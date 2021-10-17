@@ -1,0 +1,40 @@
+# -*- coding: utf-8-unix -*-
+#+STARTUP: indent showall
+
+* libmsx ; C library for MSX
+
+* Pre-requisites
+
+** Target Machine
+- MSX
+- MSX2
+- MSX2+
+- MSX Turbo R
+
+** Host Platform
+- Ubuntu 20.04
+
+** Build tools
+- SDCC ::
+  Small Device C Compiler\\
+  [[http://sdcc.sourceforge.net/]]
+
+... and some popular standard Linux/Unix commands:
+- ~find~, ~make~,
+- and so on.
+
+** Install instruction of Build tools
+
+*Ubuntu*
+#+begin_src shell
+  sudo apt update
+  sudo apt install build-essential
+  sudo apt install sdcc
+#+end_src
+
+* How to build
+
+The below makes the library ~libmsx.lib~ into ~lib~ directory.
+#+begin_src shell
+  make
+#+end_src

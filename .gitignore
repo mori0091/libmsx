@@ -1,0 +1,14 @@
+*~
+*.sys
+*.com
+*.exe
+*.lib
+*.a
+*.d
+*.o
+*.rel
+*.asm
+# *.s
+/**/bin
+/**/lib
+/**/obj

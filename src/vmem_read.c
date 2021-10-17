@@ -1,0 +1,14 @@
+// -*- coding: utf-8-unix -*-
+
+#include "../include/vdp.h"
+
+#include "vdp_internal.h"
+
+void vmem_read(vmemptr_t src, void* dst, uint16_t len) {
+  __critical {
+    vmem_set_read_address(src);
+    for (uint8_t* p = dst; len--; ) {
+      *p++ = vdp_port0;
+    }
+  }
+}

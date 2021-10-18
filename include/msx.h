@@ -16,5 +16,6 @@
   __asm__("halt")
 
 #include "vdp.h"
+#include "input.h"
 
 #endif

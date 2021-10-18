@@ -8,7 +8,7 @@ SAMPLE_PROJECTS = \
 all: build
 
 build:
-	@$(foreach d, ${SAMPLE_PROJECTS}, echo '${d}'; ${MAKE} -s -C ${d})
+	@$(foreach d, ${SAMPLE_PROJECTS}, echo '${d}'; ${MAKE} -s -C ${d} ; )
 
 clean:
-	@$(foreach d, ${SAMPLE_PROJECTS}, ${MAKE} -s -C ${d} clean)
+	@$(foreach d, ${SAMPLE_PROJECTS}, ${MAKE} -s -C ${d} clean ; )

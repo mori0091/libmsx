@@ -13,6 +13,10 @@
 
 ** Host Platform
 - Ubuntu 20.04
+- Ubuntu 21.xx (not tested)
+
+Ofcourse, Ubuntu on *WSL* is okey. :smile: \\
+(*WSL*: Windows Subsystem for Linux)
 
 ** Build tools
 - SDCC ::
@@ -23,7 +27,7 @@
 - ~find~, ~make~,
 - and so on.
 
-** Install instruction of Build tools
+** Install instructions of Build tools
 
 *Ubuntu*
 #+begin_src shell
@@ -32,9 +36,19 @@
   sudo apt install sdcc
 #+end_src
 
-* How to build
+* Build instructions of the library and sample projects
 
 The below makes the library ~libmsx.lib~ into ~lib~ directory.
 #+begin_src shell
   make
+#+end_src
+
+TO build sample projects in ~sample/~, do as follows:
+#+begin_src shell
+  make sample
+#+end_src
+
+And for cleaning up:
+#+begin_src shell
+  make clean
 #+end_src

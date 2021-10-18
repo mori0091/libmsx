@@ -1,6 +1,6 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-.PHONY: all build clean
+.PHONY: all build clean sample
 
 all: build
 
@@ -43,6 +43,10 @@ build: ${TARGETS}
 clean:
 	@rm -f ${TARGETS} ${OBJS} ${OBJS_CRT0} ${DEPS}
 	@rm -rf ${OBJDIR} ${BINDIR} ${LIBDIR}
+	@${MAKE} -s -C sample clean
+
+sample:
+	@${MAKE} -s -C sample
 
 ${LIBDIR}/%.rel: crt0/%.s
 	@${info [AS]	$<}

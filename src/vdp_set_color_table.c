@@ -34,8 +34,10 @@ void vdp_set_color_table(vmemptr_t table) {
   }
   __critical {
     RG3SAV = r3;
-    RG10SA = r10;
     VDP_SET_CTRL(3, RG3SAV);
-    VDP_SET_CTRL(10, RG10SA);
+    if (0 < msx_get_version()) {
+      RG10SA = r10;
+      VDP_SET_CTRL(10, RG10SA);
+    }
   }
 }

@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "bios.h"
 #include "workarea.h"
 
 // ---- VDP I/O ports

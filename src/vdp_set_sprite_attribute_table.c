@@ -30,8 +30,10 @@ void vdp_set_sprite_attribute_table(vmemptr_t table) {
   }
   __critical {
     RG5SAV = r5;
-    RG11SA = r11;
     VDP_SET_CTRL(5, RG5SAV);
-    VDP_SET_CTRL(11, RG11SA);
+    if (0 < msx_get_version()) {
+      RG11SA = r11;
+      VDP_SET_CTRL(11, RG11SA);
+    }
   }
 }

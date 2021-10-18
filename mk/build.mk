@@ -1,17 +1,20 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-# NAME =
+# LIBMSX_HOME = ./libmsx
+#
+# NAME = foo
+#
 # CFLAGS  = -DNDEBUG
 # LDFLAGS =
 # LDLIBS  =
 #
-# IMAGE_SIZE =
-# ADDR_HEAD =
-# ADDR_CODE =
-# ADDR_DATA =
-# CRT0 =
+# IMAGE_SIZE = 32768
+# ADDR_HEAD = 0x4000
+# ADDR_CODE = 0x4020
+# ADDR_DATA = 0xc000
+# CRT0 = ${LIBMSX_HOME}/lib/32k.4000/crt0.rel
 
-.PHONY: all build clean
+.PHONY: all build clean libmsx
 
 all: build
 
@@ -29,9 +32,6 @@ OBJS = ${OBJS_ASM} ${OBJS_C}
 
 DEPS = $(patsubst %.rel, %.d, $(OBJS))
 
-LIBMSX = libmsx/lib/libmsx.lib
-LIBS = ${LIBMSX}
-
 TARGETS = \
 	${BINDIR}/${NAME}.dat \
 	${BINDIR}/${NAME}.rom
@@ -44,22 +44,32 @@ OBJCOPY = sdobjcopy
 
 CFLAGS ?=
 CFLAGS += -mz80 -MMD
-CFLAGS += -I libmsx/include
+CFLAGS += -I ${LIBMSX_HOME}/include
+
+LIBS ?=
 
 LDFLAGS ?=
 LDFLAGS += --no-std-crt0 --code-loc ${ADDR_CODE} --data-loc ${ADDR_DATA}
+LDFLAGS += -L ${LIBMSX_HOME}/lib
 
 LDLIBS ?=
+LDLIBS += -llibmsx
 
-build: lib ${TARGETS}
+build: libmsx ${TARGETS}
 
 clean:
 	@rm -f ${TARGETS} ${OBJS} ${DEPS}
 	@rm -rf ${OBJDIR} ${BINDIR}
-	@${MAKE} -s -C libmsx clean
 
-lib ${LIBMSX}:
-	@${MAKE} -C libmsx
+ifdef LIBMSX_HOME
+libmsx:
+	@${MAKE} -C ${LIBMSX_HOME}
+else
+libmsx:
+	@${info LIBMSX_HOME is not defined in Makefile.}
+	@${info LIBMSX_HOME shall be defined as follows:}
+	@${info LIBMSX_HOME = <path to top of libmsx>}
+endif
 
 %.rom: %.ihx
 	@${info [Build]	$@}
@@ -86,10 +96,5 @@ ${OBJDIR}/%.rel: ${SRCDIR}/%.s
 	@${info [AS]	$<}
 	@mkdir -p $(dir $@)
 	@${AS} -o $@ $<
-
-crt0/%.rel: crt0/%.s
-	@${info [AS]	$<}
-	@mkdir -p $(dir $@)
-	@${AS} -g -o $@ $<
 
 -include $(DEPS)

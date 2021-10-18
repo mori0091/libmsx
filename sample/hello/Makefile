@@ -1,26 +1,27 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-# ---------------------------------------------------------------
-# This "Makefile" is a template to make application for MSX.
-# Place a copy of this file under the top folder of your project,
-# and customize the copied Makefile for your project.
-# ---------------------------------------------------------------
+# ----------------------------------------------------------------------------
+# This "Makefile" was made based on a template distributed by libmsx project.
+#
+# The original template is in `mk/` folder of libmsx GitHub repository.
+# libmsx on GitHub: https://github.com/mori0091/libmsx
+# ----------------------------------------------------------------------------
 
 # [REQUIRED]
 # Path to top of the libmsx installed folder.
-LIBMSX_HOME = path_to_top_of_libmsx
+LIBMSX_HOME = ../../
 
 # [REQUIRED]
 # Specify NAME of your rom image to be built.
 #   The rom image `${NAME}.rom` will be made into ${BINDIR} folder.
 #   e.g. If NAME was foo, the image will be `bin/foo.rom`.
-NAME = name_of_your_rom
+NAME = hello
 
 # [REQUIRED]
 # Include one of the configuration.
 #   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
 #   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
-include ${LIBMSX_HOME}/mk/32k.4000.mk
+include ${LIBMSX_HOME}/mk/16k.4000.mk
 
 # [OPTIONAL]
 # You may specify additional C compiler/linker options.

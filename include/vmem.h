@@ -29,6 +29,6 @@ void vmem_read(vmemptr_t src, void* dst, uint16_t len);
 
 void vmem_write(vmemptr_t dst, void* src, uint16_t len);
 
-void vmem_memset(vmemptr_t dst, uint8_t val, uint32_t len);
+void vmem_memset(vmemptr_t dst, uint8_t val, uint16_t len);
 
 #endif

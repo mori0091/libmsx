@@ -1,11 +1,7 @@
 // -*- coding: utf-8-unix -*-
 
+#include "../include/io.h"
 #include "../include/input.h"
-
-// ---- PSG I/O ports
-static volatile __sfr __at 0x0a0 psg_port0; /* address latch */
-static volatile __sfr __at 0x0a1 psg_port1; /* data write */
-static volatile __sfr __at 0x0a2 psg_port2; /* data read */
 
 #define KANA_LAMP_OFF  (0x080)
 

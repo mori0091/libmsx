@@ -15,7 +15,14 @@
   __asm__("ei");                                \
   __asm__("halt")
 
+#include "io.h"
+#include "bios.h"
+#include "workarea.h"
+
 #include "vdp.h"
+#include "vmem.h"
+#include "sprite.h"
+
 #include "input.h"
 
 #endif

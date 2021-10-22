@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <stdint.h>
+
 // Main ROM
 static const __at (0x002d) uint8_t MSX_SYSTEM_VERSION_CODE;
 

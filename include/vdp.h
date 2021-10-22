@@ -9,36 +9,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "io.h"
+#include "vmem.h"
+
 #include "bios.h"
 #include "workarea.h"
-
-// ---- VDP I/O ports
-static volatile __sfr __at 0x98 vdp_port0;
-static volatile __sfr __at 0x99 vdp_port1;
-static volatile __sfr __at 0x9a vdp_port2;
-static volatile __sfr __at 0x9b vdp_port3;
-
-// ---- VRAM access
-
-typedef uint32_t vmemptr_t;
-
-void vmem_set_read_address(vmemptr_t loc);
-
-void vmem_set_write_address(vmemptr_t loc);
-
-inline uint8_t vmem_get(void) {
-  return vdp_port0;
-}
-
-inline void vmem_set(uint8_t val) {
-  vdp_port0 = val;
-}
-
-void vmem_read(vmemptr_t src, void* dst, uint16_t len);
-
-void vmem_write(vmemptr_t dst, void* src, uint16_t len);
-
-void vmem_memset(vmemptr_t dst, uint8_t val, uint32_t len);
 
 // ---- VDP status register
 
@@ -86,12 +61,6 @@ enum vdp_sprite_size {
   VDP_SPRITE_SIZE_8x8_MAGNIFIED = 1,
   VDP_SPRITE_SIZE_16x16 = 2,
   VDP_SPRITE_SIZE_16x16_MAGNIFIED = 3,
-};
-
-enum vdp_sprite_tag {
-  VDP_SPRITE_TAG_IC = (1<<5),   // IC bit (Ignore Collision)
-  VDP_SPRITE_TAG_CC = (1<<6),   // CC bit (Compose Color / Cancel Collision)
-  VDP_SPRITE_TAG_EC = (1<<7),   // EC bit (Early Clock)
 };
 
 void vdp_set_visible(bool visible);
@@ -156,55 +125,5 @@ void vdp_cmd_execute_HMMV(uint16_t x, uint16_t y, uint16_t w, uint16_t h,
 void vdp_cmd_execute_HMMM(uint16_t x, uint16_t y, uint16_t w, uint16_t h,
                           uint16_t x2, uint16_t y2);
 
-// ---- Sprite
-
-// element of sprite attribute table
-struct sprite {
-  uint8_t y;
-  uint8_t x;
-  uint8_t pat;                  // sprite pattern number
-  uint8_t tag;                  // EC | CC | IC | 0 | Color Code
-};
-
-// element of sprite color table
-struct sprite_color {
-  uint8_t tags[16];             // EC | CC | IC | 0 | Color Code
-};
-
-inline
-void sprite_set_x(struct sprite* s, int x) {
-  if (x < -32) x = -32;
-  if (x > 255) x = 255;
-  if (x < 0) {
-    s->x = x + 32;
-    s->tag |= VDP_SPRITE_TAG_EC;
-  } else {
-    s->x = x;
-    s->tag &= ~VDP_SPRITE_TAG_EC;
-  }
-}
-
-inline
-void sprite_set_y(struct sprite* s, int y) {
-  s->y = (uint8_t)(y & 0xFF);
-}
-
-inline
-void sprite_set_xy(struct sprite* s, int x, int y) {
-  sprite_set_y(s, y);
-  sprite_set_x(s, x);
-}
-
-inline
-void sprite_set_pat(struct sprite* s, uint8_t pat) {
-  assert(pat < 32);
-  s->pat = pat;
-}
-
-inline
-void sprite_set_color(struct sprite* s, uint8_t color) {
-  assert(color < 16);
-  s->tag |= color;
-}
 
 #endif

@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <stdint.h>
+
 static volatile __at (0xf3df) uint8_t RG0SAV;
 static volatile __at (0xf3e0) uint8_t RG1SAV;
 static volatile __at (0xf3e1) uint8_t RG2SAV;

@@ -92,7 +92,7 @@ The below makes the library ~libmsx.lib~ into ~lib~ directory.
   make
 #+end_src
 
-TO build sample projects in ~sample/~, do as follows:
+To build sample projects in ~sample/~, do as follows:
 #+begin_src shell
   make sample
 #+end_src

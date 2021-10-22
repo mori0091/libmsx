@@ -22,6 +22,7 @@
 #include "vdp.h"
 #include "vmem.h"
 #include "sprite.h"
+#include "metasprite.h"
 
 #include "input.h"
 

@@ -65,6 +65,7 @@ enum vdp_sprite_size {
 
 void vdp_set_visible(bool visible);
 
+uint8_t vdp_get_sprite_mode(void);
 void vdp_set_screen_mode(enum vdp_screen_mode mode);
 void vdp_set_screen_lines(enum vdp_screen_lines lines);
 

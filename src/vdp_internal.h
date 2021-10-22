@@ -20,6 +20,7 @@
 
 
 extern volatile enum vdp_screen_mode screen_mode;
+extern volatile uint8_t sprite_mode;
 
 #define VDP_CMD_LMMV (0x80)
 #define VDP_CMD_LMMM (0x90)

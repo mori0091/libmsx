@@ -4,5 +4,6 @@
 
 #include "vdp_internal.h"
 
-volatile enum vdp_screen_mode screen_mode = 0;
-volatile uint8_t sprite_mode = 0;
+uint8_t vdp_get_sprite_mode(void) {
+  return sprite_mode;
+}

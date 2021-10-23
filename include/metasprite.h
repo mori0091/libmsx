@@ -16,14 +16,45 @@ typedef struct vec2i {
   int y;
 } vec2i_t;
 
+/**
+ * Meta-sprite ; an aggregate of sprites.
+ *
+ * A meta-sprite is an aggregate of sprites, that could be layered, tiled,
+ * layered tiled sprites, or various layout of sprites.
+ *
+ * A struct `metasprite` defines:
+ * - the layouts of sprites, of that the meta-sprite consists.
+ * - the sprite pattern numbers of sprites, of that the meta-sprite consists.
+ * - the anchor point of the meta-sprite, in the meta-sprite local coordinate
+ *   system.
+ *
+ * The below is not a member of the struct `metasprite`:
+ * - the position in the screen coordinate system
+ * - the sprite plane numbers of sprites
+ * - bitmap pattern of sprites
+ * - colors of sprites
+ * - tags (EC / CC / IC bit)
+ *
+ */
 typedef struct metasprite {
-  /** number of sprites of that the metasprite consists. */
+  /**
+   * Number of sprites,
+   * of that the metasprite consists.
+   */
   uint8_t n;
-  /** anchor point in metasprite local coordinates */
-  vec2i_t origin;
-  /** `n` element array of sprite positions */
+  /**
+   * the anchor point of the metasprite,
+   * in the metasprite local coordinate system.
+   */
+  vec2i_t anchor;
+  /**
+   *`n` element array of sprite positions,
+   * in the metasprite local coordinate system.
+   */
   vec2i_t* layouts;
-  /** `n` element array of sprite pattern numbers */
+  /**
+   * `n` element array of thesprite pattern numbers
+   */
   uint8_t* pats;
 } metasprite_t;
 
@@ -81,6 +112,10 @@ void vmem_set_metasprite_m(vmemptr_t base, uint8_t plane, int x, int y,
  * In sprite mode 2, vmem_set_metasprite_s() and vmem_set_metasprite_m() are
  * also useful. However, they are a bit slower because they need to copy the
  * color and tag bits to the color table element of each sprite.
+ *
+ * The function vmem_set_metasprite_a() does not set the EC bit. If there is a
+ * sprite whose x-coordinate would to be less than 0 on the screen, that sprite
+ * is hidden (unshown) simply, instead of setting the EC bit.
  *
  * \param base  Base address of the sprite attribute table in VRAM.
  * \param plane The plane number on which the 1st sprite of the metasprite is

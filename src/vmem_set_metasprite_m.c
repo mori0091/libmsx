@@ -11,8 +11,8 @@ void vmem_set_metasprite_m(vmemptr_t base, uint8_t plane, int x, int y,
     plane &= 31;
     s.pat = ms->pats[i];
     s.tagged_color = (tagged_colors[i] & ~SPRITE_TAG_EC);
-    sprite_set_x(&s, ms->layouts[i].x + x - ms->origin.x);
-    sprite_set_y(&s, ms->layouts[i].y + y - ms->origin.y);
+    sprite_set_x(&s, ms->layouts[i].x + x - ms->anchor.x);
+    sprite_set_y(&s, ms->layouts[i].y + y - ms->anchor.y);
     vmem_write(base + plane * sizeof(struct sprite), &s, sizeof(struct sprite));
     if (2 <= vdp_get_sprite_mode()) {
       vmem_memset(base - 0x0200 + plane * sizeof(struct sprite_color),

@@ -1,0 +1,13 @@
+<map id="include/sprite.h" name="include/sprite.h">
+<area shape="rect" id="node1" title=" " alt="" coords="542,5,665,32"/>
+<area shape="rect" id="node2" href="$metasprite_8h.html" title=" " alt="" coords="300,80,456,107"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title=" " alt="" coords="5,155,119,181"/>
+<area shape="rect" id="node4" href="$vmem__set__metasprite__a_8c.html" title=" " alt="" coords="143,155,362,181"/>
+<area shape="rect" id="node5" href="$vmem__set__metasprite__m_8c.html" title=" " alt="" coords="387,155,609,181"/>
+<area shape="rect" id="node6" href="$vmem__set__metasprite__s_8c.html" title=" " alt="" coords="633,155,851,181"/>
+<area shape="rect" id="node7" href="$sprite__set__color_8c.html" title=" " alt="" coords="583,80,741,107"/>
+<area shape="rect" id="node8" href="$sprite__set__pat_8c.html" title=" " alt="" coords="765,80,913,107"/>
+<area shape="rect" id="node9" href="$sprite__set__x_8c.html" title=" " alt="" coords="937,80,1072,107"/>
+<area shape="rect" id="node10" href="$sprite__set__xy_8c.html" title=" " alt="" coords="1097,80,1238,107"/>
+<area shape="rect" id="node11" href="$sprite__set__y_8c.html" title=" " alt="" coords="1262,80,1395,107"/>
+</map>

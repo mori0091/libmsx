@@ -1,0 +1,10 @@
+<map id="include/vdp.h" name="include/vdp.h">
+<area shape="rect" id="node1" title=" " alt="" coords="237,5,347,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,80,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="104,80,187,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="309,155,379,181"/>
+<area shape="rect" id="node5" href="$io_8h.html" title=" " alt="" coords="518,155,565,181"/>
+<area shape="rect" id="node6" href="$vmem_8h.html" title=" " alt="" coords="466,80,542,107"/>
+<area shape="rect" id="node7" href="$bios_8h.html" title=" " alt="" coords="261,80,323,107"/>
+<area shape="rect" id="node8" href="$workarea_8h.html" title=" " alt="" coords="347,80,442,107"/>
+</map>

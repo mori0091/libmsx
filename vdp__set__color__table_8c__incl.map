@@ -1,0 +1,12 @@
+<map id="src/vdp_set_color_table.c" name="src/vdp_set_color_table.c">
+<area shape="rect" id="node1" title=" " alt="" coords="269,5,456,32"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title=" " alt="" coords="231,80,353,107"/>
+<area shape="rect" id="node10" href="$vdp__internal_8h.html" title=" " alt="" coords="377,80,492,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,80,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="104,155,187,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="309,229,379,256"/>
+<area shape="rect" id="node6" href="$io_8h.html" title=" " alt="" coords="518,229,565,256"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title=" " alt="" coords="466,155,542,181"/>
+<area shape="rect" id="node8" href="$bios_8h.html" title=" " alt="" coords="261,155,323,181"/>
+<area shape="rect" id="node9" href="$workarea_8h.html" title=" " alt="" coords="347,155,442,181"/>
+</map>

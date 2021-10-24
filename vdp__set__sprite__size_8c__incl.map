@@ -1,0 +1,12 @@
+<map id="src/vdp_set_sprite_size.c" name="src/vdp_set_sprite_size.c">
+<area shape="rect" id="node1" title=" " alt="" coords="293,5,433,47"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title=" " alt="" coords="231,95,353,121"/>
+<area shape="rect" id="node10" href="$vdp__internal_8h.html" title=" " alt="" coords="377,95,492,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,80,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="104,169,187,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="309,244,379,271"/>
+<area shape="rect" id="node6" href="$io_8h.html" title=" " alt="" coords="518,244,565,271"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title=" " alt="" coords="466,169,542,196"/>
+<area shape="rect" id="node8" href="$bios_8h.html" title=" " alt="" coords="261,169,323,196"/>
+<area shape="rect" id="node9" href="$workarea_8h.html" title=" " alt="" coords="347,169,442,196"/>
+</map>

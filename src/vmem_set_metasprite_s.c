@@ -1,6 +1,7 @@
 // -*- coding: utf-8-unix -*-
 
 #include "../include/sprite.h"
+#include "../include/sprite_color.h"
 #include "../include/metasprite.h"
 
 void vmem_set_metasprite_s(vmemptr_t base, uint8_t plane, int x, int y,

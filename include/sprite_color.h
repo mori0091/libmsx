@@ -18,8 +18,8 @@ struct sprite_color {
 /**
  * Set sprite color table element (tagged color for each scanlines) of a sprite.
  *
- * - ~MSX2~, ~MSX2+~, ~MSXturboR~
- * - ~SPRITE MODE 2~
+ * - `MSX2`, `MSX2+`, `MSXturboR`
+ * - `SPRITE MODE 2`
  *
  * \param base  Base address of the SPRITE ATTRIBUTE TABLE in VRAM.
  * \param plane The plane number.
@@ -33,8 +33,8 @@ void vmem_set_sprite_color(vmemptr_t base, uint8_t plane,
 /**
  * Set sprite color (tagged color) of a sprite.
  *
- * - ~MSX~, ~MSX2~, ~MSX2+~, ~MSXturboR~
- * - ~SPRITE MODE 1~, ~SPRITE MODE 2~
+ * - `MSX`, `MSX2`, `MSX2+`, `MSXturboR`
+ * - `SPRITE MODE 1`, `SPRITE MODE 2`
  *
  * \param base  Base address of the SPRITE ATTRIBUTE TABLE in VRAM.
  * \param plane The plane number.
@@ -48,8 +48,8 @@ void vmem_set_sprite_color_s(vmemptr_t base, uint8_t plane,
 /**
  * Set sprite color (tagged color) of some sprites.
  *
- * - ~MSX~, ~MSX2~, ~MSX2+~, ~MSXturboR~
- * - ~SPRITE MODE 1~, ~SPRITE MODE 2~
+ * - `MSX`, `MSX2`, `MSX2+`, `MSXturboR`
+ * - `SPRITE MODE 1`, `SPRITE MODE 2`
  *
  * \param base  Base address of the SPRITE ATTRIBUTE TABLE in VRAM.
  * \param plane The plane number.

@@ -1,0 +1,13 @@
+<map id="src/vmem_set_sprite_color_s.c" name="src/vmem_set_sprite_color_s.c">
+<area shape="rect" id="node1" title=" " alt="" coords="136,5,295,47"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title=" " alt="" coords="292,169,413,196"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title=" " alt="" coords="116,244,192,271"/>
+<area shape="rect" id="node10" href="$sprite__color_8h.html" title=" " alt="" coords="5,95,177,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="523,244,598,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="622,244,705,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="156,319,227,345"/>
+<area shape="rect" id="node6" href="$io_8h.html" title=" " alt="" coords="356,319,403,345"/>
+<area shape="rect" id="node8" href="$bios_8h.html" title=" " alt="" coords="267,244,329,271"/>
+<area shape="rect" id="node9" href="$workarea_8h.html" title=" " alt="" coords="353,244,448,271"/>
+<area shape="rect" id="node11" href="$sprite_8h.html" title=" " alt="" coords="56,169,127,196"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="include/vdp.h" name="include/vdp.h">
-<area shape="rect" id="node1" title=" " alt="" coords="3110,5,3219,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="3210,5,3319,32"/>
 <area shape="rect" id="node2" href="$metasprite_8h.html" title=" " alt="" coords="175,87,331,114"/>
 <area shape="rect" id="node3" href="$msx_8h.html" title=" " alt="" coords="5,169,119,196"/>
 <area shape="rect" id="node7" href="$vdp_8c.html" title=" " alt="" coords="355,87,435,114"/>
@@ -33,8 +33,9 @@
 <area shape="rect" id="node35" href="$vmem__memset_8c.html" title=" " alt="" coords="5403,87,5561,114"/>
 <area shape="rect" id="node36" href="$vmem__read_8c.html" title=" " alt="" coords="5585,87,5720,114"/>
 <area shape="rect" id="node37" href="$vmem__set__read__address_8c.html" title=" " alt="" coords="5745,87,5963,114"/>
-<area shape="rect" id="node38" href="$vmem__set__write__address_8c.html" title=" " alt="" coords="5987,80,6142,121"/>
-<area shape="rect" id="node39" href="$vmem__write_8c.html" title=" " alt="" coords="6166,87,6305,114"/>
+<area shape="rect" id="node38" href="$vmem__set__sprite__color__s_8c.html" title=" " alt="" coords="5988,80,6147,121"/>
+<area shape="rect" id="node39" href="$vmem__set__write__address_8c.html" title=" " alt="" coords="6171,80,6326,121"/>
+<area shape="rect" id="node40" href="$vmem__write_8c.html" title=" " alt="" coords="6350,87,6489,114"/>
 <area shape="rect" id="node4" href="$vmem__set__metasprite__a_8c.html" title=" " alt="" coords="143,169,362,196"/>
 <area shape="rect" id="node5" href="$vmem__set__metasprite__m_8c.html" title=" " alt="" coords="387,169,609,196"/>
 <area shape="rect" id="node6" href="$vmem__set__metasprite__s_8c.html" title=" " alt="" coords="633,169,851,196"/>

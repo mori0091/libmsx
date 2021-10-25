@@ -96,8 +96,7 @@ $(document).ready(function(){initNavTree('vmem__set__metasprite__a_8c.html','');
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="vmem__set__metasprite__a_8c__incl.svg" width="647" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="vmem__set__metasprite__a_8c__incl.svg" width="647" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="vmem__set__metasprite__a_8c_source.html">Go to the source code of this file.</a></p>
@@ -159,7 +158,7 @@ Functions</h2></td></tr>
 <li>Cons: The EC (Early Clock) bit is not set correctly.</li>
 </ul>
 </dd></dl>
-<p>This function is supposed to be used together with <a class="el" href="sprite_8h.html#a59dc3146fb9b82d907c720b86286b853" title="Set sprite color table element (tagged color for each scanlines).">vmem_set_sprite_color()</a> in sprite mode 2.</p>
+<p>This function is supposed to be used together with <a class="el" href="sprite__color_8h.html#a59dc3146fb9b82d907c720b86286b853" title="Set sprite color table element (tagged color for each scanlines) of a sprite.">vmem_set_sprite_color()</a> in sprite mode 2.</p>
 <p>In sprite mode 1 (MSX1 compatible sprite mode), you may want to use <a class="el" href="metasprite_8h.html#a32705789983aee5f50d7e55d194ae1e5" title="Display single colored metasprite.">vmem_set_metasprite_s()</a> or <a class="el" href="metasprite_8h.html#a8f75c581188b5d3ee3f4b5fdf4d5a4b6" title="Display multi colored metasprite.">vmem_set_metasprite_m()</a>. These are fast enough and convenient.</p>
 <p>In sprite mode 2, <a class="el" href="metasprite_8h.html#a32705789983aee5f50d7e55d194ae1e5" title="Display single colored metasprite.">vmem_set_metasprite_s()</a> and <a class="el" href="metasprite_8h.html#a8f75c581188b5d3ee3f4b5fdf4d5a4b6" title="Display multi colored metasprite.">vmem_set_metasprite_m()</a> are also useful. However, they are a bit slower because they need to copy the color and tag bits to the color table element of each sprite.</p>
 <p>The function <a class="el" href="metasprite_8h.html#afc42c840f82df1225e380342dd7ebcc4" title="Display / Move metasprite.">vmem_set_metasprite_a()</a> does not set the EC bit. If there is a sprite whose x-coordinate would to be less than 0 on the screen, that sprite is hidden (unshown) simply, instead of setting the EC bit.</p>

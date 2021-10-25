@@ -99,15 +99,14 @@ $(document).ready(function(){initNavTree('sprite_8h.html',''); initResizable(); 
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sprite_8h__incl.svg" width="160" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sprite_8h__incl.svg" width="160" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sprite_8h__dep__incl.svg" width="1402" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sprite_8h__dep__incl.svg" width="1655" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -116,8 +115,6 @@ $(document).ready(function(){initNavTree('sprite_8h.html',''); initResizable(); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsprite.html">sprite</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsprite__color.html">sprite_color</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -148,9 +145,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a4d424f5d339662168ed48c3c0667f1d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">vmem_set_sprite</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> base, uint8_t plane, const struct <a class="el" href="structsprite.html">sprite</a> *s)</td></tr>
 <tr class="memdesc:a4d424f5d339662168ed48c3c0667f1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set sprite attribute table element.  <a href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">More...</a><br /></td></tr>
 <tr class="separator:a4d424f5d339662168ed48c3c0667f1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59dc3146fb9b82d907c720b86286b853"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sprite_8h.html#a59dc3146fb9b82d907c720b86286b853">vmem_set_sprite_color</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> base, uint8_t plane, const struct <a class="el" href="structsprite__color.html">sprite_color</a> *<a class="el" href="structsprite__color.html">sprite_color</a>)</td></tr>
-<tr class="memdesc:a59dc3146fb9b82d907c720b86286b853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set sprite color table element (tagged color for each scanlines).  <a href="sprite_8h.html#a59dc3146fb9b82d907c720b86286b853">More...</a><br /></td></tr>
-<tr class="separator:a59dc3146fb9b82d907c720b86286b853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a605f045b10596303a46a2ba2ba343e1c"></a>
@@ -398,61 +392,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sprite_8h_source.html#l00053">53</a> of file <a class="el" href="sprite_8h_source.html">sprite.h</a>.</p>
-
-</div>
-</div>
-<a id="a59dc3146fb9b82d907c720b86286b853"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59dc3146fb9b82d907c720b86286b853">&#9670;&nbsp;</a></span>vmem_set_sprite_color()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vmem_set_sprite_color </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a>&#160;</td>
-          <td class="paramname"><em>base</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>plane</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const struct <a class="el" href="structsprite__color.html">sprite_color</a> *&#160;</td>
-          <td class="paramname"><em>sprite_color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set sprite color table element (tagged color for each scanlines). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">base</td><td>Base address of the SPRITE ATTRIBUTE TABLE in VRAM. </td></tr>
-    <tr><td class="paramname">plane</td><td>The plane number. </td></tr>
-    <tr><td class="paramname"><a class="el" href="structsprite__color.html">sprite_color</a></td><td>Pointer to constructed sprite color table element, that to be copied into VRAM. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="sprite_8h_source.html#l00067">67</a> of file <a class="el" href="sprite_8h_source.html">sprite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sprite_8h_source.html#l00048">48</a> of file <a class="el" href="sprite_8h_source.html">sprite.h</a>.</p>
 
 </div>
 </div>

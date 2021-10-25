@@ -1,0 +1,9 @@
+<map id="include/sprite_color.h" name="include/sprite_color.h">
+<area shape="rect" id="node1" title=" " alt="" coords="523,5,683,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title=" " alt="" coords="5,87,119,114"/>
+<area shape="rect" id="node3" href="$vmem__set__metasprite__m_8c.html" title=" " alt="" coords="143,87,365,114"/>
+<area shape="rect" id="node4" href="$vmem__set__metasprite__s_8c.html" title=" " alt="" coords="389,87,607,114"/>
+<area shape="rect" id="node5" href="$vmem__set__sprite__color_8c.html" title=" " alt="" coords="631,80,789,121"/>
+<area shape="rect" id="node6" href="$vmem__set__sprite__color__m_8c.html" title=" " alt="" coords="813,80,972,121"/>
+<area shape="rect" id="node7" href="$vmem__set__sprite__color__s_8c.html" title=" " alt="" coords="996,80,1155,121"/>
+</map>

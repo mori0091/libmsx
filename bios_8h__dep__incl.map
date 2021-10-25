@@ -1,7 +1,7 @@
 <map id="include/bios.h" name="include/bios.h">
-<area shape="rect" id="node1" title=" " alt="" coords="4931,5,5043,32"/>
-<area shape="rect" id="node2" href="$vdp_8h.html" title=" " alt="" coords="3509,80,3619,107"/>
-<area shape="rect" id="node4" href="$msx_8h.html" title=" " alt="" coords="6393,244,6506,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5112,5,5224,32"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title=" " alt="" coords="3599,80,3708,107"/>
+<area shape="rect" id="node4" href="$msx_8h.html" title=" " alt="" coords="6577,244,6690,271"/>
 <area shape="rect" id="node3" href="$metasprite_8h.html" title=" " alt="" coords="282,162,438,189"/>
 <area shape="rect" id="node8" href="$vdp_8c.html" title=" " alt="" coords="463,162,543,189"/>
 <area shape="rect" id="node9" href="$vdp__cmd__execute__HMMM_8c.html" title=" " alt="" coords="567,155,729,196"/>
@@ -34,8 +34,9 @@
 <area shape="rect" id="node36" href="$vmem__memset_8c.html" title=" " alt="" coords="5510,162,5669,189"/>
 <area shape="rect" id="node37" href="$vmem__read_8c.html" title=" " alt="" coords="5693,162,5827,189"/>
 <area shape="rect" id="node38" href="$vmem__set__read__address_8c.html" title=" " alt="" coords="5852,162,6071,189"/>
-<area shape="rect" id="node39" href="$vmem__set__write__address_8c.html" title=" " alt="" coords="6095,155,6249,196"/>
-<area shape="rect" id="node40" href="$vmem__write_8c.html" title=" " alt="" coords="6273,162,6412,189"/>
+<area shape="rect" id="node39" href="$vmem__set__sprite__color__s_8c.html" title=" " alt="" coords="6095,155,6254,196"/>
+<area shape="rect" id="node40" href="$vmem__set__write__address_8c.html" title=" " alt="" coords="6279,155,6433,196"/>
+<area shape="rect" id="node41" href="$vmem__write_8c.html" title=" " alt="" coords="6457,162,6596,189"/>
 <area shape="rect" id="node5" href="$vmem__set__metasprite__a_8c.html" title=" " alt="" coords="5,244,224,271"/>
 <area shape="rect" id="node6" href="$vmem__set__metasprite__m_8c.html" title=" " alt="" coords="249,244,471,271"/>
 <area shape="rect" id="node7" href="$vmem__set__metasprite__s_8c.html" title=" " alt="" coords="495,244,713,271"/>

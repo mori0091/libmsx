@@ -41,6 +41,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "vmem_set_metasprite_m.c", "vmem__set__metasprite__m_8c.html", "vmem__set__metasprite__m_8c" ],
     [ "vmem_set_metasprite_s.c", "vmem__set__metasprite__s_8c.html", "vmem__set__metasprite__s_8c" ],
     [ "vmem_set_read_address.c", "vmem__set__read__address_8c.html", "vmem__set__read__address_8c" ],
+    [ "vmem_set_sprite_color.c", "vmem__set__sprite__color_8c.html", "vmem__set__sprite__color_8c" ],
+    [ "vmem_set_sprite_color_m.c", "vmem__set__sprite__color__m_8c.html", "vmem__set__sprite__color__m_8c" ],
+    [ "vmem_set_sprite_color_s.c", "vmem__set__sprite__color__s_8c.html", "vmem__set__sprite__color__s_8c" ],
     [ "vmem_set_write_address.c", "vmem__set__write__address_8c.html", "vmem__set__write__address_8c" ],
     [ "vmem_write.c", "vmem__write_8c.html", "vmem__write_8c" ]
 ];

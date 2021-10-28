@@ -33,7 +33,8 @@ AS = sdasz80
 LD = sdld
 AR = sdar
 
-CFLAGS = -mz80 -MMD
+CFLAGS ?= --opt-code-size
+CFLAGS += -mz80 -MMD
 CFLAGS += -DNDEBUG --Werror
 CFLAGS += -I include
 LDFLAGS = --no-std-crt0 --code-loc ${ADDR_CODE} --data-loc ${ADDR_DATA}

@@ -1,7 +1,7 @@
 // -*- coding: utf-8-unix -*-
 
-#ifndef BGM_DRIVER_H
-#define BGM_DRIVER_H
+#ifndef SOUND_H
+#define SOUND_H
 
 #pragma once
 
@@ -41,12 +41,16 @@ struct sound_clip {
   uint8_t* streams[3];
 };
 
-void bgm_set_repeat(bool repeat);
+void sound_set_repeat(bool repeat);
 
-void bgm_start(struct sound_clip* s);
+void sound_set_mute(uint8_t mute);
 
-void bgm_stop(void);
+void sound_start(struct sound_clip* s);
 
-void bgm_player(void);
+void sound_stop(void);
+
+void sound_pause(void);
+
+void sound_player(void);
 
 #endif

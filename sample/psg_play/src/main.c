@@ -2,7 +2,7 @@
 
 #include <msx.h>
 
-#include "bgm_driver.h"
+#include "sound.h"
 
 const uint8_t channel_1[] ={
   0x60, 0x1e, 0x88, 0x01, 0xac, // T120L4 V8 C
@@ -42,8 +42,8 @@ static void infinite_loop(void) {
 }
 
 void main(void) {
-  set_vsync_handler(bgm_player);
-  bgm_set_repeat(true);
-  bgm_start(&bgm);
+  set_vsync_handler(sound_player);
+  sound_set_repeat(true);
+  sound_start(&bgm);
   infinite_loop();
 }

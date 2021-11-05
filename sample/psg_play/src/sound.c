@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <msx.h>
 
-#include "bgm_driver.h"
-#include "psg.h"
+#include "sound.h"
 
 static const __at (0x002b) uint8_t INTERNATIONAL_ID_1;
 static const __at (0x002c) uint8_t INTERNATIONAL_ID_2;
@@ -18,17 +17,21 @@ static uint8_t VSYNC_FREQ;
 static struct {
   struct sound_clip* data;      // pointer to current music (set of streams)
   uint8_t* next[3];             // pointer to next chunk for each streams
-  uint16_t duration[3];         // remaining duration for each channel
+  int16_t duration[3];          // remaining duration for each channel
   uint8_t flag;                 // playing/stopped flags
   bool repeat;                  // auto repeat on/off
 } sound;
 
-void bgm_set_repeat(bool repeat) {
+void sound_set_repeat(bool repeat) {
   sound.repeat = repeat;
 }
 
-void bgm_start(struct sound_clip* s) {
-  bgm_stop();
+void sound_set_mute(uint8_t mute) {
+  // \TODO implement
+}
+
+void sound_start(struct sound_clip* s) {
+  sound_stop();
   if (s) {
     sound.data = s;
     sound.next[0] = s->streams[0];
@@ -41,7 +44,7 @@ void bgm_start(struct sound_clip* s) {
   }
 }
 
-void bgm_stop(void) {
+void sound_stop(void) {
   VSYNC_FREQ = ((INTERNATIONAL_ID_1 & 0x80) ? 50 : 60);
   COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
   psg_init();
@@ -49,29 +52,27 @@ void bgm_stop(void) {
   sound.flag = 0;
 }
 
-void bgm_player(void) {
+void sound_pause(void) {
+  // \TODO implement
+}
+
+void sound_player(void) {
   if (!sound.data) return;
   if (!(sound.flag & SOUND_CHANNEL_ALL)) {
     if (!sound.repeat) {
-      bgm_stop();
+      sound_stop();
       return;
     }
-    bgm_start(sound.data);
+    sound_start(sound.data);
   }
   uint8_t mask = SOUND_CHANNEL_A;
   for (uint8_t ch = 0; ch < 3; ++ch, mask <<= 1) {
     // ---- Countdown time remaining ----
-    if (COUNT_PER_TICK <= sound.duration[ch]) {
+    if (0 < sound.duration[ch]) {
       sound.duration[ch] -= COUNT_PER_TICK;
-      if (sound.duration[ch]) {
+      if (0 < sound.duration[ch]) {
         continue;
       }
-    }
-    else {
-      // \TODO
-      // How should I handle the remaining "duration" that is less than
-      // COUNT_PER_TICK?
-      sound.duration[ch] = 0;
     }
     // ---- Check to see if the stream has finished. ----
     if (!(sound.flag & mask)) continue; // no more chunk

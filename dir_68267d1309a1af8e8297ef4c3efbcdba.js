@@ -1,6 +1,10 @@
 var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
+    [ "interrupt.c", "interrupt_8c.html", "interrupt_8c" ],
     [ "joypad_get_state.c", "joypad__get__state_8c.html", "joypad__get__state_8c" ],
+    [ "psg_get.c", "psg__get_8c.html", "psg__get_8c" ],
+    [ "psg_init.c", "psg__init_8c.html", "psg__init_8c" ],
+    [ "psg_set.c", "psg__set_8c.html", "psg__set_8c" ],
     [ "sprite_set_color.c", "sprite__set__color_8c.html", "sprite__set__color_8c" ],
     [ "sprite_set_pat.c", "sprite__set__pat_8c.html", "sprite__set__pat_8c" ],
     [ "sprite_set_x.c", "sprite__set__x_8c.html", "sprite__set__x_8c" ],

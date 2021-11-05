@@ -20,4 +20,6 @@
 
 #include "input.h"
 
+#include "psg.h"
+
 #endif

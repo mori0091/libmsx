@@ -87,6 +87,6 @@ void main(void) {
 
   // inifinite loop...
   for (;;) {
-    await_interrupt();
+    await_vsync();
   }
 }

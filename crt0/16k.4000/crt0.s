@@ -8,6 +8,7 @@
         .module crt0
         .globl  _main
         .globl  _exit
+        .globl  _libmsx___init_intr
 
         HIMEM  = 0xfc4a
         H_STKE = 0xfeda
@@ -30,7 +31,7 @@ init:
 init2:
         ld      sp,(HIMEM)
         call    gsinit
-        ei
+        call    _libmsx___init_intr
         call    _main
         jp      _exit
 

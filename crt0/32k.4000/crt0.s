@@ -8,6 +8,7 @@
         .module crt0
         .globl  _main
         .globl  _exit
+        .globl  _libmsx___init_intr
 
         HIMEM  = 0xfc4a
         H_STKE = 0xfeda
@@ -31,7 +32,7 @@ init2:
         ld      sp,(HIMEM)
         call    gsinit
         call    find_rom_page_2
-        ei
+        call    _libmsx___init_intr
         call    _main
         jp      _exit
 
@@ -82,7 +83,7 @@ find_rom_page_2::
 	ld (hl),b
 	ret
 5$: ; ----------- @@ROM:
-	;; di
+	di
 	; Slot primario
 	call #0x0138 ; call RSLREG
 	rrca
@@ -108,7 +109,7 @@ find_rom_page_2::
 	ld h, #0x80
 	; Habilitar permanentemente
 	call #0x0024 ; call ENASLT
-	;; ei
+	ei
 	ret
 ;------------------------------------------------
         .area   _GSINIT

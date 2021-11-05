@@ -92,7 +92,7 @@ void main(void) {
 
   uint8_t joy;
   for (;;) {
-    await_interrupt();
+    await_vsync();
     joy = joypad_get_state(1);
     print_joypad_state(joy);
   }

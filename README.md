@@ -38,15 +38,27 @@ The below functionality is supported.
     
       - Reading joystick input state.
 
+  - Sound output
+    
+      - PSG (AY-3-8910)
+
+  - Sound driver
+    
+      - Start / Stop / Pause / Mute the BGM.
+      - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
+      - All functionality of PSG is supported.
+      - (Software envelope, detune, etc. are not supported yet.)
+      - (A MML compiler for the sound driver is not developped yet.)
+
 ## Unsupported functionality
 
 The below functionality is NOT supported yet.
 
   - Keyboard input
   - Sound output
-      - PSG (AY-3-8910)
+      - ~~PSG (AY-3-8910)~~ `supported`
       - OPLL (YM2413 / MSX-MUSIC)
-  - BGM driver
+  - ~~BGM driver~~ `supported`
   - Sound effect driver
   - … and so on
 

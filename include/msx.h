@@ -21,5 +21,6 @@
 #include "input.h"
 
 #include "psg.h"
+#include "sound.h"
 
 #endif

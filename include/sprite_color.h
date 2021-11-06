@@ -39,8 +39,8 @@ void vmem_set_sprite_color(vmemptr_t base, uint8_t plane,
  * \param base  Base address of the SPRITE ATTRIBUTE TABLE in VRAM.
  * \param plane The plane number.
  * \param tagged_color
- *              A color code and sprite attribute tags, that
- *              is applied for all sprites in the metasprite.
+ *              A color code and sprite attribute tags, that is applied for
+ *              sprite of the sprite plane number `plane`.
  */
 void vmem_set_sprite_color_s(vmemptr_t base, uint8_t plane,
                              const tagged_color_t tagged_color);

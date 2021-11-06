@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['input_2eh_4',['input.h',['../input_8h.html',1,'']]],
-  ['interrupt_2ec_5',['interrupt.c',['../interrupt_8c.html',1,'']]],
-  ['interrupt_2eh_6',['interrupt.h',['../interrupt_8h.html',1,'']]],
-  ['io_2eh_7',['io.h',['../io_8h.html',1,'']]]
+  ['count_5fper_5fsecond_4',['COUNT_PER_SECOND',['../sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035',1,'sound.c']]],
+  ['count_5fper_5ftick_5f60hz_5',['COUNT_PER_TICK_60HZ',['../sound_8c.html#ac174db55392218c66ba57b1392d76b2f',1,'sound.c']]]
 ];

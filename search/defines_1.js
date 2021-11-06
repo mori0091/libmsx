@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['kana_5flamp_5foff_373',['KANA_LAMP_OFF',['../joypad__get__state_8c.html#a9be96c80705518e5d0dedf2174b43149',1,'joypad_get_state.c']]]
+  ['count_5fper_5fsecond_403',['COUNT_PER_SECOND',['../sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035',1,'sound.c']]],
+  ['count_5fper_5ftick_5f60hz_404',['COUNT_PER_TICK_60HZ',['../sound_8c.html#ac174db55392218c66ba57b1392d76b2f',1,'sound.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rgb_374',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
+  ['kana_5flamp_5foff_405',['KANA_LAMP_OFF',['../joypad__get__state_8c.html#a9be96c80705518e5d0dedf2174b43149',1,'joypad_get_state.c']]]
 ];

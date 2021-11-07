@@ -141,7 +141,7 @@ void sound_set_mute(uint8_t mute);
 /**
  * Plays the specified music clip as sound effect.
  *
- * /Priority of the sound effect/
+ * **Priority of the sound effect**
  *
  * The priority of the sound effect is specified by `s->priority`. The larger
  * the value, the higher the priority. This priority determines whether or not
@@ -158,7 +158,7 @@ void sound_set_mute(uint8_t mute);
  *   is lower than or equal to that, the specified sound clip will be ignored
  *   and will not be played.
  *
- * /Auto-mute of the background music/
+ * **Auto-mute of the background music**
  *
  * While the sound effect is playing, some channels of the background music will
  * be automatically muted (if they conflict with the sound effect) and those

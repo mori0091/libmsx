@@ -45,6 +45,9 @@ The below functionality is supported.
   - Sound driver
     
       - Start / Stop / Pause / Mute the BGM.
+      - Playing sound effects.
+          - While a sound effect is playing, the channels of BGM that
+            conflicts with sound effects are automatically muted.
       - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
       - All functionality of PSG is supported.
       - (Software envelope, detune, etc. are not supported yet.)
@@ -59,7 +62,7 @@ The below functionality is NOT supported yet.
       - ~~PSG (AY-3-8910)~~ `supported`
       - OPLL (YM2413 / MSX-MUSIC)
   - ~~BGM driver~~ `supported`
-  - Sound effect driver
+  - ~~Sound effect driver~~ `supported`
   - … and so on
 
 # Pre-requisites

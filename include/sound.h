@@ -45,18 +45,19 @@
  *
  * ~~~
  * stream = chunk* eom
- * chunk  = header body+
+ * chunk  = header body
+ * body   = command+
  * eom    = 1111b 1111b
  *
- * header = body_length:3 duration_hi:5 duration_lo:8
- * body   = tone
- *        | rest
- *        | volume
- *        | envelope_pattern
- *        | envelope_cycle
- *        | envelope_pattern_and_cycle
- *        | noise
- *        | mixer
+ * header  = len:3 duration_hi:5 duration_lo:8
+ * command = tone
+ *         | rest
+ *         | volume
+ *         | envelope_pattern
+ *         | envelope_cycle
+ *         | envelope_pattern_and_cycle
+ *         | noise
+ *         | mixer
  *
  * tone   = 0000b fdr_hi:4 fdr_lo:8
  * rest   = 0001b ----b
@@ -70,6 +71,25 @@
  * envelope_pattern_and_cycle
  *        = 1101b pat:4 fdr_hi:8 fdr_lo:8
  * ~~~
+ *
+ * The structure of `chunk`:
+ * ~~~
+ * +-----------------------+  -----
+ * | len:3 | duration_hi:5 |    |
+ * |-----------------------|  header (2 bytes)
+ * |     duration_lo:8     |    |
+ * |-----------------------|  -----
+ * |       body[0]:8       |    |
+ * |-----------------------|    |
+ * |       body[1]:8       |    |
+ * |-----------------------|  body (`len` bytes)
+ * |         ...           |    |
+ * |-----------------------|    |
+ * |     body[len-1]:8     |    |
+ * +-----------------------+  -----
+ * The body is a sequence of one or more commands.
+ * ~~~
+ *
  */
 struct sound_clip {
   uint8_t* streams[3];

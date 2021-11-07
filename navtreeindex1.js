@@ -1,5 +1,12 @@
 var NAVTREEINDEX1 =
 {
+"vdp__get__status_8c_source.html":[2,0,1,18],
+"vdp__internal_8h.html":[2,0,1,19],
+"vdp__internal_8h.html#a10fb44504bb1d0a5284fce49ea4eecc1":[2,0,1,19,5],
+"vdp__internal_8h.html#a29bd2d8c617364b80dafbaa0d70708b5":[2,0,1,19,3],
+"vdp__internal_8h.html#a527eaafb3b89f7fa25f73d7758c79362":[2,0,1,19,1],
+"vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3":[2,0,1,19,4],
+"vdp__internal_8h.html#a68e00204abf99d82a7870bb609d73ed5":[2,0,1,19,6],
 "vdp__internal_8h.html#aa59dd0622b7190f7aa34cd239c5b3e3f":[2,0,1,19,2],
 "vdp__internal_8h.html#ac0414f68c349169d1b513f1d0c6aca36":[2,0,1,19,7],
 "vdp__internal_8h.html#ad7f208183d1b0993bf96986850e8de81":[2,0,1,19,8],

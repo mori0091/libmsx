@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_360',['y',['../structvec2i.html#a22bb277fc71e43cb89c17cce26cb5503',1,'vec2i::y()'],['../structsprite.html#a640b2b10663ab61156302c3f64b37989',1,'sprite::y()']]]
+  ['unused_5fin_5fsprite_5fmode_5f2_370',['unused_in_sprite_mode_2',['../structsprite.html#a4de588d4eca889c174cec87ac2c4ea67',1,'sprite']]]
 ];

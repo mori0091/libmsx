@@ -98,11 +98,17 @@ $(document).ready(function(){initNavTree('structsound__clip.html',''); initResiz
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:ab84fd2d5f4adf34fb013bd5d22f8ab20"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a> [3]</td></tr>
+<tr class="memdesc:ab84fd2d5f4adf34fb013bd5d22f8ab20"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of pointers to the sound data stream for each channel.  <a href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">More...</a><br /></td></tr>
 <tr class="separator:ab84fd2d5f4adf34fb013bd5d22f8ab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa50d220b45ae59eedb443b956ef1929d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d">priority</a></td></tr>
+<tr class="memdesc:aa50d220b45ae59eedb443b956ef1929d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority for using this sound clip as a sound effect.  <a href="structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d">More...</a><br /></td></tr>
+<tr class="separator:aa50d220b45ae59eedb443b956ef1929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The sound clip structure. </p>
-<p>The sound clip structure holds pointers to the sound data stream for each channel. Each data stream shall be the following format.</p>
+<p>The sound clip structure holds a list of pointers to the sound data stream for each channel.</p>
+<p>This structure also stores the priority order when the sound clip is used as a sound effect. (If the sound clip is to be used as background music, its priority has no meaning and will be ignored.)</p>
+<p>Each sound data stream shall be in the following format.</p>
 <dl class="section note"><dt>Note</dt><dd>The following is written in BNF-like notation.<ul>
 <li>The term <code>x*</code> means zero or more <code>x</code>.</li>
 <li>The term <code>x+</code> means one or more <code>x</code>.</li>
@@ -152,8 +158,26 @@ Data Fields</h2></td></tr>
 <div class="line">+-----------------------+  -----</div>
 <div class="line">The body is a sequence of one or more commands.</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00105">105</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00111">111</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="aa50d220b45ae59eedb443b956ef1929d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50d220b45ae59eedb443b956ef1929d">&#9670;&nbsp;</a></span>priority</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t sound_clip::priority</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Priority for using this sound clip as a sound effect. </p>
+
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00115">115</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+
+</div>
+</div>
 <a id="ab84fd2d5f4adf34fb013bd5d22f8ab20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab84fd2d5f4adf34fb013bd5d22f8ab20">&#9670;&nbsp;</a></span>streams</h2>
 
@@ -166,7 +190,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00106">106</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p>A list of pointers to the sound data stream for each channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00113">113</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>

@@ -42,8 +42,14 @@
 /**
  * The sound clip structure.
  *
- * The sound clip structure holds pointers to the sound data stream for each
- * channel. Each data stream shall be the following format.
+ * The sound clip structure holds a list of pointers to the sound data stream
+ * for each channel.
+ *
+ * This structure also stores the priority order when the sound clip is used as
+ * a sound effect. (If the sound clip is to be used as background music, its
+ * priority has no meaning and will be ignored.)
+ *
+ * Each sound data stream shall be in the following format.
  *
  * \note
  * The following is written in BNF-like notation.
@@ -103,7 +109,10 @@
  *
  */
 struct sound_clip {
+  /** A list of pointers to the sound data stream for each channel. */
   uint8_t* streams[3];
+  /** Priority for using this sound clip as a sound effect. */
+  uint16_t priority;
 };
 
 /**
@@ -130,11 +139,44 @@ void sound_set_repeat(bool repeat);
 void sound_set_mute(uint8_t mute);
 
 /**
- * Sets the given music clip to the sound driver.
+ * Plays the specified music clip as sound effect.
+ *
+ * /Priority of the sound effect/
+ *
+ * The priority of the sound effect is specified by `s->priority`. The larger
+ * the value, the higher the priority. This priority determines whether or not
+ * the sound driver will play the specified sound clip, as follows
+ *
+ * - If no sound effect is playing, the specified sound clip will be played
+ *   immediately.
+ *
+ * - If a sound effect is playing and the priority of the specified sound clip
+ *   is higher than that, the current sound effect will be stopped and the
+ *   specified sound clip will be played immediately.
+ *
+ * - If a sound effect is playing and the priority of the specified sound clip
+ *   is lower than or equal to that, the specified sound clip will be ignored
+ *   and will not be played.
+ *
+ * /Auto-mute of the background music/
+ *
+ * While the sound effect is playing, some channels of the background music will
+ * be automatically muted (if they conflict with the sound effect) and those
+ * channels will be used to play the sound effect.
+ *
+ * When the sound effect finishes playing, all channels will be used for the
+ * background music again.
+ *
+ * \param s Pointer to the music clip structure to be played as sound effect.
+ */
+void sound_effect(const struct sound_clip* s);
+
+/**
+ * Sets the specified music clip as BGM in the sound driver.
  *
  * \param s Pointer to the music clip structure to be played as BGM.
  */
-void sound_set_bgm(struct sound_clip* s);
+void sound_set_bgm(const struct sound_clip* s);
 
 /**
  * Start the BGM.

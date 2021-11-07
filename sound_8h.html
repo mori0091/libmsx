@@ -255,14 +255,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Plays the specified music clip as sound effect. </p>
-<p>/Priority of the sound effect/</p>
+<p><b>Priority of the sound effect</b></p>
 <p>The priority of the sound effect is specified by <code>s-&gt;priority</code>. The larger the value, the higher the priority. This priority determines whether or not the sound driver will play the specified sound clip, as follows</p>
 <ul>
 <li>If no sound effect is playing, the specified sound clip will be played immediately.</li>
 <li>If a sound effect is playing and the priority of the specified sound clip is higher than that, the current sound effect will be stopped and the specified sound clip will be played immediately.</li>
 <li>If a sound effect is playing and the priority of the specified sound clip is lower than or equal to that, the specified sound clip will be ignored and will not be played.</li>
 </ul>
-<p>/Auto-mute of the background music/</p>
+<p><b>Auto-mute of the background music</b></p>
 <p>While the sound effect is playing, some channels of the background music will be automatically muted (if they conflict with the sound effect) and those channels will be used to play the sound effect.</p>
 <p>When the sound effect finishes playing, all channels will be used for the background music again.</p>
 <dl class="params"><dt>Parameters</dt><dd>

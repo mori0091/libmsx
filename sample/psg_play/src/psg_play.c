@@ -16,6 +16,8 @@
 // see also https://mori0091.github.io/libmsx/structsound__clip.html
 //      and https://mori0091.github.io/libmsx/sound_8h.html
 
+// --- Background music ----
+
 // sound data stream for PSG channel A
 const uint8_t channel_1[] ={
   0x60, 0x1e, 0x88, 0x01, 0xac, // T120L4 V8 C
@@ -47,22 +49,60 @@ const struct sound_clip bgm = {
     [0] = channel_1,
     [1] = channel_2,
     [2] = channel_3,
-  }
+  },
+};
+
+// --- Sound effect ----
+
+// sound data stream for PSG channel A
+const uint8_t se_channel_1[] = {
+  0xa0, 0x02, 0xd0, 0x10, 0x00, 0x00, 0xd6, /* T180 O5 C32 S0 M4096 */
+  0x60, 0x03, 0x90, 0x00, 0xca,             /* T180    C+32 */
+  0x60, 0x05, 0x90, 0x00, 0xbe,             /* T180    D16 */
+  0xff,
+};
+
+// sound data stream for PSG channel B
+const uint8_t se_channel_2[] = {
+  0xa0, 0x02, 0xd0, 0x10, 0x00, 0x01, 0xac, /* T180 O4 C32 S0 M4096 */
+  0x60, 0x03, 0x90, 0x01, 0x94,             /* T180    C+32 */
+  0x60, 0x05, 0x90, 0x01, 0x7d,             /* T180    D16 */
+  0xff,
+};
+
+// sound data stream for PSG channel C
+const uint8_t se_channel_3[] = {
+  0xff,
+};
+
+// the sound clip structure that holds pointers to the sound data streams.
+const struct sound_clip se = {
+  .priority = 0,
+  .streams = {
+    [0] = se_channel_1,
+    [1] = se_channel_2,
+    [2] = se_channel_3,
+  },
 };
 
 _Noreturn
 static void infinite_loop(void) {
+  uint16_t t = 0;
   for (;;) {
+    t++;
     await_vsync();
+    if (t % 170 == 0) {
+      sound_effect(&se);
+    }
   }
 }
 
 void main(void) {
   set_vsync_handler(sound_player); // Register the sound driver as VSYNC handler
 
-  sound_set_repeat(true);          // Turn on the auto-repeat of BGM.
-  sound_set_bgm(&bgm);             // Register the BGM to be played.
-  sound_start();                   // Start the BGM.
+  sound_set_repeat(true);       // Turn on the auto-repeat of BGM.
+  sound_set_bgm(&bgm);          // Register the BGM to be played.
+  sound_start();                // Start the BGM.
 
   infinite_loop();
 }

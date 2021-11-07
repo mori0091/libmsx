@@ -250,7 +250,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main routine of the sound driver. </p>
-<p>To play the background music, you need to call this function at every VSYNC timing. The easiest way is to set this function as the VSYNC interrupt handler by calling <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</p>
+<p>To play the background music and/or sound effects, you need to call this function at every VSYNC timing. The easiest way is to set this function as the VSYNC interrupt handler by calling <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</p>
 <div class="fragment"><div class="line"><span class="comment">// At first, register the sound driver as the VSYNC interrupt handler.</span></div>
 <div class="line"><a class="code" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a>(<a class="code" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a>);</div>
 <div class="line"> </div>

@@ -1,5 +1,15 @@
 ;;; -*- mode: asm; coding: utf-8-unix; tab-width: 8 -*-
 
+;;; \file crt0/16k.4000/crt0.s
+;;;
+;;; Copyright (c) 2021 Daishi Mori (mori0091)
+;;;
+;;; This software is released under the MIT License.
+;;; See https://github.com/mori0091/libmsx/blob/main/LICENSE
+;;;
+;;; GitHub libmsx project
+;;; https://github.com/mori0091/libmsx
+
 ;;; crt0 for MSX ROM of 16KB starting at 0x4000
 ;;; suggested options: --code-loc 0x4020 --data-loc 0xc000
 ;;; `main` should be `void main(void)`

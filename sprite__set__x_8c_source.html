@@ -88,27 +88,26 @@ $(document).ready(function(){initNavTree('sprite__set__x_8c_source.html',''); in
 </div><!--header-->
 <div class="contents">
 <a href="sprite__set__x_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- coding: utf-8-unix -*-</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../include/sprite.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="sprite__set__x_8c.html#aa237556cb30d3104dccc66f9e9553f0b">    5</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sprite__set__x_8c.html#aa237556cb30d3104dccc66f9e9553f0b">sprite_set_x</a>(<span class="keyword">struct</span> <a class="code" href="structsprite.html">sprite</a>* s, <span class="keywordtype">int</span> x) {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">if</span> (x &lt; -32) x = -32;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">if</span> (x &gt; 255) x = 255;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordflow">if</span> (x &lt; 0) {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    s-&gt;<a class="code" href="structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c">x</a> = x + 32;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    s-&gt;<a class="code" href="structsprite.html#a938b2b6b7c016d1a538066f362f13d9c">tagged_color</a> |= <a class="code" href="sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938">SPRITE_TAG_EC</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    s-&gt;<a class="code" href="structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c">x</a> = x;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    s-&gt;<a class="code" href="structsprite.html#a938b2b6b7c016d1a538066f362f13d9c">tagged_color</a> &amp;= ~<a class="code" href="sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938">SPRITE_TAG_EC</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="preprocessor">#include &quot;../include/sprite.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="sprite__set__x_8c.html#aa237556cb30d3104dccc66f9e9553f0b">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sprite__set__x_8c.html#aa237556cb30d3104dccc66f9e9553f0b">sprite_set_x</a>(<span class="keyword">struct</span> <a class="code" href="structsprite.html">sprite</a>* s, <span class="keywordtype">int</span> x) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">if</span> (x &lt; -32) x = -32;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">if</span> (x &gt; 255) x = 255;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">if</span> (x &lt; 0) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    s-&gt;<a class="code" href="structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c">x</a> = x + 32;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    s-&gt;<a class="code" href="structsprite.html#a938b2b6b7c016d1a538066f362f13d9c">tagged_color</a> |= <a class="code" href="sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938">SPRITE_TAG_EC</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    s-&gt;<a class="code" href="structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c">x</a> = x;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    s-&gt;<a class="code" href="structsprite.html#a938b2b6b7c016d1a538066f362f13d9c">tagged_color</a> &amp;= ~<a class="code" href="sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938">SPRITE_TAG_EC</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="asprite_8h_html_a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938"><div class="ttname"><a href="sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938">SPRITE_TAG_EC</a></div><div class="ttdeci">@ SPRITE_TAG_EC</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00017">sprite.h:17</a></div></div>
-<div class="ttc" id="asprite__set__x_8c_html_aa237556cb30d3104dccc66f9e9553f0b"><div class="ttname"><a href="sprite__set__x_8c.html#aa237556cb30d3104dccc66f9e9553f0b">sprite_set_x</a></div><div class="ttdeci">void sprite_set_x(struct sprite *s, int x)</div><div class="ttdef"><b>Definition:</b> <a href="sprite__set__x_8c_source.html#l00005">sprite_set_x.c:5</a></div></div>
-<div class="ttc" id="astructsprite_html"><div class="ttname"><a href="structsprite.html">sprite</a></div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00023">sprite.h:23</a></div></div>
-<div class="ttc" id="astructsprite_html_a938b2b6b7c016d1a538066f362f13d9c"><div class="ttname"><a href="structsprite.html#a938b2b6b7c016d1a538066f362f13d9c">sprite::tagged_color</a></div><div class="ttdeci">tagged_color_t tagged_color</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00028">sprite.h:28</a></div></div>
-<div class="ttc" id="astructsprite_html_ae721ff1bb077d5d54ee08a4ea0ae607c"><div class="ttname"><a href="structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c">sprite::x</a></div><div class="ttdeci">uint8_t x</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00025">sprite.h:25</a></div></div>
+<div class="ttc" id="asprite_8h_html_a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938"><div class="ttname"><a href="sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938">SPRITE_TAG_EC</a></div><div class="ttdeci">@ SPRITE_TAG_EC</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00028">sprite.h:28</a></div></div>
+<div class="ttc" id="asprite__set__x_8c_html_aa237556cb30d3104dccc66f9e9553f0b"><div class="ttname"><a href="sprite__set__x_8c.html#aa237556cb30d3104dccc66f9e9553f0b">sprite_set_x</a></div><div class="ttdeci">void sprite_set_x(struct sprite *s, int x)</div><div class="ttdef"><b>Definition:</b> <a href="sprite__set__x_8c_source.html#l00016">sprite_set_x.c:16</a></div></div>
+<div class="ttc" id="astructsprite_html"><div class="ttname"><a href="structsprite.html">sprite</a></div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00034">sprite.h:34</a></div></div>
+<div class="ttc" id="astructsprite_html_a938b2b6b7c016d1a538066f362f13d9c"><div class="ttname"><a href="structsprite.html#a938b2b6b7c016d1a538066f362f13d9c">sprite::tagged_color</a></div><div class="ttdeci">tagged_color_t tagged_color</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00039">sprite.h:39</a></div></div>
+<div class="ttc" id="astructsprite_html_ae721ff1bb077d5d54ee08a4ea0ae607c"><div class="ttname"><a href="structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c">sprite::x</a></div><div class="ttdeci">uint8_t x</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00036">sprite.h:36</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

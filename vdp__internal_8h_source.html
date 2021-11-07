@@ -88,40 +88,39 @@ $(document).ready(function(){initNavTree('vdp__internal_8h_source.html',''); ini
 </div><!--header-->
 <div class="contents">
 <a href="vdp__internal_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- coding: utf-8-unix -*-</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef VDP_INTERNAL_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define VDP_INTERNAL_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">    8</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL(reg, x)                    \</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">  vdp_port1 = (x);                              \</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">  vdp_port1 = ((reg) | 0x80)</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a68e00204abf99d82a7870bb609d73ed5">   12</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL_PTR_NOINC(reg)             \</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">  VDP_SET_CTRL(17, (reg) | 0x80)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a10fb44504bb1d0a5284fce49ea4eecc1">   15</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL_PTR(reg)                   \</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">  VDP_SET_CTRL(17, (reg))</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#ac0414f68c349169d1b513f1d0c6aca36">   18</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL_VALUE(x)                   \</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">  vdp_port3 = (x)</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a> <a class="code" href="vdp__internal_8h.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint8_t <a class="code" href="vdp__internal_8h.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a29bd2d8c617364b80dafbaa0d70708b5">   25</a></span>&#160;<span class="preprocessor">#define VDP_CMD_LMMV (0x80)</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#aa59dd0622b7190f7aa34cd239c5b3e3f">   26</a></span>&#160;<span class="preprocessor">#define VDP_CMD_LMMM (0x90)</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a527eaafb3b89f7fa25f73d7758c79362">   27</a></span>&#160;<span class="preprocessor">#define VDP_CMD_HMMV (0xc0)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#afda668230e7a36684615d1bb524f07b9">   28</a></span>&#160;<span class="preprocessor">#define VDP_CMD_HMMM (0xd0)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="preprocessor">#ifndef VDP_INTERNAL_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define VDP_INTERNAL_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">   19</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL(reg, x)                    \</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">  vdp_port1 = (x);                              \</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  vdp_port1 = ((reg) | 0x80)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a68e00204abf99d82a7870bb609d73ed5">   23</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL_PTR_NOINC(reg)             \</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">  VDP_SET_CTRL(17, (reg) | 0x80)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a10fb44504bb1d0a5284fce49ea4eecc1">   26</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL_PTR(reg)                   \</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">  VDP_SET_CTRL(17, (reg))</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#ac0414f68c349169d1b513f1d0c6aca36">   29</a></span>&#160;<span class="preprocessor">#define VDP_SET_CTRL_VALUE(x)                   \</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">  vdp_port3 = (x)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keyword">enum</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a> <a class="code" href="vdp__internal_8h.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> uint8_t <a class="code" href="vdp__internal_8h.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a29bd2d8c617364b80dafbaa0d70708b5">   36</a></span>&#160;<span class="preprocessor">#define VDP_CMD_LMMV (0x80)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#aa59dd0622b7190f7aa34cd239c5b3e3f">   37</a></span>&#160;<span class="preprocessor">#define VDP_CMD_LMMM (0x90)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#a527eaafb3b89f7fa25f73d7758c79362">   38</a></span>&#160;<span class="preprocessor">#define VDP_CMD_HMMV (0xc0)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="vdp__internal_8h.html#afda668230e7a36684615d1bb524f07b9">   39</a></span>&#160;<span class="preprocessor">#define VDP_CMD_HMMM (0xd0)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="avdp__internal_8h_html_ad7f208183d1b0993bf96986850e8de81"><div class="ttname"><a href="vdp__internal_8h.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a></div><div class="ttdeci">enum vdp_screen_mode screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00007">vdp.c:7</a></div></div>
-<div class="ttc" id="avdp__internal_8h_html_aedaf0b3b96cebe0a1ca1c7f1e35bb40c"><div class="ttname"><a href="vdp__internal_8h.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a></div><div class="ttdeci">volatile uint8_t sprite_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00008">vdp.c:8</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a></div><div class="ttdeci">vdp_screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00041">vdp.h:41</a></div></div>
+<div class="ttc" id="avdp__internal_8h_html_ad7f208183d1b0993bf96986850e8de81"><div class="ttname"><a href="vdp__internal_8h.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a></div><div class="ttdeci">enum vdp_screen_mode screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00018">vdp.c:18</a></div></div>
+<div class="ttc" id="avdp__internal_8h_html_aedaf0b3b96cebe0a1ca1c7f1e35bb40c"><div class="ttname"><a href="vdp__internal_8h.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a></div><div class="ttdeci">volatile uint8_t sprite_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00019">vdp.c:19</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a></div><div class="ttdeci">vdp_screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00052">vdp.h:52</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -88,84 +88,83 @@ $(document).ready(function(){initNavTree('vdp__set__screen__mode_8c_source.html'
 </div><!--header-->
 <div class="contents">
 <a href="vdp__set__screen__mode_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- coding: utf-8-unix -*-</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../include/vdp.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdp__internal_8h.html">vdp_internal.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">    7</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">vdp_set_screen_mode</a>(<span class="keyword">enum</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a> mode) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  uint8_t r0;                   <span class="comment">/* 0| 0| 0| 0|M5|M4|M3| 0 */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  uint8_t r1;                   <span class="comment">/* 0| 0| 0|M1|M2| 0| 0| 0 */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">switch</span> (mode) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5aac125ea6e10634e1b7aaa8fcfa2c585b">VDP_SCREEN_MODE_TEXT_1</a>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    r0 = 0x00; r1 = 0x10;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 0;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5ab5882a1c7e4cfe3a287628245caf0769">VDP_SCREEN_MODE_TEXT_2</a>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    r0 = 0x08; r1 = 0x10;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a154b69bffe18162108b8c906cc8479b3">VDP_SCREEN_MODE_MULTI_COLOR</a>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    r0 = 0x00; r1 = 0x08;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 1;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a764c868ddd81db2d6cce6c2b4946f5b6">VDP_SCREEN_MODE_GRAPHIC_1</a>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    r0 = 0x00; r1 = 0x00;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 1;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a06b026118adc7efe275fa736e5a13d84">VDP_SCREEN_MODE_GRAPHIC_2</a>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    r0 = 0x02; r1 = 0x00;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 1;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a1d22267bc9c802b737c48c780bfff2af">VDP_SCREEN_MODE_GRAPHIC_3</a>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    r0 = 0x04; r1 = 0x00;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a938dc5b5340ebc4f5c94111c01379be3">VDP_SCREEN_MODE_GRAPHIC_4</a>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    r0 = 0x06; r1 = 0x00;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a6277345208fb288f4219b9f48fcce7b2">VDP_SCREEN_MODE_GRAPHIC_5</a>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    r0 = 0x08; r1 = 0x00;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a84b9b3a4de18527b962a57216d19e81e">VDP_SCREEN_MODE_GRAPHIC_6</a>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    r0 = 0x0A; r1 = 0x00;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a4ad71b37947aac9edc20e1eb60722a4f">VDP_SCREEN_MODE_GRAPHIC_7</a>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    r0 = 0x0E; r1 = 0x00;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  __critical {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="vdp_8c.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a> = mode;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    RG0SAV = (RG0SAV &amp; ~0x0e) | r0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    RG1SAV = (RG1SAV &amp; ~0x18) | r1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(0, RG0SAV);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(1, RG1SAV);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="preprocessor">#include &quot;../include/vdp.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdp__internal_8h.html">vdp_internal.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">vdp_set_screen_mode</a>(<span class="keyword">enum</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a> mode) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  uint8_t r0;                   <span class="comment">/* 0| 0| 0| 0|M5|M4|M3| 0 */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  uint8_t r1;                   <span class="comment">/* 0| 0| 0|M1|M2| 0| 0| 0 */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">switch</span> (mode) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5aac125ea6e10634e1b7aaa8fcfa2c585b">VDP_SCREEN_MODE_TEXT_1</a>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    r0 = 0x00; r1 = 0x10;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5ab5882a1c7e4cfe3a287628245caf0769">VDP_SCREEN_MODE_TEXT_2</a>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    r0 = 0x08; r1 = 0x10;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a154b69bffe18162108b8c906cc8479b3">VDP_SCREEN_MODE_MULTI_COLOR</a>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    r0 = 0x00; r1 = 0x08;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 1;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a764c868ddd81db2d6cce6c2b4946f5b6">VDP_SCREEN_MODE_GRAPHIC_1</a>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    r0 = 0x00; r1 = 0x00;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a06b026118adc7efe275fa736e5a13d84">VDP_SCREEN_MODE_GRAPHIC_2</a>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    r0 = 0x02; r1 = 0x00;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 1;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a1d22267bc9c802b737c48c780bfff2af">VDP_SCREEN_MODE_GRAPHIC_3</a>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    r0 = 0x04; r1 = 0x00;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a938dc5b5340ebc4f5c94111c01379be3">VDP_SCREEN_MODE_GRAPHIC_4</a>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    r0 = 0x06; r1 = 0x00;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a6277345208fb288f4219b9f48fcce7b2">VDP_SCREEN_MODE_GRAPHIC_5</a>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    r0 = 0x08; r1 = 0x00;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a84b9b3a4de18527b962a57216d19e81e">VDP_SCREEN_MODE_GRAPHIC_6</a>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    r0 = 0x0A; r1 = 0x00;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a4ad71b37947aac9edc20e1eb60722a4f">VDP_SCREEN_MODE_GRAPHIC_7</a>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    r0 = 0x0E; r1 = 0x00;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a> = 2;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  __critical {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="vdp_8c.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a> = mode;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    RG0SAV = (RG0SAV &amp; ~0x0e) | r0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    RG1SAV = (RG1SAV &amp; ~0x18) | r1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(0, RG0SAV);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(1, RG1SAV);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a06b026118adc7efe275fa736e5a13d84"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a06b026118adc7efe275fa736e5a13d84">VDP_SCREEN_MODE_GRAPHIC_2</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_2</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00045">vdp.h:45</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a1d22267bc9c802b737c48c780bfff2af"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a1d22267bc9c802b737c48c780bfff2af">VDP_SCREEN_MODE_GRAPHIC_3</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_3</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00046">vdp.h:46</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5aac125ea6e10634e1b7aaa8fcfa2c585b"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5aac125ea6e10634e1b7aaa8fcfa2c585b">VDP_SCREEN_MODE_TEXT_1</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_TEXT_1</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00043">vdp.h:43</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a764c868ddd81db2d6cce6c2b4946f5b6"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a764c868ddd81db2d6cce6c2b4946f5b6">VDP_SCREEN_MODE_GRAPHIC_1</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_1</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00042">vdp.h:42</a></div></div>
-<div class="ttc" id="avdp_8c_html_ad7f208183d1b0993bf96986850e8de81"><div class="ttname"><a href="vdp_8c.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a></div><div class="ttdeci">enum vdp_screen_mode screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00007">vdp.c:7</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a938dc5b5340ebc4f5c94111c01379be3"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a938dc5b5340ebc4f5c94111c01379be3">VDP_SCREEN_MODE_GRAPHIC_4</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_4</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00048">vdp.h:48</a></div></div>
-<div class="ttc" id="avdp__set__screen__mode_8c_html_a63053aebe62d033ef0068db1cf3a8b58"><div class="ttname"><a href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">vdp_set_screen_mode</a></div><div class="ttdeci">void vdp_set_screen_mode(enum vdp_screen_mode mode)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__set__screen__mode_8c_source.html#l00007">vdp_set_screen_mode.c:7</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a6277345208fb288f4219b9f48fcce7b2"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a6277345208fb288f4219b9f48fcce7b2">VDP_SCREEN_MODE_GRAPHIC_5</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_5</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00049">vdp.h:49</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a154b69bffe18162108b8c906cc8479b3"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a154b69bffe18162108b8c906cc8479b3">VDP_SCREEN_MODE_MULTI_COLOR</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_MULTI_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00044">vdp.h:44</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5ab5882a1c7e4cfe3a287628245caf0769"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5ab5882a1c7e4cfe3a287628245caf0769">VDP_SCREEN_MODE_TEXT_2</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_TEXT_2</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00047">vdp.h:47</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a84b9b3a4de18527b962a57216d19e81e"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a84b9b3a4de18527b962a57216d19e81e">VDP_SCREEN_MODE_GRAPHIC_6</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_6</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00050">vdp.h:50</a></div></div>
-<div class="ttc" id="avdp_8c_html_aedaf0b3b96cebe0a1ca1c7f1e35bb40c"><div class="ttname"><a href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a></div><div class="ttdeci">volatile uint8_t sprite_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00008">vdp.c:8</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a06b026118adc7efe275fa736e5a13d84"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a06b026118adc7efe275fa736e5a13d84">VDP_SCREEN_MODE_GRAPHIC_2</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_2</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00056">vdp.h:56</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a1d22267bc9c802b737c48c780bfff2af"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a1d22267bc9c802b737c48c780bfff2af">VDP_SCREEN_MODE_GRAPHIC_3</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_3</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00057">vdp.h:57</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5aac125ea6e10634e1b7aaa8fcfa2c585b"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5aac125ea6e10634e1b7aaa8fcfa2c585b">VDP_SCREEN_MODE_TEXT_1</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_TEXT_1</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00054">vdp.h:54</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a764c868ddd81db2d6cce6c2b4946f5b6"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a764c868ddd81db2d6cce6c2b4946f5b6">VDP_SCREEN_MODE_GRAPHIC_1</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_1</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00053">vdp.h:53</a></div></div>
+<div class="ttc" id="avdp_8c_html_ad7f208183d1b0993bf96986850e8de81"><div class="ttname"><a href="vdp_8c.html#ad7f208183d1b0993bf96986850e8de81">screen_mode</a></div><div class="ttdeci">enum vdp_screen_mode screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00018">vdp.c:18</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a938dc5b5340ebc4f5c94111c01379be3"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a938dc5b5340ebc4f5c94111c01379be3">VDP_SCREEN_MODE_GRAPHIC_4</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_4</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00059">vdp.h:59</a></div></div>
+<div class="ttc" id="avdp__set__screen__mode_8c_html_a63053aebe62d033ef0068db1cf3a8b58"><div class="ttname"><a href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">vdp_set_screen_mode</a></div><div class="ttdeci">void vdp_set_screen_mode(enum vdp_screen_mode mode)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__set__screen__mode_8c_source.html#l00018">vdp_set_screen_mode.c:18</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a6277345208fb288f4219b9f48fcce7b2"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a6277345208fb288f4219b9f48fcce7b2">VDP_SCREEN_MODE_GRAPHIC_5</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_5</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00060">vdp.h:60</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a154b69bffe18162108b8c906cc8479b3"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a154b69bffe18162108b8c906cc8479b3">VDP_SCREEN_MODE_MULTI_COLOR</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_MULTI_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00055">vdp.h:55</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5ab5882a1c7e4cfe3a287628245caf0769"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5ab5882a1c7e4cfe3a287628245caf0769">VDP_SCREEN_MODE_TEXT_2</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_TEXT_2</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00058">vdp.h:58</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a84b9b3a4de18527b962a57216d19e81e"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a84b9b3a4de18527b962a57216d19e81e">VDP_SCREEN_MODE_GRAPHIC_6</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_6</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00061">vdp.h:61</a></div></div>
+<div class="ttc" id="avdp_8c_html_aedaf0b3b96cebe0a1ca1c7f1e35bb40c"><div class="ttname"><a href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">sprite_mode</a></div><div class="ttdeci">volatile uint8_t sprite_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8c_source.html#l00019">vdp.c:19</a></div></div>
 <div class="ttc" id="avdp__internal_8h_html"><div class="ttname"><a href="vdp__internal_8h.html">vdp_internal.h</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a4ad71b37947aac9edc20e1eb60722a4f"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a4ad71b37947aac9edc20e1eb60722a4f">VDP_SCREEN_MODE_GRAPHIC_7</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_7</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00051">vdp.h:51</a></div></div>
-<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a></div><div class="ttdeci">vdp_screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00041">vdp.h:41</a></div></div>
-<div class="ttc" id="avdp__internal_8h_html_a56c8cf19fb67f0a13d6f06fa2a02d3b3"><div class="ttname"><a href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a></div><div class="ttdeci">#define VDP_SET_CTRL(reg, x)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__internal_8h_source.html#l00008">vdp_internal.h:8</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5a4ad71b37947aac9edc20e1eb60722a4f"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5a4ad71b37947aac9edc20e1eb60722a4f">VDP_SCREEN_MODE_GRAPHIC_7</a></div><div class="ttdeci">@ VDP_SCREEN_MODE_GRAPHIC_7</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00062">vdp.h:62</a></div></div>
+<div class="ttc" id="avdp_8h_html_a6b69e895f7f0faa700cffcd2ef60e6d5"><div class="ttname"><a href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a></div><div class="ttdeci">vdp_screen_mode</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00052">vdp.h:52</a></div></div>
+<div class="ttc" id="avdp__internal_8h_html_a56c8cf19fb67f0a13d6f06fa2a02d3b3"><div class="ttname"><a href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a></div><div class="ttdeci">#define VDP_SET_CTRL(reg, x)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__internal_8h_source.html#l00019">vdp_internal.h:19</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

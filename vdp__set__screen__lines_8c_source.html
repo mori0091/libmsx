@@ -88,23 +88,22 @@ $(document).ready(function(){initNavTree('vdp__set__screen__lines_8c_source.html
 </div><!--header-->
 <div class="contents">
 <a href="vdp__set__screen__lines_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- coding: utf-8-unix -*-</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../include/vdp.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdp__internal_8h.html">vdp_internal.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="vdp__set__screen__lines_8c.html#aa2cc4f9210a437505437273e1db868ae">    7</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="vdp__set__screen__lines_8c.html#aa2cc4f9210a437505437273e1db868ae">vdp_set_screen_lines</a>(<span class="keyword">enum</span> <a class="code" href="vdp_8h.html#a4be13cf63124c4555620dec7f2dde5d5">vdp_screen_lines</a> lines) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  __critical {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    RG9SAV = (RG9SAV &amp; ~0x80) | lines;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(9, RG9SAV);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="preprocessor">#include &quot;../include/vdp.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdp__internal_8h.html">vdp_internal.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="vdp__set__screen__lines_8c.html#aa2cc4f9210a437505437273e1db868ae">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="vdp__set__screen__lines_8c.html#aa2cc4f9210a437505437273e1db868ae">vdp_set_screen_lines</a>(<span class="keyword">enum</span> <a class="code" href="vdp_8h.html#a4be13cf63124c4555620dec7f2dde5d5">vdp_screen_lines</a> lines) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  __critical {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    RG9SAV = (RG9SAV &amp; ~0x80) | lines;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(9, RG9SAV);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="avdp_8h_html_a4be13cf63124c4555620dec7f2dde5d5"><div class="ttname"><a href="vdp_8h.html#a4be13cf63124c4555620dec7f2dde5d5">vdp_screen_lines</a></div><div class="ttdeci">vdp_screen_lines</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00054">vdp.h:54</a></div></div>
+<div class="ttc" id="avdp_8h_html_a4be13cf63124c4555620dec7f2dde5d5"><div class="ttname"><a href="vdp_8h.html#a4be13cf63124c4555620dec7f2dde5d5">vdp_screen_lines</a></div><div class="ttdeci">vdp_screen_lines</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00065">vdp.h:65</a></div></div>
 <div class="ttc" id="avdp__internal_8h_html"><div class="ttname"><a href="vdp__internal_8h.html">vdp_internal.h</a></div></div>
-<div class="ttc" id="avdp__set__screen__lines_8c_html_aa2cc4f9210a437505437273e1db868ae"><div class="ttname"><a href="vdp__set__screen__lines_8c.html#aa2cc4f9210a437505437273e1db868ae">vdp_set_screen_lines</a></div><div class="ttdeci">void vdp_set_screen_lines(enum vdp_screen_lines lines)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__set__screen__lines_8c_source.html#l00007">vdp_set_screen_lines.c:7</a></div></div>
-<div class="ttc" id="avdp__internal_8h_html_a56c8cf19fb67f0a13d6f06fa2a02d3b3"><div class="ttname"><a href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a></div><div class="ttdeci">#define VDP_SET_CTRL(reg, x)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__internal_8h_source.html#l00008">vdp_internal.h:8</a></div></div>
+<div class="ttc" id="avdp__set__screen__lines_8c_html_aa2cc4f9210a437505437273e1db868ae"><div class="ttname"><a href="vdp__set__screen__lines_8c.html#aa2cc4f9210a437505437273e1db868ae">vdp_set_screen_lines</a></div><div class="ttdeci">void vdp_set_screen_lines(enum vdp_screen_lines lines)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__set__screen__lines_8c_source.html#l00018">vdp_set_screen_lines.c:18</a></div></div>
+<div class="ttc" id="avdp__internal_8h_html_a56c8cf19fb67f0a13d6f06fa2a02d3b3"><div class="ttname"><a href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a></div><div class="ttdeci">#define VDP_SET_CTRL(reg, x)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__internal_8h_source.html#l00019">vdp_internal.h:19</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

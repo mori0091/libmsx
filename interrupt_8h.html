@@ -118,7 +118,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a92722299d30fbe4f1c49c07f30167a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register user defined VSYNC interrupt handler.  <a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">More...</a><br /></td></tr>
 <tr class="separator:a92722299d30fbe4f1c49c07f30167a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Copyright (c) 2021 Daishi Mori (mori0091)</p>
+<p>This software is released under the MIT License. See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
+<p>GitHub libmsx project <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
+
+<p class="definition">Definition in file <a class="el" href="interrupt_8h_source.html">interrupt.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3f08e4b2ce13ca2eba9bb0338d93d7d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f08e4b2ce13ca2eba9bb0338d93d7d4">&#9670;&nbsp;</a></span>await_interrupt</h2>
 
@@ -145,7 +151,7 @@ This function is supposed to be used to synchronize with an interrupt in the mai
 This function cannot be used from an interrupt handler; if you need an interrupt handler for any type of interrupt, use <a class="el" href="interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40" title="Register user defined interrupt handler.">set_interrupt_handler()</a> instead. Or if you need an interrupt handler for VSYNC, use <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27" title="Waits for next VSYNC interrupt.">await_vsync()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="interrupt_8h_source.html#l00030">30</a> of file <a class="el" href="interrupt_8h_source.html">interrupt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interrupt_8h_source.html#l00041">41</a> of file <a class="el" href="interrupt_8h_source.html">interrupt.h</a>.</p>
 
 </div>
 </div>
@@ -173,7 +179,7 @@ This function cannot be used from an interrupt handler; if you need an interrupt
 This function cannot be used from an interrupt handler; if you need an interrupt handler for VSYNC, use <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a> instead.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4" title="Waits for next interrupt.">await_interrupt()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00075">75</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00086">86</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
 
 </div>
 </div>
@@ -204,7 +210,7 @@ This function cannot be used from an interrupt handler; if you need an interrupt
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00063">63</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00074">74</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
 
 </div>
 </div>
@@ -235,7 +241,7 @@ This function cannot be used from an interrupt handler; if you need an interrupt
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00069">69</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00080">80</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
 
 </div>
 </div>

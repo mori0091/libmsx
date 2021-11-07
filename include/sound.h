@@ -196,9 +196,9 @@ void sound_pause(void);
 /**
  * Main routine of the sound driver.
  *
- * To play the background music, you need to call this function at every VSYNC
- * timing. The easiest way is to set this function as the VSYNC interrupt
- * handler by calling set_vsync_handler().
+ * To play the background music and/or sound effects, you need to call this
+ * function at every VSYNC timing. The easiest way is to set this function as
+ * the VSYNC interrupt handler by calling set_vsync_handler().
  *
  * ~~~c
  * // At first, register the sound driver as the VSYNC interrupt handler.

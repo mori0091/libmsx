@@ -9,5 +9,7 @@ var sound_8c =
     [ "sound_set_repeat", "sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee", null ],
     [ "sound_start", "sound_8c.html#a893fbd47631ab99368244cfbd0854b36", null ],
     [ "sound_stop", "sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795", null ],
-    [ "sound", "sound_8c.html#ab2e1bc8c20cef206d2cc15ea3cbbc5a5", null ]
+    [ "bg", "sound_8c.html#aeacfc9559cfdeb371bfc12b2e8327e50", null ],
+    [ "paused", "sound_8c.html#a1656129c4a4fd8809254194f08f0ac70", null ],
+    [ "repeat", "sound_8c.html#a98c61ed9410ab805baab005fe7713d9b", null ]
 ];

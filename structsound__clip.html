@@ -112,18 +112,19 @@ Data Fields</h2></td></tr>
 </ul>
 </dd></dl>
 <div class="fragment"><div class="line">stream = chunk* eom</div>
-<div class="line">chunk  = header body+</div>
+<div class="line">chunk  = header body</div>
+<div class="line">body   = command+</div>
 <div class="line">eom    = 1111b 1111b</div>
 <div class="line"> </div>
-<div class="line">header = body_length:3 duration_hi:5 duration_lo:8</div>
-<div class="line">body   = tone</div>
-<div class="line">       | rest</div>
-<div class="line">       | volume</div>
-<div class="line">       | envelope_pattern</div>
-<div class="line">       | envelope_cycle</div>
-<div class="line">       | envelope_pattern_and_cycle</div>
-<div class="line">       | noise</div>
-<div class="line">       | mixer</div>
+<div class="line">header  = len:3 duration_hi:5 duration_lo:8</div>
+<div class="line">command = tone</div>
+<div class="line">        | rest</div>
+<div class="line">        | volume</div>
+<div class="line">        | envelope_pattern</div>
+<div class="line">        | envelope_cycle</div>
+<div class="line">        | envelope_pattern_and_cycle</div>
+<div class="line">        | noise</div>
+<div class="line">        | mixer</div>
 <div class="line"> </div>
 <div class="line">tone   = 0000b fdr_hi:4 fdr_lo:8</div>
 <div class="line">rest   = 0001b ----b</div>
@@ -136,8 +137,22 @@ Data Fields</h2></td></tr>
 <div class="line">       = 0100b 0000b fdr_hi:8 fdr_lo:8</div>
 <div class="line">envelope_pattern_and_cycle</div>
 <div class="line">       = 1101b <a class="code" href="structsprite.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed">pat</a>:4 fdr_hi:8 fdr_lo:8</div>
+</div><!-- fragment --><p>The structure of <code>chunk</code>: </p><div class="fragment"><div class="line">+-----------------------+  -----</div>
+<div class="line">| len:3 | duration_hi:5 |    |</div>
+<div class="line">|-----------------------|  header (2 bytes)</div>
+<div class="line">|     duration_lo:8     |    |</div>
+<div class="line">|-----------------------|  -----</div>
+<div class="line">|       body[0]:8       |    |</div>
+<div class="line">|-----------------------|    |</div>
+<div class="line">|       body[1]:8       |    |</div>
+<div class="line">|-----------------------|  body (`len` bytes)</div>
+<div class="line">|         ...           |    |</div>
+<div class="line">|-----------------------|    |</div>
+<div class="line">|     body[len-1]:8     |    |</div>
+<div class="line">+-----------------------+  -----</div>
+<div class="line">The body is a sequence of one or more commands.</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00074">74</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00094">94</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab84fd2d5f4adf34fb013bd5d22f8ab20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab84fd2d5f4adf34fb013bd5d22f8ab20">&#9670;&nbsp;</a></span>streams</h2>
@@ -151,7 +166,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00075">75</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00095">95</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>

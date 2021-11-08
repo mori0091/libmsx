@@ -93,265 +93,270 @@ $(document).ready(function(){initNavTree('sound_8c_source.html',''); initResizab
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../include/psg.h&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../include/sound.h&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> __at (0x002b) uint8_t INTERNATIONAL_ID_1;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> __at (0x002c) uint8_t INTERNATIONAL_ID_2;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define COUNT_PER_SECOND    (300)</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">static</span> uint16_t COUNT_PER_TICK;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">static</span> uint8_t VSYNC_FREQ;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">struct </span>sound_state {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structsound__clip.html">sound_clip</a>* clip; <span class="comment">// pointer to current music (set of streams)</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> uint8_t* next[3];        <span class="comment">// pointer to next chunk for each streams</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  int16_t duration[3];           <span class="comment">// remaining duration for each channel</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  uint8_t flag;                  <span class="comment">// playing/stopped flags</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// background music</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">   38</a></span>&#160;    <span class="keyword">struct </span>sound_state <a class="code" href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">state</a>;   <span class="comment">// state of background music</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">   39</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a>;                <span class="comment">// auto repeat on/off</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="sound_8c.html#a1656129c4a4fd8809254194f08f0ac70">   40</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="sound_8c.html#a1656129c4a4fd8809254194f08f0ac70">paused</a>;                <span class="comment">// whether the BGM is paused or not.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  } <a class="code" href="sound_8c.html#a2653e85d5af4599e403c39312562d7b9">bg</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// sound effect</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">struct </span>sound_state <a class="code" href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">state</a>;   <span class="comment">// state of sound effect</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  } <a class="code" href="sound_8c.html#a7b2f509d1febe11b758fbbd90ec49f8b">se</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} sound;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a>(<span class="keywordtype">bool</span> <a class="code" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a>) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  sound.bg.repeat = <a class="code" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> uint8_t psg_reg_backup[16];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sound_psg_set(<span class="keywordtype">bool</span> muted, uint8_t reg, uint8_t value) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (!muted) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(reg, value);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    psg_reg_backup[reg] = value;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// initial value of PSG registers ; defined in &quot;psg_init.c&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> uint8_t <a class="code" href="sound_8c.html#a5fe004c472dfaef154f795a07d39ce94">psg_reg_initial_vector</a>[14];</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// backup of PSG registers</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">static</span> uint8_t psg_reg_backup[14];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> __at (0x002b) uint8_t INTERNATIONAL_ID_1;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> __at (0x002c) uint8_t INTERNATIONAL_ID_2;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define COUNT_PER_SECOND    (300)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">static</span> uint16_t COUNT_PER_TICK;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">static</span> uint8_t VSYNC_FREQ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">struct </span>sound_state {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="structsound__clip.html">sound_clip</a>* clip; <span class="comment">// pointer to current music (set of streams)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">const</span> uint8_t* next[3];        <span class="comment">// pointer to next chunk for each streams</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  int16_t duration[3];           <span class="comment">// remaining duration for each channel</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  uint8_t flag;                  <span class="comment">// playing/stopped flags</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">static</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// background music</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">   43</a></span>&#160;    <span class="keyword">struct </span>sound_state <a class="code" href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">state</a>;   <span class="comment">// state of background music</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">   44</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a>;                <span class="comment">// auto repeat on/off</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="sound_8c.html#a1656129c4a4fd8809254194f08f0ac70">   45</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="sound_8c.html#a1656129c4a4fd8809254194f08f0ac70">paused</a>;                <span class="comment">// whether the BGM is paused or not.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  } <a class="code" href="sound_8c.html#a2653e85d5af4599e403c39312562d7b9">bg</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// sound effect</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">struct </span>sound_state <a class="code" href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">state</a>;   <span class="comment">// state of sound effect</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  } <a class="code" href="sound_8c.html#a7b2f509d1febe11b758fbbd90ec49f8b">se</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} sound;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a>(<span class="keywordtype">bool</span> <a class="code" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a>) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  sound.bg.repeat = <a class="code" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sound_psg_set(<span class="keywordtype">bool</span> muted, uint8_t reg, uint8_t value) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (!muted) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(reg, value);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">sound_set_mute</a>(uint8_t mute) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  mute &amp;= 7;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  sound.bg.state.flag &amp;= ~(7 &lt;&lt; 3);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  sound.bg.state.flag |= mute &lt;&lt; 3;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">if</span> (mute &amp; <a class="code" href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">SOUND_CHANNEL_A</a>) <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(8, 0);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">if</span> (mute &amp; <a class="code" href="sound_8h.html#af0aea604a4e0e8cc864f98be452d3752">SOUND_CHANNEL_B</a>) <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(9, 0);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> (mute &amp; <a class="code" href="sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3">SOUND_CHANNEL_C</a>) <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(10, 0);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee">sound_effect</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structsound__clip.html">sound_clip</a>* s) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (!s) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">if</span> (sound.se.state.flag &amp; <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (s-&gt;<a class="code" href="structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d">priority</a> &lt; sound.se.state.clip-&gt;priority) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">if</span> (!sound.se.state.clip) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// backup some PSG registers</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (uint8_t i = 0; i &lt;= 13; ++i) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      psg_reg_backup[i] = <a class="code" href="psg_8h.html#a2935306349193999a8ed884fff7ed597">psg_get</a>(i);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  sound.se.state.next[0] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[0];</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  sound.se.state.next[1] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[1];</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  sound.se.state.next[2] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[2];</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  sound.se.state.duration[0] = 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  sound.se.state.duration[1] = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  sound.se.state.duration[2] = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  __critical {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    sound.se.state.flag = <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    sound.se.state.clip = s;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structsound__clip.html">sound_clip</a>* s) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a>();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">if</span> (s) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    sound.bg.state.next[0] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[0];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    sound.bg.state.next[1] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[1];</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    sound.bg.state.next[2] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[2];</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    sound.bg.state.duration[0] = 0;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    sound.bg.state.duration[1] = 0;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    sound.bg.state.duration[2] = 0;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    sound.bg.state.flag = <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    sound.bg.state.clip = s;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  sound.bg.paused = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    psg_reg_backup[reg] = value;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">sound_set_mute</a>(uint8_t mute) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  mute &amp;= 7;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  sound.bg.state.flag &amp;= ~(7 &lt;&lt; 3);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  sound.bg.state.flag |= mute &lt;&lt; 3;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (mute &amp; <a class="code" href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">SOUND_CHANNEL_A</a>) <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(8, 0);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (mute &amp; <a class="code" href="sound_8h.html#af0aea604a4e0e8cc864f98be452d3752">SOUND_CHANNEL_B</a>) <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(9, 0);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">if</span> (mute &amp; <a class="code" href="sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3">SOUND_CHANNEL_C</a>) <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(10, 0);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sound_set_clip(<span class="keyword">struct</span> sound_state* st, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structsound__clip.html">sound_clip</a>*s) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  st-&gt;next[0] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[0];</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  st-&gt;next[1] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[1];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  st-&gt;next[2] = s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[2];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  st-&gt;duration[0] = 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  st-&gt;duration[1] = 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  st-&gt;duration[2] = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  uint8_t flag = 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">if</span> (s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[0] &amp;&amp; *s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[0] != 0xff) flag |= <a class="code" href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">SOUND_CHANNEL_A</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span> (s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[1] &amp;&amp; *s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[1] != 0xff) flag |= <a class="code" href="sound_8h.html#af0aea604a4e0e8cc864f98be452d3752">SOUND_CHANNEL_B</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span> (s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[2] &amp;&amp; *s-&gt;<a class="code" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a>[2] != 0xff) flag |= <a class="code" href="sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3">SOUND_CHANNEL_C</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  __critical {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    st-&gt;flag = flag;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    st-&gt;clip = s;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee">   92</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee">sound_effect</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structsound__clip.html">sound_clip</a>* s) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">if</span> (!s) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (sound.se.state.flag &amp; <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (s-&gt;<a class="code" href="structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d">priority</a> &lt; sound.se.state.clip-&gt;priority) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">if</span> (!sound.se.state.clip) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// backup some PSG registers</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">for</span> (uint8_t i = 0; i &lt;= 13; ++i) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      psg_reg_backup[i] = <a class="code" href="psg_8h.html#a2935306349193999a8ed884fff7ed597">psg_get</a>(i);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  sound_set_clip(&amp;sound.se.state, s);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">  108</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code" href="structsound__clip.html">sound_clip</a>* s) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (s) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    sound_set_clip(&amp;sound.bg.state, s);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sound_init(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  VSYNC_FREQ = ((INTERNATIONAL_ID_1 &amp; 0x80) ? 50 : 60);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  COUNT_PER_TICK = <a class="code" href="sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035">COUNT_PER_SECOND</a> / VSYNC_FREQ;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="psg_8h.html#a084b8c48834b59dc9af0978ad53357c3">psg_init</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  sound.bg.state.clip = 0;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  sound.bg.state.flag = 0;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  sound.se.state.clip = 0;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  sound.se.state.flag = 0;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  memset(psg_reg_backup, 0, <span class="keyword">sizeof</span>(psg_reg_backup));</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(7, 0x80 | 0x38);      <span class="comment">// mixer</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">  128</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a>();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  sound_init();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">  133</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  sound.bg.paused = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(8, 0);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(9, 0);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(10, 0);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sound_player__process(<span class="keyword">struct</span> sound_state* st, uint8_t flag) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  uint8_t mask = <a class="code" href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">SOUND_CHANNEL_A</a>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">for</span> (uint8_t ch = 0; ch &lt; 3; ++ch, mask &lt;&lt;= 1) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// ---- Countdown time remaining ----</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (0 &lt; st-&gt;duration[ch]) {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      st-&gt;duration[ch] -= COUNT_PER_TICK;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">if</span> (0 &lt; st-&gt;duration[ch]) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// ---- Check to see if the stream has finished. ----</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (!(st-&gt;flag &amp; mask)) <span class="keywordflow">continue</span>; <span class="comment">// no more chunk</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    uint8_t head1 = *st-&gt;next[ch]++;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span> (head1 == 255) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="comment">// end of music track</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      st-&gt;flag &amp;= ~mask;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// ---- Reads head (chunk size and next duration) ----</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    uint8_t len = (head1 &gt;&gt; 5) &amp; 7;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (!len) len = 8;          <span class="comment">// &#39;length = 0&#39; means 8 bytes chunk</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">const</span> uint16_t ticks = ((head1 &amp; 0x1f) &lt;&lt; 8) | (*st-&gt;next[ch]++);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    st-&gt;duration[ch] += <a class="code" href="sound_8c.html#ac174db55392218c66ba57b1392d76b2f">COUNT_PER_TICK_60HZ</a> * ticks;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// ---- Parse and process the chunk ----</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">bool</span> muted = flag &amp; (mask &lt;&lt; 3); <span class="comment">// \note Using `flag` instead of `st-&gt;flag`</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">while</span> (len) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      len--;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      uint8_t x = *st-&gt;next[ch]++;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      uint8_t x_lo = x &amp; 0x0f;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">switch</span> (x &amp; 0xf0) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      <span class="keywordflow">case</span> 0x00:</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// tone (12bits)</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">// 0000b fdr_hi:4 fdr_lo:8</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        sound_psg_set(muted, 1+2*ch, x_lo);            <span class="comment">// fdr_hi:4</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        sound_psg_set(muted, 0+2*ch, *st-&gt;next[ch]++); <span class="comment">// fdr_lo:8</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        len--;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">case</span> 0x10:</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// rest (0bits)</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        sound_psg_set(muted, 8+ch, 0);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <span class="keywordflow">case</span> 0x20:</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <span class="keywordflow">case</span> 0x30:</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">// noise (5bits)</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">// 001b fdr:5</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        sound_psg_set(muted, 6, x &amp; 0x1f);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">case</span> 0x70:</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">// mixer (6bits)</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">// 0111b ----b --b NC:1 NB:1 NA:1 TC:1 TB:1 TA:1</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        sound_psg_set(muted, 7, (*st-&gt;next[ch]++ &amp; 0x3f) | 0x80);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <span class="keywordflow">case</span> 0x80:</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// volume (4bits)</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="comment">// 1000b vol:4</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        sound_psg_set(muted, 8+ch, x_lo);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">case</span> 0x40:</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <span class="keywordflow">case</span> 0x90:</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="keywordflow">case</span> 0xd0:</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (x &amp; 0x90) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;          <span class="comment">// envelope pattern (4bits)</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;          <span class="comment">// 1-01b pat:4</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;          sound_psg_set(muted, 13, x_lo);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          sound_psg_set(muted, 8+ch, 16); <span class="comment">// turn on hardware envelope</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span> (x &amp; 0x40) {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          <span class="comment">// envelope cycle (16bits)</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;          <span class="comment">// -10-b ----b fdr_hi:8 fdr_lo:8</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;          sound_psg_set(muted, 12, *st-&gt;next[ch]++); <span class="comment">// cyble_hi:8</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;          sound_psg_set(muted, 11, *st-&gt;next[ch]++); <span class="comment">// cycle_lo:8</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;          len -= 2;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="comment">// stream error</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        len = 0;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        st-&gt;flag &amp;= ~mask;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  }</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">  224</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="comment">// ---- auto-repeat ----</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordflow">if</span> (!(sound.bg.state.flag &amp; <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>)) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">if</span> (sound.bg.repeat) {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      <a class="code" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a>(sound.bg.state.clip);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <a class="code" href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a>();</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="comment">// ---- background music ----</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordflow">if</span> (!sound.bg.paused &amp;&amp; sound.bg.state.clip) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// By passing `flag` as 2nd argument, temporarily turn on the mute switch</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// for the channel being used for sound effects.</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    sound_player__process(&amp;sound.bg.state, ((sound.bg.state.flag) |</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                            (sound.se.state.flag &lt;&lt; 3)));</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="comment">// ---- sound effect ----</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordflow">if</span> (sound.se.state.clip) {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    sound_player__process(&amp;sound.se.state, sound.se.state.flag);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    uint8_t flag = sound.se.state.flag &amp; <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span> (!flag) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      sound.se.state.clip = 0;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="comment">// restore some PSG registers</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="keywordflow">for</span> (uint8_t i = 0; i &lt;= 13; ++i) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(i, psg_reg_backup[i]);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  sound.bg.paused = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1">  120</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  VSYNC_FREQ = ((INTERNATIONAL_ID_1 &amp; 0x80) ? 50 : 60);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  COUNT_PER_TICK = <a class="code" href="sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035">COUNT_PER_SECOND</a> / VSYNC_FREQ;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="psg_8h.html#a084b8c48834b59dc9af0978ad53357c3">psg_init</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  sound.bg.state.clip = 0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  sound.bg.state.flag = 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  sound.se.state.clip = 0;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  sound.se.state.flag = 0;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  memcpy(psg_reg_backup, <a class="code" href="sound_8c.html#a5fe004c472dfaef154f795a07d39ce94">psg_reg_initial_vector</a>, <span class="keyword">sizeof</span>(<a class="code" href="sound_8c.html#a5fe004c472dfaef154f795a07d39ce94">psg_reg_initial_vector</a>));</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">  132</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">  136</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  sound.bg.paused = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(8, 0);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(9, 0);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(10, 0);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sound_player__process(<span class="keyword">struct</span> sound_state* st, uint8_t flag) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  uint8_t mask = <a class="code" href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">SOUND_CHANNEL_A</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordflow">for</span> (uint8_t ch = 0; ch &lt; 3; ++ch, mask &lt;&lt;= 1) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// ---- Countdown time remaining ----</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (0 &lt; st-&gt;duration[ch]) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      st-&gt;duration[ch] -= COUNT_PER_TICK;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <span class="keywordflow">if</span> (0 &lt; st-&gt;duration[ch]) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// ---- Check to see if the stream has finished. ----</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span> (!(st-&gt;flag &amp; mask)) <span class="keywordflow">continue</span>; <span class="comment">// no more chunk</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    uint8_t head1 = *st-&gt;next[ch]++;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (head1 == 255) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      <span class="comment">// end of music track</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      st-&gt;flag &amp;= ~mask;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// ---- Reads head (chunk size and next duration) ----</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    uint8_t len = (head1 &gt;&gt; 5) &amp; 7;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (!len) len = 8;          <span class="comment">// &#39;length = 0&#39; means 8 bytes chunk</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">const</span> uint16_t ticks = ((head1 &amp; 0x1f) &lt;&lt; 8) | (*st-&gt;next[ch]++);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    st-&gt;duration[ch] += <a class="code" href="sound_8c.html#ac174db55392218c66ba57b1392d76b2f">COUNT_PER_TICK_60HZ</a> * ticks;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// ---- Parse and process the chunk ----</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">bool</span> muted = flag &amp; (mask &lt;&lt; 3); <span class="comment">// \note Using `flag` instead of `st-&gt;flag`</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">while</span> (len) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      len--;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      uint8_t x = *st-&gt;next[ch]++;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      uint8_t x_lo = x &amp; 0x0f;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      <span class="keywordflow">switch</span> (x &amp; 0xf0) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <span class="keywordflow">case</span> 0x00:</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// tone (12bits)</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">// 0000b fdr_hi:4 fdr_lo:8</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        sound_psg_set(muted, 1+2*ch, x_lo);            <span class="comment">// fdr_hi:4</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        sound_psg_set(muted, 0+2*ch, *st-&gt;next[ch]++); <span class="comment">// fdr_lo:8</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        len--;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      <span class="keywordflow">case</span> 0x10:</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// rest (0bits)</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        sound_psg_set(muted, 8+ch, 0);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="keywordflow">case</span> 0x20:</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <span class="keywordflow">case</span> 0x30:</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">// noise (5bits)</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// 001b fdr:5</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        sound_psg_set(muted, 6, x &amp; 0x1f);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      <span class="keywordflow">case</span> 0x70:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// mixer (6bits)</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// 0111b ----b --b NC:1 NB:1 NA:1 TC:1 TB:1 TA:1</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        sound_psg_set(muted, 7, (*st-&gt;next[ch]++ &amp; 0x3f) | 0x80);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      <span class="keywordflow">case</span> 0x80:</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">// volume (4bits)</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">// 1000b vol:4</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        sound_psg_set(muted, 8+ch, x_lo);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">case</span> 0x40:</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">case</span> 0x90:</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">case</span> 0xd0:</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (x &amp; 0x90) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          <span class="comment">// envelope pattern (4bits)</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;          <span class="comment">// 1-01b pat:4</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          sound_psg_set(muted, 13, x_lo);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          sound_psg_set(muted, 8+ch, 16); <span class="comment">// turn on hardware envelope</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">if</span> (x &amp; 0x40) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;          <span class="comment">// envelope cycle (16bits)</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;          <span class="comment">// -10-b ----b fdr_hi:8 fdr_lo:8</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;          sound_psg_set(muted, 12, *st-&gt;next[ch]++); <span class="comment">// cyble_hi:8</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;          sound_psg_set(muted, 11, *st-&gt;next[ch]++); <span class="comment">// cycle_lo:8</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;          len -= 2;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="comment">// stream error</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        len = 0;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        st-&gt;flag &amp;= ~mask;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">  227</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="comment">// ---- auto-repeat ----</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">if</span> (!(sound.bg.state.flag &amp; <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>)) {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">if</span> (sound.bg.repeat) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <a class="code" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a>(sound.bg.state.clip);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      <a class="code" href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a>();</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="comment">// ---- background music ----</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">if</span> (!sound.bg.paused &amp;&amp; sound.bg.state.clip) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// By passing `flag` as 2nd argument, temporarily turn on the mute switch</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// for the channel being used for sound effects.</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    sound_player__process(&amp;sound.bg.state, ((sound.bg.state.flag) |</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                            (sound.se.state.flag &lt;&lt; 3)));</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="comment">// ---- sound effect ----</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">if</span> (sound.se.state.clip) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    sound_player__process(&amp;sound.se.state, sound.se.state.flag);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    uint8_t flag = sound.se.state.flag &amp; <a class="code" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (!flag) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      sound.se.state.clip = 0;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <span class="comment">// restore some PSG registers</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      <span class="keywordflow">for</span> (uint8_t i = 0; i &lt;= 13; ++i) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a>(i, psg_reg_backup[i]);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="asound_8c_html_a05ffba4b6e960e4a0699f50b8a72d795"><div class="ttname"><a href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a></div><div class="ttdeci">void sound_stop(void)</div><div class="ttdoc">Stop the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00128">sound.c:128</a></div></div>
+<div class="ttc" id="asound_8c_html_a05ffba4b6e960e4a0699f50b8a72d795"><div class="ttname"><a href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a></div><div class="ttdeci">void sound_stop(void)</div><div class="ttdoc">Stop the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00132">sound.c:132</a></div></div>
 <div class="ttc" id="asound_8c_html_af7106919ce6b8fcbb8beda18c1fb9035"><div class="ttname"><a href="sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035">COUNT_PER_SECOND</a></div><div class="ttdeci">#define COUNT_PER_SECOND</div></div>
 <div class="ttc" id="apsg_8h_html_ae76dc7a8f615f828df6c22c7bf180577"><div class="ttname"><a href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a></div><div class="ttdeci">void psg_set(uint8_t reg, uint8_t val)</div><div class="ttdef"><b>Definition:</b> <a href="psg__set_8c_source.html#l00017">psg_set.c:17</a></div></div>
-<div class="ttc" id="asound_8c_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">Turn on/off the auto-repeat of the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00048">sound.c:48</a></div></div>
+<div class="ttc" id="asound_8c_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">Turn on/off the auto-repeat of the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00053">sound.c:53</a></div></div>
 <div class="ttc" id="asound_8h_html_af0aea604a4e0e8cc864f98be452d3752"><div class="ttname"><a href="sound_8h.html#af0aea604a4e0e8cc864f98be452d3752">SOUND_CHANNEL_B</a></div><div class="ttdeci">#define SOUND_CHANNEL_B</div><div class="ttdoc">The bit-mask to specify PSG channel B.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00030">sound.h:30</a></div></div>
 <div class="ttc" id="asound_8h_html_a5bcbcc6b811e8134f67e7553fd089bd3"><div class="ttname"><a href="sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3">SOUND_CHANNEL_C</a></div><div class="ttdeci">#define SOUND_CHANNEL_C</div><div class="ttdoc">The bit-mask to specify PSG channel C.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00035">sound.h:35</a></div></div>
-<div class="ttc" id="asound_8c_html_a117781baf820700e0b0674a55811fe3a"><div class="ttname"><a href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">state</a></div><div class="ttdeci">struct sound_state state</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00038">sound.c:38</a></div></div>
-<div class="ttc" id="asound_8c_html_a98c61ed9410ab805baab005fe7713d9b"><div class="ttname"><a href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a></div><div class="ttdeci">bool repeat</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00039">sound.c:39</a></div></div>
+<div class="ttc" id="asound_8c_html_a117781baf820700e0b0674a55811fe3a"><div class="ttname"><a href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">state</a></div><div class="ttdeci">struct sound_state state</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00043">sound.c:43</a></div></div>
+<div class="ttc" id="asound_8c_html_a98c61ed9410ab805baab005fe7713d9b"><div class="ttname"><a href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a></div><div class="ttdeci">bool repeat</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00044">sound.c:44</a></div></div>
 <div class="ttc" id="apsg_8h_html_a084b8c48834b59dc9af0978ad53357c3"><div class="ttname"><a href="psg_8h.html#a084b8c48834b59dc9af0978ad53357c3">psg_init</a></div><div class="ttdeci">void psg_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="psg__init_8c_source.html#l00030">psg_init.c:30</a></div></div>
-<div class="ttc" id="asound_8c_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">Sets the specified music clip as BGM in the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00097">sound.c:97</a></div></div>
-<div class="ttc" id="asound_8c_html_ac85593d9f7d37f53db1258f624f2a98c"><div class="ttname"><a href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">sound_set_mute</a></div><div class="ttdeci">void sound_set_mute(uint8_t mute)</div><div class="ttdoc">Mute/unmute for each sound channel.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00063">sound.c:63</a></div></div>
+<div class="ttc" id="asound_8c_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">Sets the specified music clip as BGM in the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00108">sound.c:108</a></div></div>
+<div class="ttc" id="asound_8c_html_ac85593d9f7d37f53db1258f624f2a98c"><div class="ttname"><a href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">sound_set_mute</a></div><div class="ttdeci">void sound_set_mute(uint8_t mute)</div><div class="ttdoc">Mute/unmute for each sound channel.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00066">sound.c:66</a></div></div>
 <div class="ttc" id="asound_8c_html_ac174db55392218c66ba57b1392d76b2f"><div class="ttname"><a href="sound_8c.html#ac174db55392218c66ba57b1392d76b2f">COUNT_PER_TICK_60HZ</a></div><div class="ttdeci">#define COUNT_PER_TICK_60HZ</div></div>
 <div class="ttc" id="asound_8c_html_a7b2f509d1febe11b758fbbd90ec49f8b"><div class="ttname"><a href="sound_8c.html#a7b2f509d1febe11b758fbbd90ec49f8b">se</a></div><div class="ttdeci">struct @2::@4 se</div></div>
 <div class="ttc" id="astructsound__clip_html"><div class="ttname"><a href="structsound__clip.html">sound_clip</a></div><div class="ttdoc">The sound clip structure.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00111">sound.h:111</a></div></div>
-<div class="ttc" id="asound_8c_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">Start the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00112">sound.c:112</a></div></div>
+<div class="ttc" id="asound_8c_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">Start the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00116">sound.c:116</a></div></div>
 <div class="ttc" id="asound_8c_html_a2653e85d5af4599e403c39312562d7b9"><div class="ttname"><a href="sound_8c.html#a2653e85d5af4599e403c39312562d7b9">bg</a></div><div class="ttdeci">struct @2::@3 bg</div></div>
 <div class="ttc" id="asound_8h_html_aaedcbb164ed2701f67c71218526dffe2"><div class="ttname"><a href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a></div><div class="ttdeci">#define SOUND_CHANNEL_ALL</div><div class="ttdoc">The bit-mask to specify all PSG channels.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00040">sound.h:40</a></div></div>
-<div class="ttc" id="asound_8c_html_aa69657f5f366eef034685b19c9c0ea3f"><div class="ttname"><a href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a></div><div class="ttdeci">void sound_pause(void)</div><div class="ttdoc">Pause the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00133">sound.c:133</a></div></div>
+<div class="ttc" id="asound_8c_html_aa69657f5f366eef034685b19c9c0ea3f"><div class="ttname"><a href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a></div><div class="ttdeci">void sound_pause(void)</div><div class="ttdoc">Pause the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00136">sound.c:136</a></div></div>
 <div class="ttc" id="astructsound__clip_html_ab84fd2d5f4adf34fb013bd5d22f8ab20"><div class="ttname"><a href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">sound_clip::streams</a></div><div class="ttdeci">uint8_t * streams[3]</div><div class="ttdoc">A list of pointers to the sound data stream for each channel.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00113">sound.h:113</a></div></div>
-<div class="ttc" id="asound_8c_html_a1656129c4a4fd8809254194f08f0ac70"><div class="ttname"><a href="sound_8c.html#a1656129c4a4fd8809254194f08f0ac70">paused</a></div><div class="ttdeci">bool paused</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00040">sound.c:40</a></div></div>
-<div class="ttc" id="asound_8c_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">Main routine of the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00224">sound.c:224</a></div></div>
-<div class="ttc" id="asound_8c_html_a9a93615db20eb70cf9df084778d9a9ee"><div class="ttname"><a href="sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee">sound_effect</a></div><div class="ttdeci">void sound_effect(const struct sound_clip *s)</div><div class="ttdoc">Plays the specified music clip as sound effect.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00072">sound.c:72</a></div></div>
+<div class="ttc" id="asound_8c_html_a5fe004c472dfaef154f795a07d39ce94"><div class="ttname"><a href="sound_8c.html#a5fe004c472dfaef154f795a07d39ce94">psg_reg_initial_vector</a></div><div class="ttdeci">const uint8_t psg_reg_initial_vector[14]</div><div class="ttdef"><b>Definition:</b> <a href="psg__init_8c_source.html#l00017">psg_init.c:17</a></div></div>
+<div class="ttc" id="asound_8c_html_a1656129c4a4fd8809254194f08f0ac70"><div class="ttname"><a href="sound_8c.html#a1656129c4a4fd8809254194f08f0ac70">paused</a></div><div class="ttdeci">bool paused</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00045">sound.c:45</a></div></div>
+<div class="ttc" id="asound_8c_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">Main routine of the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00227">sound.c:227</a></div></div>
+<div class="ttc" id="asound_8c_html_a9a93615db20eb70cf9df084778d9a9ee"><div class="ttname"><a href="sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee">sound_effect</a></div><div class="ttdeci">void sound_effect(const struct sound_clip *s)</div><div class="ttdoc">Plays the specified music clip as sound effect.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00092">sound.c:92</a></div></div>
 <div class="ttc" id="astructsound__clip_html_aa50d220b45ae59eedb443b956ef1929d"><div class="ttname"><a href="structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d">sound_clip::priority</a></div><div class="ttdeci">uint16_t priority</div><div class="ttdoc">Priority for using this sound clip as a sound effect.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00115">sound.h:115</a></div></div>
 <div class="ttc" id="apsg_8h_html_a2935306349193999a8ed884fff7ed597"><div class="ttname"><a href="psg_8h.html#a2935306349193999a8ed884fff7ed597">psg_get</a></div><div class="ttdeci">uint8_t psg_get(uint8_t reg)</div><div class="ttdef"><b>Definition:</b> <a href="psg__get_8c_source.html#l00017">psg_get.c:17</a></div></div>
+<div class="ttc" id="asound_8c_html_a90e396bab2471f72285f290ce7a5cab1"><div class="ttname"><a href="sound_8c.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a></div><div class="ttdeci">void sound_init(void)</div><div class="ttdoc">This function initializes the PSG and the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00120">sound.c:120</a></div></div>
 <div class="ttc" id="asound_8h_html_a466185ed37b39cb48ae0c4d966462cee"><div class="ttname"><a href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">SOUND_CHANNEL_A</a></div><div class="ttdeci">#define SOUND_CHANNEL_A</div><div class="ttdoc">The bit-mask to specify PSG channel A.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8h_source.html#l00025">sound.h:25</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

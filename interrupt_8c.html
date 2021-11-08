@@ -124,33 +124,6 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="abdcd317fb8447d2ade86fe3477ccbd27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdcd317fb8447d2ade86fe3477ccbd27">&#9670;&nbsp;</a></span>await_vsync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void await_vsync </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Waits for next VSYNC interrupt. </p>
-<p>Calling to <code><a class="el" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27" title="Waits for next VSYNC interrupt.">await_vsync()</a></code> waits for next VSYNC interrupt and blocks until the interrupt would to be processed.</p>
-<dl class="section note"><dt>Note</dt><dd>This function is supposed to be used to synchronize with VSYNC in the main loop of the application.</dd>
-<dd>
-This function cannot be used from an interrupt handler; if you need an interrupt handler for VSYNC, use <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a> instead.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4" title="Waits for next interrupt.">await_interrupt()</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00086">86</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
-
-</div>
-</div>
 <a id="a61a5fde49304517b2bb197a8b5577a70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61a5fde49304517b2bb197a8b5577a70">&#9670;&nbsp;</a></span>libmsx___init_intr()</h2>
 
@@ -230,6 +203,33 @@ This function cannot be used from an interrupt handler; if you need an interrupt
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00080">80</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
+
+</div>
+</div>
+<a id="abdcd317fb8447d2ade86fe3477ccbd27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdcd317fb8447d2ade86fe3477ccbd27">&#9670;&nbsp;</a></span>await_vsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void await_vsync </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Waits for next VSYNC interrupt. </p>
+<p>Calling to <code><a class="el" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27" title="Waits for next VSYNC interrupt.">await_vsync()</a></code> waits for next VSYNC interrupt and blocks until the interrupt would to be processed.</p>
+<dl class="section note"><dt>Note</dt><dd>This function is supposed to be used to synchronize with VSYNC in the main loop of the application.</dd>
+<dd>
+This function cannot be used from an interrupt handler; if you need an interrupt handler for VSYNC, use <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a> instead.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4" title="Waits for next interrupt.">await_interrupt()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00086">86</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
 
 </div>
 </div>

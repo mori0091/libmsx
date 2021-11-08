@@ -147,6 +147,20 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="metasprite_8h_source.html">metasprite.h</a>.</p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a01061ce68e98cbf7aee32116eabb258d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01061ce68e98cbf7aee32116eabb258d">&#9670;&nbsp;</a></span>vec2i_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structvec2i.html">vec2i</a> <a class="el" href="metasprite_8h.html#a01061ce68e98cbf7aee32116eabb258d">vec2i_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aaa450295993f973fb05ebda45d8d14bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa450295993f973fb05ebda45d8d14bf">&#9670;&nbsp;</a></span>metasprite_t</h2>
 
@@ -176,29 +190,15 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a01061ce68e98cbf7aee32116eabb258d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01061ce68e98cbf7aee32116eabb258d">&#9670;&nbsp;</a></span>vec2i_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structvec2i.html">vec2i</a> <a class="el" href="metasprite_8h.html#a01061ce68e98cbf7aee32116eabb258d">vec2i_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="afc42c840f82df1225e380342dd7ebcc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc42c840f82df1225e380342dd7ebcc4">&#9670;&nbsp;</a></span>vmem_set_metasprite_a()</h2>
+<a id="a32705789983aee5f50d7e55d194ae1e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32705789983aee5f50d7e55d194ae1e5">&#9670;&nbsp;</a></span>vmem_set_metasprite_s()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void vmem_set_metasprite_a </td>
+          <td class="memname">void vmem_set_metasprite_s </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a>&#160;</td>
           <td class="paramname"><em>base</em>, </td>
@@ -225,7 +225,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="metasprite_8h.html#aaa450295993f973fb05ebda45d8d14bf">metasprite_t</a> *&#160;</td>
-          <td class="paramname"><em>ms</em>&#160;</td>
+          <td class="paramname"><em>ms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c">tagged_color_t</a>&#160;</td>
+          <td class="paramname"><em>tagged_color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -235,16 +241,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Display / Move metasprite. </p>
-<dl class="section note"><dt>Note</dt><dd>This function does not change the sprite's color, tag bits, or the contents of the sprite color table. It only updates the x, y, and sprite pattern number in the sprite attribute table.<ul>
-<li>Pros: Works a little faster in sprite mode 2.</li>
-<li>Cons: The EC (Early Clock) bit is not set correctly.</li>
-</ul>
-</dd></dl>
-<p>This function is supposed to be used together with <a class="el" href="sprite__color_8h.html#a59dc3146fb9b82d907c720b86286b853" title="Set sprite color table element (tagged color for each scanlines) of a sprite.">vmem_set_sprite_color()</a> in sprite mode 2.</p>
-<p>In sprite mode 1 (MSX1 compatible sprite mode), you may want to use <a class="el" href="metasprite_8h.html#a32705789983aee5f50d7e55d194ae1e5" title="Display single colored metasprite.">vmem_set_metasprite_s()</a> or <a class="el" href="metasprite_8h.html#a8f75c581188b5d3ee3f4b5fdf4d5a4b6" title="Display multi colored metasprite.">vmem_set_metasprite_m()</a>. These are fast enough and convenient.</p>
-<p>In sprite mode 2, <a class="el" href="metasprite_8h.html#a32705789983aee5f50d7e55d194ae1e5" title="Display single colored metasprite.">vmem_set_metasprite_s()</a> and <a class="el" href="metasprite_8h.html#a8f75c581188b5d3ee3f4b5fdf4d5a4b6" title="Display multi colored metasprite.">vmem_set_metasprite_m()</a> are also useful. However, they are a bit slower because they need to copy the color and tag bits to the color table element of each sprite.</p>
-<p>The function <a class="el" href="metasprite_8h.html#afc42c840f82df1225e380342dd7ebcc4" title="Display / Move metasprite.">vmem_set_metasprite_a()</a> does not set the EC bit. If there is a sprite whose x-coordinate would to be less than 0 on the screen, that sprite is hidden (unshown) simply, instead of setting the EC bit.</p>
+<p>Display single colored metasprite. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">base</td><td>Base address of the sprite attribute table in VRAM. </td></tr>
@@ -252,11 +249,12 @@ Functions</h2></td></tr>
     <tr><td class="paramname">x</td><td>The x-coordinate in the screen coordinate system. </td></tr>
     <tr><td class="paramname">y</td><td>The y-coordinate in the screen coordinate system. </td></tr>
     <tr><td class="paramname">ms</td><td>Pointer to the metasprite structure. </td></tr>
+    <tr><td class="paramname">tagged_color</td><td>A color code and sprite attribute tags, that is applied for all sprites in the metasprite. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmem__set__metasprite__a_8c_source.html#l00017">17</a> of file <a class="el" href="vmem__set__metasprite__a_8c_source.html">vmem_set_metasprite_a.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmem__set__metasprite__s_8c_source.html#l00018">18</a> of file <a class="el" href="vmem__set__metasprite__s_8c_source.html">vmem_set_metasprite_s.c</a>.</p>
 
 </div>
 </div>
@@ -327,14 +325,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a32705789983aee5f50d7e55d194ae1e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32705789983aee5f50d7e55d194ae1e5">&#9670;&nbsp;</a></span>vmem_set_metasprite_s()</h2>
+<a id="afc42c840f82df1225e380342dd7ebcc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc42c840f82df1225e380342dd7ebcc4">&#9670;&nbsp;</a></span>vmem_set_metasprite_a()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void vmem_set_metasprite_s </td>
+          <td class="memname">void vmem_set_metasprite_a </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a>&#160;</td>
           <td class="paramname"><em>base</em>, </td>
@@ -361,13 +359,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="metasprite_8h.html#aaa450295993f973fb05ebda45d8d14bf">metasprite_t</a> *&#160;</td>
-          <td class="paramname"><em>ms</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c">tagged_color_t</a>&#160;</td>
-          <td class="paramname"><em>tagged_color</em>&#160;</td>
+          <td class="paramname"><em>ms</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -377,7 +369,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Display single colored metasprite. </p>
+<p>Display / Move metasprite. </p>
+<dl class="section note"><dt>Note</dt><dd>This function does not change the sprite's color, tag bits, or the contents of the sprite color table. It only updates the x, y, and sprite pattern number in the sprite attribute table.<ul>
+<li>Pros: Works a little faster in sprite mode 2.</li>
+<li>Cons: The EC (Early Clock) bit is not set correctly.</li>
+</ul>
+</dd></dl>
+<p>This function is supposed to be used together with <a class="el" href="sprite__color_8h.html#a59dc3146fb9b82d907c720b86286b853" title="Set sprite color table element (tagged color for each scanlines) of a sprite.">vmem_set_sprite_color()</a> in sprite mode 2.</p>
+<p>In sprite mode 1 (MSX1 compatible sprite mode), you may want to use <a class="el" href="metasprite_8h.html#a32705789983aee5f50d7e55d194ae1e5" title="Display single colored metasprite.">vmem_set_metasprite_s()</a> or <a class="el" href="metasprite_8h.html#a8f75c581188b5d3ee3f4b5fdf4d5a4b6" title="Display multi colored metasprite.">vmem_set_metasprite_m()</a>. These are fast enough and convenient.</p>
+<p>In sprite mode 2, <a class="el" href="metasprite_8h.html#a32705789983aee5f50d7e55d194ae1e5" title="Display single colored metasprite.">vmem_set_metasprite_s()</a> and <a class="el" href="metasprite_8h.html#a8f75c581188b5d3ee3f4b5fdf4d5a4b6" title="Display multi colored metasprite.">vmem_set_metasprite_m()</a> are also useful. However, they are a bit slower because they need to copy the color and tag bits to the color table element of each sprite.</p>
+<p>The function <a class="el" href="metasprite_8h.html#afc42c840f82df1225e380342dd7ebcc4" title="Display / Move metasprite.">vmem_set_metasprite_a()</a> does not set the EC bit. If there is a sprite whose x-coordinate would to be less than 0 on the screen, that sprite is hidden (unshown) simply, instead of setting the EC bit.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">base</td><td>Base address of the sprite attribute table in VRAM. </td></tr>
@@ -385,12 +386,11 @@ Functions</h2></td></tr>
     <tr><td class="paramname">x</td><td>The x-coordinate in the screen coordinate system. </td></tr>
     <tr><td class="paramname">y</td><td>The y-coordinate in the screen coordinate system. </td></tr>
     <tr><td class="paramname">ms</td><td>Pointer to the metasprite structure. </td></tr>
-    <tr><td class="paramname">tagged_color</td><td>A color code and sprite attribute tags, that is applied for all sprites in the metasprite. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="vmem__set__metasprite__s_8c_source.html#l00018">18</a> of file <a class="el" href="vmem__set__metasprite__s_8c_source.html">vmem_set_metasprite_s.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vmem__set__metasprite__a_8c_source.html#l00017">17</a> of file <a class="el" href="vmem__set__metasprite__a_8c_source.html">vmem_set_metasprite_a.c</a>.</p>
 
 </div>
 </div>

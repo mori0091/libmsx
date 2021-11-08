@@ -184,6 +184,56 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6cf16f5ecc488771a53456b03257768d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf16f5ecc488771a53456b03257768d">&#9670;&nbsp;</a></span>vmem_set_sprite_color_s()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vmem_set_sprite_color_s </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a>&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>plane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c">tagged_color_t</a>&#160;</td>
+          <td class="paramname"><em>tagged_color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set sprite color (tagged color) of a sprite. </p>
+<ul>
+<li><code>MSX</code>, <code>MSX2</code>, <code>MSX2+</code>, <code>MSXturboR</code></li>
+<li><code>SPRITE MODE 1</code>, <code>SPRITE MODE 2</code></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>Base address of the SPRITE ATTRIBUTE TABLE in VRAM. </td></tr>
+    <tr><td class="paramname">plane</td><td>The plane number. </td></tr>
+    <tr><td class="paramname">tagged_color</td><td>A color code and sprite attribute tags, that is applied for sprite of the sprite plane number <code>plane</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="vmem__set__sprite__color__s_8c_source.html#l00018">18</a> of file <a class="el" href="vmem__set__sprite__color__s_8c_source.html">vmem_set_sprite_color_s.c</a>.</p>
+
+</div>
+</div>
 <a id="a5abca0a5e85daf04fd9d5e9e1b44800c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5abca0a5e85daf04fd9d5e9e1b44800c">&#9670;&nbsp;</a></span>vmem_set_sprite_color_m()</h2>
 
@@ -238,56 +288,6 @@ Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="vmem__set__sprite__color__m_8c_source.html#l00016">16</a> of file <a class="el" href="vmem__set__sprite__color__m_8c_source.html">vmem_set_sprite_color_m.c</a>.</p>
-
-</div>
-</div>
-<a id="a6cf16f5ecc488771a53456b03257768d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cf16f5ecc488771a53456b03257768d">&#9670;&nbsp;</a></span>vmem_set_sprite_color_s()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vmem_set_sprite_color_s </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a>&#160;</td>
-          <td class="paramname"><em>base</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>plane</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c">tagged_color_t</a>&#160;</td>
-          <td class="paramname"><em>tagged_color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set sprite color (tagged color) of a sprite. </p>
-<ul>
-<li><code>MSX</code>, <code>MSX2</code>, <code>MSX2+</code>, <code>MSXturboR</code></li>
-<li><code>SPRITE MODE 1</code>, <code>SPRITE MODE 2</code></li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">base</td><td>Base address of the SPRITE ATTRIBUTE TABLE in VRAM. </td></tr>
-    <tr><td class="paramname">plane</td><td>The plane number. </td></tr>
-    <tr><td class="paramname">tagged_color</td><td>A color code and sprite attribute tags, that is applied for sprite of the sprite plane number <code>plane</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="vmem__set__sprite__color__s_8c_source.html#l00018">18</a> of file <a class="el" href="vmem__set__sprite__color__s_8c_source.html">vmem_set_sprite_color_s.c</a>.</p>
 
 </div>
 </div>

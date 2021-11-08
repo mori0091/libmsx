@@ -14,7 +14,7 @@
 #include "../include/io.h"
 #include "../include/psg.h"
 
-static const uint8_t psg_reg_ini[] = {
+const uint8_t psg_reg_initial_vector[14] = {
   0x55, 0x00,                   // R#0-1 tone A
   0x00, 0x00,                   // R#2-3 tone B
   0x00, 0x00,                   // R#4-5 tone C
@@ -29,8 +29,8 @@ static const uint8_t psg_reg_ini[] = {
 
 void psg_init(void) {
   __critical {
-    for (uint8_t i = 0; i < sizeof(psg_reg_ini); ++i) {
-      psg_set(i, psg_reg_ini[i]);
+    for (uint8_t i = 0; i < sizeof(psg_reg_initial_vector); ++i) {
+      psg_set(i, psg_reg_initial_vector[i]);
     }
   }
 }

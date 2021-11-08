@@ -116,6 +116,19 @@ struct sound_clip {
 };
 
 /**
+ * This function initializes the PSG and the sound driver.
+ *
+ * This function must be called at least once. In particular, it must be called
+ * before the first call to sound_player().
+ *
+ * \note
+ * If sound_player() is called without sound_init() being called, its behavior
+ * is undefined and, in the worst case, may cause damage to the (real) MSX
+ * machine.
+ */
+void sound_init(void);
+
+/**
  * Turn on/off the auto-repeat of the BGM.
  *
  * \param repeat   `true`: turn on, `false`: turn off
@@ -201,14 +214,22 @@ void sound_pause(void);
  * the VSYNC interrupt handler by calling set_vsync_handler().
  *
  * ~~~c
- * // At first, register the sound driver as the VSYNC interrupt handler.
+ * // At first, initialize the sound driver.
+ * sound_init();
+ *
+ * // Then, register the sound driver as the VSYNC interrupt handler.
  * set_vsync_handler(sound_player);
  *
- * // then calls other APIs to start, stop, etc.
+ * // And then, calls other APIs to start, stop, etc.
  * sound_set_repeat(true);
  * sound_set_bgm(&my_bgm);
  * sound_start();
  * ~~~
+ *
+ * \note
+ * If sound_player() is called without sound_init() being called, its behavior
+ * is undefined and, in the worst case, may cause damage to the (real) MSX
+ * machine.
  */
 void sound_player(void);
 

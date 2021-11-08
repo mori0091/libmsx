@@ -16,6 +16,11 @@
 #include "../include/psg.h"
 #include "../include/sound.h"
 
+// initial value of PSG registers ; defined in "psg_init.c"
+extern const uint8_t psg_reg_initial_vector[14];
+// backup of PSG registers
+static uint8_t psg_reg_backup[14];
+
 static const __at (0x002b) uint8_t INTERNATIONAL_ID_1;
 static const __at (0x002c) uint8_t INTERNATIONAL_ID_2;
 
@@ -48,8 +53,6 @@ static struct {
 void sound_set_repeat(bool repeat) {
   sound.bg.repeat = repeat;
 }
-
-static uint8_t psg_reg_backup[16];
 
 static void sound_psg_set(bool muted, uint8_t reg, uint8_t value) {
   if (!muted) {
@@ -114,7 +117,8 @@ void sound_start(void) {
   sound.bg.paused = false;
 }
 
-static void sound_init(void) {
+void sound_init(void) {
+  sound_pause();
   VSYNC_FREQ = ((INTERNATIONAL_ID_1 & 0x80) ? 50 : 60);
   COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
   psg_init();
@@ -122,12 +126,10 @@ static void sound_init(void) {
   sound.bg.state.flag = 0;
   sound.se.state.clip = 0;
   sound.se.state.flag = 0;
-  memset(psg_reg_backup, 0, sizeof(psg_reg_backup));
-  psg_set(7, 0x80 | 0x38);      // mixer
+  memcpy(psg_reg_backup, psg_reg_initial_vector, sizeof(psg_reg_initial_vector));
 }
 
 void sound_stop(void) {
-  sound_pause();
   sound_init();
 }
 

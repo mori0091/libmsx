@@ -92,13 +92,18 @@ static void infinite_loop(void) {
     t++;
     await_vsync();
     if (t % 170 == 0) {
-      sound_effect(&se);
+      sound_effect(&se);        // play sound effects
     }
   }
 }
 
 void main(void) {
-  set_vsync_handler(sound_player); // Register the sound driver as VSYNC handler
+  // Initialize the sound driver.
+  // This must be called once at least, before the sound_player() is called.
+  sound_init();
+
+  // Register the sound driver as VSYNC handler.
+  set_vsync_handler(sound_player);
 
   sound_set_repeat(true);       // Turn on the auto-repeat of BGM.
   sound_set_bgm(&bgm);          // Register the BGM to be played.

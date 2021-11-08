@@ -69,6 +69,23 @@ void sound_set_mute(uint8_t mute) {
   if (mute & SOUND_CHANNEL_C) psg_set(10, 0);
 }
 
+static void sound_set_clip(struct sound_state* st, const struct sound_clip*s) {
+  st->next[0] = s->streams[0];
+  st->next[1] = s->streams[1];
+  st->next[2] = s->streams[2];
+  st->duration[0] = 0;
+  st->duration[1] = 0;
+  st->duration[2] = 0;
+  uint8_t flag = 0;
+  if (s->streams[0] && *s->streams[0] != 0xff) flag |= SOUND_CHANNEL_A;
+  if (s->streams[1] && *s->streams[1] != 0xff) flag |= SOUND_CHANNEL_B;
+  if (s->streams[2] && *s->streams[2] != 0xff) flag |= SOUND_CHANNEL_C;
+  __critical {
+    st->flag = flag;
+    st->clip = s;
+  }
+}
+
 void sound_effect(const struct sound_clip* s) {
   if (!s) return;
   if (sound.se.state.flag & SOUND_CHANNEL_ALL) {
@@ -82,30 +99,14 @@ void sound_effect(const struct sound_clip* s) {
       psg_reg_backup[i] = psg_get(i);
     }
   }
-  sound.se.state.next[0] = s->streams[0];
-  sound.se.state.next[1] = s->streams[1];
-  sound.se.state.next[2] = s->streams[2];
-  sound.se.state.duration[0] = 0;
-  sound.se.state.duration[1] = 0;
-  sound.se.state.duration[2] = 0;
-  __critical {
-    sound.se.state.flag = SOUND_CHANNEL_ALL;
-    sound.se.state.clip = s;
-  }
+  sound_set_clip(&sound.se.state, s);
 }
 
 void sound_set_bgm(const struct sound_clip* s) {
   sound_stop();
   sound_pause();
   if (s) {
-    sound.bg.state.next[0] = s->streams[0];
-    sound.bg.state.next[1] = s->streams[1];
-    sound.bg.state.next[2] = s->streams[2];
-    sound.bg.state.duration[0] = 0;
-    sound.bg.state.duration[1] = 0;
-    sound.bg.state.duration[2] = 0;
-    sound.bg.state.flag = SOUND_CHANNEL_ALL;
-    sound.bg.state.clip = s;
+    sound_set_clip(&sound.bg.state, s);
   }
 }
 

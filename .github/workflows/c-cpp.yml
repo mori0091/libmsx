@@ -13,9 +13,9 @@ jobs:
 
     steps:
     - name: apt-get update
-      run: apt-get update
+      run: sudo apt-get update
     - name: apt-get install
-      run: apt-get install build-essential sdcc
+      run: sudo apt-get install build-essential sdcc
     - uses: actions/checkout@v2
     - name: make
       run: make

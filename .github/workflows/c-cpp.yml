@@ -15,15 +15,7 @@ jobs:
     - name: apt-get update
       run: sudo apt-get update
     - name: apt-get install
-      run: sudo apt-get install build-essential sdcc doxygen
+      run: sudo apt-get install build-essential sdcc
     - uses: actions/checkout@v2
     - name: make
       run: make
-    - name: gh-pages / doxygen
-      run: 
-        git config --local user.email=mori-d@qc4.so-net.ne.jp &&
-        git config --local user.name=mori0091 &&
-        git clone https://github.com/mori0091/libmsx.git -b gh-pages docs &&
-        doxygen &&
-        (cd docs && git add * && git commit -a -m "updated docs" && git push) &&
-        rm -rf docs

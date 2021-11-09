@@ -15,15 +15,15 @@
 #include "../include/psg.h"
 
 const uint8_t psg_reg_initial_vector[14] = {
-  0x55, 0x00,                   // R#0-1 tone A
-  0x00, 0x00,                   // R#2-3 tone B
-  0x00, 0x00,                   // R#4-5 tone C
-  0x00,                         // R#6 noise frequency
+  0x55, 0x00,                   // R#0-1 channel A frequency division ratio
+  0x00, 0x00,                   // R#2-3 channel B frequency division ratio
+  0x00, 0x00,                   // R#4-5 channel C frequency division ratio
+  0x00,                         // R#6 noise frequency division ratio
   0xb8,                         // R#7 mixer
   0x00,                         // R#8 volume A
   0x00,                         // R#9 volume B
   0x00,                         // R#10 volume C
-  0x0b, 0x00,                   // R#11-12 envelope frequency
+  0x0b, 0x00,                   // R#11-12 envelope cycle
   0x00,                         // R#13 envelope pattern
 };
 

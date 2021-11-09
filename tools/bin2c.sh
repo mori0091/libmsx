@@ -2,7 +2,7 @@
 # -*- coding: utf-8-unix -*-
 
 bin2c() {
-    printf 'const char %s[] = {\n' ${1}
+    printf 'const char %s[] = {\n' "${1}"
     hexdump -v -e '"  " /1 "0x%02x, " "\n"'
     printf '};\n'
 }
@@ -85,10 +85,10 @@ done
     exit 1
 }
 
-size=$(stat -c '%s' ${infile})
+size="$(stat -c '%s' ${infile})"
 {
     echo "#include <stdlib.h>"
     echo
     echo "const size_t ${name}_size = ${size};"
-    bin2c ${name}
-} < ${infile} > ${outfile}
+    bin2c "${name}"
+} < "${infile}" > "${outfile}"

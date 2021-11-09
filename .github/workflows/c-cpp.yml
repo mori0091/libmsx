@@ -21,6 +21,8 @@ jobs:
       run: make
     - name: gh-pages / doxygen
       run: 
+        git config --local user.email=mori-d@qc4.so-net.ne.jp &&
+        git config --local user.name=mori0091 &&
         git clone https://github.com/mori0091/libmsx.git -b gh-pages docs &&
         doxygen &&
         (cd docs && git add * && git commit -a -m "updated docs" && git push) &&

@@ -105,7 +105,8 @@ inline bool vdp_cmd_is_running(void) {
 }
 
 inline void vdp_cmd_await(void) {
-  while (vdp_cmd_is_running());
+  while (vdp_cmd_is_running())
+    ;
 }
 
 void vdp_cmd_set_unrestricted(bool enable);

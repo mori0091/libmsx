@@ -63,6 +63,31 @@ static void sound_psg_set(bool muted, uint8_t reg, uint8_t value) {
   }
 }
 
+static void sound_backup_psg_registers(void) {
+  for (uint8_t i = 0; i <= 13; ++i) {
+    psg_reg_backup[i] = psg_get(i);
+  }
+}
+
+static void sound_restore_psg_registers(void) {
+  // tone, noise, and mixier
+  for (uint8_t i = 0; i <= 7; ++i) {
+    psg_set(i, psg_reg_backup[i]);
+  }
+  // volume and/or envelope on/off
+  for (uint8_t i = 8; i <= 10; ++i) {
+    if (psg_reg_backup[i] < 16) {
+      psg_set(i, psg_reg_backup[i]);
+    } else {
+      psg_set(i, 0);
+    }
+  }
+  // envelope pattern and cycle
+  for (uint8_t i = 11; i <= 13; ++i) {
+    psg_set(i, psg_reg_backup[i]);
+  }
+}
+
 void sound_set_mute(uint8_t mute) {
   mute &= 7;
   sound.bg.state.flag &= ~(7 << 3);
@@ -97,10 +122,7 @@ void sound_effect(const struct sound_clip* s) {
     }
   }
   if (!sound.se.state.clip) {
-    // backup some PSG registers
-    for (uint8_t i = 0; i <= 13; ++i) {
-      psg_reg_backup[i] = psg_get(i);
-    }
+    sound_backup_psg_registers();
   }
   sound_set_clip(&sound.se.state, s);
 }
@@ -232,23 +254,20 @@ void sound_player(void) {
       sound_start();
     }
   }
-  // ---- background music ----
-  if (!sound.bg.paused && sound.bg.state.clip) {
-    // By passing `flag` as 2nd argument, temporarily turn on the mute switch
-    // for the channel being used for sound effects.
-    sound_player__process(&sound.bg.state, ((sound.bg.state.flag) |
-                                            (sound.se.state.flag << 3)));
-  }
   // ---- sound effect ----
   if (sound.se.state.clip) {
     sound_player__process(&sound.se.state, sound.se.state.flag);
     uint8_t flag = sound.se.state.flag & SOUND_CHANNEL_ALL;
     if (!flag) {
       sound.se.state.clip = 0;
-      // restore some PSG registers
-      for (uint8_t i = 0; i <= 13; ++i) {
-        psg_set(i, psg_reg_backup[i]);
-      }
+      sound_restore_psg_registers();
     }
+  }
+  // ---- background music ----
+  if (!sound.bg.paused && sound.bg.state.clip) {
+    // By passing `flag` as 2nd argument, temporarily turn on the mute switch
+    // for the channel being used for sound effects.
+    sound_player__process(&sound.bg.state, ((sound.bg.state.flag) |
+                                            (sound.se.state.flag << 3)));
   }
 }

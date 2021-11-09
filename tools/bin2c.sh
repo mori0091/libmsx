@@ -1,5 +1,5 @@
+#!/bin/sh
 # -*- coding: utf-8-unix -*-
-#/bin/sh
 
 bin2c() {
     printf 'const char %s[] = {\n' ${1}

@@ -28,7 +28,7 @@ END
 }
 
 check_option_argument_required() {
-    if [ "x${2}" == "x" ] ; then
+    if [ "x${2}" = "x" ] ; then
         echo "an argument is required '$1'"
         exit 1
     fi

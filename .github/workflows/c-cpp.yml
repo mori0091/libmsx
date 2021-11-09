@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: apt update
-      run: apt update
-    - name: apt install
-      run: apt install build-essential sdcc -y
+    - name: apt-get update
+      run: apt-get update
+    - name: apt-get install
+      run: apt-get install build-essential sdcc
     - uses: actions/checkout@v2
     - name: make
       run: make

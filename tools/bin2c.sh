@@ -85,7 +85,7 @@ done
     exit 1
 }
 
-size="$(stat -c '%s' ${infile})"
+size="$(stat -c '%s' "${infile}")"
 {
     echo "#include <stdlib.h>"
     echo

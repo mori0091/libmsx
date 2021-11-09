@@ -63,7 +63,9 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       make
+        sudo apt-get update
+        sudo apt-get install build-essential sdcc
+        make
        
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1

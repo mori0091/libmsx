@@ -19,9 +19,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: make
-    - name: doxygen
+    - name: gh-pages / doxygen
       run: 
-        git clone https://github.com/mori0091/libmsx.git -b gh-pages docs
-        doxygen
-        (cd docs && git add * && git commit -a -m "updated docs" && git push)
+        git clone https://github.com/mori0091/libmsx.git -b gh-pages docs &&
+        doxygen &&
+        (cd docs && git add * && git commit -a -m "updated docs" && git push) &&
         rm -rf docs

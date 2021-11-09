@@ -101,10 +101,8 @@ void main(void) {
   init_vdp();
   clear_vram();
 
-  uint8_t joy;
   for (;;) {
     await_vsync();
-    joy = joypad_get_state(1);
-    print_joypad_state(joy);
+    print_joypad_state(joypad_get_state(1));
   }
 }

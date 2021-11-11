@@ -40,8 +40,8 @@
 init:
 init2:
         ld      sp,(HIMEM)
-        call    gsinit
         call    find_rom_page_2
+        call    gsinit
         call    _libmsx___init_intr
         call    _main
         jp      _exit

@@ -16,8 +16,9 @@
 
 #pragma once
 
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 /**
  * The bit-mask to specify PSG channel A.
@@ -40,14 +41,13 @@
 #define SOUND_CHANNEL_ALL (SOUND_CHANNEL_A | SOUND_CHANNEL_B | SOUND_CHANNEL_C)
 
 /**
- * The sound clip structure.
+ * The sound fragment structure.
  *
- * The sound clip structure holds a list of pointers to the sound data stream
+ * The sound fragment structure represents a section of music. It is used to
+ * define reusable sections of music, such as intros, choruses, outros, etc.
+ *
+ * The sound fragment structure holds a list of pointers to the sound data stream
  * for each channel.
- *
- * This structure also stores the priority order when the sound clip is used as
- * a sound effect. (If the sound clip is to be used as background music, its
- * priority has no meaning and will be ignored.)
  *
  * Each sound data stream shall be in the following format.
  *
@@ -108,11 +108,39 @@
  * ~~~
  *
  */
-struct sound_clip {
+struct sound_fragment {
   /** A list of pointers to the sound data stream for each channel. */
   uint8_t* streams[3];
-  /** Priority for using this sound clip as a sound effect. */
+};
+
+/**
+ * The sound clip structure.
+ *
+ * The sound clip structure is a list of sound fragments. It represents the
+ * entire logical data stream of music.
+ *
+ * This structure also stores the priority order when the sound clip is used as
+ * a sound effect. (If the sound clip is to be used as background music, its
+ * priority has no meaning and will be ignored.)
+ *
+ */
+struct sound_clip {
+  /**
+   * Priority for using this sound clip as a sound effect.
+   */
   uint16_t priority;
+  /**
+   * Number of sound fragments.
+   */
+  size_t num_fragments;
+  /**
+   * Pointer to an array of pointers to sound fragments.
+   *
+   * The pair of `fragments` and `num_fragments` represent a list of sound
+   * fragments, where the list represents the entire logical data stream of the
+   * music.
+   */
+  struct sound_fragment** fragments;
 };
 
 /**

@@ -32,6 +32,7 @@ static uint8_t VSYNC_FREQ;
 
 struct sound_state {
   const struct sound_clip* clip; // pointer to current music (set of streams)
+  uint8_t section;               // current fragment number
   const uint8_t* next[3];        // pointer to next chunk for each streams
   int16_t duration[3];           // remaining duration for each channel
   uint8_t flag;                  // playing/stopped flags
@@ -97,19 +98,34 @@ void sound_set_mute(uint8_t mute) {
   if (mute & SOUND_CHANNEL_C) psg_set(10, 0);
 }
 
-static void sound_set_clip(struct sound_state* st, const struct sound_clip*s) {
-  st->next[0] = s->streams[0];
-  st->next[1] = s->streams[1];
-  st->next[2] = s->streams[2];
+static void sound_set_fragment(struct sound_state* st, const struct sound_fragment* sf) {
+  uint8_t flag = st->flag & ~SOUND_CHANNEL_ALL;
+  st->next[0] = sf->streams[0];
+  st->next[1] = sf->streams[1];
+  st->next[2] = sf->streams[2];
   st->duration[0] = 0;
   st->duration[1] = 0;
   st->duration[2] = 0;
-  uint8_t flag = 0;
-  if (s->streams[0] && *s->streams[0] != 0xff) flag |= SOUND_CHANNEL_A;
-  if (s->streams[1] && *s->streams[1] != 0xff) flag |= SOUND_CHANNEL_B;
-  if (s->streams[2] && *s->streams[2] != 0xff) flag |= SOUND_CHANNEL_C;
+  if (sf->streams[0] && *sf->streams[0] != 0xff) flag |= SOUND_CHANNEL_A;
+  if (sf->streams[1] && *sf->streams[1] != 0xff) flag |= SOUND_CHANNEL_B;
+  if (sf->streams[2] && *sf->streams[2] != 0xff) flag |= SOUND_CHANNEL_C;
   __critical {
     st->flag = flag;
+  }
+}
+
+static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
+  if (!s || !s->fragments || 0 == s->num_fragments) {
+    __critical {
+      st->flag = 0;
+      st->clip = 0;
+    }
+    return;
+  }
+  st->section = 0;
+  const struct sound_fragment* sf = s->fragments[0];
+  sound_set_fragment(st, sf);
+  __critical {
     st->clip = s;
   }
 }
@@ -162,7 +178,7 @@ void sound_pause(void) {
   psg_set(10, 0);
 }
 
-static void sound_player__process(struct sound_state* st, uint8_t flag) {
+static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
   uint8_t mask = SOUND_CHANNEL_A;
   for (uint8_t ch = 0; ch < 3; ++ch, mask <<= 1) {
     // ---- Countdown time remaining ----
@@ -246,6 +262,28 @@ static void sound_player__process(struct sound_state* st, uint8_t flag) {
   }
 }
 
+static bool sound_player__process(struct sound_state* st, uint8_t flag) {
+  sound_player__process_chunk(st, flag);
+  if (st->flag & SOUND_CHANNEL_ALL) {
+    // current fragment is not finished.
+    return false;
+  }
+  if (++st->section < st->clip->num_fragments) {
+    // the clip has more fragments
+    const struct sound_fragment * sf = st->clip->fragments[st->section];
+    if (sf) {
+      // set the next fragment
+      sound_set_fragment(st, sf);
+    }
+  }
+  if (!(st->flag & SOUND_CHANNEL_ALL)) {
+    // end of the clip
+    return false;
+  }
+  // start to play the next fragment.
+  return true;
+}
+
 void sound_player(void) {
   // ---- auto-repeat ----
   if (!(sound.bg.state.flag & SOUND_CHANNEL_ALL)) {
@@ -256,7 +294,9 @@ void sound_player(void) {
   }
   // ---- sound effect ----
   if (sound.se.state.clip) {
-    sound_player__process(&sound.se.state, sound.se.state.flag);
+    while (sound_player__process(&sound.se.state, sound.se.state.flag)) {
+      // loop while sound_player__process() returns true
+    }
     uint8_t flag = sound.se.state.flag & SOUND_CHANNEL_ALL;
     if (!flag) {
       sound.se.state.clip = 0;
@@ -267,7 +307,9 @@ void sound_player(void) {
   if (!sound.bg.paused && sound.bg.state.clip) {
     // By passing `flag` as 2nd argument, temporarily turn on the mute switch
     // for the channel being used for sound effects.
-    sound_player__process(&sound.bg.state, ((sound.bg.state.flag) |
-                                            (sound.se.state.flag << 3)));
+    while (sound_player__process(&sound.bg.state, ((sound.bg.state.flag) |
+                                                   (sound.se.state.flag << 3)))) {
+      // loop while sound_player__process() returns true
+    }
   }
 }

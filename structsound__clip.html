@@ -94,90 +94,34 @@ $(document).ready(function(){initNavTree('structsound__clip.html',''); initResiz
  <a href="structsound__clip.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="sound_8h_source.html">sound.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for sound_clip:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structsound__clip__coll__graph.svg" width="147" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ab84fd2d5f4adf34fb013bd5d22f8ab20"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">streams</a> [3]</td></tr>
-<tr class="memdesc:ab84fd2d5f4adf34fb013bd5d22f8ab20"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of pointers to the sound data stream for each channel.  <a href="structsound__clip.html#ab84fd2d5f4adf34fb013bd5d22f8ab20">More...</a><br /></td></tr>
-<tr class="separator:ab84fd2d5f4adf34fb013bd5d22f8ab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa50d220b45ae59eedb443b956ef1929d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d">priority</a></td></tr>
 <tr class="memdesc:aa50d220b45ae59eedb443b956ef1929d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority for using this sound clip as a sound effect.  <a href="structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d">More...</a><br /></td></tr>
 <tr class="separator:aa50d220b45ae59eedb443b956ef1929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4e8ddf6c34374903c6f859c4e4421eb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__clip.html#ac4e8ddf6c34374903c6f859c4e4421eb">num_fragments</a></td></tr>
+<tr class="memdesc:ac4e8ddf6c34374903c6f859c4e4421eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of sound fragments.  <a href="structsound__clip.html#ac4e8ddf6c34374903c6f859c4e4421eb">More...</a><br /></td></tr>
+<tr class="separator:ac4e8ddf6c34374903c6f859c4e4421eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9c73220c1e3cf4037a6cf67dea650b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structsound__fragment.html">sound_fragment</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__clip.html#aae9c73220c1e3cf4037a6cf67dea650b">fragments</a></td></tr>
+<tr class="memdesc:aae9c73220c1e3cf4037a6cf67dea650b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to an array of pointers to sound fragments.  <a href="structsound__clip.html#aae9c73220c1e3cf4037a6cf67dea650b">More...</a><br /></td></tr>
+<tr class="separator:aae9c73220c1e3cf4037a6cf67dea650b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The sound clip structure. </p>
-<p>The sound clip structure holds a list of pointers to the sound data stream for each channel.</p>
-<p>This structure also stores the priority order when the sound clip is used as a sound effect. (If the sound clip is to be used as background music, its priority has no meaning and will be ignored.)</p>
-<p>Each sound data stream shall be in the following format.</p>
-<dl class="section note"><dt>Note</dt><dd>The following is written in BNF-like notation.<ul>
-<li>The term <code>x*</code> means zero or more <code>x</code>.</li>
-<li>The term <code>x+</code> means one or more <code>x</code>.</li>
-<li>If a term ends with <code>b</code> (e.g. <code>1111b</code>), it means a binary number.</li>
-<li>A <code>-</code> in a binary number means an unused bit.</li>
-<li>If a term ends with <code>:y</code> (e.g. <code>foo:5</code>), it means that the term is a binary number with y bits.</li>
-</ul>
-</dd></dl>
-<div class="fragment"><div class="line">stream = chunk* eom</div>
-<div class="line">chunk  = header body</div>
-<div class="line">body   = command+</div>
-<div class="line">eom    = 1111b 1111b</div>
-<div class="line"> </div>
-<div class="line">header  = len:3 duration_hi:5 duration_lo:8</div>
-<div class="line">command = tone</div>
-<div class="line">        | rest</div>
-<div class="line">        | volume</div>
-<div class="line">        | envelope_pattern</div>
-<div class="line">        | envelope_cycle</div>
-<div class="line">        | envelope_pattern_and_cycle</div>
-<div class="line">        | noise</div>
-<div class="line">        | mixer</div>
-<div class="line"> </div>
-<div class="line">tone   = 0000b fdr_hi:4 fdr_lo:8</div>
-<div class="line">rest   = 0001b ----b</div>
-<div class="line">noise  = 001b fdr:5</div>
-<div class="line">mixer  = 0111b ----b --b NC:1 NB:1 NA:1 TC:1 TB:1 TA:1</div>
-<div class="line">volume = 1000b vol:4</div>
-<div class="line">envelope_pattern</div>
-<div class="line">       = 1001b <a class="code" href="structsprite.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed">pat</a>:4</div>
-<div class="line">envelope_cycle</div>
-<div class="line">       = 0100b 0000b fdr_hi:8 fdr_lo:8</div>
-<div class="line">envelope_pattern_and_cycle</div>
-<div class="line">       = 1101b <a class="code" href="structsprite.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed">pat</a>:4 fdr_hi:8 fdr_lo:8</div>
-</div><!-- fragment --><p>The structure of <code>chunk</code>: </p><div class="fragment"><div class="line">+-----------------------+  -----</div>
-<div class="line">| len:3 | duration_hi:5 |    |</div>
-<div class="line">|-----------------------|  header (2 bytes)</div>
-<div class="line">|     duration_lo:8     |    |</div>
-<div class="line">|-----------------------|  -----</div>
-<div class="line">|       body[0]:8       |    |</div>
-<div class="line">|-----------------------|    |</div>
-<div class="line">|       body[1]:8       |    |</div>
-<div class="line">|-----------------------|  body (`len` bytes)</div>
-<div class="line">|         ...           |    |</div>
-<div class="line">|-----------------------|    |</div>
-<div class="line">|     body[len-1]:8     |    |</div>
-<div class="line">+-----------------------+  -----</div>
-<div class="line">The body is a sequence of one or more commands.</div>
-</div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00111">111</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p>The sound clip structure is a list of sound fragments. It represents the entire logical data stream of music.</p>
+<p>This structure also stores the priority order when the sound clip is used as a sound effect. (If the sound clip is to be used as background music, its priority has no meaning and will be ignored.) </p>
+
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00127">127</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="ab84fd2d5f4adf34fb013bd5d22f8ab20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab84fd2d5f4adf34fb013bd5d22f8ab20">&#9670;&nbsp;</a></span>streams</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t* sound_clip::streams[3]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A list of pointers to the sound data stream for each channel. </p>
-
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00113">113</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
-
-</div>
-</div>
 <a id="aa50d220b45ae59eedb443b956ef1929d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa50d220b45ae59eedb443b956ef1929d">&#9670;&nbsp;</a></span>priority</h2>
 
@@ -192,7 +136,44 @@ Data Fields</h2></td></tr>
 
 <p>Priority for using this sound clip as a sound effect. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00115">115</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00131">131</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+
+</div>
+</div>
+<a id="ac4e8ddf6c34374903c6f859c4e4421eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e8ddf6c34374903c6f859c4e4421eb">&#9670;&nbsp;</a></span>num_fragments</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t sound_clip::num_fragments</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of sound fragments. </p>
+
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00135">135</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+
+</div>
+</div>
+<a id="aae9c73220c1e3cf4037a6cf67dea650b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9c73220c1e3cf4037a6cf67dea650b">&#9670;&nbsp;</a></span>fragments</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structsound__fragment.html">sound_fragment</a>** sound_clip::fragments</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to an array of pointers to sound fragments. </p>
+<p>The pair of <code>fragments</code> and <code>num_fragments</code> represent a list of sound fragments, where the list represents the entire logical data stream of the music. </p>
+
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00143">143</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -201,7 +182,6 @@ Data Fields</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructsprite_html_a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed"><div class="ttname"><a href="structsprite.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed">sprite::pat</a></div><div class="ttdeci">uint8_t pat</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00037">sprite.h:37</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

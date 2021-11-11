@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('vdp__write__palette_8c_source.html',''
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdp__internal_8h.html">vdp_internal.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="vdp__write__palette_8c.html#aae09e94d48bab51c44188a246c41e96a">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="vdp__write__palette_8c.html#aae09e94d48bab51c44188a246c41e96a">vdp_write_palette</a>(<span class="keyword">const</span> <a class="code" href="vdp_8h.html#a33595fdc0e04957d3dd734d82e10d55d">palette_t</a> palettes[16]) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  uint8_t* p = (uint8_t*)palettes;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">const</span> uint8_t* p = (<span class="keyword">const</span> uint8_t*)palettes;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  __critical {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(16, 0);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (uint8_t i = 16; i--; ) {</div>

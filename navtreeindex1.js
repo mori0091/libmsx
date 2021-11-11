@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"vdp__cmd__set__unrestricted_8c.html#aff9c85cefd095ae4e78e73cb6f848663":[2,0,1,16,0],
+"vdp__cmd__set__unrestricted_8c_source.html":[2,0,1,16],
+"vdp__get__sprite__mode_8c.html":[2,0,1,17],
 "vdp__get__sprite__mode_8c.html#a7d644558c2aba5f1480920df41fb2b3b":[2,0,1,17,0],
 "vdp__get__sprite__mode_8c_source.html":[2,0,1,17],
 "vdp__get__status_8c.html":[2,0,1,18],

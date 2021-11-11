@@ -1,5 +1,6 @@
 var sound_8h =
 [
+    [ "sound_fragment", "structsound__fragment.html", "structsound__fragment" ],
     [ "sound_clip", "structsound__clip.html", "structsound__clip" ],
     [ "SOUND_CHANNEL_A", "sound_8h.html#a466185ed37b39cb48ae0c4d966462cee", null ],
     [ "SOUND_CHANNEL_B", "sound_8h.html#af0aea604a4e0e8cc864f98be452d3752", null ],

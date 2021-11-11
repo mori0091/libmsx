@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_375',['x',['../structvec2i.html#ac10174aae1d67addfa1b70df98c5faf3',1,'vec2i::x()'],['../structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c',1,'sprite::x()']]]
+  ['unused_5fin_5fsprite_5fmode_5f2_380',['unused_in_sprite_mode_2',['../structsprite.html#a4de588d4eca889c174cec87ac2c4ea67',1,'sprite']]]
 ];

@@ -138,7 +138,14 @@ void sound_effect(const struct sound_clip* s) {
     }
   }
   if (!sound.se.state.clip) {
+    // BGM may be playing, so takes snapshot of register values.
     sound_backup_psg_registers();
+  }
+  else {
+    // When switching sound effects, using channels may differ between previous
+    // and next sound effects, so temporally restores register values for BGM
+    // before playing the next sound effects.
+    sound_restore_psg_registers();
   }
   sound_set_clip(&sound.se.state, s);
 }

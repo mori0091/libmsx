@@ -210,7 +210,6 @@ static void sound_player__process_chunk(struct sound_state* st, const uint8_t fl
     }
     // ---- Reads head (chunk size and next duration) ----
     uint8_t len = (head1 >> 5) & 7;
-    if (!len) len = 8;          // 'length = 0' means 8 bytes chunk
     const uint16_t ticks = ((head1 & 0x1f) << 8) | (*st->next[ch]++);
     st->duration[ch] += COUNT_PER_TICK_60HZ * ticks;
     // ---- Parse and process the chunk ----

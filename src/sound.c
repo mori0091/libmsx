@@ -33,6 +33,8 @@ static uint8_t VSYNC_FREQ;
 struct sound_state {
   const struct sound_clip* clip; // pointer to current music (set of streams)
   uint8_t section;               // current fragment number
+  uint8_t envelope_pattern;      // current envelope pattern
+  uint8_t volume[3];             // current volume for each channel
   const uint8_t* next[3];        // pointer to next chunk for each streams
   int16_t duration[3];           // remaining duration for each channel
   uint8_t flag;                  // playing/stopped flags
@@ -77,10 +79,10 @@ static void sound_restore_psg_registers(void) {
   }
   // volume and/or envelope on/off
   for (uint8_t i = 8; i <= 10; ++i) {
-    if (psg_reg_backup[i] < 16) {
-      psg_set(i, psg_reg_backup[i]);
-    } else {
+    if (psg_reg_backup[i] & 16) {
       psg_set(i, 0);
+    } else {
+      psg_set(i, psg_reg_backup[i]);
     }
   }
   // envelope pattern and cycle
@@ -123,6 +125,9 @@ static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
     return;
   }
   st->section = 0;
+  st->volume[0] = psg_reg_initial_vector[8];
+  st->volume[1] = psg_reg_initial_vector[9];
+  st->volume[2] = psg_reg_initial_vector[10];
   const struct sound_fragment* sf = s->fragments[0];
   sound_set_fragment(st, sf);
   __critical {
@@ -220,6 +225,18 @@ static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
         // 0000b fdr_hi:4 fdr_lo:8
         sound_psg_set(muted, 1+2*ch, x_lo);            // fdr_hi:4
         sound_psg_set(muted, 0+2*ch, *st->next[ch]++); // fdr_lo:8
+        // "note on"
+        {
+          if (16 & st->volume[ch]) {
+            // (re)set hardware envelope
+            sound_psg_set(muted, 13, st->envelope_pattern);
+            sound_psg_set(muted, 8+ch, st->volume[ch]);
+          }
+          else {
+            // (re)set software envelope
+            // \TODO implement software envelope functionality
+          }
+        }
         len--;
         break;
       case 0x10:
@@ -241,6 +258,7 @@ static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
         // volume (4bits)
         // 1000b vol:4
         sound_psg_set(muted, 8+ch, x_lo);
+        st->volume[ch] = x_lo;
         break;
       case 0x40:
       case 0x90:
@@ -248,8 +266,11 @@ static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
         if (x & 0x90) {
           // envelope pattern (4bits)
           // 1-01b pat:4
-          sound_psg_set(muted, 13, x_lo);
-          sound_psg_set(muted, 8+ch, 16); // turn on hardware envelope
+          // \note
+          // The envelope pattern and switch states are saved (not applied to
+          // the registers here) and applied at each "note on" timing.
+          st->envelope_pattern = x_lo; // envelope pattern
+          st->volume[ch] |= 16;        // turn on hardware envelope
         }
         if (x & 0x40) {
           // envelope cycle (16bits)

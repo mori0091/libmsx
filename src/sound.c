@@ -190,7 +190,7 @@ void sound_pause(void) {
   psg_set(10, 0);
 }
 
-static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
+static void sound_player__process_chunk(struct sound_state* st, const uint8_t flag) {
   uint8_t mask = SOUND_CHANNEL_A;
   for (uint8_t ch = 0; ch < 3; ++ch, mask <<= 1) {
     // ---- Countdown time remaining ----
@@ -202,7 +202,7 @@ static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
     }
     // ---- Check to see if the stream has finished. ----
     if (!(st->flag & mask)) continue; // no more chunk
-    uint8_t head1 = *st->next[ch]++;
+    const uint8_t head1 = *st->next[ch]++;
     if (head1 == 255) {
       // end of music track
       st->flag &= ~mask;
@@ -214,11 +214,11 @@ static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
     const uint16_t ticks = ((head1 & 0x1f) << 8) | (*st->next[ch]++);
     st->duration[ch] += COUNT_PER_TICK_60HZ * ticks;
     // ---- Parse and process the chunk ----
-    bool muted = flag & (mask << 3); // \note Using `flag` instead of `st->flag`
+    const bool muted = flag & (mask << 3); // \note Using `flag` instead of `st->flag`
     while (len) {
       len--;
-      uint8_t x = *st->next[ch]++;
-      uint8_t x_lo = x & 0x0f;
+      const uint8_t x = *st->next[ch]++;
+      const uint8_t x_lo = x & 0x0f;
       switch (x & 0xf0) {
       case 0x00:
         // tone (12bits)
@@ -290,54 +290,53 @@ static void sound_player__process_chunk(struct sound_state* st, uint8_t flag) {
   }
 }
 
-static bool sound_player__process(struct sound_state* st, uint8_t flag) {
-  sound_player__process_chunk(st, flag);
-  if (st->flag & SOUND_CHANNEL_ALL) {
-    // current fragment is not finished.
-    return false;
-  }
-  if (++st->section < st->clip->num_fragments) {
+static bool sound_player__process(struct sound_state* st, uint8_t mute) {
+  for (;;) {
+    sound_player__process_chunk(st, st->flag | mute);
+    if (st->flag & SOUND_CHANNEL_ALL) {
+      // current fragment is not finished.
+      return false;
+    }
+    if (st->section + 1 >= st->clip->num_fragments) {
+      // end of the clip
+      return true;
+    }
     // the clip has more fragments
+    st->section++;
     const struct sound_fragment * sf = st->clip->fragments[st->section];
     if (sf) {
       // set the next fragment
       sound_set_fragment(st, sf);
     }
+    if (!(st->flag & SOUND_CHANNEL_ALL)) {
+      // end of the clip (invalid fragment)
+      return true;
+    }
+    // start to play the next fragment.
   }
-  if (!(st->flag & SOUND_CHANNEL_ALL)) {
-    // end of the clip
-    return false;
-  }
-  // start to play the next fragment.
-  return true;
 }
 
 void sound_player(void) {
-  // ---- auto-repeat ----
-  if (!(sound.bg.state.flag & SOUND_CHANNEL_ALL)) {
-    if (sound.bg.repeat) {
-      sound_set_bgm(sound.bg.state.clip);
-      sound_start();
-    }
-  }
   // ---- sound effect ----
   if (sound.se.state.clip) {
-    while (sound_player__process(&sound.se.state, sound.se.state.flag)) {
-      // loop while sound_player__process() returns true
-    }
-    uint8_t flag = sound.se.state.flag & SOUND_CHANNEL_ALL;
-    if (!flag) {
+    bool finished = sound_player__process(&sound.se.state, 0);
+    if (finished) {
       sound.se.state.clip = 0;
       sound_restore_psg_registers();
     }
   }
   // ---- background music ----
   if (!sound.bg.paused && sound.bg.state.clip) {
-    // By passing `flag` as 2nd argument, temporarily turn on the mute switch
+    // By passing `mute` as 2nd argument, temporarily turn on the mute switch
     // for the channel being used for sound effects.
-    while (sound_player__process(&sound.bg.state, ((sound.bg.state.flag) |
-                                                   (sound.se.state.flag << 3)))) {
-      // loop while sound_player__process() returns true
+    bool finished = sound_player__process(&sound.bg.state,
+                                          (sound.se.state.flag << 3));
+    // ---- auto-repeat ----
+    if (finished) {
+      if (sound.bg.repeat) {
+        sound_set_bgm(sound.bg.state.clip);
+        sound_start();
+      }
     }
   }
 }

@@ -9,6 +9,21 @@ The library is intended for use with the C cross compiler
 
 > MSX is a registered trademark of MSX Licensing Corporation.
 
+## LICENSE
+
+Copyright (c) 2021 Daishi Mori (mori0091)
+
+This software is released under the MIT License.  
+See <https://github.com/mori0091/libmsx/blob/main/LICENSE>
+
+GitHub libmsx project  
+<https://github.com/mori0091/libmsx>
+
+## API reference
+
+The API reference of the `libmsx` library is hosted on GitHub Pages.  
+See <https://mori0091.github.io/libmsx/index.html>
+
 ## Supported functionality
 
 The below functionality is supported.
@@ -79,7 +94,7 @@ The below functionality is NOT supported yet.
   - Ubuntu 20.04
   - Ubuntu 21.xx (not tested)
 
-Ofcourse, Ubuntu on **WSL** is okey. :smile:  
+Ofcourse, Ubuntu on **WSL** is okey. 😄  
 (**WSL**: Windows Subsystem for Linux)
 
 ## Build tools
@@ -93,7 +108,7 @@ Ofcourse, Ubuntu on **WSL** is okey. :smile:
   - `find`, `make`,
   - and so on.
 
-## Install instructions of Build tools
+# Install instructions of Build tools
 
 **Ubuntu**
 
@@ -115,6 +130,56 @@ To build sample projects in `sample/`, do as follows:
 
 ``` shell
 make sample
+```
+
+And for cleaning up:
+
+``` shell
+make clean
+```
+
+# Build instructions of user applications
+
+> There are several sample projects, please refer to the `sample/`
+> folder of the `libmsx` project.
+
+## Preparation
+
+**Step 1.** Make your project's Git repository.
+
+``` shell
+git init my_proj
+```
+
+**Step 2.** Download `libmsx` and place it somewhere.
+
+``` shell
+git clone https://github.com/mori0091/libmsx.git libmsx
+```
+
+**Step 3.** Copy `libmsx/mk/Makefile` to top of your repository, and
+customize it.
+
+See <https://github.com/mori0091/libmsx/blob/main/mk/Makefile>
+
+``` shell
+cp libmsx/mk/Makfile my_proj/
+```
+
+**Step 4.** Create the folder `my_proj/src/` and place your C source
+files under it or in its subfolders.
+
+``` shell
+mkdir my_proj/src
+```
+
+## Build your application
+
+To build your application, do as follows.  
+Then the ROM image will be made into `my_proj/bin` folder.
+
+``` shell
+make
 ```
 
 And for cleaning up:

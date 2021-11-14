@@ -1,12 +1,12 @@
 <map id="src/vmem_memset.c" name="src/vmem_memset.c">
-<area shape="rect" id="node1" title=" " alt="" coords="283,5,442,32"/>
-<area shape="rect" id="node2" href="$vdp_8h.html" title=" " alt="" coords="231,80,353,107"/>
-<area shape="rect" id="node10" href="$vdp__internal_8h.html" title=" " alt="" coords="377,80,492,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,80,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="104,155,187,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="309,229,379,256"/>
-<area shape="rect" id="node6" href="$io_8h.html" title=" " alt="" coords="518,229,565,256"/>
-<area shape="rect" id="node7" href="$vmem_8h.html" title=" " alt="" coords="466,155,542,181"/>
-<area shape="rect" id="node8" href="$bios_8h.html" title=" " alt="" coords="261,155,323,181"/>
-<area shape="rect" id="node9" href="$workarea_8h.html" title=" " alt="" coords="347,155,442,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="267,5,411,32"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="221,80,329,107"/>
+<area shape="rect" id="node10" href="$vdp__internal_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="353,80,456,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,73,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="98,155,173,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="291,229,355,256"/>
+<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="486,229,529,256"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="437,155,505,181"/>
+<area shape="rect" id="node8" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="247,155,303,181"/>
+<area shape="rect" id="node9" href="$workarea_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="327,155,413,181"/>
 </map>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['set_5finterrupt_5fhandler_302',['set_interrupt_handler',['../interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40',1,'set_interrupt_handler(void(*handler)(void)):&#160;interrupt.c'],['../interrupt_8c.html#a4b7e0dcff7ea0530ab92899dc8671b40',1,'set_interrupt_handler(void(*handler)(void)):&#160;interrupt.c']]],
+  ['set_5finterrupt_5fhandler_302',['set_interrupt_handler',['../interrupt_8c.html#a4b7e0dcff7ea0530ab92899dc8671b40',1,'set_interrupt_handler(void(*handler)(void)):&#160;interrupt.c'],['../interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40',1,'set_interrupt_handler(void(*handler)(void)):&#160;interrupt.c']]],
   ['set_5fvsync_5fhandler_303',['set_vsync_handler',['../interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c',1,'set_vsync_handler(void(*handler)(void)):&#160;interrupt.c'],['../interrupt_8c.html#a92722299d30fbe4f1c49c07f30167a6c',1,'set_vsync_handler(void(*handler)(void)):&#160;interrupt.c']]],
   ['sound_5feffect_304',['sound_effect',['../sound_8h.html#a9a93615db20eb70cf9df084778d9a9ee',1,'sound_effect(const struct sound_clip *s):&#160;sound.c'],['../sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee',1,'sound_effect(const struct sound_clip *s):&#160;sound.c']]],
   ['sound_5finit_305',['sound_init',['../sound_8h.html#a90e396bab2471f72285f290ce7a5cab1',1,'sound_init(void):&#160;sound.c'],['../sound_8c.html#a90e396bab2471f72285f290ce7a5cab1',1,'sound_init(void):&#160;sound.c']]],

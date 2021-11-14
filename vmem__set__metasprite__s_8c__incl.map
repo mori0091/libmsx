@@ -1,14 +1,14 @@
 <map id="src/vmem_set_metasprite_s.c" name="src/vmem_set_metasprite_s.c">
-<area shape="rect" id="node1" title=" " alt="" coords="107,5,324,32"/>
-<area shape="rect" id="node2" href="$sprite_8h.html" title=" " alt="" coords="139,155,273,181"/>
-<area shape="rect" id="node6" href="$sprite__color_8h.html" title=" " alt="" coords="5,80,177,107"/>
-<area shape="rect" id="node7" href="$metasprite_8h.html" title=" " alt="" coords="253,80,421,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="319,304,389,331"/>
-<area shape="rect" id="node4" href="$vmem_8h.html" title=" " alt="" coords="316,229,392,256"/>
-<area shape="rect" id="node5" href="$io_8h.html" title=" " alt="" coords="591,304,637,331"/>
-<area shape="rect" id="node8" href="$vdp_8h.html" title=" " alt="" coords="585,155,643,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="830,229,905,256"/>
-<area shape="rect" id="node10" title=" " alt="" coords="417,229,499,256"/>
-<area shape="rect" id="node11" href="$bios_8h.html" title=" " alt="" coords="694,229,755,256"/>
-<area shape="rect" id="node12" href="$workarea_8h.html" title=" " alt="" coords="524,229,619,256"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="99,5,296,32"/>
+<area shape="rect" id="node2" href="$sprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="130,155,249,181"/>
+<area shape="rect" id="node6" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node7" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="235,80,383,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="299,304,363,331"/>
+<area shape="rect" id="node4" href="$vmem_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="297,229,365,256"/>
+<area shape="rect" id="node5" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="553,304,596,331"/>
+<area shape="rect" id="node8" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="544,155,597,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="779,229,847,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="389,229,464,256"/>
+<area shape="rect" id="node11" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="648,229,704,256"/>
+<area shape="rect" id="node12" href="$workarea_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="488,229,573,256"/>
 </map>

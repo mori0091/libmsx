@@ -1,6 +1,6 @@
 <map id="src/psg_set.c" name="src/psg_set.c">
-<area shape="rect" id="node1" title=" " alt="" coords="76,5,183,32"/>
-<area shape="rect" id="node2" href="$io_8h.html" title=" " alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node3" href="$psg_8h.html" title=" " alt="" coords="139,80,259,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="163,155,234,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="67,5,167,32"/>
+<area shape="rect" id="node2" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node3" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="127,80,235,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="149,155,213,181"/>
 </map>

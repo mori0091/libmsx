@@ -1,8 +1,8 @@
 <map id="include/psg.h" name="include/psg.h">
-<area shape="rect" id="node1" title=" " alt="" coords="273,5,381,32"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title=" " alt="" coords="5,80,119,107"/>
-<area shape="rect" id="node3" href="$psg__get_8c.html" title=" " alt="" coords="143,80,250,107"/>
-<area shape="rect" id="node4" href="$psg__init_8c.html" title=" " alt="" coords="274,80,381,107"/>
-<area shape="rect" id="node5" href="$psg__set_8c.html" title=" " alt="" coords="405,80,511,107"/>
-<area shape="rect" id="node6" href="$sound_8c.html" title=" " alt="" coords="536,80,631,107"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="256,5,355,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node3" href="$psg__get_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="131,80,231,107"/>
+<area shape="rect" id="node4" href="$psg__init_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="256,80,355,107"/>
+<area shape="rect" id="node5" href="$psg__set_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="379,80,479,107"/>
+<area shape="rect" id="node6" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="503,80,593,107"/>
 </map>

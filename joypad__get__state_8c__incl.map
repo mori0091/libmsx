@@ -1,7 +1,7 @@
 <map id="src/joypad_get_state.c" name="src/joypad_get_state.c">
-<area shape="rect" id="node1" title=" " alt="" coords="48,5,216,32"/>
-<area shape="rect" id="node2" href="$io_8h.html" title=" " alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node3" href="$input_8h.html" title=" " alt="" coords="139,80,269,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="117,155,192,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="217,155,287,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="43,5,195,32"/>
+<area shape="rect" id="node2" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node3" href="$input_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="127,80,242,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="105,155,173,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="198,155,262,181"/>
 </map>

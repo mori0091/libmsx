@@ -1,5 +1,9 @@
 # libmsx ; C library for MSX
 
+
+[![C/C++ CI](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml)
+[![Codacy Security Scan](https://github.com/mori0091/libmsx/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/codacy-analysis.yml)
+
 The `libmsx` library exposes MSX, MSX2, MSX2+, and MSXturboR hardware
 functionality to the C programmer.
 

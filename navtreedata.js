@@ -24,15 +24,21 @@ var NAVTREE =
 [
   [ "libmsx", "index.html", [
     [ "libmsx ; C library for MSX", "index.html", [
-      [ "Supported functionality", "index.html#autotoc_md1", null ],
-      [ "Unsupported functionality", "index.html#autotoc_md2", null ],
-      [ "Pre-requisites", "index.html#autotoc_md3", [
-        [ "Target Machine", "index.html#autotoc_md4", null ],
-        [ "Host Platform", "index.html#autotoc_md5", null ],
-        [ "Build tools", "index.html#autotoc_md6", null ],
-        [ "Install instructions of Build tools", "index.html#autotoc_md7", null ]
+      [ "LICENSE", "index.html#autotoc_md1", null ],
+      [ "API reference", "index.html#autotoc_md2", null ],
+      [ "Supported functionality", "index.html#autotoc_md3", null ],
+      [ "Unsupported functionality", "index.html#autotoc_md4", null ],
+      [ "Pre-requisites", "index.html#autotoc_md5", [
+        [ "Target Machine", "index.html#autotoc_md6", null ],
+        [ "Host Platform", "index.html#autotoc_md7", null ],
+        [ "Build tools", "index.html#autotoc_md8", null ]
       ] ],
-      [ "Build instructions of the library and sample projects", "index.html#autotoc_md8", null ]
+      [ "Install instructions of Build tools", "index.html#autotoc_md9", null ],
+      [ "Build instructions of the library and sample projects", "index.html#autotoc_md10", null ],
+      [ "Build instructions of user applications", "index.html#autotoc_md11", [
+        [ "Preparation", "index.html#autotoc_md12", null ],
+        [ "Build your application", "index.html#autotoc_md13", null ]
+      ] ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -60,7 +66,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"vdp__cmd__set__unrestricted_8c.html#aff9c85cefd095ae4e78e73cb6f848663"
+"vdp__cmd__execute__LMMM_8c_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

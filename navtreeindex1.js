@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"vdp__cmd__execute__LMMM_8c_source.html":[2,0,1,14],
+"vdp__cmd__execute__LMMV_8c.html":[2,0,1,15],
+"vdp__cmd__execute__LMMV_8c.html#a497b05654be133a79d2eb5a14a15e5f4":[2,0,1,15,0],
+"vdp__cmd__execute__LMMV_8c_source.html":[2,0,1,15],
+"vdp__cmd__set__unrestricted_8c.html":[2,0,1,16],
 "vdp__cmd__set__unrestricted_8c.html#aff9c85cefd095ae4e78e73cb6f848663":[2,0,1,16,0],
 "vdp__cmd__set__unrestricted_8c_source.html":[2,0,1,16],
 "vdp__get__sprite__mode_8c.html":[2,0,1,17],

@@ -93,6 +93,17 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p>MSX is a registered trademark of MSX Licensing Corporation. </p>
 </blockquote>
 <h1><a class="anchor" id="autotoc_md1"></a>
+LICENSE</h1>
+<p>Copyright (c) 2021 Daishi Mori (mori0091)</p>
+<p>This software is released under the MIT License. <br  />
+ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
+<p>GitHub libmsx project <br  />
+ <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a></p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+API reference</h1>
+<p>The API reference of the <code>libmsx</code> library is hosted on GitHub Pages. <br  />
+ See <a href="https://mori0091.github.io/libmsx/index.html">https://mori0091.github.io/libmsx/index.html</a></p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Supported functionality</h1>
 <p>The below functionality is supported.</p>
 <ul>
@@ -134,7 +145,7 @@ Supported functionality</h1>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Unsupported functionality</h1>
 <p>The below functionality is NOT supported yet.</p>
 <ul>
@@ -148,9 +159,9 @@ Unsupported functionality</h1>
 <li><strike>Sound effect driver</strike> <code>supported</code></li>
 <li>… and so on</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Pre-requisites</h1>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Target Machine</h2>
 <ul>
 <li>MSX</li>
@@ -158,15 +169,15 @@ Target Machine</h2>
 <li>MSX2+</li>
 <li>MSXturboR</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Host Platform</h2>
 <ul>
 <li>Ubuntu 20.04</li>
 <li>Ubuntu 21.xx (not tested)</li>
 </ul>
-<p>Ofcourse, Ubuntu on <b>WSL</b> is okey. :smile: <br  />
+<p>Ofcourse, Ubuntu on <b>WSL</b> is okey. 😄 <br  />
  (<b>WSL</b>: Windows Subsystem for Linux)</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Build tools</h2>
 <ul>
 <li>SDCC <br  />
@@ -178,18 +189,41 @@ Build tools</h2>
 <li><code>find</code>, <code>make</code>,</li>
 <li>and so on.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Install instructions of Build tools</h2>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Install instructions of Build tools</h1>
 <p><b>Ubuntu</b></p>
 <div class="fragment"><div class="line">sudo apt update</div>
 <div class="line">sudo apt install build-essential</div>
 <div class="line">sudo apt install sdcc</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
 Build instructions of the library and sample projects</h1>
 <p>The below makes the library <code>libmsx.lib</code> into <code>lib</code> directory.</p>
 <div class="fragment"><div class="line">make</div>
 </div><!-- fragment --><p>To build sample projects in <code>sample/</code>, do as follows:</p>
 <div class="fragment"><div class="line">make sample</div>
+</div><!-- fragment --><p>And for cleaning up:</p>
+<div class="fragment"><div class="line">make clean</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+Build instructions of user applications</h1>
+<blockquote class="doxtable">
+<p>There are several sample projects, please refer to the <code>sample/</code> folder of the <code>libmsx</code> project. </p>
+</blockquote>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Preparation</h2>
+<p><b>Step 1.</b> Make your project's Git repository.</p>
+<div class="fragment"><div class="line">git init my_proj</div>
+</div><!-- fragment --><p><b>Step 2.</b> Download <code>libmsx</code> and place it somewhere.</p>
+<div class="fragment"><div class="line">git clone https://github.com/mori0091/libmsx.git libmsx</div>
+</div><!-- fragment --><p><b>Step 3.</b> Copy <code>libmsx/mk/Makefile</code> to top of your repository, and customize it.</p>
+<p>See <a href="https://github.com/mori0091/libmsx/blob/main/mk/Makefile">https://github.com/mori0091/libmsx/blob/main/mk/Makefile</a></p>
+<div class="fragment"><div class="line">cp libmsx/mk/Makfile my_proj/</div>
+</div><!-- fragment --><p><b>Step 4.</b> Create the folder <code>my_proj/src/</code> and place your C source files under it or in its subfolders.</p>
+<div class="fragment"><div class="line">mkdir my_proj/src</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+Build your application</h2>
+<p>To build your application, do as follows. <br  />
+ Then the ROM image will be made into <code>my_proj/bin</code> folder.</p>
+<div class="fragment"><div class="line">make</div>
 </div><!-- fragment --><p>And for cleaning up:</p>
 <div class="fragment"><div class="line">make clean</div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->

@@ -1,6 +1,6 @@
 # libmsx ; C library for MSX
 
-
+[![MIT License](https://img.shields.io/github/license/mori0091/libmsx.svg)](https://github.com/mori0091/libmsx/blob/main/LICENSE)
 [![C/C++ CI](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml)
 [![Codacy Security Scan](https://github.com/mori0091/libmsx/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/codacy-analysis.yml)
 

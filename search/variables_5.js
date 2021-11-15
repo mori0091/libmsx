@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['pat_377',['pat',['../structsprite.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed',1,'sprite']]],
-  ['pats_378',['pats',['../structmetasprite.html#af6153ac51d17e154142232f0a7b63d2c',1,'metasprite']]],
-  ['paused_379',['paused',['../sound_8c.html#a1656129c4a4fd8809254194f08f0ac70',1,'sound.c']]],
-  ['priority_380',['priority',['../structsound__clip.html#aa50d220b45ae59eedb443b956ef1929d',1,'sound_clip']]],
-  ['psg_5freg_5finitial_5fvector_381',['psg_reg_initial_vector',['../psg__init_8c.html#a5fe004c472dfaef154f795a07d39ce94',1,'psg_reg_initial_vector():&#160;psg_init.c'],['../sound_8c.html#a5fe004c472dfaef154f795a07d39ce94',1,'psg_reg_initial_vector():&#160;psg_init.c']]]
+  ['flag_385',['flag',['../structsound__state.html#a2c2fc4d576fe4d02859fd204dc00c7db',1,'sound_state']]],
+  ['fragments_386',['fragments',['../structsound__clip.html#aae9c73220c1e3cf4037a6cf67dea650b',1,'sound_clip']]]
 ];

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['input_2eh_8',['input.h',['../input_8h.html',1,'']]],
-  ['interrupt_2ec_9',['interrupt.c',['../interrupt_8c.html',1,'']]],
-  ['interrupt_2eh_10',['interrupt.h',['../interrupt_8h.html',1,'']]],
-  ['io_2eh_11',['io.h',['../io_8h.html',1,'']]]
+  ['envelope_5fpattern_9',['envelope_pattern',['../structsound__state.html#a72fa6811d7e77f68f21cb5ba0ce2a4f2',1,'sound_state']]]
 ];

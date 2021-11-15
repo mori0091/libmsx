@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['readme_2emd_39',['README.md',['../README_8md.html',1,'']]],
-  ['repeat_40',['repeat',['../sound_8c.html#a98c61ed9410ab805baab005fe7713d9b',1,'sound.c']]],
-  ['rgb_41',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
+  ['n_28',['n',['../structmetasprite.html#af30e1055d34f0d6f22c21a28b019565a',1,'metasprite']]],
+  ['next_29',['next',['../structsound__state.html#aa0a81ae18eb561bcd4ee0be444320020',1,'sound_state']]],
+  ['num_5ffragments_30',['num_fragments',['../structsound__clip.html#ac4e8ddf6c34374903c6f859c4e4421eb',1,'sound_clip']]]
 ];

@@ -1,5 +1,6 @@
 var sound_8c =
 [
+    [ "sound_state", "structsound__state.html", "structsound__state" ],
     [ "COUNT_PER_SECOND", "sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035", null ],
     [ "COUNT_PER_TICK_60HZ", "sound_8c.html#ac174db55392218c66ba57b1392d76b2f", null ],
     [ "sound_set_repeat", "sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee", null ],

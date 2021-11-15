@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unused_5fin_5fsprite_5fmode_5f2_390',['unused_in_sprite_mode_2',['../structsprite.html#a4de588d4eca889c174cec87ac2c4ea67',1,'sprite']]]
+  ['repeat_396',['repeat',['../sound_8c.html#a98c61ed9410ab805baab005fe7713d9b',1,'sound.c']]]
 ];

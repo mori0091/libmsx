@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tagged_5fcolor_88',['tagged_color',['../structsprite.html#a938b2b6b7c016d1a538066f362f13d9c',1,'sprite']]],
-  ['tagged_5fcolor_5ft_89',['tagged_color_t',['../sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c',1,'sprite.h']]],
-  ['tagged_5fcolors_90',['tagged_colors',['../structsprite__color.html#a96825be5e00cd459cc7a1d7270daf13f',1,'sprite_color']]]
+  ['readme_2emd_44',['README.md',['../README_8md.html',1,'']]],
+  ['repeat_45',['repeat',['../sound_8c.html#a98c61ed9410ab805baab005fe7713d9b',1,'sound.c']]],
+  ['rgb_46',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
 ];

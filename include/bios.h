@@ -19,7 +19,20 @@
 #include <stdint.h>
 
 // Main ROM
+/**
+ * Major version code of MSX BIOS.
+ */
 static const __at (0x002d) uint8_t MSX_SYSTEM_VERSION_CODE;
+
+/**
+ * International identifier code #1 of MSX BIOS.
+ */
+static const __at (0x002b) uint8_t INTERNATIONAL_ID_1;
+
+/**
+ * International identifier code #2 of MSX BIOS.
+ */
+static const __at (0x002c) uint8_t INTERNATIONAL_ID_2;
 
 /**
  * Returns MSX system version code.
@@ -28,6 +41,15 @@ static const __at (0x002d) uint8_t MSX_SYSTEM_VERSION_CODE;
  */
 inline uint8_t msx_get_version(void) {
   return MSX_SYSTEM_VERSION_CODE;
+}
+
+/**
+ * Returns VSYNC frequency in Hz.
+ *
+ * \return 50 (PAL/SECAM), or 60 (NTSC)
+ */
+inline uint8_t msx_get_vsync_frequency(void) {
+  return ((INTERNATIONAL_ID_1 & 0x80) ? 50 : 60);
 }
 
 // Sub ROM

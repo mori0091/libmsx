@@ -13,6 +13,7 @@
 
 #include <string.h>
 
+#include "../include/bios.h"
 #include "../include/psg.h"
 #include "../include/sound.h"
 
@@ -20,9 +21,6 @@
 extern const uint8_t psg_reg_initial_vector[14];
 // backup of PSG registers
 static uint8_t psg_reg_backup[14];
-
-static const __at (0x002b) uint8_t INTERNATIONAL_ID_1;
-static const __at (0x002c) uint8_t INTERNATIONAL_ID_2;
 
 #define COUNT_PER_SECOND    (300)
 #define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)
@@ -169,7 +167,7 @@ void sound_start(void) {
 
 void sound_init(void) {
   sound_pause();
-  VSYNC_FREQ = ((INTERNATIONAL_ID_1 & 0x80) ? 50 : 60);
+  VSYNC_FREQ = msx_get_vsync_frequency();
   COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
   psg_init();
   sound.bg.state.clip = 0;

@@ -16,6 +16,8 @@
 
 #pragma once
 
+#include <stdint.h>
+
 /**
  * Waits for next interrupt.
  *
@@ -97,5 +99,19 @@ void set_interrupt_handler(void (*handler)(void));
  * \param handler  the user defined VSYNC interrupt handler.
  */
 void set_vsync_handler(void (*handler)(void));
+
+/**
+ * Wait for the specified number of VSYNCs to occur.
+ *
+ * \param ticks   number of VSYNCs
+ */
+void sleep_ticks(uint16_t ticks);
+
+/**
+ * Wait for the specified time to elapse in milliseconds.
+ *
+ * \param ms    time to elapse in milliseconds.
+ */
+void sleep_millis(uint16_t ms);
 
 #endif

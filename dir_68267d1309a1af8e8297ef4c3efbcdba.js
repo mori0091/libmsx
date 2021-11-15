@@ -5,6 +5,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "psg_get.c", "psg__get_8c.html", "psg__get_8c" ],
     [ "psg_init.c", "psg__init_8c.html", "psg__init_8c" ],
     [ "psg_set.c", "psg__set_8c.html", "psg__set_8c" ],
+    [ "sleep_millis.c", "sleep__millis_8c.html", "sleep__millis_8c" ],
+    [ "sleep_ticks.c", "sleep__ticks_8c.html", "sleep__ticks_8c" ],
     [ "sound.c", "sound_8c.html", "sound_8c" ],
     [ "sprite_set_color.c", "sprite__set__color_8c.html", "sprite__set__color_8c" ],
     [ "sprite_set_pat.c", "sprite__set__pat_8c.html", "sprite__set__pat_8c" ],

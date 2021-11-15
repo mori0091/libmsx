@@ -93,12 +93,21 @@ $(document).ready(function(){initNavTree('interrupt_8h.html',''); initResizable(
 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
-<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for interrupt.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interrupt_8h__dep__incl.svg" width="238" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interrupt_8h__incl.svg" width="135" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="interrupt_8h__dep__incl.svg" width="528" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -121,6 +130,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a92722299d30fbe4f1c49c07f30167a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a> (void(*handler)(void))</td></tr>
 <tr class="memdesc:a92722299d30fbe4f1c49c07f30167a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register user defined VSYNC interrupt handler.  <a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">More...</a><br /></td></tr>
 <tr class="separator:a92722299d30fbe4f1c49c07f30167a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc4bf8d4bce39389cf1e6ad5decf38a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interrupt_8h.html#abfc4bf8d4bce39389cf1e6ad5decf38a">sleep_ticks</a> (uint16_t ticks)</td></tr>
+<tr class="memdesc:abfc4bf8d4bce39389cf1e6ad5decf38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the specified number of VSYNCs to occur.  <a href="interrupt_8h.html#abfc4bf8d4bce39389cf1e6ad5decf38a">More...</a><br /></td></tr>
+<tr class="separator:abfc4bf8d4bce39389cf1e6ad5decf38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2dd34268598eb46f5f32f2d43f88603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interrupt_8h.html#aa2dd34268598eb46f5f32f2d43f88603">sleep_millis</a> (uint16_t ms)</td></tr>
+<tr class="memdesc:aa2dd34268598eb46f5f32f2d43f88603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the specified time to elapse in milliseconds.  <a href="interrupt_8h.html#aa2dd34268598eb46f5f32f2d43f88603">More...</a><br /></td></tr>
+<tr class="separator:aa2dd34268598eb46f5f32f2d43f88603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright (c) 2021 Daishi Mori (mori0091) </p>
@@ -155,7 +170,7 @@ This function is supposed to be used to synchronize with an interrupt in the mai
 This function cannot be used from an interrupt handler; if you need an interrupt handler for any type of interrupt, use <a class="el" href="interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40" title="Register user defined interrupt handler.">set_interrupt_handler()</a> instead. Or if you need an interrupt handler for VSYNC, use <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27" title="Waits for next VSYNC interrupt.">await_vsync()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="interrupt_8h_source.html#l00041">41</a> of file <a class="el" href="interrupt_8h_source.html">interrupt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interrupt_8h_source.html#l00043">43</a> of file <a class="el" href="interrupt_8h_source.html">interrupt.h</a>.</p>
 
 </div>
 </div>
@@ -246,6 +261,62 @@ This function cannot be used from an interrupt handler; if you need an interrupt
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="interrupt_8c_source.html#l00080">80</a> of file <a class="el" href="interrupt_8c_source.html">interrupt.c</a>.</p>
+
+</div>
+</div>
+<a id="abfc4bf8d4bce39389cf1e6ad5decf38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc4bf8d4bce39389cf1e6ad5decf38a">&#9670;&nbsp;</a></span>sleep_ticks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sleep_ticks </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>ticks</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait for the specified number of VSYNCs to occur. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ticks</td><td>number of VSYNCs </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="sleep__ticks_8c_source.html#l00016">16</a> of file <a class="el" href="sleep__ticks_8c_source.html">sleep_ticks.c</a>.</p>
+
+</div>
+</div>
+<a id="aa2dd34268598eb46f5f32f2d43f88603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2dd34268598eb46f5f32f2d43f88603">&#9670;&nbsp;</a></span>sleep_millis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sleep_millis </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait for the specified time to elapse in milliseconds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ms</td><td>time to elapse in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="sleep__millis_8c_source.html#l00017">17</a> of file <a class="el" href="sleep__millis_8c_source.html">sleep_millis.c</a>.</p>
 
 </div>
 </div>

@@ -1,7 +1,8 @@
 <map id="include/bios.h" name="include/bios.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1444,5,1545,32"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2880,5,2981,32"/>
 <area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,244,107,271"/>
 <area shape="rect" id="node3" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2881,80,2980,107"/>
+<area shape="rect" id="node42" href="$sleep__millis_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3004,80,3127,107"/>
 <area shape="rect" id="node4" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="157,162,296,189"/>
 <area shape="rect" id="node8" href="$vdp_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="320,162,395,189"/>
 <area shape="rect" id="node9" href="$vdp__cmd__execute__HMMM_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="419,155,568,196"/>

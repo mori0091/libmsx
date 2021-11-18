@@ -18,10 +18,37 @@
 
 #include <stdint.h>
 
+#include "../include/io.h"
+
+/**
+ * Initial values for PSG registers R#0 to R#13.
+ */
+extern const uint8_t psg_reg_initial_vector[14];
+
+/**
+ * Initialize PSG registers R#0 to R#13 with `psg_reg_initial_vector`.
+ */
 void psg_init(void);
 
-uint8_t psg_get(uint8_t reg);
+/**
+ * Read the PSG register value.
+ *
+ * \param reg    PSG register number.
+ */
+inline uint8_t psg_get(uint8_t reg) {
+  psg_port0 = reg;
+  return psg_port2;
+}
 
-void psg_set(uint8_t reg, uint8_t val);
+/**
+ * Write the PSG register value.
+ *
+ * \param reg    PSG register number.
+ * \param val    the value.
+ */
+inline void psg_set(uint8_t reg, uint8_t val) {
+  psg_port0 = reg;
+  psg_port1 = val;
+}
 
 #endif

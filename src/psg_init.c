@@ -11,7 +11,6 @@
  * https://github.com/mori0091/libmsx
  */
 
-#include "../include/io.h"
 #include "../include/psg.h"
 
 const uint8_t psg_reg_initial_vector[14] = {

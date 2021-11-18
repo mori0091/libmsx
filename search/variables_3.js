@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['duration_383',['duration',['../structsound__state.html#a0ddc08995e7b9b1a787f29bb4e3dbeca',1,'sound_state']]]
+  ['duration_387',['duration',['../structchannel.html#a876d733b1b0bf46b8723ea56fba4c3fe',1,'channel']]]
 ];

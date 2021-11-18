@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "channel", "structchannel.html", "structchannel" ],
     [ "metasprite", "structmetasprite.html", "structmetasprite" ],
     [ "sound_clip", "structsound__clip.html", "structsound__clip" ],
     [ "sound_fragment", "structsound__fragment.html", "structsound__fragment" ],

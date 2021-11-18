@@ -1,5 +1,6 @@
 var sound_8c =
 [
+    [ "channel", "structchannel.html", "structchannel" ],
     [ "sound_state", "structsound__state.html", "structsound__state" ],
     [ "COUNT_PER_SECOND", "sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035", null ],
     [ "COUNT_PER_TICK_60HZ", "sound_8c.html#ac174db55392218c66ba57b1392d76b2f", null ],
@@ -12,7 +13,6 @@ var sound_8c =
     [ "sound_stop", "sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795", null ],
     [ "sound_pause", "sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f", null ],
     [ "sound_player", "sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f", null ],
-    [ "psg_reg_initial_vector", "sound_8c.html#a5fe004c472dfaef154f795a07d39ce94", null ],
     [ "state", "sound_8c.html#a117781baf820700e0b0674a55811fe3a", null ],
     [ "repeat", "sound_8c.html#a98c61ed9410ab805baab005fe7713d9b", null ],
     [ "paused", "sound_8c.html#a1656129c4a4fd8809254194f08f0ac70", null ],

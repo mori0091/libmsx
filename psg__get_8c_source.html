@@ -88,18 +88,10 @@ $(document).ready(function(){initNavTree('psg__get_8c_source.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <a href="psg__get_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// -*- coding: utf-8-unix -*-</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="preprocessor">#include &quot;../include/io.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../include/psg.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="psg_8h.html#a2935306349193999a8ed884fff7ed597">   17</a></span>&#160;uint8_t <a class="code" href="psg__get_8c.html#a2935306349193999a8ed884fff7ed597">psg_get</a>(uint8_t reg) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  uint8_t val;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  __critical {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    psg_port0 = reg;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    val = psg_port2;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">return</span> val;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="apsg__get_8c_html_a2935306349193999a8ed884fff7ed597"><div class="ttname"><a href="psg__get_8c.html#a2935306349193999a8ed884fff7ed597">psg_get</a></div><div class="ttdeci">uint8_t psg_get(uint8_t reg)</div><div class="ttdef"><b>Definition:</b> <a href="psg__get_8c_source.html#l00017">psg_get.c:17</a></div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span><span class="preprocessor">#include &quot;../include/psg.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">extern</span> <span class="keyword">inline</span> uint8_t <a class="code" href="psg__get_8c.html#a2935306349193999a8ed884fff7ed597">psg_get</a>(uint8_t reg);</div>
+<div class="ttc" id="apsg__get_8c_html_a2935306349193999a8ed884fff7ed597"><div class="ttname"><a href="psg__get_8c.html#a2935306349193999a8ed884fff7ed597">psg_get</a></div><div class="ttdeci">uint8_t psg_get(uint8_t reg)</div><div class="ttdoc">Read the PSG register value.</div><div class="ttdef"><b>Definition:</b> <a href="psg_8h_source.html#l00038">psg.h:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,10 +1,11 @@
 <map id="src/sound.c" name="src/sound.c">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="171,5,261,32"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="170,5,259,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,69,107"/>
-<area shape="rect" id="node3" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="94,80,205,107"/>
-<area shape="rect" id="node5" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="229,80,337,107"/>
-<area shape="rect" id="node6" href="$sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="361,80,484,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="251,155,315,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="361,155,436,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="461,155,523,181"/>
+<area shape="rect" id="node3" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="226,80,337,107"/>
+<area shape="rect" id="node5" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="94,80,202,107"/>
+<area shape="rect" id="node7" href="$sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="361,80,484,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="249,155,313,181"/>
+<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="99,155,197,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="361,155,436,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="461,155,523,181"/>
 </map>

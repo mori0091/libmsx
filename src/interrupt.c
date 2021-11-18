@@ -28,18 +28,17 @@ static void (*vsync_handler)(void) = 0;
 
 static volatile bool vsync_not_finished;
 
+static void null_handler(void) {
+  /* do nothing */
+}
+
 static void default_interrupt_handler(void) {
-  vsync_not_finished = true;
-  if (interrupt_handler) {
-    interrupt_handler();
-  }
+  interrupt_handler();
   __asm__("jp _hook_keyi");
 }
 
 static void default_vsync_handler(void) {
-  if (vsync_handler) {
-    vsync_handler();
-  }
+  vsync_handler();
   __asm__("call _hook_timi");
   vsync_not_finished = false;
 }
@@ -60,11 +59,11 @@ void libmsx___init_intr(void) {
   __asm__("di");
   {
     // hook H.KEYI
-    interrupt_handler = 0;
+    interrupt_handler = null_handler;
     memcpy(hook_keyi, H_KEYI, 5);
     memcpy(H_KEYI, replacement_for_H_KEYI, 5);
     // hook H.TIMI
-    vsync_handler = 0;
+    vsync_handler = null_handler;
     memcpy(hook_timi, H_TIMI, 5);
     memcpy(H_TIMI, replacement_for_H_TIMI, 5);
   }
@@ -73,13 +72,13 @@ void libmsx___init_intr(void) {
 
 void set_interrupt_handler(void (*handler)(void)) {
   __critical {
-    interrupt_handler = handler;
+    interrupt_handler = (handler ? handler : null_handler);
   }
 }
 
 void set_vsync_handler(void (*handler)(void)) {
   __critical {
-    vsync_handler = handler;
+    vsync_handler = (handler ? handler : null_handler);
   }
 }
 
@@ -87,4 +86,5 @@ void await_vsync(void) {
   do {
     await_interrupt();
   } while (vsync_not_finished);
+  vsync_not_finished = true;
 }

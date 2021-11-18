@@ -17,10 +17,8 @@
 #include "../include/psg.h"
 #include "../include/sound.h"
 
-// initial value of PSG registers ; defined in "psg_init.c"
-extern const uint8_t psg_reg_initial_vector[14];
 // backup of PSG registers
-static uint8_t psg_reg_backup[14];
+static uint8_t sound_psg_reg_backup[14];
 
 #define COUNT_PER_SECOND    (300)
 #define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)
@@ -28,14 +26,18 @@ static uint8_t psg_reg_backup[14];
 static uint16_t COUNT_PER_TICK;
 static uint8_t VSYNC_FREQ;
 
+struct channel {
+  const uint8_t* next;          // pointer to next chunk for each streams
+  int16_t duration;             // remaining duration for each channel
+  uint8_t volume;               // current volume for each channel
+};
+
 struct sound_state {
   const struct sound_clip* clip; // pointer to current music (set of streams)
+  struct channel channels[3];
   uint8_t section;               // current fragment number
-  uint8_t envelope_pattern;      // current envelope pattern
-  uint8_t volume[3];             // current volume for each channel
-  const uint8_t* next[3];        // pointer to next chunk for each streams
-  int16_t duration[3];           // remaining duration for each channel
   uint8_t flag;                  // playing/stopped flags
+  uint8_t envelope_pattern;      // current envelope pattern
 };
 
 static struct {
@@ -60,32 +62,32 @@ static void sound_psg_set(bool muted, uint8_t reg, uint8_t value) {
     psg_set(reg, value);
   }
   else {
-    psg_reg_backup[reg] = value;
+    sound_psg_reg_backup[reg] = value;
   }
 }
 
 static void sound_backup_psg_registers(void) {
   for (uint8_t i = 0; i <= 13; ++i) {
-    psg_reg_backup[i] = psg_get(i);
+    sound_psg_reg_backup[i] = psg_get(i);
   }
 }
 
 static void sound_restore_psg_registers(void) {
   // tone, noise, and mixier
   for (uint8_t i = 0; i <= 7; ++i) {
-    psg_set(i, psg_reg_backup[i]);
+    psg_set(i, sound_psg_reg_backup[i]);
   }
   // volume and/or envelope on/off
   for (uint8_t i = 8; i <= 10; ++i) {
-    if (psg_reg_backup[i] & 16) {
+    if (sound_psg_reg_backup[i] & 16) {
       psg_set(i, 0);
     } else {
-      psg_set(i, psg_reg_backup[i]);
+      psg_set(i, sound_psg_reg_backup[i]);
     }
   }
   // envelope pattern and cycle
   for (uint8_t i = 11; i <= 13; ++i) {
-    psg_set(i, psg_reg_backup[i]);
+    psg_set(i, sound_psg_reg_backup[i]);
   }
 }
 
@@ -100,12 +102,12 @@ void sound_set_mute(uint8_t mute) {
 
 static void sound_set_fragment(struct sound_state* st, const struct sound_fragment* sf) {
   uint8_t flag = st->flag & ~SOUND_CHANNEL_ALL;
-  st->next[0] = sf->streams[0];
-  st->next[1] = sf->streams[1];
-  st->next[2] = sf->streams[2];
-  st->duration[0] = 0;
-  st->duration[1] = 0;
-  st->duration[2] = 0;
+  st->channels[0].next = sf->streams[0];
+  st->channels[1].next = sf->streams[1];
+  st->channels[2].next = sf->streams[2];
+  st->channels[0].duration = 0;
+  st->channels[1].duration = 0;
+  st->channels[2].duration = 0;
   if (sf->streams[0] && *sf->streams[0] != 0xff) flag |= SOUND_CHANNEL_A;
   if (sf->streams[1] && *sf->streams[1] != 0xff) flag |= SOUND_CHANNEL_B;
   if (sf->streams[2] && *sf->streams[2] != 0xff) flag |= SOUND_CHANNEL_C;
@@ -123,9 +125,9 @@ static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
     return;
   }
   st->section = 0;
-  st->volume[0] = psg_reg_initial_vector[8];
-  st->volume[1] = psg_reg_initial_vector[9];
-  st->volume[2] = psg_reg_initial_vector[10];
+  st->channels[0].volume = psg_reg_initial_vector[8];
+  st->channels[1].volume = psg_reg_initial_vector[9];
+  st->channels[2].volume = psg_reg_initial_vector[10];
   const struct sound_fragment* sf = s->fragments[0];
   sound_set_fragment(st, sf);
   __critical {
@@ -174,7 +176,9 @@ void sound_init(void) {
   sound.bg.state.flag = 0;
   sound.se.state.clip = 0;
   sound.se.state.flag = 0;
-  memcpy(psg_reg_backup, psg_reg_initial_vector, sizeof(psg_reg_initial_vector));
+  memcpy(sound_psg_reg_backup,
+         psg_reg_initial_vector,
+         sizeof(psg_reg_initial_vector));
 }
 
 void sound_stop(void) {
@@ -191,16 +195,17 @@ void sound_pause(void) {
 static void sound_player__process_chunk(struct sound_state* st, const uint8_t flag) {
   uint8_t mask = SOUND_CHANNEL_A;
   for (uint8_t ch = 0; ch < 3; ++ch, mask <<= 1) {
+    struct channel * stch = &st->channels[ch];
     // ---- Countdown time remaining ----
-    if (0 < st->duration[ch]) {
-      st->duration[ch] -= COUNT_PER_TICK;
-      if (0 < st->duration[ch]) {
+    if (0 < stch->duration) {
+      stch->duration -= COUNT_PER_TICK;
+      if (0 < stch->duration) {
         continue;
       }
     }
     // ---- Check to see if the stream has finished. ----
     if (!(st->flag & mask)) continue; // no more chunk
-    const uint8_t head1 = *st->next[ch]++;
+    const uint8_t head1 = *stch->next++;
     if (head1 == 255) {
       // end of music track
       st->flag &= ~mask;
@@ -208,26 +213,26 @@ static void sound_player__process_chunk(struct sound_state* st, const uint8_t fl
     }
     // ---- Reads head (chunk size and next duration) ----
     uint8_t len = (head1 >> 5) & 7;
-    const uint16_t ticks = ((head1 & 0x1f) << 8) | (*st->next[ch]++);
-    st->duration[ch] += COUNT_PER_TICK_60HZ * ticks;
+    const uint16_t ticks = ((head1 & 0x1f) << 8) | (*stch->next++);
+    stch->duration += COUNT_PER_TICK_60HZ * ticks;
     // ---- Parse and process the chunk ----
     const bool muted = flag & (mask << 3); // \note Using `flag` instead of `st->flag`
     while (len) {
       len--;
-      const uint8_t x = *st->next[ch]++;
+      const uint8_t x = *stch->next++;
       const uint8_t x_lo = x & 0x0f;
       switch (x & 0xf0) {
       case 0x00:
         // tone (12bits)
         // 0000b fdr_hi:4 fdr_lo:8
-        sound_psg_set(muted, 1+2*ch, x_lo);            // fdr_hi:4
-        sound_psg_set(muted, 0+2*ch, *st->next[ch]++); // fdr_lo:8
+        sound_psg_set(muted, 1+2*ch, x_lo);          // fdr_hi:4
+        sound_psg_set(muted, 0+2*ch, *stch->next++); // fdr_lo:8
         // "note on"
         {
-          if (16 & st->volume[ch]) {
+          if (16 & stch->volume) {
             // (re)set hardware envelope
             sound_psg_set(muted, 13, st->envelope_pattern);
-            sound_psg_set(muted, 8+ch, st->volume[ch]);
+            sound_psg_set(muted, 8+ch, stch->volume);
           }
           else {
             // (re)set software envelope
@@ -249,13 +254,13 @@ static void sound_player__process_chunk(struct sound_state* st, const uint8_t fl
       case 0x70:
         // mixer (6bits)
         // 0111b ----b --b NC:1 NB:1 NA:1 TC:1 TB:1 TA:1
-        sound_psg_set(muted, 7, (*st->next[ch]++ & 0x3f) | 0x80);
+        sound_psg_set(muted, 7, (*stch->next++ & 0x3f) | 0x80);
         break;
       case 0x80:
         // volume (4bits)
         // 1000b vol:4
         sound_psg_set(muted, 8+ch, x_lo);
-        st->volume[ch] = x_lo;
+        stch->volume = x_lo;
         break;
       case 0x40:
       case 0x90:
@@ -267,13 +272,13 @@ static void sound_player__process_chunk(struct sound_state* st, const uint8_t fl
           // The envelope pattern and switch states are saved (not applied to
           // the registers here) and applied at each "note on" timing.
           st->envelope_pattern = x_lo; // envelope pattern
-          st->volume[ch] |= 16;        // turn on hardware envelope
+          stch->volume |= 16;     // turn on hardware envelope
         }
         if (x & 0x40) {
           // envelope cycle (16bits)
           // -10-b ----b fdr_hi:8 fdr_lo:8
-          sound_psg_set(muted, 12, *st->next[ch]++); // cyble_hi:8
-          sound_psg_set(muted, 11, *st->next[ch]++); // cycle_lo:8
+          sound_psg_set(muted, 12, *stch->next++); // cyble_hi:8
+          sound_psg_set(muted, 11, *stch->next++); // cycle_lo:8
           len -= 2;
         }
         break;

@@ -135,9 +135,11 @@ static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
   }
 }
 
-static const struct sound_clip * next_sound_effect;
+static volatile const struct sound_clip * next_sound_effect;
 void sound_effect(const struct sound_clip* s) {
+  __asm__("di");
   next_sound_effect = s;
+  __asm__("ei");
 }
 
 static void sound_effect_apply(void) {

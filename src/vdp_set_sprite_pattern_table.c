@@ -36,6 +36,6 @@ void vdp_set_sprite_pattern_table(vmemptr_t table) {
   }
   __critical {
     RG6SAV = r6;
-    VDP_SET_CTRL(6, RG6SAV);
+    VDP_SET_CONTROL_REGISTER(6, RG6SAV);
   }
 }

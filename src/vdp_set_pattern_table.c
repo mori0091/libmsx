@@ -37,6 +37,6 @@ void vdp_set_pattern_table(vmemptr_t table) {
   }
   __critical {
     RG4SAV = r4;
-    VDP_SET_CTRL(4, RG4SAV);
+    VDP_SET_CONTROL_REGISTER(4, RG4SAV);
   }
 }

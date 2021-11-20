@@ -22,6 +22,6 @@ void vdp_set_hscroll_dual_page(bool enable) {
     } else {
       RG25SA &= ~0x01;
     }
-    VDP_SET_CTRL(25, RG25SA);
+    VDP_SET_CONTROL_REGISTER(25, RG25SA);
   }
 }

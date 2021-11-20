@@ -22,6 +22,6 @@ void vdp_set_hscroll_mask(bool enable) {
     } else {
       RG25SA &= ~0x02;
     }
-    VDP_SET_CTRL(25, RG25SA);
+    VDP_SET_CONTROL_REGISTER(25, RG25SA);
   }
 }

@@ -22,6 +22,6 @@ void vdp_set_sprite_visible(bool visible) {
     } else {
       RG8SAV |= 0x02;
     }
-    VDP_SET_CTRL(8, RG8SAV);
+    VDP_SET_CONTROL_REGISTER(8, RG8SAV);
   }
 }

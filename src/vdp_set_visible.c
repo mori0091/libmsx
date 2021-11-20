@@ -22,6 +22,6 @@ void vdp_set_visible(bool visible) {
     } else {
       RG1SAV &= ~0x40;
     }
-    VDP_SET_CTRL(1, RG1SAV);
+    VDP_SET_CONTROL_REGISTER(1, RG1SAV);
   }
 }

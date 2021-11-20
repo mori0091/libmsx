@@ -17,9 +17,9 @@
 
 void vdp_write_control(uint8_t reg, void* src, uint8_t len) {
   __critical {
-    VDP_SET_CTRL_PTR(reg);
+    VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(reg);
     for (uint8_t* p = src; len--; ) {
-      VDP_SET_CTRL_VALUE(*p++);
+      VDP_SET_CONTROL_REGISTER_VALUE(*p++);
     }
   }
 }

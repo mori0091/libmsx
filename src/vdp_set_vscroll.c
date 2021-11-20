@@ -18,6 +18,6 @@
 void vdp_set_vscroll(uint8_t y) {
   __critical {
     RG23SA = y;
-    VDP_SET_CTRL(23, y);
+    VDP_SET_CONTROL_REGISTER(23, y);
   }
 }

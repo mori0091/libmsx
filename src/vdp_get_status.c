@@ -18,9 +18,9 @@
 uint8_t vdp_get_status(uint8_t reg) {
   volatile uint8_t x;
   __critical {
-    VDP_SET_CTRL(15, reg);
-    x = vdp_port1;
-    VDP_SET_CTRL(15, 0);
+    VDP_SET_STATUS_REGISTER_POINTER(reg);
+    x = VDP_GET_STATUS_REGISTER_VALUE();
+    VDP_SET_STATUS_REGISTER_POINTER(0);
   }
   return x;
 }

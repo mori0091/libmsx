@@ -22,7 +22,7 @@ void vdp_set_hscroll(uint16_t x) {
   __critical {
     RG26SA = r26;
     RG27SA = r27;
-    VDP_SET_CTRL(26, r26);
-    VDP_SET_CTRL(27, r27);
+    VDP_SET_CONTROL_REGISTER(26, r26);
+    VDP_SET_CONTROL_REGISTER(27, r27);
   }
 }

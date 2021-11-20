@@ -66,7 +66,7 @@ void vdp_set_screen_mode(enum vdp_screen_mode mode) {
     screen_mode = mode;
     RG0SAV = (RG0SAV & ~0x0e) | r0;
     RG1SAV = (RG1SAV & ~0x18) | r1;
-    VDP_SET_CTRL(0, RG0SAV);
-    VDP_SET_CTRL(1, RG1SAV);
+    VDP_SET_CONTROL_REGISTER(0, RG0SAV);
+    VDP_SET_CONTROL_REGISTER(1, RG1SAV);
   }
 }

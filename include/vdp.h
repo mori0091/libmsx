@@ -26,6 +26,32 @@
 #include "bios.h"
 #include "workarea.h"
 
+inline void VDP_SET_CONTROL_REGISTER(uint8_t reg, uint8_t val) {
+  vdp_port1 = val;
+  vdp_port1 = reg | 0x80;
+}
+
+inline void VDP_SET_CONTROL_REGISTER_POINTER(uint8_t reg) {
+  VDP_SET_CONTROL_REGISTER(17, reg | 0x80);
+}
+
+inline void VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(uint8_t reg) {
+  VDP_SET_CONTROL_REGISTER(17, reg);
+}
+
+inline void VDP_SET_CONTROL_REGISTER_VALUE(uint8_t val) {
+  vdp_port3 = val;
+}
+
+inline void VDP_SET_STATUS_REGISTER_POINTER(uint8_t reg) {
+  VDP_SET_CONTROL_REGISTER(15, reg);
+}
+
+inline uint8_t VDP_GET_STATUS_REGISTER_VALUE(void) {
+  return vdp_port1;
+}
+
+
 // ---- VDP status register
 
 uint8_t vdp_get_status(uint8_t reg);

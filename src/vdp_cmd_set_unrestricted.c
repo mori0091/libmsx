@@ -22,6 +22,6 @@ void vdp_cmd_set_unrestricted(bool enable) {
     } else {
       RG25SA &= ~0x40;
     }
-    VDP_SET_CTRL(25, RG25SA);
+    VDP_SET_CONTROL_REGISTER(25, RG25SA);
   }
 }

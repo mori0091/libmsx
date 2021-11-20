@@ -41,6 +41,6 @@ void vdp_set_image_table(vmemptr_t table) {
   }
   __critical {
     RG2SAV = r2;
-    VDP_SET_CTRL(2, RG2SAV);
+    VDP_SET_CONTROL_REGISTER(2, RG2SAV);
   }
 }

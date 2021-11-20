@@ -135,7 +135,14 @@ static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
   }
 }
 
+static const struct sound_clip * next_sound_effect;
 void sound_effect(const struct sound_clip* s) {
+  next_sound_effect = s;
+}
+
+static void sound_effect_apply(void) {
+  const struct sound_clip * s = next_sound_effect;
+  next_sound_effect = NULL;
   if (!s) return;
   if (sound.se.state.flag & SOUND_CHANNEL_ALL) {
     if (s->priority < sound.se.state.clip->priority) {
@@ -168,6 +175,7 @@ void sound_start(void) {
 }
 
 void sound_init(void) {
+  sound_effect(NULL);
   sound_pause();
   VSYNC_FREQ = msx_get_vsync_frequency();
   COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
@@ -319,6 +327,7 @@ static bool sound_player__process(struct sound_state* st, uint8_t mute) {
 }
 
 void sound_player(void) {
+  sound_effect_apply();
   // ---- sound effect ----
   if (sound.se.state.clip) {
     bool finished = sound_player__process(&sound.se.state, 0);

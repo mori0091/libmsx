@@ -95,15 +95,16 @@ $(document).ready(function(){initNavTree('vdp__get__status_8c_source.html',''); 
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="vdp_8h.html#a37d2b81a2b2629fd1e853d2f72191a15">   18</a></span>&#160;uint8_t <a class="code" href="vdp__get__status_8c.html#a37d2b81a2b2629fd1e853d2f72191a15">vdp_get_status</a>(uint8_t reg) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">volatile</span> uint8_t x;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  __critical {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(15, reg);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    x = vdp_port1;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(15, 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="vdp_8h.html#a8f2ad710c0ddac5e73e3a7b5b3ba3999">VDP_SET_STATUS_REGISTER_POINTER</a>(reg);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    x = <a class="code" href="vdp_8h.html#abb381d91a109c478b02dd0612b9f3a18">VDP_GET_STATUS_REGISTER_VALUE</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="vdp_8h.html#a8f2ad710c0ddac5e73e3a7b5b3ba3999">VDP_SET_STATUS_REGISTER_POINTER</a>(0);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">return</span> x;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="ttc" id="avdp_8h_html_a8f2ad710c0ddac5e73e3a7b5b3ba3999"><div class="ttname"><a href="vdp_8h.html#a8f2ad710c0ddac5e73e3a7b5b3ba3999">VDP_SET_STATUS_REGISTER_POINTER</a></div><div class="ttdeci">void VDP_SET_STATUS_REGISTER_POINTER(uint8_t reg)</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00046">vdp.h:46</a></div></div>
+<div class="ttc" id="avdp_8h_html_abb381d91a109c478b02dd0612b9f3a18"><div class="ttname"><a href="vdp_8h.html#abb381d91a109c478b02dd0612b9f3a18">VDP_GET_STATUS_REGISTER_VALUE</a></div><div class="ttdeci">uint8_t VDP_GET_STATUS_REGISTER_VALUE(void)</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00050">vdp.h:50</a></div></div>
 <div class="ttc" id="avdp__get__status_8c_html_a37d2b81a2b2629fd1e853d2f72191a15"><div class="ttname"><a href="vdp__get__status_8c.html#a37d2b81a2b2629fd1e853d2f72191a15">vdp_get_status</a></div><div class="ttdeci">uint8_t vdp_get_status(uint8_t reg)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__get__status_8c_source.html#l00018">vdp_get_status.c:18</a></div></div>
 <div class="ttc" id="avdp__internal_8h_html"><div class="ttname"><a href="vdp__internal_8h.html">vdp_internal.h</a></div><div class="ttdoc">Copyright (c) 2021 Daishi Mori (mori0091)</div></div>
-<div class="ttc" id="avdp__internal_8h_html_a56c8cf19fb67f0a13d6f06fa2a02d3b3"><div class="ttname"><a href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a></div><div class="ttdeci">#define VDP_SET_CTRL(reg, x)</div><div class="ttdef"><b>Definition:</b> <a href="vdp__internal_8h_source.html#l00019">vdp_internal.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

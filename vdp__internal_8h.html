@@ -93,11 +93,20 @@ $(document).ready(function(){initNavTree('vdp__internal_8h.html',''); initResiza
 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
-<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for vdp_internal.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="vdp__internal_8h__incl.svg" width="135" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="vdp__internal_8h__dep__incl.svg" width="5530" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
@@ -106,14 +115,6 @@ $(document).ready(function(){initNavTree('vdp__internal_8h.html',''); initResiza
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a56c8cf19fb67f0a13d6f06fa2a02d3b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(reg,  x)</td></tr>
-<tr class="separator:a56c8cf19fb67f0a13d6f06fa2a02d3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e00204abf99d82a7870bb609d73ed5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__internal_8h.html#a68e00204abf99d82a7870bb609d73ed5">VDP_SET_CTRL_PTR_NOINC</a>(reg)&#160;&#160;&#160;  <a class="el" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(17, (reg) | 0x80)</td></tr>
-<tr class="separator:a68e00204abf99d82a7870bb609d73ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10fb44504bb1d0a5284fce49ea4eecc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__internal_8h.html#a10fb44504bb1d0a5284fce49ea4eecc1">VDP_SET_CTRL_PTR</a>(reg)&#160;&#160;&#160;  <a class="el" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(17, (reg))</td></tr>
-<tr class="separator:a10fb44504bb1d0a5284fce49ea4eecc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0414f68c349169d1b513f1d0c6aca36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__internal_8h.html#ac0414f68c349169d1b513f1d0c6aca36">VDP_SET_CTRL_VALUE</a>(x)&#160;&#160;&#160;  vdp_port3 = (x)</td></tr>
-<tr class="separator:ac0414f68c349169d1b513f1d0c6aca36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29bd2d8c617364b80dafbaa0d70708b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__internal_8h.html#a29bd2d8c617364b80dafbaa0d70708b5">VDP_CMD_LMMV</a>&#160;&#160;&#160;(0x80)</td></tr>
 <tr class="separator:a29bd2d8c617364b80dafbaa0d70708b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa59dd0622b7190f7aa34cd239c5b3e3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__internal_8h.html#aa59dd0622b7190f7aa34cd239c5b3e3f">VDP_CMD_LMMM</a>&#160;&#160;&#160;(0x90)</td></tr>
@@ -137,98 +138,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a56c8cf19fb67f0a13d6f06fa2a02d3b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56c8cf19fb67f0a13d6f06fa2a02d3b3">&#9670;&nbsp;</a></span>VDP_SET_CTRL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VDP_SET_CTRL</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">reg, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  vdp_port1 = (x);                              \</div>
-<div class="line">  vdp_port1 = ((reg) | 0x80)</div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00019">19</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a68e00204abf99d82a7870bb609d73ed5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68e00204abf99d82a7870bb609d73ed5">&#9670;&nbsp;</a></span>VDP_SET_CTRL_PTR_NOINC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VDP_SET_CTRL_PTR_NOINC</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">reg</td><td>)</td>
-          <td>&#160;&#160;&#160;  <a class="el" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(17, (reg) | 0x80)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00023">23</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a10fb44504bb1d0a5284fce49ea4eecc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10fb44504bb1d0a5284fce49ea4eecc1">&#9670;&nbsp;</a></span>VDP_SET_CTRL_PTR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VDP_SET_CTRL_PTR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">reg</td><td>)</td>
-          <td>&#160;&#160;&#160;  <a class="el" href="vdp__internal_8h.html#a56c8cf19fb67f0a13d6f06fa2a02d3b3">VDP_SET_CTRL</a>(17, (reg))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00026">26</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="ac0414f68c349169d1b513f1d0c6aca36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0414f68c349169d1b513f1d0c6aca36">&#9670;&nbsp;</a></span>VDP_SET_CTRL_VALUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VDP_SET_CTRL_VALUE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;  vdp_port3 = (x)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00029">29</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
-
-</div>
-</div>
 <a id="a29bd2d8c617364b80dafbaa0d70708b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29bd2d8c617364b80dafbaa0d70708b5">&#9670;&nbsp;</a></span>VDP_CMD_LMMV</h2>
 
@@ -241,7 +150,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00036">36</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00024">24</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
 
 </div>
 </div>
@@ -257,7 +166,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00037">37</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00025">25</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +182,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00038">38</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00026">26</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
 
 </div>
 </div>
@@ -289,7 +198,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00039">39</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp__internal_8h_source.html#l00027">27</a> of file <a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>.</p>
 
 </div>
 </div>

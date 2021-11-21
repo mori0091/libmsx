@@ -1,12 +1,12 @@
 <map id="src/vmem_read.c" name="src/vmem_read.c">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="278,5,401,32"/>
-<area shape="rect" id="node2" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="221,80,329,107"/>
-<area shape="rect" id="node10" href="$vdp__internal_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="353,80,456,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,73,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="98,155,173,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="291,229,355,256"/>
-<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="486,229,529,256"/>
-<area shape="rect" id="node7" href="$vmem_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="437,155,505,181"/>
-<area shape="rect" id="node8" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="247,155,303,181"/>
-<area shape="rect" id="node9" href="$workarea_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="327,155,413,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="94,5,217,32"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="231,80,339,107"/>
+<area shape="rect" id="node10" href="$vdp__internal_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="40,80,143,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="455,155,523,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="23,155,98,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="213,229,277,256"/>
+<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="457,229,499,256"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="363,155,431,181"/>
+<area shape="rect" id="node8" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="122,155,178,181"/>
+<area shape="rect" id="node9" href="$workarea_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="202,155,287,181"/>
 </map>

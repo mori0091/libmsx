@@ -38,6 +38,12 @@ var vdp_8h =
       [ "VDP_CMD_TXOR", "vdp_8h.html#ad5a2110934821d4a04c4f412cea3160fabf51bf611b4d847ef474e35cd61ccf3a", null ],
       [ "VDP_CMD_TNOT", "vdp_8h.html#ad5a2110934821d4a04c4f412cea3160fa55e37099d763bcf506e9163cce242a84", null ]
     ] ],
+    [ "VDP_SET_CONTROL_REGISTER", "vdp_8h.html#af53955bc84b9c190f04abdd9206f6453", null ],
+    [ "VDP_SET_CONTROL_REGISTER_POINTER", "vdp_8h.html#afdffcc91a0792402633458501bdb287a", null ],
+    [ "VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT", "vdp_8h.html#aaca56c9333743eee25ba68e572a17d10", null ],
+    [ "VDP_SET_CONTROL_REGISTER_VALUE", "vdp_8h.html#a118cb18eb1375ddef629055a90a00976", null ],
+    [ "VDP_SET_STATUS_REGISTER_POINTER", "vdp_8h.html#a8f2ad710c0ddac5e73e3a7b5b3ba3999", null ],
+    [ "VDP_GET_STATUS_REGISTER_VALUE", "vdp_8h.html#abb381d91a109c478b02dd0612b9f3a18", null ],
     [ "vdp_get_status", "vdp_8h.html#a37d2b81a2b2629fd1e853d2f72191a15", null ],
     [ "vdp_set_control", "vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f", null ],
     [ "vdp_write_control", "vdp_8h.html#a50c324140f31020a5b9257f95a1e94ba", null ],

@@ -12,8 +12,8 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
-<polygon fill="#bfbfbf" stroke="black" points="2206,-179.5 2206,-198.5 2282,-198.5 2282,-179.5 2206,-179.5"/>
-<text text-anchor="middle" x="2244" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/bios.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="2275,-179.5 2275,-198.5 2351,-198.5 2351,-179.5 2275,-179.5"/>
+<text text-anchor="middle" x="2313" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/bios.h</text>
 </a>
 </g>
 </g>
@@ -29,8 +29,8 @@
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M2195.43,-187.29C1881.75,-182.5 152.16,-153.15 64,-87 42.58,-70.93 38.67,-36.22 38.05,-19.86"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2195.51,-190.79 2205.57,-187.44 2195.62,-183.79 2195.51,-190.79"/>
+<path fill="none" stroke="midnightblue" d="M2264.43,-187.36C1944.98,-182.96 155.14,-155.29 64,-87 42.57,-70.95 38.66,-36.22 38.04,-19.86"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2264.69,-190.86 2274.74,-187.5 2264.79,-183.86 2264.69,-190.86"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -44,38 +44,53 @@
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M2228.92,-171.72C2220.11,-162.2 2209.33,-150.56 2202.1,-142.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2226.38,-174.12 2235.74,-179.08 2231.52,-169.37 2226.38,-174.12"/>
+<path fill="none" stroke="midnightblue" d="M2284.86,-175.23C2262.6,-165.13 2232.14,-151.31 2212.77,-142.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2283.59,-178.5 2294.14,-179.44 2286.48,-172.12 2283.59,-178.5"/>
 </g>
 <!-- Node42 -->
 <g id="node42" class="node">
 <title>Node42</title>
-<g id="a_node42"><a xlink:href="sleep__millis_8c.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
-<polygon fill="none" stroke="black" points="2249,-123.5 2249,-142.5 2341,-142.5 2341,-123.5 2249,-123.5"/>
-<text text-anchor="middle" x="2295" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/sleep_millis.c</text>
+<g id="a_node42"><a xlink:href="msx__set__cpu__mode_8c.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<polygon fill="none" stroke="black" points="2249,-123.5 2249,-142.5 2377,-142.5 2377,-123.5 2249,-123.5"/>
+<text text-anchor="middle" x="2313" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/msx_set_cpu_mode.c</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node42 -->
 <g id="edge43" class="edge">
 <title>Node1&#45;&gt;Node42</title>
-<path fill="none" stroke="midnightblue" d="M2259.38,-171.72C2268.37,-162.2 2279.36,-150.56 2286.74,-142.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2256.74,-169.41 2252.42,-179.08 2261.83,-174.22 2256.74,-169.41"/>
+<path fill="none" stroke="midnightblue" d="M2313,-168.8C2313,-159.91 2313,-149.78 2313,-142.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2309.5,-169.08 2313,-179.08 2316.5,-169.08 2309.5,-169.08"/>
 </g>
 <!-- Node43 -->
 <g id="node43" class="node">
 <title>Node43</title>
-<g id="a_node43"><a xlink:href="sound_8c.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
-<polygon fill="none" stroke="black" points="2359.5,-123.5 2359.5,-142.5 2426.5,-142.5 2426.5,-123.5 2359.5,-123.5"/>
-<text text-anchor="middle" x="2393" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/sound.c</text>
+<g id="a_node43"><a xlink:href="sleep__millis_8c.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<polygon fill="none" stroke="black" points="2395,-123.5 2395,-142.5 2487,-142.5 2487,-123.5 2395,-123.5"/>
+<text text-anchor="middle" x="2441" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/sleep_millis.c</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node43 -->
 <g id="edge44" class="edge">
 <title>Node1&#45;&gt;Node43</title>
-<path fill="none" stroke="midnightblue" d="M2277.37,-175.91C2305.38,-165.75 2344.7,-151.51 2369.5,-142.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2275.82,-172.75 2267.61,-179.44 2278.2,-179.33 2275.82,-172.75"/>
+<path fill="none" stroke="midnightblue" d="M2342.62,-175.5C2366.62,-165.38 2399.78,-151.39 2420.81,-142.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2341.14,-172.33 2333.28,-179.44 2343.86,-178.78 2341.14,-172.33"/>
+</g>
+<!-- Node44 -->
+<g id="node44" class="node">
+<title>Node44</title>
+<g id="a_node44"><a xlink:href="sound_8c.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<polygon fill="none" stroke="black" points="2505.5,-123.5 2505.5,-142.5 2572.5,-142.5 2572.5,-123.5 2505.5,-123.5"/>
+<text text-anchor="middle" x="2539" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/sound.c</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node44 -->
+<g id="edge45" class="edge">
+<title>Node1&#45;&gt;Node44</title>
+<path fill="none" stroke="midnightblue" d="M2358.54,-177.12C2401.92,-166.75 2466.21,-151.39 2505.2,-142.08"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2357.72,-173.72 2348.81,-179.44 2359.35,-180.52 2357.72,-173.72"/>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge8" class="edge">

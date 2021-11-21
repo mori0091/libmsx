@@ -13,6 +13,8 @@
 
 #include "../include/bios.h"
 
+static __at(0x0180) uint8_t CHGCPU[0];
+
 void msx_set_cpu_mode(const uint8_t mode) {
   ((void)mode);
   if (msx_get_version() < 3) return;

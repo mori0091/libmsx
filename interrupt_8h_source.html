@@ -95,26 +95,29 @@ $(document).ready(function(){initNavTree('interrupt_8h_source.html',''); initRes
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4">   43</a></span>&#160;<span class="preprocessor">#define await_interrupt()                       \</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">  __asm__(&quot;ei&quot;</span>);                                \</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  __asm__(&quot;halt&quot;)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40">set_interrupt_handler</a>(<span class="keywordtype">void</span> (*handler)(<span class="keywordtype">void</span>));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a>(<span class="keywordtype">void</span> (*handler)(<span class="keywordtype">void</span>));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#abfc4bf8d4bce39389cf1e6ad5decf38a">sleep_ticks</a>(uint16_t ticks);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#aa2dd34268598eb46f5f32f2d43f88603">sleep_millis</a>(uint16_t ms);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code" href="interrupt_8h.html#ac594eec6b7a3ac71bbe093c8d3e09688">vsync_busy</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4">   56</a></span>&#160;<span class="preprocessor">#define await_interrupt()                       \</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">  __asm__(&quot;ei&quot;</span>);                                \</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  __asm__(&quot;halt&quot;)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40">set_interrupt_handler</a>(<span class="keywordtype">void</span> (*handler)(<span class="keywordtype">void</span>));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a>(<span class="keywordtype">void</span> (*handler)(<span class="keywordtype">void</span>));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#abfc4bf8d4bce39389cf1e6ad5decf38a">sleep_ticks</a>(uint16_t ticks);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keywordtype">void</span> <a class="code" href="interrupt_8h.html#aa2dd34268598eb46f5f32f2d43f88603">sleep_millis</a>(uint16_t ms);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="ainterrupt_8h_html_a4b7e0dcff7ea0530ab92899dc8671b40"><div class="ttname"><a href="interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40">set_interrupt_handler</a></div><div class="ttdeci">void set_interrupt_handler(void(*handler)(void))</div><div class="ttdoc">Register user defined interrupt handler.</div><div class="ttdef"><b>Definition:</b> <a href="interrupt_8c_source.html#l00073">interrupt.c:73</a></div></div>
 <div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">Register user defined VSYNC interrupt handler.</div><div class="ttdef"><b>Definition:</b> <a href="interrupt_8c_source.html#l00079">interrupt.c:79</a></div></div>
 <div class="ttc" id="ainterrupt_8h_html_aa2dd34268598eb46f5f32f2d43f88603"><div class="ttname"><a href="interrupt_8h.html#aa2dd34268598eb46f5f32f2d43f88603">sleep_millis</a></div><div class="ttdeci">void sleep_millis(uint16_t ms)</div><div class="ttdoc">Wait for the specified time to elapse in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="sleep__millis_8c_source.html#l00017">sleep_millis.c:17</a></div></div>
 <div class="ttc" id="ainterrupt_8h_html_abdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">Waits for next VSYNC interrupt.</div><div class="ttdef"><b>Definition:</b> <a href="interrupt_8c_source.html#l00085">interrupt.c:85</a></div></div>
 <div class="ttc" id="ainterrupt_8h_html_abfc4bf8d4bce39389cf1e6ad5decf38a"><div class="ttname"><a href="interrupt_8h.html#abfc4bf8d4bce39389cf1e6ad5decf38a">sleep_ticks</a></div><div class="ttdeci">void sleep_ticks(uint16_t ticks)</div><div class="ttdoc">Wait for the specified number of VSYNCs to occur.</div><div class="ttdef"><b>Definition:</b> <a href="sleep__ticks_8c_source.html#l00016">sleep_ticks.c:16</a></div></div>
+<div class="ttc" id="ainterrupt_8h_html_ac594eec6b7a3ac71bbe093c8d3e09688"><div class="ttname"><a href="interrupt_8h.html#ac594eec6b7a3ac71bbe093c8d3e09688">vsync_busy</a></div><div class="ttdeci">volatile bool vsync_busy</div><div class="ttdoc">&quot;Busy&quot; flag for VSYNC interrupt routine.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

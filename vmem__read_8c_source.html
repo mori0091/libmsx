@@ -92,18 +92,28 @@ $(document).ready(function(){initNavTree('vmem__read_8c_source.html',''); initRe
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vdp__internal_8h.html">vdp_internal.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="vmem_8h.html#a061417fb4eecf22ada909056084768c5">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="vmem__read_8c.html#a061417fb4eecf22ada909056084768c5">vmem_read</a>(<a class="code" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> src, <span class="keywordtype">void</span>* dst, uint16_t len) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  __critical {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a>(src);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (uint8_t* p = dst; len--; ) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      *p++ = vdp_port0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// void vmem_read(vmemptr_t src, void* dst, uint16_t len) {</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//   __critical {</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     vmem_set_read_address(src);</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//     for (uint8_t* p = dst; len--; ) {</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//       *p++ = vdp_port0;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//     }</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//   }</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// }</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="vmem_8h.html#a061417fb4eecf22ada909056084768c5">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="vmem__read_8c.html#a061417fb4eecf22ada909056084768c5">vmem_read</a>(<a class="code" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> src, <span class="keywordtype">void</span>* dst, uint16_t len) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  __critical {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="vdp_8h.html#a4fe250bed0712ec04468a051b8fde22a">VDP_SET_VMEM_READ_POINTER</a>(src);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">for</span> (uint8_t* p = dst; len--; ) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    *p++ = <a class="code" href="vdp_8h.html#a038d61b6cc774b777dbc2212613fa1ed">VDP_GET_VMEM_VALUE</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="ttc" id="avdp_8h_html_a038d61b6cc774b777dbc2212613fa1ed"><div class="ttname"><a href="vdp_8h.html#a038d61b6cc774b777dbc2212613fa1ed">VDP_GET_VMEM_VALUE</a></div><div class="ttdeci">uint8_t VDP_GET_VMEM_VALUE(void)</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00074">vdp.h:74</a></div></div>
+<div class="ttc" id="avdp_8h_html_a4fe250bed0712ec04468a051b8fde22a"><div class="ttname"><a href="vdp_8h.html#a4fe250bed0712ec04468a051b8fde22a">VDP_SET_VMEM_READ_POINTER</a></div><div class="ttdeci">void VDP_SET_VMEM_READ_POINTER(vmemptr_t loc)</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00062">vdp.h:62</a></div></div>
 <div class="ttc" id="avdp__internal_8h_html"><div class="ttname"><a href="vdp__internal_8h.html">vdp_internal.h</a></div><div class="ttdoc">Copyright (c) 2021 Daishi Mori (mori0091)</div></div>
-<div class="ttc" id="avmem_8h_html_a7de002162c4beef34d9f1f40aea4708c"><div class="ttname"><a href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a></div><div class="ttdeci">void vmem_set_read_address(vmemptr_t loc)</div><div class="ttdef"><b>Definition:</b> <a href="vmem__set__read__address_8c_source.html#l00018">vmem_set_read_address.c:18</a></div></div>
 <div class="ttc" id="avmem_8h_html_aaa8bd02096bc1fc31f3da323f1d0a1f8"><div class="ttname"><a href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a></div><div class="ttdeci">uint32_t vmemptr_t</div><div class="ttdef"><b>Definition:</b> <a href="vmem_8h_source.html#l00025">vmem.h:25</a></div></div>
-<div class="ttc" id="avmem__read_8c_html_a061417fb4eecf22ada909056084768c5"><div class="ttname"><a href="vmem__read_8c.html#a061417fb4eecf22ada909056084768c5">vmem_read</a></div><div class="ttdeci">void vmem_read(vmemptr_t src, void *dst, uint16_t len)</div><div class="ttdef"><b>Definition:</b> <a href="vmem__read_8c_source.html#l00018">vmem_read.c:18</a></div></div>
+<div class="ttc" id="avmem__read_8c_html_a061417fb4eecf22ada909056084768c5"><div class="ttname"><a href="vmem__read_8c.html#a061417fb4eecf22ada909056084768c5">vmem_read</a></div><div class="ttdeci">void vmem_read(vmemptr_t src, void *dst, uint16_t len)</div><div class="ttdef"><b>Definition:</b> <a href="vmem__read_8c_source.html#l00027">vmem_read.c:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

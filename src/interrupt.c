@@ -26,7 +26,7 @@ static uint8_t hook_timi[5];
 static void (*interrupt_handler)(void) = 0;
 static void (*vsync_handler)(void) = 0;
 
-static volatile bool vsync_not_finished;
+volatile bool vsync_busy;
 
 static void null_handler(void) {
   /* do nothing */
@@ -40,7 +40,7 @@ static void default_interrupt_handler(void) {
 static void default_vsync_handler(void) {
   vsync_handler();
   __asm__("call _hook_timi");
-  vsync_not_finished = false;
+  vsync_busy = false;
 }
 
 static void replacement_for_H_KEYI(void) {
@@ -85,6 +85,6 @@ void set_vsync_handler(void (*handler)(void)) {
 void await_vsync(void) {
   do {
     await_interrupt();
-  } while (vsync_not_finished);
-  vsync_not_finished = true;
+  } while (vsync_busy);
+  vsync_busy = true;
 }

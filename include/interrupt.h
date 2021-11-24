@@ -19,6 +19,19 @@
 #include <stdint.h>
 
 /**
+ * "Busy" flag for VSYNC interrupt routine.
+ *
+ * `vsync_busy` is set to `false` when the VSYNC interrupt routine finished.
+ *
+ * \note
+ * This is used internally by `await_vsync()` to work with the VSYNC interrupt
+ * routine. Normally, you don't need to worry about this. However, if you want
+ * to override the default VSYNC interrupt routine without using
+ * `set_vsync_handler()`, you have to clear it in the VSYNC interrupt routine.
+ */
+extern volatile bool vsync_busy;
+
+/**
  * Waits for next interrupt.
  *
  * Calling to `await_interrupt()` waits for next interrupt and blocks until the

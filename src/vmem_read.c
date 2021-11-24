@@ -15,11 +15,20 @@
 
 #include "vdp_internal.h"
 
+// void vmem_read(vmemptr_t src, void* dst, uint16_t len) {
+//   __critical {
+//     vmem_set_read_address(src);
+//     for (uint8_t* p = dst; len--; ) {
+//       *p++ = vdp_port0;
+//     }
+//   }
+// }
+
 void vmem_read(vmemptr_t src, void* dst, uint16_t len) {
   __critical {
-    vmem_set_read_address(src);
-    for (uint8_t* p = dst; len--; ) {
-      *p++ = vdp_port0;
-    }
+    VDP_SET_VMEM_READ_POINTER(src);
+  }
+  for (uint8_t* p = dst; len--; ) {
+    *p++ = VDP_GET_VMEM_VALUE();
   }
 }

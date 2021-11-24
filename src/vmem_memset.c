@@ -15,11 +15,20 @@
 
 #include "vdp_internal.h"
 
+// void vmem_memset(vmemptr_t dst, uint8_t val, uint16_t len) {
+//   __critical {
+//     vmem_set_write_address(dst);
+//     for (; len--; ) {
+//       vdp_port0 = val;
+//     }
+//   }
+// }
+
 void vmem_memset(vmemptr_t dst, uint8_t val, uint16_t len) {
   __critical {
-    vmem_set_write_address(dst);
-    for (; len--; ) {
-      vdp_port0 = val;
-    }
+    VDP_SET_VMEM_WRITE_POINTER(dst);
+  }
+  for (; len--; ) {
+    VDP_SET_VMEM_VALUE(val);
   }
 }

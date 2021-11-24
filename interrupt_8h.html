@@ -94,13 +94,14 @@ $(document).ready(function(){initNavTree('interrupt_8h.html',''); initResizable(
 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for interrupt.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interrupt_8h__incl.svg" width="135" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interrupt_8h__incl.svg" width="174" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -177,7 +178,7 @@ This function is supposed to be used to synchronize with an interrupt in the mai
 This function cannot be used from an interrupt handler; if you need an interrupt handler for any type of interrupt, use <a class="el" href="interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40" title="Register user defined interrupt handler.">set_interrupt_handler()</a> instead. Or if you need an interrupt handler for VSYNC, use <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27" title="Waits for next VSYNC interrupt.">await_vsync()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="interrupt_8h_source.html#l00056">56</a> of file <a class="el" href="interrupt_8h_source.html">interrupt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interrupt_8h_source.html#l00057">57</a> of file <a class="el" href="interrupt_8h_source.html">interrupt.h</a>.</p>
 
 </div>
 </div>

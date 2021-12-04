@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 , <a class="el" href="vdp_8c.html#ad7f208183d1b0993bf96986850e8de81">vdp.c</a>
 </li>
 <li>se
-: <a class="el" href="sound_8c.html#a7b2f509d1febe11b758fbbd90ec49f8b">sound.c</a>
+: <a class="el" href="sound_8c.html#a0e45ff5f5ef6b20fde45be41f63998cf">sound.c</a>
 </li>
 <li>set_interrupt_handler()
 : <a class="el" href="interrupt_8h.html#a4b7e0dcff7ea0530ab92899dc8671b40">interrupt.h</a>
@@ -109,6 +109,9 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 : <a class="el" href="interrupt_8h.html#abfc4bf8d4bce39389cf1e6ad5decf38a">interrupt.h</a>
 , <a class="el" href="sleep__ticks_8c.html#abfc4bf8d4bce39389cf1e6ad5decf38a">sleep_ticks.c</a>
 </li>
+<li>sound_advance_count
+: <a class="el" href="sound_8c.html#ab70a16dd5e9d01bdbc35764102ac04e4">sound.c</a>
+</li>
 <li>SOUND_CHANNEL_A
 : <a class="el" href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">sound.h</a>
 </li>
@@ -121,9 +124,41 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 <li>SOUND_CHANNEL_C
 : <a class="el" href="sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3">sound.h</a>
 </li>
+<li>sound_channel_enable_hw_envelope()
+: <a class="el" href="sound_8c.html#af24dea61a01509e40bc807034d392177">sound.c</a>
+</li>
+<li>sound_channel_set_amp()
+: <a class="el" href="sound_8c.html#a381d3c17fb5bcd569dd919701e259df1">sound.c</a>
+</li>
 <li>sound_effect()
 : <a class="el" href="sound_8h.html#a9a93615db20eb70cf9df084778d9a9ee">sound.h</a>
 , <a class="el" href="sound_8c.html#a9a93615db20eb70cf9df084778d9a9ee">sound.c</a>
+</li>
+<li>sound_eg_advance()
+: <a class="el" href="sound_8c.html#a0b63e3ec27af4dcbd42dc848f1c66542">sound.c</a>
+</li>
+<li>SOUND_EG_AHDSR
+: <a class="el" href="sound__eg_8h.html#afd6ed667699c0a899cbab12bdd11238c">sound_eg.h</a>
+</li>
+<li>sound_eg_AHDSR
+: <a class="el" href="sound_8c.html#a380105d26608f74823f014bfbfcdaa04">sound.c</a>
+, <a class="el" href="sound__eg__AHDSR_8c.html#a380105d26608f74823f014bfbfcdaa04">sound_eg_AHDSR.c</a>
+</li>
+<li>sound_eg_key_off()
+: <a class="el" href="sound_8c.html#ab79f958bca7ac13a38ed5f097578fc48">sound.c</a>
+</li>
+<li>sound_eg_key_on()
+: <a class="el" href="sound_8c.html#a0f037842b006b4cdf34c8550c3c09d6e">sound.c</a>
+</li>
+<li>sound_eg_LPCM
+: <a class="el" href="sound_8c.html#a0a7b65d0dca89f6c9f929533a89fe485">sound.c</a>
+, <a class="el" href="sound__eg__LPCM_8c.html#a0a7b65d0dca89f6c9f929533a89fe485">sound_eg_LPCM.c</a>
+</li>
+<li>SOUND_EG_LPCM
+: <a class="el" href="sound__eg_8h.html#ab942e2cfa690f34865435d9618202680">sound_eg.h</a>
+</li>
+<li>SOUND_EG_TABLE_MAX
+: <a class="el" href="sound__eg_8h.html#afc790cddee3a368850174ab04058899e">sound_eg.h</a>
 </li>
 <li>sound_init()
 : <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound.h</a>
@@ -134,12 +169,19 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 , <a class="el" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound.c</a>
 </li>
 <li>sound_player()
-: <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound.h</a>
-, <a class="el" href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">sound.c</a>
+: <a class="el" href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">sound.c</a>
+, <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound.h</a>
+</li>
+<li>sound_player__process_channel()
+: <a class="el" href="sound_8c.html#a7a96ff02e758195959c7cc5c47bf6148">sound.c</a>
 </li>
 <li>sound_set_bgm()
-: <a class="el" href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound.h</a>
-, <a class="el" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound.c</a>
+: <a class="el" href="sound_8c.html#af3465ea25875e5461142411740aa69e3">sound.c</a>
+, <a class="el" href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound.h</a>
+</li>
+<li>sound_set_eg_table()
+: <a class="el" href="sound__eg_8h.html#ac5838ecb113e8d1ef6af4cae7690de3c">sound_eg.h</a>
+, <a class="el" href="sound_8c.html#ac5838ecb113e8d1ef6af4cae7690de3c">sound.c</a>
 </li>
 <li>sound_set_mute()
 : <a class="el" href="sound_8h.html#ac85593d9f7d37f53db1258f624f2a98c">sound.h</a>
@@ -149,6 +191,10 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 : <a class="el" href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound.h</a>
 , <a class="el" href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound.c</a>
 </li>
+<li>sound_set_volume()
+: <a class="el" href="sound_8h.html#a316d8aea0d56999411d02edef8466374">sound.h</a>
+, <a class="el" href="sound_8c.html#a316d8aea0d56999411d02edef8466374">sound.c</a>
+</li>
 <li>sound_start()
 : <a class="el" href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound.h</a>
 , <a class="el" href="sound_8c.html#a893fbd47631ab99368244cfbd0854b36">sound.c</a>
@@ -156,6 +202,12 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 <li>sound_stop()
 : <a class="el" href="sound_8h.html#a05ffba4b6e960e4a0699f50b8a72d795">sound.h</a>
 , <a class="el" href="sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795">sound.c</a>
+</li>
+<li>sound_tick
+: <a class="el" href="sound_8c.html#a2b1447dc233b19e8c36c251305ae12bc">sound.c</a>
+</li>
+<li>sound_update_tick()
+: <a class="el" href="sound_8c.html#a799bd52499d472f169b9b96d1ee722d5">sound.c</a>
 </li>
 <li>sprite_mode
 : <a class="el" href="vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c">vdp.c</a>
@@ -166,16 +218,16 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 , <a class="el" href="sprite__set__color_8c.html#adfaf95fcc3973b026552c7c11235547e">sprite_set_color.c</a>
 </li>
 <li>sprite_set_pat()
-: <a class="el" href="sprite__set__pat_8c.html#a0e5f09efae319ad69d5828e962ece788">sprite_set_pat.c</a>
-, <a class="el" href="sprite_8h.html#a0e5f09efae319ad69d5828e962ece788">sprite.h</a>
+: <a class="el" href="sprite_8h.html#a0e5f09efae319ad69d5828e962ece788">sprite.h</a>
+, <a class="el" href="sprite__set__pat_8c.html#a0e5f09efae319ad69d5828e962ece788">sprite_set_pat.c</a>
 </li>
 <li>sprite_set_x()
 : <a class="el" href="sprite_8h.html#aa237556cb30d3104dccc66f9e9553f0b">sprite.h</a>
 , <a class="el" href="sprite__set__x_8c.html#aa237556cb30d3104dccc66f9e9553f0b">sprite_set_x.c</a>
 </li>
 <li>sprite_set_xy()
-: <a class="el" href="sprite_8h.html#abfb561ba9c7d0a8d93cd4d776c0b5b93">sprite.h</a>
-, <a class="el" href="sprite__set__xy_8c.html#abfb561ba9c7d0a8d93cd4d776c0b5b93">sprite_set_xy.c</a>
+: <a class="el" href="sprite__set__xy_8c.html#abfb561ba9c7d0a8d93cd4d776c0b5b93">sprite_set_xy.c</a>
+, <a class="el" href="sprite_8h.html#abfb561ba9c7d0a8d93cd4d776c0b5b93">sprite.h</a>
 </li>
 <li>sprite_set_y()
 : <a class="el" href="sprite_8h.html#add07ddc8e6825d671c481f77dd1e9a26">sprite.h</a>
@@ -193,8 +245,11 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 <li>SPRITE_TAG_IC
 : <a class="el" href="sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1ab153936187f894853626bd150ddd2131">sprite.h</a>
 </li>
-<li>state
-: <a class="el" href="sound_8c.html#a117781baf820700e0b0674a55811fe3a">sound.c</a>
+<li>SUSTAIN_LEVEL
+: <a class="el" href="sound__eg__AHDSR_8c.html#ab3b1ed7a81bd3a321d52e2907667b7b5">sound_eg_AHDSR.c</a>
+</li>
+<li>SUSTAIN_PHASE
+: <a class="el" href="sound__eg__AHDSR_8c.html#a098b87f215ce140c845bd296261d489e">sound_eg_AHDSR.c</a>
 </li>
 </ul>
 </div><!-- contents -->

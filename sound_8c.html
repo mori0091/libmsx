@@ -86,7 +86,8 @@ $(document).ready(function(){initNavTree('sound_8c.html',''); initResizable(); }
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">sound.c File Reference</div>  </div>
 </div><!--header-->
@@ -98,12 +99,14 @@ $(document).ready(function(){initNavTree('sound_8c.html',''); initResizable(); }
 <code>#include &quot;<a class="el" href="bios_8h_source.html">../include/bios.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="psg_8h_source.html">../include/psg.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sound_8h_source.html">../include/sound.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sound__eg_8h_source.html">../include/sound_eg.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sound__eg__spi_8h_source.html">../include/sound_eg_spi.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sound.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sound_8c__incl.svg" width="530" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound_8c__incl.svg" width="610" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -111,7 +114,7 @@ $(document).ready(function(){initNavTree('sound_8c.html',''); initResizable(); }
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchannel.html">channel</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__channel.html">sound_channel</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsound__state.html">sound_state</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,9 +128,27 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a0f037842b006b4cdf34c8550c3c09d6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a0f037842b006b4cdf34c8550c3c09d6e">sound_eg_key_on</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a0f037842b006b4cdf34c8550c3c09d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab79f958bca7ac13a38ed5f097578fc48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ab79f958bca7ac13a38ed5f097578fc48">sound_eg_key_off</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:ab79f958bca7ac13a38ed5f097578fc48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b63e3ec27af4dcbd42dc848f1c66542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a0b63e3ec27af4dcbd42dc848f1c66542">sound_eg_advance</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a0b63e3ec27af4dcbd42dc848f1c66542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a799bd52499d472f169b9b96d1ee722d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a799bd52499d472f169b9b96d1ee722d5">sound_update_tick</a> (void)</td></tr>
+<tr class="separator:a799bd52499d472f169b9b96d1ee722d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5838ecb113e8d1ef6af4cae7690de3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ac5838ecb113e8d1ef6af4cae7690de3c">sound_set_eg_table</a> (const struct <a class="el" href="structsound__eg__attribute.html">sound_eg_attribute</a> *table)</td></tr>
+<tr class="memdesc:ac5838ecb113e8d1ef6af4cae7690de3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Re)set the software envelope generator attribute table.  <a href="sound_8c.html#ac5838ecb113e8d1ef6af4cae7690de3c">More...</a><br /></td></tr>
+<tr class="separator:ac5838ecb113e8d1ef6af4cae7690de3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a381d3c17fb5bcd569dd919701e259df1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a381d3c17fb5bcd569dd919701e259df1">sound_channel_set_amp</a> (struct <a class="el" href="structsound__channel.html">sound_channel</a> *sc, uint8_t amp)</td></tr>
+<tr class="separator:a381d3c17fb5bcd569dd919701e259df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24dea61a01509e40bc807034d392177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#af24dea61a01509e40bc807034d392177">sound_channel_enable_hw_envelope</a> (struct <a class="el" href="structsound__channel.html">sound_channel</a> *sc)</td></tr>
+<tr class="separator:af24dea61a01509e40bc807034d392177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7e35fd4fef3532ed0c5e5bc3548d4ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a> (bool <a class="el" href="sound_8c.html#a98c61ed9410ab805baab005fe7713d9b">repeat</a>)</td></tr>
 <tr class="memdesc:ad7e35fd4fef3532ed0c5e5bc3548d4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on/off the auto-repeat of the BGM.  <a href="sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">More...</a><br /></td></tr>
 <tr class="separator:ad7e35fd4fef3532ed0c5e5bc3548d4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316d8aea0d56999411d02edef8466374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a316d8aea0d56999411d02edef8466374">sound_set_volume</a> (uint8_t <a class="el" href="sound_8c.html#a14cc77262954756b30c251feabce7ea6">volume</a>)</td></tr>
+<tr class="memdesc:a316d8aea0d56999411d02edef8466374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set main volume level.  <a href="sound_8c.html#a316d8aea0d56999411d02edef8466374">More...</a><br /></td></tr>
+<tr class="separator:a316d8aea0d56999411d02edef8466374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85593d9f7d37f53db1258f624f2a98c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">sound_set_mute</a> (uint8_t mute)</td></tr>
 <tr class="memdesc:ac85593d9f7d37f53db1258f624f2a98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mute/unmute for each sound channel.  <a href="sound_8c.html#ac85593d9f7d37f53db1258f624f2a98c">More...</a><br /></td></tr>
 <tr class="separator:ac85593d9f7d37f53db1258f624f2a98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,9 +170,22 @@ Functions</h2></td></tr>
 <tr class="memitem:aa69657f5f366eef034685b19c9c0ea3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a> (void)</td></tr>
 <tr class="memdesc:aa69657f5f366eef034685b19c9c0ea3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause the BGM.  <a href="sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f">More...</a><br /></td></tr>
 <tr class="separator:aa69657f5f366eef034685b19c9c0ea3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a96ff02e758195959c7cc5c47bf6148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a7a96ff02e758195959c7cc5c47bf6148">sound_player__process_channel</a> (const uint8_t ch, const uint8_t mask)</td></tr>
+<tr class="separator:a7a96ff02e758195959c7cc5c47bf6148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca95ae20cf6bbdedef623278c7c44f5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a> (void)</td></tr>
 <tr class="memdesc:aca95ae20cf6bbdedef623278c7c44f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main routine of the sound driver.  <a href="sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f">More...</a><br /></td></tr>
 <tr class="separator:aca95ae20cf6bbdedef623278c7c44f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2b1447dc233b19e8c36c251305ae12bc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a2b1447dc233b19e8c36c251305ae12bc">sound_tick</a></td></tr>
+<tr class="separator:a2b1447dc233b19e8c36c251305ae12bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70a16dd5e9d01bdbc35764102ac04e4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#ab70a16dd5e9d01bdbc35764102ac04e4">sound_advance_count</a></td></tr>
+<tr class="separator:ab70a16dd5e9d01bdbc35764102ac04e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380105d26608f74823f014bfbfcdaa04"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structsound__eg__vtbl.html">sound_eg_vtbl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a380105d26608f74823f014bfbfcdaa04">sound_eg_AHDSR</a></td></tr>
+<tr class="separator:a380105d26608f74823f014bfbfcdaa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7b65d0dca89f6c9f929533a89fe485"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structsound__eg__vtbl.html">sound_eg_vtbl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8c.html#a0a7b65d0dca89f6c9f929533a89fe485">sound_eg_LPCM</a></td></tr>
+<tr class="separator:a0a7b65d0dca89f6c9f929533a89fe485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright (c) 2021 Daishi Mori (mori0091) </p>
@@ -172,7 +206,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00023">23</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00022">22</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -188,11 +222,219 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00024">24</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00023">23</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a0f037842b006b4cdf34c8550c3c09d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f037842b006b4cdf34c8550c3c09d6e">&#9670;&nbsp;</a></span>sound_eg_key_on()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_eg_key_on </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00090">90</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="ab79f958bca7ac13a38ed5f097578fc48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab79f958bca7ac13a38ed5f097578fc48">&#9670;&nbsp;</a></span>sound_eg_key_off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_eg_key_off </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00094">94</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a0b63e3ec27af4dcbd42dc848f1c66542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b63e3ec27af4dcbd42dc848f1c66542">&#9670;&nbsp;</a></span>sound_eg_advance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_eg_advance </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00098">98</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a799bd52499d472f169b9b96d1ee722d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a799bd52499d472f169b9b96d1ee722d5">&#9670;&nbsp;</a></span>sound_update_tick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_update_tick </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00104">104</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="ac5838ecb113e8d1ef6af4cae7690de3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5838ecb113e8d1ef6af4cae7690de3c">&#9670;&nbsp;</a></span>sound_set_eg_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_set_eg_table </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structsound__eg__attribute.html">sound_eg_attribute</a> *&#160;</td>
+          <td class="paramname"><em>table</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(Re)set the software envelope generator attribute table. </p>
+<p>This function sets the base address of the software envelope generator table to the given address <code>table</code>, or reset to the default if <code>table</code> was <code>NULL</code>.</p>
+<p>The table should be an array of <code>struct <a class="el" href="structsound__eg__attribute.html" title="Attributes of a software envelope generator object.">sound_eg_attribute</a></code> with a maximum of 16 elements. Each element can contain the individual parameter settings of an envelope generator of type AHDSR or LPCM.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>base address of the attribute table. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00115">115</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a381d3c17fb5bcd569dd919701e259df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a381d3c17fb5bcd569dd919701e259df1">&#9670;&nbsp;</a></span>sound_channel_set_amp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_channel_set_amp </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__channel.html">sound_channel</a> *&#160;</td>
+          <td class="paramname"><em>sc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>amp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00128">128</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="af24dea61a01509e40bc807034d392177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24dea61a01509e40bc807034d392177">&#9670;&nbsp;</a></span>sound_channel_enable_hw_envelope()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_channel_enable_hw_envelope </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__channel.html">sound_channel</a> *&#160;</td>
+          <td class="paramname"><em>sc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00132">132</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
 <a id="ad7e35fd4fef3532ed0c5e5bc3548d4ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7e35fd4fef3532ed0c5e5bc3548d4ee">&#9670;&nbsp;</a></span>sound_set_repeat()</h2>
 
@@ -217,7 +459,35 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00056">56</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00138">138</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a316d8aea0d56999411d02edef8466374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316d8aea0d56999411d02edef8466374">&#9670;&nbsp;</a></span>sound_set_volume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_set_volume </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>volume</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set main volume level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">volume</td><td>main volume level (0..15) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00166">166</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -252,7 +522,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00094">94</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00170">170</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -290,7 +560,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00139">139</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00211">211</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -318,7 +588,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00167">167</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00238">238</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -340,7 +610,7 @@ Functions</h2></td></tr>
 
 <p>Start the BGM. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00175">175</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00249">249</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -364,7 +634,7 @@ Functions</h2></td></tr>
 <p>This function must be called at least once. In particular, it must be called before the first call to <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00179">179</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00264">264</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -386,7 +656,7 @@ Functions</h2></td></tr>
 
 <p>Stop the BGM. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00194">194</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00272">272</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -408,7 +678,45 @@ Functions</h2></td></tr>
 
 <p>Pause the BGM. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00198">198</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00281">281</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a7a96ff02e758195959c7cc5c47bf6148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a96ff02e758195959c7cc5c47bf6148">&#9670;&nbsp;</a></span>sound_player__process_channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_player__process_channel </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00302">302</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -441,34 +749,18 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a>(&amp;my_bgm);</div>
 <div class="line"><a class="code" href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a>();</div>
 <div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">Register user defined VSYNC interrupt handler.</div><div class="ttdef"><b>Definition:</b> <a href="interrupt_8c_source.html#l00079">interrupt.c:79</a></div></div>
-<div class="ttc" id="asound_8h_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">Start the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00175">sound.c:175</a></div></div>
-<div class="ttc" id="asound_8h_html_a90e396bab2471f72285f290ce7a5cab1"><div class="ttname"><a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a></div><div class="ttdeci">void sound_init(void)</div><div class="ttdoc">This function initializes the PSG and the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00179">sound.c:179</a></div></div>
-<div class="ttc" id="asound_8h_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">Main routine of the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00331">sound.c:331</a></div></div>
-<div class="ttc" id="asound_8h_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">Turn on/off the auto-repeat of the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00056">sound.c:56</a></div></div>
-<div class="ttc" id="asound_8h_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">Sets the specified music clip as BGM in the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00167">sound.c:167</a></div></div>
+<div class="ttc" id="asound_8h_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">Start the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00249">sound.c:249</a></div></div>
+<div class="ttc" id="asound_8h_html_a90e396bab2471f72285f290ce7a5cab1"><div class="ttname"><a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a></div><div class="ttdeci">void sound_init(void)</div><div class="ttdoc">This function initializes the PSG and the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00264">sound.c:264</a></div></div>
+<div class="ttc" id="asound_8h_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">Main routine of the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00482">sound.c:482</a></div></div>
+<div class="ttc" id="asound_8h_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">Turn on/off the auto-repeat of the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00138">sound.c:138</a></div></div>
+<div class="ttc" id="asound_8h_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">Sets the specified music clip as BGM in the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00238">sound.c:238</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00331">331</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00482">482</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a117781baf820700e0b0674a55811fe3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a117781baf820700e0b0674a55811fe3a">&#9670;&nbsp;</a></span>state</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structsound__state.html">sound_state</a> state</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00040">40</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
-
-</div>
-</div>
 <a id="a98c61ed9410ab805baab005fe7713d9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a98c61ed9410ab805baab005fe7713d9b">&#9670;&nbsp;</a></span>repeat</h2>
 
@@ -481,7 +773,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00047">47</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00049">49</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -497,35 +789,199 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00048">48</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00050">50</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
-<a id="a2653e85d5af4599e403c39312562d7b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2653e85d5af4599e403c39312562d7b9">&#9670;&nbsp;</a></span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct { ... }  bg</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7b2f509d1febe11b758fbbd90ec49f8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b2f509d1febe11b758fbbd90ec49f8b">&#9670;&nbsp;</a></span></h2>
+<a id="a14cc77262954756b30c251feabce7ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14cc77262954756b30c251feabce7ea6">&#9670;&nbsp;</a></span>volume</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct { ... }  se</td>
+          <td class="memname">uint8_t volume</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00051">51</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="aeacfc9559cfdeb371bfc12b2e8327e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeacfc9559cfdeb371bfc12b2e8327e50">&#9670;&nbsp;</a></span>bg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structsound__state.html">sound_state</a> bg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00051">51</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a0e45ff5f5ef6b20fde45be41f63998cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e45ff5f5ef6b20fde45be41f63998cf">&#9670;&nbsp;</a></span>se</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structsound__state.html">sound_state</a> se</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00051">51</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a2b1447dc233b19e8c36c251305ae12bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1447dc233b19e8c36c251305ae12bc">&#9670;&nbsp;</a></span>sound_tick</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t sound_tick</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00079">79</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="ab70a16dd5e9d01bdbc35764102ac04e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70a16dd5e9d01bdbc35764102ac04e4">&#9670;&nbsp;</a></span>sound_advance_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t sound_advance_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00080">80</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a380105d26608f74823f014bfbfcdaa04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380105d26608f74823f014bfbfcdaa04">&#9670;&nbsp;</a></span>sound_eg_AHDSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structsound__eg__vtbl.html">sound_eg_vtbl</a> <a class="el" href="structsound__eg__AHDSR.html">sound_eg_AHDSR</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00090">90</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="a0a7b65d0dca89f6c9f929533a89fe485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7b65d0dca89f6c9f929533a89fe485">&#9670;&nbsp;</a></span>sound_eg_LPCM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structsound__eg__vtbl.html">sound_eg_vtbl</a> <a class="el" href="structsound__eg__LPCM.html">sound_eg_LPCM</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__LPCM_8c_source.html#l00036">36</a> of file <a class="el" href="sound__eg__LPCM_8c_source.html">sound_eg_LPCM.c</a>.</p>
+
+</div>
+</div>
+<a id="a31c9b853467f23a198f0a75610df80a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c9b853467f23a198f0a75610df80a5">&#9670;&nbsp;</a></span>noise_fdr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t noise_fdr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00143">143</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a2e831854e0cc8fdfafd66f0168d48bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e831854e0cc8fdfafd66f0168d48bd0">&#9670;&nbsp;</a></span>mixer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t mixer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00144">144</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a3646dc2c758ca63359a925b8666f4b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3646dc2c758ca63359a925b8666f4b74">&#9670;&nbsp;</a></span>envelope_cycle_lo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t envelope_cycle_lo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00145">145</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a2e193f6773a9d4e678d1b58b0d1f7392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e193f6773a9d4e678d1b58b0d1f7392">&#9670;&nbsp;</a></span>envelope_cycle_hi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t envelope_cycle_hi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00146">146</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>

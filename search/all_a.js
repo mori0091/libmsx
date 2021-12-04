@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['metasprite_24',['metasprite',['../structmetasprite.html',1,'']]],
-  ['metasprite_2eh_25',['metasprite.h',['../metasprite_8h.html',1,'']]],
-  ['metasprite_5ft_26',['metasprite_t',['../metasprite_8h.html#aaa450295993f973fb05ebda45d8d14bf',1,'metasprite.h']]],
-  ['msx_2eh_27',['msx.h',['../msx_8h.html',1,'']]],
-  ['msx_5fget_5fversion_28',['msx_get_version',['../bios_8h.html#a19b4876435ca81258934f0d78d6cae07',1,'bios.h']]],
-  ['msx_5fget_5fvsync_5ffrequency_29',['msx_get_vsync_frequency',['../bios_8h.html#a92e83309660f10fadbd038807b69b56f',1,'bios.h']]],
-  ['msx_5fset_5fcpu_5fmode_30',['msx_set_cpu_mode',['../bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af',1,'bios.h']]],
-  ['msx_5fset_5fcpu_5fmode_2ec_31',['msx_set_cpu_mode.c',['../msx__set__cpu__mode_8c.html',1,'']]]
+  ['layouts_43',['layouts',['../structmetasprite.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
+  ['len_44',['len',['../structsound__eg__LPCM.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM']]],
+  ['length_45',['LENGTH',['../sound__eg__LPCM_8c.html#a30362161c93e3f1a4ee4c673f535b5a8',1,'sound_eg_LPCM.c']]],
+  ['libmsx_20_3b_20c_20library_20for_20msx_46',['libmsx ; C library for MSX',['../index.html',1,'']]],
+  ['libmsx_5f_5f_5finit_5fintr_47',['libmsx___init_intr',['../interrupt_8c.html#a61a5fde49304517b2bb197a8b5577a70',1,'interrupt.c']]],
+  ['lpcm_48',['lpcm',['../structsound__eg__attribute.html#a8feaf87acd189517c7b126313244c422',1,'sound_eg_attribute']]]
 ];

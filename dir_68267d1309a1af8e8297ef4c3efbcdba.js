@@ -9,6 +9,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "sleep_millis.c", "sleep__millis_8c.html", "sleep__millis_8c" ],
     [ "sleep_ticks.c", "sleep__ticks_8c.html", "sleep__ticks_8c" ],
     [ "sound.c", "sound_8c.html", "sound_8c" ],
+    [ "sound_eg_AHDSR.c", "sound__eg__AHDSR_8c.html", "sound__eg__AHDSR_8c" ],
+    [ "sound_eg_LPCM.c", "sound__eg__LPCM_8c.html", "sound__eg__LPCM_8c" ],
     [ "sprite_set_color.c", "sprite__set__color_8c.html", "sprite__set__color_8c" ],
     [ "sprite_set_pat.c", "sprite__set__pat_8c.html", "sprite__set__pat_8c" ],
     [ "sprite_set_x.c", "sprite__set__x_8c.html", "sprite__set__x_8c" ],

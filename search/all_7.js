@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['joypad_5fget_5fstate_18',['joypad_get_state',['../input_8h.html#a087c749840978e4916c876d906668397',1,'joypad_get_state(uint8_t controller):&#160;joypad_get_state.c'],['../joypad__get__state_8c.html#a087c749840978e4916c876d906668397',1,'joypad_get_state(uint8_t controller):&#160;joypad_get_state.c']]],
-  ['joypad_5fget_5fstate_2ec_19',['joypad_get_state.c',['../joypad__get__state_8c.html',1,'']]]
+  ['input_2eh_34',['input.h',['../input_8h.html',1,'']]],
+  ['interrupt_2ec_35',['interrupt.c',['../interrupt_8c.html',1,'']]],
+  ['interrupt_2eh_36',['interrupt.h',['../interrupt_8h.html',1,'']]],
+  ['io_2eh_37',['io.h',['../io_8h.html',1,'']]]
 ];

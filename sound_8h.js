@@ -7,6 +7,7 @@ var sound_8h =
     [ "SOUND_CHANNEL_C", "sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3", null ],
     [ "SOUND_CHANNEL_ALL", "sound_8h.html#aaedcbb164ed2701f67c71218526dffe2", null ],
     [ "sound_init", "sound_8h.html#a90e396bab2471f72285f290ce7a5cab1", null ],
+    [ "sound_set_volume", "sound_8h.html#a316d8aea0d56999411d02edef8466374", null ],
     [ "sound_set_repeat", "sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee", null ],
     [ "sound_set_mute", "sound_8h.html#ac85593d9f7d37f53db1258f624f2a98c", null ],
     [ "sound_effect", "sound_8h.html#a9a93615db20eb70cf9df084778d9a9ee", null ],

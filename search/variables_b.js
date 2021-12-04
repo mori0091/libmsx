@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tagged_5fcolor_428',['tagged_color',['../structsprite.html#a938b2b6b7c016d1a538066f362f13d9c',1,'sprite']]],
-  ['tagged_5fcolors_429',['tagged_colors',['../structsprite__color.html#a96825be5e00cd459cc7a1d7270daf13f',1,'sprite_color']]]
+  ['output_515',['output',['../structsound__eg.html#a3ce703ec9ed6795282f6894776e44513',1,'sound_eg']]]
 ];

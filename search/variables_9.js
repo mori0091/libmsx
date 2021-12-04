@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['repeat_421',['repeat',['../sound_8c.html#a98c61ed9410ab805baab005fe7713d9b',1,'sound.c']]]
+  ['mixer_510',['mixer',['../sound_8c.html#a2e831854e0cc8fdfafd66f0168d48bd0',1,'sound.c']]]
 ];

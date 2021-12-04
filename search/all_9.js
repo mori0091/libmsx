@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['layouts_21',['layouts',['../structmetasprite.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
-  ['libmsx_20_3b_20c_20library_20for_20msx_22',['libmsx ; C library for MSX',['../index.html',1,'']]],
-  ['libmsx_5f_5f_5finit_5fintr_23',['libmsx___init_intr',['../interrupt_8c.html#a61a5fde49304517b2bb197a8b5577a70',1,'interrupt.c']]]
+  ['kana_5flamp_5foff_40',['KANA_LAMP_OFF',['../joypad__get__state_8c.html#a9be96c80705518e5d0dedf2174b43149',1,'joypad_get_state.c']]],
+  ['key_5foff_41',['key_off',['../structsound__eg__vtbl.html#afdcfbfc61334813f3fc101c19c3fe773',1,'sound_eg_vtbl']]],
+  ['key_5fon_42',['key_on',['../structsound__eg__vtbl.html#a96a18fcdbea75bbddbff5a41b62258f7',1,'sound_eg_vtbl']]]
 ];

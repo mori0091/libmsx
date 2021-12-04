@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['sound_5fchannel_5fa_481',['SOUND_CHANNEL_A',['../sound_8h.html#a466185ed37b39cb48ae0c4d966462cee',1,'sound.h']]],
-  ['sound_5fchannel_5fall_482',['SOUND_CHANNEL_ALL',['../sound_8h.html#aaedcbb164ed2701f67c71218526dffe2',1,'sound.h']]],
-  ['sound_5fchannel_5fb_483',['SOUND_CHANNEL_B',['../sound_8h.html#af0aea604a4e0e8cc864f98be452d3752',1,'sound.h']]],
-  ['sound_5fchannel_5fc_484',['SOUND_CHANNEL_C',['../sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3',1,'sound.h']]]
+  ['hold_5fphase_593',['HOLD_PHASE',['../sound__eg__AHDSR_8c.html#a0423e639047abad5105635835c34bc5a',1,'sound_eg_AHDSR.c']]],
+  ['hold_5ftime_594',['HOLD_TIME',['../sound__eg__AHDSR_8c.html#a3f171629948a6f7ad5c9e9a4d9f1366c',1,'sound_eg_AHDSR.c']]]
 ];

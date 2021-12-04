@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['kana_5flamp_5foff_479',['KANA_LAMP_OFF',['../joypad__get__state_8c.html#a9be96c80705518e5d0dedf2174b43149',1,'joypad_get_state.c']]]
+  ['data_589',['DATA',['../sound__eg__LPCM_8c.html#aad9ae913bdfab20dd94ad04ee2d5b045',1,'sound_eg_LPCM.c']]],
+  ['decay_5fphase_590',['DECAY_PHASE',['../sound__eg__AHDSR_8c.html#a2c65c583bd4b8ed85ed09ee45a97e5cc',1,'sound_eg_AHDSR.c']]],
+  ['decay_5frate_591',['DECAY_RATE',['../sound__eg__AHDSR_8c.html#a34e67bacdf31e21c0bd9ef4542eaedf4',1,'sound_eg_AHDSR.c']]]
 ];

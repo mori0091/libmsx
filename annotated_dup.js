@@ -1,8 +1,13 @@
 var annotated_dup =
 [
-    [ "channel", "structchannel.html", "structchannel" ],
     [ "metasprite", "structmetasprite.html", "structmetasprite" ],
+    [ "sound_channel", "structsound__channel.html", "structsound__channel" ],
     [ "sound_clip", "structsound__clip.html", "structsound__clip" ],
+    [ "sound_eg", "structsound__eg.html", "structsound__eg" ],
+    [ "sound_eg_AHDSR", "structsound__eg__AHDSR.html", "structsound__eg__AHDSR" ],
+    [ "sound_eg_attribute", "structsound__eg__attribute.html", "structsound__eg__attribute" ],
+    [ "sound_eg_LPCM", "structsound__eg__LPCM.html", "structsound__eg__LPCM" ],
+    [ "sound_eg_vtbl", "structsound__eg__vtbl.html", "structsound__eg__vtbl" ],
     [ "sound_fragment", "structsound__fragment.html", "structsound__fragment" ],
     [ "sound_state", "structsound__state.html", "structsound__state" ],
     [ "sprite", "structsprite.html", "structsprite" ],

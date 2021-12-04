@@ -1,11 +1,13 @@
 <map id="src/sound.c" name="src/sound.c">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="170,5,259,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,69,107"/>
-<area shape="rect" id="node3" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="226,80,337,107"/>
-<area shape="rect" id="node5" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="94,80,202,107"/>
-<area shape="rect" id="node7" href="$sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="361,80,484,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="249,155,313,181"/>
-<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="99,155,197,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="361,155,436,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="461,155,523,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="241,5,331,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="21,87,85,114"/>
+<area shape="rect" id="node3" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,169,116,196"/>
+<area shape="rect" id="node5" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="160,87,268,114"/>
+<area shape="rect" id="node7" href="$sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="481,169,603,196"/>
+<area shape="rect" id="node10" href="$sound__eg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="313,169,456,196"/>
+<area shape="rect" id="node11" href="$sound__eg__spi_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="293,80,426,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="283,244,347,271"/>
+<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="140,169,237,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="379,244,454,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="511,244,573,271"/>
 </map>

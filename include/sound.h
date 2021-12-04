@@ -52,13 +52,14 @@
  * Each sound data stream shall be in the following format.
  *
  * \note
- * The following is written in BNF-like notation.
+ * The format of the sound data stream is described in the extended BNF format
+ * as follows:
  * - The term `x*` means zero or more `x`.
  * - The term `x+` means one or more `x`.
  * - If a term ends with `b` (e.g. `1111b`), it means a binary number.
  * - A `-` in a binary number means an unused bit.
  * - If a term ends with `:y` (e.g. `foo:5`), it means that the term is a binary
- *   number with y bits.
+ *   number with `y` bits.
  *
  * ~~~
  * stream = chunk* eom
@@ -67,26 +68,31 @@
  * eom    = 1111b 1111b
  *
  * header  = len:3 duration_hi:5 duration_lo:8
- * command = tone
- *         | rest
+ * command = keyon
+ *         | tone
+ *         | keyoff
  *         | volume
+ *         | software_envelope_pattern
  *         | envelope_pattern
  *         | envelope_cycle
  *         | envelope_pattern_and_cycle
  *         | noise
  *         | mixer
  *
- * tone   = 0000b fdr_hi:4 fdr_lo:8
- * rest   = 0001b ----b
- * noise  = 001b fdr:5
+ * keyon  = 0000b tone_fdr_hi:4 tone_fdr_lo:8
+ * tone   = 1110b tone_fdr_hi:4 tone_fdr_lo:8
+ * keyoff = 0001b ----b
+ * noise  = 001b noise_fdr:5
  * mixer  = 0111b ----b --b NC:1 NB:1 NA:1 TC:1 TB:1 TA:1
  * volume = 1000b vol:4
+ * software_envelope_pattern
+ *        = 1100b pat:4
  * envelope_pattern
  *        = 1001b pat:4
  * envelope_cycle
- *        = 0100b 0000b fdr_hi:8 fdr_lo:8
+ *        = 0100b 0000b cycle_hi:8 cycle_lo:8
  * envelope_pattern_and_cycle
- *        = 1101b pat:4 fdr_hi:8 fdr_lo:8
+ *        = 1101b pat:4 cycle_hi:8 cycle_lo:8
  * ~~~
  *
  * The structure of `chunk`:
@@ -155,6 +161,13 @@ struct sound_clip {
  * machine.
  */
 void sound_init(void);
+
+/**
+ * Set main volume level.
+ *
+ * \param volume   main volume level (0..15)
+ */
+void sound_set_volume(uint8_t volume);
 
 /**
  * Turn on/off the auto-repeat of the BGM.

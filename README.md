@@ -38,39 +38,40 @@ The below functionality is supported.
 
   - Almost of TMS9918A, V9938, V9958 VDP (Video Display Processor)
     functionality.
-    
-      - Display screen mode setting
-      - Display area position adjustment
-      - Display lines setting (192 lines / 212 lines)
-      - VRAM memory map setting (pattern name table, color table, and so
-        on)
-      - Color palette
-      - Hardware vertical scroll
-      - Hardware horizontal scroll
-      - Enable / disable display visibility
-      - Enable / disable sprites visibility
-      - VDP command execution (HMMM, HMMV, LMMM, and LMMV)
-      - VRAM read / write
-      - … and so on
+    - Display screen mode setting
+    - Display area position adjustment
+    - Display lines setting (192 lines / 212 lines)
+    - VRAM memory map setting (pattern name table, color table, and so on)
+    - Color palette
+    - Hardware vertical scroll
+    - Hardware horizontal scroll
+    - Enable / disable display visibility
+    - Enable / disable sprites visibility
+    - VDP command execution (HMMM, HMMV, LMMM, and LMMV)
+    - VRAM read / write
+    - … and so on
 
   - GPIO (8-bit parallel I/O port ; a.k.a Joystick I/F)
-    
-      - Reading joystick input state.
+
+    - Reading joystick input state.
 
   - Sound output
     
-      - PSG (AY-3-8910)
+    - PSG (AY-3-8910)
 
   - Sound driver
     
-      - Start / Stop / Pause / Mute the BGM.
-      - Playing sound effects.
-          - While a sound effect is playing, the channels of BGM that
-            conflicts with sound effects are automatically muted.
-      - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
-      - All functionality of PSG is supported.
-      - (Software envelope, detune, etc. are not supported yet.)
-      - (A MML compiler for the sound driver is not developped yet.)
+    - Start / Stop / Pause / Mute the BGM.
+    - Playing sound effects.
+      - While a sound effect is playing, the channels of BGM that conflicts with
+        sound effects are automatically muted.
+    - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
+    - All functionality of PSG is supported.
+    - Software envelope generator is supported.
+      - AHDSR (attack / hold / decay / sutain / release) type envelope generator
+      - LPCM (8-bit 60Hz linear PCM) type envelope generator
+      - Up to 16 user-defined envelope patterns can be used.
+    - (A MML compiler for the sound driver is not developped yet.)
 
 ## Unsupported functionality
 
@@ -78,8 +79,8 @@ The below functionality is NOT supported yet.
 
   - Keyboard input
   - Sound output
-      - ~~PSG (AY-3-8910)~~ `supported`
-      - OPLL (YM2413 / MSX-MUSIC)
+    - ~~PSG (AY-3-8910)~~ `supported`
+    - OPLL (YM2413 / MSX-MUSIC)
   - ~~BGM driver~~ `supported`
   - ~~Sound effect driver~~ `supported`
   - … and so on

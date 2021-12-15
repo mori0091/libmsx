@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"structsound__eg__AHDSR.html#a29c9ae53b12db8c23db4d5484cfbad42":[1,0,4,2],
+"structsound__eg__AHDSR.html#a4a1388e1f7cf928ec13f1b3a7ae53b8b":[1,0,4,0],
+"structsound__eg__AHDSR.html#ab41cb77000c9074cde189e9dd85f92a8":[1,0,4,4],
 "structsound__eg__AHDSR.html#adc973360e68d9c031ab40af9f5d36708":[1,0,4,3],
 "structsound__eg__LPCM.html":[1,0,6],
 "structsound__eg__LPCM.html#a7a482f814a0cb413be88ef7931779faf":[1,0,6,1],

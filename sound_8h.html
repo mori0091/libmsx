@@ -139,12 +139,18 @@ Macros</h2></td></tr>
 <tr class="memitem:aaedcbb164ed2701f67c71218526dffe2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">SOUND_CHANNEL_ALL</a>&#160;&#160;&#160;(<a class="el" href="sound_8h.html#a466185ed37b39cb48ae0c4d966462cee">SOUND_CHANNEL_A</a> | <a class="el" href="sound_8h.html#af0aea604a4e0e8cc864f98be452d3752">SOUND_CHANNEL_B</a> | <a class="el" href="sound_8h.html#a5bcbcc6b811e8134f67e7553fd089bd3">SOUND_CHANNEL_C</a>)</td></tr>
 <tr class="memdesc:aaedcbb164ed2701f67c71218526dffe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bit-mask to specify all PSG channels.  <a href="sound_8h.html#aaedcbb164ed2701f67c71218526dffe2">More...</a><br /></td></tr>
 <tr class="separator:aaedcbb164ed2701f67c71218526dffe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7eb937cc5e1bd69e231eab9c4e7b96b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#ad7eb937cc5e1bd69e231eab9c4e7b96b">SOUND_SPEED_1X</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:ad7eb937cc5e1bd69e231eab9c4e7b96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of the playback speed multiplier for 1.0x speed.  <a href="sound_8h.html#ad7eb937cc5e1bd69e231eab9c4e7b96b">More...</a><br /></td></tr>
+<tr class="separator:ad7eb937cc5e1bd69e231eab9c4e7b96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a90e396bab2471f72285f290ce7a5cab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a> (void)</td></tr>
 <tr class="memdesc:a90e396bab2471f72285f290ce7a5cab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function initializes the PSG and the sound driver.  <a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">More...</a><br /></td></tr>
 <tr class="separator:a90e396bab2471f72285f290ce7a5cab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e978bf0d3673790d9cdb40fa03ce41a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a">sound_set_speed</a> (uint8_t multiplier)</td></tr>
+<tr class="memdesc:a0e978bf0d3673790d9cdb40fa03ce41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the playback speed multiplier.  <a href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a">More...</a><br /></td></tr>
+<tr class="separator:a0e978bf0d3673790d9cdb40fa03ce41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a316d8aea0d56999411d02edef8466374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a316d8aea0d56999411d02edef8466374">sound_set_volume</a> (uint8_t <a class="el" href="sound_8c.html#a14cc77262954756b30c251feabce7ea6">volume</a>)</td></tr>
 <tr class="memdesc:a316d8aea0d56999411d02edef8466374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set main volume level.  <a href="sound_8h.html#a316d8aea0d56999411d02edef8466374">More...</a><br /></td></tr>
 <tr class="separator:a316d8aea0d56999411d02edef8466374"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,6 +258,25 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7eb937cc5e1bd69e231eab9c4e7b96b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7eb937cc5e1bd69e231eab9c4e7b96b">&#9670;&nbsp;</a></span>SOUND_SPEED_1X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SOUND_SPEED_1X&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The value of the playback speed multiplier for 1.0x speed. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a" title="Sets the playback speed multiplier.">sound_set_speed()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00047">47</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a90e396bab2471f72285f290ce7a5cab1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90e396bab2471f72285f290ce7a5cab1">&#9670;&nbsp;</a></span>sound_init()</h2>
@@ -273,7 +298,42 @@ Functions</h2></td></tr>
 <p>This function must be called at least once. In particular, it must be called before the first call to <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00264">264</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00271">271</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+
+</div>
+</div>
+<a id="a0e978bf0d3673790d9cdb40fa03ce41a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e978bf0d3673790d9cdb40fa03ce41a">&#9670;&nbsp;</a></span>sound_set_speed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sound_set_speed </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>multiplier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the playback speed multiplier. </p>
+<p>The playback speed multiplier is specified by a value of 4 times. For example, a value of 4 means a playback speed of 1.0x, and a value of 6 means 1.5x.</p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>The default value of the <code>multiplier</code> is 4 (i.e. 1.0x).</li>
+<li>The maximum value of the <code>multiplier</code> is 8 (i.e. 2.0x).</li>
+<li>If the specified value is greater than 8, it will be modified to 8.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">multiplier</td><td>4 times the playback speed multiplier </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00138">138</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -301,7 +361,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00166">166</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00173">173</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -329,7 +389,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00138">138</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00145">145</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -364,7 +424,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00170">170</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00177">177</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -402,7 +462,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00211">211</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00218">218</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -430,7 +490,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00238">238</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00245">245</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -452,7 +512,7 @@ Functions</h2></td></tr>
 
 <p>Start the BGM. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00249">249</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00256">256</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -474,7 +534,7 @@ Functions</h2></td></tr>
 
 <p>Stop the BGM. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00272">272</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00279">279</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -496,7 +556,7 @@ Functions</h2></td></tr>
 
 <p>Pause the BGM. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00281">281</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00288">288</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>
@@ -529,14 +589,14 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a>(&amp;my_bgm);</div>
 <div class="line"><a class="code" href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a>();</div>
 <div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">Register user defined VSYNC interrupt handler.</div><div class="ttdef"><b>Definition:</b> <a href="interrupt_8c_source.html#l00079">interrupt.c:79</a></div></div>
-<div class="ttc" id="asound_8h_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">Start the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00249">sound.c:249</a></div></div>
-<div class="ttc" id="asound_8h_html_a90e396bab2471f72285f290ce7a5cab1"><div class="ttname"><a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a></div><div class="ttdeci">void sound_init(void)</div><div class="ttdoc">This function initializes the PSG and the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00264">sound.c:264</a></div></div>
-<div class="ttc" id="asound_8h_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">Main routine of the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00482">sound.c:482</a></div></div>
-<div class="ttc" id="asound_8h_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">Turn on/off the auto-repeat of the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00138">sound.c:138</a></div></div>
-<div class="ttc" id="asound_8h_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">Sets the specified music clip as BGM in the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00238">sound.c:238</a></div></div>
+<div class="ttc" id="asound_8h_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">Start the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00256">sound.c:256</a></div></div>
+<div class="ttc" id="asound_8h_html_a90e396bab2471f72285f290ce7a5cab1"><div class="ttname"><a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a></div><div class="ttdeci">void sound_init(void)</div><div class="ttdoc">This function initializes the PSG and the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00271">sound.c:271</a></div></div>
+<div class="ttc" id="asound_8h_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">Main routine of the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00489">sound.c:489</a></div></div>
+<div class="ttc" id="asound_8h_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">Turn on/off the auto-repeat of the BGM.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00145">sound.c:145</a></div></div>
+<div class="ttc" id="asound_8h_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">Sets the specified music clip as BGM in the sound driver.</div><div class="ttdef"><b>Definition:</b> <a href="sound_8c_source.html#l00245">sound.c:245</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00482">482</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8c_source.html#l00489">489</a> of file <a class="el" href="sound_8c_source.html">sound.c</a>.</p>
 
 </div>
 </div>

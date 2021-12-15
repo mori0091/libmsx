@@ -19,7 +19,7 @@
 #include "../include/sound_eg.h"
 #include "../include/sound_eg_spi.h"
 
-#define COUNT_PER_SECOND    (300)
+#define COUNT_PER_SECOND    (1200)
 #define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)
 
 static uint8_t COUNT_PER_TICK;
@@ -134,6 +134,13 @@ inline void sound_channel_enable_hw_envelope(struct sound_channel * sc) {
 }
 
 // -----
+
+void sound_set_speed(uint8_t multiplier) {
+  if (8 < multiplier) {
+    multiplier = 8;
+  }
+  COUNT_PER_TICK = COUNT_PER_SECOND * multiplier / VSYNC_FREQ / 4;
+}
 
 void sound_set_repeat(bool repeat) {
   sound.repeat = repeat;
@@ -263,7 +270,7 @@ static void sound_state_init(struct sound_state * st) {
 
 void sound_init(void) {
   VSYNC_FREQ = msx_get_vsync_frequency();
-  COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
+  sound_set_speed(SOUND_SPEED_1X);
   sound_eg_table = sound_eg_table_default;
   sound_set_volume(15);
   sound_stop();

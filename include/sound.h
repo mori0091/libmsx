@@ -41,6 +41,12 @@
 #define SOUND_CHANNEL_ALL (SOUND_CHANNEL_A | SOUND_CHANNEL_B | SOUND_CHANNEL_C)
 
 /**
+ * The value of the playback speed multiplier for 1.0x speed.
+ * \sa sound_set_speed()
+ */
+#define SOUND_SPEED_1X    (4)
+
+/**
  * The sound fragment structure.
  *
  * The sound fragment structure represents a section of music. It is used to
@@ -161,6 +167,22 @@ struct sound_clip {
  * machine.
  */
 void sound_init(void);
+
+/**
+ * Sets the playback speed multiplier.
+ *
+ * The playback speed multiplier is specified by a value of 4 times. For
+ * example, a value of 4 means a playback speed of 1.0x, and a value of 6 means
+ * 1.5x.
+ *
+ * \note
+ * - The default value of the `multiplier` is 4 (i.e. 1.0x).
+ * - The maximum value of the `multiplier` is 8 (i.e. 2.0x).
+ * - If the specified value is greater than 8, it will be modified to 8.
+ *
+ * \param multiplier   4 times the playback speed multiplier
+ */
+void sound_set_speed(uint8_t multiplier);
 
 /**
  * Set main volume level.

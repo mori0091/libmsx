@@ -1,7 +1,8 @@
 <map id="include/sound_eg.h" name="include/sound_eg.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="58,5,191,32"/>
-<area shape="rect" id="node2" href="$sound__eg__spi_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="113,80,270,107"/>
-<area shape="rect" id="node3" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,155,95,181"/>
-<area shape="rect" id="node4" href="$sound__eg__AHDSR_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="119,155,282,181"/>
-<area shape="rect" id="node5" href="$sound__eg__LPCM_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="306,155,461,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="77,5,211,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node3" href="$sound__eg__spi_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="199,80,356,107"/>
+<area shape="rect" id="node4" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="91,155,181,181"/>
+<area shape="rect" id="node5" href="$sound__eg__AHDSR_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="205,155,368,181"/>
+<area shape="rect" id="node6" href="$sound__eg__LPCM_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="392,155,547,181"/>
 </map>

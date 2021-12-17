@@ -33,5 +33,6 @@
 
 #include "psg.h"
 #include "sound.h"
+#include "sound_eg.h"
 
 #endif

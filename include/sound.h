@@ -169,7 +169,9 @@ struct sound_clip {
 void sound_init(void);
 
 /**
- * Sets the playback speed multiplier.
+ * Sets the playback speed multiplier for background music.
+ *
+ * This function is used to control the playback speed of background music.
  *
  * The playback speed multiplier is specified by a value of 4 times. For
  * example, a value of 4 means a playback speed of 1.0x, and a value of 6 means
@@ -181,6 +183,8 @@ void sound_init(void);
  * - If the specified value is greater than 8, it will be modified to 8.
  *
  * \param multiplier   4 times the playback speed multiplier
+ *
+ * \sa SOUND_SPEED_1X
  */
 void sound_set_speed(uint8_t multiplier);
 

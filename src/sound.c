@@ -43,6 +43,7 @@ struct sound_state {
   uint8_t section;              // current fragment number
   uint8_t flag;                 // playing/stopped flags
   uint8_t envelope_pattern;     // R#13 hardware envelope pattern (4 bits)
+  uint8_t count_per_tick;
 };
 
 static struct {
@@ -144,7 +145,7 @@ void sound_set_speed(uint8_t multiplier) {
   if (8 < multiplier) {
     multiplier = 8;
   }
-  COUNT_PER_TICK = COUNT_PER_SECOND * multiplier / VSYNC_FREQ / 4;
+  sound.bg.count_per_tick = COUNT_PER_SECOND * multiplier / VSYNC_FREQ / 4;
 }
 
 void sound_set_repeat(bool repeat) {
@@ -274,7 +275,9 @@ static void sound_state_init(struct sound_state * st) {
 
 void sound_init(void) {
   VSYNC_FREQ = msx_get_vsync_frequency();
-  sound_set_speed(SOUND_SPEED_1X);
+  COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
+  sound.bg.count_per_tick = COUNT_PER_TICK;
+  sound.se.count_per_tick = COUNT_PER_TICK;
   sound_eg_table = sound_eg_table_default;
   sound_set_volume(15);
   sound_stop();
@@ -317,7 +320,7 @@ inline void sound_player__process_channel(const uint8_t ch, const uint8_t mask) 
   sound_eg_advance(&stch->eg);
   // ---- Countdown time remaining ----
   {
-    stch->duration -= COUNT_PER_TICK;
+    stch->duration -= st->count_per_tick;
     if (0 < stch->duration) {
       if (!channel_muted && !stch->hw_envelope_enable) {
         sound_channel_output(ch, stch);

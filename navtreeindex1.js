@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"structsound__eg__AHDSR.html#a21370f5de118aca5b633e0501a668892":[1,0,4,1],
 "structsound__eg__AHDSR.html#a29c9ae53b12db8c23db4d5484cfbad42":[1,0,4,2],
 "structsound__eg__AHDSR.html#a4a1388e1f7cf928ec13f1b3a7ae53b8b":[1,0,4,0],
 "structsound__eg__AHDSR.html#ab41cb77000c9074cde189e9dd85f92a8":[1,0,4,4],
@@ -22,6 +23,7 @@ var NAVTREEINDEX1 =
 "structsound__state.html#a2b0fe923df0afe7637210500ecb8a854":[1,0,9,0],
 "structsound__state.html#a2c2fc4d576fe4d02859fd204dc00c7db":[1,0,9,3],
 "structsound__state.html#a72fa6811d7e77f68f21cb5ba0ce2a4f2":[1,0,9,4],
+"structsound__state.html#a8dbfb37e52c8f4d3c98ad0db1848bf8d":[1,0,9,5],
 "structsound__state.html#a95f4f8ab996ee399057134258c6b1ca3":[1,0,9,2],
 "structsound__state.html#ab61baff70bd11f96fd98b0b7f2154a6c":[1,0,9,1],
 "structsprite.html":[1,0,10],

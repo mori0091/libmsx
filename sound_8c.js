@@ -11,6 +11,7 @@ var sound_8c =
     [ "sound_set_eg_table", "sound_8c.html#ac5838ecb113e8d1ef6af4cae7690de3c", null ],
     [ "sound_channel_set_amp", "sound_8c.html#a381d3c17fb5bcd569dd919701e259df1", null ],
     [ "sound_channel_enable_hw_envelope", "sound_8c.html#af24dea61a01509e40bc807034d392177", null ],
+    [ "sound_channel_reset", "sound_8c.html#aa560fe00977b55cd93f3bb67f56b4af8", null ],
     [ "sound_set_speed", "sound_8c.html#a0e978bf0d3673790d9cdb40fa03ce41a", null ],
     [ "sound_set_repeat", "sound_8c.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee", null ],
     [ "sound_set_volume", "sound_8c.html#a316d8aea0d56999411d02edef8466374", null ],

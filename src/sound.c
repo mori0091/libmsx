@@ -133,6 +133,11 @@ inline void sound_channel_enable_hw_envelope(struct sound_channel * sc) {
   sc->hw_envelope_enable = true;
 }
 
+inline void sound_channel_reset(struct sound_channel * sc) {
+  sound_channel_set_amp(sc, 0);
+  sound_channel_set_envelope(sc, 0);
+}
+
 // -----
 
 void sound_set_speed(uint8_t multiplier) {
@@ -206,9 +211,9 @@ static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
     return;
   }
   st->section = 0;
-  st->channels[0].amp = psg_reg_initial_vector[8];
-  st->channels[1].amp = psg_reg_initial_vector[9];
-  st->channels[2].amp = psg_reg_initial_vector[10];
+  for (uint8_t ch = 0; ch < 3; ++ch) {
+    sound_channel_reset(&st->channels[ch]);
+  }
   const struct sound_fragment* sf = s->fragments[0];
   sound_set_fragment(st, sf);
   st->clip = s;
@@ -262,8 +267,7 @@ static void sound_state_init(struct sound_state * st) {
   st->flag = 0;
   // ----
   for (uint8_t ch = 0; ch < 3; ++ch) {
-    sound_channel_set_envelope(&st->channels[ch], 0);
-    sound_channel_set_amp(&st->channels[ch], psg_reg_initial_vector[8+ch]);
+    sound_channel_reset(&st->channels[ch]);
   }
   st->envelope_pattern = psg_reg_initial_vector[13];
 }

@@ -11,8 +11,6 @@
  * https://github.com/mori0091/libmsx
  */
 
-#include <string.h>
-
 #include "../include/bios.h"
 #include "../include/psg.h"
 #include "../include/sound.h"
@@ -23,7 +21,6 @@
 #define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)
 
 static uint8_t COUNT_PER_TICK;
-static uint8_t VSYNC_FREQ;
 
 struct sound_channel {
   /* sequence control */
@@ -253,7 +250,6 @@ static void sound_effect_apply(void) {
 
 void sound_set_bgm(const struct sound_clip* s) {
   sound_stop();
-  sound_pause();
   if (!s) {
     return;
   }
@@ -277,8 +273,7 @@ static void sound_state_init(struct sound_state * st) {
 }
 
 void sound_init(void) {
-  VSYNC_FREQ = msx_get_vsync_frequency();
-  COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
+  COUNT_PER_TICK = COUNT_PER_SECOND / msx_get_vsync_frequency();
   sound.bg.count_per_tick = SOUND_SPEED_1X;
   sound.se.count_per_tick = SOUND_SPEED_1X;
   sound_eg_table = sound_eg_table_default;
@@ -293,6 +288,7 @@ void sound_stop(void) {
   sound_state_init(&sound.bg);
   sound_state_init(&sound.se);
   sound_tick = 0;
+  sound_advance_count = 0;
 }
 
 void sound_pause(void) {

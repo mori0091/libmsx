@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"structsound__clip.html#aae9c73220c1e3cf4037a6cf67dea650b":[1,0,2,2],
+"structsound__clip.html#ac4e8ddf6c34374903c6f859c4e4421eb":[1,0,2,1],
+"structsound__eg.html":[1,0,3],
+"structsound__eg.html#a11f3f809d824183971f03be159631cc0":[1,0,3,3],
+"structsound__eg.html#a3ce703ec9ed6795282f6894776e44513":[1,0,3,1],
+"structsound__eg.html#a736ecb4289fcdae1ef9fdd54794c3a93":[1,0,3,0],
 "structsound__eg.html#af0ad44ad1ad0d31adbb3a01fbe1c0ae8":[1,0,3,2],
 "structsound__eg__AHDSR.html":[1,0,4],
 "structsound__eg__AHDSR.html#a21370f5de118aca5b633e0501a668892":[1,0,4,1],
@@ -243,11 +249,5 @@ var NAVTREEINDEX1 =
 "vmem__set__sprite__color__m_8c_source.html":[2,0,1,52],
 "vmem__set__sprite__color__s_8c.html":[2,0,1,53],
 "vmem__set__sprite__color__s_8c.html#a6cf16f5ecc488771a53456b03257768d":[2,0,1,53,0],
-"vmem__set__sprite__color__s_8c_source.html":[2,0,1,53],
-"vmem__set__write__address_8c.html":[2,0,1,54],
-"vmem__set__write__address_8c.html#a2fc46495107310faa212423a4cdeea3d":[2,0,1,54,0],
-"vmem__set__write__address_8c_source.html":[2,0,1,54],
-"vmem__write_8c.html":[2,0,1,55],
-"vmem__write_8c.html#a17658e78f1b4ab50df4781d2333ce236":[2,0,1,55,0],
-"vmem__write_8c_source.html":[2,0,1,55]
+"vmem__set__sprite__color__s_8c_source.html":[2,0,1,53]
 };

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hold_5ftime_509',['hold_time',['../structsound__eg__AHDSR.html#a21370f5de118aca5b633e0501a668892',1,'sound_eg_AHDSR']]],
-  ['hw_5fenvelope_5fenable_510',['hw_envelope_enable',['../structsound__channel.html#a08683c480a2ed674e7e8c5b666e173f1',1,'sound_channel']]]
+  ['hold_5ftime_517',['hold_time',['../structsound__eg__AHDSR.html#a21370f5de118aca5b633e0501a668892',1,'sound_eg_AHDSR']]],
+  ['hw_5fenvelope_5fenable_518',['hw_envelope_enable',['../structsound__channel.html#a08683c480a2ed674e7e8c5b666e173f1',1,'sound_channel']]]
 ];

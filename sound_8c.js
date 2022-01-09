@@ -4,6 +4,7 @@ var sound_8c =
     [ "sound_state", "structsound__state.html", "structsound__state" ],
     [ "COUNT_PER_SECOND", "sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035", null ],
     [ "COUNT_PER_TICK_60HZ", "sound_8c.html#ac174db55392218c66ba57b1392d76b2f", null ],
+    [ "ctx", "sound_8c.html#ae2fda8859e12165aeda509a17512572c", null ],
     [ "sound_eg_key_on", "sound_8c.html#a0f037842b006b4cdf34c8550c3c09d6e", null ],
     [ "sound_eg_key_off", "sound_8c.html#ab79f958bca7ac13a38ed5f097578fc48", null ],
     [ "sound_eg_advance", "sound_8c.html#a0b63e3ec27af4dcbd42dc848f1c66542", null ],
@@ -36,5 +37,10 @@ var sound_8c =
     [ "mixer", "sound_8c.html#a2e831854e0cc8fdfafd66f0168d48bd0", null ],
     [ "envelope_cycle_lo", "sound_8c.html#a3646dc2c758ca63359a925b8666f4b74", null ],
     [ "envelope_cycle_hi", "sound_8c.html#a2e193f6773a9d4e678d1b58b0d1f7392", null ],
+    [ "st", "sound_8c.html#adef2683c40153538e8ce6de5eb3305fd", null ],
+    [ "mute", "sound_8c.html#ad9aef3fe07cb77df6845f5830762396d", null ],
+    [ "ch", "sound_8c.html#acbcf5f8de7895ca456bb39fbcccde1d1", null ],
+    [ "mask", "sound_8c.html#a8a74907784be6c7786c2d060c8d7e10b", null ],
+    [ "channel_muted", "sound_8c.html#a31110db3dab8e3b627b8a1e7ba210617", null ],
     [ "stch", "sound_8c.html#aa4a70da2d11b6e2437c49999958ebbfa", null ]
 ];

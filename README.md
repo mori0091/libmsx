@@ -68,7 +68,7 @@ The below functionality is supported.
     - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
     - All functionality of PSG is supported.
     - Software envelope generator is supported.
-      - AHDSR (attack / hold / decay / sutain / release) type envelope generator
+      - AHDSR (attack / hold / decay / sustain / release) type envelope generator
       - LPCM (8-bit 60Hz linear PCM) type envelope generator
       - Up to 16 user-defined envelope patterns can be used.
     - (A MML compiler for the sound driver is not developped yet.)

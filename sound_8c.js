@@ -22,7 +22,6 @@ var sound_8c =
     [ "sound_init", "sound_8c.html#a90e396bab2471f72285f290ce7a5cab1", null ],
     [ "sound_stop", "sound_8c.html#a05ffba4b6e960e4a0699f50b8a72d795", null ],
     [ "sound_pause", "sound_8c.html#aa69657f5f366eef034685b19c9c0ea3f", null ],
-    [ "sound_player__process_channel", "sound_8c.html#a7a96ff02e758195959c7cc5c47bf6148", null ],
     [ "sound_player", "sound_8c.html#aca95ae20cf6bbdedef623278c7c44f5f", null ],
     [ "repeat", "sound_8c.html#a98c61ed9410ab805baab005fe7713d9b", null ],
     [ "paused", "sound_8c.html#a1656129c4a4fd8809254194f08f0ac70", null ],
@@ -36,5 +35,6 @@ var sound_8c =
     [ "noise_fdr", "sound_8c.html#a31c9b853467f23a198f0a75610df80a5", null ],
     [ "mixer", "sound_8c.html#a2e831854e0cc8fdfafd66f0168d48bd0", null ],
     [ "envelope_cycle_lo", "sound_8c.html#a3646dc2c758ca63359a925b8666f4b74", null ],
-    [ "envelope_cycle_hi", "sound_8c.html#a2e193f6773a9d4e678d1b58b0d1f7392", null ]
+    [ "envelope_cycle_hi", "sound_8c.html#a2e193f6773a9d4e678d1b58b0d1f7392", null ],
+    [ "stch", "sound_8c.html#aa4a70da2d11b6e2437c49999958ebbfa", null ]
 ];

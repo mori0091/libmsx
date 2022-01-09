@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"structsound__eg.html#af0ad44ad1ad0d31adbb3a01fbe1c0ae8":[1,0,3,2],
+"structsound__eg__AHDSR.html":[1,0,4],
 "structsound__eg__AHDSR.html#a21370f5de118aca5b633e0501a668892":[1,0,4,1],
 "structsound__eg__AHDSR.html#a29c9ae53b12db8c23db4d5484cfbad42":[1,0,4,2],
 "structsound__eg__AHDSR.html#a4a1388e1f7cf928ec13f1b3a7ae53b8b":[1,0,4,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "vmem__set__write__address_8c_source.html":[2,0,1,54],
 "vmem__write_8c.html":[2,0,1,55],
 "vmem__write_8c.html#a17658e78f1b4ab50df4781d2333ce236":[2,0,1,55,0],
-"vmem__write_8c_source.html":[2,0,1,55],
-"workarea_8h.html":[2,0,0,14],
-"workarea_8h_source.html":[2,0,0,14]
+"vmem__write_8c_source.html":[2,0,1,55]
 };

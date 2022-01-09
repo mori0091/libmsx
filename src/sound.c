@@ -19,7 +19,7 @@
 #include "../include/sound_eg.h"
 #include "../include/sound_eg_spi.h"
 
-#define COUNT_PER_SECOND    (1200)
+#define COUNT_PER_SECOND    (300)
 #define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)
 
 static uint8_t COUNT_PER_TICK;
@@ -142,10 +142,13 @@ inline void sound_channel_reset(struct sound_channel * sc) {
 // -----
 
 void sound_set_speed(uint8_t multiplier) {
-  if (8 < multiplier) {
-    multiplier = 8;
+  if (multiplier < SOUND_SPEED_MIN) {
+    multiplier = SOUND_SPEED_MIN;
   }
-  sound.bg.count_per_tick = COUNT_PER_SECOND * multiplier / VSYNC_FREQ / 4;
+  if (SOUND_SPEED_MAX < multiplier) {
+    multiplier = SOUND_SPEED_MAX;
+  }
+  sound.bg.count_per_tick = multiplier;
 }
 
 void sound_set_repeat(bool repeat) {
@@ -276,8 +279,8 @@ static void sound_state_init(struct sound_state * st) {
 void sound_init(void) {
   VSYNC_FREQ = msx_get_vsync_frequency();
   COUNT_PER_TICK = COUNT_PER_SECOND / VSYNC_FREQ;
-  sound.bg.count_per_tick = COUNT_PER_TICK;
-  sound.se.count_per_tick = COUNT_PER_TICK;
+  sound.bg.count_per_tick = SOUND_SPEED_1X;
+  sound.se.count_per_tick = SOUND_SPEED_1X;
   sound_eg_table = sound_eg_table_default;
   sound_set_volume(15);
   sound_stop();
@@ -300,140 +303,149 @@ void sound_pause(void) {
 }
 
 // ---- local work area for `sound_player()` ----
-static struct sound_state* st;
+static struct sound_state * st;
 static uint8_t mute;
 
-static void sound_channel_output(const uint8_t ch,
-                                 const struct sound_channel * stch) {
-  // if using hardware envelope, it shall be treated specially.
-  // otherwise, the amplitude is controlled by software envelope.
-  const uint8_t x = ((uint16_t)stch->eg.output *
-                     (stch->amp + 1) *
-                     (sound.volume + 1)) >> 12;
-  psg_set(8+ch, x);
+static uint8_t ch;
+static uint8_t mask;
+static bool channel_muted;
+struct sound_channel * stch;
+
+static void sound_channel_output(void) {
+  int8_t x = (stch->eg.output >> 4) + stch->amp + sound.volume - 30;
+  psg_set(8+ch, (0 < x ? x : 0));
 }
 
-inline void sound_player__process_channel(const uint8_t ch, const uint8_t mask) {
-  const bool channel_muted = (bool)(mute & (mask << 3));
-  struct sound_channel * const stch = &st->channels[ch];
+static void sound_player__process_channel(void) {
   // advance the channel's envelope generator by 1/60th a second.
   sound_eg_advance(&stch->eg);
   // ---- Countdown time remaining ----
   {
-    stch->duration -= st->count_per_tick;
+    stch->duration -= st->count_per_tick * sound_advance_count;
     if (0 < stch->duration) {
-      if (!channel_muted && !stch->hw_envelope_enable) {
-        sound_channel_output(ch, stch);
+      if (channel_muted || stch->hw_envelope_enable) {
+        return;
       }
+      sound_channel_output();
       return;
     }
   }
   // ---- Reads head (chunk size and next duration) ----
-  uint8_t len;
-  {
-    const uint8_t head1 = *stch->next++;
-    if (head1 == 255) {
-      // end of music track
-      st->flag &= ~mask;
-      if (!channel_muted && !stch->hw_envelope_enable) {
-        sound_channel_output(ch, stch);
-      }
+  const uint8_t head1 = *stch->next++;
+  if (head1 == 255) {
+    // end of music track
+    st->flag &= ~mask;
+    if (channel_muted || stch->hw_envelope_enable) {
       return;
     }
-    const uint16_t ticks = ((head1 & 0x1f) << 8) | (*stch->next++);
-    stch->duration += COUNT_PER_TICK_60HZ * ticks;
-    len = (head1 >> 5) & 7;
+    sound_channel_output();
+    return;
   }
+  uint8_t len = (head1 >> 5) & 7;
+  const uint16_t ticks = ((head1 & 0x1f) << 8) | (*stch->next++);
+  stch->duration += SOUND_SPEED_1X * ticks;
   // ---- Parse and process the chunk ----
   while (len--) {
     const uint8_t x = *stch->next++;
-    const uint8_t x_lo = x & 0x0f;
-    switch (x & 0xf0) {
-    case 0xe0:
+    switch (x >> 4) {
+    case 0xe:
       // tone (12bits)
       // 1110b fdr_hi:4 fdr_lo:8
       // -- changes frequency of tone generator but do not key-on.
       {
-        const uint8_t x_hi = *stch->next++;
+        const uint8_t fdr_hi = x & 0x0f;
+        const uint8_t fdr_lo = *stch->next++;
         len--;
-        if (!channel_muted) {
-          psg_set(1+2*ch, x_lo);    // fdr_hi:4
-          psg_set(0+2*ch, x_hi);    // fdr_lo:8
+        if (channel_muted) {
+          break;
         }
+        psg_set(1+2*ch, fdr_hi); // fdr_hi:4
+        psg_set(0+2*ch, fdr_lo); // fdr_lo:8
       }
       break;
-    case 0x00:
+    case 0x0:
       // keyon (12bits)
       // 0000b fdr_hi:4 fdr_lo:8
       // -- Changes frequency of tone generator and performs a key-on.
+      sound_eg_key_on(&stch->eg);
       {
-        const uint8_t x_hi = *stch->next++;
+        const uint8_t fdr_hi = x & 0x0f;
+        const uint8_t fdr_lo = *stch->next++;
         len--;
-        if (!channel_muted) {
-          psg_set(1+2*ch, x_lo);    // fdr_hi:4
-          psg_set(0+2*ch, x_hi);    // fdr_lo:8
-          // When using hardware envelopes, special processing is required.
-          if (stch->hw_envelope_enable) {
-            psg_set(13, st->envelope_pattern);
-            psg_set(8+ch, 16);
-          }
+        if (channel_muted) {
+          break;
         }
-        sound_eg_key_on(&stch->eg);
+        psg_set(1+2*ch, fdr_hi); // fdr_hi:4
+        psg_set(0+2*ch, fdr_lo); // fdr_lo:8
+      }
+      // When using hardware envelopes, special processing is required.
+      if (stch->hw_envelope_enable) {
+        psg_set(13, st->envelope_pattern);
+        psg_set(8+ch, 16);
       }
       break;
-    case 0x10:
+    case 0x1:
       // keyoff (0bits)
       // -- Perform a key-off. (It also serves as a rest.)
       sound_eg_key_off(&stch->eg);
-      if (stch->hw_envelope_enable && !channel_muted) {
+      if (channel_muted) {
+        break;
+      }
+      if (stch->hw_envelope_enable) {
         psg_set(8+ch, 0);
       }
       break;
-    case 0x20:
-    case 0x30:
+    case 0x2:
+    case 0x3:
       // noise (5bits)
       // 001b fdr:5
       // -- Changes frequency of noise generator.
-      if (!channel_muted) {
-        psg_set(6, (x & 0x1f));
+      if (channel_muted) {
+        break;
       }
+      psg_set(6, (x & 0x1f));
       break;
-    case 0x70:
+    case 0x7:
       // mixer (6bits)
       // 0111b ----b --b NC:1 NB:1 NA:1 TC:1 TB:1 TA:1
       // -- Changes the mixer setting.
       {
         const uint8_t mixer = (*stch->next++ & 0x3f) | 0x80;
         len--;
-        if (!channel_muted) {
-          psg_set(7, mixer);
+        if (channel_muted) {
+          break;
         }
+        psg_set(7, mixer);
       }
       break;
-    case 0x80:
+    case 0x8:
       // volume (4bits)
       // 1000b vol:4
       // -- Changes the amplifier level.
-      stch->amp = x_lo;
-      stch->hw_envelope_enable = false;
+      {
+        stch->amp = x & 0x0f;
+        stch->hw_envelope_enable = false;
+      }
       break;
-    case 0xc0:
+    case 0xc:
       // software envelope pattern (4bits)
       // 1100b pat:4
       // -- Set the software envelope pattern.
-      sound_channel_set_envelope(stch, x_lo);
-      stch->hw_envelope_enable = false;
+      {
+        sound_channel_set_envelope(stch, x & 0x0f);
+        stch->hw_envelope_enable = false;
+      }
       break;
-    case 0x40:
-    case 0x90:
-    case 0xd0:
+    case 0x4:
+    case 0x9:
+    case 0xd:
       if (x & 0x90) {
         // envelope pattern (4bits)
         // 1-01b pat:4
         // -- Set the hardware envelope pattern, and enable hardware envelope.
         // The envelope pattern and switch states are saved (not applied to
         // the registers here) and applied at each "key on" timing.
-        st->envelope_pattern = x_lo;
+        st->envelope_pattern = x & 0x0f;
         stch->hw_envelope_enable = true;
       }
       if (x & 0x40) {
@@ -443,10 +455,11 @@ inline void sound_player__process_channel(const uint8_t ch, const uint8_t mask) 
         const uint8_t cycle_hi = *stch->next++;
         const uint8_t cycle_lo = *stch->next++;
         len -= 2;
-        if (!channel_muted) {
-          psg_set(12, cycle_hi); // cycle_hi:8
-          psg_set(11, cycle_lo); // cycle_lo:8
+        if (channel_muted) {
+          break;
         }
+        psg_set(12, cycle_hi); // cycle_hi:8
+        psg_set(11, cycle_lo); // cycle_lo:8
       }
       break;
     default:
@@ -456,18 +469,21 @@ inline void sound_player__process_channel(const uint8_t ch, const uint8_t mask) 
       break;
     }
   }
-  if (!channel_muted && !stch->hw_envelope_enable) {
-    sound_channel_output(ch, stch);
+  if (channel_muted || stch->hw_envelope_enable) {
+    return;
   }
+  sound_channel_output();
 }
 
 static bool sound_player__process(void) {
   for (;;) {
     {
-      uint8_t mask = SOUND_CHANNEL_A;
-      for (uint8_t ch = 0; ch < 3; ++ch, mask <<= 1) {
+      mask = SOUND_CHANNEL_A;
+      for (ch = 0; ch < 3; ++ch, mask <<= 1) {
         if (st->flag & mask) {
-          sound_player__process_channel(ch, mask);
+          channel_muted = (bool)(mute & mask);
+          stch = &st->channels[ch];
+          sound_player__process_channel();
         }
       }
     }
@@ -502,8 +518,7 @@ void sound_player(void) {
   // ---- sound effect ----
   if (sound.se.clip) {
     st = &sound.se;
-    // mute = sound.se.flag & (7 << 3);
-    mute = sound.se.flag;
+    mute = sound.se.flag >> 3;
     if (sound_player__process()) {
       // ---- end of music ----
       sound.se.clip = 0;
@@ -512,11 +527,10 @@ void sound_player(void) {
   }
   // ---- background music ----
   if (sound.bg.clip) {
-    // By passing `mute` as 2nd argument, temporarily turn on the mute switch
+    // By passing `mute` as 2nd parameter, temporarily turn on the mute switch
     // for the channel being used for sound effects.
     st = &sound.bg;
-    // mute = (sound.bg.flag & (7 << 3)) | ((sound.se.flag & 7) << 3);
-    mute = sound.bg.flag | (sound.se.flag << 3);
+    mute = (sound.bg.flag >> 3) | sound.se.flag;
     if (sound_player__process()) {
       // ---- end of music ----
       if (sound.repeat) {

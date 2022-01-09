@@ -47,6 +47,20 @@
 #define SOUND_SPEED_1X    (4)
 
 /**
+ * Minimum value of playback speed multiplier.
+ * Equivalent to `SOUND_SPEED_1X / 4` (i.e., 0.25x speed).
+ * \sa sound_set_speed()
+ */
+#define SOUND_SPEED_MIN   (1)
+
+/**
+ * Maximum value of playback speed multiplier.
+ * Equivalent to `SOUND_SPEED_1X * 2` (i.e., 2.0x speed).
+ * \sa sound_set_speed()
+ */
+#define SOUND_SPEED_MAX   (8)
+
+/**
  * The sound fragment structure.
  *
  * The sound fragment structure represents a section of music. It is used to
@@ -179,12 +193,16 @@ void sound_init(void);
  *
  * \note
  * - The default value of the `multiplier` is 4 (i.e. 1.0x).
+ * - The minimum value of the `multiplier` is 1 (i.e. 0.25x).
  * - The maximum value of the `multiplier` is 8 (i.e. 2.0x).
+ * - If the specified value is less than 1, it will be modified to 1.
  * - If the specified value is greater than 8, it will be modified to 8.
  *
  * \param multiplier   4 times the playback speed multiplier
  *
  * \sa SOUND_SPEED_1X
+ * \sa SOUND_SPEED_MIN
+ * \sa SOUND_SPEED_MAX
  */
 void sound_set_speed(uint8_t multiplier);
 

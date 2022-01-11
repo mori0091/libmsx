@@ -259,17 +259,34 @@ uint8_t vdp_get_sprite_mode(void);
  *
  * \note
  * This function just set/reset the M1..M5 bits of the VDP mode registers,
- * therefore:
- * - sprite size shall be set by calling vdp_set_sprite_size().
- * - In case of MSX2 or later, number of visible lines shall be set by calling
+ * any other settings are not changed by this function.
+ *
+ * Therefore you should do the following after this function if needed:
+ * - Address of **pattern name table** shall be set by calling
+ *   vdp_set_image_table().
+ * - Address of **pattern generator table** shall be set by calling
+ *   vdp_set_pattern_table().
+ * - Address of **color table** shall be set by calling vdp_set_color_table().
+ * - Address of **sprite pattern generator table** shall be set by calling
+ *   vdp_set_sprite_pattern_table().
+ * - Address of **sprite attribute table** shall be set by calling
+ *   vdp_set_sprite_attribute_table().
+ * - **Sprite size** shall be set by calling vdp_set_sprite_size().
+ * - In case of MSX2 or later, **number of visible lines** shall be set by calling
  *   vdp_set_screen_lines().
  * - In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e.,
- *   SCREEN 10, 11, or 12), YJK/YAE bits shall be set manually by calling
- *   vdp_set_control() after this function.
+ *   SCREEN 10, 11, or 12), **YJK/YAE bits** shall be set manually by calling
+ *   vdp_set_control(). (There is no dedicated functions for setting YJK/YAE bits.)
+ * - etc.
  *
  * \param mode  VDP screen mode.
  *
+ * \sa vdp_set_image_table()
+ * \sa vdp_set_pattern_table()
+ * \sa vdp_set_color_table()
  * \sa vdp_set_screen_lines()
+ * \sa vdp_set_sprite_pattern_table()
+ * \sa vdp_set_sprite_attribute_table()
  * \sa vdp_set_sprite_size()
  * \sa vdp_get_sprite_mode()
  */
@@ -284,9 +301,19 @@ void vdp_set_screen_mode(enum vdp_screen_mode mode);
 void vdp_set_screen_lines(enum vdp_screen_lines lines);
 
 /**
- * Set VRAM address of the name table.
+ * Set VRAM address of the pattern name table.
  *
- * \param table  VRAM address of the name table.
+ * \param table  VRAM address of the pattern name table.
+ *
+ * \note
+ * **Pattern name table** is almost the same as what is called
+ * a **frame buffer** in modern computer systems.
+ *
+ * Especially in the bitmap graphics mode (GRAPHIC 4 to 7), the pattern name
+ * table serves as a frame buffer for 2bpp, 4bpp, or 8bpp graphics images.
+ *
+ * In any other screen mode, it serves as a frame buffer for tile pattern
+ * matrix.
  */
 void vdp_set_image_table(vmemptr_t table);
 
@@ -294,6 +321,9 @@ void vdp_set_image_table(vmemptr_t table);
  * Set VRAM address of the pattern generator table.
  *
  * \param table  VRAM address of the pattern generator table.
+ *
+ * \note
+ * In the bitamp graphics mode (GRAPHIC 4 to 7), you may not call this function.
  */
 void vdp_set_pattern_table(vmemptr_t table);
 
@@ -301,6 +331,9 @@ void vdp_set_pattern_table(vmemptr_t table);
  * Set VRAM address of the color table.
  *
  * \param table  VRAM address of the color table.
+ *
+ * \note
+ * In the bitamp graphics mode (GRAPHIC 4 to 7), you may not call this function.
  */
 void vdp_set_color_table(vmemptr_t table);
 
@@ -315,6 +348,11 @@ void vdp_set_sprite_pattern_table(vmemptr_t table);
  * Set VRAM address of the sprite attribute table.
  *
  * \param table  VRAM address of the sprite attribute table.
+ *
+ * \note
+ * In sprite mode 2, there is one more table called "sprite color table". The
+ * sprite color table is (implicitlly) placed at `SAT - 0x0200` ; where `SAT` is
+ * the base address of sprite attribute table.
  */
 void vdp_set_sprite_attribute_table(vmemptr_t table);
 
@@ -342,20 +380,25 @@ void vdp_set_color(uint8_t c);  // set color register R#7
 /**
  * Set VDP display adjust register.
  *
- * \param x  x offset (-8..7)
- * \param y  y offset (-8..7)
+ * If x < 0, shift the display area to left.
+ * If x > 0, shift the display area to right.
+ * If y < 0, shift the display area to upper.
+ * If y > 0, shift the display area to lower.
+ *
+ * \param x  x offset (-7..+8)
+ * \param y  y offset (-7..+8)
  */
 void vdp_set_adjust(int8_t x, int8_t y);
 
 /**
- * Set VDP display offset register.
+ * Set VDP vertical display offset register.
  *
- * \param y  Beginning line number.
+ * \param y  vertical offset. (0..255)
  */
 void vdp_set_vscroll(uint8_t y);
 
 /**
- * Set VDP horizontal offset register.
+ * Set VDP horizontal display offset register.
  *
  * \param x  horizontal offset (0..511)
  */
@@ -624,8 +667,20 @@ inline void vdp_cmd_set_logop(struct vdp_cmd * c, enum vdp_cmd_logop logop) {
  * to the `struct vdp_cmd` object pointed by `c`. To set parameters, you may use
  * vdp_cmd_set_*() inline functions.
  *
+ * After calling this function, if you want to wait for the VDP command to
+ * finish, call vdp_cmd_await().
+ *
  * \param c       pointer to `struct vdp_cmd`.
- * \param opcode  an operation code
+ * \param opcode  an operation code.
+ *
+ * \sa vdp_cmd_await()
+ *
+ * \note
+ * Currently, only the following operations are supported:
+ * - VDP_CMD_LMMV
+ * - VDP_CMD_LMMM
+ * - VDP_CMD_HMMV
+ * - VDP_CMD_HMMM
  */
 void vdp_cmd_execute(const struct vdp_cmd * c, enum vdp_cmd_op opcode);
 

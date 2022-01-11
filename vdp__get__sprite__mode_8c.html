@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('vdp__get__sprite__mode_8c.html',''); i
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7d644558c2aba5f1480920df41fb2b3b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__get__sprite__mode_8c.html#a7d644558c2aba5f1480920df41fb2b3b">vdp_get_sprite_mode</a> (void)</td></tr>
+<tr class="memdesc:a7d644558c2aba5f1480920df41fb2b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current sprite mode.  <a href="vdp__get__sprite__mode_8c.html#a7d644558c2aba5f1480920df41fb2b3b">More...</a><br /></td></tr>
 <tr class="separator:a7d644558c2aba5f1480920df41fb2b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -132,6 +133,45 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get current sprite mode. </p>
+<p>The sprite mode will be determined based on the current screen mode.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"><code>enum vdp_screen_mode</code>   </th><th class="markdownTableHeadNone">VDP Screen mode   </th><th class="markdownTableHeadNone">BASIC Screen mode   </th><th class="markdownTableHeadNone">Sprite mode   </th><th class="markdownTableHeadNone">compatibility    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_TEXT_1</code>   </td><td class="markdownTableBodyNone">TEXT 1   </td><td class="markdownTableBodyNone">SCREEN 0, WIDTH 40   </td><td class="markdownTableBodyNone">(no sprite)   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_1</code>   </td><td class="markdownTableBodyNone">GRAPHIC 1   </td><td class="markdownTableBodyNone">SCREEN 1   </td><td class="markdownTableBodyNone"><b>mode 1</b>   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_2</code>   </td><td class="markdownTableBodyNone">GRAPHIC 2   </td><td class="markdownTableBodyNone">SCREEN 2   </td><td class="markdownTableBodyNone"><b>mode 1</b>   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_MULTI_COLOR</code>   </td><td class="markdownTableBodyNone">MULTI COLOR   </td><td class="markdownTableBodyNone">SCREEN 3   </td><td class="markdownTableBodyNone"><b>mode 1</b>   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_TEXT_2</code>   </td><td class="markdownTableBodyNone">TEXT 2   </td><td class="markdownTableBodyNone">SCREEN 0, WIDTH 80   </td><td class="markdownTableBodyNone">(no sprite)   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_3</code>   </td><td class="markdownTableBodyNone">GRAPHIC 3   </td><td class="markdownTableBodyNone">SCREEN 4   </td><td class="markdownTableBodyNone"><b>mode 2</b>   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_4</code>   </td><td class="markdownTableBodyNone">GRAPHIC 4   </td><td class="markdownTableBodyNone">SCREEN 5   </td><td class="markdownTableBodyNone"><b>mode 2</b>   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_5</code>   </td><td class="markdownTableBodyNone">GRAPHIC 5   </td><td class="markdownTableBodyNone">SCREEN 6   </td><td class="markdownTableBodyNone"><b>mode 2</b>   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_6</code>   </td><td class="markdownTableBodyNone">GRAPHIC 6   </td><td class="markdownTableBodyNone">SCREEN 7   </td><td class="markdownTableBodyNone"><b>mode 2</b>   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7   </td><td class="markdownTableBodyNone">SCREEN 8   </td><td class="markdownTableBodyNone"><b>mode 2</b>   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7 YJK/RGB   </td><td class="markdownTableBodyNone">SCREEN 10 or 11   </td><td class="markdownTableBodyNone"><b>mode 2</b>   </td><td class="markdownTableBodyNone">MSX2+    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7 YJK   </td><td class="markdownTableBodyNone">SCREEN 12   </td><td class="markdownTableBodyNone"><b>mode 2</b>   </td><td class="markdownTableBodyNone">MSX2+   </td></tr>
+</table>
+<dl class="section return"><dt>Returns</dt><dd>The sprite mode based on the current screen mode:<ul>
+<li>0 if the screen mode was TEXT 1 or TEXT 2,</li>
+<li>1 if the sprite mode was mode 1,</li>
+<li>2 if the sprite mode was mode 2.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you call this function before calling <a class="el" href="vdp_8h.html#a63053aebe62d033ef0068db1cf3a8b58" title="Set VDP screen mode.">vdp_set_screen_mode()</a>, the return value may be wrong.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a63053aebe62d033ef0068db1cf3a8b58" title="Set VDP screen mode.">vdp_set_screen_mode()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vdp__get__sprite__mode_8c_source.html#l00018">18</a> of file <a class="el" href="vdp__get__sprite__mode_8c_source.html">vdp_get_sprite_mode.c</a>.</p>
 

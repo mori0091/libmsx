@@ -1,9 +1,24 @@
 var searchData=
 [
-  ['readme_2emd_83',['README.md',['../README_8md.html',1,'']]],
-  ['release_5fphase_84',['RELEASE_PHASE',['../sound__eg__AHDSR_8c.html#a496c4c8e61d9a2960fcbd72042b0e587',1,'sound_eg_AHDSR.c']]],
-  ['release_5frate_85',['release_rate',['../structsound__eg__AHDSR.html#ab41cb77000c9074cde189e9dd85f92a8',1,'sound_eg_AHDSR']]],
-  ['release_5frate_86',['RELEASE_RATE',['../sound__eg__AHDSR_8c.html#a7d89eec58954de8705c571c1a0150ae2',1,'sound_eg_AHDSR.c']]],
-  ['repeat_87',['repeat',['../sound_8c.html#a98c61ed9410ab805baab005fe7713d9b',1,'sound.c']]],
-  ['rgb_88',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
+  ['r32_83',['r32',['../structvdp__cmd.html#adffb3dff81792127c3237a7a007d51ca',1,'vdp_cmd']]],
+  ['r33_84',['r33',['../structvdp__cmd.html#a0743603166fbefc51673d0729383124f',1,'vdp_cmd']]],
+  ['r34_85',['r34',['../structvdp__cmd.html#ae5f7e7185ca8d8d37ff830b142bae2e7',1,'vdp_cmd']]],
+  ['r35_86',['r35',['../structvdp__cmd.html#a3495c3849dcef3ec13b166585c54baab',1,'vdp_cmd']]],
+  ['r36_87',['r36',['../structvdp__cmd.html#ae37e7f549e115e4cdf4eef0f49309286',1,'vdp_cmd']]],
+  ['r37_88',['r37',['../structvdp__cmd.html#adab628c22d73bf9f305245d4b7a35f97',1,'vdp_cmd']]],
+  ['r38_89',['r38',['../structvdp__cmd.html#aad7bb7489f5d17c6cf69a613b4a97671',1,'vdp_cmd']]],
+  ['r39_90',['r39',['../structvdp__cmd.html#a3afc82059d1cc97479f87946869e20e0',1,'vdp_cmd']]],
+  ['r40_91',['r40',['../structvdp__cmd.html#a447c576d47b798afcb2c95b6886a7350',1,'vdp_cmd']]],
+  ['r41_92',['r41',['../structvdp__cmd.html#afb372d6b23511208995733bb9826fe20',1,'vdp_cmd']]],
+  ['r42_93',['r42',['../structvdp__cmd.html#ab0182c2a6759d986d044e46ea5616afe',1,'vdp_cmd']]],
+  ['r43_94',['r43',['../structvdp__cmd.html#a9077e2830392a7e8d0eb8b53234d5a53',1,'vdp_cmd']]],
+  ['r44_95',['r44',['../structvdp__cmd.html#a0ec5533d6ba0dd58cbd20a7c4b98881d',1,'vdp_cmd']]],
+  ['r45_96',['r45',['../structvdp__cmd.html#a21066c5249d7ed332096c3ff57a21598',1,'vdp_cmd']]],
+  ['r46_97',['r46',['../structvdp__cmd.html#af0ee51e6846dd236e4ecbfb7632d23e8',1,'vdp_cmd']]],
+  ['readme_2emd_98',['README.md',['../README_8md.html',1,'']]],
+  ['release_5fphase_99',['RELEASE_PHASE',['../sound__eg__AHDSR_8c.html#a496c4c8e61d9a2960fcbd72042b0e587',1,'sound_eg_AHDSR.c']]],
+  ['release_5frate_100',['release_rate',['../structsound__eg__AHDSR.html#ab41cb77000c9074cde189e9dd85f92a8',1,'sound_eg_AHDSR']]],
+  ['release_5frate_101',['RELEASE_RATE',['../sound__eg__AHDSR_8c.html#a7d89eec58954de8705c571c1a0150ae2',1,'sound_eg_AHDSR.c']]],
+  ['repeat_102',['repeat',['../sound_8c.html#a98c61ed9410ab805baab005fe7713d9b',1,'sound.c']]],
+  ['rgb_103',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
 ];

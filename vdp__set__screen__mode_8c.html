@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('vdp__set__screen__mode_8c.html',''); i
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a63053aebe62d033ef0068db1cf3a8b58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">vdp_set_screen_mode</a> (enum <a class="el" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5">vdp_screen_mode</a> mode)</td></tr>
+<tr class="memdesc:a63053aebe62d033ef0068db1cf3a8b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set VDP screen mode.  <a href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">More...</a><br /></td></tr>
 <tr class="separator:a63053aebe62d033ef0068db1cf3a8b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -132,6 +133,53 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set VDP screen mode. </p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"><code>enum vdp_screen_mode</code>   </th><th class="markdownTableHeadNone">VDP Screen mode   </th><th class="markdownTableHeadNone">BASIC Screen mode   </th><th class="markdownTableHeadNone">Sprite mode   </th><th class="markdownTableHeadNone">compatibility    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_TEXT_1</code>   </td><td class="markdownTableBodyNone">TEXT 1   </td><td class="markdownTableBodyNone">SCREEN 0, WIDTH 40   </td><td class="markdownTableBodyNone">(no sprite)   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_1</code>   </td><td class="markdownTableBodyNone">GRAPHIC 1   </td><td class="markdownTableBodyNone">SCREEN 1   </td><td class="markdownTableBodyNone">mode 1   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_2</code>   </td><td class="markdownTableBodyNone">GRAPHIC 2   </td><td class="markdownTableBodyNone">SCREEN 2   </td><td class="markdownTableBodyNone">mode 1   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_MULTI_COLOR</code>   </td><td class="markdownTableBodyNone">MULTI COLOR   </td><td class="markdownTableBodyNone">SCREEN 3   </td><td class="markdownTableBodyNone">mode 1   </td><td class="markdownTableBodyNone">MSX    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_TEXT_2</code>   </td><td class="markdownTableBodyNone">TEXT 2   </td><td class="markdownTableBodyNone">SCREEN 0, WIDTH 80   </td><td class="markdownTableBodyNone">(no sprite)   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_3</code>   </td><td class="markdownTableBodyNone">GRAPHIC 3   </td><td class="markdownTableBodyNone">SCREEN 4   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_4</code>   </td><td class="markdownTableBodyNone">GRAPHIC 4   </td><td class="markdownTableBodyNone">SCREEN 5   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_5</code>   </td><td class="markdownTableBodyNone">GRAPHIC 5   </td><td class="markdownTableBodyNone">SCREEN 6   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_6</code>   </td><td class="markdownTableBodyNone">GRAPHIC 6   </td><td class="markdownTableBodyNone">SCREEN 7   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7   </td><td class="markdownTableBodyNone">SCREEN 8   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7 YJK/RGB   </td><td class="markdownTableBodyNone">SCREEN 10 or 11   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2+    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7 YJK   </td><td class="markdownTableBodyNone">SCREEN 12   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2+   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>This function just set/reset the M1..M5 bits of the VDP mode registers, therefore:<ul>
+<li>sprite size shall be set by calling <a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a>.</li>
+<li>In case of MSX2 or later, number of visible lines shall be set by calling <a class="el" href="vdp_8h.html#aa2cc4f9210a437505437273e1db868ae" title="Set number of visible lines.">vdp_set_screen_lines()</a>.</li>
+<li>In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e., SCREEN 10, 11, or 12), YJK/YAE bits shall be set manually by calling <a class="el" href="vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f" title="Write to a VDP control register.">vdp_set_control()</a> after this function.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>VDP screen mode.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#aa2cc4f9210a437505437273e1db868ae" title="Set number of visible lines.">vdp_set_screen_lines()</a> </dd>
+<dd>
+<a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a> </dd>
+<dd>
+<a class="el" href="vdp_8h.html#a7d644558c2aba5f1480920df41fb2b3b" title="Get current sprite mode.">vdp_get_sprite_mode()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vdp__set__screen__mode_8c_source.html#l00018">18</a> of file <a class="el" href="vdp__set__screen__mode_8c_source.html">vdp_set_screen_mode.c</a>.</p>
 

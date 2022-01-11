@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="vdp_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node2"><a xlink:href="vdp_8h.html" target="_top" xlink:title="Data types and functions for VDP (Video Display Proccessor) access.">
 <polygon fill="none" stroke="black" points="201.5,-112.5 201.5,-131.5 282.5,-131.5 282.5,-112.5 201.5,-112.5"/>
 <text text-anchor="middle" x="242" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">../include/vdp.h</text>
 </a>

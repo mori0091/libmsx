@@ -1,6 +1,6 @@
 <map id="src/vmem_memset.c" name="src/vmem_memset.c">
 <area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="83,5,227,32"/>
-<area shape="rect" id="node2" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="231,80,339,107"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="231,80,339,107"/>
 <area shape="rect" id="node10" href="$vdp__internal_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="40,80,143,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="455,155,523,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="23,155,98,181"/>

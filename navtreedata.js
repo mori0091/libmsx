@@ -69,7 +69,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "structsound__clip.html#aae9c73220c1e3cf4037a6cf67dea650b",
-"vmem__set__write__address_8c.html"
+"vdp__write__palette_8c.html#aae09e94d48bab51c44188a246c41e96a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

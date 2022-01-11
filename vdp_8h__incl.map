@@ -1,5 +1,5 @@
 <map id="include/vdp.h" name="include/vdp.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="226,5,325,32"/>
+<area shape="rect" id="node1" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="226,5,325,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,73,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="98,80,173,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="291,155,355,181"/>

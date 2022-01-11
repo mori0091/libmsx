@@ -1,6 +1,6 @@
 <map id="src/vdp_set_hscroll_dual_page.c" name="src/vdp_set_hscroll_dual_page.c">
 <area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="88,5,223,47"/>
-<area shape="rect" id="node2" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="231,95,339,121"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="231,95,339,121"/>
 <area shape="rect" id="node10" href="$vdp__internal_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="40,95,143,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="455,169,523,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="23,169,98,196"/>

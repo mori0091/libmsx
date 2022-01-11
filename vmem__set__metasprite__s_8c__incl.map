@@ -6,7 +6,7 @@
 <area shape="rect" id="node3" title=" " alt="" coords="299,304,363,331"/>
 <area shape="rect" id="node4" href="$vmem_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="297,229,365,256"/>
 <area shape="rect" id="node5" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="553,304,596,331"/>
-<area shape="rect" id="node8" href="$vdp_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="544,155,597,181"/>
+<area shape="rect" id="node8" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="544,155,597,181"/>
 <area shape="rect" id="node9" title=" " alt="" coords="779,229,847,256"/>
 <area shape="rect" id="node10" title=" " alt="" coords="389,229,464,256"/>
 <area shape="rect" id="node11" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="648,229,704,256"/>

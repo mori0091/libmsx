@@ -12,5 +12,6 @@ var annotated_dup =
     [ "sound_state", "structsound__state.html", "structsound__state" ],
     [ "sprite", "structsprite.html", "structsprite" ],
     [ "sprite_color", "structsprite__color.html", "structsprite__color" ],
+    [ "vdp_cmd", "structvdp__cmd.html", "structvdp__cmd" ],
     [ "vec2i", "structvec2i.html", "structvec2i" ]
 ];

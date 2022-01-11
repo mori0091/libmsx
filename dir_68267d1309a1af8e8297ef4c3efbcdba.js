@@ -17,6 +17,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "sprite_set_xy.c", "sprite__set__xy_8c.html", "sprite__set__xy_8c" ],
     [ "sprite_set_y.c", "sprite__set__y_8c.html", "sprite__set__y_8c" ],
     [ "vdp.c", "vdp_8c.html", "vdp_8c" ],
+    [ "vdp_cmd_execute.c", "vdp__cmd__execute_8c.html", "vdp__cmd__execute_8c" ],
     [ "vdp_cmd_execute_HMMM.c", "vdp__cmd__execute__HMMM_8c.html", "vdp__cmd__execute__HMMM_8c" ],
     [ "vdp_cmd_execute_HMMV.c", "vdp__cmd__execute__HMMV_8c.html", "vdp__cmd__execute__HMMV_8c" ],
     [ "vdp_cmd_execute_LMMM.c", "vdp__cmd__execute__LMMM_8c.html", "vdp__cmd__execute__LMMM_8c" ],

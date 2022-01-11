@@ -93,13 +93,12 @@ $(document).ready(function(){initNavTree('vdp__cmd__execute__LMMV_8c.html',''); 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="vdp_8h_source.html">../include/vdp.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="vdp__internal_8h_source.html">vdp_internal.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for vdp_cmd_execute_LMMV.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="vdp__cmd__execute__LMMV_8c__incl.svg" width="547" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="vdp__cmd__execute__LMMV_8c__incl.svg" width="535" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -108,6 +107,7 @@ $(document).ready(function(){initNavTree('vdp__cmd__execute__LMMV_8c.html',''); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a497b05654be133a79d2eb5a14a15e5f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp__cmd__execute__LMMV_8c.html#a497b05654be133a79d2eb5a14a15e5f4">vdp_cmd_execute_LMMV</a> (uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint8_t color, enum <a class="el" href="vdp_8h.html#ad5a2110934821d4a04c4f412cea3160f">vdp_cmd_logop</a> logop)</td></tr>
+<tr class="memdesc:a497b05654be133a79d2eb5a14a15e5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes VDP command "LMMV" (fills rectangular area w/ logical operation).  <a href="vdp__cmd__execute__LMMV_8c.html#a497b05654be133a79d2eb5a14a15e5f4">More...</a><br /></td></tr>
 <tr class="separator:a497b05654be133a79d2eb5a14a15e5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -167,7 +167,40 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vdp__cmd__execute__LMMV_8c_source.html#l00018">18</a> of file <a class="el" href="vdp__cmd__execute__LMMV_8c_source.html">vdp_cmd_execute_LMMV.c</a>.</p>
+<p>Executes VDP command "LMMV" (fills rectangular area w/ logical operation). </p>
+<p>This function is equivalent to the following code: </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structvdp__cmd.html">vdp_cmd</a> c;</div>
+<div class="line"><a class="code" href="vdp_8h.html#a65efa5e431eff15a57d9b092610b8edb">vdp_cmd_set_DX</a>(&amp;c, x);</div>
+<div class="line"><a class="code" href="vdp_8h.html#a612592dd23f62875d3fb55ae1b497242">vdp_cmd_set_DY</a>(&amp;c, y);</div>
+<div class="line"><a class="code" href="vdp_8h.html#aea64672ade0f3b169abeced91a198847">vdp_cmd_set_NX</a>(&amp;c, w);</div>
+<div class="line"><a class="code" href="vdp_8h.html#ab297213010a03d7237910ce72934f4f7">vdp_cmd_set_NY</a>(&amp;c, h);</div>
+<div class="line"><a class="code" href="vdp_8h.html#accb32ceabc58747ddf52f2af53fb15f1">vdp_cmd_set_CLR</a>(&amp;c, color);</div>
+<div class="line"><a class="code" href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a>(&amp;c, 0);</div>
+<div class="line"><a class="code" href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a>(&amp;c, logop);</div>
+<div class="line"><a class="code" href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute</a>(&amp;c, <a class="code" href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05">VDP_CMD_LMMV</a>);</div>
+<div class="ttc" id="astructvdp__cmd_html"><div class="ttname"><a href="structvdp__cmd.html">vdp_cmd</a></div><div class="ttdoc">Parameters for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00483">vdp.h:483</a></div></div>
+<div class="ttc" id="avdp_8h_html_a612592dd23f62875d3fb55ae1b497242"><div class="ttname"><a href="vdp_8h.html#a612592dd23f62875d3fb55ae1b497242">vdp_cmd_set_DY</a></div><div class="ttdeci">void vdp_cmd_set_DY(struct vdp_cmd *c, uint16_t dy)</div><div class="ttdoc">Set DY value (y-coordinate of the destination point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00548">vdp.h:548</a></div></div>
+<div class="ttc" id="avdp_8h_html_a65efa5e431eff15a57d9b092610b8edb"><div class="ttname"><a href="vdp_8h.html#a65efa5e431eff15a57d9b092610b8edb">vdp_cmd_set_DX</a></div><div class="ttdeci">void vdp_cmd_set_DX(struct vdp_cmd *c, uint16_t dx)</div><div class="ttdoc">Set DX value (x-coordinate of the destination point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00535">vdp.h:535</a></div></div>
+<div class="ttc" id="avdp_8h_html_a695575c1ece47e0b0ec0c00a7df45f1a"><div class="ttname"><a href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a></div><div class="ttdeci">void vdp_cmd_set_ARG(struct vdp_cmd *c, uint8_t arg)</div><div class="ttdoc">Set ARG value (DIX, DIY, etc.) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00599">vdp.h:599</a></div></div>
+<div class="ttc" id="avdp_8h_html_a713522050128f19e20c19e2556398914"><div class="ttname"><a href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute</a></div><div class="ttdeci">void vdp_cmd_execute(const struct vdp_cmd *c, enum vdp_cmd_op opcode)</div><div class="ttdoc">Executes a VDP command.</div><div class="ttdef"><b>Definition:</b> <a href="vdp__cmd__execute_8c_source.html#l00058">vdp_cmd_execute.c:58</a></div></div>
+<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05">VDP_CMD_LMMV</a></div><div class="ttdeci">@ VDP_CMD_LMMV</div><div class="ttdoc">Operation code &quot;LMMV&quot; : Fill rectangular area w/ logical operation.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00461">vdp.h:461</a></div></div>
+<div class="ttc" id="avdp_8h_html_ab297213010a03d7237910ce72934f4f7"><div class="ttname"><a href="vdp_8h.html#ab297213010a03d7237910ce72934f4f7">vdp_cmd_set_NY</a></div><div class="ttdeci">void vdp_cmd_set_NY(struct vdp_cmd *c, uint16_t ny)</div><div class="ttdoc">Set NY value (height) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00574">vdp.h:574</a></div></div>
+<div class="ttc" id="avdp_8h_html_ab2c2102d96581f5961af3d04340e1ea2"><div class="ttname"><a href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a></div><div class="ttdeci">void vdp_cmd_set_logop(struct vdp_cmd *c, enum vdp_cmd_logop logop)</div><div class="ttdoc">Set a logical operation code for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00611">vdp.h:611</a></div></div>
+<div class="ttc" id="avdp_8h_html_accb32ceabc58747ddf52f2af53fb15f1"><div class="ttname"><a href="vdp_8h.html#accb32ceabc58747ddf52f2af53fb15f1">vdp_cmd_set_CLR</a></div><div class="ttdeci">void vdp_cmd_set_CLR(struct vdp_cmd *c, uint8_t clr)</div><div class="ttdoc">Set CLR value (color) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00587">vdp.h:587</a></div></div>
+<div class="ttc" id="avdp_8h_html_aea64672ade0f3b169abeced91a198847"><div class="ttname"><a href="vdp_8h.html#aea64672ade0f3b169abeced91a198847">vdp_cmd_set_NX</a></div><div class="ttdeci">void vdp_cmd_set_NX(struct vdp_cmd *c, uint16_t nx)</div><div class="ttdoc">Set NX value (width) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00561">vdp.h:561</a></div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>x-coordinate of the top-left corner of the rectangular area. </td></tr>
+    <tr><td class="paramname">y</td><td>y-coordinate of the top-left corner of the rectangular area. </td></tr>
+    <tr><td class="paramname">w</td><td>width of the rectangular area. </td></tr>
+    <tr><td class="paramname">h</td><td>height of the rectangular area. </td></tr>
+    <tr><td class="paramname">color</td><td>color code. </td></tr>
+    <tr><td class="paramname">logop</td><td>logical operation code.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vdp__cmd__execute__LMMV_8c_source.html#l00016">16</a> of file <a class="el" href="vdp__cmd__execute__LMMV_8c_source.html">vdp_cmd_execute_LMMV.c</a>.</p>
 
 </div>
 </div>

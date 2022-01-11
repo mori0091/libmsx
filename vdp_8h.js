@@ -1,5 +1,6 @@
 var vdp_8h =
 [
+    [ "vdp_cmd", "structvdp__cmd.html", "structvdp__cmd" ],
     [ "RGB", "vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e", null ],
     [ "palette_t", "vdp_8h.html#a33595fdc0e04957d3dd734d82e10d55d", null ],
     [ "vdp_screen_mode", "vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5", [
@@ -38,6 +39,21 @@ var vdp_8h =
       [ "VDP_CMD_TXOR", "vdp_8h.html#ad5a2110934821d4a04c4f412cea3160fabf51bf611b4d847ef474e35cd61ccf3a", null ],
       [ "VDP_CMD_TNOT", "vdp_8h.html#ad5a2110934821d4a04c4f412cea3160fa55e37099d763bcf506e9163cce242a84", null ]
     ] ],
+    [ "vdp_cmd_op", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8ded", [
+      [ "VDP_CMD_STOP", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda35c720b673854b1e96dd4d0812d502e2", null ],
+      [ "VDP_CMD_POINT", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda9109a8f3b0d85245f419f5f6a4066a7c", null ],
+      [ "VDP_CMD_PSET", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda6e40e2c49371ee180ef4cef4be8caa25", null ],
+      [ "VDP_CMD_SRCH", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda2935786214504f4592dedef4a6782f84", null ],
+      [ "VDP_CMD_LINE", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda52b97666f5b315264826ba5f3ae1431d", null ],
+      [ "VDP_CMD_LMMV", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05", null ],
+      [ "VDP_CMD_LMMM", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda2a8db7f645f4f80ca1f6730329b8bfa7", null ],
+      [ "VDP_CMD_LMCM", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda0349315753336d9cbcca4494d2c04b70", null ],
+      [ "VDP_CMD_LMMC", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda68a2287f76d0c2e35b369ebbe350a889", null ],
+      [ "VDP_CMD_HMMV", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda3c650b04b29de4d9f870a0dc71b442c5", null ],
+      [ "VDP_CMD_HMMM", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda9ebbe650db52f80d69c52152d1b5bed3", null ],
+      [ "VDP_CMD_YMMM", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda42c812e77ed5b7d3339a21735ca3aab6", null ],
+      [ "VDP_CMD_HMMC", "vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8dedaf90ff06014f702cb577d6cfa41793316", null ]
+    ] ],
     [ "VDP_SET_CONTROL_REGISTER", "vdp_8h.html#af53955bc84b9c190f04abdd9206f6453", null ],
     [ "VDP_SET_CONTROL_REGISTER_POINTER", "vdp_8h.html#afdffcc91a0792402633458501bdb287a", null ],
     [ "VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT", "vdp_8h.html#aaca56c9333743eee25ba68e572a17d10", null ],
@@ -73,6 +89,16 @@ var vdp_8h =
     [ "vdp_cmd_is_running", "vdp_8h.html#aa461d4bee77f7d945adde5648a7b7be2", null ],
     [ "vdp_cmd_await", "vdp_8h.html#abe88a78350fc63e2c03970acbd30dcdb", null ],
     [ "vdp_cmd_set_unrestricted", "vdp_8h.html#aff9c85cefd095ae4e78e73cb6f848663", null ],
+    [ "vdp_cmd_set_SX", "vdp_8h.html#a365bbf8b0c100ccc6f069bc45e1d6370", null ],
+    [ "vdp_cmd_set_SY", "vdp_8h.html#a06d40a54ded58c30c885cf0de48bdb57", null ],
+    [ "vdp_cmd_set_DX", "vdp_8h.html#a65efa5e431eff15a57d9b092610b8edb", null ],
+    [ "vdp_cmd_set_DY", "vdp_8h.html#a612592dd23f62875d3fb55ae1b497242", null ],
+    [ "vdp_cmd_set_NX", "vdp_8h.html#aea64672ade0f3b169abeced91a198847", null ],
+    [ "vdp_cmd_set_NY", "vdp_8h.html#ab297213010a03d7237910ce72934f4f7", null ],
+    [ "vdp_cmd_set_CLR", "vdp_8h.html#accb32ceabc58747ddf52f2af53fb15f1", null ],
+    [ "vdp_cmd_set_ARG", "vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a", null ],
+    [ "vdp_cmd_set_logop", "vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2", null ],
+    [ "vdp_cmd_execute", "vdp_8h.html#a713522050128f19e20c19e2556398914", null ],
     [ "vdp_cmd_execute_LMMV", "vdp_8h.html#a497b05654be133a79d2eb5a14a15e5f4", null ],
     [ "vdp_cmd_execute_LMMM", "vdp_8h.html#af9dda09b05a98b20905b6a6ace2a7d30", null ],
     [ "vdp_cmd_execute_HMMV", "vdp_8h.html#a0e26d347442f3917aa56d865808fdb99", null ],

@@ -257,10 +257,13 @@ uint8_t vdp_get_sprite_mode(void);
  * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7 YJK/RGB | SCREEN 10 or 11    | mode 2      | MSX2+         |
  * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7 YJK     | SCREEN 12          | mode 2      | MSX2+         |
  *
+ * \param mode  VDP screen mode.
+ *
  * \note
  * This function just set/reset the M1..M5 bits of the VDP mode registers,
  * any other settings are not changed by this function.
  *
+ * \par
  * Therefore you should do the following after this function if needed:
  * - Address of **pattern name table** shall be set by calling
  *   vdp_set_image_table().
@@ -278,8 +281,6 @@ uint8_t vdp_get_sprite_mode(void);
  *   SCREEN 10, 11, or 12), **YJK/YAE bits** shall be set manually by calling
  *   vdp_set_control(). (There is no dedicated functions for setting YJK/YAE bits.)
  * - etc.
- *
- * \param mode  VDP screen mode.
  *
  * \sa vdp_set_image_table()
  * \sa vdp_set_pattern_table()
@@ -309,9 +310,11 @@ void vdp_set_screen_lines(enum vdp_screen_lines lines);
  * **Pattern name table** is almost the same as what is called
  * a **frame buffer** in modern computer systems.
  *
+ * \par
  * Especially in the bitmap graphics mode (GRAPHIC 4 to 7), the pattern name
  * table serves as a frame buffer for 2bpp, 4bpp, or 8bpp graphics images.
  *
+ * \par
  * In any other screen mode, it serves as a frame buffer for tile pattern
  * matrix.
  */
@@ -323,7 +326,7 @@ void vdp_set_image_table(vmemptr_t table);
  * \param table  VRAM address of the pattern generator table.
  *
  * \note
- * In the bitamp graphics mode (GRAPHIC 4 to 7), you may not call this function.
+ * In the bitmap graphics mode (GRAPHIC 4 to 7), you may not call this function.
  */
 void vdp_set_pattern_table(vmemptr_t table);
 
@@ -333,7 +336,7 @@ void vdp_set_pattern_table(vmemptr_t table);
  * \param table  VRAM address of the color table.
  *
  * \note
- * In the bitamp graphics mode (GRAPHIC 4 to 7), you may not call this function.
+ * In the bitmap graphics mode (GRAPHIC 4 to 7), you may not call this function.
  */
 void vdp_set_color_table(vmemptr_t table);
 
@@ -380,10 +383,10 @@ void vdp_set_color(uint8_t c);  // set color register R#7
 /**
  * Set VDP display adjust register.
  *
- * If x < 0, shift the display area to left.
- * If x > 0, shift the display area to right.
- * If y < 0, shift the display area to upper.
- * If y > 0, shift the display area to lower.
+ * - If x < 0, shift the display area to left.
+ * - If x > 0, shift the display area to right.
+ * - If y < 0, shift the display area to upper.
+ * - If y > 0, shift the display area to lower.
  *
  * \param x  x offset (-7..+8)
  * \param y  y offset (-7..+8)
@@ -673,14 +676,14 @@ inline void vdp_cmd_set_logop(struct vdp_cmd * c, enum vdp_cmd_logop logop) {
  * \param c       pointer to `struct vdp_cmd`.
  * \param opcode  an operation code.
  *
- * \sa vdp_cmd_await()
- *
  * \note
  * Currently, only the following operations are supported:
  * - VDP_CMD_LMMV
  * - VDP_CMD_LMMM
  * - VDP_CMD_HMMV
  * - VDP_CMD_HMMM
+ *
+ * \sa vdp_cmd_await()
  */
 void vdp_cmd_execute(const struct vdp_cmd * c, enum vdp_cmd_op opcode);
 

@@ -1,6 +1,7 @@
 // -*- coding: utf-8-unix -*-
 /**
  * \file vdp.h
+ * \brief Data types and functions for VDP (Video Display Proccessor) access.
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
@@ -77,101 +78,366 @@ inline uint8_t VDP_GET_VMEM_VALUE(void) {
 
 // ---- VDP status register
 
+/**
+ * Read from a VDP status register.
+ *
+ * \param reg  VDP status register number.
+ * \return     Value of the VDP status register.
+ */
 uint8_t vdp_get_status(uint8_t reg);
 
 // ---- VDP control registers
 
+/**
+ * Write to a VDP control register.
+ *
+ * \param reg  VDP control register number.
+ * \param x    Value to be written.
+ */
 void vdp_set_control(uint8_t reg, uint8_t x);
 
+/**
+ * Write to a series of VDP control registers.
+ *
+ * \param reg  First number of the VDP control register.
+ * \param src  Pointer to the beginning of the value to be written.
+ * \param len  Number of VDP control registers and values.
+ */
 void vdp_write_control(uint8_t reg, void* src, uint8_t len);
 
 // ---- VDP palette registers
 
+/**
+ * Type for RGB color palette value.
+ *
+ * \sa RGB()
+ */
 typedef uint16_t palette_t;
 
-#define RGB(r, g, b) \
-  ((((g) & 7) << 8) | (((r) & 7) << 4) | ((b) & 7))
+/**
+ * Constructs RGB color palette value.
+ *
+ * \param r  Red component (0..7)
+ * \param g  Green component (0..7)
+ * \param b  Blue component (0..7)
+ * \return   RGB color palette value.
+ */
+#define RGB(r, g, b)                                              \
+  ((palette_t)((((g) & 7) << 8) | (((r) & 7) << 4) | ((b) & 7)))
 
+/**
+ * Write to a VDP palette register.
+ *
+ * \param idx      color palette number. (0..15)
+ * \param palette  color palette value.
+ *
+ * \sa RGB()
+ */
 void vdp_set_palette(uint8_t idx, const palette_t palette);
 
+/**
+ * Write to a series of VDP palette registers.
+ *
+ * \param palettes  16 color palette values.
+ *
+ * \sa RGB()
+ */
 void vdp_write_palette(const palette_t palettes[16]);
 
 // ---- VDP display setting
 
+/**
+ * Enumeration of VDP screen modes.
+ * \sa vdp_set_screen_mode()
+ */
 enum vdp_screen_mode {
+  /** GRAPHIC 1 (SCREEN 1) */
   VDP_SCREEN_MODE_GRAPHIC_1   = 0, // 00000b (00) SCREEN 1
+  /** TEXT 1 (SCREEN 0, WIDTH 40)*/
   VDP_SCREEN_MODE_TEXT_1      = 1, // 00001b (01) SCREEN 0: WIDTH 40
+  /** MULTI COLOR (SCREEN 3) */
   VDP_SCREEN_MODE_MULTI_COLOR = 2, // 00010b (02) SCREEN 3
+  /** GRAPHIC 2 (SCREEN 2) */
   VDP_SCREEN_MODE_GRAPHIC_2   = 3, // 00100b (04) SCREEN 2
+  /** GRAPHIC 3 (SCREEN 4) */
   VDP_SCREEN_MODE_GRAPHIC_3   = 4, // 01000b (08) SCREEN 4
+  /** TEXT 2 (SCREEN 0, WIDTH 80)*/
   VDP_SCREEN_MODE_TEXT_2      = 5, // 01001b (09) SCREEN 0: WIDTH 80
+  /** GRAPHIC 4 (SCREEN 5) */
   VDP_SCREEN_MODE_GRAPHIC_4   = 6, // 01100b (0C) SCREEN 5
+  /** GRAPHIC 5 (SCREEN 6) */
   VDP_SCREEN_MODE_GRAPHIC_5   = 7, // 10000b (10) SCREEN 6
+  /** GRAPHIC 6 (SCREEN 7) */
   VDP_SCREEN_MODE_GRAPHIC_6   = 8, // 10100b (14) SCREEN 7
+  /** GRAPHIC 7 (SCREEN 8) */
   VDP_SCREEN_MODE_GRAPHIC_7   = 9, // 11100b (1C) SCREEN 8
 };
 
+/**
+ * Enumeration of VDP screen lines.
+ * \sa vdp_set_screen_lines()
+ */
 enum vdp_screen_lines {
+  /** 192 lines */
   VDP_SCREEN_LINES_192 = 0x00,
+  /** 212 lines */
   VDP_SCREEN_LINES_212 = 0x80,
 };
 
+/**
+ * Enumeration of VDP sprite size.
+ * \sa vdp_set_sprite_size()
+ */
 enum vdp_sprite_size {
+  /** 8x8 pixels */
   VDP_SPRITE_SIZE_8x8 = 0,
+  /** 8x8 pixels, 2x magnification */
   VDP_SPRITE_SIZE_8x8_MAGNIFIED = 1,
+  /** 16x16 pixels */
   VDP_SPRITE_SIZE_16x16 = 2,
+  /** 16x16 pixels, 2x magnification */
   VDP_SPRITE_SIZE_16x16_MAGNIFIED = 3,
 };
 
+/**
+ * Show / hide screen.
+ *
+ * \param visible  show screen if `true`, hide otherwise.
+ */
 void vdp_set_visible(bool visible);
 
+/**
+ * Get current sprite mode.
+ *
+ * The sprite mode will be determined based on the current screen mode.
+ *
+ * | `enum vdp_screen_mode`        | VDP Screen mode   | BASIC Screen mode  | Sprite mode | compatibility |
+ * | ----------------------------- | ----------------- | ------------------ | ----------- | ------------- |
+ * | `VDP_SCREEN_MODE_TEXT_1`      | TEXT 1            | SCREEN 0, WIDTH 40 | (no sprite) | MSX           |
+ * | `VDP_SCREEN_MODE_GRAPHIC_1`   | GRAPHIC 1         | SCREEN 1           | **mode 1**  | MSX           |
+ * | `VDP_SCREEN_MODE_GRAPHIC_2`   | GRAPHIC 2         | SCREEN 2           | **mode 1**  | MSX           |
+ * | `VDP_SCREEN_MODE_MULTI_COLOR` | MULTI COLOR       | SCREEN 3           | **mode 1**  | MSX           |
+ * | `VDP_SCREEN_MODE_TEXT_2`      | TEXT 2            | SCREEN 0, WIDTH 80 | (no sprite) | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_3`   | GRAPHIC 3         | SCREEN 4           | **mode 2**  | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_4`   | GRAPHIC 4         | SCREEN 5           | **mode 2**  | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_5`   | GRAPHIC 5         | SCREEN 6           | **mode 2**  | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_6`   | GRAPHIC 6         | SCREEN 7           | **mode 2**  | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7         | SCREEN 8           | **mode 2**  | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7 YJK/RGB | SCREEN 10 or 11    | **mode 2**  | MSX2+         |
+ * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7 YJK     | SCREEN 12          | **mode 2**  | MSX2+         |
+ *
+ * \return  The sprite mode based on the current screen mode:
+ *          - 0 if the screen mode was TEXT 1 or TEXT 2,
+ *          - 1 if the sprite mode was mode 1,
+ *          - 2 if the sprite mode was mode 2.
+ *
+ * \note
+ * If you call this function before calling vdp_set_screen_mode(), the return
+ * value may be wrong.
+ *
+ * \sa vdp_set_screen_mode()
+ */
 uint8_t vdp_get_sprite_mode(void);
+
+/**
+ * Set VDP screen mode.
+ *
+ * | `enum vdp_screen_mode`        | VDP Screen mode   | BASIC Screen mode  | Sprite mode | compatibility |
+ * | ----------------------------- | ----------------- | ------------------ | ----------- | ------------- |
+ * | `VDP_SCREEN_MODE_TEXT_1`      | TEXT 1            | SCREEN 0, WIDTH 40 | (no sprite) | MSX           |
+ * | `VDP_SCREEN_MODE_GRAPHIC_1`   | GRAPHIC 1         | SCREEN 1           | mode 1      | MSX           |
+ * | `VDP_SCREEN_MODE_GRAPHIC_2`   | GRAPHIC 2         | SCREEN 2           | mode 1      | MSX           |
+ * | `VDP_SCREEN_MODE_MULTI_COLOR` | MULTI COLOR       | SCREEN 3           | mode 1      | MSX           |
+ * | `VDP_SCREEN_MODE_TEXT_2`      | TEXT 2            | SCREEN 0, WIDTH 80 | (no sprite) | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_3`   | GRAPHIC 3         | SCREEN 4           | mode 2      | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_4`   | GRAPHIC 4         | SCREEN 5           | mode 2      | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_5`   | GRAPHIC 5         | SCREEN 6           | mode 2      | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_6`   | GRAPHIC 6         | SCREEN 7           | mode 2      | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7         | SCREEN 8           | mode 2      | MSX2          |
+ * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7 YJK/RGB | SCREEN 10 or 11    | mode 2      | MSX2+         |
+ * | `VDP_SCREEN_MODE_GRAPHIC_7`   | GRAPHIC 7 YJK     | SCREEN 12          | mode 2      | MSX2+         |
+ *
+ * \note
+ * This function just set/reset the M1..M5 bits of the VDP mode registers,
+ * therefore:
+ * - sprite size shall be set by calling vdp_set_sprite_size().
+ * - In case of MSX2 or later, number of visible lines shall be set by calling
+ *   vdp_set_screen_lines().
+ * - In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e.,
+ *   SCREEN 10, 11, or 12), YJK/YAE bits shall be set manually by calling
+ *   vdp_set_control() after this function.
+ *
+ * \param mode  VDP screen mode.
+ *
+ * \sa vdp_set_screen_lines()
+ * \sa vdp_set_sprite_size()
+ * \sa vdp_get_sprite_mode()
+ */
 void vdp_set_screen_mode(enum vdp_screen_mode mode);
+
+/**
+ * Set number of visible lines.
+ *
+ * \param lines  `VDP_SCREEN_LINES_192` for 192 lines, or
+ *               `VDP_SCREEN_LINES_212` for 212 lines.
+ */
 void vdp_set_screen_lines(enum vdp_screen_lines lines);
 
+/**
+ * Set VRAM address of the name table.
+ *
+ * \param table  VRAM address of the name table.
+ */
 void vdp_set_image_table(vmemptr_t table);
+
+/**
+ * Set VRAM address of the pattern generator table.
+ *
+ * \param table  VRAM address of the pattern generator table.
+ */
 void vdp_set_pattern_table(vmemptr_t table);
+
+/**
+ * Set VRAM address of the color table.
+ *
+ * \param table  VRAM address of the color table.
+ */
 void vdp_set_color_table(vmemptr_t table);
+
+/**
+ * Set VRAM address of the sprite pattern generator table.
+ *
+ * \param table  VRAM address of the sprite pattern generator table.
+ */
 void vdp_set_sprite_pattern_table(vmemptr_t table);
+
+/**
+ * Set VRAM address of the sprite attribute table.
+ *
+ * \param table  VRAM address of the sprite attribute table.
+ */
 void vdp_set_sprite_attribute_table(vmemptr_t table);
 
+/**
+ * Set sprite size.
+ *
+ * \param size  sprite size.
+ */
 void vdp_set_sprite_size(enum sprite_size size);
+
+/**
+ * Show / hide sprites.
+ *
+ * \param visible  show sprites if `true`, hide otherwise.
+ */
 void vdp_set_sprite_visible(bool visible);
 
+/**
+ * Set VDP color register.
+ *
+ * \param c  value to be set to VDP color register (R#7)
+ */
 void vdp_set_color(uint8_t c);  // set color register R#7
 
+/**
+ * Set VDP display adjust register.
+ *
+ * \param x  x offset (-8..7)
+ * \param y  y offset (-8..7)
+ */
 void vdp_set_adjust(int8_t x, int8_t y);
 
+/**
+ * Set VDP display offset register.
+ *
+ * \param y  Beginning line number.
+ */
 void vdp_set_vscroll(uint8_t y);
+
+/**
+ * Set VDP horizontal offset register.
+ *
+ * \param x  horizontal offset (0..511)
+ */
 void vdp_set_hscroll(uint16_t x);
+
+/**
+ * Enables/Disables the screen mask for the leftmost 8 pixels.
+ *
+ * \param enable  Hide the leftmost 8 pixels if `true`, show otherwise.
+ */
 void vdp_set_hscroll_mask(bool enable);
+
+/**
+ * Enable/disable horizontal scrolling for two pages.
+ *
+ * \param enable  scrolling two pages if `true`, one page otherwise.
+ */
 void vdp_set_hscroll_dual_page(bool enable);
 
 // ---- VDP COMMANDs
 
+/**
+ * Tests if a VDP command is running.
+ *
+ * \return  `true` is a VDP command is running, `false` otherwise.
+ *
+ * \sa vdp_cmd_execute()
+ */
 inline bool vdp_cmd_is_running(void) {
   return (vdp_get_status(2) & 1);
 }
 
+/**
+ * Wait for the VDP command to finish.
+ *
+ * \sa vdp_cmd_execute()
+ */
 inline void vdp_cmd_await(void) {
   while (vdp_cmd_is_running())
     ;
 }
 
+/**
+ * Unristricts/Restricts availability of the VDP command for some screen modes.
+ *
+ * \param enable  If `true`, enables the VDP command for all screen modes.
+ *                Otherwise, enables the VDP command only for GRAPHIC 4 to 7.
+ *
+ * \sa vdp_cmd_execute()
+ * \sa vdp_set_screen_mode()
+ */
 void vdp_cmd_set_unrestricted(bool enable);
 
+/**
+ * Enumeration of logical operation codes for VDP commands.
+ *
+ * \sa vdp_cmd_execute()
+ */
 enum vdp_cmd_logop {
+  /** Logical operation code "IMP" : destination ← source */
   VDP_CMD_IMP  = 0x00,
+  /** Logical operation code "AND" : destination ← destination & source */
   VDP_CMD_AND  = 0x01,
+  /** Logical operation code "OR" : destination ← destination | source */
   VDP_CMD_OR   = 0x02,
+  /** Logical operation code "EOR" : destination ← destination ^ source */
   VDP_CMD_EOR  = 0x03,
+  /** (synonim for `VDP_CMD_EOR`) */
   VDP_CMD_XOR  = VDP_CMD_EOR,
+  /** Logical operation code "NOT" : destination ← ~source */
   VDP_CMD_NOT  = 0x04,
+  /** Logical operation code "TIMP" : destination ← source , if source ≠ 0 */
   VDP_CMD_TIMP = 0x08,
+  /** Logical operation code "TAND" : destination ← destination & source , if source ≠ 0 */
   VDP_CMD_TAND = 0x09,
+  /** Logical operation code "TOR" : destination ← destination | source , if source ≠ 0 */
   VDP_CMD_TOR  = 0x0a,
+  /** Logical operation code "TEOR" : destination ← destination ^ source , if source ≠ 0 */
   VDP_CMD_TEOR = 0x0b,
+  /** (synonim for `VDP_CMD_TEOR`) */
   VDP_CMD_TXOR = VDP_CMD_TEOR,
+  /** Logical operation code "NOT" : destination ← ~source , if source ≠ 0 */
   VDP_CMD_TNOT = 0x0c,
 };
 
@@ -363,15 +629,117 @@ inline void vdp_cmd_set_logop(struct vdp_cmd * c, enum vdp_cmd_logop logop) {
  */
 void vdp_cmd_execute(const struct vdp_cmd * c, enum vdp_cmd_op opcode);
 
+/**
+ * Executes VDP command "LMMV" (fills rectangular area w/ logical operation).
+ *
+ * This function is equivalent to the following code:
+ * ~~~
+ * struct vdp_cmd c;
+ * vdp_cmd_set_DX(&c, x);
+ * vdp_cmd_set_DY(&c, y);
+ * vdp_cmd_set_NX(&c, w);
+ * vdp_cmd_set_NY(&c, h);
+ * vdp_cmd_set_CLR(&c, color);
+ * vdp_cmd_set_ARG(&c, 0);
+ * vdp_cmd_set_logop(&c, logop);
+ * vdp_cmd_execute(&c, VDP_CMD_LMMV);
+ * ~~~
+ *
+ * \param x      x-coordinate of the top-left corner of the rectangular area.
+ * \param y      y-coordinate of the top-left corner of the rectangular area.
+ * \param w      width of the rectangular area.
+ * \param h      height of the rectangular area.
+ * \param color  color code.
+ * \param logop  logical operation code.
+ *
+ * \sa vdp_cmd_execute()
+ */
 void vdp_cmd_execute_LMMV(uint16_t x, uint16_t y, uint16_t w, uint16_t h,
                           uint8_t color, enum vdp_cmd_logop logop);
 
+/**
+ * Executes VDP command "LMMM" (copy rectangular area w/ logical operation).
+ *
+ * This function is equivalent to the following code:
+ * ~~~
+ * struct vdp_cmd c;
+ * vdp_cmd_set_SX(&c, x);
+ * vdp_cmd_set_SY(&c, y);
+ * vdp_cmd_set_DX(&c, x2);
+ * vdp_cmd_set_DY(&c, y2);
+ * vdp_cmd_set_NX(&c, w);
+ * vdp_cmd_set_NY(&c, h);
+ * vdp_cmd_set_ARG(&c, 0);
+ * vdp_cmd_set_logop(&c, logop);
+ * vdp_cmd_execute(&c, VDP_CMD_LMMM);
+ * ~~~
+ *
+ * \param x      x-coordinate of the top-left corner of the source rectangular area.
+ * \param y      y-coordinate of the top-left corner of the source rectangular area.
+ * \param x2     x-coordinate of the top-left corner of the destination rectangular area.
+ * \param y2     y-coordinate of the top-left corner of the destination rectangular area.
+ * \param w      width of the rectangular area.
+ * \param h      height of the rectangular area.
+ * \param logop  logical operation code.
+ *
+ * \sa vdp_cmd_execute()
+ */
 void vdp_cmd_execute_LMMM(uint16_t x, uint16_t y, uint16_t w, uint16_t h,
                           uint16_t x2, uint16_t y2, enum vdp_cmd_logop logop);
 
+/**
+ * Executes VDP command "HMMV" (fills rectangular area).
+ *
+ * This function is equivalent to the following code:
+ * ~~~
+ * struct vdp_cmd c;
+ * vdp_cmd_set_DX(&c, x);
+ * vdp_cmd_set_DY(&c, y);
+ * vdp_cmd_set_NX(&c, w);
+ * vdp_cmd_set_NY(&c, h);
+ * vdp_cmd_set_CLR(&c, color);
+ * vdp_cmd_set_ARG(&c, 0);
+ * vdp_cmd_set_logop(&c, 0);
+ * vdp_cmd_execute(&c, VDP_CMD_HMMV);
+ * ~~~
+ *
+ * \param x      x-coordinate of the top-left corner of the rectangular area.
+ * \param y      y-coordinate of the top-left corner of the rectangular area.
+ * \param w      width of the rectangular area.
+ * \param h      height of the rectangular area.
+ * \param color  color code.
+ *
+ * \sa vdp_cmd_execute()
+ */
 void vdp_cmd_execute_HMMV(uint16_t x, uint16_t y, uint16_t w, uint16_t h,
                           uint8_t color);
 
+/**
+ * Executes VDP command "HMMM" (copy rectangular area).
+ *
+ * This function is equivalent to the following code:
+ * ~~~
+ * struct vdp_cmd c;
+ * vdp_cmd_set_SX(&c, x);
+ * vdp_cmd_set_SY(&c, y);
+ * vdp_cmd_set_DX(&c, x2);
+ * vdp_cmd_set_DY(&c, y2);
+ * vdp_cmd_set_NX(&c, w);
+ * vdp_cmd_set_NY(&c, h);
+ * vdp_cmd_set_ARG(&c, 0);
+ * vdp_cmd_set_logop(&c, 0);
+ * vdp_cmd_execute(&c, VDP_CMD_HMMM);
+ * ~~~
+ *
+ * \param x      x-coordinate of the top-left corner of the source rectangular area.
+ * \param y      y-coordinate of the top-left corner of the source rectangular area.
+ * \param x2     x-coordinate of the top-left corner of the destination rectangular area.
+ * \param y2     y-coordinate of the top-left corner of the destination rectangular area.
+ * \param w      width of the rectangular area.
+ * \param h      height of the rectangular area.
+ *
+ * \sa vdp_cmd_execute()
+ */
 void vdp_cmd_execute_HMMM(uint16_t x, uint16_t y, uint16_t w, uint16_t h,
                           uint16_t x2, uint16_t y2);
 

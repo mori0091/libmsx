@@ -163,19 +163,35 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7 YJK   </td><td class="markdownTableBodyNone">SCREEN 12   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2+   </td></tr>
 </table>
-<dl class="section note"><dt>Note</dt><dd>This function just set/reset the M1..M5 bits of the VDP mode registers, therefore:<ul>
-<li>sprite size shall be set by calling <a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a>.</li>
-<li>In case of MSX2 or later, number of visible lines shall be set by calling <a class="el" href="vdp_8h.html#aa2cc4f9210a437505437273e1db868ae" title="Set number of visible lines.">vdp_set_screen_lines()</a>.</li>
-<li>In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e., SCREEN 10, 11, or 12), YJK/YAE bits shall be set manually by calling <a class="el" href="vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f" title="Write to a VDP control register.">vdp_set_control()</a> after this function.</li>
+<dl class="section note"><dt>Note</dt><dd>This function just set/reset the M1..M5 bits of the VDP mode registers, any other settings are not changed by this function.</dd></dl>
+<p>Therefore you should do the following after this function if needed:</p><ul>
+<li>Address of <b>pattern name table</b> shall be set by calling <a class="el" href="vdp_8h.html#a3fb6099b9811621c8ba3dd09c76f2dec" title="Set VRAM address of the pattern name table.">vdp_set_image_table()</a>.</li>
+<li>Address of <b>pattern generator table</b> shall be set by calling <a class="el" href="vdp_8h.html#af161441fd5475dbf63be7b384a2cf27a" title="Set VRAM address of the pattern generator table.">vdp_set_pattern_table()</a>.</li>
+<li>Address of <b>color table</b> shall be set by calling <a class="el" href="vdp_8h.html#aa8c6e5071b94616225f70959001afe2b" title="Set VRAM address of the color table.">vdp_set_color_table()</a>.</li>
+<li>Address of <b>sprite pattern generator table</b> shall be set by calling <a class="el" href="vdp_8h.html#a785c8cbb6c9e3f15400eb49691f32d5e" title="Set VRAM address of the sprite pattern generator table.">vdp_set_sprite_pattern_table()</a>.</li>
+<li>Address of <b>sprite attribute table</b> shall be set by calling <a class="el" href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419" title="Set VRAM address of the sprite attribute table.">vdp_set_sprite_attribute_table()</a>.</li>
+<li><b>Sprite size</b> shall be set by calling <a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a>.</li>
+<li>In case of MSX2 or later, <b>number of visible lines</b> shall be set by calling <a class="el" href="vdp_8h.html#aa2cc4f9210a437505437273e1db868ae" title="Set number of visible lines.">vdp_set_screen_lines()</a>.</li>
+<li>In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e., SCREEN 10, 11, or 12), <b>YJK/YAE bits</b> shall be set manually by calling <a class="el" href="vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f" title="Write to a VDP control register.">vdp_set_control()</a>. (There is no dedicated functions for setting YJK/YAE bits.)</li>
+<li>etc.</li>
 </ul>
-</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mode</td><td>VDP screen mode.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#aa2cc4f9210a437505437273e1db868ae" title="Set number of visible lines.">vdp_set_screen_lines()</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a3fb6099b9811621c8ba3dd09c76f2dec" title="Set VRAM address of the pattern name table.">vdp_set_image_table()</a> </dd>
+<dd>
+<a class="el" href="vdp_8h.html#af161441fd5475dbf63be7b384a2cf27a" title="Set VRAM address of the pattern generator table.">vdp_set_pattern_table()</a> </dd>
+<dd>
+<a class="el" href="vdp_8h.html#aa8c6e5071b94616225f70959001afe2b" title="Set VRAM address of the color table.">vdp_set_color_table()</a> </dd>
+<dd>
+<a class="el" href="vdp_8h.html#aa2cc4f9210a437505437273e1db868ae" title="Set number of visible lines.">vdp_set_screen_lines()</a> </dd>
+<dd>
+<a class="el" href="vdp_8h.html#a785c8cbb6c9e3f15400eb49691f32d5e" title="Set VRAM address of the sprite pattern generator table.">vdp_set_sprite_pattern_table()</a> </dd>
+<dd>
+<a class="el" href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419" title="Set VRAM address of the sprite attribute table.">vdp_set_sprite_attribute_table()</a> </dd>
 <dd>
 <a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a> </dd>
 <dd>

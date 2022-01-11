@@ -145,10 +145,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set VDP display adjust register. </p>
+<p>If x &lt; 0, shift the display area to left. If x &gt; 0, shift the display area to right. If y &lt; 0, shift the display area to upper. If y &gt; 0, shift the display area to lower.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>x offset (-8..7) </td></tr>
-    <tr><td class="paramname">y</td><td>y offset (-8..7) </td></tr>
+    <tr><td class="paramname">x</td><td>x offset (-7..+8) </td></tr>
+    <tr><td class="paramname">y</td><td>y offset (-7..+8) </td></tr>
   </table>
   </dd>
 </dl>

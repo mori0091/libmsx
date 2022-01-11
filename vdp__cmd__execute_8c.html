@@ -146,13 +146,22 @@ Functions</h2></td></tr>
 <p>Executes a VDP command. </p>
 <p>Requests the VDP to execute a VDP command. When a previous VDP command is still running, this function waits for the command to finish before requesting. Therefore you need not to call <a class="el" href="vdp_8h.html#abe88a78350fc63e2c03970acbd30dcdb" title="Wait for the VDP command to finish.">vdp_cmd_await()</a> before calling <a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a>.</p>
 <p>Before calling this function, all parameters for the VDP command must be set to the <code>struct <a class="el" href="structvdp__cmd.html" title="Parameters for VDP commands.">vdp_cmd</a></code> object pointed by <code>c</code>. To set parameters, you may use vdp_cmd_set_*() inline functions.</p>
+<p>After calling this function, if you want to wait for the VDP command to finish, call <a class="el" href="vdp_8h.html#abe88a78350fc63e2c03970acbd30dcdb" title="Wait for the VDP command to finish.">vdp_cmd_await()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>pointer to <code>struct <a class="el" href="structvdp__cmd.html" title="Parameters for VDP commands.">vdp_cmd</a></code>. </td></tr>
-    <tr><td class="paramname">opcode</td><td>an operation code </td></tr>
+    <tr><td class="paramname">opcode</td><td>an operation code.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#abe88a78350fc63e2c03970acbd30dcdb" title="Wait for the VDP command to finish.">vdp_cmd_await()</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Currently, only the following operations are supported:<ul>
+<li>VDP_CMD_LMMV</li>
+<li>VDP_CMD_LMMM</li>
+<li>VDP_CMD_HMMV</li>
+<li>VDP_CMD_HMMM </li>
+</ul>
+</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vdp__cmd__execute_8c_source.html#l00058">58</a> of file <a class="el" href="vdp__cmd__execute_8c_source.html">vdp_cmd_execute.c</a>.</p>
 

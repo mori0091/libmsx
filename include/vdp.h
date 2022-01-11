@@ -175,6 +175,194 @@ enum vdp_cmd_logop {
   VDP_CMD_TNOT = 0x0c,
 };
 
+/**
+ * Enumeration of operation codes for VDP commands.
+ *
+ * \sa vdp_cmd_execute()
+ */
+enum vdp_cmd_op {
+  /** Operation code "STOP" : (not implemented) */
+  VDP_CMD_STOP = 0x00,
+  /** Operation code "POINT" : (not implemented) */
+  VDP_CMD_POINT = 0x40,
+  /** Operation code "PSET" : (not implemented) */
+  VDP_CMD_PSET = 0x50,
+  /** Operation code "SRCH" : (not implemented) */
+  VDP_CMD_SRCH = 0x60,
+  /** Operation code "LINE" : (not implemented) */
+  VDP_CMD_LINE = 0x70,
+  /** Operation code "LMMV" : Fill rectangular area w/ logical operation. */
+  VDP_CMD_LMMV = 0x80,
+  /** Operation code "LMMM" : Copy rectangular area from VRAM to VRAM w/ logical operation. */
+  VDP_CMD_LMMM = 0x90,
+  /** Operation code "LMCM" : (not implemented) */
+  VDP_CMD_LMCM = 0xa0,
+  /** Operation code "LMMC" : (not implemented) */
+  VDP_CMD_LMMC = 0xb0,
+  /** Operation code "HMMV" : Fill rectangular area. */
+  VDP_CMD_HMMV = 0xc0,
+  /** Operation code "HMMM" : Copy rectangular area from VRAM to VRAM */
+  VDP_CMD_HMMM = 0xd0,
+  /** Operation code "YMMM" : (not implemented) */
+  VDP_CMD_YMMM = 0xe0,
+  /** Operation code "HMMC" : (not implemented) */
+  VDP_CMD_HMMC = 0xf0,
+};
+
+/**
+ * Parameters for VDP commands.
+ *
+ * \sa vdp_cmd_execute()
+ */
+struct vdp_cmd {
+  uint8_t r32;            // SX (lo)
+  uint8_t r33;            // SX (hi)
+  uint8_t r34;            // SY (lo)
+  uint8_t r35;            // SY (hi)
+  uint8_t r36;            // DX (lo)
+  uint8_t r37;            // DX (hi)
+  uint8_t r38;            // DY (lo)
+  uint8_t r39;            // DY (hi)
+  uint8_t r40;            // NX (lo)
+  uint8_t r41;            // NX (hi)
+  uint8_t r42;            // NY (lo)
+  uint8_t r43;            // NY (hi)
+  uint8_t r44;            // CLR (2bpp * 4 pix, 4bpp * 2 pix, or 8bpp * 1 pix)
+  uint8_t r45;            // ARG (0000b | DIY | DIX | 00b)
+  uint8_t r46;            // CMR (op | logop)
+};
+
+/**
+ * Set SX value (x-coordinate of the source point) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param sx  SX value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_SX(struct vdp_cmd * c, uint16_t sx) {
+  c->r32 = (sx & 0xff);
+  c->r33 = (sx >> 8) & 0x01;
+}
+
+/**
+ * Set SY value (y-coordinate of the source point) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param sy  SY value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_SY(struct vdp_cmd * c, uint16_t sy) {
+  c->r34 = (sy & 0xff);
+  c->r35 = (sy >> 8) & 0x03;
+}
+
+/**
+ * Set DX value (x-coordinate of the destination point) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param dx  DX value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_DX(struct vdp_cmd * c, uint16_t dx) {
+  c->r36 = (dx & 0xff);
+  c->r37 = (dx >> 8) & 0x01;
+}
+
+/**
+ * Set DY value (y-coordinate of the destination point) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param dy  DY value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_DY(struct vdp_cmd * c, uint16_t dy) {
+  c->r38 = (dy & 0xff);
+  c->r39 = (dy >> 8) & 0x03;
+}
+
+/**
+ * Set NX value (width) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param nx  NX value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_NX(struct vdp_cmd * c, uint16_t nx) {
+  c->r40 = (nx & 0xff);
+  c->r41 = (nx >> 8) & 0x01;
+}
+
+/**
+ * Set NY value (height) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param ny  NY value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_NY(struct vdp_cmd * c, uint16_t ny) {
+  c->r42 = (ny & 0xff);
+  c->r43 = (ny >> 8) & 0x03;
+}
+
+/**
+ * Set CLR value (color) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param clr CLR value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_CLR(struct vdp_cmd * c, uint8_t clr) {
+  c->r44 = clr;
+}
+
+/**
+ * Set ARG value (DIX, DIY, etc.) for VDP commands.
+ *
+ * \param c   pointer to `struct vdp_cmd`.
+ * \param arg ARG value.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_ARG(struct vdp_cmd * c, uint8_t arg) {
+  c->r45 = arg;
+}
+
+/**
+ * Set a logical operation code for VDP commands.
+ *
+ * \param c      pointer to `struct vdp_cmd`.
+ * \param logop  a logical operation code.
+ *
+ * \sa vdp_cmd_execute()
+ */
+inline void vdp_cmd_set_logop(struct vdp_cmd * c, enum vdp_cmd_logop logop) {
+  c->r46 = logop;
+}
+
+/**
+ * Executes a VDP command.
+ *
+ * Requests the VDP to execute a VDP command. When a previous VDP command is
+ * still running, this function waits for the command to finish before
+ * requesting. Therefore you need not to call vdp_cmd_await() before calling
+ * vdp_cmd_execute().
+ *
+ * Before calling this function, all parameters for the VDP command must be set
+ * to the `struct vdp_cmd` object pointed by `c`. To set parameters, you may use
+ * vdp_cmd_set_*() inline functions.
+ *
+ * \param c       pointer to `struct vdp_cmd`.
+ * \param opcode  an operation code
+ */
+void vdp_cmd_execute(const struct vdp_cmd * c, enum vdp_cmd_op opcode);
+
 void vdp_cmd_execute_LMMV(uint16_t x, uint16_t y, uint16_t w, uint16_t h,
                           uint8_t color, enum vdp_cmd_logop logop);
 

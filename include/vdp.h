@@ -480,7 +480,7 @@ enum vdp_cmd_logop {
   VDP_CMD_TEOR = 0x0b,
   /** (synonim for `VDP_CMD_TEOR`) */
   VDP_CMD_TXOR = VDP_CMD_TEOR,
-  /** Logical operation code "NOT" : destination ← ~source , if source ≠ 0 */
+  /** Logical operation code "TNOT" : destination ← ~source , if source ≠ 0 */
   VDP_CMD_TNOT = 0x0c,
 };
 

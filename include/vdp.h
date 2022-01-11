@@ -5,7 +5,7 @@
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
- * This software is released under the MIT License.
+ * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
  * GitHub libmsx project
@@ -263,7 +263,7 @@ uint8_t vdp_get_sprite_mode(void);
  * This function just set/reset the M1..M5 bits of the VDP mode registers,
  * any other settings are not changed by this function.
  *
- * \par
+ * \note
  * Therefore you should do the following after this function if needed:
  * - Address of **pattern name table** shall be set by calling
  *   vdp_set_image_table().
@@ -296,7 +296,7 @@ void vdp_set_screen_mode(enum vdp_screen_mode mode);
 /**
  * Set number of visible lines.
  *
- * \param lines  `VDP_SCREEN_LINES_192` for 192 lines, or
+ * \param lines  `VDP_SCREEN_LINES_192` for 192 lines, or \n
  *               `VDP_SCREEN_LINES_212` for 212 lines.
  */
 void vdp_set_screen_lines(enum vdp_screen_lines lines);
@@ -310,11 +310,11 @@ void vdp_set_screen_lines(enum vdp_screen_lines lines);
  * **Pattern name table** is almost the same as what is called
  * a **frame buffer** in modern computer systems.
  *
- * \par
+ * \note
  * Especially in the bitmap graphics mode (GRAPHIC 4 to 7), the pattern name
  * table serves as a frame buffer for 2bpp, 4bpp, or 8bpp graphics images.
  *
- * \par
+ * \note
  * In any other screen mode, it serves as a frame buffer for tile pattern
  * matrix.
  */
@@ -353,9 +353,10 @@ void vdp_set_sprite_pattern_table(vmemptr_t table);
  * \param table  VRAM address of the sprite attribute table.
  *
  * \note
- * In sprite mode 2, there is one more table called "sprite color table". The
- * sprite color table is (implicitlly) placed at `SAT - 0x0200` ; where `SAT` is
- * the base address of sprite attribute table.
+ * In sprite mode 2, there is one more table called "sprite color table".
+ * \note
+ * The sprite color table is (implicitlly) placed at `SAT - 0x0200` ; where
+ * `SAT` is the base address of sprite attribute table.
  */
 void vdp_set_sprite_attribute_table(vmemptr_t table);
 
@@ -447,7 +448,7 @@ inline void vdp_cmd_await(void) {
 /**
  * Unristricts/Restricts availability of the VDP command for some screen modes.
  *
- * \param enable  If `true`, enables the VDP command for all screen modes.
+ * \param enable  If `true`, enables the VDP command for all screen modes. \n
  *                Otherwise, enables the VDP command only for GRAPHIC 4 to 7.
  *
  * \sa vdp_cmd_execute()
@@ -667,8 +668,18 @@ inline void vdp_cmd_set_logop(struct vdp_cmd * c, enum vdp_cmd_logop logop) {
  * vdp_cmd_execute().
  *
  * Before calling this function, all parameters for the VDP command must be set
- * to the `struct vdp_cmd` object pointed by `c`. To set parameters, you may use
- * vdp_cmd_set_*() inline functions.
+ * to the `struct vdp_cmd` object pointed by the 1st argument `c`.
+ *
+ * To set parameters, you may use the following inline functions:
+ * - vdp_cmd_set_SX()
+ * - vdp_cmd_set_SY()
+ * - vdp_cmd_set_DX()
+ * - vdp_cmd_set_DY()
+ * - vdp_cmd_set_NX()
+ * - vdp_cmd_set_NY()
+ * - vdp_cmd_set_CLR()
+ * - vdp_cmd_set_ARG()
+ * - vdp_cmd_set_logop()
  *
  * After calling this function, if you want to wait for the VDP command to
  * finish, call vdp_cmd_await().
@@ -684,6 +695,15 @@ inline void vdp_cmd_set_logop(struct vdp_cmd * c, enum vdp_cmd_logop logop) {
  * - VDP_CMD_HMMM
  *
  * \sa vdp_cmd_await()
+ * \sa vdp_cmd_set_SX()
+ * \sa vdp_cmd_set_SY()
+ * \sa vdp_cmd_set_DX()
+ * \sa vdp_cmd_set_DY()
+ * \sa vdp_cmd_set_NX()
+ * \sa vdp_cmd_set_NY()
+ * \sa vdp_cmd_set_CLR()
+ * \sa vdp_cmd_set_ARG()
+ * \sa vdp_cmd_set_logop()
  */
 void vdp_cmd_execute(const struct vdp_cmd * c, enum vdp_cmd_op opcode);
 

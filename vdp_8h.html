@@ -564,7 +564,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00460">460</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00463">463</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -611,7 +611,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00492">492</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00495">495</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -1221,8 +1221,14 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>VDP_SCREEN_MODE_GRAPHIC_7</code>   </td><td class="markdownTableBodyNone">GRAPHIC 7 YJK   </td><td class="markdownTableBodyNone">SCREEN 12   </td><td class="markdownTableBodyNone">mode 2   </td><td class="markdownTableBodyNone">MSX2+   </td></tr>
 </table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>VDP screen mode.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section note"><dt>Note</dt><dd>This function just set/reset the M1..M5 bits of the VDP mode registers, any other settings are not changed by this function.</dd></dl>
-<p>Therefore you should do the following after this function if needed:</p><ul>
+<dl class="section user"><dt></dt><dd>Therefore you should do the following after this function if needed:<ul>
 <li>Address of <b>pattern name table</b> shall be set by calling <a class="el" href="vdp_8h.html#a3fb6099b9811621c8ba3dd09c76f2dec" title="Set VRAM address of the pattern name table.">vdp_set_image_table()</a>.</li>
 <li>Address of <b>pattern generator table</b> shall be set by calling <a class="el" href="vdp_8h.html#af161441fd5475dbf63be7b384a2cf27a" title="Set VRAM address of the pattern generator table.">vdp_set_pattern_table()</a>.</li>
 <li>Address of <b>color table</b> shall be set by calling <a class="el" href="vdp_8h.html#aa8c6e5071b94616225f70959001afe2b" title="Set VRAM address of the color table.">vdp_set_color_table()</a>.</li>
@@ -1233,12 +1239,7 @@ Functions</h2></td></tr>
 <li>In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e., SCREEN 10, 11, or 12), <b>YJK/YAE bits</b> shall be set manually by calling <a class="el" href="vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f" title="Write to a VDP control register.">vdp_set_control()</a>. (There is no dedicated functions for setting YJK/YAE bits.)</li>
 <li>etc.</li>
 </ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mode</td><td>VDP screen mode.</td></tr>
-  </table>
-  </dd>
-</dl>
+</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a3fb6099b9811621c8ba3dd09c76f2dec" title="Set VRAM address of the pattern name table.">vdp_set_image_table()</a> </dd>
 <dd>
 <a class="el" href="vdp_8h.html#af161441fd5475dbf63be7b384a2cf27a" title="Set VRAM address of the pattern generator table.">vdp_set_pattern_table()</a> </dd>
@@ -1311,8 +1312,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd><b>Pattern name table</b> is almost the same as what is called a <b>frame buffer</b> in modern computer systems.</dd></dl>
-<p>Especially in the bitmap graphics mode (GRAPHIC 4 to 7), the pattern name table serves as a frame buffer for 2bpp, 4bpp, or 8bpp graphics images.</p>
-<p>In any other screen mode, it serves as a frame buffer for tile pattern matrix. </p>
+<dl class="section user"><dt></dt><dd>Especially in the bitmap graphics mode (GRAPHIC 4 to 7), the pattern name table serves as a frame buffer for 2bpp, 4bpp, or 8bpp graphics images.</dd></dl>
+<dl class="section user"><dt></dt><dd>In any other screen mode, it serves as a frame buffer for tile pattern matrix. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vdp__set__image__table_8c_source.html#l00018">18</a> of file <a class="el" href="vdp__set__image__table_8c_source.html">vdp_set_image_table.c</a>.</p>
 
@@ -1341,7 +1342,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>In the bitamp graphics mode (GRAPHIC 4 to 7), you may not call this function. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In the bitmap graphics mode (GRAPHIC 4 to 7), you may not call this function. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vdp__set__pattern__table_8c_source.html#l00018">18</a> of file <a class="el" href="vdp__set__pattern__table_8c_source.html">vdp_set_pattern_table.c</a>.</p>
 
@@ -1370,7 +1371,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>In the bitamp graphics mode (GRAPHIC 4 to 7), you may not call this function. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In the bitmap graphics mode (GRAPHIC 4 to 7), you may not call this function. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vdp__set__color__table_8c_source.html#l00018">18</a> of file <a class="el" href="vdp__set__color__table_8c_source.html">vdp_set_color_table.c</a>.</p>
 
@@ -1544,7 +1545,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set VDP display adjust register. </p>
-<p>If x &lt; 0, shift the display area to left. If x &gt; 0, shift the display area to right. If y &lt; 0, shift the display area to upper. If y &gt; 0, shift the display area to lower.</p>
+<ul>
+<li>If x &lt; 0, shift the display area to left.</li>
+<li>If x &gt; 0, shift the display area to right.</li>
+<li>If y &lt; 0, shift the display area to upper.</li>
+<li>If y &gt; 0, shift the display area to lower.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x offset (-7..+8) </td></tr>
@@ -1697,7 +1703,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> is a VDP command is running, <code>false</code> otherwise.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00430">430</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00433">433</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -1728,7 +1734,7 @@ Functions</h2></td></tr>
 <p>Wait for the VDP command to finish. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00439">439</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00442">442</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -1807,7 +1813,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00552">552</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00555">555</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -1855,7 +1861,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00565">565</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00568">568</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -1903,7 +1909,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00578">578</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00581">581</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -1951,7 +1957,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00591">591</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00594">594</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -1999,7 +2005,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00604">604</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00607">607</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -2047,7 +2053,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00617">617</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00620">620</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -2095,7 +2101,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00630">630</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00633">633</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -2143,7 +2149,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00642">642</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00645">645</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -2191,7 +2197,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914" title="Executes a VDP command.">vdp_cmd_execute()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00654">654</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00657">657</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -2232,14 +2238,14 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#abe88a78350fc63e2c03970acbd30dcdb" title="Wait for the VDP command to finish.">vdp_cmd_await()</a></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Currently, only the following operations are supported:<ul>
 <li>VDP_CMD_LMMV</li>
 <li>VDP_CMD_LMMM</li>
 <li>VDP_CMD_HMMV</li>
-<li>VDP_CMD_HMMM </li>
+<li>VDP_CMD_HMMM</li>
 </ul>
 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#abe88a78350fc63e2c03970acbd30dcdb" title="Wait for the VDP command to finish.">vdp_cmd_await()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vdp__cmd__execute_8c_source.html#l00058">58</a> of file <a class="el" href="vdp__cmd__execute_8c_source.html">vdp_cmd_execute.c</a>.</p>
 
@@ -2305,16 +2311,16 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a>(&amp;c, 0);</div>
 <div class="line"><a class="code" href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a>(&amp;c, logop);</div>
 <div class="line"><a class="code" href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute</a>(&amp;c, <a class="code" href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05">VDP_CMD_LMMV</a>);</div>
-<div class="ttc" id="astructvdp__cmd_html"><div class="ttname"><a href="structvdp__cmd.html">vdp_cmd</a></div><div class="ttdoc">Parameters for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00526">vdp.h:526</a></div></div>
-<div class="ttc" id="avdp_8h_html_a612592dd23f62875d3fb55ae1b497242"><div class="ttname"><a href="vdp_8h.html#a612592dd23f62875d3fb55ae1b497242">vdp_cmd_set_DY</a></div><div class="ttdeci">void vdp_cmd_set_DY(struct vdp_cmd *c, uint16_t dy)</div><div class="ttdoc">Set DY value (y-coordinate of the destination point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00591">vdp.h:591</a></div></div>
-<div class="ttc" id="avdp_8h_html_a65efa5e431eff15a57d9b092610b8edb"><div class="ttname"><a href="vdp_8h.html#a65efa5e431eff15a57d9b092610b8edb">vdp_cmd_set_DX</a></div><div class="ttdeci">void vdp_cmd_set_DX(struct vdp_cmd *c, uint16_t dx)</div><div class="ttdoc">Set DX value (x-coordinate of the destination point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00578">vdp.h:578</a></div></div>
-<div class="ttc" id="avdp_8h_html_a695575c1ece47e0b0ec0c00a7df45f1a"><div class="ttname"><a href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a></div><div class="ttdeci">void vdp_cmd_set_ARG(struct vdp_cmd *c, uint8_t arg)</div><div class="ttdoc">Set ARG value (DIX, DIY, etc.) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00642">vdp.h:642</a></div></div>
+<div class="ttc" id="astructvdp__cmd_html"><div class="ttname"><a href="structvdp__cmd.html">vdp_cmd</a></div><div class="ttdoc">Parameters for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00529">vdp.h:529</a></div></div>
+<div class="ttc" id="avdp_8h_html_a612592dd23f62875d3fb55ae1b497242"><div class="ttname"><a href="vdp_8h.html#a612592dd23f62875d3fb55ae1b497242">vdp_cmd_set_DY</a></div><div class="ttdeci">void vdp_cmd_set_DY(struct vdp_cmd *c, uint16_t dy)</div><div class="ttdoc">Set DY value (y-coordinate of the destination point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00594">vdp.h:594</a></div></div>
+<div class="ttc" id="avdp_8h_html_a65efa5e431eff15a57d9b092610b8edb"><div class="ttname"><a href="vdp_8h.html#a65efa5e431eff15a57d9b092610b8edb">vdp_cmd_set_DX</a></div><div class="ttdeci">void vdp_cmd_set_DX(struct vdp_cmd *c, uint16_t dx)</div><div class="ttdoc">Set DX value (x-coordinate of the destination point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00581">vdp.h:581</a></div></div>
+<div class="ttc" id="avdp_8h_html_a695575c1ece47e0b0ec0c00a7df45f1a"><div class="ttname"><a href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a></div><div class="ttdeci">void vdp_cmd_set_ARG(struct vdp_cmd *c, uint8_t arg)</div><div class="ttdoc">Set ARG value (DIX, DIY, etc.) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00645">vdp.h:645</a></div></div>
 <div class="ttc" id="avdp_8h_html_a713522050128f19e20c19e2556398914"><div class="ttname"><a href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute</a></div><div class="ttdeci">void vdp_cmd_execute(const struct vdp_cmd *c, enum vdp_cmd_op opcode)</div><div class="ttdoc">Executes a VDP command.</div><div class="ttdef"><b>Definition:</b> <a href="vdp__cmd__execute_8c_source.html#l00058">vdp_cmd_execute.c:58</a></div></div>
-<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05">VDP_CMD_LMMV</a></div><div class="ttdeci">@ VDP_CMD_LMMV</div><div class="ttdoc">Operation code &quot;LMMV&quot; : Fill rectangular area w/ logical operation.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00504">vdp.h:504</a></div></div>
-<div class="ttc" id="avdp_8h_html_ab297213010a03d7237910ce72934f4f7"><div class="ttname"><a href="vdp_8h.html#ab297213010a03d7237910ce72934f4f7">vdp_cmd_set_NY</a></div><div class="ttdeci">void vdp_cmd_set_NY(struct vdp_cmd *c, uint16_t ny)</div><div class="ttdoc">Set NY value (height) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00617">vdp.h:617</a></div></div>
-<div class="ttc" id="avdp_8h_html_ab2c2102d96581f5961af3d04340e1ea2"><div class="ttname"><a href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a></div><div class="ttdeci">void vdp_cmd_set_logop(struct vdp_cmd *c, enum vdp_cmd_logop logop)</div><div class="ttdoc">Set a logical operation code for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00654">vdp.h:654</a></div></div>
-<div class="ttc" id="avdp_8h_html_accb32ceabc58747ddf52f2af53fb15f1"><div class="ttname"><a href="vdp_8h.html#accb32ceabc58747ddf52f2af53fb15f1">vdp_cmd_set_CLR</a></div><div class="ttdeci">void vdp_cmd_set_CLR(struct vdp_cmd *c, uint8_t clr)</div><div class="ttdoc">Set CLR value (color) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00630">vdp.h:630</a></div></div>
-<div class="ttc" id="avdp_8h_html_aea64672ade0f3b169abeced91a198847"><div class="ttname"><a href="vdp_8h.html#aea64672ade0f3b169abeced91a198847">vdp_cmd_set_NX</a></div><div class="ttdeci">void vdp_cmd_set_NX(struct vdp_cmd *c, uint16_t nx)</div><div class="ttdoc">Set NX value (width) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00604">vdp.h:604</a></div></div>
+<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05">VDP_CMD_LMMV</a></div><div class="ttdeci">@ VDP_CMD_LMMV</div><div class="ttdoc">Operation code &quot;LMMV&quot; : Fill rectangular area w/ logical operation.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00507">vdp.h:507</a></div></div>
+<div class="ttc" id="avdp_8h_html_ab297213010a03d7237910ce72934f4f7"><div class="ttname"><a href="vdp_8h.html#ab297213010a03d7237910ce72934f4f7">vdp_cmd_set_NY</a></div><div class="ttdeci">void vdp_cmd_set_NY(struct vdp_cmd *c, uint16_t ny)</div><div class="ttdoc">Set NY value (height) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00620">vdp.h:620</a></div></div>
+<div class="ttc" id="avdp_8h_html_ab2c2102d96581f5961af3d04340e1ea2"><div class="ttname"><a href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a></div><div class="ttdeci">void vdp_cmd_set_logop(struct vdp_cmd *c, enum vdp_cmd_logop logop)</div><div class="ttdoc">Set a logical operation code for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00657">vdp.h:657</a></div></div>
+<div class="ttc" id="avdp_8h_html_accb32ceabc58747ddf52f2af53fb15f1"><div class="ttname"><a href="vdp_8h.html#accb32ceabc58747ddf52f2af53fb15f1">vdp_cmd_set_CLR</a></div><div class="ttdeci">void vdp_cmd_set_CLR(struct vdp_cmd *c, uint8_t clr)</div><div class="ttdoc">Set CLR value (color) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00633">vdp.h:633</a></div></div>
+<div class="ttc" id="avdp_8h_html_aea64672ade0f3b169abeced91a198847"><div class="ttname"><a href="vdp_8h.html#aea64672ade0f3b169abeced91a198847">vdp_cmd_set_NX</a></div><div class="ttdeci">void vdp_cmd_set_NX(struct vdp_cmd *c, uint16_t nx)</div><div class="ttdoc">Set NX value (width) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00607">vdp.h:607</a></div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x-coordinate of the top-left corner of the rectangular area. </td></tr>
@@ -2399,9 +2405,9 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a>(&amp;c, 0);</div>
 <div class="line"><a class="code" href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a>(&amp;c, logop);</div>
 <div class="line"><a class="code" href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute</a>(&amp;c, <a class="code" href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda2a8db7f645f4f80ca1f6730329b8bfa7">VDP_CMD_LMMM</a>);</div>
-<div class="ttc" id="avdp_8h_html_a06d40a54ded58c30c885cf0de48bdb57"><div class="ttname"><a href="vdp_8h.html#a06d40a54ded58c30c885cf0de48bdb57">vdp_cmd_set_SY</a></div><div class="ttdeci">void vdp_cmd_set_SY(struct vdp_cmd *c, uint16_t sy)</div><div class="ttdoc">Set SY value (y-coordinate of the source point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00565">vdp.h:565</a></div></div>
-<div class="ttc" id="avdp_8h_html_a365bbf8b0c100ccc6f069bc45e1d6370"><div class="ttname"><a href="vdp_8h.html#a365bbf8b0c100ccc6f069bc45e1d6370">vdp_cmd_set_SX</a></div><div class="ttdeci">void vdp_cmd_set_SX(struct vdp_cmd *c, uint16_t sx)</div><div class="ttdoc">Set SX value (x-coordinate of the source point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00552">vdp.h:552</a></div></div>
-<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda2a8db7f645f4f80ca1f6730329b8bfa7"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda2a8db7f645f4f80ca1f6730329b8bfa7">VDP_CMD_LMMM</a></div><div class="ttdeci">@ VDP_CMD_LMMM</div><div class="ttdoc">Operation code &quot;LMMM&quot; : Copy rectangular area from VRAM to VRAM w/ logical operation.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00506">vdp.h:506</a></div></div>
+<div class="ttc" id="avdp_8h_html_a06d40a54ded58c30c885cf0de48bdb57"><div class="ttname"><a href="vdp_8h.html#a06d40a54ded58c30c885cf0de48bdb57">vdp_cmd_set_SY</a></div><div class="ttdeci">void vdp_cmd_set_SY(struct vdp_cmd *c, uint16_t sy)</div><div class="ttdoc">Set SY value (y-coordinate of the source point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00568">vdp.h:568</a></div></div>
+<div class="ttc" id="avdp_8h_html_a365bbf8b0c100ccc6f069bc45e1d6370"><div class="ttname"><a href="vdp_8h.html#a365bbf8b0c100ccc6f069bc45e1d6370">vdp_cmd_set_SX</a></div><div class="ttdeci">void vdp_cmd_set_SX(struct vdp_cmd *c, uint16_t sx)</div><div class="ttdoc">Set SX value (x-coordinate of the source point) for VDP commands.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00555">vdp.h:555</a></div></div>
+<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda2a8db7f645f4f80ca1f6730329b8bfa7"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda2a8db7f645f4f80ca1f6730329b8bfa7">VDP_CMD_LMMM</a></div><div class="ttdeci">@ VDP_CMD_LMMM</div><div class="ttdoc">Operation code &quot;LMMM&quot; : Copy rectangular area from VRAM to VRAM w/ logical operation.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00509">vdp.h:509</a></div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x-coordinate of the top-left corner of the source rectangular area. </td></tr>
@@ -2474,7 +2480,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a>(&amp;c, 0);</div>
 <div class="line"><a class="code" href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a>(&amp;c, 0);</div>
 <div class="line"><a class="code" href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute</a>(&amp;c, <a class="code" href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda3c650b04b29de4d9f870a0dc71b442c5">VDP_CMD_HMMV</a>);</div>
-<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda3c650b04b29de4d9f870a0dc71b442c5"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda3c650b04b29de4d9f870a0dc71b442c5">VDP_CMD_HMMV</a></div><div class="ttdeci">@ VDP_CMD_HMMV</div><div class="ttdoc">Operation code &quot;HMMV&quot; : Fill rectangular area.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00512">vdp.h:512</a></div></div>
+<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda3c650b04b29de4d9f870a0dc71b442c5"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda3c650b04b29de4d9f870a0dc71b442c5">VDP_CMD_HMMV</a></div><div class="ttdeci">@ VDP_CMD_HMMV</div><div class="ttdoc">Operation code &quot;HMMV&quot; : Fill rectangular area.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00515">vdp.h:515</a></div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x-coordinate of the top-left corner of the rectangular area. </td></tr>
@@ -2552,7 +2558,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code" href="vdp_8h.html#a695575c1ece47e0b0ec0c00a7df45f1a">vdp_cmd_set_ARG</a>(&amp;c, 0);</div>
 <div class="line"><a class="code" href="vdp_8h.html#ab2c2102d96581f5961af3d04340e1ea2">vdp_cmd_set_logop</a>(&amp;c, 0);</div>
 <div class="line"><a class="code" href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute</a>(&amp;c, <a class="code" href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda9ebbe650db52f80d69c52152d1b5bed3">VDP_CMD_HMMM</a>);</div>
-<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda9ebbe650db52f80d69c52152d1b5bed3"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda9ebbe650db52f80d69c52152d1b5bed3">VDP_CMD_HMMM</a></div><div class="ttdeci">@ VDP_CMD_HMMM</div><div class="ttdoc">Operation code &quot;HMMM&quot; : Copy rectangular area from VRAM to VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00514">vdp.h:514</a></div></div>
+<div class="ttc" id="avdp_8h_html_a8644c26f4880aa2d4ec82b0de3bc8deda9ebbe650db52f80d69c52152d1b5bed3"><div class="ttname"><a href="vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda9ebbe650db52f80d69c52152d1b5bed3">VDP_CMD_HMMM</a></div><div class="ttdeci">@ VDP_CMD_HMMM</div><div class="ttdoc">Operation code &quot;HMMM&quot; : Copy rectangular area from VRAM to VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00517">vdp.h:517</a></div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x-coordinate of the top-left corner of the source rectangular area. </td></tr>

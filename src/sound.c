@@ -15,7 +15,8 @@
 #include "../include/psg.h"
 #include "../include/sound.h"
 #include "../include/sound_eg.h"
-#include "../include/sound_eg_spi.h"
+
+#include "sound_eg_spi.h"
 
 #define COUNT_PER_SECOND    (300)
 #define COUNT_PER_TICK_60HZ (COUNT_PER_SECOND / 60)

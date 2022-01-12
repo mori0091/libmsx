@@ -11,7 +11,7 @@
  * https://github.com/mori0091/libmsx
  */
 
-#include "../include/sound_eg_spi.h"
+#include "sound_eg_spi.h"
 
 #define LENGTH    (self->attr.lpcm->len)
 #define DATA      (self->attr.lpcm->data)

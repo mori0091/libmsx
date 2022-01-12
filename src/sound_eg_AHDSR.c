@@ -11,7 +11,7 @@
  * https://github.com/mori0091/libmsx
  */
 
-#include "../include/sound_eg_spi.h"
+#include "sound_eg_spi.h"
 
 #define END_OF_PHASE  (0)
 #define ATTACK_PHASE  (1)

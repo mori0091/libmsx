@@ -1,7 +1,7 @@
 <map id="src/vmem_set_sprite_color_s.c" name="src/vmem_set_sprite_color_s.c">
 <area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="128,5,272,47"/>
 <area shape="rect" id="node2" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="274,169,382,196"/>
-<area shape="rect" id="node7" href="$vmem_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="107,244,175,271"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="107,244,175,271"/>
 <area shape="rect" id="node10" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,95,160,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="491,244,559,271"/>
 <area shape="rect" id="node4" title=" " alt="" coords="584,244,659,271"/>

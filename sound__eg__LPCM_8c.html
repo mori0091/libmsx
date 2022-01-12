@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('sound__eg__LPCM_8c.html',''); initResi
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">sound_eg_LPCM.c File Reference</div>  </div>
@@ -93,13 +94,13 @@ $(document).ready(function(){initNavTree('sound__eg__LPCM_8c.html',''); initResi
 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="sound__eg__spi_8h_source.html">../include/sound_eg_spi.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="sound__eg__spi_8h_source.html">sound_eg_spi.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sound_eg_LPCM.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sound__eg__LPCM_8c__incl.svg" width="174" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound__eg__LPCM_8c__incl.svg" width="174" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -111,6 +112,17 @@ Macros</h2></td></tr>
 <tr class="separator:a30362161c93e3f1a4ee4c673f535b5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad9ae913bdfab20dd94ad04ee2d5b045"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__LPCM_8c.html#aad9ae913bdfab20dd94ad04ee2d5b045">DATA</a>&#160;&#160;&#160;(self-&gt;attr.lpcm-&gt;data)</td></tr>
 <tr class="separator:aad9ae913bdfab20dd94ad04ee2d5b045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a41dabadefd3100dd868905714d7810c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__LPCM_8c.html#a41dabadefd3100dd868905714d7810c2">update</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a41dabadefd3100dd868905714d7810c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa0f2fa54fe99db8e8402f77b5b22bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__LPCM_8c.html#a3fa0f2fa54fe99db8e8402f77b5b22bd">sound_eg_LPCM_key_on</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a3fa0f2fa54fe99db8e8402f77b5b22bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9924f6a43dc498588d903af61be904a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__LPCM_8c.html#ad9924f6a43dc498588d903af61be904a">sound_eg_LPCM_key_off</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:ad9924f6a43dc498588d903af61be904a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab878bfa51747eb4426d2bf65b34de1b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__LPCM_8c.html#ab878bfa51747eb4426d2bf65b34de1b4">sound_eg_LPCM_advance</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:ab878bfa51747eb4426d2bf65b34de1b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -156,6 +168,119 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a41dabadefd3100dd868905714d7810c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41dabadefd3100dd868905714d7810c2">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void update </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__LPCM_8c_source.html#l00019">19</a> of file <a class="el" href="sound__eg__LPCM_8c_source.html">sound_eg_LPCM.c</a>.</p>
+
+</div>
+</div>
+<a id="a3fa0f2fa54fe99db8e8402f77b5b22bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fa0f2fa54fe99db8e8402f77b5b22bd">&#9670;&nbsp;</a></span>sound_eg_LPCM_key_on()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sound_eg_LPCM_key_on </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__LPCM_8c_source.html#l00026">26</a> of file <a class="el" href="sound__eg__LPCM_8c_source.html">sound_eg_LPCM.c</a>.</p>
+
+</div>
+</div>
+<a id="ad9924f6a43dc498588d903af61be904a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9924f6a43dc498588d903af61be904a">&#9670;&nbsp;</a></span>sound_eg_LPCM_key_off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sound_eg_LPCM_key_off </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__LPCM_8c_source.html#l00031">31</a> of file <a class="el" href="sound__eg__LPCM_8c_source.html">sound_eg_LPCM.c</a>.</p>
+
+</div>
+</div>
+<a id="ab878bfa51747eb4426d2bf65b34de1b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab878bfa51747eb4426d2bf65b34de1b4">&#9670;&nbsp;</a></span>sound_eg_LPCM_advance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sound_eg_LPCM_advance </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__LPCM_8c_source.html#l00036">36</a> of file <a class="el" href="sound__eg__LPCM_8c_source.html">sound_eg_LPCM.c</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a0a7b65d0dca89f6c9f929533a89fe485"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a7b65d0dca89f6c9f929533a89fe485">&#9670;&nbsp;</a></span>sound_eg_LPCM</h2>
@@ -169,10 +294,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">  .key_on  = sound_eg_LPCM_key_on,</div>
-<div class="line">  .key_off = sound_eg_LPCM_key_off,</div>
-<div class="line">  .advance = sound_eg_LPCM_advance,</div>
+<div class="line">  .key_on  = <a class="code" href="sound__eg__LPCM_8c.html#a3fa0f2fa54fe99db8e8402f77b5b22bd">sound_eg_LPCM_key_on</a>,</div>
+<div class="line">  .key_off = <a class="code" href="sound__eg__LPCM_8c.html#ad9924f6a43dc498588d903af61be904a">sound_eg_LPCM_key_off</a>,</div>
+<div class="line">  .advance = <a class="code" href="sound__eg__LPCM_8c.html#ab878bfa51747eb4426d2bf65b34de1b4">sound_eg_LPCM_advance</a>,</div>
 <div class="line">}</div>
+<div class="ttc" id="asound__eg__LPCM_8c_html_a3fa0f2fa54fe99db8e8402f77b5b22bd"><div class="ttname"><a href="sound__eg__LPCM_8c.html#a3fa0f2fa54fe99db8e8402f77b5b22bd">sound_eg_LPCM_key_on</a></div><div class="ttdeci">static void sound_eg_LPCM_key_on(struct sound_eg *self)</div><div class="ttdef"><b>Definition:</b> <a href="sound__eg__LPCM_8c_source.html#l00026">sound_eg_LPCM.c:26</a></div></div>
+<div class="ttc" id="asound__eg__LPCM_8c_html_ab878bfa51747eb4426d2bf65b34de1b4"><div class="ttname"><a href="sound__eg__LPCM_8c.html#ab878bfa51747eb4426d2bf65b34de1b4">sound_eg_LPCM_advance</a></div><div class="ttdeci">static void sound_eg_LPCM_advance(struct sound_eg *self)</div><div class="ttdef"><b>Definition:</b> <a href="sound__eg__LPCM_8c_source.html#l00036">sound_eg_LPCM.c:36</a></div></div>
+<div class="ttc" id="asound__eg__LPCM_8c_html_ad9924f6a43dc498588d903af61be904a"><div class="ttname"><a href="sound__eg__LPCM_8c.html#ad9924f6a43dc498588d903af61be904a">sound_eg_LPCM_key_off</a></div><div class="ttdeci">static void sound_eg_LPCM_key_off(struct sound_eg *self)</div><div class="ttdef"><b>Definition:</b> <a href="sound__eg__LPCM_8c_source.html#l00031">sound_eg_LPCM.c:31</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="sound__eg__LPCM_8c_source.html#l00036">36</a> of file <a class="el" href="sound__eg__LPCM_8c_source.html">sound_eg_LPCM.c</a>.</p>
 

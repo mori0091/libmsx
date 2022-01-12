@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['layouts_570',['layouts',['../structmetasprite.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
-  ['len_571',['len',['../structsound__eg__LPCM.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM']]],
-  ['lpcm_572',['lpcm',['../structsound__eg__attribute.html#a8feaf87acd189517c7b126313244c422',1,'sound_eg_attribute']]]
+  ['key_5foff_693',['key_off',['../structsound__eg__vtbl.html#afdcfbfc61334813f3fc101c19c3fe773',1,'sound_eg_vtbl']]],
+  ['key_5fon_694',['key_on',['../structsound__eg__vtbl.html#a96a18fcdbea75bbddbff5a41b62258f7',1,'sound_eg_vtbl']]]
 ];

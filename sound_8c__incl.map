@@ -1,12 +1,12 @@
 <map id="src/sound.c" name="src/sound.c">
 <area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="241,5,331,32"/>
-<area shape="rect" id="node2" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="137,87,248,114"/>
-<area shape="rect" id="node4" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,87,113,114"/>
-<area shape="rect" id="node6" href="$sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="415,169,538,196"/>
-<area shape="rect" id="node9" href="$sound__eg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="248,169,391,196"/>
-<area shape="rect" id="node10" href="$sound__eg__spi_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="323,80,457,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="218,244,282,271"/>
-<area shape="rect" id="node5" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="75,169,172,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="314,244,389,271"/>
-<area shape="rect" id="node8" title=" " alt="" coords="445,244,508,271"/>
+<area shape="rect" id="node2" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="137,80,248,107"/>
+<area shape="rect" id="node4" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node6" href="$sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="405,155,527,181"/>
+<area shape="rect" id="node9" href="$sound__eg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="237,155,380,181"/>
+<area shape="rect" id="node10" href="$sound__eg__spi_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="323,80,435,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="207,229,271,256"/>
+<area shape="rect" id="node5" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="64,155,161,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="303,229,378,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="435,229,497,256"/>
 </map>

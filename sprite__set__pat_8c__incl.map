@@ -2,6 +2,6 @@
 <area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,5,141,32"/>
 <area shape="rect" id="node2" href="$sprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="14,80,133,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,229,69,256"/>
-<area shape="rect" id="node4" href="$vmem_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="75,155,143,181"/>
+<area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="75,155,143,181"/>
 <area shape="rect" id="node5" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="93,229,136,256"/>
 </map>

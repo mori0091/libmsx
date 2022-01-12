@@ -83,6 +83,9 @@ $(document).ready(function(){initNavTree('msx__set__cpu__mode_8c.html',''); init
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">msx_set_cpu_mode.c File Reference</div>  </div>
 </div><!--header-->
@@ -101,13 +104,99 @@ $(document).ready(function(){initNavTree('msx__set__cpu__mode_8c.html',''); init
 </div>
 </div>
 <p><a href="msx__set__cpu__mode_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msx__set__cpu__mode_8c.html#a4bb01de7baaae78f6cc43e81ba88d9af">msx_set_cpu_mode</a> (const uint8_t mode)</td></tr>
+<tr class="memdesc:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the CPU mode based on the given <code>mode</code>.  <a href="msx__set__cpu__mode_8c.html#a4bb01de7baaae78f6cc43e81ba88d9af">More...</a><br /></td></tr>
+<tr class="separator:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9662b931b12b878a1e2d4d0a9e0f5d23"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msx__set__cpu__mode_8c.html#a9662b931b12b878a1e2d4d0a9e0f5d23">CHGCPU</a> [0]</td></tr>
+<tr class="separator:a9662b931b12b878a1e2d4d0a9e0f5d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright (c) 2021 Daishi Mori (mori0091) </p>
 <p>This software is released under the MIT License. See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
 <p>GitHub libmsx project <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
 
 <p class="definition">Definition in file <a class="el" href="msx__set__cpu__mode_8c_source.html">msx_set_cpu_mode.c</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a4bb01de7baaae78f6cc43e81ba88d9af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb01de7baaae78f6cc43e81ba88d9af">&#9670;&nbsp;</a></span>msx_set_cpu_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void msx_set_cpu_mode </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the CPU mode based on the given <code>mode</code>. </p>
+<dl class="section note"><dt>Note</dt><dd><ul>
+<li>This function is the C interface to the <code>CHGCPU (0180H/MAIN)</code> BIOS function for MSXturboR.</li>
+<li>In case of MSX, MSX2, or MSX2+, this function does nothing.</li>
+</ul>
+</dd></dl>
+<p>The parameter <code>mode</code> shall be the following bit pattern:</p><ul>
+<li>bit #7 : LED</li>
+<li>bit #6..#2 : (unused, shall be all '0')</li>
+<li>bit #1..#0 : CPU</li>
+</ul>
+<p><b>LED</b></p><ul>
+<li><code>0</code> : Do not change the LED status</li>
+<li><code>1</code> : Turn the LED on and off according to the <b>CPU</b></li>
+</ul>
+<p><b>CPU</b></p><ul>
+<li><code>00</code> : Z80 mode</li>
+<li><code>01</code> : R800 ROM mode</li>
+<li><code>10</code> : R800 DRAM mode</li>
+<li><code>11</code> : (reserved)</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>cpu mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="msx__set__cpu__mode_8c_source.html#l00018">18</a> of file <a class="el" href="msx__set__cpu__mode_8c_source.html">msx_set_cpu_mode.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9662b931b12b878a1e2d4d0a9e0f5d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9662b931b12b878a1e2d4d0a9e0f5d23">&#9670;&nbsp;</a></span>CHGCPU</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t CHGCPU[0]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="msx__set__cpu__mode_8c_source.html#l00016">16</a> of file <a class="el" href="msx__set__cpu__mode_8c_source.html">msx_set_cpu_mode.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

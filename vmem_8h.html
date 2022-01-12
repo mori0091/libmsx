@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('vmem_8h.html',''); initResizable(); })
 </div><!--header-->
 <div class="contents">
 
-<p>Copyright (c) 2021 Daishi Mori (mori0091)  
+<p>Data types and functions for VRAM access.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="io_8h_source.html">io.h</a>&quot;</code><br />
@@ -117,28 +117,38 @@ $(document).ready(function(){initNavTree('vmem_8h.html',''); initResizable(); })
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:aaa8bd02096bc1fc31f3da323f1d0a1f8"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a></td></tr>
+<tr class="memdesc:aaa8bd02096bc1fc31f3da323f1d0a1f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for VRAM address.  <a href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">More...</a><br /></td></tr>
 <tr class="separator:aaa8bd02096bc1fc31f3da323f1d0a1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7de002162c4beef34d9f1f40aea4708c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> loc)</td></tr>
+<tr class="memdesc:a7de002162c4beef34d9f1f40aea4708c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set VRAM address for sequential reading of VRAM.  <a href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">More...</a><br /></td></tr>
 <tr class="separator:a7de002162c4beef34d9f1f40aea4708c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fc46495107310faa212423a4cdeea3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d">vmem_set_write_address</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> loc)</td></tr>
+<tr class="memdesc:a2fc46495107310faa212423a4cdeea3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set VRAM address for sequential writing of VRAM.  <a href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d">More...</a><br /></td></tr>
 <tr class="separator:a2fc46495107310faa212423a4cdeea3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99cbd2a385cef65e129ab37d4dd9bb2e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e">vmem_get</a> (void)</td></tr>
+<tr class="memdesc:a99cbd2a385cef65e129ab37d4dd9bb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 1 byte from VRAM.  <a href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e">More...</a><br /></td></tr>
 <tr class="separator:a99cbd2a385cef65e129ab37d4dd9bb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a633768cfdfc1f7a91ef66ae56da1e5d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8">vmem_set</a> (uint8_t val)</td></tr>
+<tr class="memdesc:a633768cfdfc1f7a91ef66ae56da1e5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 1 byte to VRAM.  <a href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8">More...</a><br /></td></tr>
 <tr class="separator:a633768cfdfc1f7a91ef66ae56da1e5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a061417fb4eecf22ada909056084768c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#a061417fb4eecf22ada909056084768c5">vmem_read</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> src, void *dst, uint16_t len)</td></tr>
+<tr class="memdesc:a061417fb4eecf22ada909056084768c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a series of bytes from VRAM.  <a href="vmem_8h.html#a061417fb4eecf22ada909056084768c5">More...</a><br /></td></tr>
 <tr class="separator:a061417fb4eecf22ada909056084768c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17658e78f1b4ab50df4781d2333ce236"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#a17658e78f1b4ab50df4781d2333ce236">vmem_write</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> dst, void *src, uint16_t len)</td></tr>
+<tr class="memdesc:a17658e78f1b4ab50df4781d2333ce236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a series of bytes to VRAM.  <a href="vmem_8h.html#a17658e78f1b4ab50df4781d2333ce236">More...</a><br /></td></tr>
 <tr class="separator:a17658e78f1b4ab50df4781d2333ce236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab433fbefdc4e89e70e13080e74d35bc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem_8h.html#ab433fbefdc4e89e70e13080e74d35bc7">vmem_memset</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> dst, uint8_t val, uint16_t len)</td></tr>
+<tr class="memdesc:ab433fbefdc4e89e70e13080e74d35bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a series of bytes in VRAM with the specified value.  <a href="vmem_8h.html#ab433fbefdc4e89e70e13080e74d35bc7">More...</a><br /></td></tr>
 <tr class="separator:ab433fbefdc4e89e70e13080e74d35bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Copyright (c) 2021 Daishi Mori (mori0091) </p>
-<p>This software is released under the MIT License. See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
+<div class="textblock"><p>Data types and functions for VRAM access. </p>
+<p>Copyright (c) 2021 Daishi Mori (mori0091)</p>
+<p>This software is released under the MIT License.<br  />
+See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
 <p>GitHub libmsx project <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
 
 <p class="definition">Definition in file <a class="el" href="vmem_8h_source.html">vmem.h</a>.</p>
@@ -155,7 +165,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vmem_8h_source.html#l00025">25</a> of file <a class="el" href="vmem_8h_source.html">vmem.h</a>.</p>
+<p>Type for VRAM address. </p>
+
+<p class="definition">Definition at line <a class="el" href="vmem_8h_source.html#l00029">29</a> of file <a class="el" href="vmem_8h_source.html">vmem.h</a>.</p>
 
 </div>
 </div>
@@ -176,6 +188,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set VRAM address for sequential reading of VRAM. </p>
+<p>This function sets the VRAM access base address register (R#14) and/or the VRAM address counter to a value based on <code>loc</code> for sequential reading of VRAM in subsequent calls to <code><a class="el" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e" title="Read 1 byte from VRAM.">vmem_get()</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc</td><td>VRAM address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e" title="Read 1 byte from VRAM.">vmem_get()</a> </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="vmem__set__read__address_8c_source.html#l00024">24</a> of file <a class="el" href="vmem__set__read__address_8c_source.html">vmem_set_read_address.c</a>.</p>
 
 </div>
@@ -195,6 +217,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set VRAM address for sequential writing of VRAM. </p>
+<p>This function sets the VRAM access base address register (R#14) and/or the VRAM address counter to a value based on <code>loc</code> for sequential writing of VRAM in subsequent calls to <code><a class="el" href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8" title="Write 1 byte to VRAM.">vmem_set()</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc</td><td>VRAM address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8" title="Write 1 byte to VRAM.">vmem_set()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vmem__set__write__address_8c_source.html#l00024">24</a> of file <a class="el" href="vmem__set__write__address_8c_source.html">vmem_set_write_address.c</a>.</p>
 
@@ -224,7 +256,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vmem_8h_source.html#l00031">31</a> of file <a class="el" href="vmem_8h_source.html">vmem.h</a>.</p>
+<p>Read 1 byte from VRAM. </p>
+<dl class="section return"><dt>Returns</dt><dd>a value read from VRAM.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c" title="Set VRAM address for sequential reading of VRAM.">vmem_set_read_address()</a> must be called at least once, before calling <a class="el" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e" title="Read 1 byte from VRAM.">vmem_get()</a>. Also, after the last call to <a class="el" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c" title="Set VRAM address for sequential reading of VRAM.">vmem_set_read_address()</a> and before calling <a class="el" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e" title="Read 1 byte from VRAM.">vmem_get()</a>, <a class="el" href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d" title="Set VRAM address for sequential writing of VRAM.">vmem_set_write_address()</a> must not be called.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c" title="Set VRAM address for sequential reading of VRAM.">vmem_set_read_address()</a> </dd>
+<dd>
+<a class="el" href="vmem_8h.html#a061417fb4eecf22ada909056084768c5" title="Read a series of bytes from VRAM.">vmem_read()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vmem_8h_source.html#l00070">70</a> of file <a class="el" href="vmem_8h_source.html">vmem.h</a>.</p>
 
 </div>
 </div>
@@ -252,7 +291,19 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vmem_8h_source.html#l00035">35</a> of file <a class="el" href="vmem_8h_source.html">vmem.h</a>.</p>
+<p>Write 1 byte to VRAM. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>a value to be written to VRAM.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d" title="Set VRAM address for sequential writing of VRAM.">vmem_set_write_address()</a> must be called at least once, before calling <a class="el" href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8" title="Write 1 byte to VRAM.">vmem_set()</a>. Also, after the last call to <a class="el" href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d" title="Set VRAM address for sequential writing of VRAM.">vmem_set_write_address()</a> and before calling <a class="el" href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8" title="Write 1 byte to VRAM.">vmem_set()</a>, <a class="el" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c" title="Set VRAM address for sequential reading of VRAM.">vmem_set_read_address()</a> must not be called.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d" title="Set VRAM address for sequential writing of VRAM.">vmem_set_write_address()</a> </dd>
+<dd>
+<a class="el" href="vmem_8h.html#a17658e78f1b4ab50df4781d2333ce236" title="Write a series of bytes to VRAM.">vmem_write()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vmem_8h_source.html#l00087">87</a> of file <a class="el" href="vmem_8h_source.html">vmem.h</a>.</p>
 
 </div>
 </div>
@@ -287,6 +338,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read a series of bytes from VRAM. </p>
+<p>This function copies <code>len</code> bytes from VRAM to RAM.</p>
+<p>That is almost same as the below code: </p><div class="fragment"><div class="line"><a class="code" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a>(src);</div>
+<div class="line"><span class="keywordflow">for</span> (uint8_t *p = dst; len--; ) {</div>
+<div class="line">  *p++ = <a class="code" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e">vmem_get</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="avmem_8h_html_a7de002162c4beef34d9f1f40aea4708c"><div class="ttname"><a href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a></div><div class="ttdeci">void vmem_set_read_address(vmemptr_t loc)</div><div class="ttdoc">Set VRAM address for sequential reading of VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vmem__set__read__address_8c_source.html#l00024">vmem_set_read_address.c:24</a></div></div>
+<div class="ttc" id="avmem_8h_html_a99cbd2a385cef65e129ab37d4dd9bb2e"><div class="ttname"><a href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e">vmem_get</a></div><div class="ttdeci">uint8_t vmem_get(void)</div><div class="ttdoc">Read 1 byte from VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vmem_8h_source.html#l00070">vmem.h:70</a></div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>source base address of VRAM. </td></tr>
+    <tr><td class="paramname">dst</td><td>destination base address of RAM. </td></tr>
+    <tr><td class="paramname">len</td><td>number of bytes to be read. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="vmem__read_8c_source.html#l00027">27</a> of file <a class="el" href="vmem__read_8c_source.html">vmem_read.c</a>.</p>
 
@@ -324,6 +392,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Write a series of bytes to VRAM. </p>
+<p>This function copies <code>len</code> bytes from ROM/RAM to VRAM.</p>
+<p>That is almost same as the below code: </p><div class="fragment"><div class="line"><a class="code" href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d">vmem_set_write_address</a>(dst);</div>
+<div class="line"><span class="keywordflow">for</span> (uint8_t *p = src; len--; ) {</div>
+<div class="line">  <a class="code" href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8">vmem_set</a>(*p++);</div>
+<div class="line">}</div>
+<div class="ttc" id="avmem_8h_html_a2fc46495107310faa212423a4cdeea3d"><div class="ttname"><a href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d">vmem_set_write_address</a></div><div class="ttdeci">void vmem_set_write_address(vmemptr_t loc)</div><div class="ttdoc">Set VRAM address for sequential writing of VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vmem__set__write__address_8c_source.html#l00024">vmem_set_write_address.c:24</a></div></div>
+<div class="ttc" id="avmem_8h_html_a633768cfdfc1f7a91ef66ae56da1e5d8"><div class="ttname"><a href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8">vmem_set</a></div><div class="ttdeci">void vmem_set(uint8_t val)</div><div class="ttdoc">Write 1 byte to VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vmem_8h_source.html#l00087">vmem.h:87</a></div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst</td><td>destination base address of VRAM. </td></tr>
+    <tr><td class="paramname">src</td><td>source base address of ROM/RAM. </td></tr>
+    <tr><td class="paramname">len</td><td>number of bytes to be written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="vmem__write_8c_source.html#l00027">27</a> of file <a class="el" href="vmem__write_8c_source.html">vmem_write.c</a>.</p>
 
 </div>
@@ -359,6 +444,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fill a series of bytes in VRAM with the specified value. </p>
+<p>That is almost same as the below code: </p><div class="fragment"><div class="line"><a class="code" href="vmem_8h.html#a2fc46495107310faa212423a4cdeea3d">vmem_set_write_address</a>(dst);</div>
+<div class="line"><span class="keywordflow">for</span> (; len--; ) {</div>
+<div class="line">  <a class="code" href="vmem_8h.html#a633768cfdfc1f7a91ef66ae56da1e5d8">vmem_set</a>(val);</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst</td><td>destination base address of VRAM. </td></tr>
+    <tr><td class="paramname">val</td><td>a byte value to be written. </td></tr>
+    <tr><td class="paramname">len</td><td>number of bytes to be written. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="vmem__memset_8c_source.html#l00027">27</a> of file <a class="el" href="vmem__memset_8c_source.html">vmem_memset.c</a>.</p>
 

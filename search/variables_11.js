@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['volume_621',['volume',['../sound_8c.html#a14cc77262954756b30c251feabce7ea6',1,'sound.c']]],
-  ['vsync_5fbusy_622',['vsync_busy',['../interrupt_8h.html#ac594eec6b7a3ac71bbe093c8d3e09688',1,'interrupt.h']]]
+  ['unused_5fin_5fsprite_5fmode_5f2_785',['unused_in_sprite_mode_2',['../structsprite.html#a4de588d4eca889c174cec87ac2c4ea67',1,'sprite']]]
 ];

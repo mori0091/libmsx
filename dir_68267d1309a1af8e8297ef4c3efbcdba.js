@@ -2,7 +2,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
     [ "interrupt.c", "interrupt_8c.html", "interrupt_8c" ],
     [ "joypad_get_state.c", "joypad__get__state_8c.html", "joypad__get__state_8c" ],
-    [ "msx_set_cpu_mode.c", "msx__set__cpu__mode_8c.html", null ],
+    [ "msx_set_cpu_mode.c", "msx__set__cpu__mode_8c.html", "msx__set__cpu__mode_8c" ],
     [ "psg_get.c", "psg__get_8c.html", "psg__get_8c" ],
     [ "psg_init.c", "psg__init_8c.html", "psg__init_8c" ],
     [ "psg_set.c", "psg__set_8c.html", "psg__set_8c" ],
@@ -11,6 +11,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "sound.c", "sound_8c.html", "sound_8c" ],
     [ "sound_eg_AHDSR.c", "sound__eg__AHDSR_8c.html", "sound__eg__AHDSR_8c" ],
     [ "sound_eg_LPCM.c", "sound__eg__LPCM_8c.html", "sound__eg__LPCM_8c" ],
+    [ "sound_eg_spi.h", "sound__eg__spi_8h.html", [
+      [ "sound_eg", "structsound__eg.html", "structsound__eg" ],
+      [ "sound_eg_vtbl", "structsound__eg__vtbl.html", "structsound__eg__vtbl" ]
+    ] ],
     [ "sprite_set_color.c", "sprite__set__color_8c.html", "sprite__set__color_8c" ],
     [ "sprite_set_pat.c", "sprite__set__pat_8c.html", "sprite__set__pat_8c" ],
     [ "sprite_set_x.c", "sprite__set__x_8c.html", "sprite__set__x_8c" ],

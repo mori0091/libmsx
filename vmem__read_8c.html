@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('vmem__read_8c.html',''); initResizable
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a061417fb4eecf22ada909056084768c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem__read_8c.html#a061417fb4eecf22ada909056084768c5">vmem_read</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> src, void *dst, uint16_t len)</td></tr>
+<tr class="memdesc:a061417fb4eecf22ada909056084768c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a series of bytes from VRAM.  <a href="vmem__read_8c.html#a061417fb4eecf22ada909056084768c5">More...</a><br /></td></tr>
 <tr class="separator:a061417fb4eecf22ada909056084768c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -148,6 +149,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read a series of bytes from VRAM. </p>
+<p>This function copies <code>len</code> bytes from VRAM to RAM.</p>
+<p>That is almost same as the below code: </p><div class="fragment"><div class="line"><a class="code" href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a>(src);</div>
+<div class="line"><span class="keywordflow">for</span> (uint8_t *p = dst; len--; ) {</div>
+<div class="line">  *p++ = <a class="code" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e">vmem_get</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="avmem_8h_html_a7de002162c4beef34d9f1f40aea4708c"><div class="ttname"><a href="vmem_8h.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a></div><div class="ttdeci">void vmem_set_read_address(vmemptr_t loc)</div><div class="ttdoc">Set VRAM address for sequential reading of VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vmem__set__read__address_8c_source.html#l00024">vmem_set_read_address.c:24</a></div></div>
+<div class="ttc" id="avmem_8h_html_a99cbd2a385cef65e129ab37d4dd9bb2e"><div class="ttname"><a href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e">vmem_get</a></div><div class="ttdeci">uint8_t vmem_get(void)</div><div class="ttdoc">Read 1 byte from VRAM.</div><div class="ttdef"><b>Definition:</b> <a href="vmem_8h_source.html#l00070">vmem.h:70</a></div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>source base address of VRAM. </td></tr>
+    <tr><td class="paramname">dst</td><td>destination base address of RAM. </td></tr>
+    <tr><td class="paramname">len</td><td>number of bytes to be read. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="vmem__read_8c_source.html#l00027">27</a> of file <a class="el" href="vmem__read_8c_source.html">vmem_read.c</a>.</p>
 

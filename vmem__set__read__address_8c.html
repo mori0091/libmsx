@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('vmem__set__read__address_8c.html','');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7de002162c4beef34d9f1f40aea4708c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vmem__set__read__address_8c.html#a7de002162c4beef34d9f1f40aea4708c">vmem_set_read_address</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> loc)</td></tr>
+<tr class="memdesc:a7de002162c4beef34d9f1f40aea4708c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set VRAM address for sequential reading of VRAM.  <a href="vmem__set__read__address_8c.html#a7de002162c4beef34d9f1f40aea4708c">More...</a><br /></td></tr>
 <tr class="separator:a7de002162c4beef34d9f1f40aea4708c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -132,6 +133,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set VRAM address for sequential reading of VRAM. </p>
+<p>This function sets the VRAM access base address register (R#14) and/or the VRAM address counter to a value based on <code>loc</code> for sequential reading of VRAM in subsequent calls to <code><a class="el" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e" title="Read 1 byte from VRAM.">vmem_get()</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc</td><td>VRAM address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e" title="Read 1 byte from VRAM.">vmem_get()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vmem__set__read__address_8c_source.html#l00024">24</a> of file <a class="el" href="vmem__set__read__address_8c_source.html">vmem_set_read_address.c</a>.</p>
 

@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="vmem_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node3"><a xlink:href="vmem_8h.html" target="_top" xlink:title="Data types and functions for VRAM access.">
 <polygon fill="none" stroke="black" points="52.5,-56.5 52.5,-75.5 103.5,-75.5 103.5,-56.5 52.5,-56.5"/>
 <text text-anchor="middle" x="78" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">vmem.h</text>
 </a>

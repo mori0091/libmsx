@@ -95,6 +95,12 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 <li>VDP_CMD_EOR
 : <a class="el" href="vdp_8h.html#ad5a2110934821d4a04c4f412cea3160fa5dbf4bfa6dd408b336f0005df9e634f0">vdp.h</a>
 </li>
+<li>vdp_cmd_exec_r32()
+: <a class="el" href="vdp__cmd__execute_8c.html#a33c739897cd8dc656d32f48b0c67a905">vdp_cmd_execute.c</a>
+</li>
+<li>vdp_cmd_exec_r36()
+: <a class="el" href="vdp__cmd__execute_8c.html#aceb90ffd36b89561a266f02f08453a39">vdp_cmd_execute.c</a>
+</li>
 <li>vdp_cmd_execute()
 : <a class="el" href="vdp_8h.html#a713522050128f19e20c19e2556398914">vdp.h</a>
 , <a class="el" href="vdp__cmd__execute_8c.html#a713522050128f19e20c19e2556398914">vdp_cmd_execute.c</a>
@@ -229,14 +235,26 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 , <a class="el" href="vdp__get__sprite__mode_8c.html#a7d644558c2aba5f1480920df41fb2b3b">vdp_get_sprite_mode.c</a>
 </li>
 <li>vdp_get_status()
-: <a class="el" href="vdp__get__status_8c.html#a37d2b81a2b2629fd1e853d2f72191a15">vdp_get_status.c</a>
-, <a class="el" href="vdp_8h.html#a37d2b81a2b2629fd1e853d2f72191a15">vdp.h</a>
+: <a class="el" href="vdp_8h.html#a37d2b81a2b2629fd1e853d2f72191a15">vdp.h</a>
+, <a class="el" href="vdp__get__status_8c.html#a37d2b81a2b2629fd1e853d2f72191a15">vdp_get_status.c</a>
 </li>
 <li>VDP_GET_STATUS_REGISTER_VALUE()
 : <a class="el" href="vdp_8h.html#abb381d91a109c478b02dd0612b9f3a18">vdp.h</a>
 </li>
 <li>VDP_GET_VMEM_VALUE()
 : <a class="el" href="vdp_8h.html#a038d61b6cc774b777dbc2212613fa1ed">vdp.h</a>
+</li>
+<li>vdp_port0
+: <a class="el" href="io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8">io.h</a>
+</li>
+<li>vdp_port1
+: <a class="el" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">io.h</a>
+</li>
+<li>vdp_port2
+: <a class="el" href="io_8h.html#a5411656a5ffcdece10e5dc8e44451553">io.h</a>
+</li>
+<li>vdp_port3
+: <a class="el" href="io_8h.html#a9ee87b9d8167d1b4f01a4380a4cd7f68">io.h</a>
 </li>
 <li>vdp_screen_lines
 : <a class="el" href="vdp_8h.html#a4be13cf63124c4555620dec7f2dde5d5">vdp.h</a>
@@ -281,8 +299,8 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 : <a class="el" href="vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5ab5882a1c7e4cfe3a287628245caf0769">vdp.h</a>
 </li>
 <li>vdp_set_adjust()
-: <a class="el" href="vdp__set__adjust_8c.html#ac0bd7ff710cf49c932e253ec30c5f873">vdp_set_adjust.c</a>
-, <a class="el" href="vdp_8h.html#ac0bd7ff710cf49c932e253ec30c5f873">vdp.h</a>
+: <a class="el" href="vdp_8h.html#ac0bd7ff710cf49c932e253ec30c5f873">vdp.h</a>
+, <a class="el" href="vdp__set__adjust_8c.html#ac0bd7ff710cf49c932e253ec30c5f873">vdp_set_adjust.c</a>
 </li>
 <li>vdp_set_color()
 : <a class="el" href="vdp_8h.html#a385097678914680b356edbb9213f4d05">vdp.h</a>
@@ -293,8 +311,8 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 , <a class="el" href="vdp__set__color__table_8c.html#aa8c6e5071b94616225f70959001afe2b">vdp_set_color_table.c</a>
 </li>
 <li>vdp_set_control()
-: <a class="el" href="vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f">vdp.h</a>
-, <a class="el" href="vdp__set__control_8c.html#af9ead93518d9dab82fdfbe29dc6bd10f">vdp_set_control.c</a>
+: <a class="el" href="vdp__set__control_8c.html#af9ead93518d9dab82fdfbe29dc6bd10f">vdp_set_control.c</a>
+, <a class="el" href="vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f">vdp.h</a>
 </li>
 <li>VDP_SET_CONTROL_REGISTER()
 : <a class="el" href="vdp_8h.html#af53955bc84b9c190f04abdd9206f6453">vdp.h</a>
@@ -309,12 +327,12 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 : <a class="el" href="vdp_8h.html#a118cb18eb1375ddef629055a90a00976">vdp.h</a>
 </li>
 <li>vdp_set_hscroll()
-: <a class="el" href="vdp__set__hscroll_8c.html#a7e46df6cf6d6959b4232cb7cd7d5feb2">vdp_set_hscroll.c</a>
-, <a class="el" href="vdp_8h.html#a7e46df6cf6d6959b4232cb7cd7d5feb2">vdp.h</a>
+: <a class="el" href="vdp_8h.html#a7e46df6cf6d6959b4232cb7cd7d5feb2">vdp.h</a>
+, <a class="el" href="vdp__set__hscroll_8c.html#a7e46df6cf6d6959b4232cb7cd7d5feb2">vdp_set_hscroll.c</a>
 </li>
 <li>vdp_set_hscroll_dual_page()
-: <a class="el" href="vdp__set__hscroll__dual__page_8c.html#afad0198c990fd23d914c6ae6fda4d175">vdp_set_hscroll_dual_page.c</a>
-, <a class="el" href="vdp_8h.html#afad0198c990fd23d914c6ae6fda4d175">vdp.h</a>
+: <a class="el" href="vdp_8h.html#afad0198c990fd23d914c6ae6fda4d175">vdp.h</a>
+, <a class="el" href="vdp__set__hscroll__dual__page_8c.html#afad0198c990fd23d914c6ae6fda4d175">vdp_set_hscroll_dual_page.c</a>
 </li>
 <li>vdp_set_hscroll_mask()
 : <a class="el" href="vdp_8h.html#a9bec57b16ef92a033f6046a62475e178">vdp.h</a>
@@ -341,12 +359,12 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 , <a class="el" href="vdp__set__screen__mode_8c.html#a63053aebe62d033ef0068db1cf3a8b58">vdp_set_screen_mode.c</a>
 </li>
 <li>vdp_set_sprite_attribute_table()
-: <a class="el" href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419">vdp.h</a>
-, <a class="el" href="vdp__set__sprite__attribute__table_8c.html#aa6a6414b4ac931ef585a34dda4dcf419">vdp_set_sprite_attribute_table.c</a>
+: <a class="el" href="vdp__set__sprite__attribute__table_8c.html#aa6a6414b4ac931ef585a34dda4dcf419">vdp_set_sprite_attribute_table.c</a>
+, <a class="el" href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419">vdp.h</a>
 </li>
 <li>vdp_set_sprite_pattern_table()
-: <a class="el" href="vdp__set__sprite__pattern__table_8c.html#a785c8cbb6c9e3f15400eb49691f32d5e">vdp_set_sprite_pattern_table.c</a>
-, <a class="el" href="vdp_8h.html#a785c8cbb6c9e3f15400eb49691f32d5e">vdp.h</a>
+: <a class="el" href="vdp_8h.html#a785c8cbb6c9e3f15400eb49691f32d5e">vdp.h</a>
+, <a class="el" href="vdp__set__sprite__pattern__table_8c.html#a785c8cbb6c9e3f15400eb49691f32d5e">vdp_set_sprite_pattern_table.c</a>
 </li>
 <li>vdp_set_sprite_size()
 : <a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7">vdp.h</a>
@@ -392,12 +410,12 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 : <a class="el" href="vdp_8h.html#a91cf075ff9817fd8e552c6f055ce8b95ab8183ad4525eb276c8bdacdb46a5b70f">vdp.h</a>
 </li>
 <li>vdp_write_control()
-: <a class="el" href="vdp_8h.html#a50c324140f31020a5b9257f95a1e94ba">vdp.h</a>
-, <a class="el" href="vdp__write__control_8c.html#a50c324140f31020a5b9257f95a1e94ba">vdp_write_control.c</a>
+: <a class="el" href="vdp__write__control_8c.html#a50c324140f31020a5b9257f95a1e94ba">vdp_write_control.c</a>
+, <a class="el" href="vdp_8h.html#a50c324140f31020a5b9257f95a1e94ba">vdp.h</a>
 </li>
 <li>vdp_write_palette()
-: <a class="el" href="vdp_8h.html#aae09e94d48bab51c44188a246c41e96a">vdp.h</a>
-, <a class="el" href="vdp__write__palette_8c.html#aae09e94d48bab51c44188a246c41e96a">vdp_write_palette.c</a>
+: <a class="el" href="vdp__write__palette_8c.html#aae09e94d48bab51c44188a246c41e96a">vdp_write_palette.c</a>
+, <a class="el" href="vdp_8h.html#aae09e94d48bab51c44188a246c41e96a">vdp.h</a>
 </li>
 <li>vec2i_t
 : <a class="el" href="metasprite_8h.html#a01061ce68e98cbf7aee32116eabb258d">metasprite.h</a>
@@ -458,8 +476,8 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 , <a class="el" href="vmem__set__sprite__color_8c.html#a59dc3146fb9b82d907c720b86286b853">vmem_set_sprite_color.c</a>
 </li>
 <li>vmem_set_sprite_color_m()
-: <a class="el" href="vmem__set__sprite__color__m_8c.html#a5abca0a5e85daf04fd9d5e9e1b44800c">vmem_set_sprite_color_m.c</a>
-, <a class="el" href="sprite__color_8h.html#a5abca0a5e85daf04fd9d5e9e1b44800c">sprite_color.h</a>
+: <a class="el" href="sprite__color_8h.html#a5abca0a5e85daf04fd9d5e9e1b44800c">sprite_color.h</a>
+, <a class="el" href="vmem__set__sprite__color__m_8c.html#a5abca0a5e85daf04fd9d5e9e1b44800c">vmem_set_sprite_color_m.c</a>
 </li>
 <li>vmem_set_sprite_color_s()
 : <a class="el" href="sprite__color_8h.html#a6cf16f5ecc488771a53456b03257768d">sprite_color.h</a>
@@ -481,6 +499,10 @@ $(document).ready(function(){initNavTree('globals_v.html',''); initResizable(); 
 </li>
 <li>vsync_busy
 : <a class="el" href="interrupt_8h.html#ac594eec6b7a3ac71bbe093c8d3e09688">interrupt.h</a>
+, <a class="el" href="interrupt_8c.html#ac594eec6b7a3ac71bbe093c8d3e09688">interrupt.c</a>
+</li>
+<li>vsync_handler
+: <a class="el" href="interrupt_8c.html#a2a01700ad27c25cff8e0ac784443e52c">interrupt.c</a>
 </li>
 </ul>
 </div><!-- contents -->

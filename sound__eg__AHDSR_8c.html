@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('sound__eg__AHDSR_8c.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">sound_eg_AHDSR.c File Reference</div>  </div>
@@ -93,13 +94,13 @@ $(document).ready(function(){initNavTree('sound__eg__AHDSR_8c.html',''); initRes
 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="sound__eg__spi_8h_source.html">../include/sound_eg_spi.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="sound__eg__spi_8h_source.html">sound_eg_spi.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sound_eg_AHDSR.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="sound__eg__AHDSR_8c__incl.svg" width="176" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="sound__eg__AHDSR_8c__incl.svg" width="176" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -129,6 +130,25 @@ Macros</h2></td></tr>
 <tr class="separator:ab3b1ed7a81bd3a321d52e2907667b7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d89eec58954de8705c571c1a0150ae2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#a7d89eec58954de8705c571c1a0150ae2">RELEASE_RATE</a>&#160;&#160;&#160;(self-&gt;attr.ahdsr-&gt;release_rate)</td></tr>
 <tr class="separator:a7d89eec58954de8705c571c1a0150ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5a21f68fceed7b2f2b3b47a6080bff9b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#a5a21f68fceed7b2f2b3b47a6080bff9b">attack_phase</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a5a21f68fceed7b2f2b3b47a6080bff9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dafe52ececee815d9f543489576716a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#a0dafe52ececee815d9f543489576716a">hold_phase</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a0dafe52ececee815d9f543489576716a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc599219cae74acd56bdfeb48973a9d0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#afc599219cae74acd56bdfeb48973a9d0">decay_phase</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:afc599219cae74acd56bdfeb48973a9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff8e999a4f2dcb8fe74ac9dcb48e6bc1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#aff8e999a4f2dcb8fe74ac9dcb48e6bc1">sustain_phase</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:aff8e999a4f2dcb8fe74ac9dcb48e6bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8e3e53c349599f119b5d878e9b2455"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#a3b8e3e53c349599f119b5d878e9b2455">release_phase</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a3b8e3e53c349599f119b5d878e9b2455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78dc55e376f7d08e36b903eaba0fe2a2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#a78dc55e376f7d08e36b903eaba0fe2a2">sound_eg_AHDSR_key_on</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a78dc55e376f7d08e36b903eaba0fe2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0ce94f1dbe38eca02b70b4015494b7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#abf0ce94f1dbe38eca02b70b4015494b7">sound_eg_AHDSR_key_off</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:abf0ce94f1dbe38eca02b70b4015494b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659c2e3ce1bf3aec21e3f812f587f910"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg__AHDSR_8c.html#a659c2e3ce1bf3aec21e3f812f587f910">sound_eg_AHDSR_advance</a> (struct <a class="el" href="structsound__eg.html">sound_eg</a> *self)</td></tr>
+<tr class="separator:a659c2e3ce1bf3aec21e3f812f587f910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -318,6 +338,231 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a5a21f68fceed7b2f2b3b47a6080bff9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a21f68fceed7b2f2b3b47a6080bff9b">&#9670;&nbsp;</a></span>attack_phase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void attack_phase </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00029">29</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="a0dafe52ececee815d9f543489576716a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dafe52ececee815d9f543489576716a">&#9670;&nbsp;</a></span>hold_phase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void hold_phase </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00044">44</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="afc599219cae74acd56bdfeb48973a9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc599219cae74acd56bdfeb48973a9d0">&#9670;&nbsp;</a></span>decay_phase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void decay_phase </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00050">50</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="aff8e999a4f2dcb8fe74ac9dcb48e6bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff8e999a4f2dcb8fe74ac9dcb48e6bc1">&#9670;&nbsp;</a></span>sustain_phase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sustain_phase </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00063">63</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="a3b8e3e53c349599f119b5d878e9b2455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8e3e53c349599f119b5d878e9b2455">&#9670;&nbsp;</a></span>release_phase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void release_phase </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00068">68</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="a78dc55e376f7d08e36b903eaba0fe2a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78dc55e376f7d08e36b903eaba0fe2a2">&#9670;&nbsp;</a></span>sound_eg_AHDSR_key_on()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sound_eg_AHDSR_key_on </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00079">79</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="abf0ce94f1dbe38eca02b70b4015494b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf0ce94f1dbe38eca02b70b4015494b7">&#9670;&nbsp;</a></span>sound_eg_AHDSR_key_off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sound_eg_AHDSR_key_off </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00085">85</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
+<a id="a659c2e3ce1bf3aec21e3f812f587f910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659c2e3ce1bf3aec21e3f812f587f910">&#9670;&nbsp;</a></span>sound_eg_AHDSR_advance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sound_eg_AHDSR_advance </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structsound__eg.html">sound_eg</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00090">90</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a380105d26608f74823f014bfbfcdaa04"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a380105d26608f74823f014bfbfcdaa04">&#9670;&nbsp;</a></span>sound_eg_AHDSR</h2>
@@ -331,10 +576,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">  .key_on  = sound_eg_AHDSR_key_on,</div>
-<div class="line">  .key_off = sound_eg_AHDSR_key_off,</div>
-<div class="line">  .advance = sound_eg_AHDSR_advance,</div>
+<div class="line">  .key_on  = <a class="code" href="sound__eg__AHDSR_8c.html#a78dc55e376f7d08e36b903eaba0fe2a2">sound_eg_AHDSR_key_on</a>,</div>
+<div class="line">  .key_off = <a class="code" href="sound__eg__AHDSR_8c.html#abf0ce94f1dbe38eca02b70b4015494b7">sound_eg_AHDSR_key_off</a>,</div>
+<div class="line">  .advance = <a class="code" href="sound__eg__AHDSR_8c.html#a659c2e3ce1bf3aec21e3f812f587f910">sound_eg_AHDSR_advance</a>,</div>
 <div class="line">}</div>
+<div class="ttc" id="asound__eg__AHDSR_8c_html_a659c2e3ce1bf3aec21e3f812f587f910"><div class="ttname"><a href="sound__eg__AHDSR_8c.html#a659c2e3ce1bf3aec21e3f812f587f910">sound_eg_AHDSR_advance</a></div><div class="ttdeci">static void sound_eg_AHDSR_advance(struct sound_eg *self)</div><div class="ttdef"><b>Definition:</b> <a href="sound__eg__AHDSR_8c_source.html#l00090">sound_eg_AHDSR.c:90</a></div></div>
+<div class="ttc" id="asound__eg__AHDSR_8c_html_a78dc55e376f7d08e36b903eaba0fe2a2"><div class="ttname"><a href="sound__eg__AHDSR_8c.html#a78dc55e376f7d08e36b903eaba0fe2a2">sound_eg_AHDSR_key_on</a></div><div class="ttdeci">static void sound_eg_AHDSR_key_on(struct sound_eg *self)</div><div class="ttdef"><b>Definition:</b> <a href="sound__eg__AHDSR_8c_source.html#l00079">sound_eg_AHDSR.c:79</a></div></div>
+<div class="ttc" id="asound__eg__AHDSR_8c_html_abf0ce94f1dbe38eca02b70b4015494b7"><div class="ttname"><a href="sound__eg__AHDSR_8c.html#abf0ce94f1dbe38eca02b70b4015494b7">sound_eg_AHDSR_key_off</a></div><div class="ttdeci">static void sound_eg_AHDSR_key_off(struct sound_eg *self)</div><div class="ttdef"><b>Definition:</b> <a href="sound__eg__AHDSR_8c_source.html#l00085">sound_eg_AHDSR.c:85</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="sound__eg__AHDSR_8c_source.html#l00090">90</a> of file <a class="el" href="sound__eg__AHDSR_8c_source.html">sound_eg_AHDSR.c</a>.</p>
 

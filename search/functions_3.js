@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['msx_5fget_5fversion_447',['msx_get_version',['../bios_8h.html#a19b4876435ca81258934f0d78d6cae07',1,'bios.h']]],
-  ['msx_5fget_5fvsync_5ffrequency_448',['msx_get_vsync_frequency',['../bios_8h.html#a92e83309660f10fadbd038807b69b56f',1,'bios.h']]],
-  ['msx_5fset_5fcpu_5fmode_449',['msx_set_cpu_mode',['../bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af',1,'bios.h']]]
+  ['joypad_5fget_5fstate_536',['joypad_get_state',['../input_8h.html#a087c749840978e4916c876d906668397',1,'joypad_get_state(uint8_t controller):&#160;joypad_get_state.c'],['../joypad__get__state_8c.html#a087c749840978e4916c876d906668397',1,'joypad_get_state(uint8_t controller):&#160;joypad_get_state.c']]]
 ];

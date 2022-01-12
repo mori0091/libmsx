@@ -11,8 +11,8 @@
  * https://github.com/mori0091/libmsx
  */
 
-#include "../include/io.h"
 #include "../include/input.h"
+#include "../include/psg.h"
 
 #define KANA_LAMP_OFF  (0x080)
 
@@ -28,7 +28,7 @@ uint8_t joypad_get_state(uint8_t controller) {
     r15 = 0x13;
     break;
   case 2:
-    // joystick #1
+    // joystick #2
     r15 = 0x6c;
     break;
   default:
@@ -38,15 +38,12 @@ uint8_t joypad_get_state(uint8_t controller) {
   for (;;) {
     volatile uint8_t x;
     __critical {
-      psg_port0 = 15;
-      psg_port1 = r15 | KANA_LAMP_OFF;
-      psg_port0 = 14;
-      x = psg_port2;
+      psg_set(15, r15 | KANA_LAMP_OFF);
+      x = psg_get(14);
       // bit #3..#0 of PSG port B (PSG #15) shall be H level
       // during the PSG port B is not used for output.
       // (see MSX Datapack Volume 1, pp.44)
-      psg_port0 = 15;
-      psg_port1 = 0x0f | KANA_LAMP_OFF;
+      psg_set(15, 0x0f | KANA_LAMP_OFF);
     }
     if (r14 == x) break;
     r14 = x;

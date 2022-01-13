@@ -93,20 +93,24 @@ $(document).ready(function(){initNavTree('input_8h_source.html',''); initResizab
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="input_8h.html#a57a88ceb387a03c046c9c51a8c154e05">   22</a></span>&#160;<span class="preprocessor">#define VK_UP     (1 &lt;&lt; 0)</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="input_8h.html#ac0d40bc0c552d2a841591717eb21f24e">   23</a></span>&#160;<span class="preprocessor">#define VK_DOWN   (1 &lt;&lt; 1)</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="input_8h.html#abc5b23d7329364d2b0045bdbde9ef826">   24</a></span>&#160;<span class="preprocessor">#define VK_LEFT   (1 &lt;&lt; 2)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="input_8h.html#abde1a28b80e3625c66ee269c3dec02f0">   25</a></span>&#160;<span class="preprocessor">#define VK_RIGHT  (1 &lt;&lt; 3)</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="input_8h.html#a8cd30be158daff14ab2f276621786dbe">   26</a></span>&#160;<span class="preprocessor">#define VK_FIRE_0 (1 &lt;&lt; 4)</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="input_8h.html#ab889bf94695db344840ab8b5d8e40880">   27</a></span>&#160;<span class="preprocessor">#define VK_FIRE_1 (1 &lt;&lt; 5)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;uint8_t <a class="code" href="input_8h.html#a087c749840978e4916c876d906668397">joypad_get_state</a>(uint8_t controller);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="ainput_8h_html_a087c749840978e4916c876d906668397"><div class="ttname"><a href="input_8h.html#a087c749840978e4916c876d906668397">joypad_get_state</a></div><div class="ttdeci">uint8_t joypad_get_state(uint8_t controller)</div><div class="ttdef"><b>Definition:</b> <a href="joypad__get__state_8c_source.html#l00019">joypad_get_state.c:19</a></div></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="input_8h.html#a57a88ceb387a03c046c9c51a8c154e05">   26</a></span>&#160;<span class="preprocessor">#define VK_UP     (1 &lt;&lt; 0)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="input_8h.html#ac0d40bc0c552d2a841591717eb21f24e">   33</a></span>&#160;<span class="preprocessor">#define VK_DOWN   (1 &lt;&lt; 1)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="input_8h.html#abc5b23d7329364d2b0045bdbde9ef826">   40</a></span>&#160;<span class="preprocessor">#define VK_LEFT   (1 &lt;&lt; 2)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="input_8h.html#abde1a28b80e3625c66ee269c3dec02f0">   47</a></span>&#160;<span class="preprocessor">#define VK_RIGHT  (1 &lt;&lt; 3)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="input_8h.html#a8cd30be158daff14ab2f276621786dbe">   54</a></span>&#160;<span class="preprocessor">#define VK_FIRE_0 (1 &lt;&lt; 4)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="input_8h.html#ab889bf94695db344840ab8b5d8e40880">   61</a></span>&#160;<span class="preprocessor">#define VK_FIRE_1 (1 &lt;&lt; 5)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;uint8_t <a class="code" href="input_8h.html#a087c749840978e4916c876d906668397">joypad_get_state</a>(uint8_t controller);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ainput_8h_html_a087c749840978e4916c876d906668397"><div class="ttname"><a href="input_8h.html#a087c749840978e4916c876d906668397">joypad_get_state</a></div><div class="ttdeci">uint8_t joypad_get_state(uint8_t controller)</div><div class="ttdoc">Get the status of the joystick buttons and levers.</div><div class="ttdef"><b>Definition:</b> <a href="joypad__get__state_8c_source.html#l00067">joypad_get_state.c:67</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

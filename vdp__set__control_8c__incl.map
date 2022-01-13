@@ -1,12 +1,14 @@
 <map id="src/vdp_set_control.c" name="src/vdp_set_control.c">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="82,5,229,32"/>
-<area shape="rect" id="node2" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="231,80,339,107"/>
-<area shape="rect" id="node10" href="$vdp__internal_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="40,80,143,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="455,155,523,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="23,155,98,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="213,229,277,256"/>
-<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="457,229,499,256"/>
-<area shape="rect" id="node7" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="363,155,431,181"/>
-<area shape="rect" id="node8" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="122,155,178,181"/>
-<area shape="rect" id="node9" href="$workarea_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="202,155,287,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="287,5,434,32"/>
+<area shape="rect" id="node2" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="243,80,351,107"/>
+<area shape="rect" id="node12" href="$vdp__internal_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="523,80,625,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,73,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="98,155,173,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="439,304,503,331"/>
+<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="247,229,290,256"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="299,155,367,181"/>
+<area shape="rect" id="node8" href="$bios_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="391,155,447,181"/>
+<area shape="rect" id="node11" href="$workarea_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="599,229,685,256"/>
+<area shape="rect" id="node9" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="365,229,460,256"/>
+<area shape="rect" id="node10" href="$bios__entry_8h.html" title="Assembler entry points for MSX BIOS functions." alt="" coords="485,229,575,256"/>
 </map>

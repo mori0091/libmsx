@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['n_703',['n',['../structmetasprite.html#af30e1055d34f0d6f22c21a28b019565a',1,'metasprite']]],
-  ['next_704',['next',['../structsound__channel.html#a3f61eab3e156b2394813aa944fd3908d',1,'sound_channel']]],
-  ['next_5fsound_5feffect_705',['next_sound_effect',['../sound_8c.html#a48009578d8ab7b77c750fd32d27cff57',1,'sound.c']]],
-  ['noise_5ffdr_706',['noise_fdr',['../sound_8c.html#a31c9b853467f23a198f0a75610df80a5',1,'sound.c']]],
-  ['num_5ffragments_707',['num_fragments',['../structsound__clip.html#ac4e8ddf6c34374903c6f859c4e4421eb',1,'sound_clip']]]
+  ['mask_719',['mask',['../sound_8c.html#a8a74907784be6c7786c2d060c8d7e10b',1,'sound.c']]],
+  ['mixer_720',['mixer',['../sound_8c.html#a2e831854e0cc8fdfafd66f0168d48bd0',1,'sound.c']]],
+  ['msx_5fsystem_5fversion_5fcode_721',['MSX_SYSTEM_VERSION_CODE',['../bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda',1,'bios_const.h']]],
+  ['mute_722',['mute',['../sound_8c.html#ad9aef3fe07cb77df6845f5830762396d',1,'sound.c']]]
 ];

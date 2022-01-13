@@ -84,8 +84,7 @@ $(document).ready(function(){initNavTree('bios_8h.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">bios.h File Reference</div>  </div>
 </div><!--header-->
@@ -93,13 +92,14 @@ $(document).ready(function(){initNavTree('bios_8h.html',''); initResizable(); })
 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="bios__const_8h_source.html">bios_const.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for bios.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="bios_8h__incl.svg" width="112" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="bios_8h__incl.svg" width="222" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -121,25 +121,23 @@ Functions</h2></td></tr>
 <tr class="memitem:a92e83309660f10fadbd038807b69b56f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a92e83309660f10fadbd038807b69b56f">msx_get_vsync_frequency</a> (void)</td></tr>
 <tr class="memdesc:a92e83309660f10fadbd038807b69b56f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns VSYNC frequency in Hz.  <a href="bios_8h.html#a92e83309660f10fadbd038807b69b56f">More...</a><br /></td></tr>
 <tr class="separator:a92e83309660f10fadbd038807b69b56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221aeb5b2cb8816e03b9413e7c945ed8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8">msx_GTSTCK</a> (const uint8_t a)</td></tr>
+<tr class="memdesc:a221aeb5b2cb8816e03b9413e7c945ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">BIOS : GTSTCK (00D5H / MAIN) <code>MSX</code>  <a href="bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8">More...</a><br /></td></tr>
+<tr class="separator:a221aeb5b2cb8816e03b9413e7c945ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68a83910179dac98a2d038c99ea55abf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a68a83910179dac98a2d038c99ea55abf">msx_GTTRIG</a> (const uint8_t a)</td></tr>
+<tr class="memdesc:a68a83910179dac98a2d038c99ea55abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">BIOS : GTTRIG (00D8H / MAIN) <code>MSX</code>  <a href="bios_8h.html#a68a83910179dac98a2d038c99ea55abf">More...</a><br /></td></tr>
+<tr class="separator:a68a83910179dac98a2d038c99ea55abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3c2351bf7f00eb60bd423e0b6fa4d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1">msx_CHGCPU</a> (const uint8_t mode)</td></tr>
+<tr class="memdesc:ade3c2351bf7f00eb60bd423e0b6fa4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">BIOS : CHGCPU (0180H/MAIN) <code>MSXturboR</code>  <a href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1">More...</a><br /></td></tr>
+<tr class="separator:ade3c2351bf7f00eb60bd423e0b6fa4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af">msx_set_cpu_mode</a> (const uint8_t mode)</td></tr>
-<tr class="memdesc:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the CPU mode based on the given <code>mode</code>.  <a href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af">More...</a><br /></td></tr>
+<tr class="memdesc:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the CPU mode.  <a href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af">More...</a><br /></td></tr>
 <tr class="separator:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a6affd3a7801ad8c6c255400f0a391cda"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a></td></tr>
-<tr class="memdesc:a6affd3a7801ad8c6c255400f0a391cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Major version code of MSX BIOS.  <a href="bios_8h.html#a6affd3a7801ad8c6c255400f0a391cda">More...</a><br /></td></tr>
-<tr class="separator:a6affd3a7801ad8c6c255400f0a391cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91e2a52aaf73b50f909f12bb9f9fc9bc"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a></td></tr>
-<tr class="memdesc:a91e2a52aaf73b50f909f12bb9f9fc9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">International identifier code #1 of MSX BIOS.  <a href="bios_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">More...</a><br /></td></tr>
-<tr class="separator:a91e2a52aaf73b50f909f12bb9f9fc9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c64be4c8a1cc67033892d7f4d83ac7a"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">INTERNATIONAL_ID_2</a></td></tr>
-<tr class="memdesc:a0c64be4c8a1cc67033892d7f4d83ac7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">International identifier code #2 of MSX BIOS.  <a href="bios_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">More...</a><br /></td></tr>
-<tr class="separator:a0c64be4c8a1cc67033892d7f4d83ac7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright (c) 2021 Daishi Mori (mori0091) </p>
-<p>This software is released under the MIT License. See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
+<p>This software is released under the MIT License.<br  />
+See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
 <p>GitHub libmsx project <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
 
 <p class="definition">Definition in file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
@@ -171,7 +169,7 @@ Variables</h2></td></tr>
 <p>Returns MSX system version code. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 (MSX1), 1 (MSX2), 2 (MSX2+), 3 (MSXturboR), or else. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00041">41</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00027">27</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
 
 </div>
 </div>
@@ -202,7 +200,144 @@ Variables</h2></td></tr>
 <p>Returns VSYNC frequency in Hz. </p>
 <dl class="section return"><dt>Returns</dt><dd>50 (PAL/SECAM), or 60 (NTSC) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00050">50</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00036">36</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+
+</div>
+</div>
+<a id="a221aeb5b2cb8816e03b9413e7c945ed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221aeb5b2cb8816e03b9413e7c945ed8">&#9670;&nbsp;</a></span>msx_GTSTCK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t msx_GTSTCK </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BIOS : GTSTCK (00D5H / MAIN) <code>MSX</code> </p>
+<p>Get the status of the eight-way lever on the joystick or the arrow keys on the keyboard.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>joystick number<ul>
+<li><code>0</code> : keyboard (the arrow keys)</li>
+<li><code>1</code> : joystick #1</li>
+<li><code>2</code> : joystick #2</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status of the eight-way lever or the arrow keys.<ul>
+<li><code>0</code> : center</li>
+<li><code>1</code> : north</li>
+<li><code>2</code> : north east</li>
+<li><code>3</code> : east</li>
+<li><code>4</code> : south east</li>
+<li><code>5</code> : south</li>
+<li><code>6</code> : south west</li>
+<li><code>7</code> : west</li>
+<li><code>8</code> : north west</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="input_8h.html#a087c749840978e4916c876d906668397" title="Get the status of the joystick buttons and levers.">joypad_get_state()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="msx__GTSTCK_8c_source.html#l00016">16</a> of file <a class="el" href="msx__GTSTCK_8c_source.html">msx_GTSTCK.c</a>.</p>
+
+</div>
+</div>
+<a id="a68a83910179dac98a2d038c99ea55abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68a83910179dac98a2d038c99ea55abf">&#9670;&nbsp;</a></span>msx_GTTRIG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t msx_GTTRIG </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BIOS : GTTRIG (00D8H / MAIN) <code>MSX</code> </p>
+<p>Get the status of the trigger button on the joystick or the SPACE key on the keyboard.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>trigger button number<ul>
+<li><code>0</code> : keyboard (the SPACE key)</li>
+<li><code>1</code> : trigger button #1 of the joystick #1</li>
+<li><code>2</code> : trigger button #1 of the joystick #2</li>
+<li><code>3</code> : trigger button #2 of the joystick #1</li>
+<li><code>4</code> : trigger button #2 of the joystick #2</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status of the trigger button or the SPACE key.<ul>
+<li><code>0x00</code> : released</li>
+<li><code>0xFF</code> : pressed</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="input_8h.html#a087c749840978e4916c876d906668397" title="Get the status of the joystick buttons and levers.">joypad_get_state()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="msx__GTTRIG_8c_source.html#l00016">16</a> of file <a class="el" href="msx__GTTRIG_8c_source.html">msx_GTTRIG.c</a>.</p>
+
+</div>
+</div>
+<a id="ade3c2351bf7f00eb60bd423e0b6fa4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3c2351bf7f00eb60bd423e0b6fa4d1">&#9670;&nbsp;</a></span>msx_CHGCPU()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void msx_CHGCPU </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BIOS : CHGCPU (0180H/MAIN) <code>MSXturboR</code> </p>
+<p>Change the CPU mode.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>cpu mode, that shall be the following bit pattern:<ul>
+<li><code>bit #7</code> : <code>LED</code><ul>
+<li><code>0</code> : Do not change the LED status</li>
+<li><code>1</code> : Turn the LED on and off according to the <code>CPU</code></li>
+</ul>
+</li>
+<li><code>bit #6..#2</code> : (unused, shall be all <code>0</code>)</li>
+<li><code>bit #1..#0</code> : <code>CPU</code><ul>
+<li><code>00</code> : Z80 mode</li>
+<li><code>01</code> : R800 ROM mode</li>
+<li><code>10</code> : R800 DRAM mode</li>
+<li><code>11</code> : (reserved)</li>
+</ul>
+</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This is a C language wrapper for the BIOS function <code>CHGCPU (0180H/MAIN)</code> for MSXturboR.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>For MSX, MSX2, and MSX2+, the behavior is undefined.<br  />
+Therefore, <a class="el" href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af" title="Change the CPU mode.">msx_set_cpu_mode()</a> is recommended instead.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af" title="Change the CPU mode.">msx_set_cpu_mode()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="msx__CHGCPU_8c_source.html#l00016">16</a> of file <a class="el" href="msx__CHGCPU_8c_source.html">msx_CHGCPU.c</a>.</p>
 
 </div>
 </div>
@@ -222,114 +357,35 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Change the CPU mode based on the given <code>mode</code>. </p>
-<dl class="section note"><dt>Note</dt><dd><ul>
-<li>This function is the C interface to the <code>CHGCPU (0180H/MAIN)</code> BIOS function for MSXturboR.</li>
-<li>In case of MSX, MSX2, or MSX2+, this function does nothing.</li>
-</ul>
-</dd></dl>
-<p>The parameter <code>mode</code> shall be the following bit pattern:</p><ul>
-<li>bit #7 : LED</li>
-<li>bit #6..#2 : (unused, shall be all '0')</li>
-<li>bit #1..#0 : CPU</li>
-</ul>
-<p><b>LED</b></p><ul>
+<p>Change the CPU mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>cpu mode, that shall be the following bit pattern:<ul>
+<li><code>bit #7</code> : <code>LED</code><ul>
 <li><code>0</code> : Do not change the LED status</li>
-<li><code>1</code> : Turn the LED on and off according to the <b>CPU</b></li>
+<li><code>1</code> : Turn the LED on and off according to the <code>CPU</code></li>
 </ul>
-<p><b>CPU</b></p><ul>
+</li>
+<li><code>bit #6..#2</code> : (unused, shall be all <code>0</code>)</li>
+<li><code>bit #1..#0</code> : <code>CPU</code><ul>
 <li><code>00</code> : Z80 mode</li>
 <li><code>01</code> : R800 ROM mode</li>
 <li><code>10</code> : R800 DRAM mode</li>
 <li><code>11</code> : (reserved)</li>
 </ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mode</td><td>cpu mode </td></tr>
+</li>
+</ul>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>This function is the C interface for the BIOS function<code>CHGCPU (0180H/MAIN)</code> for MSXturboR.</dd>
+<dd>
+For MSX, MSX2, and MSX2+, this function does nothing.<br  />
+Therefore, unlike <a class="el" href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1" title="BIOS : CHGCPU (0180H/MAIN) MSXturboR">msx_CHGCPU()</a>, this function can be used on any MSX platform.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1" title="BIOS : CHGCPU (0180H/MAIN) MSXturboR">msx_CHGCPU()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="msx__set__cpu__mode_8c_source.html#l00018">18</a> of file <a class="el" href="msx__set__cpu__mode_8c_source.html">msx_set_cpu_mode.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a6affd3a7801ad8c6c255400f0a391cda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6affd3a7801ad8c6c255400f0a391cda">&#9670;&nbsp;</a></span>MSX_SYSTEM_VERSION_CODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t MSX_SYSTEM_VERSION_CODE</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Major version code of MSX BIOS. </p>
-
-<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00024">24</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
-
-</div>
-</div>
-<a id="a91e2a52aaf73b50f909f12bb9f9fc9bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91e2a52aaf73b50f909f12bb9f9fc9bc">&#9670;&nbsp;</a></span>INTERNATIONAL_ID_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t INTERNATIONAL_ID_1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>International identifier code #1 of MSX BIOS. </p>
-
-<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00029">29</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
-
-</div>
-</div>
-<a id="a0c64be4c8a1cc67033892d7f4d83ac7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c64be4c8a1cc67033892d7f4d83ac7a">&#9670;&nbsp;</a></span>INTERNATIONAL_ID_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t INTERNATIONAL_ID_2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>International identifier code #2 of MSX BIOS. </p>
-
-<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00034">34</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="msx__set__cpu__mode_8c_source.html#l00016">16</a> of file <a class="el" href="msx__set__cpu__mode_8c_source.html">msx_set_cpu_mode.c</a>.</p>
 
 </div>
 </div>

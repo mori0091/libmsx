@@ -2,6 +2,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
     [ "interrupt.c", "interrupt_8c.html", "interrupt_8c" ],
     [ "joypad_get_state.c", "joypad__get__state_8c.html", "joypad__get__state_8c" ],
+    [ "msx_CHGCPU.c", "msx__CHGCPU_8c.html", "msx__CHGCPU_8c" ],
+    [ "msx_GTSTCK.c", "msx__GTSTCK_8c.html", "msx__GTSTCK_8c" ],
+    [ "msx_GTTRIG.c", "msx__GTTRIG_8c.html", "msx__GTTRIG_8c" ],
     [ "msx_set_cpu_mode.c", "msx__set__cpu__mode_8c.html", "msx__set__cpu__mode_8c" ],
     [ "psg_get.c", "psg__get_8c.html", "psg__get_8c" ],
     [ "psg_init.c", "psg__init_8c.html", "psg__init_8c" ],

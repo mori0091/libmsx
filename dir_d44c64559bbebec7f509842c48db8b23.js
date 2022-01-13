@@ -1,6 +1,8 @@
 var dir_d44c64559bbebec7f509842c48db8b23 =
 [
     [ "bios.h", "bios_8h.html", "bios_8h" ],
+    [ "bios_const.h", "bios__const_8h.html", "bios__const_8h" ],
+    [ "bios_entry.h", "bios__entry_8h.html", "bios__entry_8h" ],
     [ "input.h", "input_8h.html", "input_8h" ],
     [ "interrupt.h", "interrupt_8h.html", "interrupt_8h" ],
     [ "io.h", "io_8h.html", "io_8h" ],

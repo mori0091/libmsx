@@ -1,10 +1,14 @@
 <map id="include/bios.h" name="include/bios.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3132,5,3233,32"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3460,5,3561,32"/>
 <area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,244,107,271"/>
 <area shape="rect" id="node3" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="2975,80,3073,107"/>
-<area shape="rect" id="node43" href="$msx__set__cpu__mode_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3097,80,3268,107"/>
-<area shape="rect" id="node44" href="$sleep__millis_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3292,80,3415,107"/>
-<area shape="rect" id="node45" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3439,80,3529,107"/>
+<area shape="rect" id="node43" href="$joypad__get__state_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3097,80,3249,107"/>
+<area shape="rect" id="node44" href="$msx__CHGCPU_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3274,80,3417,107"/>
+<area shape="rect" id="node45" href="$msx__GTSTCK_8c.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="3441,80,3580,107"/>
+<area shape="rect" id="node46" href="$msx__GTTRIG_8c.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="3605,80,3739,107"/>
+<area shape="rect" id="node47" href="$msx__set__cpu__mode_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3764,80,3935,107"/>
+<area shape="rect" id="node48" href="$sleep__millis_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3959,80,4081,107"/>
+<area shape="rect" id="node49" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="4106,80,4195,107"/>
 <area shape="rect" id="node4" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="157,162,296,189"/>
 <area shape="rect" id="node8" href="$vdp_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="320,162,395,189"/>
 <area shape="rect" id="node9" href="$vdp__cmd__execute_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="419,162,578,189"/>

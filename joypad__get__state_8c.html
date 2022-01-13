@@ -84,8 +84,8 @@ $(document).ready(function(){initNavTree('joypad__get__state_8c.html',''); initR
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">joypad_get_state.c File Reference</div>  </div>
 </div><!--header-->
@@ -93,28 +93,29 @@ $(document).ready(function(){initNavTree('joypad__get__state_8c.html',''); initR
 
 <p>Copyright (c) 2021 Daishi Mori (mori0091)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="input_8h_source.html">../include/input.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="psg_8h_source.html">../include/psg.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="bios_8h_source.html">../include/bios.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="input_8h_source.html">../include/input.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for joypad_get_state.c:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="joypad__get__state_8c__incl.svg" width="290" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="joypad__get__state_8c__incl.svg" width="316" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
 <p><a href="joypad__get__state_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a9be96c80705518e5d0dedf2174b43149"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="joypad__get__state_8c.html#a9be96c80705518e5d0dedf2174b43149">KANA_LAMP_OFF</a>&#160;&#160;&#160;(0x080)</td></tr>
-<tr class="separator:a9be96c80705518e5d0dedf2174b43149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a087c749840978e4916c876d906668397"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="joypad__get__state_8c.html#a087c749840978e4916c876d906668397">joypad_get_state</a> (uint8_t controller)</td></tr>
+<tr class="memdesc:a087c749840978e4916c876d906668397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status of the joystick buttons and levers.  <a href="joypad__get__state_8c.html#a087c749840978e4916c876d906668397">More...</a><br /></td></tr>
 <tr class="separator:a087c749840978e4916c876d906668397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8dd23014e79ffa30982a669044cf8de4"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="joypad__get__state_8c.html#a8dd23014e79ffa30982a669044cf8de4">lot</a> []</td></tr>
+<tr class="separator:a8dd23014e79ffa30982a669044cf8de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright (c) 2021 Daishi Mori (mori0091) </p>
@@ -122,24 +123,7 @@ Functions</h2></td></tr>
 <p>GitHub libmsx project <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
 
 <p class="definition">Definition in file <a class="el" href="joypad__get__state_8c_source.html">joypad_get_state.c</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a9be96c80705518e5d0dedf2174b43149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9be96c80705518e5d0dedf2174b43149">&#9670;&nbsp;</a></span>KANA_LAMP_OFF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KANA_LAMP_OFF&#160;&#160;&#160;(0x080)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="joypad__get__state_8c_source.html#l00017">17</a> of file <a class="el" href="joypad__get__state_8c_source.html">joypad_get_state.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a087c749840978e4916c876d906668397"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a087c749840978e4916c876d906668397">&#9670;&nbsp;</a></span>joypad_get_state()</h2>
 
@@ -156,7 +140,77 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="joypad__get__state_8c_source.html#l00019">19</a> of file <a class="el" href="joypad__get__state_8c_source.html">joypad_get_state.c</a>.</p>
+<p>Get the status of the joystick buttons and levers. </p>
+<p>Get the status of the two trigger buttons and eight-way lever of the specified joystick (or SPACE key and arrow keys of the keyboard).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">controller</td><td>joystick number<ul>
+<li><code>0</code> : keyboard (the arrow keys and the SPACE key)</li>
+<li><code>1</code> : joystick #1</li>
+<li><code>2</code> : joystick #2</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status of buttons.<br  />
+ the following bits will be <code>1</code> if corresponding buttons / keys were pressed or will be <code>0</code> if released.<ul>
+<li><code>bit #0</code> : VK_UP</li>
+<li><code>bit #1</code> : VK_DOWN</li>
+<li><code>bit #2</code> : VK_LEFT</li>
+<li><code>bit #3</code> : VK_RIGHT</li>
+<li><code>bit #4</code> : VK_FIRE_0</li>
+<li><code>bit #5</code> : VK_FIRE_1</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Each bit of the return value is independent and dedicated to the corresponding button/key. Therefore, a single call to <a class="el" href="input_8h.html#a087c749840978e4916c876d906668397" title="Get the status of the joystick buttons and levers.">joypad_get_state()</a> can be used to get the state of all buttons on the specified joystick.</dd>
+<dd>
+For example, if you push the joystick lever to the upper right and press trigger #1, bit #0, bit #3, and bit #4 of the return value will be set to 1 (i.e., the value <code>VK_UP | VK_RIGHT | VK_FIRE_0</code> will be returned).</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8" title="BIOS : GTSTCK (00D5H / MAIN) MSX">msx_GTSTCK()</a> </dd>
+<dd>
+<a class="el" href="bios_8h.html#a68a83910179dac98a2d038c99ea55abf" title="BIOS : GTTRIG (00D8H / MAIN) MSX">msx_GTTRIG()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="joypad__get__state_8c_source.html#l00067">67</a> of file <a class="el" href="joypad__get__state_8c_source.html">joypad_get_state.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a8dd23014e79ffa30982a669044cf8de4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dd23014e79ffa30982a669044cf8de4">&#9670;&nbsp;</a></span>lot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t lot[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">  [0] = 0,</div>
+<div class="line">  [1] = <a class="code" href="input_8h.html#a57a88ceb387a03c046c9c51a8c154e05">VK_UP</a>,</div>
+<div class="line">  [2] = <a class="code" href="input_8h.html#a57a88ceb387a03c046c9c51a8c154e05">VK_UP</a>   | <a class="code" href="input_8h.html#abde1a28b80e3625c66ee269c3dec02f0">VK_RIGHT</a>,</div>
+<div class="line">  [3] =           <a class="code" href="input_8h.html#abde1a28b80e3625c66ee269c3dec02f0">VK_RIGHT</a>,</div>
+<div class="line">  [4] = <a class="code" href="input_8h.html#ac0d40bc0c552d2a841591717eb21f24e">VK_DOWN</a> | <a class="code" href="input_8h.html#abde1a28b80e3625c66ee269c3dec02f0">VK_RIGHT</a>,</div>
+<div class="line">  [5] = <a class="code" href="input_8h.html#ac0d40bc0c552d2a841591717eb21f24e">VK_DOWN</a>,</div>
+<div class="line">  [6] = <a class="code" href="input_8h.html#ac0d40bc0c552d2a841591717eb21f24e">VK_DOWN</a> | <a class="code" href="input_8h.html#abc5b23d7329364d2b0045bdbde9ef826">VK_LEFT</a>,</div>
+<div class="line">  [7] =           <a class="code" href="input_8h.html#abc5b23d7329364d2b0045bdbde9ef826">VK_LEFT</a>,</div>
+<div class="line">  [8] = <a class="code" href="input_8h.html#a57a88ceb387a03c046c9c51a8c154e05">VK_UP</a>   | <a class="code" href="input_8h.html#abc5b23d7329364d2b0045bdbde9ef826">VK_LEFT</a>,</div>
+<div class="line">}</div>
+<div class="ttc" id="ainput_8h_html_a57a88ceb387a03c046c9c51a8c154e05"><div class="ttname"><a href="input_8h.html#a57a88ceb387a03c046c9c51a8c154e05">VK_UP</a></div><div class="ttdeci">#define VK_UP</div><div class="ttdoc">Bitmask for UP direction of joystick or UP arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00026">input.h:26</a></div></div>
+<div class="ttc" id="ainput_8h_html_abc5b23d7329364d2b0045bdbde9ef826"><div class="ttname"><a href="input_8h.html#abc5b23d7329364d2b0045bdbde9ef826">VK_LEFT</a></div><div class="ttdeci">#define VK_LEFT</div><div class="ttdoc">Bitmask for LEFT direction of joystick or LEFT arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00040">input.h:40</a></div></div>
+<div class="ttc" id="ainput_8h_html_abde1a28b80e3625c66ee269c3dec02f0"><div class="ttname"><a href="input_8h.html#abde1a28b80e3625c66ee269c3dec02f0">VK_RIGHT</a></div><div class="ttdeci">#define VK_RIGHT</div><div class="ttdoc">Bitmask for RIGHT direction of joystick or RIGHT arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00047">input.h:47</a></div></div>
+<div class="ttc" id="ainput_8h_html_ac0d40bc0c552d2a841591717eb21f24e"><div class="ttname"><a href="input_8h.html#ac0d40bc0c552d2a841591717eb21f24e">VK_DOWN</a></div><div class="ttdeci">#define VK_DOWN</div><div class="ttdoc">Bitmask for DOWN direction of joystick or DOWN arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00033">input.h:33</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="joypad__get__state_8c_source.html#l00055">55</a> of file <a class="el" href="joypad__get__state_8c_source.html">joypad_get_state.c</a>.</p>
 
 </div>
 </div>

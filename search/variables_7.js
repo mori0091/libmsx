@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['international_5fid_5f1_690',['INTERNATIONAL_ID_1',['../bios_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc',1,'bios.h']]],
-  ['international_5fid_5f2_691',['INTERNATIONAL_ID_2',['../bios_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a',1,'bios.h']]],
-  ['interrupt_5fhandler_692',['interrupt_handler',['../interrupt_8c.html#a3d0ac47ecc205486917816995d5bc148',1,'interrupt.c']]]
+  ['h_5fkeyi_703',['H_KEYI',['../interrupt_8c.html#ae2099c9daed9ab4fad701aa545575da7',1,'interrupt.c']]],
+  ['h_5ftimi_704',['H_TIMI',['../interrupt_8c.html#a5ff31b3f4a38d6d5d447d65fcea0f540',1,'interrupt.c']]],
+  ['hold_5ftime_705',['hold_time',['../structsound__eg__AHDSR.html#a21370f5de118aca5b633e0501a668892',1,'sound_eg_AHDSR']]],
+  ['hook_5fkeyi_706',['hook_keyi',['../interrupt_8c.html#a6ce62f96c8b7e90c140f2c085a916669',1,'interrupt.c']]],
+  ['hook_5ftimi_707',['hook_timi',['../interrupt_8c.html#ac9cc5fc93d7556e39b39a9ee0741d478',1,'interrupt.c']]],
+  ['hw_5fenvelope_5fenable_708',['hw_envelope_enable',['../structsound__channel.html#a08683c480a2ed674e7e8c5b666e173f1',1,'sound_channel']]]
 ];

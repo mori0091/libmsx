@@ -16,7 +16,6 @@
 
 #pragma once
 
-#include <assert.h>
 #include <stdint.h>
 
 #define VK_UP     (1 << 0)

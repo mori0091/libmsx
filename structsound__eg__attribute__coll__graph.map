@@ -1,5 +1,5 @@
 <map id="sound_eg_attribute" name="sound_eg_attribute">
-<area shape="rect" id="node1" title="Attributes of a software envelope generator object." alt="" coords="75,95,207,121"/>
-<area shape="rect" id="node2" href="$structsound__eg__LPCM.html" title="Parameters for linear PCM (8&#45;bit, 60Hz) envelope generator." alt="" coords="5,5,128,32"/>
-<area shape="rect" id="node3" href="$structsound__eg__AHDSR.html" title="Parameters for AHDSR envelope generator." alt="" coords="152,5,283,32"/>
+<area shape="rect" id="node1" title="Attributes of a software envelope generator object." alt="" coords="79,95,211,121"/>
+<area shape="rect" id="node2" href="$structsound__eg__AHDSR.html" title="Parameters for AHDSR envelope generator." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node3" href="$structsound__eg__LPCM.html" title="Parameters for linear PCM (8&#45;bit, 60Hz) envelope generator." alt="" coords="160,5,283,32"/>
 </map>

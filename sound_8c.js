@@ -2,6 +2,8 @@ var sound_8c =
 [
     [ "sound_channel", "structsound__channel.html", "structsound__channel" ],
     [ "sound_state", "structsound__state.html", "structsound__state" ],
+    [ "PSG_SET", "sound_8c.html#a7ae7e10344799784eac6a71252a0504a", null ],
+    [ "PSG_GET", "sound_8c.html#a421a74b73ba9eece3fd31db4f32f25d1", null ],
     [ "COUNT_PER_SECOND", "sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035", null ],
     [ "COUNT_PER_TICK_60HZ", "sound_8c.html#ac174db55392218c66ba57b1392d76b2f", null ],
     [ "ctx", "sound_8c.html#ae2fda8859e12165aeda509a17512572c", null ],

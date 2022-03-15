@@ -13,6 +13,15 @@
 
 #include "../include/bios.h"
 
+#if (__SDCCCALL == 1)
+
+uint8_t msx_GTTRIG(const uint8_t a) __naked {
+  ((void)a);
+  __asm__("jp _GTTRIG");
+}
+
+#else
+
 uint8_t msx_GTTRIG(const uint8_t a) __naked {
   ((void)a);
   __asm__("ld   hl, #2");
@@ -22,3 +31,5 @@ uint8_t msx_GTTRIG(const uint8_t a) __naked {
   __asm__("ld   l, a");
   __asm__("ret");
 }
+
+#endif

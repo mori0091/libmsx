@@ -13,6 +13,18 @@
 
 #include "../include/bios.h"
 
+#if (__SDCCCALL == 1)
+
+uint8_t msx_GTSTCK(const uint8_t a) __naked {
+  ((void)a);
+  __asm__("push ix");           // save IX register (frame pointer)
+  __asm__("call _GTSTCK");
+  __asm__("pop  ix");           // restore IX register
+  __asm__("ret");
+}
+
+#else
+
 uint8_t msx_GTSTCK(const uint8_t a) __naked {
   ((void)a);
   __asm__("ld   hl, #2");
@@ -24,3 +36,5 @@ uint8_t msx_GTSTCK(const uint8_t a) __naked {
   __asm__("pop  ix");           // restore IX register
   __asm__("ret");
 }
+
+#endif

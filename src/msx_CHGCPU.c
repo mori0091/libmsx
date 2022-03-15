@@ -13,6 +13,16 @@
 
 #include "../include/bios.h"
 
+#if (__SDCCCALL == 1)
+
+void msx_CHGCPU(const uint8_t mode) __naked {
+  ((void)mode);
+  __asm__("and a, #0x83");
+  __asm__("jp _CHGCPU");
+}
+
+#else
+
 void msx_CHGCPU(const uint8_t mode) __naked {
   ((void)mode);
   __asm__("ld hl, #2+0");
@@ -21,3 +31,5 @@ void msx_CHGCPU(const uint8_t mode) __naked {
   __asm__("and a, #0x83");
   __asm__("jp _CHGCPU");
 }
+
+#endif

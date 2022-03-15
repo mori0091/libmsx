@@ -90,18 +90,32 @@ $(document).ready(function(){initNavTree('msx__GTSTCK_8c_source.html',''); initR
 <a href="msx__GTSTCK_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span><span class="preprocessor">#include &quot;../include/bios.h&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8">   16</a></span>uint8_t <a class="code hl_function" href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a) __naked {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  ((void)a);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  __asm__(<span class="stringliteral">&quot;ld   hl, #2&quot;</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  __asm__(<span class="stringliteral">&quot;add  hl, sp&quot;</span>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  __asm__(<span class="stringliteral">&quot;ld   a, (hl)&quot;</span>);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  __asm__(<span class="stringliteral">&quot;push ix&quot;</span>);           <span class="comment">// save IX register (frame pointer)</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  __asm__(<span class="stringliteral">&quot;call _GTSTCK&quot;</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  __asm__(<span class="stringliteral">&quot;ld   l, a&quot;</span>);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  __asm__(<span class="stringliteral">&quot;pop  ix&quot;</span>);           <span class="comment">// restore IX register</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  __asm__(<span class="stringliteral">&quot;ret&quot;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
-<div class="ttc" id="amsx__GTSTCK_8c_html_a58e32ee1cf193b035975ab990e62a13c"><div class="ttname"><a href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a></div><div class="ttdeci">uint8_t msx_GTSTCK(const uint8_t a) __naked</div><div class="ttdoc">BIOS : GTSTCK (00D5H / MAIN) MSX</div><div class="ttdef"><b>Definition:</b> <a href="msx__GTSTCK_8c_source.html#l00016">msx_GTSTCK.c:16</a></div></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if (__SDCCCALL == 1)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>uint8_t <a class="code hl_function" href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a) __naked {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  ((void)a);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  __asm__(<span class="stringliteral">&quot;push ix&quot;</span>);           <span class="comment">// save IX register (frame pointer)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  __asm__(<span class="stringliteral">&quot;call _GTSTCK&quot;</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  __asm__(<span class="stringliteral">&quot;pop  ix&quot;</span>);           <span class="comment">// restore IX register</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  __asm__(<span class="stringliteral">&quot;ret&quot;</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8">   28</a></span>uint8_t <a class="code hl_function" href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a) __naked {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  ((void)a);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  __asm__(<span class="stringliteral">&quot;ld   hl, #2&quot;</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  __asm__(<span class="stringliteral">&quot;add  hl, sp&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  __asm__(<span class="stringliteral">&quot;ld   a, (hl)&quot;</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  __asm__(<span class="stringliteral">&quot;push ix&quot;</span>);           <span class="comment">// save IX register (frame pointer)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  __asm__(<span class="stringliteral">&quot;call _GTSTCK&quot;</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  __asm__(<span class="stringliteral">&quot;ld   l, a&quot;</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  __asm__(<span class="stringliteral">&quot;pop  ix&quot;</span>);           <span class="comment">// restore IX register</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  __asm__(<span class="stringliteral">&quot;ret&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="amsx__GTSTCK_8c_html_a58e32ee1cf193b035975ab990e62a13c"><div class="ttname"><a href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a></div><div class="ttdeci">uint8_t msx_GTSTCK(const uint8_t a) __naked</div><div class="ttdoc">BIOS : GTSTCK (00D5H / MAIN) MSX</div><div class="ttdef"><b>Definition:</b> <a href="msx__GTSTCK_8c_source.html#l00028">msx_GTSTCK.c:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -4,17 +4,19 @@
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
- * This software is released under the MIT License.
+ * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
- * GitHub libmsx project
+ * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
+
+#pragma once
 
 #ifndef MSX_H
 #define MSX_H
 
-#pragma once
+#include "config.h"
 
 #include "interrupt.h"
 

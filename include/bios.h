@@ -7,14 +7,14 @@
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
- * GitHub libmsx project
+ * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
 
+#pragma once
+
 #ifndef BIOS_H
 #define BIOS_H
-
-#pragma once
 
 #include "bios_const.h"
 #include "bios_entry.h"

@@ -2,22 +2,25 @@
 /**
  * \file bios_entry.h
  * \brief Assembler entry points for MSX BIOS functions.
+ * \note This defines address and name of entry points.
  *
  * Copyright (c) 2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
- * GitHub libmsx project
+ * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
+
+#pragma once
 
 #ifndef BIOS_ENTRY_H
 #define BIOS_ENTRY_H
 
-#pragma once
-
 #include <stdint.h>
+
+#include "config.h"
 
 /**
  * BIOS : GTSTCK (00D5H / MAIN) `MSX`.

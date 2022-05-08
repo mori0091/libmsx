@@ -4,17 +4,17 @@
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
- * This software is released under the MIT License.
+ * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
- * GitHub libmsx project
+ * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
 
+#pragma once
+
 #ifndef SPRITE_H
 #define SPRITE_H
-
-#pragma once
 
 #include <stdint.h>
 
@@ -57,7 +57,7 @@ void sprite_set_color(struct sprite* s, tagged_color_t tagged_color);
  */
 inline
 void vmem_set_sprite(vmemptr_t base, uint8_t plane, const struct sprite* s) {
-  vmem_write(base + plane * sizeof(struct sprite), s, sizeof(struct sprite));
+  vmem_write(base + plane * sizeof(struct sprite), (void*)s, sizeof(struct sprite));
 }
 
 #endif

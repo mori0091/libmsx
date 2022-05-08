@@ -4,19 +4,24 @@
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
- * This software is released under the MIT License.
+ * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
- * GitHub libmsx project
+ * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
+
+#pragma once
 
 #ifndef WORKAREA_H
 #define WORKAREA_H
 
-#pragma once
-
 #include <stdint.h>
+
+#include "config.h"
+
+/** key click beep swith (0:off, non-zero:on) */
+static volatile __at (0xf3db) uint8_t CLIKSW;
 
 static volatile __at (0xf3df) uint8_t RG0SAV;
 static volatile __at (0xf3e0) uint8_t RG1SAV;

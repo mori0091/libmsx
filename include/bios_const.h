@@ -2,22 +2,24 @@
 /**
  * \file bios_const.h
  * \brief Constant variables in the MSX BIOS ROM.
+ * \note This defines address, type, and name of variables.
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
- * GitHub libmsx project
+ * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
+
+#pragma once
 
 #ifndef BIOS_CONST_H
 #define BIOS_CONST_H
 
-#pragma once
-
 #include <stdint.h>
+#include "config.h"
 
 /**
  * International identifier code #1 of MSX BIOS (002BH / MAIN).

@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /**
- * \file ay_3_8910.h
+ * \file config.h
  *
  * Copyright (c) 2022 Daishi Mori (mori0091)
  *
@@ -13,15 +13,16 @@
 
 #pragma once
 
-#ifndef AY_3_8910_H
-#define AY_3_8910_H
+#ifndef CONFIG_H_
+#define CONFIG_H_
 
-#include "psg.h"
-
-extern uint8_t ay_3_8910_buffer[14];
-
-void ay_3_8910_init(void);
-
-void ay_3_8910_play(void);
-
+#if !defined(__SDCC)
+// omits SDCC specific keywords
+#  define __at(x)
+#  define __sfr char
+#  define __critical
+#  define __naked
+#  define __banked
 #endif
+
+#endif // CONFIG_H_

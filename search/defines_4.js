@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['hold_5fphase_0',['HOLD_PHASE',['../sound__eg__AHDSR_8c.html#a0423e639047abad5105635835c34bc5a',1,'sound_eg_AHDSR.c']]],
-  ['hold_5ftime_1',['HOLD_TIME',['../sound__eg__AHDSR_8c.html#a3f171629948a6f7ad5c9e9a4d9f1366c',1,'sound_eg_AHDSR.c']]]
+  ['data_0',['DATA',['../sound__eg__LPCM_8c.html#aad9ae913bdfab20dd94ad04ee2d5b045',1,'sound_eg_LPCM.c']]],
+  ['decay_5fphase_1',['DECAY_PHASE',['../sound__eg__AHDSR_8c.html#a2c65c583bd4b8ed85ed09ee45a97e5cc',1,'sound_eg_AHDSR.c']]],
+  ['decay_5frate_2',['DECAY_RATE',['../sound__eg__AHDSR_8c.html#a34e67bacdf31e21c0bd9ef4542eaedf4',1,'sound_eg_AHDSR.c']]]
 ];

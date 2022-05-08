@@ -96,18 +96,19 @@ $(document).ready(function(){initNavTree('vdp__set__hscroll_8c_source.html','');
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  uint8_t r26 = (x &gt;&gt; 3) &amp; 0x3f;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  uint8_t r27 = (~x + 1) &amp; 0x07;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> (r27) r26++;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  __critical {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_define" href="config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056">__critical</a> {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_variable" href="workarea_8h.html#ae85872a73daf84bc7538b12205d5c971">RG26SA</a> = r26;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_variable" href="workarea_8h.html#ab1b98fc221e0ffd30f8ba8db259a93c9">RG27SA</a> = r27;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="vdp_8h.html#af53955bc84b9c190f04abdd9206f6453">VDP_SET_CONTROL_REGISTER</a>(26, r26);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="vdp_8h.html#af53955bc84b9c190f04abdd9206f6453">VDP_SET_CONTROL_REGISTER</a>(27, r27);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aconfig_8h_html_adf60f22bd0a17f4f67e98819a5fdb056"><div class="ttname"><a href="config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056">__critical</a></div><div class="ttdeci">#define __critical</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00023">config.h:23</a></div></div>
 <div class="ttc" id="avdp_8h_html_af53955bc84b9c190f04abdd9206f6453"><div class="ttname"><a href="vdp_8h.html#af53955bc84b9c190f04abdd9206f6453">VDP_SET_CONTROL_REGISTER</a></div><div class="ttdeci">void VDP_SET_CONTROL_REGISTER(uint8_t reg, uint8_t val)</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00030">vdp.h:30</a></div></div>
 <div class="ttc" id="avdp__internal_8h_html"><div class="ttname"><a href="vdp__internal_8h.html">vdp_internal.h</a></div><div class="ttdoc">Copyright (c) 2021 Daishi Mori (mori0091)</div></div>
 <div class="ttc" id="avdp__set__hscroll_8c_html_a7e46df6cf6d6959b4232cb7cd7d5feb2"><div class="ttname"><a href="vdp__set__hscroll_8c.html#a7e46df6cf6d6959b4232cb7cd7d5feb2">vdp_set_hscroll</a></div><div class="ttdeci">void vdp_set_hscroll(uint16_t x)</div><div class="ttdoc">Set VDP horizontal display offset register.</div><div class="ttdef"><b>Definition:</b> <a href="vdp__set__hscroll_8c_source.html#l00018">vdp_set_hscroll.c:18</a></div></div>
-<div class="ttc" id="aworkarea_8h_html_ab1b98fc221e0ffd30f8ba8db259a93c9"><div class="ttname"><a href="workarea_8h.html#ab1b98fc221e0ffd30f8ba8db259a93c9">RG27SA</a></div><div class="ttdeci">static volatile uint8_t RG27SA</div><div class="ttdef"><b>Definition:</b> <a href="workarea_8h_source.html#l00049">workarea.h:49</a></div></div>
-<div class="ttc" id="aworkarea_8h_html_ae85872a73daf84bc7538b12205d5c971"><div class="ttname"><a href="workarea_8h.html#ae85872a73daf84bc7538b12205d5c971">RG26SA</a></div><div class="ttdeci">static volatile uint8_t RG26SA</div><div class="ttdef"><b>Definition:</b> <a href="workarea_8h_source.html#l00048">workarea.h:48</a></div></div>
+<div class="ttc" id="aworkarea_8h_html_ab1b98fc221e0ffd30f8ba8db259a93c9"><div class="ttname"><a href="workarea_8h.html#ab1b98fc221e0ffd30f8ba8db259a93c9">RG27SA</a></div><div class="ttdeci">static volatile uint8_t RG27SA</div><div class="ttdef"><b>Definition:</b> <a href="workarea_8h_source.html#l00054">workarea.h:54</a></div></div>
+<div class="ttc" id="aworkarea_8h_html_ae85872a73daf84bc7538b12205d5c971"><div class="ttname"><a href="workarea_8h.html#ae85872a73daf84bc7538b12205d5c971">RG26SA</a></div><div class="ttdeci">static volatile uint8_t RG26SA</div><div class="ttdef"><b>Definition:</b> <a href="workarea_8h_source.html#l00053">workarea.h:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

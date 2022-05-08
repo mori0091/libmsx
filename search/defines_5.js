@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['length_0',['LENGTH',['../sound__eg__LPCM_8c.html#a30362161c93e3f1a4ee4c673f535b5a8',1,'sound_eg_LPCM.c']]]
+  ['end_5fof_5fphase_0',['END_OF_PHASE',['../sound__eg__AHDSR_8c.html#a8034a0e7896d755615b8b0316dd303a0',1,'sound_eg_AHDSR.c']]]
 ];

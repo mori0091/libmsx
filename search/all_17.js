@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_0',['y',['../structvec2i.html#a22bb277fc71e43cb89c17cce26cb5503',1,'vec2i::y()'],['../structsprite.html#a640b2b10663ab61156302c3f64b37989',1,'sprite::y()']]]
+  ['x_0',['x',['../structvec2i.html#ac10174aae1d67addfa1b70df98c5faf3',1,'vec2i::x()'],['../structsprite.html#ae721ff1bb077d5d54ee08a4ea0ae607c',1,'sprite::x()']]]
 ];

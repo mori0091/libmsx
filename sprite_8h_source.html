@@ -88,10 +88,10 @@ $(document).ready(function(){initNavTree('sprite_8h_source.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <a href="sprite_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span><span class="preprocessor">#ifndef SPRITE_H</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define SPRITE_H</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifndef SPRITE_H</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="sprite_8h.html#ae87d4efcec93345966e6ef936b562875">   17</a></span><span class="preprocessor">#define SPRITE_H</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('sprite_8h_source.html',''); initResiza
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">inline</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">vmem_set_sprite</a>(<a class="code hl_typedef" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> base, uint8_t plane, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structsprite.html">sprite</a>* s) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_function" href="vmem_8h.html#a17658e78f1b4ab50df4781d2333ce236">vmem_write</a>(base + plane * <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structsprite.html">sprite</a>), s, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structsprite.html">sprite</a>));</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_function" href="vmem_8h.html#a17658e78f1b4ab50df4781d2333ce236">vmem_write</a>(base + plane * <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structsprite.html">sprite</a>), (<span class="keywordtype">void</span>*)s, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code hl_struct" href="structsprite.html">sprite</a>));</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>

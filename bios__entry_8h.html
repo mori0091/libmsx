@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('bios__entry_8h.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">bios_entry.h File Reference</div></div>
 </div><!--header-->
@@ -93,12 +94,13 @@ $(document).ready(function(){initNavTree('bios__entry_8h.html',''); initResizabl
 <p>Assembler entry points for MSX BIOS functions.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for bios_entry.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="bios__entry_8h__incl.svg" width="147" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="bios__entry_8h__incl.svg" width="166" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -112,6 +114,11 @@ $(document).ready(function(){initNavTree('bios__entry_8h.html',''); initResizabl
 </div>
 <p><a href="bios__entry_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a43cf7de11d57db1dc1ef1ae8d1d3acba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios__entry_8h.html#a43cf7de11d57db1dc1ef1ae8d1d3acba">BIOS_ENTRY_H</a></td></tr>
+<tr class="separator:a43cf7de11d57db1dc1ef1ae8d1d3acba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a7dfb0604fdb04a3a658b5e1db04cdefa"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios__entry_8h.html#a7dfb0604fdb04a3a658b5e1db04cdefa">GTSTCK</a></td></tr>
@@ -126,13 +133,32 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Assembler entry points for MSX BIOS functions. </p>
-<p >Copyright (c) 2022 Daishi Mori (mori0091)</p>
+<dl class="section note"><dt>Note</dt><dd>This defines address and name of entry points.</dd></dl>
+<p>Copyright (c) 2022 Daishi Mori (mori0091)</p>
 <p >This software is released under the MIT License.<br  />
 See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
-<p >GitHub libmsx project <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
+<p >GitHub libmsx project<br  />
+<a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
 
 <p class="definition">Definition in file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
-</div><h2 class="groupheader">Variable Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a43cf7de11d57db1dc1ef1ae8d1d3acba" name="a43cf7de11d57db1dc1ef1ae8d1d3acba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43cf7de11d57db1dc1ef1ae8d1d3acba">&#9670;&nbsp;</a></span>BIOS_ENTRY_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIOS_ENTRY_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bios__entry_8h_source.html#l00019">19</a> of file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a7dfb0604fdb04a3a658b5e1db04cdefa" name="a7dfb0604fdb04a3a658b5e1db04cdefa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7dfb0604fdb04a3a658b5e1db04cdefa">&#9670;&nbsp;</a></span>GTSTCK</h2>
 
@@ -192,7 +218,7 @@ MSX Datapack Volume 2, pp.70 (w/ error) </dd>
 <dd>
 MSX Datapack Volume 2, pp.612 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios__entry_8h_source.html#l00051">51</a> of file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios__entry_8h_source.html#l00054">54</a> of file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
 
 </div>
 </div>
@@ -249,7 +275,7 @@ MSX Datapack Volume 2, pp.71 </dd>
 <dd>
 MSX Datapack Volume 2, pp.613 (w/ error) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios__entry_8h_source.html#l00075">75</a> of file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios__entry_8h_source.html#l00078">78</a> of file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
 
 </div>
 </div>
@@ -309,7 +335,7 @@ MSX Datapack Volume 3, pp.13 </dd>
 <dd>
 MSX Datapack Volume 3, pp.25 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios__entry_8h_source.html#l00118">118</a> of file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios__entry_8h_source.html#l00121">121</a> of file <a class="el" href="bios__entry_8h_source.html">bios_entry.h</a>.</p>
 
 </div>
 </div>

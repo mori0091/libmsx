@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['attack_5fphase_0',['ATTACK_PHASE',['../sound__eg__AHDSR_8c.html#af35e52e13f52593d64f565f97bafc90b',1,'sound_eg_AHDSR.c']]],
-  ['attack_5frate_1',['ATTACK_RATE',['../sound__eg__AHDSR_8c.html#ac439f1ed3c177870e4aa5da7a6586890',1,'sound_eg_AHDSR.c']]],
-  ['await_5finterrupt_2',['await_interrupt',['../interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4',1,'interrupt.h']]]
+  ['_5f_5fat_0',['__at',['../config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556',1,'config.h']]],
+  ['_5f_5fbanked_1',['__banked',['../config_8h.html#af666593cde636407eb5fc23658dc14d5',1,'config.h']]],
+  ['_5f_5fcritical_2',['__critical',['../config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056',1,'config.h']]],
+  ['_5f_5fnaked_3',['__naked',['../config_8h.html#abcaf90e207efed7e5d0887aee08c7338',1,'config.h']]],
+  ['_5f_5fsfr_4',['__sfr',['../config_8h.html#ac6697545fa668cd6d830013d8c6a3fc3',1,'config.h']]]
 ];

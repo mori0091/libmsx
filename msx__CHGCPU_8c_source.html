@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('msx__CHGCPU_8c_source.html',''); initR
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if (__SDCCCALL == 1)</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="msx__CHGCPU_8c.html#a8423582c073c3638929643157b94c99a">msx_CHGCPU</a>(<span class="keyword">const</span> uint8_t mode) __naked {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="msx__CHGCPU_8c.html#a8423582c073c3638929643157b94c99a">msx_CHGCPU</a>(<span class="keyword">const</span> uint8_t mode) <a class="code hl_define" href="config_8h.html#abcaf90e207efed7e5d0887aee08c7338">__naked</a> {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  ((void)mode);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  __asm__(<span class="stringliteral">&quot;and a, #0x83&quot;</span>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  __asm__(<span class="stringliteral">&quot;jp _CHGCPU&quot;</span>);</div>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('msx__CHGCPU_8c_source.html',''); initR
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="msx__CHGCPU_8c.html#a8423582c073c3638929643157b94c99a">msx_CHGCPU</a>(<span class="keyword">const</span> uint8_t mode) __naked {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="msx__CHGCPU_8c.html#a8423582c073c3638929643157b94c99a">msx_CHGCPU</a>(<span class="keyword">const</span> uint8_t mode) <a class="code hl_define" href="config_8h.html#abcaf90e207efed7e5d0887aee08c7338">__naked</a> {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  ((void)mode);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  __asm__(<span class="stringliteral">&quot;ld hl, #2+0&quot;</span>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  __asm__(<span class="stringliteral">&quot;add hl, sp&quot;</span>);</div>
@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('msx__CHGCPU_8c_source.html',''); initR
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_8h_html_abcaf90e207efed7e5d0887aee08c7338"><div class="ttname"><a href="config_8h.html#abcaf90e207efed7e5d0887aee08c7338">__naked</a></div><div class="ttdeci">#define __naked</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00024">config.h:24</a></div></div>
 <div class="ttc" id="amsx__CHGCPU_8c_html_a8423582c073c3638929643157b94c99a"><div class="ttname"><a href="msx__CHGCPU_8c.html#a8423582c073c3638929643157b94c99a">msx_CHGCPU</a></div><div class="ttdeci">void msx_CHGCPU(const uint8_t mode) __naked</div><div class="ttdoc">BIOS : CHGCPU (0180H/MAIN) MSXturboR</div><div class="ttdef"><b>Definition:</b> <a href="msx__CHGCPU_8c_source.html#l00026">msx_CHGCPU.c:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

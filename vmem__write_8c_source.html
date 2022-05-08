@@ -102,13 +102,14 @@ $(document).ready(function(){initNavTree('vmem__write_8c_source.html',''); initR
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// }</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="vmem_8h.html#a17658e78f1b4ab50df4781d2333ce236">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vmem__write_8c.html#a17658e78f1b4ab50df4781d2333ce236">vmem_write</a>(<a class="code hl_typedef" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> dst, <span class="keywordtype">void</span>* src, uint16_t len) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  __critical {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_define" href="config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056">__critical</a> {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="vdp_8h.html#a2363013478b321749486d2e63b9947ba">VDP_SET_VMEM_WRITE_POINTER</a>(dst);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordflow">for</span> (uint8_t* p = src; len--; ) {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="vdp_8h.html#af6052365cbc622c55c3e8892b991b746">VDP_SET_VMEM_VALUE</a>(*p++);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="ttc" id="aconfig_8h_html_adf60f22bd0a17f4f67e98819a5fdb056"><div class="ttname"><a href="config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056">__critical</a></div><div class="ttdeci">#define __critical</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00023">config.h:23</a></div></div>
 <div class="ttc" id="avdp_8h_html_a2363013478b321749486d2e63b9947ba"><div class="ttname"><a href="vdp_8h.html#a2363013478b321749486d2e63b9947ba">VDP_SET_VMEM_WRITE_POINTER</a></div><div class="ttdeci">void VDP_SET_VMEM_WRITE_POINTER(vmemptr_t loc)</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00055">vdp.h:55</a></div></div>
 <div class="ttc" id="avdp_8h_html_af6052365cbc622c55c3e8892b991b746"><div class="ttname"><a href="vdp_8h.html#af6052365cbc622c55c3e8892b991b746">VDP_SET_VMEM_VALUE</a></div><div class="ttdeci">void VDP_SET_VMEM_VALUE(uint8_t val)</div><div class="ttdef"><b>Definition:</b> <a href="vdp_8h_source.html#l00071">vdp.h:71</a></div></div>
 <div class="ttc" id="avdp__internal_8h_html"><div class="ttname"><a href="vdp__internal_8h.html">vdp_internal.h</a></div><div class="ttdoc">Copyright (c) 2021 Daishi Mori (mori0091)</div></div>

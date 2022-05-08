@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('bios__const_8h.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">bios_const.h File Reference</div></div>
 </div><!--header-->
@@ -93,12 +94,13 @@ $(document).ready(function(){initNavTree('bios__const_8h.html',''); initResizabl
 <p>Constant variables in the MSX BIOS ROM.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for bios_const.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="bios__const_8h__incl.svg" width="151" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="bios__const_8h__incl.svg" width="166" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -112,6 +114,11 @@ $(document).ready(function(){initNavTree('bios__const_8h.html',''); initResizabl
 </div>
 <p><a href="bios__const_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ad8c0bb04896170083efc8c7d7d423967"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios__const_8h.html#ad8c0bb04896170083efc8c7d7d423967">BIOS_CONST_H</a></td></tr>
+<tr class="separator:ad8c0bb04896170083efc8c7d7d423967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a91e2a52aaf73b50f909f12bb9f9fc9bc"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a></td></tr>
@@ -126,13 +133,32 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Constant variables in the MSX BIOS ROM. </p>
-<p >Copyright (c) 2021 Daishi Mori (mori0091)</p>
+<dl class="section note"><dt>Note</dt><dd>This defines address, type, and name of variables.</dd></dl>
+<p>Copyright (c) 2021 Daishi Mori (mori0091)</p>
 <p >This software is released under the MIT License.<br  />
 See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
-<p >GitHub libmsx project <a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
+<p >GitHub libmsx project<br  />
+<a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
 
 <p class="definition">Definition in file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
-</div><h2 class="groupheader">Variable Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad8c0bb04896170083efc8c7d7d423967" name="ad8c0bb04896170083efc8c7d7d423967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c0bb04896170083efc8c7d7d423967">&#9670;&nbsp;</a></span>BIOS_CONST_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIOS_CONST_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bios__const_8h_source.html#l00019">19</a> of file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
 <a id="a91e2a52aaf73b50f909f12bb9f9fc9bc" name="a91e2a52aaf73b50f909f12bb9f9fc9bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a91e2a52aaf73b50f909f12bb9f9fc9bc">&#9670;&nbsp;</a></span>INTERNATIONAL_ID_1</h2>
 
@@ -156,7 +182,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 <p>International identifier code #1 of MSX BIOS (002BH / MAIN). </p>
 <dl class="section see"><dt>See also</dt><dd>MSX Datapack Volume 1, pp.322 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios__const_8h_source.html#l00027">27</a> of file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios__const_8h_source.html#l00029">29</a> of file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
 
 </div>
 </div>
@@ -183,7 +209,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 <p>International identifier code #2 of MSX BIOS (002CH / MAIN). </p>
 <dl class="section see"><dt>See also</dt><dd>MSX Datapack Volume 1, pp.322 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios__const_8h_source.html#l00034">34</a> of file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios__const_8h_source.html#l00036">36</a> of file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
 
 </div>
 </div>
@@ -225,7 +251,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 <dd>
 MSX Datapack Volume 3, pp.43 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios__const_8h_source.html#l00051">51</a> of file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios__const_8h_source.html#l00053">53</a> of file <a class="el" href="bios__const_8h_source.html">bios_const.h</a>.</p>
 
 </div>
 </div>

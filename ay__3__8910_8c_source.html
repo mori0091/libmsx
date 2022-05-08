@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('ay__3__8910_8c_source.html',''); initR
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="ay__3__8910_8h.html#a549cb1b577a2dc0269c4744aa8dba0d3">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ay__3__8910_8c.html#a549cb1b577a2dc0269c4744aa8dba0d3">ay_3_8910_play</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  __critical {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_define" href="config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056">__critical</a> {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      uint8_t x = <a class="code hl_variable" href="ay__3__8910_8c.html#a2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a>[7];</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      x &amp;= 0x3f;</div>
@@ -126,6 +126,7 @@ $(document).ready(function(){initNavTree('ay__3__8910_8c_source.html',''); initR
 <div class="ttc" id="aay__3__8910_8c_html_a2ee75153f949aaf13e5aa0dea52fb72f"><div class="ttname"><a href="ay__3__8910_8c.html#a2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a></div><div class="ttdeci">uint8_t ay_3_8910_buffer[14]</div><div class="ttdef"><b>Definition:</b> <a href="ay__3__8910_8c_source.html#l00017">ay_3_8910.c:17</a></div></div>
 <div class="ttc" id="aay__3__8910_8c_html_a549cb1b577a2dc0269c4744aa8dba0d3"><div class="ttname"><a href="ay__3__8910_8c.html#a549cb1b577a2dc0269c4744aa8dba0d3">ay_3_8910_play</a></div><div class="ttdeci">void ay_3_8910_play(void)</div><div class="ttdef"><b>Definition:</b> <a href="ay__3__8910_8c_source.html#l00026">ay_3_8910.c:26</a></div></div>
 <div class="ttc" id="aay__3__8910_8c_html_ac0fa68a646b8593944f5f8243b371a0c"><div class="ttname"><a href="ay__3__8910_8c.html#ac0fa68a646b8593944f5f8243b371a0c">ay_3_8910_init</a></div><div class="ttdeci">void ay_3_8910_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="ay__3__8910_8c_source.html#l00019">ay_3_8910.c:19</a></div></div>
+<div class="ttc" id="aconfig_8h_html_adf60f22bd0a17f4f67e98819a5fdb056"><div class="ttname"><a href="config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056">__critical</a></div><div class="ttdeci">#define __critical</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00023">config.h:23</a></div></div>
 <div class="ttc" id="apsg_8h_html_ae76dc7a8f615f828df6c22c7bf180577"><div class="ttname"><a href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a></div><div class="ttdeci">void psg_set(uint8_t reg, uint8_t val)</div><div class="ttdoc">Write the PSG register value.</div><div class="ttdef"><b>Definition:</b> <a href="psg_8h_source.html#l00049">psg.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

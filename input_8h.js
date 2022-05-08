@@ -1,5 +1,6 @@
 var input_8h =
 [
+    [ "INPUT_H", "input_8h.html#a3124ba59577e5a4c41023f9360aa1458", null ],
     [ "VK_UP", "input_8h.html#a57a88ceb387a03c046c9c51a8c154e05", null ],
     [ "VK_DOWN", "input_8h.html#ac0d40bc0c552d2a841591717eb21f24e", null ],
     [ "VK_LEFT", "input_8h.html#abc5b23d7329364d2b0045bdbde9ef826", null ],

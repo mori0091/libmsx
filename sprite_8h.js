@@ -1,6 +1,7 @@
 var sprite_8h =
 [
     [ "sprite", "structsprite.html", "structsprite" ],
+    [ "SPRITE_H", "sprite_8h.html#ae87d4efcec93345966e6ef936b562875", null ],
     [ "tagged_color_t", "sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c", null ],
     [ "sprite_tag", "sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1", [
       [ "SPRITE_TAG_IC", "sprite_8h.html#a1bcc3bbb6147ac89600bc593acd181f1ab153936187f894853626bd150ddd2131", null ],

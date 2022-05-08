@@ -1,4 +1,5 @@
 <map id="include/bios_const.h" name="include/bios_const.h">
-<area shape="rect" id="node1" title="Constant variables in the MSX BIOS ROM." alt="" coords="5,5,145,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="43,80,107,107"/>
+<area shape="rect" id="node1" title="Constant variables in the MSX BIOS ROM." alt="" coords="11,5,151,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,69,107"/>
+<area shape="rect" id="node3" href="$config_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="93,80,160,107"/>
 </map>

@@ -1,5 +1,7 @@
 var workarea_8h =
 [
+    [ "WORKAREA_H", "workarea_8h.html#ab17199beb488baf080e336e3d3577f57", null ],
+    [ "CLIKSW", "workarea_8h.html#aaa9abc23fbc4a9fd8cb1ad0e4be20fb1", null ],
     [ "RG0SAV", "workarea_8h.html#af0308ee928d41382ca763102fd14b16f", null ],
     [ "RG1SAV", "workarea_8h.html#a0a8aec393b81f957f4280a02ad60df20", null ],
     [ "RG2SAV", "workarea_8h.html#a12695f0805fa75953f0574fb7d3ee2ca", null ],

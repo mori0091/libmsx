@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('msx__GTSTCK_8c_source.html',''); initR
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if (__SDCCCALL == 1)</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>uint8_t <a class="code hl_function" href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a) __naked {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>uint8_t <a class="code hl_function" href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a) <a class="code hl_define" href="config_8h.html#abcaf90e207efed7e5d0887aee08c7338">__naked</a> {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  ((void)a);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  __asm__(<span class="stringliteral">&quot;push ix&quot;</span>);           <span class="comment">// save IX register (frame pointer)</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  __asm__(<span class="stringliteral">&quot;call _GTSTCK&quot;</span>);</div>
@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('msx__GTSTCK_8c_source.html',''); initR
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8">   28</a></span>uint8_t <a class="code hl_function" href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a) __naked {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8">   28</a></span>uint8_t <a class="code hl_function" href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a) <a class="code hl_define" href="config_8h.html#abcaf90e207efed7e5d0887aee08c7338">__naked</a> {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  ((void)a);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  __asm__(<span class="stringliteral">&quot;ld   hl, #2&quot;</span>);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  __asm__(<span class="stringliteral">&quot;add  hl, sp&quot;</span>);</div>
@@ -115,6 +115,7 @@ $(document).ready(function(){initNavTree('msx__GTSTCK_8c_source.html',''); initR
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_8h_html_abcaf90e207efed7e5d0887aee08c7338"><div class="ttname"><a href="config_8h.html#abcaf90e207efed7e5d0887aee08c7338">__naked</a></div><div class="ttdeci">#define __naked</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00024">config.h:24</a></div></div>
 <div class="ttc" id="amsx__GTSTCK_8c_html_a58e32ee1cf193b035975ab990e62a13c"><div class="ttname"><a href="msx__GTSTCK_8c.html#a58e32ee1cf193b035975ab990e62a13c">msx_GTSTCK</a></div><div class="ttdeci">uint8_t msx_GTSTCK(const uint8_t a) __naked</div><div class="ttdoc">BIOS : GTSTCK (00D5H / MAIN) MSX</div><div class="ttdef"><b>Definition:</b> <a href="msx__GTSTCK_8c_source.html#l00028">msx_GTSTCK.c:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

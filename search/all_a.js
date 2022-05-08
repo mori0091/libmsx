@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['key_5foff_0',['key_off',['../structsound__eg__vtbl.html#afdcfbfc61334813f3fc101c19c3fe773',1,'sound_eg_vtbl']]],
-  ['key_5fon_1',['key_on',['../structsound__eg__vtbl.html#a96a18fcdbea75bbddbff5a41b62258f7',1,'sound_eg_vtbl']]]
+  ['joypad_5fget_5fstate_0',['joypad_get_state',['../input_8h.html#a087c749840978e4916c876d906668397',1,'joypad_get_state(uint8_t controller):&#160;joypad_get_state.c'],['../joypad__get__state_8c.html#a087c749840978e4916c876d906668397',1,'joypad_get_state(uint8_t controller):&#160;joypad_get_state.c']]],
+  ['joypad_5fget_5fstate_2ec_1',['joypad_get_state.c',['../joypad__get__state_8c.html',1,'']]]
 ];

@@ -1,14 +1,11 @@
 var searchData=
 [
-  ['ch_0',['ch',['../sound_8c.html#acbcf5f8de7895ca456bb39fbcccde1d1',1,'sound.c']]],
-  ['channel_5fmuted_1',['channel_muted',['../sound_8c.html#a31110db3dab8e3b627b8a1e7ba210617',1,'sound.c']]],
-  ['channels_2',['channels',['../structsound__state.html#ab61baff70bd11f96fd98b0b7f2154a6c',1,'sound_state']]],
-  ['chgcpu_3',['CHGCPU',['../bios__entry_8h.html#aeba5f9f725b4d999e89ef352fba7bace',1,'bios_entry.h']]],
-  ['clip_4',['clip',['../structsound__state.html#a2b0fe923df0afe7637210500ecb8a854',1,'sound_state']]],
-  ['clz_5',['clz',['../structsound__eg__attribute.html#afa6629c9b9efe819c7c36ccda1f47396',1,'sound_eg_attribute']]],
-  ['count_5fper_5fsecond_6',['COUNT_PER_SECOND',['../sound_8c.html#af7106919ce6b8fcbb8beda18c1fb9035',1,'sound.c']]],
-  ['count_5fper_5ftick_7',['count_per_tick',['../structsound__state.html#a8dbfb37e52c8f4d3c98ad0db1848bf8d',1,'sound_state']]],
-  ['count_5fper_5ftick_8',['COUNT_PER_TICK',['../sound_8c.html#a47f92849930071d12da9acc7a7b37d68',1,'sound.c']]],
-  ['count_5fper_5ftick_5f60hz_9',['COUNT_PER_TICK_60HZ',['../sound_8c.html#ac174db55392218c66ba57b1392d76b2f',1,'sound.c']]],
-  ['ctx_10',['ctx',['../sound_8c.html#ae2fda8859e12165aeda509a17512572c',1,'sound.c']]]
+  ['backup_0',['backup',['../sound_8c.html#a3fe9668601144b317ed58b8230cca575',1,'sound.c']]],
+  ['bg_1',['bg',['../sound_8c.html#aeacfc9559cfdeb371bfc12b2e8327e50',1,'sound.c']]],
+  ['bios_2eh_2',['bios.h',['../bios_8h.html',1,'']]],
+  ['bios_5fconst_2eh_3',['bios_const.h',['../bios__const_8h.html',1,'']]],
+  ['bios_5fconst_5fh_4',['BIOS_CONST_H',['../bios__const_8h.html#ad8c0bb04896170083efc8c7d7d423967',1,'bios_const.h']]],
+  ['bios_5fentry_2eh_5',['bios_entry.h',['../bios__entry_8h.html',1,'']]],
+  ['bios_5fentry_5fh_6',['BIOS_ENTRY_H',['../bios__entry_8h.html#a43cf7de11d57db1dc1ef1ae8d1d3acba',1,'bios_entry.h']]],
+  ['bios_5fh_7',['BIOS_H',['../bios_8h.html#a1c92f825a1fef0fbf75ab1b2cfd7475b',1,'bios.h']]]
 ];

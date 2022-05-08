@@ -1,5 +1,6 @@
 var bios_8h =
 [
+    [ "BIOS_H", "bios_8h.html#a1c92f825a1fef0fbf75ab1b2cfd7475b", null ],
     [ "msx_get_version", "bios_8h.html#a19b4876435ca81258934f0d78d6cae07", null ],
     [ "msx_get_vsync_frequency", "bios_8h.html#a92e83309660f10fadbd038807b69b56f", null ],
     [ "msx_GTSTCK", "bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8", null ],

@@ -1,19 +1,8 @@
 var searchData=
 [
-  ['advance_0',['advance',['../structsound__eg__vtbl.html#a6196d0923115892b107dc50b11a22ccb',1,'sound_eg_vtbl']]],
-  ['ahdsr_1',['ahdsr',['../structsound__eg__attribute.html#ac7e20080dd2b5bb593da8571876ff359',1,'sound_eg_attribute']]],
-  ['amp_2',['amp',['../structsound__channel.html#a7fd75e8820b6d1bc9ad8578de702908d',1,'sound_channel']]],
-  ['anchor_3',['anchor',['../structmetasprite.html#a8cff0a450c6cc8ed07f5d13a79a84395',1,'metasprite']]],
-  ['attack_5fphase_4',['attack_phase',['../sound__eg__AHDSR_8c.html#a5a21f68fceed7b2f2b3b47a6080bff9b',1,'sound_eg_AHDSR.c']]],
-  ['attack_5fphase_5',['ATTACK_PHASE',['../sound__eg__AHDSR_8c.html#af35e52e13f52593d64f565f97bafc90b',1,'sound_eg_AHDSR.c']]],
-  ['attack_5frate_6',['attack_rate',['../structsound__eg__AHDSR.html#a4a1388e1f7cf928ec13f1b3a7ae53b8b',1,'sound_eg_AHDSR']]],
-  ['attack_5frate_7',['ATTACK_RATE',['../sound__eg__AHDSR_8c.html#ac439f1ed3c177870e4aa5da7a6586890',1,'sound_eg_AHDSR.c']]],
-  ['attr_8',['attr',['../structsound__eg.html#a736ecb4289fcdae1ef9fdd54794c3a93',1,'sound_eg']]],
-  ['await_5finterrupt_9',['await_interrupt',['../interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4',1,'interrupt.h']]],
-  ['await_5fvsync_10',['await_vsync',['../interrupt_8c.html#abdcd317fb8447d2ade86fe3477ccbd27',1,'await_vsync(void):&#160;interrupt.c'],['../interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27',1,'await_vsync(void):&#160;interrupt.c']]],
-  ['ay_5f3_5f8910_2ec_11',['ay_3_8910.c',['../ay__3__8910_8c.html',1,'']]],
-  ['ay_5f3_5f8910_2eh_12',['ay_3_8910.h',['../ay__3__8910_8h.html',1,'']]],
-  ['ay_5f3_5f8910_5fbuffer_13',['ay_3_8910_buffer',['../ay__3__8910_8h.html#a2ee75153f949aaf13e5aa0dea52fb72f',1,'ay_3_8910_buffer():&#160;ay_3_8910.c'],['../ay__3__8910_8c.html#a2ee75153f949aaf13e5aa0dea52fb72f',1,'ay_3_8910_buffer():&#160;ay_3_8910.c']]],
-  ['ay_5f3_5f8910_5finit_14',['ay_3_8910_init',['../ay__3__8910_8h.html#ac0fa68a646b8593944f5f8243b371a0c',1,'ay_3_8910_init(void):&#160;ay_3_8910.c'],['../ay__3__8910_8c.html#ac0fa68a646b8593944f5f8243b371a0c',1,'ay_3_8910_init(void):&#160;ay_3_8910.c']]],
-  ['ay_5f3_5f8910_5fplay_15',['ay_3_8910_play',['../ay__3__8910_8h.html#a549cb1b577a2dc0269c4744aa8dba0d3',1,'ay_3_8910_play(void):&#160;ay_3_8910.c'],['../ay__3__8910_8c.html#a549cb1b577a2dc0269c4744aa8dba0d3',1,'ay_3_8910_play(void):&#160;ay_3_8910.c']]]
+  ['_5f_5fat_0',['__at',['../config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556',1,'config.h']]],
+  ['_5f_5fbanked_1',['__banked',['../config_8h.html#af666593cde636407eb5fc23658dc14d5',1,'config.h']]],
+  ['_5f_5fcritical_2',['__critical',['../config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056',1,'config.h']]],
+  ['_5f_5fnaked_3',['__naked',['../config_8h.html#abcaf90e207efed7e5d0887aee08c7338',1,'config.h']]],
+  ['_5f_5fsfr_4',['__sfr',['../config_8h.html#ac6697545fa668cd6d830013d8c6a3fc3',1,'config.h']]]
 ];

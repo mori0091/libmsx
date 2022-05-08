@@ -1,6 +1,7 @@
 var vdp_8h =
 [
     [ "vdp_cmd", "structvdp__cmd.html", "structvdp__cmd" ],
+    [ "VDP_H", "vdp_8h.html#aee91aea941d7e8ac7147b6dc7125bdc8", null ],
     [ "RGB", "vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e", null ],
     [ "palette_t", "vdp_8h.html#a33595fdc0e04957d3dd734d82e10d55d", null ],
     [ "vdp_screen_mode", "vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5", [

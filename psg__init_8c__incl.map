@@ -1,6 +1,7 @@
 <map id="src/psg_init.c" name="src/psg_init.c">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="40,5,139,32"/>
-<area shape="rect" id="node2" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="35,80,143,107"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="27,5,125,32"/>
+<area shape="rect" id="node2" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="22,80,130,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,69,181"/>
-<area shape="rect" id="node4" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="94,155,191,181"/>
+<area shape="rect" id="node4" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="93,155,136,181"/>
+<area shape="rect" id="node5" href="$config_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="81,229,148,256"/>
 </map>

@@ -88,7 +88,7 @@ var NAVTREEINDEX2 =
 "vdp__set__sprite__pattern__table_8c.html#a785c8cbb6c9e3f15400eb49691f32d5e":[2,0,1,44,0],
 "vdp__set__sprite__pattern__table_8c_source.html":[2,0,1,44],
 "vdp__set__sprite__size_8c.html":[2,0,1,45],
-"vdp__set__sprite__size_8c.html#a0978232f8a4398cd331a7959a76442a7":[2,0,1,45,0],
+"vdp__set__sprite__size_8c.html#a804e31e6ebc463c819e59e5f17e49657":[2,0,1,45,0],
 "vdp__set__sprite__size_8c_source.html":[2,0,1,45],
 "vdp__set__sprite__visible_8c.html":[2,0,1,46],
 "vdp__set__sprite__visible_8c.html#a7b5b2cdb1157662aa3c6682515547348":[2,0,1,46,0],

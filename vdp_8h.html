@@ -276,9 +276,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa6a6414b4ac931ef585a34dda4dcf419"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419">vdp_set_sprite_attribute_table</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> table)</td></tr>
 <tr class="memdesc:aa6a6414b4ac931ef585a34dda4dcf419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set VRAM address of the sprite attribute table.  <a href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419">More...</a><br /></td></tr>
 <tr class="separator:aa6a6414b4ac931ef585a34dda4dcf419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0978232f8a4398cd331a7959a76442a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7">vdp_set_sprite_size</a> (enum sprite_size size)</td></tr>
-<tr class="memdesc:a0978232f8a4398cd331a7959a76442a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set sprite size.  <a href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7">More...</a><br /></td></tr>
-<tr class="separator:a0978232f8a4398cd331a7959a76442a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804e31e6ebc463c819e59e5f17e49657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp_8h.html#a804e31e6ebc463c819e59e5f17e49657">vdp_set_sprite_size</a> (enum <a class="el" href="vdp_8h.html#a91cf075ff9817fd8e552c6f055ce8b95">vdp_sprite_size</a> size)</td></tr>
+<tr class="memdesc:a804e31e6ebc463c819e59e5f17e49657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set sprite size.  <a href="vdp_8h.html#a804e31e6ebc463c819e59e5f17e49657">More...</a><br /></td></tr>
+<tr class="separator:a804e31e6ebc463c819e59e5f17e49657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5b2cdb1157662aa3c6682515547348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vdp_8h.html#a7b5b2cdb1157662aa3c6682515547348">vdp_set_sprite_visible</a> (bool visible)</td></tr>
 <tr class="memdesc:a7b5b2cdb1157662aa3c6682515547348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show / hide sprites.  <a href="vdp_8h.html#a7b5b2cdb1157662aa3c6682515547348">More...</a><br /></td></tr>
 <tr class="separator:a7b5b2cdb1157662aa3c6682515547348"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -508,7 +508,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 </div><div class="memdoc">
 
 <p>Enumeration of VDP sprite size. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="vdp_8h.html#a804e31e6ebc463c819e59e5f17e49657" title="Set sprite size.">vdp_set_sprite_size()</a> </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a91cf075ff9817fd8e552c6f055ce8b95ae42e60b539c779111e2d3f98cc0f0eef" name="a91cf075ff9817fd8e552c6f055ce8b95ae42e60b539c779111e2d3f98cc0f0eef"></a>VDP_SPRITE_SIZE_8x8&#160;</td><td class="fielddoc"><p >8x8 pixels </p>
 </td></tr>
@@ -1236,7 +1236,7 @@ Therefore you should do the following after this function if needed:<ul>
 <li>Address of <b>color table</b> shall be set by calling <a class="el" href="vdp_8h.html#aa8c6e5071b94616225f70959001afe2b" title="Set VRAM address of the color table.">vdp_set_color_table()</a>.</li>
 <li>Address of <b>sprite pattern generator table</b> shall be set by calling <a class="el" href="vdp_8h.html#a785c8cbb6c9e3f15400eb49691f32d5e" title="Set VRAM address of the sprite pattern generator table.">vdp_set_sprite_pattern_table()</a>.</li>
 <li>Address of <b>sprite attribute table</b> shall be set by calling <a class="el" href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419" title="Set VRAM address of the sprite attribute table.">vdp_set_sprite_attribute_table()</a>.</li>
-<li><b>Sprite size</b> shall be set by calling <a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a>.</li>
+<li><b>Sprite size</b> shall be set by calling <a class="el" href="vdp_8h.html#a804e31e6ebc463c819e59e5f17e49657" title="Set sprite size.">vdp_set_sprite_size()</a>.</li>
 <li>In case of MSX2 or later, <b>number of visible lines</b> shall be set by calling <a class="el" href="vdp_8h.html#aa2cc4f9210a437505437273e1db868ae" title="Set number of visible lines.">vdp_set_screen_lines()</a>.</li>
 <li>In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e., SCREEN 10, 11, or 12), <b>YJK/YAE bits</b> shall be set manually by calling <a class="el" href="vdp_8h.html#af9ead93518d9dab82fdfbe29dc6bd10f" title="Write to a VDP control register.">vdp_set_control()</a>. (There is no dedicated functions for setting YJK/YAE bits.)</li>
 <li>etc.</li>
@@ -1254,7 +1254,7 @@ Therefore you should do the following after this function if needed:<ul>
 <dd>
 <a class="el" href="vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419" title="Set VRAM address of the sprite attribute table.">vdp_set_sprite_attribute_table()</a> </dd>
 <dd>
-<a class="el" href="vdp_8h.html#a0978232f8a4398cd331a7959a76442a7" title="Set sprite size.">vdp_set_sprite_size()</a> </dd>
+<a class="el" href="vdp_8h.html#a804e31e6ebc463c819e59e5f17e49657" title="Set sprite size.">vdp_set_sprite_size()</a> </dd>
 <dd>
 <a class="el" href="vdp_8h.html#a7d644558c2aba5f1480920df41fb2b3b" title="Get current sprite mode.">vdp_get_sprite_mode()</a> </dd></dl>
 
@@ -1441,8 +1441,8 @@ The sprite color table is (implicitlly) placed at <code>SAT - 0x0200</code> ; wh
 
 </div>
 </div>
-<a id="a0978232f8a4398cd331a7959a76442a7" name="a0978232f8a4398cd331a7959a76442a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0978232f8a4398cd331a7959a76442a7">&#9670;&nbsp;</a></span>vdp_set_sprite_size()</h2>
+<a id="a804e31e6ebc463c819e59e5f17e49657" name="a804e31e6ebc463c819e59e5f17e49657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804e31e6ebc463c819e59e5f17e49657">&#9670;&nbsp;</a></span>vdp_set_sprite_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1450,7 +1450,7 @@ The sprite color table is (implicitlly) placed at <code>SAT - 0x0200</code> ; wh
         <tr>
           <td class="memname">void vdp_set_sprite_size </td>
           <td>(</td>
-          <td class="paramtype">enum sprite_size&#160;</td>
+          <td class="paramtype">enum <a class="el" href="vdp_8h.html#a91cf075ff9817fd8e552c6f055ce8b95">vdp_sprite_size</a>&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
           <td></td>
         </tr>

@@ -78,7 +78,7 @@ var vdp_8h =
     [ "vdp_set_color_table", "vdp_8h.html#aa8c6e5071b94616225f70959001afe2b", null ],
     [ "vdp_set_sprite_pattern_table", "vdp_8h.html#a785c8cbb6c9e3f15400eb49691f32d5e", null ],
     [ "vdp_set_sprite_attribute_table", "vdp_8h.html#aa6a6414b4ac931ef585a34dda4dcf419", null ],
-    [ "vdp_set_sprite_size", "vdp_8h.html#a0978232f8a4398cd331a7959a76442a7", null ],
+    [ "vdp_set_sprite_size", "vdp_8h.html#a804e31e6ebc463c819e59e5f17e49657", null ],
     [ "vdp_set_sprite_visible", "vdp_8h.html#a7b5b2cdb1157662aa3c6682515547348", null ],
     [ "vdp_set_color", "vdp_8h.html#a385097678914680b356edbb9213f4d05", null ],
     [ "vdp_set_adjust", "vdp_8h.html#ac0bd7ff710cf49c932e253ec30c5f873", null ],

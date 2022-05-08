@@ -365,7 +365,7 @@ void vdp_set_sprite_attribute_table(vmemptr_t table);
  *
  * \param size  sprite size.
  */
-void vdp_set_sprite_size(enum sprite_size size);
+void vdp_set_sprite_size(enum vdp_sprite_size size);
 
 /**
  * Show / hide sprites.

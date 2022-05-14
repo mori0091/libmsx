@@ -70,6 +70,15 @@ void libmsx___init_intr(void) {
   __asm__("ei");
 }
 
+void libmsx___purge_intr(void) {
+  __asm__("di");
+  {
+    memcpy(H_KEYI, hook_keyi, 5);
+    memcpy(H_TIMI, hook_timi, 5);
+  }
+  __asm__("ei");
+}
+
 void set_interrupt_handler(void (*handler)(void)) {
   __critical {
     interrupt_handler = (handler ? handler : null_handler);

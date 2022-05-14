@@ -14,7 +14,8 @@ List of source files derived from **SDCC run-time libraries**
 LICENCE
 =======
 
-**SDCC run-time libraries** for Z80 is released under **GPLv2** licence.__
+**SDCC run-time libraries** for Z80 is released under **GPLv2** licence.
+
 Therefore files in this directory are also released under **GPLv2** licence.
 
 See also terms described in each files for more detail.

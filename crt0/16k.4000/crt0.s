@@ -58,33 +58,5 @@ init:
 _exit::
         rst     0x00
 
-        ;;
-        .area   _GSINIT
-gsinit::
-        ;; initialize global variables that have no initializer
-        ld      bc, #l__DATA
-        ld      a, b
-        or      a, c
-        jr      Z, zeroed_data
-        ld      hl, #s__DATA
-        ld      (hl), #0x00
-        dec     bc
-        ld      a, b
-        or      a, c
-        jr      Z, zeroed_data
-        ld      e, l
-        ld      d, h
-        inc     de
-        ldir
-zeroed_data:
-        ;; initialize global variables that have explicit initializer
-        ld      bc, #l__INITIALIZER
-        ld      a, b
-        or      a, c
-        jr      Z, gsinit_next
-        ld      de, #s__INITIALIZED
-        ld      hl, #s__INITIALIZER
-        ldir
-gsinit_next:
-        .area   _GSFINAL
-        ret
+;------------------------------------------------
+        .include        "../../sdcc/device/lib/z80/gsinit.s"

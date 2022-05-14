@@ -9,6 +9,9 @@
 *.rel
 *.asm
 # *.s
-/**/bin
-/**/lib
-/**/obj
+/bin
+/lib
+/obj
+/sample/**/bin
+/sample/**/lib
+/sample/**/obj

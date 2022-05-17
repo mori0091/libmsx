@@ -36,94 +36,93 @@ See <https://mori0091.github.io/libmsx/index.html>
 
 The below functionality is supported.
 
-  - Getting MSX system version code
+- Getting MSX system version code
 
-  - VSYNC based timing synchronization
+- VSYNC based timing synchronization
 
-  - Almost of TMS9918A, V9938, V9958 VDP (Video Display Processor)
-    functionality.
-    - Display screen mode setting
-    - Display area position adjustment
-    - Display lines setting (192 lines / 212 lines)
-    - VRAM memory map setting (pattern name table, color table, and so on)
-    - Color palette
-    - Hardware vertical scroll
-    - Hardware horizontal scroll
-    - Enable / disable display visibility
-    - Enable / disable sprites visibility
-    - VDP command execution (HMMM, HMMV, LMMM, and LMMV)
-    - VRAM read / write
-    - … and so on
+- Almost of TMS9918A, V9938, V9958 VDP (Video Display Processor) functionality.
+  - Display screen mode setting
+  - Display area position adjustment
+  - Display lines setting (192 lines / 212 lines)
+  - VRAM memory map setting (pattern name table, color table, and so on)
+  - Color palette
+  - Hardware vertical scroll
+  - Hardware horizontal scroll
+  - Enable / disable display visibility
+  - Enable / disable sprites visibility
+  - VDP command execution (HMMM, HMMV, LMMM, and LMMV)
+  - VRAM read / write
+  - … and so on
 
-  - GPIO (8-bit parallel I/O port ; a.k.a Joystick I/F)
-    - Reading joystick input state.
+- GPIO (8-bit parallel I/O port ; a.k.a Joystick I/F)
+  - Reading joystick input state.
 
-  - Sound output
-    - PSG (AY-3-8910)
+- Sound output
+  - PSG (AY-3-8910)
 
-  - Sound driver
-    - Start / Stop / Pause / Mute the BGM.
-    - Playing sound effects.
-      - While a sound effect is playing, the channels of BGM that conflicts with
-        sound effects are automatically muted.
-    - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
-    - All functionality of PSG is supported.
-    - Software envelope generator is supported.
-      - AHDSR (attack / hold / decay / sustain / release) type envelope generator
-      - LPCM (8-bit 60Hz linear PCM) type envelope generator
-      - Up to 16 user-defined envelope patterns can be used.
-    - (A MML compiler for the sound driver is not developped yet.)
+- Sound driver
+  - Start / Stop / Pause / Mute the BGM.
+  - Playing sound effects.
+    - While a sound effect is playing, the channels of BGM that conflicts with
+      sound effects are automatically muted.
+  - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
+  - All functionality of PSG is supported.
+  - Software envelope generator is supported.
+    - AHDSR (attack / hold / decay / sustain / release) type envelope generator
+    - LPCM (8-bit 60Hz linear PCM) type envelope generator
+    - Up to 16 user-defined envelope patterns can be used.
+  - (A MML compiler for the sound driver is not developped yet.)
 
-  - MegaROM Mapper
-    - SDCC `__banked` functions support (SDCC 4.2.0 or later)
-    - Supported ROM mappers:
-      - ASCII8 ROM mapper
-      - ASCII16 ROM mapper
+- MegaROM Mapper
+  - SDCC `__banked` functions support (SDCC 4.2.0 or later)
+  - Supported ROM mappers:
+    - ASCII8 ROM mapper
+    - ASCII16 ROM mapper
 
 ## Unsupported functionality
 
 The below functionality is NOT supported yet.
 
-  - Keyboard input
-  - Sound output
-    - ~~PSG (AY-3-8910)~~ `supported`
-    - OPLL (YM2413 / MSX-MUSIC)
-  - ~~BGM driver~~ `supported`
-  - ~~Sound effect driver~~ `supported`
-  - … and so on
+- Keyboard input
+- Sound output
+  - ~~PSG (AY-3-8910)~~ `supported`
+  - OPLL (YM2413 / MSX-MUSIC)
+- ~~BGM driver~~ `supported`
+- ~~Sound effect driver~~ `supported`
+- … and so on
 
 # Pre-requisites
 
 ## Target Machine
 
-  - MSX
-  - MSX2
-  - MSX2+
-  - MSXturboR
+- MSX
+- MSX2
+- MSX2+
+- MSXturboR
 
 ## Host Platform
 
-  - Ubuntu 20.04
-  - Ubuntu 21.xx (not tested)
-  - Ubuntu 22.04 (recommended)
+- Ubuntu 20.04
+- Ubuntu 21.xx (not tested)
+- Ubuntu 22.04 (recommended)
 
-  - Windows 10 / MSYS2 MINGW64 (not tested)
+- Windows 10 / MSYS2 MINGW64 (not tested)
 
 Ofcourse, Ubuntu on **WSL** is okey. 😄  
 (**WSL**: Windows Subsystem for Linux)
 
 ## Build tools
 
-  - SDCC  
-    Small Device C Compiler  
-    <http://sdcc.sourceforge.net/>
+- SDCC  
+  Small Device C Compiler  
+  <http://sdcc.sourceforge.net/>
 
 > SDCC 4.2.0 or later is recommended.
 
 … and some popular standard Linux/Unix commands:
 
-  - `find`, `make`,
-  - and so on.
+- `find`, `make`,
+- and so on.
 
 # Install instructions of Build tools
 

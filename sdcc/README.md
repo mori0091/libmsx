@@ -10,11 +10,11 @@ List of source files derived from **SDCC run-time libraries**
 |----------------------------------|---------------------------------------|
 | `device/lib/z80/gsinit.s`        | `sdcc/device/lib/z80/crt0.s`          |
 
-LICENCE
+LICENSE
 =======
 
-**SDCC run-time libraries** for Z80 is released under **GPLv2** licence.
+**SDCC run-time libraries** for Z80 is released under **GPLv2** license.
 
-Therefore files in this directory are also released under **GPLv2** licence.
+Therefore files in this directory are also released under **GPLv2** license.
 
 See also terms described in each files for more detail.

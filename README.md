@@ -8,8 +8,8 @@ The `libmsx` library exposes MSX, MSX2, MSX2+, and MSXturboR hardware
 functionality to the C programmer.
 
 The library is intended for use with the C cross compiler
-[SDCC](http://sdcc.sourceforge.net/), and makes it easy to build 16KiB /
-32KiB ROM cartridge image.
+[SDCC](http://sdcc.sourceforge.net/), and makes it easy to build MSX ROM
+cartridge image (16KiB, 32KiB, or MegaROM).
 
 > MSX is a registered trademark of MSX Licensing Corporation.
 
@@ -22,6 +22,10 @@ See <https://github.com/mori0091/libmsx/blob/main/LICENSE>
 
 GitHub libmsx project  
 <https://github.com/mori0091/libmsx>
+
+> A code snippet (gsinit.s) extracted and derived from the SDCC runtime library
+> are available under the GPLv2 license.  
+> See <https://github.com/mori0091/libmsx/blob/main/sdcc/README.md>.
 
 ## API reference
 
@@ -52,15 +56,12 @@ The below functionality is supported.
     - … and so on
 
   - GPIO (8-bit parallel I/O port ; a.k.a Joystick I/F)
-
     - Reading joystick input state.
 
   - Sound output
-    
     - PSG (AY-3-8910)
 
   - Sound driver
-    
     - Start / Stop / Pause / Mute the BGM.
     - Playing sound effects.
       - While a sound effect is playing, the channels of BGM that conflicts with
@@ -72,6 +73,12 @@ The below functionality is supported.
       - LPCM (8-bit 60Hz linear PCM) type envelope generator
       - Up to 16 user-defined envelope patterns can be used.
     - (A MML compiler for the sound driver is not developped yet.)
+
+  - MegaROM Mapper
+    - SDCC `__banked` functions support (SDCC 4.2.0 or later)
+    - Supported ROM mappers:
+      - ASCII8 ROM mapper
+      - ASCII16 ROM mapper
 
 ## Unsupported functionality
 
@@ -98,6 +105,9 @@ The below functionality is NOT supported yet.
 
   - Ubuntu 20.04
   - Ubuntu 21.xx (not tested)
+  - Ubuntu 22.04 (recommended)
+
+  - Windows 10 / MSYS2 MINGW64 (not tested)
 
 Ofcourse, Ubuntu on **WSL** is okey. 😄  
 (**WSL**: Windows Subsystem for Linux)
@@ -107,6 +117,8 @@ Ofcourse, Ubuntu on **WSL** is okey. 😄
   - SDCC  
     Small Device C Compiler  
     <http://sdcc.sourceforge.net/>
+
+> SDCC 4.2.0 or later is recommended.
 
 … and some popular standard Linux/Unix commands:
 
@@ -122,6 +134,11 @@ sudo apt update
 sudo apt install build-essential
 sudo apt install sdcc
 ```
+
+> Note that the latest version of SDCC may not be installed by the above
+> instruction. In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we
+> recommend that you download SDCC 4.2.0 pre-built binary and use it on Ubuntu
+> 22.04 or later.
 
 # Build instructions of the library and sample projects
 

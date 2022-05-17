@@ -258,7 +258,7 @@ void compile(FILE* in, FILE* out) {
       // omit a block out of range
       continue;
     }
-    if (blocks[i].size <= 0) {
+    if (!blocks[i].size) {
       blocks[i].size = addr_max - blocks[i].base;
     }
     if (blocks[i].base + blocks[i].size <= addr_min) {

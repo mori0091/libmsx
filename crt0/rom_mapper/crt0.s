@@ -1,8 +1,13 @@
 ;;; -*- mode: asm; coding: utf-8-unix; tab-width: 8 -*-
 
 ;;; \file crt0/rom_mapper/crt0.s
+;;; C startup routine for MSX w/ ROM mapper and SDCC banked call support.
 ;;;
-;;; Copyright (c) 2021 Daishi Mori (mori0091)
+;;; \note
+;;; It is a common part of crt0 and is intended to be used with one of a ROM
+;;; mapper-specific modules such as rom_ascii8.s and rom_ascii16.s.
+;;;
+;;; Copyright (c) 2022 Daishi Mori (mori0091)
 ;;;
 ;;; This software is released under the MIT License.
 ;;; See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -45,11 +50,21 @@
         .area   _INITIALIZER
         .area   _GSINIT
         .area   _GSFINAL
+        ;; ----
+        .area   _BANK0
+        ;; ----
         .area   _DATA
         .area   _INITIALIZED
         .area   _BSEG
         .area   _BSS
         .area   _HEAP
+        ;; ----
+        .area   _BANK1
+        .area   _BANK2
+        .area   _BANK3
+        .area   _BANK4
+        .area   _BANK5
+        .area   _BANK6
         ;; ----
 
         .area   _CODE
@@ -74,7 +89,6 @@ _exit::
         SLTTBL = 0xfcc5         ; (4 bytes) Save area for secondary slot selector registers
 
         .area   _CODE
-
 find_rom_page_2::
         ld      hl, #0x4000
         ld      b, (hl)
@@ -117,25 +131,4 @@ find_rom_page_2::
         ret
 
 ;------------------------------------------------
-        ;; void rom_banked_jump(uint8_t a)
-        ;; Trampoline code for banked jump
-        ;; (jump to the start address of bank a)
-        .area   _INITIALIZER
-rom_bjump:
-        push    af
-        call    _libmsx___purge_intr
-        pop     af
-        call    set_bank
-        ld      hl, (0x4002)
-        ex      (sp), hl
-        ret
-        l_rom_bjump = (. - rom_bjump)
-
-        .area   _INITIALIZED
-_rom_banked_jump::
-        .ds     l_rom_bjump
-
-;------------------------------------------------
         .include        "../../sdcc/device/lib/z80/gsinit.s"
-        .include        "../../sdcc/device/lib/z80/__sdcc_bcall.s"
-        ;; .include        "../rom_mapper/rom_ascii8.s"

@@ -15,6 +15,7 @@
 #include <stdint.h>
 #include <string.h>
 
+#include "../include/config.h"
 #include "../include/interrupt.h"
 
 static __at(0xfd9a) uint8_t H_KEYI[5];
@@ -66,15 +67,6 @@ void libmsx___init_intr(void) {
     vsync_handler = null_handler;
     memcpy(hook_timi, H_TIMI, 5);
     memcpy(H_TIMI, replacement_for_H_TIMI, 5);
-  }
-  __asm__("ei");
-}
-
-void libmsx___purge_intr(void) {
-  __asm__("di");
-  {
-    memcpy(H_KEYI, hook_keyi, 5);
-    memcpy(H_TIMI, hook_timi, 5);
   }
   __asm__("ei");
 }

@@ -15,3 +15,6 @@
 /sample/**/bin
 /sample/**/lib
 /sample/**/obj
+/tools/**/bin
+/tools/**/lib
+/tools/**/obj

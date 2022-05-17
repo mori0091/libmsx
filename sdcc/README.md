@@ -9,7 +9,6 @@ List of source files derived from **SDCC run-time libraries**
 | file in this directory           | SDCC source file from which derived   |
 |----------------------------------|---------------------------------------|
 | `device/lib/z80/gsinit.s`        | `sdcc/device/lib/z80/crt0.s`          |
-| `device/lib/z80/___sdcc_bcall.s` | `sdcc/device/lib/z80/___sdcc_bcall.s` |
 
 LICENCE
 =======

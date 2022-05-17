@@ -49,6 +49,7 @@ AS = sdasz80
 LD = sdld
 AR = sdar
 OBJCOPY = sdobjcopy
+IHX2BIN = ${LIBMSX_HOME}/tools/ihx2bin/bin/ihx2bin
 
 CFLAGS ?=
 CFLAGS += -mz80 -MMD
@@ -81,14 +82,22 @@ endif
 
 %.rom: %.ihx
 	@${info [Build]	$@}
-	@${OBJCOPY} -I ihex -O binary \
-	--gap-fill 0xff \
-	--pad-to $$(printf '%d' $$((${ADDR_HEAD} + ${IMAGE_SIZE}))) \
-	$< $@
+	@${IHX2BIN} ${IHX2BIN_FLAGS} -o $@ $<
 
 %.dat: %.ihx
 	@${info [Build]	$@}
-	@${OBJCOPY} -I ihex -O binary $< $@
+	@${IHX2BIN} -o $@ $<
+
+# %.rom: %.ihx
+# 	@${info [Build]	$@}
+# 	@${OBJCOPY} -I ihex -O binary \
+# 	--gap-fill 0xff \
+# 	--pad-to $$(printf '%d' $$((${ADDR_HEAD} + ${IMAGE_SIZE}))) \
+# 	$< $@
+
+# %.dat: %.ihx
+# 	@${info [Build]	$@}
+# 	@${OBJCOPY} -I ihex -O binary $< $@
 
 ${BINDIR}/${NAME}.ihx: ${CRT0} ${OBJS} ${LIBS}
 	@${info [LD]	$@}

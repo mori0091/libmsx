@@ -8,7 +8,7 @@
 # GitHub libmsx project
 # https://github.com/mori0091/libmsx
 
-.PHONY: all build clean sample
+.PHONY: all build clean sample tools
 
 all: build
 
@@ -47,7 +47,7 @@ CFLAGS += -DNDEBUG --Werror
 CFLAGS += -I include
 LDFLAGS = --no-std-crt0 --code-loc ${ADDR_CODE} --data-loc ${ADDR_DATA}
 
-build: ${TARGETS}
+build: ${TARGETS} tools
 
 clean:
 	@rm -f ${TARGETS} ${OBJS} ${OBJS_CRT0} ${DEPS}
@@ -56,6 +56,9 @@ clean:
 
 sample:
 	@${MAKE} -s -C sample
+
+tools:
+	@make -s -C tools/ihx2bin
 
 ${LIBDIR}/%.rel: crt0/%.s
 	@${info [AS]	$<}

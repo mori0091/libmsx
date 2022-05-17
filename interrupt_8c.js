@@ -6,7 +6,6 @@ var interrupt_8c =
     [ "replacement_for_H_KEYI", "interrupt_8c.html#a84bffabeb9263ffcdbaa92bd4b1f9b8b", null ],
     [ "replacement_for_H_TIMI", "interrupt_8c.html#a3792da9689694ac5ee2d0575c418f849", null ],
     [ "libmsx___init_intr", "interrupt_8c.html#a61a5fde49304517b2bb197a8b5577a70", null ],
-    [ "libmsx___purge_intr", "interrupt_8c.html#af217186d0acaf9fdbe8cc25808cfc577", null ],
     [ "set_interrupt_handler", "interrupt_8c.html#a4b7e0dcff7ea0530ab92899dc8671b40", null ],
     [ "set_vsync_handler", "interrupt_8c.html#a92722299d30fbe4f1c49c07f30167a6c", null ],
     [ "await_vsync", "interrupt_8c.html#abdcd317fb8447d2ade86fe3477ccbd27", null ],

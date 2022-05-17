@@ -16,8 +16,8 @@ var searchData=
   ['r45_13',['r45',['../structvdp__cmd.html#a21066c5249d7ed332096c3ff57a21598',1,'vdp_cmd']]],
   ['r46_14',['r46',['../structvdp__cmd.html#af0ee51e6846dd236e4ecbfb7632d23e8',1,'vdp_cmd']]],
   ['readme_2emd_15',['README.md',['../README_8md.html',1,'']]],
-  ['release_5fphase_16',['release_phase',['../sound__eg__AHDSR_8c.html#a3b8e3e53c349599f119b5d878e9b2455',1,'sound_eg_AHDSR.c']]],
-  ['release_5fphase_17',['RELEASE_PHASE',['../sound__eg__AHDSR_8c.html#a496c4c8e61d9a2960fcbd72042b0e587',1,'sound_eg_AHDSR.c']]],
+  ['release_5fphase_16',['RELEASE_PHASE',['../sound__eg__AHDSR_8c.html#a496c4c8e61d9a2960fcbd72042b0e587',1,'sound_eg_AHDSR.c']]],
+  ['release_5fphase_17',['release_phase',['../sound__eg__AHDSR_8c.html#a3b8e3e53c349599f119b5d878e9b2455',1,'sound_eg_AHDSR.c']]],
   ['release_5frate_18',['release_rate',['../structsound__eg__AHDSR.html#ab41cb77000c9074cde189e9dd85f92a8',1,'sound_eg_AHDSR']]],
   ['release_5frate_19',['RELEASE_RATE',['../sound__eg__AHDSR_8c.html#a7d89eec58954de8705c571c1a0150ae2',1,'sound_eg_AHDSR.c']]],
   ['repeat_20',['repeat',['../sound_8c.html#a98c61ed9410ab805baab005fe7713d9b',1,'sound.c']]],
@@ -50,8 +50,5 @@ var searchData=
   ['rg7sav_47',['RG7SAV',['../workarea_8h.html#a38e4780e32e165787f69e4cf5fae9c63',1,'workarea.h']]],
   ['rg8sav_48',['RG8SAV',['../workarea_8h.html#a35206e339da39f453c194db0b1938f0e',1,'workarea.h']]],
   ['rg9sav_49',['RG9SAV',['../workarea_8h.html#af38cfb9a0cc661cf1378dd07e2b756c3',1,'workarea.h']]],
-  ['rgb_50',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]],
-  ['rom_5fbanked_5fjump_51',['rom_banked_jump',['../rom__mapper_8h.html#ac59a33b8e5ff5fe18beca27e2674f98e',1,'rom_mapper.h']]],
-  ['rom_5fmapper_2eh_52',['rom_mapper.h',['../rom__mapper_8h.html',1,'']]],
-  ['rom_5fmapper_5fh_5f_53',['ROM_MAPPER_H_',['../rom__mapper_8h.html#a293a7b27aa5e7362c1e75e9b7c82ef26',1,'rom_mapper.h']]]
+  ['rgb_50',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
 ];

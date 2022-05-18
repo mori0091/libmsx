@@ -29,12 +29,12 @@ This sample shows usecase / implementation example of the following feature:
         - C standard library functions
         - SDCC runtime library functions
     - BANK0 (0x8000..0xbfff ; banked / switchable by `__banked` function call)
-      - Describe `pragma codeseg BANK0` in all `*.c`
+      - Describe `#pragma codeseg BANK0` in all `*.c`
       - `void game_main(void) __banked` (entry point of main module)
       - BANK0 local functions.
       - BANK0 local const variables.
     - BANK1 (0x8000..0xbfff ; banked / switchable by `__banked` function call)
-      - Describe `pragma codeseg BANK1` in all `*.c`
+      - Describe `#pragma codeseg BANK1` in all `*.c`
       - `void boot_main(void) __banked` (entry point of boot module)
       - BANK1 local functions for VRAM initialization.
       - BANK1 local const variables.
@@ -66,8 +66,9 @@ sample/megarom/
 
 > _NOTE_  
 > This sample is very small, plain 16KiB ROM is enough.  
-> If you want do so, try the following:
-> - remove all `__banked` keyword and `pragma codeseg BANK*` in the `*.c` and `*.h`
+> If you want to do so, try the following:
+> - remove all `__banked` keyword in the `*.c` and `*.h`
+> - remove all `#pragma codeseg BANK*` in the `*.c`
 > - modify `Makefile`
 >   - from `#include ${LIBMSX_HOME}/mk/ascii16.mk`
 >   -   to `#include ${LIBMSX_HOME}/mk/16k.4000.mk`

@@ -36,7 +36,7 @@ static bool pad_to_pow2 = false;
 
 uint32_t round_up_to_pow2(uint32_t x) {
   /* assert(x < (1 << 31)); */
-  if (!x || 0x10000000u <= x) {
+  if (!x || 0x80000000u <= x) {
     return x;
   }
   uint32_t y = 1;

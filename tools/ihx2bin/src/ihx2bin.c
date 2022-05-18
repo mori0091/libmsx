@@ -291,13 +291,15 @@ void compile(FILE* in, FILE* out) {
   // ---- trailing padding
   if (pad_to_pow2) {
     const uint32_t pad_size = round_up_to_pow2(dst) - dst;
-    for (uint32_t i = 0; i < pad_size; ++i) {
-      fputc(PAD_BYTE, out);
+    if (pad_size) {
+      for (uint32_t i = 0; i < pad_size; ++i) {
+        fputc(PAD_BYTE, out);
+      }
+      fprintf(stderr, "padding:                     (%d bytes) -> %08X..%08X\n",
+              (int)pad_size,
+              dst, dst + pad_size - 1);
+      dst += pad_size;
     }
-    fprintf(stderr, "padding:                     (%d bytes) -> %08X..%08X\n",
-            (int)pad_size,
-            dst, dst + pad_size - 1);
-    dst += pad_size;
   }
 }
 

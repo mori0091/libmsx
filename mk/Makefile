@@ -28,6 +28,8 @@ NAME = name_of_your_rom
 # Include one of the configuration.
 #   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
 #   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
+#   - ${LIBMSX_HOME}/mk/ascii16.mk  : to make MegaROM image (ROM type: ASCII16)
+#   - ${LIBMSX_HOME}/mk/ascii8.mk   : to make MegaROM image (ROM type: ASCII8)
 include ${LIBMSX_HOME}/mk/32k.4000.mk
 
 # [OPTIONAL]

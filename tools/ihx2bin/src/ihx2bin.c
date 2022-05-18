@@ -36,11 +36,12 @@ static bool pad_to_pow2 = false;
 
 uint32_t round_up_to_pow2(uint32_t x) {
   /* assert(x < (1 << 31)); */
-  if (!x || (1 << 31) <= x) {
+  if (!x || 0x10000000u <= x) {
     return x;
   }
   uint32_t y = 1;
-  for (int i = 0; i < 32 && y < x; ++i, y <<= 1);
+  for (int i = 0; i < 32 && y < x; ++i, y <<= 1)
+    ;
   return y;
 }
 
@@ -294,7 +295,7 @@ void compile(FILE* in, FILE* out) {
       fputc(PAD_BYTE, out);
     }
     fprintf(stderr, "padding:                     (%d bytes) -> %08X..%08X\n",
-            pad_size,
+            (int)pad_size,
             dst, dst + pad_size - 1);
     dst += pad_size;
   }

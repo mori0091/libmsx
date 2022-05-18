@@ -17,19 +17,13 @@
 
 # [REQUIRED]
 # Path to top of the libmsx installed folder.
-LIBMSX_HOME = ../../
+LIBMSX_HOME = ../..
 
 # [REQUIRED]
 # Specify NAME of your rom image to be built.
 #   The rom image `${NAME}.rom` will be made into ${BINDIR} folder.
 #   e.g. If NAME was foo, the image will be `bin/foo.rom`.
 NAME = hello
-
-# [REQUIRED]
-# Include one of the configuration.
-#   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
-#   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
-include ${LIBMSX_HOME}/mk/16k.4000.mk
 
 # [OPTIONAL]
 # You may specify additional C compiler/linker options.
@@ -56,6 +50,12 @@ LIBS    =
 # You may specify a folder where your rom image would to be made.
 # (default is 'bin', if omitted)
 # BINDIR = bin
+
+# [REQUIRED]
+# Include one of the configuration.
+#   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
+#   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
+include ${LIBMSX_HOME}/mk/16k.4000.mk
 
 # [REQUIRED] (No need to modify)
 # Include common part of Makefile

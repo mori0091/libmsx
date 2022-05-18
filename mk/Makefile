@@ -24,14 +24,6 @@ LIBMSX_HOME = path_to_top_of_libmsx
 #   e.g. If NAME was foo, the image will be `bin/foo.rom`.
 NAME = name_of_your_rom
 
-# [REQUIRED]
-# Include one of the configuration.
-#   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
-#   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
-#   - ${LIBMSX_HOME}/mk/ascii16.mk  : to make MegaROM image (ROM type: ASCII16)
-#   - ${LIBMSX_HOME}/mk/ascii8.mk   : to make MegaROM image (ROM type: ASCII8)
-include ${LIBMSX_HOME}/mk/32k.4000.mk
-
 # [OPTIONAL]
 # You may specify additional C compiler/linker options.
 #   - CFLAGS shall be C language options such as "-I dir"
@@ -57,6 +49,14 @@ LIBS    =
 # You may specify a folder where your rom image would to be made.
 # (default is 'bin', if omitted)
 # BINDIR = bin
+
+# [REQUIRED]
+# Include one of the configuration.
+#   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
+#   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
+#   - ${LIBMSX_HOME}/mk/ascii16.mk  : to make MegaROM image (ROM type: ASCII16)
+#   - ${LIBMSX_HOME}/mk/ascii8.mk   : to make MegaROM image (ROM type: ASCII8)
+include ${LIBMSX_HOME}/mk/32k.4000.mk
 
 # [REQUIRED] (No need to modify)
 # Include common part of Makefile

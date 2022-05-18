@@ -56,6 +56,7 @@ IHX2BIN_FLAGS = -s ${IMAGE_SIZE} -b ${ADDR_HEAD} \
 		-b 0x48000			 \
 		-b 0x58000			 \
 		-b 0x68000			 \
+		--pow2
 
 CRT0 = ${LIBMSX_HOME}/lib/rom_mapper/crt0.rel
 CRT0 += ${LIBMSX_HOME}/lib/rom_mapper/rom_ascii8.rel

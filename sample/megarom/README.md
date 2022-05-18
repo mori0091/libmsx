@@ -1,5 +1,7 @@
 # sample: Horizontal Scroll (MSX2+) / MegaROM version
 
+https://user-images.githubusercontent.com/659805/169100710-f450963c-10f3-4a99-bf2d-aa801da55f7e.mp4
+
 This sample shows usecase / implementation example of the following feature:
 
 - Fixed score board with scrolling screen

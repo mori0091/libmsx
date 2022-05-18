@@ -19,6 +19,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define PAD_BYTE (0x0ff)
+
 static uint8_t image[4 * 1024 * 1024]; // 4 MiB
 static uint8_t csum = 0;
 static int line = 1;
@@ -29,6 +31,18 @@ static struct block {
   uint32_t size;
   uint32_t base;
 } blocks[256];
+
+static bool pad_to_pow2 = false;
+
+uint32_t round_up_to_pow2(uint32_t x) {
+  /* assert(x < (1 << 31)); */
+  if (!x || (1 << 31) <= x) {
+    return x;
+  }
+  uint32_t y = 1;
+  for (int i = 0; i < 32 && y < x; ++i, y <<= 1);
+  return y;
+}
 
 FILE* open_file(const char* file, const char* mode) {
   FILE* f = fopen(file, mode);
@@ -252,6 +266,7 @@ void compile(FILE* in, FILE* out) {
     blocks[0].size = addr_max - addr_min;
     nblocks = 1;
   }
+  // ---- extract specified blocks
   uint32_t dst = 0;
   for (int i = 0; i < nblocks; ++i) {
     if (addr_max <= blocks[i].base) {
@@ -271,6 +286,17 @@ void compile(FILE* in, FILE* out) {
             (int)blocks[i].base, (int)blocks[i].base + blocks[i].size - 1, (int)blocks[i].size,
             dst, dst + blocks[i].size - 1);
     dst += blocks[i].size;
+  }
+  // ---- trailing padding
+  if (pad_to_pow2) {
+    const uint32_t pad_size = round_up_to_pow2(dst) - dst;
+    for (uint32_t i = 0; i < pad_size; ++i) {
+      fputc(PAD_BYTE, out);
+    }
+    fprintf(stderr, "padding:                     (%d bytes) -> %08X..%08X\n",
+            pad_size,
+            dst, dst + pad_size - 1);
+    dst += pad_size;
   }
 }
 
@@ -303,6 +329,7 @@ void help(void) {
   printf("  -o FILE        output filename\n");
   printf("  -s INT         size of blocks applied to subsequent \"-b\" options\n");
   printf("  -b INT         base address of next block\n");
+  printf("     --pow2      Set output file size to a power of 2");
   printf("\n");
   printf("Example:\n");
   printf("\n");
@@ -378,6 +405,11 @@ static int parse_options(int argc, char** argv) {
       p += 2;
       continue;
     }
+    if (strcmp(*p, "--pow2") == 0) {
+      pad_to_pow2 = true;
+      p++;
+      continue;
+    }
     error_unknown_option(p);
   }
   return 1 + nargs;
@@ -408,7 +440,7 @@ int main(int argc, char** argv) {
   }
 
   // fill
-  memset(image, 0xff, sizeof(image));
+  memset(image, PAD_BYTE, sizeof(image));
 
   in = open_file(argv[1], "rb");
   compile(in, out);

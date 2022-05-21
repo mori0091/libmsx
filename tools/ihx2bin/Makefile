@@ -1,10 +1,14 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-TARGET = bin/ihx2bin
+SRCDIR ?= src
+OBJDIR ?= obj
+BINDIR ?= bin
+
+TARGET = ${BINDIR}/ihx2bin
 
 CFLAGS = -std=c11 -Wall -Wpedantic
 
-SRCS = src/ihx2bin.c
+SRCS = ${SRCDIR}/ihx2bin.c
 
 .PHONY: all build clean
 
@@ -13,7 +17,7 @@ all: build
 build: ${TARGET}
 
 clean:
-	@rm -rf bin
+	@rm -f ${TARGET}
 
 ${TARGET}: ${SRCS}
 	@$(info [BUILD] $@)

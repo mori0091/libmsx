@@ -36,10 +36,10 @@ TARGETS = \
 	${OBJS_CRT0} \
 	${LIBDIR}/${NAME}.lib
 
-CC = sdcc
-AS = sdasz80
-LD = sdld
-AR = sdar
+SDCC = sdcc
+SDAS = sdasz80
+SDLD = sdld
+SDAR = sdar
 
 CFLAGS ?= --opt-code-size
 CFLAGS += -mz80 -MMD
@@ -53,31 +53,32 @@ clean:
 	@rm -f ${TARGETS} ${OBJS} ${OBJS_CRT0} ${DEPS}
 	@rm -rf ${OBJDIR} ${BINDIR} ${LIBDIR}
 	@${MAKE} -s -C sample clean
+	@make BINDIR="$(abspath ${BINDIR})" -s -C tools clean
 
 sample:
 	@${MAKE} -s -C sample
 
 tools:
-	@make -s -C tools/ihx2bin
+	@make BINDIR="$(abspath ${BINDIR})" -s -C tools
 
 ${LIBDIR}/%.rel: crt0/%.s
 	@${info [AS]	$<}
 	@mkdir -p $(dir $@)
-	@${AS} -g -o $@ $<
+	@${SDAS} -g -o $@ $<
 
 ${LIBDIR}/${NAME}.lib: ${OBJS}
 	@${info [AR]	$@}
 	@mkdir -p $(dir $@)
-	@$(AR) cr $@ $^
+	@$(SDAR) cr $@ $^
 
 ${OBJDIR}/%.rel: ${SRCDIR}/%.c
 	@${info [C]	$<}
 	@mkdir -p $(dir $@)
-	@${CC} ${CFLAGS} -o $@ -c $<
+	@${SDCC} ${CFLAGS} -o $@ -c $<
 
 ${OBJDIR}/%.rel: ${SRCDIR}/%.s
 	@${info [AS]	$<}
 	@mkdir -p $(dir $@)
-	@${AS} -o $@ $<
+	@${SDAS} -o $@ $<
 
 -include $(DEPS)

@@ -49,7 +49,7 @@ AS = sdasz80
 LD = sdld
 AR = sdar
 OBJCOPY = sdobjcopy
-IHX2BIN = ${LIBMSX_HOME}/tools/ihx2bin/bin/ihx2bin
+IHX2BIN = ${LIBMSX_HOME}/bin/ihx2bin
 
 CFLAGS ?=
 CFLAGS += -mz80 -MMD

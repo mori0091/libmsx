@@ -10,7 +10,7 @@
 
 .PHONY: all build clean sample tools
 
-all: build
+all: build tools
 
 SRCDIR ?= src
 OBJDIR ?= obj
@@ -47,7 +47,7 @@ CFLAGS += -DNDEBUG --Werror
 CFLAGS += -I include
 LDFLAGS = --no-std-crt0 --code-loc ${ADDR_CODE} --data-loc ${ADDR_DATA}
 
-build: ${TARGETS} tools
+build: ${TARGETS}
 
 clean:
 	@rm -f ${TARGETS} ${OBJS} ${OBJS_CRT0} ${DEPS}

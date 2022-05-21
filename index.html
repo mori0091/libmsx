@@ -191,12 +191,40 @@ Target Machine</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Host Platform</h2>
-<ul>
-<li>Ubuntu 20.04</li>
-<li>Ubuntu 21.xx (not tested)</li>
-<li>Ubuntu 22.04 (recommended)</li>
-<li>Windows 10 / MSYS2 MINGW64 (not tested)</li>
-</ul>
+<p ><b>Linux</b></p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Host Platform   </th><th class="markdownTableHeadNone">SDCC version   </th><th class="markdownTableHeadNone">status    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Ubuntu 20.04   </td><td class="markdownTableBodyNone">3.8.0   </td><td class="markdownTableBodyNone">✔ (outdated)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">3.9.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.0.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.1.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.2.0   </td><td class="markdownTableBodyNone">❌    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Ubuntu 21.04   </td><td class="markdownTableBodyNone">?   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Ubuntu 22.04   </td><td class="markdownTableBodyNone">4.0.0   </td><td class="markdownTableBodyNone">✔ (outdated)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.1.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.2.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
+</table>
+<p ><b>Windows</b></p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Host Platform   </th><th class="markdownTableHeadNone">SDCC version   </th><th class="markdownTableHeadNone">status    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MSYS2 MINGW64   </td><td class="markdownTableBodyNone">4.0.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.1.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.2.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
+</table>
 <p >Ofcourse, Ubuntu on <b>WSL</b> is okey. 😄 <br  />
  (<b>WSL</b>: Windows Subsystem for Linux)</p>
 <h2><a class="anchor" id="autotoc_md8"></a>
@@ -211,19 +239,32 @@ Build tools</h2>
 </blockquote>
 <p>… and some popular standard Linux/Unix commands:</p>
 <ul>
-<li><code>find</code>, <code>make</code>,</li>
+<li>GNU <code>find</code>, <code>make</code>,</li>
 <li>and so on.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md9"></a>
 Install instructions of Build tools</h1>
-<p ><b>Ubuntu</b></p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+&lt;strong&gt;Ubuntu&lt;/strong&gt;</h2>
 <div class="fragment"><div class="line">sudo apt update</div>
 <div class="line">sudo apt install build-essential</div>
 <div class="line">sudo apt install sdcc</div>
 </div><!-- fragment --><blockquote class="doxtable">
 <p >Note that the latest version of SDCC may not be installed by the above instruction. In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we recommend that you download SDCC 4.2.0 pre-built binary and use it on Ubuntu 22.04 or later. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
+&lt;strong&gt;Windows&lt;/strong&gt;</h2>
+<p >There are two recommended ways to setup build tools:</p>
+<p >CASE 1. Use Ubuntu on WSL environment, and proceed with the above instructions.</p>
+<p >CASE 2. Use MSYS2 MINGW64 environment.</p><ul>
+<li>Download and install <a href="http://sdcc.sourceforge.net/">SDCC</a>.</li>
+<li>Download and install <a href="https://www.msys2.org/">MSYS2</a>. <br  />
+ Then install the required build tools as following:</li>
+</ul>
+<div class="fragment"><div class="line">pacman -S git base-devel mingw-w64-x86_64-gcc</div>
+</div><!-- fragment --><p >Don't forget adding SDCC to <code>PATH</code> environment variable. <br  />
+ (add the below to <code>~/.bashrc</code> or <code>~/.bash_profile</code>) </p><div class="fragment"><div class="line">export PATH=${PATH}:/c/Program\ Files/SDCC/bin</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Build instructions of the library and sample projects</h1>
 <p >The below makes the library <code>libmsx.lib</code> into <code>lib</code> directory.</p>
 <div class="fragment"><div class="line">make</div>
@@ -231,12 +272,12 @@ Build instructions of the library and sample projects</h1>
 <div class="fragment"><div class="line">make sample</div>
 </div><!-- fragment --><p >And for cleaning up:</p>
 <div class="fragment"><div class="line">make clean</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md13"></a>
 Build instructions of user applications</h1>
 <blockquote class="doxtable">
 <p >There are several sample projects, please refer to the <code>sample/</code> folder of the <code>libmsx</code> project. </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Preparation</h2>
 <p ><b>Step 1.</b> Make your project's Git repository.</p>
 <div class="fragment"><div class="line">git init my_proj</div>
@@ -247,7 +288,7 @@ Preparation</h2>
 <div class="fragment"><div class="line">cp libmsx/mk/Makfile my_proj/</div>
 </div><!-- fragment --><p ><b>Step 4.</b> Create the folder <code>my_proj/src/</code> and place your C source files under it or in its subfolders.</p>
 <div class="fragment"><div class="line">mkdir my_proj/src</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md15"></a>
 Build your application</h2>
 <p >To build your application, do as follows. <br  />
  Then the ROM image will be made into <code>my_proj/bin</code> folder.</p>

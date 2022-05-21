@@ -35,11 +35,14 @@ var NAVTREE =
         [ "Host Platform", "index.html#autotoc_md7", null ],
         [ "Build tools", "index.html#autotoc_md8", null ]
       ] ],
-      [ "Install instructions of Build tools", "index.html#autotoc_md9", null ],
-      [ "Build instructions of the library and sample projects", "index.html#autotoc_md10", null ],
-      [ "Build instructions of user applications", "index.html#autotoc_md11", [
-        [ "Preparation", "index.html#autotoc_md12", null ],
-        [ "Build your application", "index.html#autotoc_md13", null ]
+      [ "Install instructions of Build tools", "index.html#autotoc_md9", [
+        [ "<strong>Ubuntu</strong>", "index.html#autotoc_md10", null ],
+        [ "<strong>Windows</strong>", "index.html#autotoc_md11", null ]
+      ] ],
+      [ "Build instructions of the library and sample projects", "index.html#autotoc_md12", null ],
+      [ "Build instructions of user applications", "index.html#autotoc_md13", [
+        [ "Preparation", "index.html#autotoc_md14", null ],
+        [ "Build your application", "index.html#autotoc_md15", null ]
       ] ]
     ] ],
     [ "Data Structures", "annotated.html", [
@@ -68,8 +71,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"sound_8c.html#ac5838ecb113e8d1ef6af4cae7690de3c",
-"vdp_8h.html#a91cf075ff9817fd8e552c6f055ce8b95ab8183ad4525eb276c8bdacdb46a5b70f"
+"sound_8c.html#abe54003118d54c90db6550f995d7d918",
+"vdp_8h.html#a91cf075ff9817fd8e552c6f055ce8b95a021c502522980336404e5701e1595d8f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,16 +1,18 @@
 // -*- coding: utf-8-unix -*-
 /**
  * \file joystick.c
+ * Sample : get and show joystick button state.
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
- * This software is released under the MIT License.
+ * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
  *
- * GitHub libmsx project
+ * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
 
+#include <stdint.h>
 #include <stdlib.h>
 #include <msx.h>
 
@@ -58,9 +60,15 @@ static void locate(uint8_t x, uint8_t y) {
 }
 
 static void putc(int c) {
-  vmem_write(IMAGE + text_pos_x + text_pos_y * 32,
-             (uint8_t*)&c, 1);
-  text_pos_x++;
+  if (c == '\n') {
+    text_pos_x = 0;
+    text_pos_y++;
+  }
+  else {
+    vmem_write(IMAGE + text_pos_x + text_pos_y * 32,
+               (uint8_t*)&c, 1);
+    text_pos_x++;
+  }
   if (32 <= text_pos_x) {
     text_pos_x = 0;
     text_pos_y++;
@@ -76,25 +84,25 @@ static void puts(const char* str) {
   }
 }
 
-static void print_joypad_state(const uint8_t state) {
-  locate(0,0);
+static void puts_joystate(const uint8_t state, const char* str) {
   for (int i = 7; i >= 0; --i) {
     putc('0' + ((state >> i) & 1));
   }
-  locate(0,1);
-  puts("  ||||||");
-  locate(0,2);
-  puts("  |||||+-- VK_UP");
-  locate(0,3);
-  puts("  ||||+--- VK_DOWN");
-  locate(0,4);
-  puts("  |||+---- VK_LEFT");
-  locate(0,5);
-  puts("  ||+----- VK_RIGHT");
-  locate(0,6);
-  puts("  |+------ VK_FIRE_0");
-  locate(0,7);
-  puts("  +------- VK_FIRE_1");
+  puts(str);
+}
+
+static void print_joypad_state(void) {
+  locate(0,0);
+  puts_joystate(joypad_get_state(0), " : SPACE and ARROW keys\n");
+  puts_joystate(joypad_get_state(1), " : joystick #1 (port A)\n");
+  puts_joystate(joypad_get_state(2), " : joystick #2 (port B)\n");
+  puts("  ||||||\n"
+       "  |||||`-- VK_UP\n"
+       "  ||||`--- VK_DOWN\n"
+       "  |||`---- VK_LEFT\n"
+       "  ||`----- VK_RIGHT\n"
+       "  |`------ VK_FIRE_0\n"
+       "  `------- VK_FIRE_1\n");
 }
 
 void main(void) {
@@ -103,6 +111,6 @@ void main(void) {
 
   for (;;) {
     await_vsync();
-    print_joypad_state(joypad_get_state(1));
+    print_joypad_state();
   }
 }

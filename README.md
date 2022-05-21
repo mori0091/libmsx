@@ -104,11 +104,27 @@ The below functionality is NOT supported yet.
 
 ## Host Platform
 
-- Ubuntu 20.04
-- Ubuntu 21.xx (not tested)
-- Ubuntu 22.04 (recommended)
+**Linux**
 
-- Windows 10 / MSYS2 MINGW64 (not tested)
+| Host Platform | SDCC version | status          |
+|---------------|--------------|-----------------|
+| Ubuntu 20.04  | 3.8.0        | ✔ (outdated)    |
+|               | 3.9.0        | (not tested)    |
+|               | 4.0.0        | (not tested)    |
+|               | 4.1.0        | (not tested)    |
+|               | 4.2.0        | ❌              |
+| Ubuntu 21.04  | ?            | (not tested)    |
+| Ubuntu 22.04  | 4.0.0        | ✔ (outdated)    |
+|               | 4.1.0        | (not tested)    |
+|               | 4.2.0        | ✔ (recommended) |
+
+**Windows**
+
+| Host Platform | SDCC version | status          |
+|---------------|--------------|-----------------|
+| MSYS2 MINGW64 | 4.0.0        | (not tested)    |
+|               | 4.1.0        | (not tested)    |
+|               | 4.2.0        | ✔ (recommended) |
 
 Ofcourse, Ubuntu on **WSL** is okey. 😄  
 (**WSL**: Windows Subsystem for Linux)
@@ -123,12 +139,13 @@ Ofcourse, Ubuntu on **WSL** is okey. 😄
 
 … and some popular standard Linux/Unix commands:
 
-- `find`, `make`,
+- GNU `find`, `make`,
 - and so on.
 
 # Install instructions of Build tools
 
 **Ubuntu**
+---
 
 ``` shell
 sudo apt update
@@ -140,6 +157,28 @@ sudo apt install sdcc
 > instruction. In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we
 > recommend that you download SDCC 4.2.0 pre-built binary and use it on Ubuntu
 > 22.04 or later.
+
+**Windows**
+---
+
+There are two recommended ways to setup build tools:
+
+CASE 1. Use Ubuntu on WSL environment, and proceed with the above instructions.
+
+CASE 2. Use MSYS2 MINGW64 environment.
+- Download and install [SDCC](http://sdcc.sourceforge.net/).
+- Download and install [MSYS2](https://www.msys2.org/).  
+  Then install the required build tools as following:
+
+```shell
+pacman -S git base-devel mingw-w64-x86_64-gcc
+```
+
+Don't forget adding SDCC to `PATH` environment variable.  
+(add the below to `~/.bashrc` or `~/.bash_profile`)
+```shell
+export PATH=${PATH}:/c/Program\ Files/SDCC/bin
+```
 
 # Build instructions of the library and sample projects
 

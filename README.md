@@ -13,6 +13,8 @@ cartridge image (16KiB, 32KiB, or MegaROM).
 
 > MSX is a registered trademark of MSX Licensing Corporation.
 
+_Pull requests (PRs) and issues (bug reports, feature requests) are welcome._ 😉
+
 ## LICENSE
 
 Copyright (c) 2021 Daishi Mori (mori0091)

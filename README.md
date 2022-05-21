@@ -168,13 +168,12 @@ CASE 1. Use Ubuntu on WSL environment, and proceed with the above instructions.
 CASE 2. Use MSYS2 MINGW64 environment.
 - Download and install [SDCC](http://sdcc.sourceforge.net/).
 - Download and install [MSYS2](https://www.msys2.org/).  
-  Then install the required build tools as following:
+  Then install the required build tools as described in "MSYS2 Getting Started"
+  https://www.msys2.org/.
 
-```shell
-pacman -S git base-devel mingw-w64-x86_64-gcc
-```
+> See carefully "MSYS2 Getting Started" https://www.msys2.org/ for detail.
 
-Don't forget adding SDCC to `PATH` environment variable.  
+Finally, don't forget adding SDCC to `PATH` environment variable.  
 (add the below to `~/.bashrc` or `~/.bash_profile`)
 ```shell
 export PATH=${PATH}:/c/Program\ Files/SDCC/bin

@@ -4,7 +4,7 @@
 *.exe
 *.lib
 *.a
-*.cache
+/**/.cache
 *.d
 *.o
 *.rel

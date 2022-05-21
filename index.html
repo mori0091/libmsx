@@ -259,10 +259,12 @@ Install instructions of Build tools</h1>
 <p >CASE 2. Use MSYS2 MINGW64 environment.</p><ul>
 <li>Download and install <a href="http://sdcc.sourceforge.net/">SDCC</a>.</li>
 <li>Download and install <a href="https://www.msys2.org/">MSYS2</a>. <br  />
- Then install the required build tools as following:</li>
+ Then install the required build tools as described in "MSYS2 Getting Started" <a href="https://www.msys2.org/">https://www.msys2.org/</a>.</li>
 </ul>
-<div class="fragment"><div class="line">pacman -S git base-devel mingw-w64-x86_64-gcc</div>
-</div><!-- fragment --><p >Don't forget adding SDCC to <code>PATH</code> environment variable. <br  />
+<blockquote class="doxtable">
+<p >See carefully "MSYS2 Getting Started" <a href="https://www.msys2.org/">https://www.msys2.org/</a> for detail. </p>
+</blockquote>
+<p>Finally, don't forget adding SDCC to <code>PATH</code> environment variable. <br  />
  (add the below to <code>~/.bashrc</code> or <code>~/.bash_profile</code>) </p><div class="fragment"><div class="line">export PATH=${PATH}:/c/Program\ Files/SDCC/bin</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
 Build instructions of the library and sample projects</h1>

@@ -20,3 +20,4 @@
 /tools/**/lib
 /tools/**/obj
 /**/compile_commands.json
+/**/.vscode

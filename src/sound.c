@@ -305,6 +305,7 @@ void sound_pause(void) {
   PSG_SET(8, 0);
   PSG_SET(9, 0);
   PSG_SET(10, 0);
+  ay_3_8910_play();
 }
 
 // ---- local work area for `sound_player()` ----

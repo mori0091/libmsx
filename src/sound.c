@@ -20,6 +20,9 @@
 
 #include "../include/ay_3_8910.h"
 
+#define DI()                __asm__("di")
+#define EI()                __asm__("ei")
+
 #define PSG_SET(reg, val)   ay_3_8910_buffer[(reg)] = (val)
 #define PSG_GET(reg)        ay_3_8910_buffer[(reg)]
 
@@ -115,8 +118,20 @@ inline void sound_update_tick(void) {
 }
 
 // -----
+static void sound_set_eg_table0(const struct sound_eg_attribute * table);
+static void sound_set_speed0(uint8_t multiplier);
+static void sound_set_repeat0(bool repeat);
+static void sound_set_volume0(uint8_t volume);
+static void sound_set_mute0(uint8_t mute);
+static void sound_effect0(const struct sound_clip* s);
+static void sound_set_bgm0(const struct sound_clip* s);
+static void sound_start0(void);
+static void sound_init0(void);
+static void sound_stop0(void);
+static void sound_pause0(void);
 
-void sound_set_eg_table(const struct sound_eg_attribute * table) {
+// -----
+static void sound_set_eg_table0(const struct sound_eg_attribute * table) {
   sound_eg_table = table ? table : sound_eg_table_default;
 }
 
@@ -144,7 +159,7 @@ inline void sound_channel_reset(struct sound_channel * sc) {
 
 // -----
 
-void sound_set_speed(uint8_t multiplier) {
+static void sound_set_speed0(uint8_t multiplier) {
   if (multiplier < SOUND_SPEED_MIN) {
     multiplier = SOUND_SPEED_MIN;
   }
@@ -154,7 +169,7 @@ void sound_set_speed(uint8_t multiplier) {
   sound.bg.count_per_tick = multiplier;
 }
 
-void sound_set_repeat(bool repeat) {
+static void sound_set_repeat0(bool repeat) {
   sound.repeat = repeat;
 }
 
@@ -185,19 +200,19 @@ static void sound_restore_psg_registers(void) {
   PSG_SET(12, backup.envelope_cycle_hi);
 }
 
-void sound_set_volume(uint8_t volume) {
+static void sound_set_volume0(uint8_t volume) {
   sound.volume = (15 < volume ? 15 : volume);
 }
 
-void sound_set_mute(uint8_t mute) {
+static void sound_set_mute0(uint8_t mute) {
   mute &= 7;
   sound.bg.flag &= ~(7 << 3);
   sound.bg.flag |= mute << 3;
   sound.se.flag &= ~(7 << 3);
   sound.se.flag |= mute << 3;
-  if (mute & SOUND_CHANNEL_A) PSG_SET(8, 0);
-  if (mute & SOUND_CHANNEL_B) PSG_SET(9, 0);
-  if (mute & SOUND_CHANNEL_C) PSG_SET(10, 0);
+  if (mute & SOUND_CHANNEL_A) psg_set(8, 0);
+  if (mute & SOUND_CHANNEL_B) psg_set(9, 0);
+  if (mute & SOUND_CHANNEL_C) psg_set(10, 0);
 }
 
 static void sound_set_fragment(struct sound_state* st, const struct sound_fragment* sf) {
@@ -230,22 +245,20 @@ static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
 }
 
 static volatile const struct sound_clip * next_sound_effect;
-void sound_effect(const struct sound_clip* s) {
-  __asm__("di");
+static void sound_effect0(const struct sound_clip* s) {
   next_sound_effect = s;
-  __asm__("ei");
 }
 
 static void sound_effect_apply(void) {
   const struct sound_clip * s = next_sound_effect;
   next_sound_effect = NULL;
   if (!s) return;
-  if (sound.se.flag & SOUND_CHANNEL_ALL) {
-    if (s->priority < sound.se.clip->priority) {
-      return;
-    }
-  }
   if (sound.se.clip) {
+    if (sound.se.flag & SOUND_CHANNEL_ALL) {
+      if (s->priority < sound.se.clip->priority) {
+        return;
+      }
+    }
     // When switching sound effects, using channels may differ between previous
     // and next sound effects, so temporally restores register values for BGM
     // before playing the next sound effects.
@@ -257,17 +270,15 @@ static void sound_effect_apply(void) {
   sound_set_clip(&sound.se, s);
 }
 
-void sound_set_bgm(const struct sound_clip* s) {
-  sound_stop();
+static void sound_set_bgm0(const struct sound_clip* s) {
+  sound_stop0();
   if (!s) {
     return;
   }
-  __critical {
-    sound_set_clip(&sound.bg, s);
-  }
+  sound_set_clip(&sound.bg, s);
 }
 
-void sound_start(void) {
+static void sound_start0(void) {
   sound.paused = false;
 }
 
@@ -281,18 +292,18 @@ static void sound_state_init(struct sound_state * st) {
   st->envelope_pattern = 0;
 }
 
-void sound_init(void) {
+static void sound_init0(void) {
   COUNT_PER_TICK = COUNT_PER_SECOND / msx_get_vsync_frequency();
   sound.bg.count_per_tick = SOUND_SPEED_1X;
   sound.se.count_per_tick = SOUND_SPEED_1X;
   sound_eg_table = sound_eg_table_default;
-  sound_set_volume(15);
-  sound_stop();
+  sound_set_volume0(15);
+  sound_stop0();
 }
 
-void sound_stop(void) {
-  sound_effect(NULL);
-  sound_pause();
+static void sound_stop0(void) {
+  sound_effect0(NULL);
+  sound_pause0();
   ay_3_8910_init();
   sound_state_init(&sound.bg);
   sound_state_init(&sound.se);
@@ -300,12 +311,11 @@ void sound_stop(void) {
   sound_advance_count = 0;
 }
 
-void sound_pause(void) {
+static void sound_pause0(void) {
   sound.paused = true;
-  PSG_SET(8, 0);
-  PSG_SET(9, 0);
-  PSG_SET(10, 0);
-  ay_3_8910_play();
+  psg_set(8, 0);
+  psg_set(9, 0);
+  psg_set(10, 0);
 }
 
 // ---- local work area for `sound_player()` ----
@@ -457,7 +467,7 @@ static void sound_player__process_channel(void) {
 }
 
 static bool sound_player__process(void) {
-  for (;;) {
+  while (ctx.st->section < ctx.st->clip->num_fragments) {
     {
       const uint8_t count = ctx.st->count_per_tick * sound_advance_count;
       ctx.mask = SOUND_CHANNEL_A;
@@ -466,8 +476,10 @@ static bool sound_player__process(void) {
           ctx.channel_muted = (bool)(ctx.mute & ctx.mask);
           ctx.stch = &ctx.st->channels[ctx.ch];
           // ---- Countdown time remaining ----
-          ctx.stch->duration -= count;
-          if (ctx.stch->duration <= 0) {
+          if (count < ctx.stch->duration) {
+            ctx.stch->duration -= count;
+          } else {
+            ctx.stch->duration = 0;
             // ---- Decode next chunk ----
             sound_player__process_channel();
           }
@@ -484,22 +496,26 @@ static bool sound_player__process(void) {
     }
     if (++ctx.st->section >= ctx.st->clip->num_fragments) {
       // end of the clip
-      return true;
+      break;
     }
     // the clip has more fragments
     const struct sound_fragment * sf = ctx.st->clip->fragments[ctx.st->section];
-    if (sf) {
-      // set the next fragment
-      sound_set_fragment(ctx.st, sf);
+    if (!sf) {
+      break;
     }
+    // set the next fragment
+    sound_set_fragment(ctx.st, sf);
     if (!(ctx.st->flag & SOUND_CHANNEL_ALL)) {
       // end of the clip (invalid fragment)
-      return true;
+      break;
     }
     // start to play the next fragment.
   }
+  ctx.st->section = ctx.st->clip->num_fragments;
+  return true;
 }
 
+// -----
 void sound_player(void) {
   if (sound.paused) {
     return;
@@ -512,24 +528,95 @@ void sound_player(void) {
     // By passing `mute` as 2nd parameter, temporarily turn on the mute switch
     // for the channel being used for sound effects.
     ctx.st = &sound.bg;
-    ctx.mute = (sound.bg.flag >> 3) | sound.se.flag;
+    ctx.mute = ((sound.bg.flag >> 3) & 7) | sound.se.flag;
     if (sound_player__process()) {
       // ---- end of music ----
       if (sound.repeat) {
         // ---- auto-repeat ----
-        sound_set_bgm(sound.bg.clip);
-        sound_start();
+        sound_set_bgm0(sound.bg.clip);
+        sound_start0();
+      }
+      else {
+        /* sound.bg.clip = 0; */
+        sound_state_init(&sound.bg);
       }
     }
   }
   // ---- sound effect ----
   if (sound.se.clip) {
     ctx.st = &sound.se;
-    ctx.mute = sound.se.flag >> 3;
+    ctx.mute = (sound.se.flag >> 3) & 7;
     if (sound_player__process()) {
       // ---- end of music ----
-      sound.se.clip = 0;
+      /* sound.se.clip = 0; */
+      sound_state_init(&sound.se);
       sound_restore_psg_registers();
     }
   }
+}
+
+void sound_set_eg_table(const struct sound_eg_attribute * table) {
+  DI();
+  sound_set_eg_table0(table);
+  EI();
+}
+
+void sound_set_speed(uint8_t multiplier) {
+  DI();
+  sound_set_speed0(multiplier);
+  EI();
+}
+
+void sound_set_repeat(bool repeat) {
+  DI();
+  sound_set_repeat0(repeat);
+  EI();
+}
+
+void sound_set_volume(uint8_t volume) {
+  DI();
+  sound_set_volume0(volume);
+  EI();
+}
+
+void sound_set_mute(uint8_t mute) {
+  DI();
+  sound_set_mute0(mute);
+  EI();
+}
+
+void sound_effect(const struct sound_clip* s) {
+  DI();
+  sound_effect0(s);
+  EI();
+}
+
+void sound_set_bgm(const struct sound_clip* s) {
+  DI();
+  sound_set_bgm0(s);
+  EI();
+}
+
+void sound_start(void) {
+  DI();
+  sound_start0();
+  EI();
+}
+
+void sound_init(void) {
+  DI();
+  sound_init0();
+  EI();
+}
+
+void sound_stop(void) {
+  DI();
+  sound_stop0();
+  EI();
+}
+
+void sound_pause(void) {
+  DI();
+  sound_pause0();
+  EI();
 }

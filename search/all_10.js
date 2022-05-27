@@ -17,7 +17,7 @@ var searchData=
   ['psg_5fport1_14',['psg_port1',['../io_8h.html#ae513155a83d71ab12033bbf82b70f721',1,'io.h']]],
   ['psg_5fport2_15',['psg_port2',['../io_8h.html#a901f03d5ca82e8e40201c6b57fc7f34c',1,'io.h']]],
   ['psg_5freg_5finitial_5fvector_16',['psg_reg_initial_vector',['../psg_8h.html#a5fe004c472dfaef154f795a07d39ce94',1,'psg_reg_initial_vector():&#160;psg_init.c'],['../psg__init_8c.html#a5fe004c472dfaef154f795a07d39ce94',1,'psg_reg_initial_vector():&#160;psg_init.c']]],
-  ['psg_5fset_17',['PSG_SET',['../sound_8c.html#a7ae7e10344799784eac6a71252a0504a',1,'sound.c']]],
-  ['psg_5fset_18',['psg_set',['../psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577',1,'psg_set(uint8_t reg, uint8_t val):&#160;psg.h'],['../psg__set_8c.html#ae76dc7a8f615f828df6c22c7bf180577',1,'psg_set(uint8_t reg, uint8_t val):&#160;psg.h']]],
+  ['psg_5fset_17',['psg_set',['../psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577',1,'psg_set(uint8_t reg, uint8_t val):&#160;psg.h'],['../psg__set_8c.html#ae76dc7a8f615f828df6c22c7bf180577',1,'psg_set(uint8_t reg, uint8_t val):&#160;psg.h']]],
+  ['psg_5fset_18',['PSG_SET',['../sound_8c.html#a7ae7e10344799784eac6a71252a0504a',1,'sound.c']]],
   ['psg_5fset_2ec_19',['psg_set.c',['../psg__set_8c.html',1,'']]]
 ];

@@ -36,8 +36,8 @@ var NAVTREE =
         [ "Build tools", "index.html#autotoc_md8", null ]
       ] ],
       [ "Install instructions of Build tools", "index.html#autotoc_md9", [
-        [ "<strong>Ubuntu</strong>", "index.html#autotoc_md10", null ],
-        [ "<strong>Windows</strong>", "index.html#autotoc_md11", null ]
+        [ "Ubuntu", "index.html#autotoc_md10", null ],
+        [ "Windows", "index.html#autotoc_md11", null ]
       ] ],
       [ "Build instructions of the library and sample projects", "index.html#autotoc_md12", null ],
       [ "Build instructions of user applications", "index.html#autotoc_md13", [

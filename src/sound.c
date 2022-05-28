@@ -229,15 +229,12 @@ static void sound_set_fragment(struct sound_state* st, const struct sound_fragme
   st->flag = flag;
 }
 
+static void sound_state_init(struct sound_state * st);
+
 static void sound_set_clip(struct sound_state* st, const struct sound_clip* s) {
+  sound_state_init(st);
   if (!s || !s->fragments || 0 == s->num_fragments) {
-    st->flag = 0;
-    st->clip = 0;
     return;
-  }
-  st->section = 0;
-  for (uint8_t ch = 0; ch < 3; ++ch) {
-    sound_channel_reset(&st->channels[ch]);
   }
   const struct sound_fragment* sf = s->fragments[0];
   sound_set_fragment(st, sf);
@@ -285,6 +282,7 @@ static void sound_start0(void) {
 static void sound_state_init(struct sound_state * st) {
   st->clip = 0;
   st->flag = 0;
+  st->section = 0;
   // ----
   for (uint8_t ch = 0; ch < 3; ++ch) {
     sound_channel_reset(&st->channels[ch]);

@@ -357,9 +357,6 @@ static void sound_player__process_channel(void) {
     ctx.stch->duration += SOUND_SPEED_1X * ticks;
     len = (head1 >> 5) & 7;
     ctx.stch->next = next + len;
-    if (ctx.channel_muted) {
-      return;
-    }
   }
   // ---- Parse and process the chunk ----
   while (len--) {
@@ -372,6 +369,7 @@ static void sound_player__process_channel(void) {
       sound_eg_key_on(&ctx.stch->eg);
       // When using hardware envelopes, special processing is required.
       if (ctx.stch->hw_envelope_enable) {
+        if (ctx.channel_muted) break;
         PSG_SET(13, ctx.st->envelope_pattern);
         PSG_SET(8+ctx.ch, 16);
       }
@@ -384,6 +382,7 @@ static void sound_player__process_channel(void) {
         const uint8_t fdr_hi = x & 0x0f;
         const uint8_t fdr_lo = *next++;
         len--;
+        if (ctx.channel_muted) break;
         PSG_SET(1+2*ctx.ch, fdr_hi); // fdr_hi:4
         PSG_SET(0+2*ctx.ch, fdr_lo); // fdr_lo:8
       }
@@ -393,6 +392,7 @@ static void sound_player__process_channel(void) {
       // -- Perform a key-off. (It also serves as a rest.)
       sound_eg_key_off(&ctx.stch->eg);
       if (ctx.stch->hw_envelope_enable) {
+        if (ctx.channel_muted) break;
         PSG_SET(8+ctx.ch, 0);
       }
       break;
@@ -401,6 +401,7 @@ static void sound_player__process_channel(void) {
       // noise (5bits)
       // 001b fdr:5
       // -- Changes frequency of noise generator.
+      if (ctx.channel_muted) break;
       PSG_SET(6, (x & 0x1f));
       break;
     case 0x7:
@@ -411,6 +412,7 @@ static void sound_player__process_channel(void) {
         len--;
         // const uint8_t mixer = (*next++ & 0x3f) | 0x80;
         const uint8_t mixer = *next++;
+        if (ctx.channel_muted) break;
         PSG_SET(7, mixer);
       }
       break;
@@ -451,6 +453,7 @@ static void sound_player__process_channel(void) {
         const uint8_t cycle_hi = *next++;
         const uint8_t cycle_lo = *next++;
         len -= 2;
+        if (ctx.channel_muted) break;
         PSG_SET(12, cycle_hi); // cycle_hi:8
         PSG_SET(11, cycle_lo); // cycle_lo:8
       }

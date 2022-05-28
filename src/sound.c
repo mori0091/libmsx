@@ -531,8 +531,7 @@ void sound_player(void) {
       // ---- end of music ----
       if (sound.repeat) {
         // ---- auto-repeat ----
-        sound_set_bgm0(sound.bg.clip);
-        sound_start0();
+        sound_set_clip(&sound.bg, sound.bg.clip);
       }
       else {
         sound_state_init(&sound.bg);

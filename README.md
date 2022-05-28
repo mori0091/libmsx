@@ -113,7 +113,6 @@ The below functionality is NOT supported yet.
 |               | 4.0.0        | (not tested)    |
 |               | 4.1.0        | (not tested)    |
 |               | 4.2.0        | ❌              |
-| Ubuntu 21.04  | ?            | (not tested)    |
 | Ubuntu 22.04  | 4.0.0        | ✔ (outdated)    |
 |               | 4.1.0        | (not tested)    |
 |               | 4.2.0        | ✔ (recommended) |
@@ -144,8 +143,7 @@ Ofcourse, Ubuntu on **WSL** is okey. 😄
 
 # Install instructions of Build tools
 
-**Ubuntu**
----
+## Ubuntu
 
 ``` shell
 sudo apt update
@@ -158,8 +156,7 @@ sudo apt install sdcc
 > recommend that you download SDCC 4.2.0 pre-built binary and use it on Ubuntu
 > 22.04 or later.
 
-**Windows**
----
+## Windows
 
 There are two recommended ways to setup build tools:
 

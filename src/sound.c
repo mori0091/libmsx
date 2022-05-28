@@ -526,7 +526,7 @@ void sound_player(void) {
     // By passing `mute` as 2nd parameter, temporarily turn on the mute switch
     // for the channel being used for sound effects.
     ctx.st = &sound.bg;
-    ctx.mute = ((sound.bg.flag >> 3) & 7) | sound.se.flag;
+    ctx.mute = ((sound.bg.flag >> 3) | sound.se.flag) & 7;
     if (sound_player__process()) {
       // ---- end of music ----
       if (sound.repeat) {

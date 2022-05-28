@@ -535,7 +535,6 @@ void sound_player(void) {
         sound_start0();
       }
       else {
-        /* sound.bg.clip = 0; */
         sound_state_init(&sound.bg);
       }
     }
@@ -546,7 +545,6 @@ void sound_player(void) {
     ctx.mute = (sound.se.flag >> 3) & 7;
     if (sound_player__process()) {
       // ---- end of music ----
-      /* sound.se.clip = 0; */
       sound_state_init(&sound.se);
       sound_restore_psg_registers();
     }

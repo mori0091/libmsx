@@ -66,6 +66,7 @@ var sound_8c =
     [ "sound_eg_AHDSR", "sound_8c.html#a380105d26608f74823f014bfbfcdaa04", null ],
     [ "sound_eg_LPCM", "sound_8c.html#a0a7b65d0dca89f6c9f929533a89fe485", null ],
     [ "sound_eg_classes", "sound_8c.html#aae5b5b111aa60e4a7440174b0bbaa66e", null ],
+    [ "flag", "sound_8c.html#aff31312fb16705aa73c53b945a1a6b30", null ],
     [ "noise_fdr", "sound_8c.html#a31c9b853467f23a198f0a75610df80a5", null ],
     [ "mixer", "sound_8c.html#a2e831854e0cc8fdfafd66f0168d48bd0", null ],
     [ "envelope_cycle_lo", "sound_8c.html#a3646dc2c758ca63359a925b8666f4b74", null ],

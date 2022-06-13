@@ -174,6 +174,7 @@ static void sound_set_repeat0(bool repeat) {
 }
 
 static struct {
+  uint8_t flag;
   uint8_t noise_fdr;
   uint8_t mixer;
   uint8_t envelope_cycle_lo;
@@ -188,14 +189,20 @@ static void sound_backup_psg_registers(void) {
 }
 
 static void sound_restore_psg_registers(void) {
-  sound.bg.channels[0].eg.output = 0;
-  sound.bg.channels[1].eg.output = 0;
-  sound.bg.channels[2].eg.output = 0;
+  if (backup.flag & SOUND_CHANNEL_A) {
+    sound.bg.channels[0].eg.output = 0;
+    PSG_SET(8, 0);
+  }
+  if (backup.flag & SOUND_CHANNEL_B) {
+    sound.bg.channels[1].eg.output = 0;
+    PSG_SET(9, 0);
+  }
+  if (backup.flag & SOUND_CHANNEL_C) {
+    sound.bg.channels[2].eg.output = 0;
+    PSG_SET(10, 0);
+  }
   PSG_SET(6, backup.noise_fdr);
   PSG_SET(7, backup.mixer);
-  PSG_SET(8, 0);
-  PSG_SET(9, 0);
-  PSG_SET(10, 0);
   PSG_SET(11, backup.envelope_cycle_lo);
   PSG_SET(12, backup.envelope_cycle_hi);
 }
@@ -265,6 +272,7 @@ static void sound_effect_apply(void) {
     sound_backup_psg_registers();
   }
   sound_set_clip(&sound.se, s);
+  backup.flag = sound.se.flag;  // Memory which channel(s) the SFX uses.
 }
 
 static void sound_set_bgm0(const struct sound_clip* s) {
@@ -331,13 +339,17 @@ static struct {
 #define ctx sound_player_ctx
 
 static void sound_channel_output(void) {
-  int8_t x = (ctx.stch->eg.output >> 4) + ctx.stch->amp + sound.volume - 30;
-  if (x < 0) {
-    x = 0;
+  if (!ctx.stch->hw_envelope_enable) {
+    if (!ctx.channel_muted) {
+      int8_t x = (ctx.stch->eg.output >> 4) + ctx.stch->amp + sound.volume - 30;
+      if (x < 0) {
+        x = 0;
+      }
+      PSG_SET(8+ctx.ch, x);
+    }
+    // advance the channel's envelope generator by 1/60th a second.
+    sound_eg_advance(&ctx.stch->eg);
   }
-  PSG_SET(8+ctx.ch, x);
-  // advance the channel's envelope generator by 1/60th a second.
-  sound_eg_advance(&ctx.stch->eg);
 }
 
 static void sound_player__process_channel(void) {
@@ -483,9 +495,6 @@ static bool sound_player__process(void) {
             ctx.stch->duration = 0;
             // ---- Decode next chunk ----
             sound_player__process_channel();
-          }
-          if (ctx.channel_muted || ctx.stch->hw_envelope_enable) {
-            continue;
           }
           sound_channel_output();
         }

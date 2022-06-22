@@ -118,7 +118,6 @@ void snd_m__init(struct snd_m_ctx * ctx) {
   snd_m__program_change(ctx, 0);
   ctx->isEnd = true;
   ctx->timer = 0;
-  snd_i__set_i_tables(0, 0);
   for (uint8_t ch = 3; ch--;) {
     struct snd_channel * pch = &ctx->channels[ch];
     snd_i__program_change(&pch->i, 1); // instrument #1

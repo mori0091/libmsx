@@ -116,8 +116,6 @@ static int16_t snd__osc_period(uint8_t note, int16_t pitch) {
 
 void snd_m__init(struct snd_m_ctx * ctx) {
   snd_m__program_change(ctx, 0);
-  ctx->isEnd = true;
-  ctx->timer = 0;
   for (uint8_t ch = 3; ch--;) {
     struct snd_channel * pch = &ctx->channels[ch];
     snd_i__program_change(&pch->i, 1); // instrument #1
@@ -135,13 +133,15 @@ void snd_m__init(struct snd_m_ctx * ctx) {
 }
 
 void snd_m__program_change(struct snd_m_ctx * ctx, const uint8_t * m_stream) {
+  ctx->timer = 0;
   if (!m_stream) {
     ctx->next = ctx->data = &end_of_stream;
     ctx->isEnd = true;
-    return;
   }
-  ctx->next = ctx->data = m_stream;
-  ctx->isEnd = false;
+  else {
+    ctx->next = ctx->data = m_stream;
+    ctx->isEnd = false;
+  }
 }
 
 uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {

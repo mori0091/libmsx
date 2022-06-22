@@ -20,6 +20,8 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#include "../include/snd_i_table.h"
+
 struct snd_i_ctx {
   uint8_t wait;
   uint8_t timer;
@@ -47,16 +49,6 @@ struct snd_i_ctx {
     uint8_t  hw_arp;            // default: 0
     uint16_t hw_pitch;          // default: 0
   };
-};
-
-/**
- * Instrument table.
- */
-struct snd_i_table {
-  const uint8_t wait;
-  const uint8_t * ad_part;
-  const uint8_t * s_part;
-  const uint8_t * r_part;
 };
 
 extern void snd_i__set_i_tables(size_t n, const struct snd_i_table * i_tables_);

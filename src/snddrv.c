@@ -122,8 +122,8 @@ void snd_init(void) {
   EI();
 }
 
-inline void snd__process(struct snd_ctx * ctx);
-inline void snd__mixing(void);
+static void snd__decode(struct snd_ctx * ctx);
+static void snd__synthesis(void);
 
 void snd_play(void) {
   if (paused) {
@@ -131,9 +131,9 @@ void snd_play(void) {
   }
   ay_3_8910_play();
 
-  snd__process(&snd_bgm);
-  snd__process(&snd_sfx);
-  snd__mixing();
+  snd__decode(&snd_bgm);
+  snd__decode(&snd_sfx);
+  snd__synthesis();
 
   if (repeat && snd_bgm.m.isEnd) {
     snd__set_bgm((void *)snd_bgm.m.data);
@@ -143,27 +143,18 @@ void snd_play(void) {
 // ------------------------------------------------
 
 static void snd__decode(struct snd_ctx * ctx) {
-  snd_m__decode(&ctx->m);
-  uint8_t ch = 3;
-  while (ch--) {
-    struct snd_channel * pch = &ctx->m.channels[ch];
-    snd_i__decode(&pch->i);
-    snd_a__decode(&pch->a);
-    snd_p__decode(&pch->p);
-    snd_e__decode(&pch->e);
-  }
-}
-
-inline void snd__synthesis(struct snd_ctx * ctx) {
-  snd_m__synthesis(&ctx->m);
-}
-
-inline void snd__process(struct snd_ctx * ctx) {
   ctx->counter += ctx->play_freq;
   while (vsync_freq <= ctx->counter) {
     ctx->counter -= vsync_freq;
-    snd__decode(ctx);
-    snd__synthesis(ctx);
+    // ----
+    snd_m__decode(&ctx->m);
+    for (uint8_t ch = 3; ch--;) {
+      struct snd_channel * pch = &ctx->m.channels[ch];
+      snd_i__decode(&pch->i);
+      snd_a__decode(&pch->a);
+      snd_p__decode(&pch->p);
+      snd_e__decode(&pch->e);
+    }
   }
 }
 
@@ -173,8 +164,15 @@ inline bool is_playing(struct snd_ctx * ctx, uint8_t ch) {
   return !!ctx->m.channels[ch].volume;
 }
 
-inline void snd__mixing(void) {
-  for (uint8_t ch = 0; ch < 3; ++ch) {
-    snd_m__mixing(is_playing(&snd_sfx, ch) ? &snd_sfx.m : &snd_bgm.m, ch);
+static void snd__synthesis(void) {
+  static struct snd_channel * pchs[3];
+  for (uint8_t ch = 3; ch--;) {
+    if (is_playing(&snd_sfx, ch)) {
+      pchs[ch] = &snd_sfx.m.channels[ch];
+    }
+    else {
+      pchs[ch] = &snd_bgm.m.channels[ch];
+    }
   }
+  snd_m__synthesis(pchs);
 }

@@ -44,13 +44,74 @@ static const uint16_t osc_periods[] = {
   0x00e, 0x00d, 0x00c, 0x00b, 0x00b, 0x00a, 0x00a, 0x009, 0x009, 0x008, 0x008, 0x007, // octave 9
 };
 
-inline int16_t snd__osc_period_of(uint8_t note) {
+// inline int16_t snd__osc_period_of(uint8_t note) {
+//   int8_t idx = MIDI_NOTE_NUMBER_TO_INDEX(note);
+//   if (idx < 0 || OSC_PERIODS_INDEX_MAX <= idx) {
+//     // out of range
+//     return -1;
+//   }
+//   return osc_periods[idx];
+// }
+
+/**
+ * Multiply an 7 bit coefficient `k` to `x`.
+ *
+ * \param k  an 7 bit coefficient (0..255 means 0..255/128)
+ * \param x  a 16 bit unsigned integer
+ * \return   the integer part of k*x
+ */
+inline uint16_t kxQ7(uint8_t k, uint16_t x) {
+  uint16_t h = (k * (x >> 7));
+  uint16_t l = (k * (x & 127)) >> 7;
+  return (h + l);
+}
+
+/**
+ * Linear interpolation between `a` and `b`.
+ *
+ * \param k  an 7 bit coefficient (0..128 means 0..128/128)
+ * \param x  a 16 bit unsigned integer
+ * \return   the integer part of the result.
+ * \note
+ * `k` must be less than or equal to 128.
+ */
+inline uint16_t lerpQ7(uint8_t k, uint16_t a, uint16_t b) {
+  return kxQ7(128 - k, a) + kxQ7(k, b);
+}
+
+/**
+ * \param note    MIDI note number
+ * \param pitch   pitch shift (pitch == 128 means +1 note)
+ * \return        OSC period (≈ wave lengh)
+ */
+static int16_t snd__osc_period(uint8_t note, int16_t pitch) {
+  if (127 < note) {
+    // out of range (illegal MIDI note number)
+    return -1;
+  }
+  if (pitch < 0) {
+    uint16_t d = ((-pitch) >> 7) + 1;
+    if (note < d) {
+      // out of range
+      return -1;
+    }
+    note -= d;
+    pitch = 128 - ((-pitch) & 127);
+  }
+  // ----
   int8_t idx = MIDI_NOTE_NUMBER_TO_INDEX(note);
-  if (idx < 0 || OSC_PERIODS_INDEX_MAX <= idx) {
+  if (127 < pitch) {
+    idx++;
+    pitch &= 0x7f;
+  }
+  if (idx < 0) {
     // out of range
     return -1;
   }
-  return osc_periods[idx];
+  if (OSC_PERIODS_INDEX_MAX - 1 <= idx) {
+    return osc_periods[OSC_PERIODS_INDEX_MAX - 1];
+  }
+  return lerpQ7(pitch, osc_periods[idx], osc_periods[idx+1]);
 }
 
 void snd_m__init(struct snd_m_ctx * ctx) {
@@ -58,21 +119,19 @@ void snd_m__init(struct snd_m_ctx * ctx) {
   ctx->isEnd = true;
   ctx->timer = 0;
   snd_i__set_i_tables(0, 0);
-  for (uint8_t ch = 0; ch < 3; ++ch) {
+  for (uint8_t ch = 3; ch--;) {
     struct snd_channel * pch = &ctx->channels[ch];
     snd_i__program_change(&pch->i, 1); // instrument #1
     snd_a__program_change(&pch->a, 0); // arpeggio off
     snd_p__program_change(&pch->p, 0); // pitch envelope off
     snd_e__program_change(&pch->e, 0); // amplitude envelope off
-    pch->note = 0xff;
-    pch->volume = 15;
-    pch->arp = 0;
-    pch->pitch = 0;
-    pch->volume = 0;
-    pch->fade_delta = 0;
+    pch->note       = 0xff;
+    pch->volume     = 0;
+    pch->arp        = 0;
+    pch->pitch      = 0;
+    pch->fade_wait  = 0;
     pch->fade_timer = 0;
-    pch->fade_wait = 0;
-    pch->period = 0;
+    pch->fade       = 0;
   }
 }
 
@@ -95,11 +154,10 @@ uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {
   return x;
 }
 
-void snd_m__decode_expression_command(struct snd_m_ctx * ctx, uint8_t ch) {
+static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch) {
   // decode an expression command
   uint8_t tag = snd_m__stream_take(ctx);
   uint8_t x = tag & 0x0f;
-  struct snd_channel * pch = &ctx->channels[ch];
   switch (tag >> 4) {
     case 0:
       // \TODO reset effect
@@ -117,18 +175,20 @@ void snd_m__decode_expression_command(struct snd_m_ctx * ctx, uint8_t ch) {
       snd_m__stream_take(ctx);
       break;
     case 4:
-      // \TODO pitch up
+      // pitch up (+0..+15/128)
+      pch->pitch = x;
       break;
     case 5:
-      // \TODO pitch down
+      // pitch down (-15/128..+0)
+      pch->pitch = -x;
       break;
     case 6:
-      // \TODO fast pitch up
-      snd_m__stream_take(ctx);
+      // fast pitch up (+0..+4095/128)
+      pch->pitch = (x << 8) + snd_m__stream_take(ctx);
       break;
     case 7:
-      // \TODO fast pitch down
-      snd_m__stream_take(ctx);
+      // fast pitch down (-4095/128..+0)
+      pch->pitch = -((x << 8) + snd_m__stream_take(ctx));
       break;
     case 8:
       // \TODO pitch glide
@@ -137,17 +197,16 @@ void snd_m__decode_expression_command(struct snd_m_ctx * ctx, uint8_t ch) {
     case 9:
       // set volume to x
       pch->volume = x;
+      pch->fade = 0;
       break;
     case 10:
-      // \TODO fade in
-      pch->fade_delta = 1;
+      pch->fade = 1;
       pch->fade_wait
         = pch->fade_timer
         = (x << 8) + snd_m__stream_take(ctx);
       break;
     case 11:
-      // \TODO fade out
-      pch->fade_delta = -1;
+      pch->fade = -1;
       pch->fade_wait
         = pch->fade_timer
         = (x << 8) + snd_m__stream_take(ctx);
@@ -180,8 +239,7 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
       ctx->timer = x;
       return;
     }
-    uint8_t ch = x & 0x0f;
-    struct snd_channel * pch = &ctx->channels[ch];
+    struct snd_channel * pch = &ctx->channels[x & 0x0f];
     switch (x >> 4) {
       case 8:                   // NoteOn
         pch->note = snd_m__stream_take(ctx);
@@ -210,7 +268,7 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
         snd_e__program_change(&pch->e, snd_m__stream_take(ctx));
         break;
       case 14:
-        snd_m__decode_expression_command(ctx, ch);
+        snd_m__decode_expression_command(ctx, pch);
         break;
       case 15:
       default:
@@ -219,81 +277,117 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
   }
 }
 
-static void snd_m__synthesis_fade_in_out(struct snd_m_ctx * ctx) {
-  uint8_t ch = 3;
-  while (ch--) {
-    struct snd_channel * pch = &ctx->channels[ch];
-    int8_t fade = pch->fade_delta;
-    if (fade) {
-      if (pch->fade_timer) {
-        pch->fade_timer--;
-        continue;
-      }
-      pch->fade_timer = pch->fade_wait;
-      int8_t amp = pch->volume + fade;
-      if (amp < 0) {
-        amp = 0;
-        pch->fade_delta = 0;
-        continue;
-      }
-      if (15 < amp) {
-        amp = 15;
-        pch->fade_delta = 0;
-        continue;
-      }
+static void snd_m__synthesis_fade_in_out(struct snd_channel * pchs[3]) {
+  for (uint8_t ch = 3; ch--;) {
+    struct snd_channel * pch = pchs[ch];
+    if (!pch->fade) {
+      continue;
+    }
+    if (pch->fade_timer) {
+      pch->fade_timer--;
+      continue;
+    }
+    pch->fade_timer = pch->fade_wait;
+    int8_t amp = pch->volume + pch->fade;
+    if (amp <= 0 || 15 <= amp) {
+      pch->fade = 0;
+    }
+    else {
       pch->volume = (uint8_t)amp;
     }
   }
 }
 
-static void snd_m__synthesis_pitch(struct snd_m_ctx * ctx) {
-  uint8_t ch = 3;
-  while (ch--) {
-    struct snd_channel * pch = &ctx->channels[ch];
-    int16_t period = snd__osc_period_of(pch->note + pch->arp);
-    if (period < 0) {
-      pch->period = -1;
+void snd_m__synthesis(struct snd_channel * pchs[3]) {
+  snd_m__synthesis_fade_in_out(pchs);
+  // ---------------------------------------------------
+  uint8_t mixer = 0xb8;
+  for (uint8_t ch = 3; ch--; ) {
+    struct snd_channel * pch = pchs[ch];
+    if (pch->note == 0xff) {
+      PSG_SET(ch+8, 0);
       continue;
     }
+    // ----
+    if (pch->i.noise_fdr) {
+      PSG_SET(6, pch->i.noise_fdr);
+      mixer &= ~(4 << ch);
+    }
+    if (!pch->i.tone_on) {
+      mixer |= (1 << ch);
+    }
+    // ----
+    int8_t note = pch->note + pch->arp;
     int16_t pitch = pch->pitch;
-    if (0 < pitch && period < pitch) {
-      pch->period = 1;
+    // ----
+    uint16_t sw_period = pch->i.sw_period;
+    // SW only -----------------------------------------
+    if (pch->i.modulation == 0) {
+      // ---- volume / software envelope ----
+      int8_t volume = pch->volume + pch->i.volume - 15;
+      if (volume < 0)  { volume = 0;  }
+      if (15 < volume) { volume = 15; }
+      PSG_SET(ch+8, volume);
+      // ---- square wave ----
+      if (!sw_period) {
+        sw_period = snd__osc_period(note + pch->i.sw_arp, pitch + pch->i.sw_pitch);
+      }
+      PSG_SET(2*ch+0, (sw_period     ) & 0xff);
+      PSG_SET(2*ch+1, (sw_period >> 8) & 0xff);
       continue;
     }
-    period -= pitch;
-    if (0x0fff < period) {
-      pch->period = 0x0fff;
-      continue;
+    // ----
+    uint16_t hw_period = pch->i.hw_period;
+    // HW only -----------------------------------------
+    if (pch->i.modulation == 1) {
+      mixer |= (1 << ch);
+      if (!hw_period) {
+        hw_period = snd__osc_period(note + pch->i.hw_arp, pitch + pch->i.hw_pitch) >> pch->i.ratio;
+      }
     }
-    pch->period = period;
+    else {
+      mixer &= ~(1 << ch);
+      // SW -> HW ----------------------------------------
+      if (pch->i.modulation == 2) {
+        if (!sw_period) {
+          sw_period = snd__osc_period(note + pch->i.sw_arp, pitch + pch->i.sw_pitch);
+        }
+        if (!hw_period) {
+          hw_period = sw_period >> pch->i.ratio;
+        }
+      }
+      // HW -> SW ----------------------------------------
+      else if (pch->i.modulation == 3) {
+        if (!hw_period) {
+          hw_period = snd__osc_period(note + pch->i.hw_arp, pitch + pch->i.hw_pitch) >> pch->i.ratio;
+        }
+        if (!sw_period) {
+          sw_period = hw_period << pch->i.ratio;
+        }
+      }
+      // SW + HW -----------------------------------------
+      else if (pch->i.modulation == 4) {
+        if (!hw_period) {
+          hw_period = snd__osc_period(note + pch->i.hw_arp, pitch + pch->i.hw_pitch) >> pch->i.ratio;
+        }
+        if (!sw_period) {
+          sw_period = snd__osc_period(note + pch->i.sw_arp, pitch + pch->i.sw_pitch);
+        }
+      }
+      // ??      -----------------------------------------
+      else {
+        // nothing to do
+      }
+      PSG_SET(2*ch+0, (sw_period     ) & 0xff);
+      PSG_SET(2*ch+1, (sw_period >> 8) & 0xff);
+    }
+    PSG_SET(11, (hw_period     ) & 0xff);
+    PSG_SET(12, (hw_period >> 8) & 0xff);
+    if (pch->i.retrig) {
+      // R13 = 8:Saw, 10:Triangle, 12:Inv-Saw, 14:Inv-Triangle
+      PSG_SET(13, pch->i.waveform * 2 + 8);
+    }
+    PSG_SET(8+ch, 16);
   }
-}
-
-void snd_m__synthesis(struct snd_m_ctx * ctx) {
-  snd_m__synthesis_fade_in_out(ctx);
-  snd_m__synthesis_pitch(ctx);
-}
-
-void snd_m__mixing(struct snd_m_ctx * ctx, uint8_t ch) {
-  struct snd_channel * pch = &ctx->channels[ch];
-  int16_t period = pch->period;
-  if (period <= 0) {
-    PSG_SET(ch+8, 0);
-    return;
-  }
-  int8_t volume = pch->volume + pch->i.volume - 15;
-  if (volume < 0) {
-    volume = 0;
-  }
-  if (15 < volume) {
-    volume = 15;
-  }
-  PSG_SET(2*ch+0, period & 0xff);
-  PSG_SET(2*ch+1, (period >> 8));
-  PSG_SET(  ch+8, volume);
-  // PSG_SET(6, 0);                // noise
-  // PSG_SET(7, 0xb8);             // mixer
-  // PSG_SET(11, 0);               // hw envelope cycle (lo)
-  // PSG_SET(12, 0);               // hw envelope cycle (hi)
-  // PSG_SET(13, 0xff);            // set hw envelope curve & reset phase
+  PSG_SET(7, mixer);
 }

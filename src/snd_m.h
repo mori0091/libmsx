@@ -43,11 +43,7 @@ struct snd_channel {
   struct {
     uint16_t fade_wait;
     uint16_t fade_timer;
-    int8_t fade_delta;          // fade-in/out delta
-  };
-  // ----
-  struct {
-    int16_t period;
+    int8_t   fade;              // constant (0) fade-in (+1), fade-out (-1)
   };
 };
 
@@ -66,10 +62,7 @@ void snd_m__init(struct snd_m_ctx * ctx);
 void snd_m__program_change(struct snd_m_ctx * ctx, const uint8_t * m_stream);
 
 uint8_t snd_m__stream_take(struct snd_m_ctx * ctx);
-void snd_m__decode_expression_command(struct snd_m_ctx * ctx, uint8_t ch);
 void snd_m__decode(struct snd_m_ctx * ctx);
-
-void snd_m__synthesis(struct snd_m_ctx * ctx);
-void snd_m__mixing(struct snd_m_ctx * ctx, uint8_t ch);
+void snd_m__synthesis(struct snd_channel * pchs[3]);
 
 #endif // SND_M_H_

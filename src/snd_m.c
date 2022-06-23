@@ -119,7 +119,6 @@ static void reset_effect(struct snd_channel * pch) {
   snd_p__program_change(&pch->p, 0); // pitch envelope off
   snd_e__program_change(&pch->e, 0); // amplitude envelope off
   pch->arp   = 0;
-  pch->pitch = 0;
   pch->fade  = 0;
 }
 
@@ -249,7 +248,7 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
     struct snd_channel * pch = &ctx->channels[x & 0x0f];
     switch (x >> 4) {
       case 8:                   // NoteOn
-        pch->pitch = 0;
+        pch->p.pitch = 0;
         pch->fade = 0;
         uint8_t note = snd_m__stream_take(ctx);
         if (note < 0x80) {
@@ -334,7 +333,7 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
     }
     // ----
     int8_t note = pch->note + pch->arp;
-    int16_t pitch = pch->pitch;
+    int16_t pitch = pch->p.pitch;
     // ----
     uint16_t sw_period = pch->i.sw_period;
     // SW only -----------------------------------------

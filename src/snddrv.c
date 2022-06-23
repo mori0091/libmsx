@@ -62,6 +62,7 @@ static void snd__init(void) {
   ay_3_8910_init();
   snd__pause();
   snd_i__set_i_tables(0, 0);
+  snd_p__set_p_tables(0, 0);
   snd__init_ctx(&snd_sfx);
   snd__init_ctx(&snd_bgm);
 }

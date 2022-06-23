@@ -34,7 +34,6 @@ struct snd_channel {
     uint8_t note;               // note number
     uint8_t volume;             // current volume level
     int8_t  arp;                // +/- note number
-    int16_t pitch;              // +/- pitch
   };
   // ---- expression (fade-in, fade-out) ----
   struct {

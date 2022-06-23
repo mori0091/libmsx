@@ -243,11 +243,20 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
     struct snd_channel * pch = &ctx->channels[x & 0x0f];
     switch (x >> 4) {
       case 8:                   // NoteOn
-        pch->note = snd_m__stream_take(ctx);
-        snd_a_note_on(&pch->a);
-        snd_i_note_on(&pch->i);
-        snd_p_note_on(&pch->p);
-        snd_e_note_on(&pch->e);
+        pch->pitch = 0;
+        pch->fade = 0;
+        uint8_t note = snd_m__stream_take(ctx);
+        if (note < 0x80) {
+          pch->note = note;
+          snd_a_note_on(&pch->a);
+          snd_i_note_on(&pch->i);
+          snd_p_note_on(&pch->p);
+          snd_e_note_on(&pch->e);
+        }
+        // legato
+        else {
+          pch->note = note & 0x7f;
+        }
         break;
       case 9:
         pch->note = 0xff;

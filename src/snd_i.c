@@ -51,10 +51,11 @@ void snd_i__set_i_tables(size_t n, const struct snd_i_table * i_tables_) {
   if (!n || !i_tables_) {
     i_tables = default_i_tables;
     i_number_max = 1;
-    return;
   }
-  i_tables = i_tables_;
-  i_number_max = n;
+  else {
+    i_tables = i_tables_;
+    i_number_max = n;
+  }
 }
 
 void snd_i_note_on(struct snd_i_ctx * ctx) {

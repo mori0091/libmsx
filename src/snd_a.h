@@ -20,8 +20,9 @@
 #include <stdbool.h>
 
 struct snd_a_ctx {
+  uint8_t wait;
   uint8_t timer;
-  uint8_t a_number[3];          // arpeggio table number
+  uint8_t a_number;             // arpeggio table number
 };
 
 extern void snd_a_note_on(struct snd_a_ctx * ctx);

@@ -33,9 +33,6 @@ struct snd_channel {
   struct {
     uint8_t note;               // note number
     uint8_t volume;             // current volume level
-  };
-  // ---- expression (arpeggio, pitch glide) ----
-  struct {
     int8_t  arp;                // +/- note number
     int16_t pitch;              // +/- pitch
   };

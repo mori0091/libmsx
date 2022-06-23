@@ -20,8 +20,9 @@
 #include <stdbool.h>
 
 struct snd_e_ctx {
+  uint8_t wait;
   uint8_t timer;
-  uint8_t e_number[3];          // amplitude envelope table number
+  uint8_t e_number;             // amplitude envelope table number
 };
 
 extern void snd_e_note_on(struct snd_e_ctx * ctx);

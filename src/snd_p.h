@@ -20,8 +20,9 @@
 #include <stdbool.h>
 
 struct snd_p_ctx {
+  uint8_t wait;
   uint8_t timer;
-  uint8_t p_number[3];          // pitch envelope table number
+  uint8_t p_number;             // pitch envelope table number
 };
 
 extern void snd_p_note_on(struct snd_p_ctx * ctx);

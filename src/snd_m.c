@@ -157,71 +157,77 @@ uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {
 
 static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch) {
   // decode an expression command
-  uint8_t tag = snd_m__stream_take(ctx);
-  uint8_t x = tag & 0x0f;
-  switch (tag >> 4) {
-    case 0:
-      // \TODO reset effect
-      pch->volume = 15 - x;
-      break;
-    case 1:
-      // \TODO arpeggio 2 notes
-      break;
-    case 2:
+  const uint8_t x = snd_m__stream_take(ctx);
+  const uint8_t tag = x >> 4;
+  if (!tag) {
+    // \TODO reset effect
+    reset_effect(pch);
+    pch->volume = ~x & 15;
+  }
+  else if (tag == 8) {
+    // set volume to x
+    pch->volume = x & 15;
+    pch->fade = 0;
+  }
+  else {
+    const uint16_t xyz = ((x & 15) << 8) + snd_m__stream_take(ctx);
+    if (tag == 1) {
       // \TODO arpeggio 3 notes
-      snd_m__stream_take(ctx);
-      break;
-    case 3:
+      // set arp to (+0, +x, +y);
+      return;
+    }
+    else if (tag == 2) {
       // \TODO arpeggio 4 notes
-      snd_m__stream_take(ctx);
-      break;
-    case 4:
-      // pitch up (+0..+15/128)
-      pch->pitch = x;
-      break;
-    case 5:
-      // pitch down (-15/128..+0)
-      pch->pitch = -x;
-      break;
-    case 6:
-      // fast pitch up (+0..+4095/128)
-      pch->pitch = (x << 8) + snd_m__stream_take(ctx);
-      break;
-    case 7:
-      // fast pitch down (-4095/128..+0)
-      pch->pitch = -((x << 8) + snd_m__stream_take(ctx));
-      break;
-    case 8:
+      // set arp to (+0, +x, +y, +z);
+      return;
+    }
+    else if (tag == 3) {
+      // \TODO pitch up (+0..+4095/128)
+      // set speed of slow pitch slide
+      return;
+    }
+    else if (tag == 4) {
+      // \TODO pitch down (-4095/128..+0)
+      return;
+    }
+    else if (tag == 5) {
+      // \TODO fast pitch up (+0..+4095/128)
+      return;
+    }
+    else if (tag == 6) {
+      // \TODO fast pitch down (-4095/128..+0)
+      return;
+    }
+    else if (tag == 7) {
       // \TODO pitch glide
-      snd_m__stream_take(ctx);
-      break;
-    case 9:
-      // set volume to x
-      pch->volume = x;
-      pch->fade = 0;
-      break;
-    case 10:
+      return;
+    }
+    else if (tag == 9) {
       pch->fade = 1;
-      pch->fade_wait
-        = pch->fade_timer
-        = (x << 8) + snd_m__stream_take(ctx);
-      break;
-    case 11:
+      pch->fade_wait = pch->fade_timer = xyz;
+    }
+    else if (tag == 10) {
       pch->fade = -1;
-      pch->fade_wait
-        = pch->fade_timer
-        = (x << 8) + snd_m__stream_take(ctx);
-      break;
-    case 12:
-      // \TODO force the speed of
-      // - instrument (x == 0)
-      // - arpeggio   (x == 1)
-      // - pitch      (x == 2)
-      snd_m__stream_take(ctx);
-      break;
-    default:
-      // illegal expression command
-      break;
+      pch->fade_wait = pch->fade_timer = xyz;
+    }
+    else if (tag == 11) {
+      // \TODO force the speed of instrument
+      pch->i.wait = xyz >> 4;
+    }
+    else if (tag == 12) {
+      // \TODO force the speed of arpeggio
+      pch->a.wait = xyz >> 4;
+    }
+    else if (tag == 13) {
+      // \TODO force the speed of pitch
+      pch->p.wait = xyz >> 4;
+    }
+    // else if (tag == 14) {
+    //   // (reserved)
+    // }
+    // else if (tag == 15) {
+    //   // (reserved)
+    // }
   }
 }
 

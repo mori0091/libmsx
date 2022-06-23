@@ -114,21 +114,23 @@ static int16_t snd__osc_period(uint8_t note, int16_t pitch) {
   return lerpQ7(pitch, osc_periods[idx], osc_periods[idx+1]);
 }
 
+static void reset_effect(struct snd_channel * pch) {
+  snd_a__program_change(&pch->a, 0); // arpeggio off
+  snd_p__program_change(&pch->p, 0); // pitch envelope off
+  snd_e__program_change(&pch->e, 0); // amplitude envelope off
+  pch->arp   = 0;
+  pch->pitch = 0;
+  pch->fade  = 0;
+}
+
 void snd_m__init(struct snd_m_ctx * ctx) {
   snd_m__program_change(ctx, 0);
   for (uint8_t ch = 3; ch--;) {
     struct snd_channel * pch = &ctx->channels[ch];
     snd_i__program_change(&pch->i, 1); // instrument #1
-    snd_a__program_change(&pch->a, 0); // arpeggio off
-    snd_p__program_change(&pch->p, 0); // pitch envelope off
-    snd_e__program_change(&pch->e, 0); // amplitude envelope off
-    pch->note       = 0xff;
-    pch->volume     = 0;
-    pch->arp        = 0;
-    pch->pitch      = 0;
-    pch->fade_wait  = 0;
-    pch->fade_timer = 0;
-    pch->fade       = 0;
+    reset_effect(pch);
+    pch->volume = 0;
+    pch->note   = 0xff;
   }
 }
 

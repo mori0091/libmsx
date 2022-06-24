@@ -23,26 +23,28 @@
 
 #define PSG_SET(reg, val)    ay_3_8910_buffer[(reg)] = (val)
 
-#define MIDI_NOTE_NUMBER_C4          (60)
-#define OSC_PERIODS_INDEX_C4         (3+3*12)
 #define OSC_PERIODS_INDEX_MAX        (sizeof(osc_periods) / sizeof(osc_periods[0]))
-#define MIDI_NOTE_NUMBER_TO_INDEX(x) ((x) + OSC_PERIODS_INDEX_C4 - MIDI_NOTE_NUMBER_C4)
+#define MIDI_NOTE_NUMBER_MIN         (21) // A0
+#define MIDI_NOTE_NUMBER_MAX         (MIDI_NOTE_NUMBER_MIN + OSC_PERIODS_INDEX_MAX - 1)
+#define MIDI_NOTE_NUMBER_TO_INDEX(x) ((x) - MIDI_NOTE_NUMBER_MIN)
 
-static const uint8_t end_of_stream = 0xff;
+#define PITCH_MIN                    (MIDI_NOTE_NUMBER_MIN << 8)
+#define PITCH_MAX                    (MIDI_NOTE_NUMBER_MAX << 8)
 
 static const uint16_t osc_periods[] = {
   // C      C#     D      D#     E      F      F#     G      G#     A      A#     B
                                                                  0xfe4, 0xf00, 0xe28, // octave 0
-  0xd5d, 0xc9c, 0xbe7, 0xb3c, 0xa9b, 0xa02, 0x973, 0x8eb, 0x86b, 0x7f2, 0x780, 0x714, // octave 1
-  0x6af, 0x64e, 0x5f4, 0x59e, 0x54e, 0x501, 0x4ba, 0x476, 0x436, 0x3f9, 0x3c0, 0x38a, // octave 2
-  0x357, 0x327, 0x2fa, 0x2cf, 0x2a7, 0x281, 0x25d, 0x23b, 0x21b, 0x1fd, 0x1e0, 0x1c5, // octave 3
-  0x1ac, 0x194, 0x17d, 0x168, 0x153, 0x140, 0x12e, 0x11d, 0x10d, 0x0fe, 0x0f0, 0x0e3, // octave 4
-  0x0d6, 0x0ca, 0x0be, 0x0b4, 0x0aa, 0x0a0, 0x097, 0x08f, 0x087, 0x07f, 0x078, 0x071, // octave 5
-  0x06b, 0x065, 0x05f, 0x05a, 0x055, 0x050, 0x04c, 0x047, 0x043, 0x040, 0x03c, 0x039, // octave 6
-  0x035, 0x032, 0x030, 0x02d, 0x02a, 0x028, 0x026, 0x024, 0x022, 0x020, 0x01e, 0x01c, // octave 7
-  0x01b, 0x019, 0x018, 0x016, 0x015, 0x014, 0x013, 0x012, 0x011, 0x010, 0x00f, 0x00e, // octave 8
-  0x00e, 0x00d, 0x00c, 0x00b, 0x00b, 0x00a, 0x00a, 0x009, 0x009, 0x008, 0x008, 0x007, // octave 9
+  0xd5d, 0xc9c, 0xbe7, 0xb3c, 0xa9b, 0xa02, 0x973, 0x8eb, 0x86b, 0x7f2, 0x780, 0x714, // octave 1 ( #24..)
+  0x6af, 0x64e, 0x5f4, 0x59e, 0x54e, 0x501, 0x4ba, 0x476, 0x436, 0x3f9, 0x3c0, 0x38a, // octave 2 ( #36..)
+  0x357, 0x327, 0x2fa, 0x2cf, 0x2a7, 0x281, 0x25d, 0x23b, 0x21b, 0x1fd, 0x1e0, 0x1c5, // octave 3 ( #48..)
+  0x1ac, 0x194, 0x17d, 0x168, 0x153, 0x140, 0x12e, 0x11d, 0x10d, 0x0fe, 0x0f0, 0x0e3, // octave 4 ( #60..)
+  0x0d6, 0x0ca, 0x0be, 0x0b4, 0x0aa, 0x0a0, 0x097, 0x08f, 0x087, 0x07f, 0x078, 0x071, // octave 5 ( #72..)
+  0x06b, 0x065, 0x05f, 0x05a, 0x055, 0x050, 0x04c, 0x047, 0x043, 0x040, 0x03c, 0x039, // octave 6 ( #84..)
+  0x035, 0x032, 0x030, 0x02d, 0x02a, 0x028, 0x026, 0x024, 0x022, 0x020, 0x01e, 0x01c, // octave 7 ( #96..)
+  0x01b, 0x019, 0x018, 0x016, 0x015, 0x014, 0x013, 0x012, 0x011, 0x010, 0x00f, 0x00e, // octave 8 (#108..)
 };
+
+static const uint8_t end_of_stream = 0xff;
 
 /**
  * Multiply an 8 bit coefficient `k` to `x`.
@@ -63,8 +65,6 @@ inline uint16_t kxQ8(uint8_t k, uint16_t x) {
  * \param k  an 8 bit coefficient (0..255 means 0..255/256)
  * \param x  a 16 bit unsigned integer
  * \return   the integer part of the result.
- * \note
- * `k` must be less than or equal to 128.
  */
 inline uint16_t lerpQ8(uint8_t k, uint16_t a, uint16_t b) {
   return !k ? a : (kxQ8(256 - k, a) + kxQ8(k, b));
@@ -75,18 +75,15 @@ inline uint16_t lerpQ8(uint8_t k, uint16_t a, uint16_t b) {
  * \return        OSC period (≈ wave lengh)
  */
 static int16_t snd__osc_period(int16_t pitch) {
-  if (pitch < 0) {
+  if (pitch < (MIDI_NOTE_NUMBER_MIN << 8)) {
     // out of range (illegal MIDI note number)
     return osc_periods[0];
   }
-  if ((127 << 8) < pitch) {
+  if ((MIDI_NOTE_NUMBER_MAX << 8) <= pitch) {
     // out of range (illegal MIDI note number)
     return osc_periods[OSC_PERIODS_INDEX_MAX - 1];
   }
   int8_t idx = MIDI_NOTE_NUMBER_TO_INDEX(pitch >> 8);
-  if (OSC_PERIODS_INDEX_MAX - 1 <= idx) {
-    return osc_periods[OSC_PERIODS_INDEX_MAX - 1];
-  }
   return lerpQ8(pitch & 255, osc_periods[idx], osc_periods[idx+1]);
 }
 
@@ -123,7 +120,6 @@ void snd_m__program_change(struct snd_m_ctx * ctx, const uint8_t * m_stream) {
 }
 
 uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {
-  // \TODO
   uint8_t x = *ctx->next;
   if (x != 0xff) {
     ctx->next++;
@@ -136,7 +132,6 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
   const uint8_t x = snd_m__stream_take(ctx);
   const uint8_t tag = x >> 4;
   if (!tag) {
-    // \TODO reset effect
     reset_effect(pch);
     pch->volume = ~x & 15;
   }
@@ -158,29 +153,28 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
       return;
     }
     else if (tag == 3) {
-      // \TODO pitch up (+0..+4095/128)
-      // set speed of slow pitch slide
+      // pitch up (+0..+4095/128)
       pch->pitch_timer = pch->pitch_wait = 5; // Shouldn't it be vsync_freq / 10?
       pch->pitch_delta = xyz;
       pch->pitch_triggered = true;
       return;
     }
     else if (tag == 4) {
-      // \TODO pitch down (-4095/128..+0)
+      // pitch down (-4095/128..+0)
       pch->pitch_timer = pch->pitch_wait = 5; // Shouldn't it be vsync_freq / 10?
       pch->pitch_delta = -xyz;
       pch->pitch_triggered = true;
       return;
     }
     else if (tag == 5) {
-      // \TODO fast pitch up (+0..+4095/128)
+      // fast pitch up (+0..+4095/128)
       pch->pitch_timer = pch->pitch_wait = 0;
       pch->pitch_delta = xyz;
       pch->pitch_triggered = true;
       return;
     }
     else if (tag == 6) {
-      // \TODO fast pitch down (-4095/128..+0)
+      // fast pitch down (-4095/128..+0)
       pch->pitch_timer = pch->pitch_wait = 0;
       pch->pitch_delta = -xyz;
       pch->pitch_triggered = true;
@@ -201,15 +195,15 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
       pch->fade_triggered = true;
     }
     else if (tag == 11) {
-      // \TODO force the speed of instrument
+      // force the speed of instrument
       pch->i.wait = xyz >> 4;
     }
     else if (tag == 12) {
-      // \TODO force the speed of arpeggio
+      // force the speed of arpeggio
       pch->a.wait = xyz >> 4;
     }
     else if (tag == 13) {
-      // \TODO force the speed of pitch
+      // force the speed of pitch
       pch->p.wait = pch->pitch_wait = xyz >> 4;
     }
     // else if (tag == 14) {
@@ -231,11 +225,11 @@ static void snd_m__update_pitch_bend(struct snd_channel * pch) {
   }
   pch->pitch_timer = pch->pitch_wait;
   pch->pitch += pch->pitch_delta;
-  if (pch->pitch < 0) {
-    pch->pitch = 0;
+  if (pch->pitch < PITCH_MIN) {
+    pch->pitch = PITCH_MIN;
   }
-  if (127 * 256 < pch->pitch) {
-    pch->pitch = 127 * 256;
+  if (PITCH_MAX < pch->pitch) {
+    pch->pitch = PITCH_MAX;
   }
 }
 

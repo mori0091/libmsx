@@ -31,7 +31,7 @@ struct snd_channel {
   struct snd_e_ctx e;           // context for amplitude envelope
   // ----
   struct {
-    int16_t pitch;              // (note number) << 8
+    int16_t pitch;              // (note number) << 8 ; i.e. [1/256 note]
     uint8_t volume;             // current volume level
     int8_t  arp;                // +/- note number
   };

@@ -138,6 +138,12 @@ static void snd_m__set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_
   pch->pitch_max = PITCH_MAX;
 }
 
+inline void snd_m__set_fade(int8_t fade, uint16_t wait, struct snd_channel * pch) {
+  pch->fade_wait = pch->fade_timer = wait;
+  pch->fade = fade;
+  pch->fade_triggered = true;
+}
+
 static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch) {
   // decode an expression command
   const uint8_t x = snd_m__stream_take(ctx);
@@ -189,14 +195,10 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
       return;
     }
     else if (tag == 9) {
-      pch->fade_wait = pch->fade_timer = xyz;
-      pch->fade = 1;
-      pch->fade_triggered = true;
+      snd_m__set_fade(+1, xyz, pch);
     }
     else if (tag == 10) {
-      pch->fade_wait = pch->fade_timer = xyz;
-      pch->fade = -1;
-      pch->fade_triggered = true;
+      snd_m__set_fade(-1, xyz, pch);
     }
     else if (tag == 11) {
       // force the speed of instrument

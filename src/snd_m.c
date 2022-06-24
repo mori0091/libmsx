@@ -94,6 +94,9 @@ static void reset_effect(struct snd_channel * pch) {
   pch->arp = 0;
   pch->fade = 0;
   pch->pitch_delta = 0;
+  pch->pitch_glide = 0;
+  pch->pitch_min = PITCH_MIN;
+  pch->pitch_max = PITCH_MAX;
 }
 
 void snd_m__init(struct snd_m_ctx * ctx) {
@@ -127,6 +130,14 @@ uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {
   return x;
 }
 
+static void snd_m__set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch) {
+  pch->pitch_timer = pch->pitch_wait = wait;
+  pch->pitch_delta = pitch_delta;
+  pch->pitch_triggered = true;
+  pch->pitch_min = PITCH_MIN;
+  pch->pitch_max = PITCH_MAX;
+}
+
 static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch) {
   // decode an expression command
   const uint8_t x = snd_m__stream_take(ctx);
@@ -154,34 +165,27 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
     }
     else if (tag == 3) {
       // pitch up (+0..+4095/128)
-      pch->pitch_timer = pch->pitch_wait = 5; // Shouldn't it be vsync_freq / 10?
-      pch->pitch_delta = xyz;
-      pch->pitch_triggered = true;
+      snd_m__set_pitch_bend(5, xyz, pch);
       return;
     }
     else if (tag == 4) {
       // pitch down (-4095/128..+0)
-      pch->pitch_timer = pch->pitch_wait = 5; // Shouldn't it be vsync_freq / 10?
-      pch->pitch_delta = -xyz;
-      pch->pitch_triggered = true;
+      snd_m__set_pitch_bend(5, -xyz, pch);
       return;
     }
     else if (tag == 5) {
       // fast pitch up (+0..+4095/128)
-      pch->pitch_timer = pch->pitch_wait = 0;
-      pch->pitch_delta = xyz;
-      pch->pitch_triggered = true;
+      snd_m__set_pitch_bend(0, xyz, pch);
       return;
     }
     else if (tag == 6) {
       // fast pitch down (-4095/128..+0)
-      pch->pitch_timer = pch->pitch_wait = 0;
-      pch->pitch_delta = -xyz;
-      pch->pitch_triggered = true;
+      snd_m__set_pitch_bend(0, -xyz, pch);
       return;
     }
     else if (tag == 7) {
-      // \TODO pitch glide
+      // pitch glide
+      pch->pitch_glide = xyz;
       return;
     }
     else if (tag == 9) {
@@ -193,6 +197,8 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
       pch->fade_wait = pch->fade_timer = xyz;
       pch->fade = -1;
       pch->fade_triggered = true;
+      pch->pitch_min = PITCH_MIN;
+      pch->pitch_max = PITCH_MAX;
     }
     else if (tag == 11) {
       // force the speed of instrument
@@ -225,11 +231,15 @@ static void snd_m__update_pitch_bend(struct snd_channel * pch) {
   }
   pch->pitch_timer = pch->pitch_wait;
   pch->pitch += pch->pitch_delta;
-  if (pch->pitch < PITCH_MIN) {
-    pch->pitch = PITCH_MIN;
+  if (pch->pitch <= pch->pitch_min) {
+    pch->pitch = pch->pitch_min;
+    pch->pitch_min = PITCH_MIN;
+    pch->pitch_delta = 0;
   }
-  if (PITCH_MAX < pch->pitch) {
-    pch->pitch = PITCH_MAX;
+  if (pch->pitch_max <= pch->pitch) {
+    pch->pitch = pch->pitch_max;
+    pch->pitch_max = PITCH_MAX;
+    pch->pitch_delta = 0;
   }
 }
 
@@ -287,14 +297,29 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
           pch->pitch_delta = 0;
         }
         pch->pitch_triggered = false;
+        // ----
         if (!pch->fade_triggered) {
           // Turn fade-in/out off
           pch->fade = 0;
         }
         pch->fade_triggered = false;
-        uint8_t note = snd_m__stream_take(ctx);
-        if (note < 0x80) {
-          pch->pitch = note << 8;
+        // ----
+        const uint8_t note = snd_m__stream_take(ctx);
+        const uint16_t pitch = (note & 0x7f) << 8;
+        if (0 <= pch->pitch && pch->pitch_glide) {
+          // Turn pitch glide on
+          if (pitch < pch->pitch) {
+            snd_m__set_pitch_bend(1, -pch->pitch_glide, pch);
+            pch->pitch_min = pitch;
+          }
+          else if (pch->pitch < pitch) {
+            snd_m__set_pitch_bend(1, +pch->pitch_glide, pch);
+            pch->pitch_max = pitch;
+          }
+          pch->pitch_glide = 0;
+        }
+        else if (note < 0x80) {
+          pch->pitch = pitch;
           snd_a_note_on(&pch->a);
           snd_i_note_on(&pch->i);
           snd_p_note_on(&pch->p);
@@ -302,7 +327,7 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
         }
         // legato
         else {
-          pch->pitch = (note & 0x7f) << 8;
+          pch->pitch = pitch;
         }
         break;
       case 9:

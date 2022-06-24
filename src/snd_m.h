@@ -39,15 +39,20 @@ struct snd_channel {
   struct {
     uint16_t fade_wait;
     uint16_t fade_timer;
-    int8_t   fade;              // constant (0), fade-in (+1), fade-out (-1)
+    int8_t   fade;              // off (0), fade-in (+1), fade-out (-1)
     bool     fade_triggered;
   };
   // ---- expression (pitch bend) ----
   struct {
     uint16_t pitch_wait;
     uint16_t pitch_timer;
-    int16_t  pitch_delta;       // constant (0), +/- pitch
+    int16_t  pitch_delta;       // off (0), +/- pitch
     bool     pitch_triggered;
+  };
+  struct {
+    uint16_t pitch_glide;       // off (0), pitch
+    uint16_t pitch_min;         // PITCH_MIN or glide target (be set on NoteOn message)
+    uint16_t pitch_max;         // PITCH_MAX or glide target (be set on NoteOn message)
   };
 };
 

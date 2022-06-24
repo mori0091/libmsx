@@ -72,4 +72,14 @@ uint8_t snd_m__stream_take(struct snd_m_ctx * ctx);
 void snd_m__decode(struct snd_m_ctx * ctx);
 void snd_m__synthesis(struct snd_channel * pchs[3]);
 
+/**
+ * Add some value to the current pitch of a channel.
+ *
+ * \param pch          pointer to a channel
+ * \param pitch_delta  value of pitch bend
+ * \return `true` if succeeded, `false` if failed or the pitch reached to
+ *          upper/lower limit.
+ */
+bool snd_m__add_pitch(struct snd_channel * pch, int16_t pitch_delta);
+
 #endif // SND_M_H_

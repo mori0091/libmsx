@@ -219,6 +219,25 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
   }
 }
 
+bool snd_m__add_pitch(struct snd_channel * pch, int16_t pitch_delta) {
+  if (pch->pitch < 0) {
+    // the channel is off
+    return false;
+  }
+  pch->pitch += pitch_delta;
+  if (pch->pitch <= pch->pitch_min) {
+    pch->pitch = pch->pitch_min;
+    pch->pitch_min = PITCH_MIN;
+    return false;
+  }
+  if (pch->pitch_max <= pch->pitch) {
+    pch->pitch = pch->pitch_max;
+    pch->pitch_max = PITCH_MAX;
+    return false;
+  }
+  return true;
+}
+
 static void snd_m__update_pitch_bend(struct snd_channel * pch) {
   if (!pch->pitch_delta) {
     return;
@@ -228,15 +247,7 @@ static void snd_m__update_pitch_bend(struct snd_channel * pch) {
     return;
   }
   pch->pitch_timer = pch->pitch_wait;
-  pch->pitch += pch->pitch_delta;
-  if (pch->pitch <= pch->pitch_min) {
-    pch->pitch = pch->pitch_min;
-    pch->pitch_min = PITCH_MIN;
-    pch->pitch_delta = 0;
-  }
-  if (pch->pitch_max <= pch->pitch) {
-    pch->pitch = pch->pitch_max;
-    pch->pitch_max = PITCH_MAX;
+  if (!snd_m__add_pitch(pch, pch->pitch_delta)) {
     pch->pitch_delta = 0;
   }
 }

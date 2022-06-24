@@ -197,8 +197,6 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
       pch->fade_wait = pch->fade_timer = xyz;
       pch->fade = -1;
       pch->fade_triggered = true;
-      pch->pitch_min = PITCH_MIN;
-      pch->pitch_max = PITCH_MAX;
     }
     else if (tag == 11) {
       // force the speed of instrument

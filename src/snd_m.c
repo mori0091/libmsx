@@ -206,7 +206,34 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
   }
 }
 
+static void snd_m__update_fade_in_out(struct snd_channel * pch) {
+  if (!pch->fade) {
+    return;
+  }
+  if (pch->fade_timer) {
+    pch->fade_timer--;
+    return;
+  }
+  pch->fade_timer = pch->fade_wait;
+  int8_t amp = pch->volume + pch->fade;
+  if (amp <= 0 || 15 <= amp) {
+    pch->fade = 0;
+  }
+  else {
+    pch->volume = (uint8_t)amp;
+  }
+}
+
+static void snd_m__update(struct snd_m_ctx * ctx) {
+  struct snd_channel * pch = ctx->channels;
+  for (uint8_t ch = 3; ch--; pch++) {
+    snd_m__update_fade_in_out(pch);
+  }
+}
+
 void snd_m__decode(struct snd_m_ctx * ctx) {
+  snd_m__update(ctx);
+  // ---------------------------------------------------
   if (ctx->timer) {
     ctx->timer--;
     return;
@@ -268,30 +295,7 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
   }
 }
 
-static void snd_m__synthesis_fade_in_out(struct snd_channel * pchs[3]) {
-  for (uint8_t ch = 3; ch--;) {
-    struct snd_channel * pch = pchs[ch];
-    if (!pch->fade) {
-      continue;
-    }
-    if (pch->fade_timer) {
-      pch->fade_timer--;
-      continue;
-    }
-    pch->fade_timer = pch->fade_wait;
-    int8_t amp = pch->volume + pch->fade;
-    if (amp <= 0 || 15 <= amp) {
-      pch->fade = 0;
-    }
-    else {
-      pch->volume = (uint8_t)amp;
-    }
-  }
-}
-
 void snd_m__synthesis(struct snd_channel * pchs[3]) {
-  snd_m__synthesis_fade_in_out(pchs);
-  // ---------------------------------------------------
   uint8_t mixer = 0xb8;
   for (uint8_t ch = 3; ch--; ) {
     struct snd_channel * pch = pchs[ch];

@@ -39,7 +39,15 @@ struct snd_channel {
   struct {
     uint16_t fade_wait;
     uint16_t fade_timer;
-    int8_t   fade;              // constant (0) fade-in (+1), fade-out (-1)
+    int8_t   fade;              // constant (0), fade-in (+1), fade-out (-1)
+    bool     fade_triggered;
+  };
+  // ---- expression (pitch bend) ----
+  struct {
+    uint16_t pitch_wait;
+    uint16_t pitch_timer;
+    int16_t  pitch_delta;       // constant (0), +/- pitch
+    bool     pitch_triggered;
   };
 };
 

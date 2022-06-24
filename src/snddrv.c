@@ -162,7 +162,8 @@ static void snd__decode(struct snd_ctx * ctx) {
 // ------------------------------------------------
 
 inline bool is_playing(struct snd_ctx * ctx, uint8_t ch) {
-  return !ctx->m.isEnd && !!ctx->m.channels[ch].volume;
+  struct snd_channel * pch = &ctx->m.channels[ch];
+  return !ctx->m.isEnd && 0 <= pch->pitch && !!pch->volume;
 }
 
 static void snd__synthesis(void) {

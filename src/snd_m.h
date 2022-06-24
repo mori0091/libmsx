@@ -22,13 +22,11 @@
 #include "./snd_i.h"
 #include "./snd_a.h"
 #include "./snd_p.h"
-#include "./snd_e.h"
 
 struct snd_channel {
   struct snd_i_ctx i;           // context for instrument
   struct snd_a_ctx a;           // context for arpeggio
   struct snd_p_ctx p;           // context for pitch envelope
-  struct snd_e_ctx e;           // context for amplitude envelope
   // ----
   struct {
     int16_t pitch;              // (note number) << 8 ; i.e. [1/256 note]

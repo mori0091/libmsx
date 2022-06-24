@@ -19,7 +19,6 @@
 #include "./snd_i.h"
 #include "./snd_a.h"
 #include "./snd_p.h"
-#include "./snd_e.h"
 
 #define PSG_SET(reg, val)    ay_3_8910_buffer[(reg)] = (val)
 
@@ -90,7 +89,6 @@ static int16_t snd__osc_period(int16_t pitch) {
 static void reset_effect(struct snd_channel * pch) {
   snd_a__program_change(&pch->a, 0); // arpeggio off
   snd_p__program_change(&pch->p, 0); // pitch envelope off
-  snd_e__program_change(&pch->e, 0); // amplitude envelope off
   pch->arp = 0;
   pch->fade = 0;
   pch->pitch_delta = 0;
@@ -323,7 +321,6 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
           snd_a_note_on(&pch->a);
           snd_i_note_on(&pch->i);
           snd_p_note_on(&pch->p);
-          snd_e_note_on(&pch->e);
         }
         // legato
         else {
@@ -335,7 +332,6 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
         snd_a_note_off(&pch->a);
         snd_i_note_off(&pch->i);
         snd_p_note_off(&pch->p);
-        snd_e_note_off(&pch->e);
         break;
       case 10:
         snd_a__program_change(&pch->a, snd_m__stream_take(ctx));
@@ -348,7 +344,6 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
         snd_i__program_change(&pch->i, snd_m__stream_take(ctx));
         break;
       case 13:
-        snd_e__program_change(&pch->e, snd_m__stream_take(ctx));
         break;
       case 14:
         snd_m__decode_expression_command(ctx, pch);

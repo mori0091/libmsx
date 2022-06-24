@@ -155,7 +155,6 @@ static void snd__decode(struct snd_ctx * ctx) {
       snd_i__decode(&pch->i);
       snd_a__decode(&pch->a);
       snd_p__decode(&pch->p);
-      snd_e__decode(&pch->e);
     }
   }
 }

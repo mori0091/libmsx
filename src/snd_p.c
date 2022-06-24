@@ -15,8 +15,10 @@
 
 #include "./snd_p.h"
 
-static const uint8_t p_table_00_data[] = {
-  0xff,
+#define END_MARK   (-32768)
+
+static const int16_t p_table_00_data[] = {
+  END_MARK,
 };
 static const struct snd_p_table p_table_00 = {
   .wait    = 255,
@@ -69,15 +71,15 @@ void snd_p__decode(struct snd_p_ctx * ctx) {
     return;
   }
   ctx->timer = ctx->wait;
-  uint8_t x = *ctx->next;
-  if (x == 0xff) {
+  int16_t x = *ctx->next;
+  if (x == END_MARK) {
     if (ctx->next < ctx->p_table->r_part) {
       ctx->next = ctx->p_table->s_part;
       x = *ctx->next;
     }
   }
-  if (x < 0xff) {
+  if (x != END_MARK) {
     ctx->next++;
-    ctx->pitch = (x << 8) + (*ctx->next++);
+    ctx->pitch = x;
   }
 }

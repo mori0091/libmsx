@@ -25,9 +25,9 @@ struct snd_p_ctx {
   uint8_t timer;
   uint8_t p_number;                   // pitch envelope table number
   const struct snd_p_table * p_table; // pointer to current instrument table
-  const uint8_t * next;               // pointer to next lilne of table
+  const int16_t * next;               // pointer to next lilne of table
   struct {
-    int16_t pitch;              // +/- pitch
+    int16_t pitch;              // +/- pitch (-32767..+32767)
   };
 };
 
@@ -46,11 +46,11 @@ struct snd_p_table {
   /** Wait counts (ticks per data chunk) */
   const uint8_t wait;
   /** Pointer to Atack..Decay part of data stream. */
-  const uint8_t * ad_part;
+  const int16_t * ad_part;
   /** Pointer to Sustain part of data stream. (loop part) */
-  const uint8_t * s_part;
+  const int16_t * s_part;
   /** Pointer to Release part of data stream. */
-  const uint8_t * r_part;
+  const int16_t * r_part;
 };
 
 extern void snd_p__set_p_tables(size_t n, const struct snd_p_table * p_tables);

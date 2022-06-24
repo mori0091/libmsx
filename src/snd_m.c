@@ -44,74 +44,50 @@ static const uint16_t osc_periods[] = {
   0x00e, 0x00d, 0x00c, 0x00b, 0x00b, 0x00a, 0x00a, 0x009, 0x009, 0x008, 0x008, 0x007, // octave 9
 };
 
-// inline int16_t snd__osc_period_of(uint8_t note) {
-//   int8_t idx = MIDI_NOTE_NUMBER_TO_INDEX(note);
-//   if (idx < 0 || OSC_PERIODS_INDEX_MAX <= idx) {
-//     // out of range
-//     return -1;
-//   }
-//   return osc_periods[idx];
-// }
-
 /**
- * Multiply an 7 bit coefficient `k` to `x`.
+ * Multiply an 8 bit coefficient `k` to `x`.
  *
- * \param k  an 7 bit coefficient (0..255 means 0..255/128)
+ * \param k  an 8 bit coefficient (0..255 means 0..255/256)
  * \param x  a 16 bit unsigned integer
  * \return   the integer part of k*x
  */
-inline uint16_t kxQ7(uint8_t k, uint16_t x) {
-  uint16_t h = (k * (x >> 7));
-  uint16_t l = (k * (x & 127)) >> 7;
+inline uint16_t kxQ8(uint8_t k, uint16_t x) {
+  uint16_t h = (k * (x >> 8));
+  uint16_t l = (k * (x & 255)) >> 8;
   return (h + l);
 }
 
 /**
  * Linear interpolation between `a` and `b`.
  *
- * \param k  an 7 bit coefficient (0..128 means 0..128/128)
+ * \param k  an 8 bit coefficient (0..255 means 0..255/256)
  * \param x  a 16 bit unsigned integer
  * \return   the integer part of the result.
  * \note
  * `k` must be less than or equal to 128.
  */
-inline uint16_t lerpQ7(uint8_t k, uint16_t a, uint16_t b) {
-  return kxQ7(128 - k, a) + kxQ7(k, b);
+inline uint16_t lerpQ8(uint8_t k, uint16_t a, uint16_t b) {
+  return !k ? a : (kxQ8(256 - k, a) + kxQ8(k, b));
 }
 
 /**
- * \param note    MIDI note number
- * \param pitch   pitch shift (pitch == 128 means +1 note)
+ * \param pitch   pitch (pitch == 128 means +1 note)
  * \return        OSC period (≈ wave lengh)
  */
-static int16_t snd__osc_period(uint8_t note, int16_t pitch) {
-  if (127 < note) {
-    // out of range (illegal MIDI note number)
-    return -1;
-  }
+static int16_t snd__osc_period(int16_t pitch) {
   if (pitch < 0) {
-    uint16_t d = ((-pitch) >> 7) + 1;
-    if (note < d) {
-      // out of range
-      return -1;
-    }
-    note -= d;
-    pitch = 128 - ((-pitch) & 127);
+    // out of range (illegal MIDI note number)
+    return osc_periods[0];
   }
-  // ----
-  int8_t idx = MIDI_NOTE_NUMBER_TO_INDEX(note);
-  if (127 < pitch) {
-    idx++;
-    pitch &= 0x7f;
+  if ((127 << 8) < pitch) {
+    // out of range (illegal MIDI note number)
+    return osc_periods[OSC_PERIODS_INDEX_MAX - 1];
   }
-  if (idx < 0) {
-    // out of range
-    return -1;
-  }
+  int8_t idx = MIDI_NOTE_NUMBER_TO_INDEX(pitch >> 8);
   if (OSC_PERIODS_INDEX_MAX - 1 <= idx) {
     return osc_periods[OSC_PERIODS_INDEX_MAX - 1];
   }
-  return lerpQ7(pitch, osc_periods[idx], osc_periods[idx+1]);
+  return lerpQ8(pitch & 255, osc_periods[idx], osc_periods[idx+1]);
 }
 
 static void reset_effect(struct snd_channel * pch) {
@@ -129,7 +105,7 @@ void snd_m__init(struct snd_m_ctx * ctx) {
     snd_i__program_change(&pch->i, 1); // instrument #1
     reset_effect(pch);
     pch->volume = 0;
-    pch->note   = 0xff;
+    pch->pitch  = -1;
   }
 }
 
@@ -252,7 +228,7 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
         pch->fade = 0;
         uint8_t note = snd_m__stream_take(ctx);
         if (note < 0x80) {
-          pch->note = note;
+          pch->pitch = note << 8;
           snd_a_note_on(&pch->a);
           snd_i_note_on(&pch->i);
           snd_p_note_on(&pch->p);
@@ -260,11 +236,11 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
         }
         // legato
         else {
-          pch->note = note & 0x7f;
+          pch->pitch = (note & 0x7f) << 8;
         }
         break;
       case 9:
-        pch->note = 0xff;
+        pch->pitch = -1;
         snd_a_note_off(&pch->a);
         snd_i_note_off(&pch->i);
         snd_p_note_off(&pch->p);
@@ -319,7 +295,7 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
   uint8_t mixer = 0xb8;
   for (uint8_t ch = 3; ch--; ) {
     struct snd_channel * pch = pchs[ch];
-    if (pch->note == 0xff) {
+    if (pch->pitch < 0) {
       PSG_SET(ch+8, 0);
       continue;
     }
@@ -332,8 +308,7 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
       mixer |= (1 << ch);
     }
     // ----
-    int8_t note = pch->note + pch->arp;
-    int16_t pitch = pch->p.pitch;
+    int16_t pitch = pch->pitch + 256 * pch->arp + pch->p.pitch;
     // ----
     uint16_t sw_period = pch->i.sw_period;
     // SW only -----------------------------------------
@@ -345,7 +320,7 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
       PSG_SET(ch+8, volume);
       // ---- square wave ----
       if (!sw_period) {
-        sw_period = snd__osc_period(note + pch->i.sw_arp, pitch + pch->i.sw_pitch);
+        sw_period = snd__osc_period(pitch + 256 * pch->i.sw_arp + pch->i.sw_pitch);
       }
       PSG_SET(2*ch+0, (sw_period     ) & 0xff);
       PSG_SET(2*ch+1, (sw_period >> 8) & 0xff);
@@ -357,7 +332,7 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
     if (pch->i.modulation == 1) {
       mixer |= (1 << ch);
       if (!hw_period) {
-        hw_period = snd__osc_period(note + pch->i.hw_arp, pitch + pch->i.hw_pitch) >> pch->i.ratio;
+        hw_period = snd__osc_period(pitch + 256 * pch->i.hw_arp + pch->i.hw_pitch) >> pch->i.ratio;
       }
     }
     else {
@@ -365,7 +340,7 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
       // SW -> HW ----------------------------------------
       if (pch->i.modulation == 2) {
         if (!sw_period) {
-          sw_period = snd__osc_period(note + pch->i.sw_arp, pitch + pch->i.sw_pitch);
+          sw_period = snd__osc_period(pitch + 256 * pch->i.sw_arp + pch->i.sw_pitch);
         }
         if (!hw_period) {
           hw_period = sw_period >> pch->i.ratio;
@@ -374,7 +349,7 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
       // HW -> SW ----------------------------------------
       else if (pch->i.modulation == 3) {
         if (!hw_period) {
-          hw_period = snd__osc_period(note + pch->i.hw_arp, pitch + pch->i.hw_pitch) >> pch->i.ratio;
+          hw_period = snd__osc_period(pitch + 256 * pch->i.hw_arp + pch->i.hw_pitch) >> pch->i.ratio;
         }
         if (!sw_period) {
           sw_period = hw_period << pch->i.ratio;
@@ -383,10 +358,10 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
       // SW + HW -----------------------------------------
       else if (pch->i.modulation == 4) {
         if (!hw_period) {
-          hw_period = snd__osc_period(note + pch->i.hw_arp, pitch + pch->i.hw_pitch) >> pch->i.ratio;
+          hw_period = snd__osc_period(pitch + 256 * pch->i.hw_arp + pch->i.hw_pitch) >> pch->i.ratio;
         }
         if (!sw_period) {
-          sw_period = snd__osc_period(note + pch->i.sw_arp, pitch + pch->i.sw_pitch);
+          sw_period = snd__osc_period(pitch + 256 * pch->i.sw_arp + pch->i.sw_pitch);
         }
       }
       // ??      -----------------------------------------

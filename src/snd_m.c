@@ -327,8 +327,11 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
           pch->pitch = pitch;
         }
         break;
-      case 9:
-        pch->pitch = -1;
+      case 9:                   // Note off
+        // \note
+        // `Note off` means `KEY OFF`.
+        // Thus the pitch should not be cleared.
+        // pch->pitch = -1; // <- DO NOT THIS HERE
         snd_a_note_off(&pch->a);
         snd_i_note_off(&pch->i);
         snd_p_note_off(&pch->p);

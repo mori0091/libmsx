@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file snddrv_demo.c
- *
+/*
  * Copyright (c) 2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -10,160 +8,26 @@
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
+/**
+ * \file snddrv_demo.c
+ */
 
 #include <msx.h>
 #include <snddrv.h>
 #include <snd_i_table.h>
 
-#define ARRAY_SIZEOF(a)    (sizeof(a) / sizeof(a[0]))
+// User-defined instruments / timbres.
+// \see `instruments.c`
+extern const size_t i_tables_length;
+extern const struct snd_i_table * i_tables[];
 
-static const uint8_t i_table_01_a[] = {
-  0x1e, 0x1c, 0x1a, 0x18, 0x16, 0x14, 0x12,
-  /* 0xff, */
-};
-static const uint8_t i_table_01_s[] = {
-  0x10,
-  0xff,
-};
-static const uint8_t i_table_01_r[] = {
-  0x0e, 0x0c, 0x0a, 0x08, 0x06, 0x04, 0x02, 0x00,
-  0xff,
-};
+// Sound effect "coin"
+// \see 'sfx_coin.c'
+extern const uint8_t sfx_coin[];
 
-static const uint8_t i_table_02_a[] = {
-  0x1e, 0x1c, 0x1a, 0x18, 0x16, 0x14, 0x12, 0x10,
-  0x0e, 0x0c, 0x0a, 0x08, 0x06, 0x04, 0x02, 0x00,
-};
-static const uint8_t i_table_02_s[] = {
-  0xff,
-};
-
-static const struct snd_i_table i_tables[] = {
-  // instrument #1
-  [0] = { 1, i_table_01_a, i_table_01_s, i_table_01_r, },
-  // instrument #2
-  [1] = { 4, i_table_02_a, i_table_02_s, i_table_02_s, },
-};
-
-// ---- Sound effects ----
-const uint8_t sfx[] = {
-//ch0            ch1            ch3            wait  // ch0     ch1      ch2
-                 0xc1, 2,                            //         i#2
-                 0xe1, 0x8f,                         //         V15
-                 0x81, 83,                     0x02, //         B5               T225 L32.
-                 0x81, 88,                     0x1f, //         E6               T225 L2
-
-  0xff,
-};
-
-// ---- Background music ----
-
-const uint8_t bgm[] = {
-//ch0               ch1               ch3               wait  // ch0     ch1      ch2
-  // A part (1/2)
-  0xe0, 0x8f,       0xe1, 0x8f,       0xe2, 0x8f,             // V15     V15      V15
-
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x09, // C4      F4       G4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x13, // C4      F4       G4      T180 L8
-  0xe0, 0x70, 0x80, 0xe1, 0x70, 0x80, 0xe2, 0x70, 0x80,
-
-  0x80, 0x3e,       0x81, 0x42,       0x82, 0x45,       0x09, // D4      G4       A4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x3e,       0x81, 0x42,       0x82, 0x45,       0x13, // D4      G4       A4      T180 L8
-  0xe0, 0x70, 0x80, 0xe1, 0x70, 0x80, 0xe2, 0x70, 0x80,
-
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x09, // C4      F4       G4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x09, // C4      F4       G4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x37,       0x81, 0x3c,       0x82, 0x3e,       0x09, // G3      C4       D4    | T180 L4
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x04, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x01, // fade in                |
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x01, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x00, // fade in                |
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x13, // fade out                 T180 L4
-
-  // A part (2/2)
-  0xe0, 0x8f,       0xe1, 0x8f,       0xe2, 0x8f,             // V15     V15      V15
-
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x09, // C4      F4       G4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x09, // C4      F4       G4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x3e,       0x81, 0x42,       0x82, 0x45,       0x09, // D4      G4       A4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x3e,       0x81, 0x42,       0x82, 0x45,       0x09, // D4      G4       A4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x09, // C4      F4       G4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x3c,       0x81, 0x41,       0x82, 0x43,       0x09, // C4      F4       G4      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x37,       0x81, 0x3c,       0x82, 0x3e,       0x09, // G3      C4       D4    | T180 L4
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x04, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x01, // fade in                |
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x01, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x00, // fade in                |
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x13, // fade out                 T180 L4
-
-  0xe0, 0x71, 0x00, 0xe1, 0x71, 0x00, 0xe2, 0x71, 0x00,
-  // B part (1/2)
-  0xe0, 0x8c,       0xe1, 0x8c,       0xe2, 0x8c,             // V12     V12      V12
-
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x30,       0x81, 0x35,       0x82, 0x37,       0x09, // C3      F3       G3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x30,       0x81, 0x35,       0x82, 0x37,       0x09, // C3      F3       G3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x37,       0x81, 0x3c,       0x82, 0x3e,       0x09, // G3      C4       D4    | T180 L4
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x04, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x01, // fade in                |
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x01, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x00, // fade in                |
-                                                        0x13, // R       R        R       T180 L4
-
-  0xe0, 0x71, 0x00, 0xe1, 0x71, 0x00, 0xe2, 0x71, 0x00,
-  // B part (2/2)
-  0xe0, 0x8c,       0xe1, 0x8c,       0xe2, 0x8c,             // V12     V12      V12
-
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x30,       0x81, 0x35,       0x82, 0x37,       0x09, // C3      F3       G3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x30,       0x81, 0x35,       0x82, 0x37,       0x09, // C3      F3       G3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-  0x80, 0x32,       0x81, 0x37,       0x82, 0x39,       0x09, // D3      G3       A3      T180 L8
-  0x90,             0x91,             0x92,             0x09, // Off     Off      Off     T180 L8
-
-  0x80, 0x37,       0x81, 0x3c,       0x82, 0x3e,       0x09, // G3      C4       D4    | T180 L4
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x04, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x01, // fade in                |
-  0xe0, 0xa0, 1,    0xe1, 0xa0, 1,    0xe2, 0xa0, 1,    0x01, // fade out               |
-  0xe0, 0x90, 1,    0xe1, 0x90, 1,    0xe2, 0x90, 1,    0x00, // fade in                |
-                                                        0x13, // R       R        R       T180 L4
-
-  0xff,
-};
+// Background music
+// \see 'bgm_01.c'
+extern const uint8_t bgm_01[];
 
 _Noreturn
 static void infinite_loop(void) {
@@ -174,7 +38,7 @@ static void infinite_loop(void) {
     bool fired = joypad_get_state(0) & VK_FIRE_0;
     if (!old_fired && fired) {
       // sound effects "coiiiiiiin!"
-      snd_set_sfx((void *)sfx);
+      snd_set_sfx((void *)sfx_coin);
     }
     old_fired = fired;
   }
@@ -188,15 +52,15 @@ void main(void) {
   snd_init();
 
   // Register instruments (timbre) table.
-  snd_set_i_tables(ARRAY_SIZEOF(i_tables), i_tables);
+  snd_set_i_tables(i_tables_length, i_tables);
 
   // Register the sound driver as VSYNC handler.
   set_vsync_handler(snd_play);
 
   snd_set_repeat(true);
-  snd_set_speed(SND_SPEED_1X * 1); // 2x
-  snd_set_bgm((void *)bgm);     // Register the BGM to be played.
-  snd_start();                  // Start the BGM.
+  snd_set_speed(SND_SPEED_1X * 1); // 1x
+  snd_set_bgm((void *)bgm_01);     // Register the BGM to be played.
+  snd_start();                     // Start (or resume if paused) to play music.
 
   infinite_loop();
 }

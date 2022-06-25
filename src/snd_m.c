@@ -16,11 +16,8 @@
 #include "../include/ay_3_8910.h"
 
 #include "./snd_m.h"
-#include "./snd_i.h"
-#include "./snd_a.h"
-#include "./snd_p.h"
 
-#define PSG_SET(reg, val)    ay_3_8910_buffer[(reg)] = (val)
+#define PSG(reg)                     (ay_3_8910_buffer[(reg)])
 
 #define OSC_PERIODS_INDEX_MAX        (sizeof(osc_periods) / sizeof(osc_periods[0]))
 #define MIDI_NOTE_NUMBER_MIN         (21) // A0
@@ -86,7 +83,7 @@ static int16_t snd__osc_period(int16_t pitch) {
   return lerpQ8(pitch & 255, osc_periods[idx], osc_periods[idx+1]);
 }
 
-static void reset_effect(struct snd_channel * pch) {
+static void snd_m__reset_expression(struct snd_channel * pch) {
   snd_a__program_change(&pch->a, 0); // arpeggio off
   snd_p__program_change(&pch->p, 0); // pitch envelope off
   pch->arp = 0;
@@ -102,7 +99,7 @@ void snd_m__init(struct snd_m_ctx * ctx) {
   for (uint8_t ch = 3; ch--;) {
     struct snd_channel * pch = &ctx->channels[ch];
     snd_i__program_change(&pch->i, 1); // instrument #1
-    reset_effect(pch);
+    snd_m__reset_expression(pch);
     pch->volume = 0;
     pch->pitch  = -1;
   }
@@ -149,7 +146,7 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
   const uint8_t x = snd_m__stream_take(ctx);
   const uint8_t tag = x >> 4;
   if (!tag) {
-    reset_effect(pch);
+    snd_m__reset_expression(pch);
     pch->volume = ~x & 15;
   }
   else if (tag == 8) {
@@ -371,109 +368,137 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
   }
 }
 
+static void snd_m__set_noise(uint8_t ch, struct snd_channel * pch);
+static void snd_m__set_tone_flag(uint8_t ch, struct snd_channel * pch);
+static void snd_m__set_volume(uint8_t ch, struct snd_channel * pch);
+static void snd_m__set_modulation(uint8_t ch, struct snd_channel * pch);
+
 void snd_m__synthesis(struct snd_channel * pchs[3]) {
-  uint8_t mixer = 0xb8;
+  PSG(7) = 0xb8;
   for (uint8_t ch = 3; ch--; ) {
     struct snd_channel * pch = pchs[ch];
-    if (pch->pitch < 0) {
-      PSG_SET(ch+8, 0);
-      continue;
-    }
-    // ----
-    if (pch->i.noise_fdr) {
-      PSG_SET(6, pch->i.noise_fdr);
-      mixer &= ~(4 << ch);
-    }
-    if (!pch->i.tone_on) {
-      mixer |= (1 << ch);
-    }
-    // ----
-    int16_t pitch = pch->pitch + 256 * pch->arp + pch->p.pitch;
-    // ----
-    uint16_t sw_period = pch->i.sw_period;
-    // SW only -----------------------------------------
-    if (pch->i.modulation == 0) {
-      // ---- volume / software envelope ----
-      int8_t volume = pch->volume + pch->i.volume - 15;
-      if (volume < 0)  { volume = 0;  }
-      if (15 < volume) { volume = 15; }
-      PSG_SET(ch+8, volume);
-      // ---- square wave ----
-      if (!sw_period) {
-        sw_period
-          = snd__osc_period(pitch + pch->i.sw_pitch)
-          + pch->i.sw_period_delta;
-      }
-      PSG_SET(2*ch+0, (sw_period     ) & 0xff);
-      PSG_SET(2*ch+1, (sw_period >> 8) & 0xff);
-      continue;
-    }
-    // ----
-    uint16_t hw_period = pch->i.hw_period;
-    // HW only -----------------------------------------
-    if (pch->i.modulation == 1) {
-      mixer |= (1 << ch);
-      if (!hw_period) {
-        hw_period
-          = (snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio)
-          + pch->i.hw_period_delta;
-      }
+    if (pch->pitch < 0 || 4 < pch->i.modulation) {
+      PSG(ch+8) = 0;
     }
     else {
-      mixer &= ~(1 << ch);
-      // SW -> HW ----------------------------------------
-      if (pch->i.modulation == 2) {
-        if (!sw_period) {
-          sw_period
-            = snd__osc_period(pitch + pch->i.sw_pitch) // \note use SW pitch
-            + pch->i.sw_period_delta;
-        }
-        if (!hw_period) {
-          hw_period
-            = (sw_period >> pch->i.ratio)
-            + pch->i.hw_period_delta;
-        }
-      }
-      // HW -> SW ----------------------------------------
-      else if (pch->i.modulation == 3) {
-        if (!hw_period) {
-          hw_period
-            = (snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio) // \note use HW pitch
-            + pch->i.hw_period_delta;
-        }
-        if (!sw_period) {
-          sw_period
-            = (hw_period << pch->i.ratio)
-            + pch->i.sw_period_delta;
-        }
-      }
-      // SW + HW -----------------------------------------
-      else if (pch->i.modulation == 4) {
-        if (!hw_period) {
-          hw_period
-            = (snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio)
-            + pch->i.hw_period_delta;
-        }
-        if (!sw_period) {
-          sw_period
-            = snd__osc_period(pitch + pch->i.sw_pitch)
-            + pch->i.sw_period_delta;
-        }
-      }
-      // ??      -----------------------------------------
-      else {
-        // nothing to do
-      }
-      PSG_SET(2*ch+0, (sw_period     ) & 0xff);
-      PSG_SET(2*ch+1, (sw_period >> 8) & 0xff);
+      // noise -------------------------------------------
+      snd_m__set_noise(ch, pch);
+      // tone on/off -------------------------------------
+      snd_m__set_tone_flag(ch, pch);
+      // volume or enable hardware envelope --------------
+      snd_m__set_volume(ch, pch);
+      // modulation --------------------------------------
+      snd_m__set_modulation(ch, pch);
     }
-    PSG_SET(11, (hw_period     ) & 0xff);
-    PSG_SET(12, (hw_period >> 8) & 0xff);
-    if (pch->i.retrig) {
-      // R13 = 8:Saw, 10:Triangle, 12:Inv-Saw, 14:Inv-Triangle
-      PSG_SET(13, pch->i.waveform * 2 + 8);
-    }
-    PSG_SET(8+ch, 16);
   }
-  PSG_SET(7, mixer);
+}
+
+static void snd_m__set_noise(uint8_t ch, struct snd_channel * pch) {
+  if (pch->i.noise_fdr) {
+    PSG(6) = pch->i.noise_fdr;
+    PSG(7) &= ~(4 << ch);
+  }
+}
+static void snd_m__set_tone_flag(uint8_t ch, struct snd_channel * pch) {
+  if (!pch->i.tone_on || pch->i.modulation == 1) {
+    PSG(7) |= (1 << ch);
+  }
+}
+static void snd_m__set_volume(uint8_t ch, struct snd_channel * pch) {
+  if (!pch->i.modulation) {
+    int8_t volume = pch->volume + pch->i.volume - 15;
+    if (volume < 0) {
+      volume = 0;
+    }
+    else if (15 < volume) {
+      volume = 15;
+    }
+    PSG(ch+8) = volume;
+  }
+  else {
+    PSG(ch+8) = 16;
+  }
+}
+
+static uint16_t snd_m__calc_sw_period(uint16_t pitch, struct snd_channel * pch);
+static uint16_t snd_m__calc_hw_period(uint16_t pitch, struct snd_channel * pch);
+inline void snd_m__set_sw_period(uint8_t ch, uint16_t sw_period);
+inline void snd_m__set_hw_period(struct snd_channel * pch, uint16_t hw_period);
+
+static void snd_m__set_modulation(uint8_t ch, struct snd_channel * pch) {
+  const int16_t pitch = pch->pitch + 256 * pch->arp + pch->p.pitch;
+  uint16_t sw_period = pch->i.sw_period;
+  uint16_t hw_period = pch->i.hw_period;
+  // ---- SW only ------------------------------------
+  if (pch->i.modulation == 0) {
+    if (!sw_period) {
+      sw_period = snd_m__calc_sw_period(pitch, pch);
+    }
+  }
+  // ---- HW only ------------------------------------
+  else if (pch->i.modulation == 1) {
+    if (!hw_period) {
+      hw_period = snd_m__calc_hw_period(pitch, pch);
+    }
+  }
+  // ---- SW -> HW -----------------------------------
+  else if (pch->i.modulation == 2) {
+    if (!sw_period) {
+      sw_period = snd_m__calc_sw_period(pitch, pch);
+    }
+    if (!hw_period) {
+      hw_period
+        = (sw_period >> pch->i.ratio)
+        + pch->i.hw_period_delta;
+    }
+  }
+  // ----- HW -> SW -----------------------------------
+  else if (pch->i.modulation == 3) {
+    if (!hw_period) {
+      hw_period = snd_m__calc_hw_period(pitch, pch);
+    }
+    if (!sw_period) {
+      sw_period
+        = (hw_period << pch->i.ratio)
+        + pch->i.sw_period_delta;
+    }
+  }
+  // ----- SW + HW ------------------------------------
+  else if (pch->i.modulation == 4) {
+    if (!sw_period) {
+      sw_period = snd_m__calc_sw_period(pitch, pch);
+    }
+    if (!hw_period) {
+      hw_period = snd_m__calc_hw_period(pitch, pch);
+    }
+  }
+  // ---- square wave ---------------------------------
+  if (pch->i.modulation != 1) {
+    snd_m__set_sw_period(ch, sw_period);
+  }
+  // ---- saw / triangle wave -------------------------
+  if (0 < pch->i.modulation) {
+    snd_m__set_hw_period(pch, hw_period);
+  }
+}
+
+static uint16_t snd_m__calc_sw_period(uint16_t pitch, struct snd_channel * pch) {
+  return (snd__osc_period(pitch + pch->i.sw_pitch)
+          + pch->i.sw_period_delta);
+}
+static uint16_t snd_m__calc_hw_period(uint16_t pitch, struct snd_channel * pch) {
+  return ((snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio)
+          + pch->i.hw_period_delta);
+}
+inline void snd_m__set_sw_period(uint8_t ch, uint16_t sw_period) {
+  PSG(2*ch+0) = (sw_period     ) & 0xff;
+  PSG(2*ch+1) = (sw_period >> 8) & 0x0f;
+}
+inline void snd_m__set_hw_period(struct snd_channel * pch, uint16_t hw_period) {
+  PSG(11) = (hw_period     ) & 0xff;
+  PSG(12) = (hw_period >> 8) & 0xff;
+  if (pch->i.retrig) {
+    // R13 = 8:Saw, 10:Triangle, 12:Inv-Saw, 14:Inv-Triangle
+    PSG(13) = pch->i.waveform * 2 + 8;
+  }
 }

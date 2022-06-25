@@ -129,7 +129,8 @@ uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {
 }
 
 static void snd_m__set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch) {
-  pch->pitch_timer = pch->pitch_wait = wait;
+  pch->pitch_wait = wait;
+  pch->pitch_timer = 0;
   pch->pitch_delta = pitch_delta;
   pch->pitch_triggered = true;
   pch->pitch_min = PITCH_MIN;
@@ -137,7 +138,8 @@ static void snd_m__set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_
 }
 
 inline void snd_m__set_fade(int8_t fade, uint16_t wait, struct snd_channel * pch) {
-  pch->fade_wait = pch->fade_timer = wait;
+  pch->fade_wait = wait;
+  pch->fade_timer = 0;
   pch->fade = fade;
   pch->fade_triggered = true;
 }

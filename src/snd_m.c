@@ -400,8 +400,9 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
       PSG_SET(ch+8, volume);
       // ---- square wave ----
       if (!sw_period) {
-        sw_period = snd__osc_period(pitch + pch->i.sw_pitch);
-        sw_period += pch->i.sw_period_delta;
+        sw_period
+          = snd__osc_period(pitch + pch->i.sw_pitch)
+          + pch->i.sw_period_delta;
       }
       PSG_SET(2*ch+0, (sw_period     ) & 0xff);
       PSG_SET(2*ch+1, (sw_period >> 8) & 0xff);
@@ -413,8 +414,9 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
     if (pch->i.modulation == 1) {
       mixer |= (1 << ch);
       if (!hw_period) {
-        hw_period = snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio;
-        hw_period += pch->i.hw_period_delta;
+        hw_period
+          = (snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio)
+          + pch->i.hw_period_delta;
       }
     }
     else {
@@ -422,35 +424,41 @@ void snd_m__synthesis(struct snd_channel * pchs[3]) {
       // SW -> HW ----------------------------------------
       if (pch->i.modulation == 2) {
         if (!sw_period) {
-          sw_period = snd__osc_period(pitch + pch->i.sw_pitch); // \note use SW pitch
+          sw_period
+            = snd__osc_period(pitch + pch->i.sw_pitch) // \note use SW pitch
+            + pch->i.sw_period_delta;
         }
         if (!hw_period) {
-          hw_period = sw_period >> pch->i.ratio;
+          hw_period
+            = (sw_period >> pch->i.ratio)
+            + pch->i.hw_period_delta;
         }
-        sw_period += pch->i.sw_period_delta;
-        hw_period += pch->i.hw_period_delta;
       }
       // HW -> SW ----------------------------------------
       else if (pch->i.modulation == 3) {
         if (!hw_period) {
-          hw_period = snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio; // \note use HW pitch
+          hw_period
+            = (snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio) // \note use HW pitch
+            + pch->i.hw_period_delta;
         }
         if (!sw_period) {
-          sw_period = hw_period << pch->i.ratio;
+          sw_period
+            = (hw_period << pch->i.ratio)
+            + pch->i.sw_period_delta;
         }
-        sw_period += pch->i.sw_period_delta;
-        hw_period += pch->i.hw_period_delta;
       }
       // SW + HW -----------------------------------------
       else if (pch->i.modulation == 4) {
         if (!hw_period) {
-          hw_period = snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio;
+          hw_period
+            = (snd__osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio)
+            + pch->i.hw_period_delta;
         }
         if (!sw_period) {
-          sw_period = snd__osc_period(pitch + pch->i.sw_pitch);
+          sw_period
+            = snd__osc_period(pitch + pch->i.sw_pitch)
+            + pch->i.sw_period_delta;
         }
-        sw_period += pch->i.sw_period_delta;
-        hw_period += pch->i.hw_period_delta;
       }
       // ??      -----------------------------------------
       else {

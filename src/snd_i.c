@@ -70,7 +70,7 @@ void snd_i_note_off(struct snd_i_ctx * ctx) {
   ctx->next = ctx->i_table->r_part;
 }
 
-void snd_i__program_change(struct snd_i_ctx * ctx, uint8_t index) {
+void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx) {
   // set instrument table number
   if (i_number_max < index) {
     index = 0;

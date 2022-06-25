@@ -53,7 +53,7 @@ void snd_p_note_off(struct snd_p_ctx * ctx) {
   ctx->next = ctx->p_table->r_part;
 }
 
-void snd_p__program_change(struct snd_p_ctx * ctx, uint8_t index) {
+void snd_p__program_change(uint8_t index, struct snd_p_ctx * ctx) {
   // set pitch envelope table number
   if (p_number_max < index) {
     index = 0;

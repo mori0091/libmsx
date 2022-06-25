@@ -25,10 +25,10 @@ void snd_a_note_off(struct snd_a_ctx * ctx) {
   (void)ctx;
 }
 
-void snd_a__program_change(struct snd_a_ctx * ctx, uint8_t index) {
+void snd_a__program_change(uint8_t index, struct snd_a_ctx * ctx) {
   // set arpeggio table number
-  (void)ctx;
   (void)index;
+  (void)ctx;
 }
 
 void snd_a__decode(struct snd_a_ctx * ctx) {

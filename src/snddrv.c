@@ -150,8 +150,8 @@ static void snd__decode(struct snd_ctx * ctx) {
     ctx->counter -= vsync_freq;
     // ----
     snd_m__decode(&ctx->m);
-    for (uint8_t ch = 3; ch--;) {
-      struct snd_channel * pch = &ctx->m.channels[ch];
+    struct snd_channel * pch = &ctx->m.channels[0];
+    for (uint8_t ch = 3; ch--; pch++) {
       snd_i__decode(&pch->i);
       snd_a__decode(&pch->a);
       snd_p__decode(&pch->p);
@@ -176,5 +176,5 @@ static void snd__synthesis(void) {
       pchs[ch] = &snd_bgm.m.channels[ch];
     }
   }
-  snd_m__synthesis(pchs);
+  snd_channel_synthesis(pchs);
 }

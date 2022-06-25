@@ -42,12 +42,12 @@ struct snd_i_ctx {
     uint8_t ratio;              // default: 4
     // _pa01111
     uint16_t sw_period;         // default: 0 (auto)
-    uint8_t  sw_arp;            // default: 0
-    uint16_t sw_pitch;          // default: 0
+    int16_t  sw_period_delta;   // default: 0 ; wave length offset
+    int16_t  sw_pitch;          // default: 0 ; pitch bend / arpeggio
     // pa011111
     uint16_t hw_period;         // default: 0 (auto)
-    uint8_t  hw_arp;            // default: 0
-    uint16_t hw_pitch;          // default: 0
+    int16_t  hw_period_delta;   // default: 0 ; wave length offset
+    int16_t  hw_pitch;          // default: 0 ; pitch bend / arpeggio
   };
 };
 

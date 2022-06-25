@@ -105,10 +105,10 @@ static void snd_i__init_state(struct snd_i_ctx * ctx) {
   ctx->waveform = 0;
   ctx->ratio = 4;
   ctx->sw_period = 0;
-  ctx->sw_arp = 0;
+  ctx->sw_period_delta = 0;
   ctx->sw_pitch = 0;
   ctx->hw_period = 0;
-  ctx->hw_arp = 0;
+  ctx->hw_period_delta = 0;
   ctx->hw_pitch = 0;
 }
 
@@ -160,8 +160,9 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
         continue;
       }
       if (x & 1) {
-        ctx->sw_arp
-          = snd_i__stream_take(ctx);
+        ctx->sw_period_delta
+          = (snd_i__stream_take(ctx) << 8)
+          + snd_i__stream_take(ctx);
       }
       if (x & 2) {
         ctx->sw_pitch
@@ -180,8 +181,9 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
         continue;
       }
       if (x & 1) {
-        ctx->hw_arp
-          = snd_i__stream_take(ctx);
+        ctx->hw_period_delta
+          = (snd_i__stream_take(ctx) << 8)
+          + snd_i__stream_take(ctx);
       }
       if (x & 2) {
         ctx->hw_pitch

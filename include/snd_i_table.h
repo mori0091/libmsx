@@ -39,8 +39,8 @@ struct snd_i_table {
  * Register instrument (timbre) tables.
  *
  * \param n         number of instrument tables.
- * \param i_tables  instrument tables.
+ * \param i_tables  array of pointers to instrument tables.
  */
-void snd_set_i_tables(size_t n, const struct snd_i_table * i_tables);
+void snd_set_i_tables(size_t n, const struct snd_i_table ** i_tables);
 
 #endif // SND_I_TABLE_H_

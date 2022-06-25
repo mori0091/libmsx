@@ -36,18 +36,21 @@ static const uint8_t i_table_01_s[] = {
 static const uint8_t i_table_01_r[] = {
   0x0e, 0x0c, 0x0a, 0x08, 0x06, 0x04, 0x02, 0x00, 0xff,
 };
-static const struct snd_i_table default_i_tables[] = {
-  [0] = {
-    .wait    = 1,
-    .ad_part = i_table_01_a,
-    .s_part  = i_table_01_s,
-    .r_part  = i_table_01_r,
-  },
+static const struct snd_i_table i_table_01 = {
+  .wait    = 1,
+  .ad_part = i_table_01_a,
+  .s_part  = i_table_01_s,
+  .r_part  = i_table_01_r,
 };
-static const struct snd_i_table * i_tables;
+
+static const struct snd_i_table * default_i_tables[] = {
+  &i_table_01,
+};
+
+static const struct snd_i_table ** i_tables;
 static size_t i_number_max;
 
-void snd_i__set_i_tables(size_t n, const struct snd_i_table * i_tables_) {
+void snd_i__set_i_tables(size_t n, const struct snd_i_table ** i_tables_) {
   if (!n || !i_tables_) {
     i_tables = default_i_tables;
     i_number_max = 1;
@@ -76,7 +79,7 @@ void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx) {
     index = 0;
   }
   ctx->i_number = index;
-  ctx->i_table = !index ? &i_table_00 : &i_tables[index-1];
+  ctx->i_table = !index ? &i_table_00 : i_tables[index-1];
   ctx->wait = ctx->i_table->wait;
   ctx->timer = 0;
   ctx->next = ctx->i_table->ad_part;

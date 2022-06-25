@@ -51,7 +51,7 @@ struct snd_i_ctx {
   };
 };
 
-extern void snd_i__set_i_tables(size_t n, const struct snd_i_table * i_tables_);
+extern void snd_i__set_i_tables(size_t n, const struct snd_i_table ** i_tables_);
 
 extern void snd_i_note_on(struct snd_i_ctx * ctx);
 extern void snd_i_note_off(struct snd_i_ctx * ctx);

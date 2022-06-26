@@ -27,7 +27,7 @@ static uint8_t volume[3];       // main volume
 static bool paused;
 static bool repeat;
 static uint8_t vsync_freq;
-uint8_t snd_speed_multiplier4x;
+uint8_t snd_speed_multiplier;
 
 struct snd_ctx snd_bgm;
 struct snd_ctx snd_sfx;
@@ -57,7 +57,7 @@ static void snd__set_repeat(bool status) {
 
 static void snd__init(void) {
   vsync_freq = msx_get_vsync_frequency();
-  snd_speed_multiplier4x = SND_SPEED_1X;
+  snd_speed_multiplier = SND_SPEED_1X;
   // psg_init();
   ay_3_8910_init();
   snd__pause();
@@ -76,9 +76,11 @@ static void snd__stop(void) {
 #define DI() __asm__("di")
 #define EI() __asm__("ei")
 
+extern void snd__set_speed(uint8_t multiplier);
+
 static void snd__set_bgm(void * data) {
   snd__set_song(&snd_bgm, data);
-  snd_set_player_frequency((int)snd_speed_multiplier4x * snd_bgm.song_freq / 4);
+  snd__set_speed(snd_speed_multiplier);
 }
 
 void snd_set_bgm(void * data) {
@@ -138,7 +140,9 @@ void snd_play(void) {
   snd__synthesis();
 
   if (repeat && snd_bgm.m.isEnd) {
+    uint8_t freq = snd_bgm.play_freq;
     snd__set_bgm((void *)snd_bgm.m.data);
+    snd_bgm.play_freq = freq;
   }
 }
 

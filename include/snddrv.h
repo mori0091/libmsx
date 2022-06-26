@@ -23,7 +23,7 @@
  * The value of the playback speed multiplier for 1.0x speed.
  * \sa snd_set_speed()
  */
-#define SND_SPEED_1X      (4)
+#define SND_SPEED_1X      (16)
 
 /**
  * Returns default frequency of the background music.
@@ -54,13 +54,13 @@ uint8_t snd_get_player_frequency(void);
  * \sa snd_set_speed()
  *
  * \note
- * Default frequency that the music composer assumed may not be the same.
- * Therefore snd_set_speed() is recommended instead.
- *
- * \note
  * When a music is set by snd_set_bgm(), the player frequency is calculated
  * regarding to the default frequency of the music and the speed set by
  * snd_set_speed().
+ *
+ * \note
+ * Default frequency that the music composer assumed may not be the same.
+ * Therefore snd_set_speed() is recommended instead.
  */
 void snd_set_player_frequency(uint8_t freq);
 
@@ -69,22 +69,22 @@ void snd_set_player_frequency(uint8_t freq);
  *
  * This function is used to control the playback speed of background music.
  *
- * The playback speed multiplier is specified by a value of 4 times. For
- * example, a value of 4 means a playback speed of 1.0x, and a value of 6 means
- * 1.5x.
+ * The playback speed multiplier is specified by a value of 16 times. For
+ * example, a value of 16 means a playback speed of 1.0x, and a value of 24
+ * means 1.5x.
  *
  * ~~~c
  * snd_set_speed(SND_SPEED_1X * 2);  // 2.0x faster playback
  * snd_set_speed(SND_SPEED_1X / 4);  // 1/4x the slowest playback
  * ~~~
  *
- * \param multiplier4x  4 times the playback speed multiplier
+ * \param multiplier    16 times the playback speed multiplier
  * \sa SND_SPEED_1X
  * \sa snd_get_bgm_frequency()
  * \sa snd_get_player_frequency()
  * \sa snd_set_player_frequency()
  */
-void snd_set_speed(uint8_t multiplier4x);
+void snd_set_speed(uint8_t multiplier);
 
 /**
  * Turn on/off the auto-repeat of the BGM.

@@ -16,9 +16,20 @@
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
 
-extern uint8_t snd_speed_multiplier4x;
+#define DI() __asm__("di")
+#define EI() __asm__("ei")
 
-void snd_set_speed(uint8_t multiplier4x) {
-  snd_speed_multiplier4x = multiplier4x;
-  snd_set_player_frequency((int)multiplier4x * snd_bgm.song_freq / 4);
+extern uint8_t snd_speed_multiplier;
+
+extern void snd__set_bgm_freq(uint8_t freq);
+
+void snd__set_speed(uint8_t multiplier) {
+  snd_speed_multiplier = multiplier;
+  snd__set_bgm_freq((int)snd_bgm.song_freq * multiplier / SND_SPEED_1X);
+}
+
+void snd_set_speed(uint8_t multiplier) {
+  DI();
+  snd__set_speed(multiplier);
+  EI();
 }

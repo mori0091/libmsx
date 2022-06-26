@@ -19,7 +19,7 @@
 #define DI() __asm__("di")
 #define EI() __asm__("ei")
 
-inline void snd__set_bgm_freq(uint8_t freq) {
+void snd__set_bgm_freq(uint8_t freq) {
   if (freq <= 0) {
     freq = 1;
   }

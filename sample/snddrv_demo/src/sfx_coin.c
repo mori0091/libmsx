@@ -12,10 +12,10 @@
  * \file sfx_coin.c
  */
 
-#include <stdint.h>
+#include <snd_sound.h>
 
 // ---- Sound effects ----
-const uint8_t sfx_coin[] = {
+static const uint8_t stream[] = {
 //ch0            ch1            ch3            wait  // ch0     ch1      ch2
                  0xc1, 2,                            //         i#2
                  0xe1, 0x8f,                         //         V15
@@ -23,4 +23,10 @@ const uint8_t sfx_coin[] = {
                  0x81, 88,                     0x1f, //         E6               T225 L2
 
   0xff,
+};
+
+const snd_Sound sfx_coin = {
+  .tag = SND_STREAM,
+  .replayRate = 60,             // 60Hz
+  .stream.data = stream,
 };

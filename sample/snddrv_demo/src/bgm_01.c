@@ -12,10 +12,10 @@
  * \file bgm_01.c
  */
 
-#include <stdint.h>
+#include <snd_sound.h>
 
 // ---- Background music ----
-const uint8_t bgm_01[] = {
+static const uint8_t stream[] = {
 //ch0               ch1               ch3               wait  // ch0     ch1      ch2
   // A part (1/2)
   0xe0, 0x8f,       0xe1, 0x8f,       0xe2, 0x8f,             // V15     V15      V15
@@ -120,4 +120,10 @@ const uint8_t bgm_01[] = {
                                                         0x13, // R       R        R       T180 L4
 
   0xff,
+};
+
+const snd_Sound bgm_01 = {
+  .tag = SND_STREAM,
+  .replayRate = 60,             // 60Hz
+  .stream.data = stream,
 };

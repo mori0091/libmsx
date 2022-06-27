@@ -25,11 +25,11 @@ extern const struct snd_i_table * i_tables[];
 
 // Sound effect "coin" -------------------------------
 // \see 'sfx_coin.c'
-extern const uint8_t sfx_coin[];
+extern const snd_Sound sfx_coin;
 
 // Background music ----------------------------------
 // \see 'bgm_01.c'
-extern const uint8_t bgm_01[];
+extern const snd_Sound bgm_01;
 
 // Volume gauge --------------------------------------
 // \see 'volume_gauge.c'
@@ -63,7 +63,7 @@ static void main_loop(void) {
     bool fired = joypad_get_state(0) & VK_FIRE_0;
     if (!old_fired && fired) {
       // sound effects "coiiiiiiin!"
-      snd_set_sfx((void *)sfx_coin);
+      snd_set_sfx(&sfx_coin);
     }
     old_fired = fired;
   }
@@ -93,7 +93,7 @@ void main(void) {
 
   snd_set_repeat(true);
   snd_set_speed(SND_SPEED_1X * 1); // 1x
-  snd_set_bgm((void *)bgm_01);     // Register the BGM to be played.
+  snd_set_bgm(&bgm_01);            // Register the BGM to be played.
   snd_start();                     // Start (or resume if paused) to play music.
 
   // snd_set_player_frequency(55); // Another method to control playing speed.

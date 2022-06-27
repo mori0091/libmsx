@@ -34,14 +34,22 @@ struct snd_ctx snd_sfx;
 
 static void snd__init_ctx(struct snd_ctx * ctx) {
   snd_m__init(&ctx->m);
-  ctx->song_freq = 60;          // \TODO
-  ctx->play_freq = ctx->song_freq;
+  ctx->song_freq = vsync_freq;
+  ctx->play_freq = vsync_freq;
+  ctx->data = 0;
   ctx->counter = 0;
 }
 
-static void snd__set_song(struct snd_ctx * ctx, void * data) {
-  snd__init_ctx(ctx);
-  snd_m__program_change(&ctx->m, data); // \TODO
+static void snd__set_song(struct snd_ctx * ctx, const snd_Sound * data) {
+  if (data && data->tag == SND_STREAM && data->stream.data) {
+    snd__init_ctx(ctx);
+    snd_m__program_change(&ctx->m, data->stream.data);
+    if (data->replayRate) {
+      ctx->song_freq = data->replayRate;
+      ctx->play_freq = data->replayRate;
+    }
+    ctx->data = data;
+  }
 }
 
 static void snd__pause(void) {
@@ -68,9 +76,9 @@ static void snd__init(void) {
 }
 
 static void snd__stop(void) {
-  const uint8_t * song = snd_bgm.m.data;
+  const snd_Sound * song = snd_bgm.data;
   snd__init();
-  snd__set_song(&snd_bgm, (void *)song);
+  snd__set_song(&snd_bgm, song);
 }
 
 #define DI() __asm__("di")
@@ -78,18 +86,18 @@ static void snd__stop(void) {
 
 extern void snd__set_speed(uint8_t multiplier);
 
-static void snd__set_bgm(void * data) {
+static void snd__set_bgm(const snd_Sound * data) {
   snd__set_song(&snd_bgm, data);
   snd__set_speed(snd_speed_multiplier);
 }
 
-void snd_set_bgm(void * data) {
+void snd_set_bgm(const snd_Sound * data) {
   DI();
   snd__set_bgm(data);
   EI();
 }
 
-void snd_set_sfx(void * data) {
+void snd_set_sfx(const snd_Sound * data) {
   (void)data;
   DI();
   snd__set_song(&snd_sfx, data);
@@ -141,7 +149,7 @@ void snd_play(void) {
 
   if (repeat && snd_bgm.m.isEnd) {
     uint8_t freq = snd_bgm.play_freq;
-    snd__set_bgm((void *)snd_bgm.m.data);
+    snd__set_bgm(snd_bgm.data);
     snd_bgm.play_freq = freq;
   }
 }

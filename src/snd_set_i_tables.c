@@ -22,7 +22,7 @@
 
 extern void snd_stop(void);
 
-void snd_set_i_tables(size_t n, const struct snd_i_table ** i_tables) {
+void snd_set_i_tables(uint8_t n, const struct snd_i_table ** i_tables) {
   snd_stop();
   DI();
   snd_i__set_i_tables(n, i_tables);

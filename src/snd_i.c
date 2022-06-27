@@ -48,9 +48,9 @@ static const struct snd_i_table * default_i_tables[] = {
 };
 
 static const struct snd_i_table ** i_tables;
-static size_t i_number_max;
+static uint8_t i_number_max;
 
-void snd_i__set_i_tables(size_t n, const struct snd_i_table ** i_tables_) {
+void snd_i__set_i_tables(uint8_t n, const struct snd_i_table ** i_tables_) {
   if (!n || !i_tables_) {
     i_tables = default_i_tables;
     i_number_max = 1;

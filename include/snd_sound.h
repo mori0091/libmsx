@@ -117,46 +117,92 @@ struct snd_Sound {
    */
   const uint8_t replayRate;
   union {
-    /** Available if `tag == SND_STREAM` */
-    struct {
-      /** Pointer to a stream data that ends with 0xff. */
-      const uint8_t * const data;
-    } stream;
-    /** Available if `tag == SND_PROGRAM` */
-    struct {
-      /** Pointer to a `snd_Program` */
-      const snd_Program * const program;
-    };
+    /**
+     * Pointer to a stream data that ends with 0xff.
+     *
+     * \note Available if and only if `tag == SND_STREAM`.
+     */
+    const uint8_t * const stream;
+    /**
+     * Pointer to a `snd_Program`
+     *
+     * \note Available if and only if `tag == SND_PROGRAM`.
+     */
+    const snd_Program * const program;
   };
 };
 
+/**
+ * A music program.
+ *
+ * A `snd_Program` contains:
+ * - one or more music items,
+ * - all tracks refered in items, and
+ * - all special tracks refered in items.
+ */
 struct snd_Program {
-  vec(snd_SpeedTrack) speedTracks; ///< [optional] list of all speed tracks refered in items.
-  vec(snd_EventTrack) eventTracks; ///< [optional] list of all event tracks refered in items.
-  vec(snd_Track)      tracks;      ///< list of all tracks refered in items.
-  vec(snd_Item)       items;       ///< at least one item
+  /** [optional] list of all speed tracks refered in items. */
+  vec(snd_SpeedTrack) speedTracks;
+  /** [optional] list of all event tracks refered in items. */
+  vec(snd_EventTrack) eventTracks;
+  /** list of all tracks refered in items. */
+  vec(snd_Track)      tracks;
+  /** list of music items (at least one item) */
+  vec(snd_Item)       items;
 };
 
+/**
+ * A fragment of single channel music score.
+ */
 struct snd_Track {
-  vec(uint8_t);                 ///< fragment of a single channel music stream
+  /** fragment of a single channel music stream */
+  vec(uint8_t);
 };
 
+/**
+ * A special track to control speed of tracks.
+ */
 struct snd_SpeedTrack {
-  vec(uint8_t);                 ///< list of wait counts
+  /** list of wait counts */
+  vec(uint8_t);
 };
 
+/**
+ * A special track to control event trigger of tracks.
+ * \note unused yet.
+ */
 struct snd_EventTrack {
-  vec(uint8_t);                 ///< list of event numbers
+  /** list of event numbers */
+  vec(uint8_t);
 };
 
+/**
+ * A music item of a program.
+ *
+ * A `snd_Item` refers to a `snd_Matrix` that corresponds to full score,
+ * and it defines:
+ * - replay rate (default player frequency that composer expecting),
+ * - loop or not, and
+ * - initial speed (default speed).
+ */
 struct snd_Item {
-  const uint8_t    replayRate;   ///< default frequency of the program [Hz]
-  const uint8_t    loopToIndex;  ///< pattern index of the beggining of loop.
-  const uint8_t    isLoop;       ///< `true` if loopback to the `loopToIndex` at the end of music.
-  const uint8_t    initialSpeed; ///< default wait count per line. [tick]
-  const snd_Matrix * const matrix; ///< list of patterns. (pattern sequence)
+  /** default frequency of the program in [Hz]. */
+  const uint8_t    replayRate;
+  /** pattern index of the beggining of loop. */
+  const uint8_t    loopToIndex;
+  /** `true` if loopback to the `loopToIndex` at the end of music. */
+  const uint8_t    isLoop;
+  /** default wait count per line [tick]. */
+  const uint8_t    initialSpeed;
+  /** list of patterns (pattern sequence). */
+  const snd_Matrix * const matrix;
 };
 
+/**
+ * Corresponds to full score of a music item.
+ *
+ * A `snd_Matrix` defines which track is played on which channel in which order.
+ */
 struct snd_Matrix {
   /**
    * Size of the matrix in bytes.

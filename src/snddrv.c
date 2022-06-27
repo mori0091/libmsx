@@ -41,9 +41,9 @@ static void snd__init_ctx(struct snd_ctx * ctx) {
 }
 
 static void snd__set_song(struct snd_ctx * ctx, const snd_Sound * data) {
-  if (data && data->tag == SND_STREAM && data->stream.data) {
+  if (data && data->tag == SND_STREAM && data->stream) {
     snd__init_ctx(ctx);
-    snd_m__program_change(&ctx->m, data->stream.data);
+    snd_m__program_change(&ctx->m, data->stream);
     if (data->replayRate) {
       ctx->song_freq = data->replayRate;
       ctx->play_freq = data->replayRate;

@@ -27,10 +27,10 @@ static const struct snd_p_table p_table_00 = {
   .r_part  = p_table_00_data + 0,
 };
 
-static const struct snd_p_table * p_tables;
-static size_t p_number_max;
+static const struct snd_p_table ** p_tables;
+static uint8_t p_number_max;
 
-void snd_p__set_p_tables(size_t n, const struct snd_p_table * p_tables_) {
+void snd_p__set_p_tables(uint8_t n, const struct snd_p_table ** p_tables_) {
   if (!n || !p_tables_) {
     p_tables = 0;
     p_number_max = 0;
@@ -59,7 +59,7 @@ void snd_p__program_change(uint8_t index, struct snd_p_ctx * ctx) {
     index = 0;
   }
   ctx->p_number = index;
-  ctx->p_table = !index ? &p_table_00 : &p_tables[index-1];
+  ctx->p_table = !index ? &p_table_00 : p_tables[index-1];
   ctx->wait = ctx->p_table->wait;
   ctx->timer = 0;
   ctx->next = ctx->p_table->ad_part;

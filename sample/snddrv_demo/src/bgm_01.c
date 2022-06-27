@@ -125,5 +125,5 @@ static const uint8_t stream[] = {
 const snd_Sound bgm_01 = {
   .tag = SND_STREAM,
   .replayRate = 60,             // 60Hz
-  .stream.data = stream,
+  .stream = stream,
 };

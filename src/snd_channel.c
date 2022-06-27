@@ -57,7 +57,8 @@ inline uint16_t kxQ8(uint8_t k, uint16_t x) {
  * Linear interpolation between `a` and `b`.
  *
  * \param k  an 8 bit coefficient (0..255 means 0..255/256)
- * \param x  a 16 bit unsigned integer
+ * \param a  a 16 bit unsigned integer
+ * \param b  the other 16 bit unsigned integer
  * \return   the integer part of the result.
  */
 inline uint16_t lerpQ8(uint8_t k, uint16_t a, uint16_t b) {

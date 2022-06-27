@@ -70,14 +70,15 @@ void snd_set_player_frequency(uint8_t freq);
  *
  * The playback speed multiplier is specified by a value of 16 times. For
  * example, a value of 16 means a playback speed of 1.0x, and a value of 24
- * means 1.5x.
+ * means 1.5x. (i.e. Speed multiplier values are fixed-point numbers with a
+ * 4-bit integer part and a 4-bit decimal part.)
  *
  * ~~~c
  * snd_set_speed(SND_SPEED_1X * 2);  // 2.0x faster playback
- * snd_set_speed(SND_SPEED_1X / 4);  // 1/4x the slowest playback
+ * snd_set_speed(SND_SPEED_1X / 4);  // 1/4x slower playback
  * ~~~
  *
- * \param multiplier    16 times the playback speed multiplier
+ * \param multiplier    the playback speed multiplier
  * \sa SND_SPEED_1X
  * \sa snd_get_bgm_frequency()
  * \sa snd_get_player_frequency()
@@ -93,23 +94,23 @@ void snd_set_speed(uint8_t multiplier);
 void snd_set_repeat(bool repeat);
 
 /**
- * Sets the specified music clip as BGM in the sound driver.
+ * Sets the specified music as BGM in the sound driver.
  *
- * \param data   Pointer to the music clip structure to be played as BGM.
+ * \param data   Pointer to the music structure to be played as BGM.
  */
 void snd_set_bgm(const snd_Sound * data);
 
 /**
- * Sets the specified music clip as SFX (sound effects) in the sound driver.
+ * Sets the specified music as SFX (sound effects) in the sound driver.
  *
- * \param data   Pointer to the music clip structure to be played as SFX.
+ * \param data   Pointer to the music structure to be played as SFX.
  */
 void snd_set_sfx(const snd_Sound * data);
 
 /**
- * This function initializes the PSG and the sound driver.
+ * Initialize the PSG and the sound driver.
  *
- * This function must be called at least once. In particular, it must be called.
+ * This function must be called at least once. In particular, it must be called
  * before the first call to snd_play().
  *
  * \note
@@ -119,7 +120,7 @@ void snd_set_sfx(const snd_Sound * data);
 void snd_init(void);
 
 /**
- * Start / Unpause music.
+ * Start / Resume music.
  */
 void snd_start(void);
 

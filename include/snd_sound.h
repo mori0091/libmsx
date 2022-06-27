@@ -52,7 +52,7 @@
 #define SND_PROGRAM    (1)
 
 /**
- * Container of a stream data of audio clip or a music program.
+ * Container of a sound stream or a music program.
  */
 typedef struct snd_Sound      snd_Sound;
 
@@ -83,13 +83,6 @@ typedef struct snd_SpeedTrack snd_SpeedTrack;
 typedef struct snd_EventTrack snd_EventTrack;
 
 /**
- * Corresponds to full score of a music item.
- *
- * A `snd_Matrix` defines which track is played on which channel in which order.
- */
-typedef struct snd_Matrix     snd_Matrix;
-
-/**
  * A music item of a program.
  *
  * A `snd_Item` refers to a `snd_Matrix` that corresponds to full score,
@@ -100,14 +93,74 @@ typedef struct snd_Matrix     snd_Matrix;
  */
 typedef struct snd_Item       snd_Item;
 
-#define vec(T)                                      \
-  struct { const uint8_t length; const T * data; }
+/**
+ * Corresponds to full score of a music item.
+ *
+ * A `snd_Matrix` defines which track is played on which channel in which order.
+ */
+typedef struct snd_Matrix     snd_Matrix;
 
+/**
+ * Define a type generic vector (as anonymous struct).
+ * \param T   typename
+ *
+ * \note
+ * THIS MACRO IS INTERNAL USE ONLY and it will be undefined at the last of
+ * `snd_sound.h`.
+ */
+#define vec(T)                                      \
+  struct {                                          \
+    /** number of elements */                       \
+    const uint8_t length;                           \
+    /** pointer to array of `const T` */            \
+    const T * data;                                 \
+  }
+
+/**
+ * Container of a sound stream or a music program.
+ *
+ * Ex.1 Defining a snd_Sound `music` that contains a sound stream.
+ * ~~~c
+ * static const uint8_t a_stream[] = {
+ *   // stream data...
+ *   0xff, // end mark
+ * };
+ * const snd_Sound music = {
+ *   .tag = SND_STREAM,
+ *   .replayRate = 60,  // [Hz]
+ *   .stream = a_stream,
+ * };
+ * ~~~
+ *
+ * Ex.2 Defining a snd_Sound `music` that contains a music program.
+ * ~~~c
+ * static const snd_Program a_program = {
+ *   .speedTracks = {0},  // no speed tracks
+ *   .eventTracks = {0},  // no event tracks
+ *   .tracks = {
+ *     .length = ...,     // number of tracks
+ *     .data = ...,       // pointer to array of tracks
+ *   },
+ *   .items  = {
+ *     .length = ...,     // number of music items
+ *     .data = ...,       // pointer to array of music items
+ *   },
+ * };
+ * const snd_Sound music = {
+ *   .tag = SND_PROGRAM,
+ *   .replayRate = 60,  // [Hz]
+ *   .program = &a_program,
+ * };
+ * ~~~
+ *
+ * \todo Write documents for defining of music stream.
+ * \todo Write documents for defining of music program.
+ */
 struct snd_Sound {
   /** `SND_STREAM` or `SND_PROGRAM` */
   const uint8_t tag;
   /**
-   * Default frequency of the stream or a program item. [Hz]
+   * Default frequency of the stream or a program item in [Hz].
    *
    * If not specified (i.e. `replayRate == 0`), the VSYNC frequency is assumed.
    *
@@ -217,21 +270,21 @@ struct snd_Matrix {
    *
    * A pattern vector defines which track is played on which channel.
    *
-   * For each pattern index `i`, an element (i,j) of the matrix is:
-   * - (i,0): number of lines of track (i.e. height of tracks)
-   * - (i,j): a track number, a speed track number, or a event trac number.
+   * For each pattern index `i`, an element `(i,j)` of the matrix is:
+   * - `(i,0)`: number of lines of track (i.e. height of tracks)
+   * - `(i,j)`: a track number, a speed track number, or a event track number.
    *
-   * 'number of tracks' and the order of track-numbers are determined by
+   * Number of tracks and the order of track-numbers are determined by
    * `track_bits*`; `track_bits*` is a bitmap of which track/channel is used.
    *
    * For example, if `track_bits0 = 00000101b` and `track_bitsS = 00000001b`,
    * that means PSG channel A, C, and speed track are used. So in that case, an
    * element of the matrix shall be as follows:\n
    * for each pattern index `i`
-   * - (i,0): number of lines of track (i.e. height of tracks)
-   * - (i,1): a track number for PSG channel A
-   * - (i,2): a track number for PSG channel C
-   * - (i,3): a speed track number
+   * - `(i,0)`: number of lines of track (i.e. height of tracks)
+   * - `(i,1)`: a track number for PSG channel A
+   * - `(i,2)`: a track number for PSG channel C
+   * - `(i,3)`: a speed track number
    */
   const uint8_t * data;
 

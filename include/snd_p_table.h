@@ -61,6 +61,6 @@ struct snd_p_table {
  * \param n         number of pitch bend tables.
  * \param p_tables  array of pointers to pitch bend tables.
  */
-void snd_p_set_p_tables(uint8_t n, const struct snd_p_table ** p_tables);
+void snd_set_p_tables(uint8_t n, const struct snd_p_table ** p_tables);
 
 #endif // SND_P_TABLE_H_

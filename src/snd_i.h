@@ -18,7 +18,6 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <stddef.h>
 
 #include "../include/snd_i_table.h"
 
@@ -57,7 +56,6 @@ extern void snd_i_note_on(struct snd_i_ctx * ctx);
 extern void snd_i_note_off(struct snd_i_ctx * ctx);
 extern void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx);
 
-extern uint8_t snd_i__stream_take(struct snd_i_ctx * ctx);
 extern void snd_i__decode(struct snd_i_ctx * ctx);
 
 #endif // SND_I_H_

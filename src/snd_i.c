@@ -85,7 +85,7 @@ void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx) {
   ctx->next = ctx->i_table->ad_part;
 }
 
-uint8_t snd_i__stream_take(struct snd_i_ctx * ctx) {
+static uint8_t snd_i__stream_take(struct snd_i_ctx * ctx) {
   uint8_t x = *ctx->next;
   if (x == 0xff) {
     if (ctx->next < ctx->i_table->r_part) {

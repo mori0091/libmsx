@@ -17,7 +17,6 @@
 #define SND_I_TABLE_H_
 
 #include <stdint.h>
-#include <stddef.h>
 
 /**
  * Instrument (timbre) table.

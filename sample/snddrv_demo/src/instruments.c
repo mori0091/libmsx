@@ -57,4 +57,4 @@ const struct snd_i_table * i_tables[] = {
   // pointer to instrument #2
   &i_table_02,
 };
-const size_t i_tables_length = ARRAY_SIZEOF(i_tables);
+const uint8_t i_tables_length = ARRAY_SIZEOF(i_tables);

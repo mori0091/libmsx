@@ -41,7 +41,7 @@ struct snd_p_table {
   /**
    * Wait counts (ticks per data chunk).
    *
-   * This determines the speed to process the instrument data stream:
+   * This determines the speed to process the pitch bend data stream:
    * - if `wait = 0`, data is processed every ticks.
    * - if `wait = 1`, data is processed every **2** ticks.
    * - if `wait = n`, data is processed every **n+1** ticks.
@@ -59,7 +59,7 @@ struct snd_p_table {
  * Register pitch bend tables.
  *
  * \param n         number of pitch bend tables.
- * \param i_tables  array of pointers to pitch bend tables.
+ * \param p_tables  array of pointers to pitch bend tables.
  */
 void snd_p_set_p_tables(uint8_t n, const struct snd_p_table ** p_tables);
 

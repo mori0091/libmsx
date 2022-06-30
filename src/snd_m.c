@@ -57,38 +57,36 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
       ctx->isEnd = true;
       return;
     }
-    if (x < 0x80) {
+    if (!(x & 0x80)) {
       ctx->timer = x;
       return;
     }
-    const uint8_t ch = x & 0xf;
+    // channel message
+    const uint8_t ch = x & 0x7f;
     struct snd_channel * pch = &ctx->channels[ch];
-    switch (x >> 4) {
-      case 8:                   // NoteOn
-        // Turn fade-in/out and pitch-bend off if not triggered.
-        snd_channel_note_on(snd_m__stream_take(ctx), pch);
-        // ----
-        break;
-      case 9:                   // Note off
-        snd_channel_note_off(pch);
-        break;
-      case 10:
-        snd_a__program_change(snd_m__stream_take(ctx), &pch->a);
-        break;
-      case 11:
-        snd_p__program_change(snd_m__stream_take(ctx), &pch->p);
-        break;
-      case 12:
-        snd_i__program_change(snd_m__stream_take(ctx), &pch->i);
-        break;
-      case 13:
-        break;
-      case 14:
+    // t_chunk
+    x = snd_m__stream_take(ctx);
+    if (!x) {
+      snd_channel_note_off(pch);
+    }
+    else if (!(x & 0x80)) {
+      const uint8_t i_number = snd_m__stream_take(ctx);
+      if (!i_number) {
+        // legato
+        x |= 0x80;
+      }
+      else {
+        // note on
+        snd_i__program_change(i_number, &pch->i);
+      }
+      snd_channel_note_on(x, pch);
+    }
+    else {
+      // expressions
+      uint8_t n = x & 0x0f;
+      do {
         snd_m__decode_expression_command(ctx, pch);
-        break;
-      case 15:
-      default:
-        break;
+      } while (n--);
     }
   }
 }
@@ -136,27 +134,22 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
     else if (tag == 3) {
       // pitch up (+0..+4095/128)
       snd_channel_set_pitch_bend(5, xyz, pch);
-      return;
     }
     else if (tag == 4) {
       // pitch down (-4095/128..+0)
       snd_channel_set_pitch_bend(5, -xyz, pch);
-      return;
     }
     else if (tag == 5) {
       // fast pitch up (+0..+4095/128)
       snd_channel_set_pitch_bend(0, xyz, pch);
-      return;
     }
     else if (tag == 6) {
       // fast pitch down (-4095/128..+0)
       snd_channel_set_pitch_bend(0, -xyz, pch);
-      return;
     }
     else if (tag == 7) {
       // pitch glide
       pch->pitch_glide = xyz;
-      return;
     }
     else if (tag == 9) {
       snd_channel_set_fade(+1, xyz, pch);
@@ -176,11 +169,11 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
       // force the speed of pitch
       pch->p.wait = pch->pitch_wait = xyz >> 4;
     }
-    // else if (tag == 14) {
-    //   // (reserved)
-    // }
-    // else if (tag == 15) {
-    //   // (reserved)
-    // }
+    else if (tag == 14) {
+      snd_a__program_change(xyz >> 4, &pch->a);
+    }
+    else if (tag == 15) {
+      snd_p__program_change(xyz >> 4, &pch->p);
+    }
   }
 }

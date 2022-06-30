@@ -83,20 +83,25 @@ static int16_t snd__osc_period(int16_t pitch) {
 }
 
 void snd_channel_note_on(uint8_t note, struct snd_channel * pch) {
-  if (!pch->pitch_triggered) {
+  if (pch->pitch_triggered) {
+    pch->pitch_triggered = false;
+  }
+  else {
     // Turn pitch-bend off
     snd_p__program_change(0, &pch->p);
     pch->pitch_delta = 0;
   }
-  pch->pitch_triggered = false;
   // ----
-  if (!pch->fade_triggered) {
+  if (pch->fade_triggered) {
+    pch->fade_triggered = false;
+  }
+  else {
     // Turn fade-in/out off
     pch->fade = 0;
   }
-  pch->fade_triggered = false;
-  // ----
+  // --------------------------------------------------------
   const uint16_t pitch = (note & 0x7f) << 8;
+  // ---- Start pitch glide toward to the given note.
   if (0 <= pch->pitch && pch->pitch_glide) {
     // Turn pitch glide on
     if (pitch < pch->pitch) {
@@ -109,15 +114,15 @@ void snd_channel_note_on(uint8_t note, struct snd_channel * pch) {
     }
     pch->pitch_glide = 0;
   }
-  else if (note < 0x80) {
-    pch->pitch = pitch;
-    snd_a_note_on(&pch->a);
-    snd_i_note_on(&pch->i);
-    snd_p_note_on(&pch->p);
-  }
-  // legato
   else {
+    // ---- Legato : switch to the given note w/o attack
     pch->pitch = pitch;
+    // ---- Normal NoteOn (attack)
+    if (note < 0x80) {
+      snd_a_note_on(&pch->a);
+      snd_i_note_on(&pch->i);
+      snd_p_note_on(&pch->p);
+    }
   }
 }
 

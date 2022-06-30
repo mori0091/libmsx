@@ -124,12 +124,12 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
     if (tag == 1) {
       // \TODO arpeggio 3 notes
       // set arp to (+0, +x, +y);
-      return;
+      snd_channel_set_arpeggio(0, 3, xyz, pch);
     }
     else if (tag == 2) {
       // \TODO arpeggio 4 notes
       // set arp to (+0, +x, +y, +z);
-      return;
+      snd_channel_set_arpeggio(0, 4, xyz, pch);
     }
     else if (tag == 3) {
       // pitch up (+0..+4095/128)

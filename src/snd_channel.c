@@ -137,15 +137,29 @@ void snd_channel_note_off(struct snd_channel * pch) {
   snd_p_note_off(&pch->p);
 }
 
-void snd_channel_reset_expression(struct snd_channel * pch) {
+inline void snd_channel_reset_arpeggio(struct snd_channel * pch) {
   snd_a__program_change(0, &pch->a); // arpeggio off
-  snd_p__program_change(0, &pch->p); // pitch envelope off
   pch->arp = 0;
-  pch->fade = 0;
+  pch->arp_vec_data = 0;
+}
+inline void snd_channel_reset_pitch_bend(struct snd_channel * pch) {
+  snd_p__program_change(0, &pch->p); // pitch envelope off
   pch->pitch_delta = 0;
+}
+inline void snd_channel_reset_pitch_glide(struct snd_channel * pch) {
   pch->pitch_glide = 0;
   pch->pitch_min = PITCH_MIN;
   pch->pitch_max = PITCH_MAX;
+}
+inline void snd_channel_reset_fade(struct snd_channel * pch) {
+  pch->fade = 0;
+}
+
+void snd_channel_reset_expression(struct snd_channel * pch) {
+  snd_channel_reset_arpeggio(pch);
+  snd_channel_reset_pitch_bend(pch);
+  snd_channel_reset_pitch_glide(pch);
+  snd_channel_reset_fade(pch);
 }
 
 void snd_channel_set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch) {
@@ -164,14 +178,23 @@ void snd_channel_set_fade(int8_t fade, uint16_t wait, struct snd_channel * pch) 
   pch->fade_triggered = true;
 }
 
+void snd_channel_set_arpeggio(uint8_t wait, uint8_t arp_vec_len, uint16_t arp_vec, struct snd_channel * pch) {
+  pch->arp_wait = wait;
+  pch->arp_timer = 0;
+  pch->arp_vec_lenth = arp_vec_len;
+  pch->arp_vec_data = arp_vec;
+}
+
 static void snd_channel__update_pitch_bend(struct snd_channel * pch);
 static void snd_channel__update_fade_in_out(struct snd_channel * pch);
+static void snd_channel__update_arpeggio(struct snd_channel * pch);
 
 void snd_channel_update(struct snd_channel * pch) {
   if (0 <= pch->pitch) {
     // the channel is on
     snd_channel__update_pitch_bend(pch);
     snd_channel__update_fade_in_out(pch);
+    snd_channel__update_arpeggio(pch);
   }
 }
 
@@ -213,6 +236,28 @@ static void snd_channel__update_fade_in_out(struct snd_channel * pch) {
   }
   else {
     pch->volume = (uint8_t)amp;
+  }
+}
+
+static void snd_channel__update_arpeggio(struct snd_channel * pch) {
+  if (!pch->arp_vec_data) {
+    return;
+  }
+  if (pch->arp_timer) {
+    pch->arp_timer--;
+    return;
+  }
+  pch->arp_timer = pch->arp_wait;
+  pch->arp = (pch->arp_vec_data >> 12) & 15;
+  if (pch->arp_vec_lenth == 4) {
+    pch->arp_vec_data &= 0x0fff;
+    pch->arp_vec_data <<= 4;
+    pch->arp_vec_data += pch->arp;
+  }
+  else if (pch->arp_vec_lenth == 3) {
+    pch->arp_vec_data &= 0x0ff0;
+    pch->arp_vec_data += pch->arp;
+    pch->arp_vec_data <<= 4;
   }
 }
 

@@ -49,6 +49,13 @@ struct snd_channel {
     uint16_t pitch_min;         // PITCH_MIN or glide target (be set on NoteOn message)
     uint16_t pitch_max;         // PITCH_MAX or glide target (be set on NoteOn message)
   };
+  // ---- expression (arpeggio) ----
+  struct {
+    uint16_t arp_wait;
+    uint16_t arp_timer;
+    uint16_t arp_vec_data;      // vector of 4bit values (0x0000: off)
+    uint8_t  arp_vec_lenth;     // 3: 3 notes, 4: 4 notes
+  };
 };
 
 /**
@@ -76,5 +83,7 @@ void snd_channel_reset_expression(struct snd_channel * pch);
 void snd_channel_set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch);
 
 void snd_channel_set_fade(int8_t fade, uint16_t wait, struct snd_channel * pch);
+
+void snd_channel_set_arpeggio(uint8_t wait, uint8_t arp_vec_len, uint16_t arp_vec, struct snd_channel * pch);
 
 #endif // SND_CHANNEL_H_

@@ -159,31 +159,15 @@ void snd_channel_set_fade(int8_t fade, uint16_t wait, struct snd_channel * pch) 
   pch->fade_triggered = true;
 }
 
-bool snd_channel_add_pitch(struct snd_channel * pch, int16_t pitch_delta) {
-  if (pch->pitch < 0) {
-    // the channel is off
-    return false;
-  }
-  pch->pitch += pitch_delta;
-  if (pch->pitch <= pch->pitch_min) {
-    pch->pitch = pch->pitch_min;
-    pch->pitch_min = PITCH_MIN;
-    return false;
-  }
-  if (pch->pitch_max <= pch->pitch) {
-    pch->pitch = pch->pitch_max;
-    pch->pitch_max = PITCH_MAX;
-    return false;
-  }
-  return true;
-}
-
 static void snd_channel__update_pitch_bend(struct snd_channel * pch);
 static void snd_channel__update_fade_in_out(struct snd_channel * pch);
 
 void snd_channel_update(struct snd_channel * pch) {
-  snd_channel__update_pitch_bend(pch);
-  snd_channel__update_fade_in_out(pch);
+  if (0 <= pch->pitch) {
+    // the channel is on
+    snd_channel__update_pitch_bend(pch);
+    snd_channel__update_fade_in_out(pch);
+  }
 }
 
 static void snd_channel__update_pitch_bend(struct snd_channel * pch) {
@@ -195,7 +179,16 @@ static void snd_channel__update_pitch_bend(struct snd_channel * pch) {
     return;
   }
   pch->pitch_timer = pch->pitch_wait;
-  if (!snd_channel_add_pitch(pch, pch->pitch_delta)) {
+  pch->pitch += pch->pitch_delta;
+  if (pch->pitch <= pch->pitch_min) {
+    pch->pitch = pch->pitch_min;
+    pch->pitch_min = PITCH_MIN;
+    pch->pitch_delta = 0;
+
+  }
+  if (pch->pitch_max <= pch->pitch) {
+    pch->pitch = pch->pitch_max;
+    pch->pitch_max = PITCH_MAX;
     pch->pitch_delta = 0;
   }
 }

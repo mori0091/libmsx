@@ -73,16 +73,6 @@ void snd_channel_note_off(struct snd_channel * pch);
 
 void snd_channel_reset_expression(struct snd_channel * pch);
 
-/**
- * Add some value to the current pitch of a channel.
- *
- * \param pch          pointer to a channel
- * \param pitch_delta  value of pitch bend
- * \return `true` if succeeded, `false` if failed or the pitch reached to
- *          upper/lower limit.
- */
-bool snd_channel_add_pitch(struct snd_channel * pch, int16_t pitch_delta);
-
 void snd_channel_set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch);
 
 void snd_channel_set_fade(int8_t fade, uint16_t wait, struct snd_channel * pch);

@@ -97,7 +97,7 @@ void snd_channel_note_on(uint8_t note, struct snd_channel * pch) {
   }
   else {
     // Turn fade-in/out off
-    pch->fade = 0;
+    pch->fade_speed = 0;
   }
   // --------------------------------------------------------
   const uint16_t pitch = (note & 0x7f) << 8;
@@ -152,7 +152,7 @@ inline void snd_channel_reset_pitch_glide(struct snd_channel * pch) {
   pch->pitch_max = PITCH_MAX;
 }
 inline void snd_channel_reset_fade(struct snd_channel * pch) {
-  pch->fade = 0;
+  pch->fade_speed = 0;
 }
 
 void snd_channel_reset_expression(struct snd_channel * pch) {
@@ -171,8 +171,8 @@ void snd_channel_set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_ch
   pch->pitch_max = PITCH_MAX;
 }
 
-void snd_channel_set_fade(int8_t fade, uint16_t wait, struct snd_channel * pch) {
-  pch->fade_wait = wait;
+void snd_channel_set_fade(int8_t fade, uint16_t speed, struct snd_channel * pch) {
+  pch->fade_speed = speed;
   pch->fade_timer = 0;
   pch->fade = fade;
   pch->fade_triggered = true;
@@ -222,20 +222,27 @@ static void snd_channel__update_pitch_bend(struct snd_channel * pch) {
 }
 
 static void snd_channel__update_fade_in_out(struct snd_channel * pch) {
-  if (!pch->fade) {
+  if (!pch->fade_speed) {
     return;
   }
-  if (pch->fade_timer) {
-    pch->fade_timer--;
-    return;
+  const uint16_t acc = pch->fade_timer + pch->fade_speed;
+  const uint8_t delta = acc >> 7;
+  pch->fade_timer = acc & 0x7f;
+  // fade in
+  if (0 < pch->fade) {
+    pch->volume += delta;
+    if (15 < pch->volume) {
+      pch->volume = 15;
+    }
   }
-  pch->fade_timer = pch->fade_wait;
-  int8_t amp = pch->volume + pch->fade;
-  if (amp <= 0 || 15 <= amp) {
-    pch->fade = 0;
-  }
+  // fade out
   else {
-    pch->volume = (uint8_t)amp;
+    if (pch->volume <= delta) {
+      pch->volume = 0;
+    }
+    else {
+      pch->volume -= delta;
+    }
   }
 }
 

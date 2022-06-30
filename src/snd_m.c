@@ -117,7 +117,7 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
   else if (tag == 8) {
     // set volume to x
     pch->volume = x & 15;
-    pch->fade = 0;
+    pch->fade_speed = 0;
   }
   else {
     const uint16_t xyz = ((x & 15) << 8) + snd_m__stream_take(ctx);

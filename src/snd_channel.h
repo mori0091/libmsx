@@ -32,7 +32,7 @@ struct snd_channel {
   };
   // ---- expression (fade-in, fade-out) ----
   struct {
-    uint16_t fade_wait;
+    uint16_t fade_speed;        // 1 lv / 128 ticks
     uint16_t fade_timer;
     int8_t   fade;              // off (0), fade-in (+1), fade-out (-1)
     bool     fade_triggered;

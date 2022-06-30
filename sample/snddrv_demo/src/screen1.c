@@ -24,7 +24,7 @@ void screen1(void) {
 
 void init_vdp(void) {
   /* Set backdrop color (border color of the screen) */
-  vdp_set_color(0x07);
+  vdp_set_color(0x04);
 
   vdp_set_screen_mode(SCREEN_MODE);
 

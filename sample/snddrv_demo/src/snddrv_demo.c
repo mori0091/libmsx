@@ -55,17 +55,29 @@ static void show_frequency(void) {
 _Noreturn
 static void main_loop(void) {
   show_frequency();
-  bool old_fired = false;
+  uint8_t old_pressed = 0;
   for (;;) {
     await_vsync();
     show_volume_levels();
     // Is SPACE key pressed ?
-    bool fired = joypad_get_state(0) & VK_FIRE_0;
-    if (!old_fired && fired) {
+    uint8_t pressed = joypad_get_state(0);
+    uint8_t clicked = (old_pressed ^ pressed) & pressed;
+    if (clicked & VK_FIRE_0) {
       // sound effects "coiiiiiiin!"
       snd_set_sfx(&sfx_coin);
     }
-    old_fired = fired;
+    uint8_t Hz = snd_get_player_frequency();
+    if (pressed & (VK_UP | VK_RIGHT)) {
+      Hz++;
+    }
+    else if (pressed & (VK_DOWN | VK_LEFT)) {
+      Hz--;
+    }
+    if (0 < Hz && Hz <= 120) {
+      snd_set_player_frequency(Hz);
+      locate(6, 1); puti(Hz); puts("Hz ");
+    }
+    old_pressed = pressed;
   }
 }
 
@@ -75,8 +87,10 @@ void main(void) {
   CLIKSW = 0;
   // Initiallize SCREEN mode
   screen1();
+  locate(10,  7); puts("- libmsx -");
   locate(10,  8); puts("SNDDRV demo");
   locate( 1, 20); puts("HIT SPACE TO PLAY SOUND EFFECT");
+  locate( 3, 22); puts("(Arrow key: speed up/down)");
 
   // Set character patterns for volume bar.
   init_volume_gauge_chars();

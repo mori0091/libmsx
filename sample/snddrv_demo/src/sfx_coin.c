@@ -16,13 +16,10 @@
 
 // ---- Sound effects ----
 static const uint8_t stream[] = {
-//ch0            ch1            ch3            wait  // ch0     ch1      ch2
-                 0xc1, 2,                            //         i#2
-                 0xe1, 0x8f,                         //         V15
-                 0x81, 83,                     0x02, //         B5               T225 L32.
-                 0x81, 88,                     0x1f, //         E6               T225 L2
-
-  0xff,
+  //ch, expressions...,   ch, note, i#, wait, // channel: note i# expressions         wait+1
+  0x81, 0x80, 0x8f,     0x81,   83,  2, 0x02, // PSG chB:  B_5 02 vF.. .... .... .... 03
+                        0x81,   88,  2, 0x1f, // PSG chB:  B_6 02 .... .... .... .... 20
+  0xff,                                       // EOM
 };
 
 const snd_Sound sfx_coin = {

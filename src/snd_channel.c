@@ -100,11 +100,11 @@ void snd_channel_note_on(uint8_t note, struct snd_channel * pch) {
   if (0 <= pch->pitch && pch->pitch_glide) {
     // Turn pitch glide on
     if (pitch < pch->pitch) {
-      snd_channel_set_pitch_bend(1, -pch->pitch_glide, pch);
+      snd_channel_set_pitch_bend(0, -pch->pitch_glide, pch);
       pch->pitch_min = pitch;
     }
     else if (pch->pitch < pitch) {
-      snd_channel_set_pitch_bend(1, +pch->pitch_glide, pch);
+      snd_channel_set_pitch_bend(0, +pch->pitch_glide, pch);
       pch->pitch_max = pitch;
     }
     pch->pitch_glide = 0;

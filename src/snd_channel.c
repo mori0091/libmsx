@@ -82,14 +82,28 @@ static int16_t snd__osc_period(int16_t pitch) {
   return lerpQ8(pitch & 255, osc_periods[idx], osc_periods[idx+1]);
 }
 
+static void snd_channel_reset_arpeggio(struct snd_channel * pch);
+static void snd_channel_reset_period_bend(struct snd_channel * pch);
+static void snd_channel_reset_pitch_bend(struct snd_channel * pch);
+static void snd_channel_reset_pitch_glide(struct snd_channel * pch);
+static void snd_channel_reset_fade(struct snd_channel * pch);
+
 void snd_channel_note_on(uint8_t note, struct snd_channel * pch) {
+  pch->period_offset = 0;
+  if (pch->period_triggered) {
+    pch->period_triggered = false;
+  }
+  else {
+    // Turn period-bend off
+    snd_channel_reset_period_bend(pch);
+  }
+  // ----
   if (pch->pitch_triggered) {
     pch->pitch_triggered = false;
   }
   else {
     // Turn pitch-bend off
-    snd_p__program_change(0, &pch->p);
-    pch->pitch_delta = 0;
+    snd_channel_reset_pitch_bend(pch);
   }
   // ----
   if (pch->fade_triggered) {
@@ -97,7 +111,7 @@ void snd_channel_note_on(uint8_t note, struct snd_channel * pch) {
   }
   else {
     // Turn fade-in/out off
-    pch->fade_speed = 0;
+    snd_channel_reset_fade(pch);
   }
   // --------------------------------------------------------
   const uint16_t pitch = (note & 0x7f) << 8;
@@ -112,7 +126,7 @@ void snd_channel_note_on(uint8_t note, struct snd_channel * pch) {
       snd_channel_set_pitch_bend(0, +pch->pitch_glide, pch);
       pch->pitch_max = pitch;
     }
-    pch->pitch_glide = 0;
+    snd_channel_reset_pitch_glide(pch);
   }
   else {
     // ---- Legato : switch to the given note w/o attack
@@ -137,29 +151,40 @@ void snd_channel_note_off(struct snd_channel * pch) {
   snd_p_note_off(&pch->p);
 }
 
-inline void snd_channel_reset_arpeggio(struct snd_channel * pch) {
-  snd_a__program_change(0, &pch->a); // arpeggio off
-  pch->arp = 0;
-  pch->arp_vec_data = 0;
-}
-inline void snd_channel_reset_pitch_bend(struct snd_channel * pch) {
-  snd_p__program_change(0, &pch->p); // pitch envelope off
-  pch->pitch_delta = 0;
-}
-inline void snd_channel_reset_pitch_glide(struct snd_channel * pch) {
-  pch->pitch_glide = 0;
-  pch->pitch_min = PITCH_MIN;
-  pch->pitch_max = PITCH_MAX;
-}
-inline void snd_channel_reset_fade(struct snd_channel * pch) {
-  pch->fade_speed = 0;
-}
-
 void snd_channel_reset_expression(struct snd_channel * pch) {
   snd_channel_reset_arpeggio(pch);
   snd_channel_reset_pitch_bend(pch);
   snd_channel_reset_pitch_glide(pch);
   snd_channel_reset_fade(pch);
+}
+
+static void snd_channel_reset_arpeggio(struct snd_channel * pch) {
+  snd_a__program_change(0, &pch->a); // arpeggio off
+  pch->arp = 0;
+  pch->arp_vec_data = 0;
+}
+static void snd_channel_reset_period_bend(struct snd_channel * pch) {
+  pch->period_delta = 0;
+  pch->period_offset = 0;
+  // pch->pitch_min = PITCH_MIN;
+  // pch->pitch_max = PITCH_MAX;
+}
+static void snd_channel_reset_pitch_bend(struct snd_channel * pch) {
+  snd_p__program_change(0, &pch->p); // pitch envelope off
+  pch->pitch_delta = 0;
+}
+static void snd_channel_reset_pitch_glide(struct snd_channel * pch) {
+  pch->pitch_glide = 0;
+}
+static void snd_channel_reset_fade(struct snd_channel * pch) {
+  pch->fade_speed = 0;
+}
+
+void snd_channel_set_period_bend(int8_t sign, uint16_t period_delta, struct snd_channel * pch) {
+  pch->period_delta = period_delta;
+  pch->period_timer = 0;
+  pch->period_sign = sign;
+  pch->period_triggered = true;
 }
 
 void snd_channel_set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch) {
@@ -185,6 +210,7 @@ void snd_channel_set_arpeggio(uint8_t wait, uint8_t arp_vec_len, uint16_t arp_ve
   pch->arp_vec_data = arp_vec;
 }
 
+static void snd_channel__update_period_bend(struct snd_channel * pch);
 static void snd_channel__update_pitch_bend(struct snd_channel * pch);
 static void snd_channel__update_fade_in_out(struct snd_channel * pch);
 static void snd_channel__update_arpeggio(struct snd_channel * pch);
@@ -192,9 +218,31 @@ static void snd_channel__update_arpeggio(struct snd_channel * pch);
 void snd_channel_update(struct snd_channel * pch) {
   if (0 <= pch->pitch) {
     // the channel is on
+    snd_channel__update_period_bend(pch);
     snd_channel__update_pitch_bend(pch);
     snd_channel__update_fade_in_out(pch);
     snd_channel__update_arpeggio(pch);
+  }
+}
+
+static void snd_channel__update_period_bend(struct snd_channel * pch) {
+  if (!pch->period_delta) {
+    return;
+  }
+  const uint16_t acc = pch->period_timer + pch->period_delta;
+  const uint16_t delta = acc >> 4;
+  pch->period_timer &= 15;
+  if (0 <= pch->period_sign) {
+    pch->period_offset += delta;
+    if (4095 < pch->period_offset) {
+      pch->period_offset = 4095;
+    }
+  }
+  else {
+    pch->period_offset -= delta;
+    if (pch->period_offset < -4095) {
+      pch->period_offset = -4095;
+    }
   }
 }
 
@@ -327,6 +375,9 @@ static uint16_t snd_channel_calc_hw_period(uint16_t pitch, struct snd_channel * 
 inline void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period);
 inline void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period);
 
+static uint16_t add_sw_period(uint16_t period, int16_t delta);
+static uint16_t add_hw_period(uint16_t period, int16_t delta);
+
 static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
   const int16_t pitch = pch->pitch + 256 * pch->arp + pch->p.pitch;
   uint16_t sw_period = pch->i.sw_period;
@@ -336,22 +387,23 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
     if (!sw_period) {
       sw_period = snd_channel_calc_sw_period(pitch, pch);
     }
+    sw_period = add_sw_period(sw_period, pch->period_offset);
   }
   // ---- HW only ------------------------------------
   else if (pch->i.modulation == 1) {
     if (!hw_period) {
       hw_period = snd_channel_calc_hw_period(pitch, pch);
     }
+    hw_period = add_hw_period(hw_period, pch->period_offset); // !?
   }
   // ---- SW -> HW -----------------------------------
   else if (pch->i.modulation == 2) {
     if (!sw_period) {
       sw_period = snd_channel_calc_sw_period(pitch, pch);
     }
+    sw_period = add_sw_period(sw_period, pch->period_offset);
     if (!hw_period) {
-      hw_period
-        = (sw_period >> pch->i.ratio)
-        + pch->i.hw_period_delta;
+      hw_period = add_hw_period(sw_period >> pch->i.ratio, pch->i.hw_period_delta);
     }
   }
   // ----- HW -> SW -----------------------------------
@@ -359,10 +411,9 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
     if (!hw_period) {
       hw_period = snd_channel_calc_hw_period(pitch, pch);
     }
+    hw_period = add_hw_period(hw_period, pch->period_offset); // !?
     if (!sw_period) {
-      sw_period
-        = (hw_period << pch->i.ratio)
-        + pch->i.sw_period_delta;
+      sw_period = add_sw_period(hw_period << pch->i.ratio, pch->i.sw_period_delta);
     }
   }
   // ----- SW + HW ------------------------------------
@@ -370,9 +421,11 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
     if (!sw_period) {
       sw_period = snd_channel_calc_sw_period(pitch, pch);
     }
+    sw_period = add_sw_period(sw_period, pch->period_offset);
     if (!hw_period) {
       hw_period = snd_channel_calc_hw_period(pitch, pch);
     }
+    hw_period = add_hw_period(hw_period, pch->period_offset); // !?
   }
   // ---- square wave ---------------------------------
   if (pch->i.modulation != 1) {
@@ -382,6 +435,29 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
   if (0 < pch->i.modulation) {
     snd_channel_set_hw_period(pch, hw_period);
   }
+}
+
+static uint16_t add_sw_period(uint16_t period, int16_t delta) {
+  period = add_hw_period(period, delta);
+  if (0xfff < period) {
+    return 0xfff;
+  }
+  return period;
+}
+
+static uint16_t add_hw_period(uint16_t period, int16_t delta) {
+  const uint16_t x = period + delta;
+  if (delta < 0) {
+    if (period < x) {
+      return 0;
+    }
+  }
+  else {
+    if (x < period) {
+      return 0xffff;
+    }
+  }
+  return x;
 }
 
 static uint16_t snd_channel_calc_sw_period(uint16_t pitch, struct snd_channel * pch) {

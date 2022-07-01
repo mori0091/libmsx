@@ -27,6 +27,7 @@ struct snd_channel {
   // ----
   struct {
     int16_t pitch;              // (note number) << 8 ; i.e. [1/256 note]
+    int16_t period_offset;      // +/- period (wave length)
     uint8_t volume;             // current volume level
     int8_t  arp;                // +/- note number
   };
@@ -38,6 +39,12 @@ struct snd_channel {
     bool     fade_triggered;
   };
   // ---- expression (pitch bend) ----
+  struct {
+    uint16_t period_delta;      // off (0)
+    uint16_t period_timer;
+    int8_t   period_sign;
+    bool     period_triggered;
+  };
   struct {
     uint16_t pitch_wait;
     uint16_t pitch_timer;
@@ -79,6 +86,8 @@ void snd_channel_note_on(uint8_t note, struct snd_channel * pch);
 void snd_channel_note_off(struct snd_channel * pch);
 
 void snd_channel_reset_expression(struct snd_channel * pch);
+
+void snd_channel_set_period_bend(int8_t sign, uint16_t period_delta, struct snd_channel * pch);
 
 void snd_channel_set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch);
 

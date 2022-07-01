@@ -108,44 +108,49 @@ static uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {
 
 static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch) {
   // decode an expression command
-  const uint8_t x = snd_m__stream_take(ctx);
+  uint8_t x = snd_m__stream_take(ctx);
   const uint8_t tag = x >> 4;
+  x &= 15;
   if (!tag) {
     snd_channel_reset_expression(pch);
-    pch->volume = ~x & 15;
+    pch->volume = 15 - x;
   }
   else if (tag == 8) {
     // set volume to x
-    pch->volume = x & 15;
+    pch->volume = x;
     pch->fade_speed = 0;
   }
   else {
-    const uint16_t xyz = ((x & 15) << 8) + snd_m__stream_take(ctx);
+    const uint16_t xyz = (x << 8) + snd_m__stream_take(ctx);
     if (tag == 1) {
-      // \TODO arpeggio 3 notes
+      // arpeggio 3 notes
       // set arp to (+0, +x, +y);
       snd_channel_set_arpeggio(0, 3, xyz, pch);
     }
     else if (tag == 2) {
-      // \TODO arpeggio 4 notes
+      // arpeggio 4 notes
       // set arp to (+0, +x, +y, +z);
       snd_channel_set_arpeggio(0, 4, xyz, pch);
     }
     else if (tag == 3) {
-      // pitch up (+0..+4095/128)
-      snd_channel_set_pitch_bend(5, xyz, pch);
+      // // pitch up (+0..+4095/128)
+      // snd_channel_set_pitch_bend(5, xyz, pch);
+      snd_channel_set_period_bend(-1, xyz >> 4, pch);
     }
     else if (tag == 4) {
-      // pitch down (-4095/128..+0)
-      snd_channel_set_pitch_bend(5, -xyz, pch);
+      // // pitch down (-4095/128..+0)
+      // snd_channel_set_pitch_bend(5, -xyz, pch);
+      snd_channel_set_period_bend(+1, xyz >> 4, pch);
     }
     else if (tag == 5) {
-      // fast pitch up (+0..+4095/128)
-      snd_channel_set_pitch_bend(0, xyz, pch);
+      // // fast pitch up (+0..+4095/128)
+      // snd_channel_set_pitch_bend(0, xyz, pch);
+      snd_channel_set_period_bend(-1, xyz, pch);
     }
     else if (tag == 6) {
-      // fast pitch down (-4095/128..+0)
-      snd_channel_set_pitch_bend(0, -xyz, pch);
+      // // fast pitch down (-4095/128..+0)
+      // snd_channel_set_pitch_bend(0, -xyz, pch);
+      snd_channel_set_period_bend(+1, xyz, pch);
     }
     else if (tag == 7) {
       // pitch glide

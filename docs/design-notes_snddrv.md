@@ -90,91 +90,90 @@ SNDDRV's sound processing pipeline is consisting of 3 part of components: some
 Here is the notation for defining our sound data format.  
 This notation itself is described in BNF notation.
 
-    <term> = <identifier>      ; name of a variable
-           | <term> <term>     ; sequence of <term>
-           | "(" <term> ")"    ; group of <term>
-           | <term> "|" <term> ; left-hand <term> or right-hand <term>
-           | <term>"?"         ; 0 or 1 <term>
-           | <term>"*"         ; 0 or more <term>
-           | <term>"+"         ; 1 or more <term>
-           | <term>"{"<n>"}"   ; <n> times repetition of <term>
-           | <bit>{<bit>}"b"   ; A bit string such as "1001b".
-           | "0:k"             ; A k-bit string of all 0's. (k > 0)
-           | "1:k"             ; A k-bit string of all 1's. (k > 0)
-           | "_:k"             ; A k-bit string of any value. (k > 0)
-           | <term>":k"        ; <term> that is a k-bit string (k > 0)
+    <term> := <identifier>        ; name of a variable
+            | <term> <term>       ; sequence of <term>
+            | '(' <term> ')'      ; group of <term>
+            | <term> '|' <term>   ; left-hand <term> or right-hand <term>
+            | <term> '?'          ; 0 or 1 <term>
+            | <term> '*'          ; 0 or more <term>
+            | <term> '+'          ; 1 or more <term>
+            | <term> '{' <n> '}'  ; <n> times repetition of <term>
+            | <bits> 'b'          ; A binary such as "1001b"
+            | <term> ':' <k>      ; <term> that is a <k> bit binary
     
-    <bit>  = "0"               ; 1 bit zero
-           | "1"               ; 1 bit one
-           | "_"               ; 1 bit wildcard
+    <bits> := <bit>
+            | <bit> <bits>
+
+    <bit>  := '0'                 ; 1 bit zero
+            | '1'                 ; 1 bit one
+            | '_'                 ; 1 bit wildcard
 
 # Definition of Music stream and Track stream
 
 The following is the sound data format for **music streams** and **track
 streams** written in the notation defined in the previous section.
 
-``` 
+```
 ; Music stream
-m_stream   = ((channel t_chunk)* wait)* EOM
+m_stream   := ((channel t_chunk)* wait)* EOM
 
-channel    = 1b c:7                  ; c: channel # (0..127)
-wait       = 0b w:7                  ; w: wait count [ticks]
-EOM        = 1111b 1111b
+channel    := 1b c:7                  ; c: channel # (0..127)
+wait       := 0b w:7                  ; w: wait count [ticks]
+EOM        := 1111b 1111b
 
 ; Track stream
-t_stream   = t_line*
+t_stream   := t_line*
 
 ; A line of track
-t_line     = t_chunk* EOL
-t_chunk    = expressions
-           | NoteOff
-           | Legato
-           | NoteOn
+t_line     := t_chunk* EOL
+t_chunk    := expressions
+            | NoteOff
+            | Legato
+            | NoteOn
 
-EOL        = 1110b l:4               ; l: number of lines - 1
+EOL        := 1110b l:4               ; l: number of lines - 1
 
-NoteOff    = 0:8
-Legato     = 0b n:7 0:8              ; n: note # (1..127)
-NoteOn     = 0b n:7 i:8              ; n: note # (1..127), i: instrument # (1..255)
+NoteOff    := 0:8
+Legato     := 0b n:7 0:8              ; n: note # (1..127)
+NoteOn     := 0b n:7 i:8              ; n: note # (1..127), i: instrument # (1..255)
 
-expresions = 1000b n:4 expr0{n+1}    ; n: number of expressions - 1
+expresions := 1000b n:4 expr0{n+1}    ; n: number of expressions - 1
 
-expr0      = 0000b x:4               ; reset effect and set volume to 15-x
-           | 0001b x:4 y:4 _:4       ; arpeggio 3 notes (+0, +x, +y)
-           | 0010b x:4 y:4 z:4       ; arpeggio 4 notes (+0, +x, +y, +z)
-           | 0011b x:4 y:4 z:4       ; pitch up   (+xyz for each some ticks)
-           | 0100b x:4 y:4 z:4       ; pitch down (-xyz for each some ticks)
-           | 0101b x:4 y:4 z:4       ; fast pitch up   (+xyz for each tick)
-           | 0110b x:4 y:4 z:4       ; fast pitch down (-xyz for each tick)
-           | 0111b x:4 y:4 z:4       ; pitch glide (glide for each xyz+1 ticks)
-           | 1000b x:4               ; set volume to x
-           | 1001b x:4 y:4 z:4       ; fade in  (volume +1 for each xyz+1 ticks)
-           | 1010b x:4 y:4 z:4       ; fade out (volume -1 for each xyz+1 ticks)
-           | 1011b x:4 y:4 _:4       ; force the speed of an instrument (1 step for each xy+1 ticks)
-           | 1100b x:4 y:4 _:4       ; force the speed of an arpeggio   (1 step for each xy+1 ticks)
-           | 1101b x:4 y:4 _:4       ; force the speed of a pitch slide (1 step for each xy+1 ticks)
-           | 1110b x:4 y:4 _:4       ; set arpeggio table # to xy (1..255) or turn arpeggio off (xy = 0)
-           | 1111b x:4 y:4 _:4       ; set pitch-slide table # to xy (1..255) or turn pitch-slide off (xy = 0)
-
+expr0      := 0000b x:4               ; reset effect and set volume to 15-x
+            | 0001b x:4 y:4 _:4       ; arpeggio 3 notes (note +0, +x, +y)
+            | 0010b x:4 y:4 z:4       ; arpeggio 4 notes (note +0, +x, +y, +z)
+            | 0011b x:4 y:4 z:4       ; pitch up         (period -xyz/256 for each some ticks)
+            | 0100b x:4 y:4 z:4       ; pitch down       (period +xyz/256 for each some ticks)
+            | 0101b x:4 y:4 z:4       ; fast pitch up    (period -xyz/16 for each tick)
+            | 0110b x:4 y:4 z:4       ; fast pitch down  (period +xyz/16 for each tick)
+            | 0111b x:4 y:4 z:4       ; pitch glide      (pitch ±1 for each xyz+1 ticks)
+            | 1000b x:4               ; set volume to x  (volume ← x)
+            | 1001b x:4 y:4 z:4       ; fade in          (volume +xyz/128 for each ticks)
+            | 1010b x:4 y:4 z:4       ; fade out         (volume -xyz/128 for each ticks)
+            | 1011b x:4 y:4 _:4       ; force the speed of an instrument (1 step for each xy+1 ticks)
+            | 1100b x:4 y:4 _:4       ; force the speed of an arpeggio   (1 step for each xy+1 ticks)
+            | 1101b x:4 y:4 _:4       ; force the speed of a pitch bend  (1 step for each xy+1 ticks)
+            | 1110b x:4 y:4 _:4       ; set arpeggio table # to xy (1..255) or turn arpeggio off (xy = 0)
+            | 1111b x:4 y:4 _:4       ; set pitch bend table # to xy (1..255) or turn pitch bend off (xy = 0)
 ```
 
 # Instrument (timbre) table
 
 ```
 ; list of instrument tables
-i_tables = i_table_addr*
+i_tables := i_table_addr*
 
 ; an instrument table
-i_table  = i_header i_body
-i_header = AD_part_addr S_part_addr R_part_addr
-i_body   = AD_part S_part R_part
-AD_part  = i_chunk+
-S_part   = i_chunk* EOM
-R_part   = i_chunk* EOM
+i_table  := i_header i_body
+i_header := AD_part_addr S_part_addr R_part_addr
+i_body   := AD_part S_part R_part
+AD_part  := i_chunk+
+S_part   := i_chunk* EOM
+R_part   := i_chunk* EOM
 
-i_stream = i_chunk* EOM
-i_chunk  = Ps? N? V
-         | Ps? Ph? N? R? H
+i_stream := i_chunk* EOM
+i_chunk  := Ps? N? V
+          | Ps? Ph? N? R? H
 ```
 
   - V  

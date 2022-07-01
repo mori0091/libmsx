@@ -296,7 +296,7 @@ void snd_channel_synthesis(struct snd_channel * pchs[3]) {
 static void snd_channel_set_noise(uint8_t ch, struct snd_channel * pch) {
   if (pch->i.noise_fdr) {
     PSG(6) = pch->i.noise_fdr;
-    PSG(7) &= ~(4 << ch);
+    PSG(7) &= ~(8 << ch);
   }
 }
 static void snd_channel_set_tone_flag(uint8_t ch, struct snd_channel * pch) {

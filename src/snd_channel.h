@@ -75,13 +75,16 @@ void snd_channel_synthesis(struct snd_channel * pchs[3]);
 // ------------------------------------------------------------------------------------
 
 /**
- * Update fade-in/out and pitch-bend state of a channel
+ * Update the state of ongoing expression commands for a channel.
+ * - arpeggio,
+ * - pitch/period-slide, pitch-glide,
+ * - fade-in/out
  *
  * \param pch   pointer to a channel
  */
 void snd_channel_update(struct snd_channel * pch);
 
-void snd_channel_note_on(uint8_t note, struct snd_channel * pch);
+void snd_channel_note_on(uint8_t note, uint8_t i_number, struct snd_channel * pch);
 
 void snd_channel_note_off(struct snd_channel * pch);
 

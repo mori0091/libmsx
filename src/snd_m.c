@@ -39,9 +39,15 @@ void snd_m__program_change(struct snd_m_ctx * ctx, const uint8_t * m_stream) {
   }
 }
 
-static void snd_m__update(struct snd_m_ctx * ctx);
 static uint8_t snd_m__stream_take(struct snd_m_ctx * ctx);
 static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch);
+
+inline void snd_m__update(struct snd_m_ctx * ctx) {
+  struct snd_channel * pch = ctx->channels;
+  for (uint8_t ch = 3; ch--; pch++) {
+    snd_channel_update(pch);
+  }
+}
 
 void snd_m__decode(struct snd_m_ctx * ctx) {
   snd_m__update(ctx);
@@ -69,32 +75,17 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
     if (!x) {
       snd_channel_note_off(pch);
     }
-    else if (!(x & 0x80)) {
-      const uint8_t i_number = snd_m__stream_take(ctx);
-      if (!i_number) {
-        // legato
-        x |= 0x80;
-      }
-      else {
-        // note on
-        snd_i__program_change(i_number, &pch->i);
-      }
-      snd_channel_note_on(x, pch);
-    }
-    else {
+    else if (x & 0x80) {
       // expressions
       uint8_t n = x & 0x0f;
       do {
         snd_m__decode_expression_command(ctx, pch);
       } while (n--);
     }
-  }
-}
-
-static void snd_m__update(struct snd_m_ctx * ctx) {
-  struct snd_channel * pch = ctx->channels;
-  for (uint8_t ch = 3; ch--; pch++) {
-    snd_channel_update(pch);
+    else {
+      const uint8_t i_number = snd_m__stream_take(ctx);
+      snd_channel_note_on(x, i_number, pch);
+    }
   }
 }
 

@@ -15,6 +15,7 @@
 #include <msx.h>
 #include <snddrv.h>
 #include <snd_i_table.h>
+#include <ay_3_8910.h>
 
 #include "./screen1.h"
 
@@ -38,7 +39,11 @@ void init_volume_gauge_chars(void);
 
 static void show_volume_levels(void) {
   for (uint8_t ch = 0; ch < 3; ++ch) {
-    uint8_t vol = psg_get(8+ch);
+    // uint8_t vol = psg_get(8+ch);
+    uint8_t vol = ay_3_8910_buffer[8+ch];
+    if (16 < vol) {
+      vol = 16;
+    }
     locate(10, 10+ch);
     puts("VOL.#"); putc('0'+ch); puts(":"); puts(volume_gauge[vol]);
   }
@@ -57,7 +62,7 @@ static void main_loop(void) {
   show_frequency();
   uint8_t old_pressed = 0;
   for (;;) {
-    await_vsync();
+    // await_vsync();
     show_volume_levels();
     // Is SPACE key pressed ?
     uint8_t pressed = joypad_get_state(0);

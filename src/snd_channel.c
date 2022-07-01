@@ -257,14 +257,16 @@ static void snd_channel__update_arpeggio(struct snd_channel * pch) {
   pch->arp_timer = pch->arp_wait;
   pch->arp = (pch->arp_vec_data >> 12) & 15;
   if (pch->arp_vec_lenth == 4) {
-    pch->arp_vec_data &= 0x0fff;
-    pch->arp_vec_data <<= 4;
-    pch->arp_vec_data += pch->arp;
+    // pch->arp_vec_data &= 0x0fff;
+    // pch->arp_vec_data <<= 4;
+    // pch->arp_vec_data += pch->arp;
+    pch->arp_vec_data = (pch->arp_vec_data << 4) + pch->arp;
   }
   else if (pch->arp_vec_lenth == 3) {
-    pch->arp_vec_data &= 0x0ff0;
-    pch->arp_vec_data += pch->arp;
-    pch->arp_vec_data <<= 4;
+    // pch->arp_vec_data &= 0x0ff0;
+    // pch->arp_vec_data += pch->arp;
+    // pch->arp_vec_data <<= 4;
+    pch->arp_vec_data = (pch->arp_vec_data + pch->arp) << 4;
   }
 }
 

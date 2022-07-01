@@ -36,8 +36,9 @@ static const struct snd_i_table i_table_01 = {
 
 // Instrument #2
 static const uint8_t i_table_02_a[] = {
-  0x1e, 0x1c, 0x1a, 0x18, 0x16, 0x14, 0x12, 0x10,
-  0x0e, 0x0c, 0x0a, 0x08, 0x06, 0x04, 0x02, 0x00,
+  0xfd, 0x1e, 0x1c, 0x18, 0x16, 0x14, 0x10, 0x0c, 0x0a,
+  0x08, 0x06, 0x04, 0x02, 0x00,
+  0xff,
 };
 static const uint8_t i_table_02_s[] = {
   0xff,
@@ -47,7 +48,23 @@ static const uint8_t i_table_02_r[] = {
 };
 static const struct snd_i_table i_table_02 = {
 // wait cnt, attack-decay, sustain     , release
-  .wait = 4, i_table_02_a, i_table_02_s, i_table_02_r,
+  .wait = 0, i_table_02_a, i_table_02_s, i_table_02_r,
+};
+
+// Instrument #3
+static const uint8_t i_table_03_a[] = {
+  0x1e, 0x1c, 0x1a, 0x18, 0x16, 0x14, 0x12, 0x10,
+  0x0e, 0x0c, 0x0a, 0x08, 0x06, 0x04, 0x02, 0x00,
+};
+static const uint8_t i_table_03_s[] = {
+  0xff,
+};
+static const uint8_t i_table_03_r[] = {
+  0xff,
+};
+static const struct snd_i_table i_table_03 = {
+// wait cnt, attack-decay, sustain     , release
+  .wait = 4, i_table_03_a, i_table_03_s, i_table_03_r,
 };
 
 // List of pointers to instruments.
@@ -56,5 +73,7 @@ const struct snd_i_table * i_tables[] = {
   &i_table_01,
   // pointer to instrument #2
   &i_table_02,
+  // pointer to instrument #3
+  &i_table_03,
 };
 const uint8_t i_tables_length = ARRAY_SIZEOF(i_tables);

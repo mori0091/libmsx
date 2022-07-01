@@ -229,7 +229,7 @@ static void snd_channel__update_fade_in_out(struct snd_channel * pch) {
   const uint8_t delta = acc >> 7;
   pch->fade_timer = acc & 0x7f;
   // fade in
-  if (0 < pch->fade) {
+  if (0 <= pch->fade) {
     pch->volume += delta;
     if (15 < pch->volume) {
       pch->volume = 15;

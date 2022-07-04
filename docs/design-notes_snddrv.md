@@ -7,7 +7,7 @@
 - Functionallity
   - NTSC (60Hz), PAL/SECAM (50Hz), auto detect and auto adjust.
   - Available to specify default playing frequency that composer expecting.
-  - Run-time speed / repaly frequency control.
+  - Run-time replay speed/frequency control.
   - Stop, Start, Pause, Resume, Auto-Repeat.
   - Playing sound effects (SFX) during playing background music (BGM).
   - Same data format for BGM and SFX.
@@ -26,14 +26,14 @@
 - Instrument (timbre)
   - User defined instrument (timbre) tables
     - Oscillator (Square wave)
-    - Software envelope generator
+    - Software amplitude envelope generator
     - Noise generator
     - Tone / Noise mixing
-    - Hardware envelope generator (Saw, Triangle, Inv-Saw, Inv-Triangle wave)
-    - Use hardware envelope generator as frequency modulator!
+    - Hardware amplitude envelope generator (Saw, Triangle, Inv-Saw, Inv-Triangle wave)
+    - Use hardware envelope generator as **frequency modulator**!
     - Arpeggio / Pitch-bend effect
     - Period (wave cycle) modification
-  
+
 # Internal of SNDDRV
 
 SNDDRV's sound processing pipeline is consisting of 3 part of components: some
@@ -117,44 +117,52 @@ streams** written in the notation defined in the previous section.
 ; Music stream
 m_stream   := ((channel t_chunk)* wait)* EOM
 
-channel    := 1b c:7                  ; c: channel # (0..127)
-wait       := 0b w:7                  ; w: wait count [ticks]
-EOM        := 1111b 1111b
+wait       := 0b w:7                    ; w: wait count [ticks]
+channel    := 10b c:6                   ; c: channel # (0..63)
+EOM        := 1111b 1111b               ; end mark
 
 ; Track stream
 t_stream   := t_line*
 
 ; A line of track
 t_line     := t_chunk* EOL
-t_chunk    := expressions
-            | NoteOff
-            | Legato
-            | NoteOn
 
-EOL        := 1110b l:4               ; l: number of lines - 1
+t_chunk    := Reset                     ; stops the sound of the instrument.
+            | Note                      ; a note command
+            | Exprs                     ; expressions
+            | ExprsNote                 ; expressions with a note command
 
-NoteOff    := 0:8
-Legato     := 0b n:7 0:8              ; n: note # (1..127)
-NoteOn     := 0b n:7 i:8              ; n: note # (1..127), i: instrument # (1..255)
+EOL        := 110b l:5                  ; l: number of lines - 1
 
-expresions := 1000b n:4 expr0{n+1}    ; n: number of expressions - 1
+Reset      := 1110b _:4
 
-expr0      := 0000b x:4               ; reset effect and set volume to 15-x
-            | 0001b x:4 y:4 _:4       ; arpeggio 3 notes (note +0, +x, +y)
-            | 0010b x:4 y:4 z:4       ; arpeggio 4 notes (note +0, +x, +y, +z)
-            | 0011b x:4 y:4 z:4       ; pitch up         (period -xyz/256 for each some ticks)
-            | 0100b x:4 y:4 z:4       ; pitch down       (period +xyz/256 for each some ticks)
-            | 0101b x:4 y:4 z:4       ; fast pitch up    (period -xyz/16 for each tick)
-            | 0110b x:4 y:4 z:4       ; fast pitch down  (period +xyz/16 for each tick)
-            | 0111b x:4 y:4 z:4       ; pitch glide      (pitch ±1 for each xyz+1 ticks)
-            | 1000b x:4               ; set volume to x  (volume ← x)
-            | 1001b x:4 y:4 z:4       ; fade in          (volume +xyz/128 for each ticks)
-            | 1010b x:4 y:4 z:4       ; fade out         (volume -xyz/128 for each ticks)
-            | 1011b x:4 y:4 _:4       ; force the speed of an instrument (1 step for each xy+1 ticks)
-            | 1100b x:4 y:4 _:4       ; force the speed of an arpeggio   (1 step for each xy+1 ticks)
-            | 1101b x:4 y:4 _:4       ; force the speed of a pitch bend  (1 step for each xy+1 ticks)
-            | 1110b x:4 y:4 _:4       ; set arpeggio table # to xy (1..255) or turn arpeggio off (xy = 0)
-            | 1111b x:4 y:4 _:4       ; set pitch bend table # to xy (1..255) or turn pitch bend off (xy = 0)
+Note       := NoteOff                   ; key off
+            | NoteOn                    ; key on
+            | Legato                    ; switch note w/o key on
+
+   NoteOff := 0:8
+   NoteOn  := 0b n:7 i:8                ; n: note # (1..127), i: instrument # (1..255)
+   Legato  := 0b n:7 0:8                ; n: note # (1..127)
+
+Exprs      := 10_0b n:4 expr{n+1}       ; n: number of expressions - 1
+ExprsNote  := 10_1b n:4 expr{n+1} Note  ; expressions w/ note
+
+   expr    := 0000b x:4                 ; reset effect and set volume to 15-x
+            | 0001b x:4 y:4 _:4         ; arpeggio 3 notes (note +0, +x, +y)
+            | 0010b x:4 y:4 z:4         ; arpeggio 4 notes (note +0, +x, +y, +z)
+            | 0011b x:4 y:4 z:4         ; pitch up         (period -xyz/256 for each some ticks)
+            | 0100b x:4 y:4 z:4         ; pitch down       (period +xyz/256 for each some ticks)
+            | 0101b x:4 y:4 z:4         ; fast pitch up    (period -xyz/16 for each tick)
+            | 0110b x:4 y:4 z:4         ; fast pitch down  (period +xyz/16 for each tick)
+            | 0111b x:4 y:4 z:4         ; pitch glide      (pitch ±1 for each xyz+1 ticks)
+            | 1000b x:4                 ; set volume to x  (volume ← x)
+            | 1001b x:4 y:4 z:4         ; fade in          (volume +xyz/128 for each ticks)
+            | 1010b x:4 y:4 z:4         ; fade out         (volume -xyz/128 for each ticks)
+            | 1011b x:4 y:4 _:4         ; force the speed of an instrument (1 step for each xy+1 ticks)
+            | 1100b x:4 y:4 _:4         ; force the speed of an arpeggio   (1 step for each xy+1 ticks)
+            | 1101b x:4 y:4 _:4         ; force the speed of a pitch bend  (1 step for each xy+1 ticks)
+            | 1110b x:4 y:4 _:4         ; set arpeggio table # to xy (1..255) or turn arpeggio off (xy = 0)
+            | 1111b x:4 y:4 _:4         ; set pitch bend table # to xy (1..255) or turn pitch bend off (xy = 0)
 ```
 
 # Instrument (timbre) table

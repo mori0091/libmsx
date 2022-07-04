@@ -72,17 +72,28 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
     struct snd_channel * pch = &ctx->channels[ch];
     // t_chunk
     x = snd_m__stream_take(ctx);
-    if (!x) {
-      snd_channel_note_off(pch);
-    }
-    else if (x & 0x80) {
+    if (x & 0x80) {
       // expressions
       uint8_t n = x & 0x0f;
       do {
         snd_m__decode_expression_command(ctx, pch);
       } while (n--);
+      if (!(x & 0x10)) {
+        continue;
+      }
+      x = snd_m__stream_take(ctx);
+    }
+    // note command
+    if (!x) {
+      // NoteOff
+      snd_channel_note_off(pch);
+    }
+    else if (0xe0 <= x) {
+      // Reset
+      snd_i__program_change(0, &pch->i);
     }
     else {
+      // NoteOn i# (or Legato)
       const uint8_t i_number = snd_m__stream_take(ctx);
       snd_channel_note_on(x, i_number, pch);
     }

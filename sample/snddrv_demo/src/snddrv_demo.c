@@ -16,6 +16,7 @@
 #include <snddrv.h>
 #include <snd_i_table.h>
 #include <ay_3_8910.h>
+#include <stdint.h>
 
 #include "./screen1.h"
 
@@ -26,11 +27,13 @@ extern const struct snd_i_table * i_tables[];
 
 // Sound effect "coin" -------------------------------
 // \see 'sfx_coin.c'
-extern const snd_Sound sfx_coin;
+extern const snd_Stream sfx_coin;
+// extern const snd_Program sfx_coin;
 
 // Background music ----------------------------------
 // \see 'bgm_01.c'
-extern const snd_Sound bgm_01;
+// extern const snd_Stream bgm_01;
+extern const snd_Program bgm_01;
 
 // Volume gauge --------------------------------------
 // \see 'volume_gauge.c'
@@ -72,13 +75,15 @@ static void main_loop(void) {
       snd_set_sfx(&sfx_coin);
     }
     uint8_t Hz = snd_get_player_frequency();
-    if (pressed & (VK_UP | VK_RIGHT)) {
-      Hz++;
+    int8_t x = 0;
+    if (Hz < 120 && (pressed & (VK_UP | VK_RIGHT))) {
+      x = 1;
     }
-    else if (pressed & (VK_DOWN | VK_LEFT)) {
-      Hz--;
+    if (0 < Hz && (pressed & (VK_DOWN | VK_LEFT))) {
+      x = -1;
     }
-    if (0 < Hz && Hz <= 120) {
+    if (x) {
+      Hz += x;
       snd_set_player_frequency(Hz);
       locate(6, 1); puti(Hz); puts("Hz ");
     }

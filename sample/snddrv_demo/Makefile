@@ -31,7 +31,7 @@ NAME = snddrv_demo
 #   - LDFLAGS shall be linker options such as "-L dir"
 #   - LDLIBS shall be libraries to be linked such as "-lfoo" or "foo.lib"
 #   - LIBS shall be your custom libraries to be linked such as "mylib.lib"
-CFLAGS  = -DNDEBUG
+CFLAGS  = -DNDEBUG --std-c11
 LDFLAGS =
 LDLIBS  =
 LIBS    =

@@ -1,4 +1,5 @@
 *~
+*.bak
 *.sys
 *.com
 *.exe
@@ -21,3 +22,4 @@
 /tools/**/obj
 /**/compile_commands.json
 /**/.vscode
+/html

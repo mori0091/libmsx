@@ -96,16 +96,50 @@ void snd_set_repeat(bool repeat);
 /**
  * Sets the specified music as BGM in the sound driver.
  *
- * \param data   Pointer to the music structure to be played as BGM.
+ * \param data   Pointer to the music stream to be played as BGM.
  */
-void snd_set_bgm(const snd_Sound * data);
+void snd_set_bgm_stream(const snd_Stream * data);
+/**
+ * Sets the specified music as BGM in the sound driver.
+ *
+ * \param data   Pointer to the music program to be played as BGM.
+ */
+void snd_set_bgm_program(const snd_Program * data);
+
+/**
+ * Sets the specified music as BGM in the sound driver.
+ *
+ * \param data   Pointer to a snd_Stream or a snd_Program to be played as BGM.
+ */
+#define snd_set_bgm(data)                       \
+  _Generic(*(data)                              \
+           , snd_Stream  : snd_set_bgm_stream   \
+           , snd_Program : snd_set_bgm_program  \
+          )(data)
 
 /**
  * Sets the specified music as SFX (sound effects) in the sound driver.
  *
- * \param data   Pointer to the music structure to be played as SFX.
+ * \param data   Pointer to the music stream to be played as SFX.
  */
-void snd_set_sfx(const snd_Sound * data);
+void snd_set_sfx_stream(const snd_Stream * data);
+/**
+ * Sets the specified music as SFX (sound effects) in the sound driver.
+ *
+ * \param data   Pointer to the music program to be played as SFX.
+ */
+void snd_set_sfx_program(const snd_Program * data);
+
+/**
+ * Sets the specified music as SFX (sound effects) in the sound driver.
+ *
+ * \param data   Pointer to a snd_Stream or a snd_Program to be played as SFX.
+ */
+#define snd_set_sfx(data)                       \
+  _Generic(*(data)                              \
+           , snd_Stream  : snd_set_sfx_stream   \
+           , snd_Program : snd_set_sfx_program  \
+          )(data)
 
 /**
  * Initialize the PSG and the sound driver.

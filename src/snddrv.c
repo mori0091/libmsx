@@ -36,19 +36,24 @@ static void snd__init_ctx(struct snd_ctx * ctx) {
   snd_m__init(&ctx->m);
   ctx->song_freq = vsync_freq;
   ctx->play_freq = vsync_freq;
-  ctx->data = 0;
   ctx->counter = 0;
 }
 
-static void snd__set_song(struct snd_ctx * ctx, const snd_Sound * data) {
-  if (data && data->tag == SND_STREAM && data->stream) {
-    snd__init_ctx(ctx);
-    snd_m__program_change(&ctx->m, data->stream);
-    if (data->replayRate) {
-      ctx->song_freq = data->replayRate;
-      ctx->play_freq = data->replayRate;
-    }
-    ctx->data = data;
+static void snd__set_stream(struct snd_ctx * ctx, const snd_Stream * data) {
+  snd__init_ctx(ctx);
+  snd_m__program_change_s(&ctx->m, data);
+  if (data && data->replayRate) {
+    ctx->song_freq = data->replayRate;
+    ctx->play_freq = data->replayRate;
+  }
+}
+
+static void snd__set_program(struct snd_ctx * ctx, const snd_Program * data) {
+  snd__init_ctx(ctx);
+  snd_m__program_change_p(&ctx->m, data);
+  if (data && data->replayRate) {
+    ctx->song_freq = data->replayRate;
+    ctx->play_freq = data->replayRate;
   }
 }
 
@@ -75,32 +80,56 @@ static void snd__init(void) {
   snd__init_ctx(&snd_bgm);
 }
 
-static void snd__stop(void) {
-  const snd_Sound * song = snd_bgm.data;
-  snd__init();
-  snd__set_song(&snd_bgm, song);
-}
-
 #define DI() __asm__("di")
 #define EI() __asm__("ei")
 
 extern void snd__set_speed(uint8_t multiplier);
 
-static void snd__set_bgm(const snd_Sound * data) {
-  snd__set_song(&snd_bgm, data);
+static void snd__set_bgm_stream(const snd_Stream * data) {
+  snd__set_stream(&snd_bgm, data);
   snd__set_speed(snd_speed_multiplier);
 }
 
-void snd_set_bgm(const snd_Sound * data) {
+static void snd__set_bgm_program(const snd_Program * data) {
+  snd__set_program(&snd_bgm, data);
+  snd__set_speed(snd_speed_multiplier);
+}
+
+static void snd__stop(void) {
+  const snd_Program * p = snd_bgm.m.music;
+  const snd_Stream * s = snd_bgm.m.m_stream;
+  snd__init();
+  if (p) {
+    snd__set_bgm_program(p);
+  }
+  else {
+    snd__set_bgm_stream(s);
+  }
+}
+
+void snd_set_bgm_stream(const snd_Stream * data) {
   DI();
-  snd__set_bgm(data);
+  snd__set_bgm_stream(data);
   EI();
 }
 
-void snd_set_sfx(const snd_Sound * data) {
+void snd_set_sfx_stream(const snd_Stream * data) {
   (void)data;
   DI();
-  snd__set_song(&snd_sfx, data);
+  snd__set_stream(&snd_sfx, data);
+  EI();
+}
+
+void snd_set_bgm_program(const snd_Program * data) {
+  DI();
+  snd__set_bgm_program(data);
+  EI();
+}
+
+void snd_set_sfx_program(const snd_Program * data) {
+  (void)data;
+  DI();
+  snd__set_program(&snd_sfx, data);
   EI();
 }
 
@@ -149,7 +178,12 @@ void snd_play(void) {
 
   if (repeat && snd_bgm.m.isEnd) {
     uint8_t freq = snd_bgm.play_freq;
-    snd__set_bgm(snd_bgm.data);
+    if (snd_bgm.m.music) {
+      snd__set_bgm_program(snd_bgm.m.music);
+    }
+    else {
+      snd__set_bgm_stream(snd_bgm.m.m_stream);
+    }
     snd_bgm.play_freq = freq;
   }
 }
@@ -157,6 +191,7 @@ void snd_play(void) {
 // ------------------------------------------------
 
 static void snd__decode(struct snd_ctx * ctx) {
+  if (ctx->m.isEnd) return;
   ctx->counter += ctx->play_freq;
   while (vsync_freq <= ctx->counter) {
     ctx->counter -= vsync_freq;

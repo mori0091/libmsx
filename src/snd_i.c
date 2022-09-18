@@ -105,7 +105,7 @@ static void snd_i__init_state(struct snd_i_ctx * ctx) {
   ctx->noise_fdr = 0;
   ctx->retrig = false;
   ctx->modulation = 0;
-  ctx->waveform = 0;
+  ctx->waveform = 8;
   ctx->ratio = 4;
   ctx->sw_period = 0;
   ctx->sw_period_delta = 0;
@@ -144,7 +144,7 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
       x >>= 1;
       ctx->modulation = (x & 3) + 1;
       x >>= 2;
-      ctx->waveform = x & 3;
+      ctx->waveform = (x & 3) * 2 + 8;
       return;
     }
     x >>= 1;

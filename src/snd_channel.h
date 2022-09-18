@@ -16,11 +16,13 @@
 #ifndef SND_CHANNEL_H_
 #define SND_CHANNEL_H_
 
+#include "./snd_t.h"
 #include "./snd_i.h"
 #include "./snd_a.h"
 #include "./snd_p.h"
 
 struct snd_channel {
+  struct snd_t_ctx t;           // context for track
   struct snd_i_ctx i;           // context for instrument
   struct snd_a_ctx a;           // context for arpeggio
   struct snd_p_ctx p;           // context for pitch envelope

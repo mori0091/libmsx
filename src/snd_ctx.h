@@ -20,7 +20,6 @@
 #include "./snd_m.h"
 
 struct snd_ctx {
-  const snd_Sound * data;
   struct snd_m_ctx m;
   uint8_t song_freq;            // frequency of the song
   uint8_t play_freq;            // frequency of the player

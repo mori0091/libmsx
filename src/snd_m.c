@@ -14,9 +14,11 @@
  */
 
 #include "./snd_m.h"
+#include <stdint.h>
 
 void snd_m__init(struct snd_m_ctx * ctx) {
-  snd_m__program_change(ctx, 0);
+  snd_m__program_change_s(ctx, 0);
+  // ----
   struct snd_channel * pch = &ctx->channels[0];
   for (uint8_t ch = 3; ch--; pch++) {
     snd_i__program_change(1, &pch->i); // instrument #1
@@ -26,20 +28,52 @@ void snd_m__init(struct snd_m_ctx * ctx) {
   }
 }
 
-void snd_m__program_change(struct snd_m_ctx * ctx, const uint8_t * m_stream) {
+void snd_m__program_change_s(struct snd_m_ctx * ctx, const snd_Stream * m_stream) {
   static const uint8_t end_of_stream = 0xff;
+  ctx->music = 0;
   ctx->timer = 0;
-  if (!m_stream) {
-    ctx->next = ctx->data = &end_of_stream;
+  if (!m_stream || !m_stream->stream) {
+    ctx->m_stream = 0;
+    ctx->next = &end_of_stream;
     ctx->isEnd = true;
   }
   else {
-    ctx->next = ctx->data = m_stream;
+    ctx->m_stream = m_stream;
+    ctx->next = m_stream->stream;
     ctx->isEnd = false;
   }
 }
 
+static void snd_m__set_Pattern_by_index(struct snd_m_ctx * ctx, const snd_Program * pg, uint8_t index);
+
+void snd_m__program_change_p(struct snd_m_ctx * ctx, const snd_Program * pg) {
+  ctx->m_stream = 0;
+  ctx->timer = 0;
+  ctx->pindex = 0;
+  ctx->line = 1;
+  if (!pg) {
+    ctx->music = 0;
+    ctx->isEnd = true;
+  }
+  else {
+    ctx->music = pg;
+    ctx->isEnd = false;
+    snd_m__set_Pattern_by_index(ctx, pg, 0);
+  }
+}
+
+static void snd_m__set_Pattern_by_index(struct snd_m_ctx * ctx, const snd_Program * pg, uint8_t index) {
+  const snd_Pattern * p = &pg->patterns.data[index];
+  for (uint8_t ch = 3; ch--; ) {
+    struct snd_channel * pch = &ctx->channels[ch];
+    const uint8_t trackNumber = p->channels[ch].track;
+    const snd_Track * track = &pg->tracks.data[trackNumber];
+    snd_t_program_change(track, &pch->t);
+  }
+}
+
 static uint8_t snd_m__stream_take(struct snd_m_ctx * ctx);
+static void snd_m__decode_channel(struct snd_m_ctx * ctx, struct snd_channel * pch);
 static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch);
 
 inline void snd_m__update(struct snd_m_ctx * ctx) {
@@ -49,7 +83,20 @@ inline void snd_m__update(struct snd_m_ctx * ctx) {
   }
 }
 
+static void snd_m__decode_stream(struct snd_m_ctx * ctx);
+static void snd_m__decode_program(struct snd_m_ctx * ctx);
+
 void snd_m__decode(struct snd_m_ctx * ctx) {
+  if (ctx->music) {
+    snd_m__decode_program(ctx);
+  }
+  else {
+    snd_m__decode_stream(ctx);
+  }
+}
+
+
+static void snd_m__decode_stream(struct snd_m_ctx * ctx) {
   snd_m__update(ctx);
   // ---------------------------------------------------
   if (ctx->timer) {
@@ -70,32 +117,59 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
     // channel message
     const uint8_t ch = x & 0x7f;
     struct snd_channel * pch = &ctx->channels[ch];
-    // t_chunk
-    x = snd_m__stream_take(ctx);
-    if (x & 0x80) {
-      // expressions
-      uint8_t n = x & 0x0f;
-      do {
-        snd_m__decode_expression_command(ctx, pch);
-      } while (n--);
-      if (!(x & 0x10)) {
-        continue;
+    snd_m__decode_channel(ctx, pch);
+  }
+}
+
+static void snd_m__decode_program(struct snd_m_ctx * ctx) {
+  snd_m__update(ctx);
+  // ---------------------------------------------------
+  if (ctx->timer) {
+    ctx->timer--;
+    return;
+  }
+  // ---------------------------------------------------
+  const snd_Program * pg = ctx->music;
+  const snd_Pattern * p = &pg->patterns.data[ctx->pindex];
+  if (ctx->line > p->height) {
+    // Proceed to the next pattern
+    ctx->line = 1;
+    ctx->pindex++;
+    if (pg->patterns.length <= ctx->pindex) {
+      // End of the list of patterns
+      if (pg->isLoop && pg->loopToIndex < pg->patterns.length) {
+        // Loop back to the specified pattern
+        ctx->pindex = pg->loopToIndex;
       }
-      x = snd_m__stream_take(ctx);
+      else {
+        // finish the program (unless 'auto-repeat' is set)
+        ctx->isEnd = true;
+        return;
+      }
     }
-    // note command
-    if (!x) {
-      // NoteOff
-      snd_channel_note_off(pch);
-    }
-    else if (0xe0 <= x) {
-      // Reset
-      snd_i__program_change(0, &pch->i);
+    snd_m__set_Pattern_by_index(ctx, pg, ctx->pindex);
+  }
+  else {
+    // Proceed to the next line of the current pattern
+    ctx->line++;
+  }
+  for (uint8_t ch = 3; ch--; ) {
+    struct snd_channel * pch = &ctx->channels[ch];
+    struct snd_t_ctx * tctx = &pch->t;
+    if (tctx->skip_count) {
+      tctx->skip_count--;
     }
     else {
-      // NoteOn i# (or Legato)
-      const uint8_t i_number = snd_m__stream_take(ctx);
-      snd_channel_note_on(x, i_number, pch);
+      snd_m__decode_channel(ctx, pch);
+    }
+  }
+  // ----
+  ctx->timer = pg->initialSpeed;
+  const uint8_t speedTrackNumber = p->specialChannels.speedTrack;
+  if (speedTrackNumber && speedTrackNumber < pg->speedTracks.length) {
+    const snd_SpeedTrack * speedTrack = &pg->speedTracks.data[speedTrackNumber];
+    if (ctx->line < speedTrack->length) {
+      ctx->timer = speedTrack->data[ctx->line];
     }
   }
 }
@@ -108,9 +182,58 @@ static uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {
   return x;
 }
 
+static uint8_t snd__stream_take(struct snd_m_ctx * ctx, struct snd_channel * pch) {
+  if (ctx->music) {
+    return snd_t_stream_take(&pch->t);
+  }
+  else {
+    return snd_m__stream_take(ctx);
+  }
+}
+
+static void snd_m__decode_channel(struct snd_m_ctx * ctx, struct snd_channel * pch) {
+  // t_chunk
+  for (;;) {
+    uint8_t x = snd__stream_take(ctx, pch);
+    // note command
+    if (!x) {                   // x == 00000000b
+      // NoteOff
+      snd_channel_note_off(pch);
+    }
+    else if (!(x & 0x80)) {     // x == 0*******b
+      // NoteOn i# (or Legato)
+      const uint8_t i_number = snd__stream_take(ctx, pch);
+      snd_channel_note_on(x, i_number, pch);
+    }
+    else if (!(x & 0x40)) {     // x == 10******b
+      // expressions
+      uint8_t n = x & 0x0f;
+      do {
+        snd_m__decode_expression_command(ctx, pch);
+      } while (n--);
+      if (x & 0x10) {           // x == 10*1****b
+        continue;
+      }
+    }
+    else if (!(x & 0x20)) {     // x == 110*****b
+      // EOL (End of line and skip lines)
+      pch->t.skip_count = x & 0x1f;
+      return;
+    }
+    else if (!(x & 0x10)) {     // x == 1110****b
+      // Reset
+      snd_i__program_change(0, &pch->i);
+    }
+    else {                      // x == 1111****b
+      return;
+    }
+    if (!ctx->music) return;
+  }
+}
+
 static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch) {
   // decode an expression command
-  uint8_t x = snd_m__stream_take(ctx);
+  uint8_t x = snd__stream_take(ctx, pch);
   const uint8_t tag = x >> 4;
   x &= 15;
   if (!tag) {
@@ -123,7 +246,7 @@ static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_
     pch->fade_speed = 0;
   }
   else {
-    const uint16_t xyz = (x << 8) + snd_m__stream_take(ctx);
+    const uint16_t xyz = (x << 8) + snd__stream_take(ctx, pch);
     if (tag == 1) {
       // arpeggio 3 notes
       // set arp to (+0, +x, +y);

@@ -159,6 +159,6 @@ inline void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_peri
   PSG(12) = (hw_period >> 8) & 0xff;
   if (pch->i.retrig) {
     // R13 = 8:Saw, 10:Triangle, 12:Inv-Saw, 14:Inv-Triangle
-    PSG(13) = pch->i.waveform * 2 + 8;
+    PSG(13) = pch->i.waveform;
   }
 }

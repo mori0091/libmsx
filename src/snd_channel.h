@@ -20,6 +20,11 @@
 #include "./snd_i.h"
 #include "./snd_a.h"
 #include "./snd_p.h"
+#include <stdint.h>
+
+#define FADE_TRIG    (1 << 0)
+#define PERIOD_TRIG  (1 << 1)
+#define PITCH_TRIG   (1 << 2)
 
 struct snd_channel {
   struct snd_t_ctx t;           // context for track
@@ -33,25 +38,24 @@ struct snd_channel {
     uint8_t volume;             // current volume level
     int8_t  arp;                // +/- note number
   };
+  // ----
+  uint8_t flag;
   // ---- expression (fade-in, fade-out) ----
   struct {
     uint16_t fade_speed;        // 1 lv / 128 ticks
     uint16_t fade_timer;
     int8_t   fade;              // off (0), fade-in (+1), fade-out (-1)
-    bool     fade_triggered;
   };
   // ---- expression (pitch bend) ----
   struct {
     uint16_t period_delta;      // off (0)
     uint16_t period_timer;
     int8_t   period_sign;
-    bool     period_triggered;
   };
   struct {
     uint16_t pitch_wait;
     uint16_t pitch_timer;
     int16_t  pitch_delta;       // off (0), +/- pitch
-    bool     pitch_triggered;
   };
   struct {
     uint16_t pitch_glide;       // off (0), pitch

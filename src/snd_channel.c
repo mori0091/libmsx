@@ -24,28 +24,21 @@ static void snd_channel_reset_fade(struct snd_channel * pch);
 
 void snd_channel_note_on(uint8_t note, uint8_t i_number, struct snd_channel * pch) {
   pch->period_offset = 0;
-  if (pch->period_triggered) {
-    pch->period_triggered = false;
-  }
-  else {
-    // Turn period-bend off
-    snd_channel_reset_period_bend(pch);
-  }
-  // ----
-  if (pch->pitch_triggered) {
-    pch->pitch_triggered = false;
-  }
-  else {
-    // Turn pitch-bend off
-    snd_channel_reset_pitch_bend(pch);
-  }
-  // ----
-  if (pch->fade_triggered) {
-    pch->fade_triggered = false;
-  }
-  else {
-    // Turn fade-in/out off
-    snd_channel_reset_fade(pch);
+  {
+    uint8_t flag = pch->flag;
+    pch->flag = 0;
+    if (!(flag & FADE_TRIG)) {
+      // Turn fade-in/out off
+      snd_channel_reset_fade(pch);
+    }
+    if (!(flag & PERIOD_TRIG)) {
+      // Turn period-bend off
+      snd_channel_reset_period_bend(pch);
+    }
+    if (!(flag & PITCH_TRIG)) {
+      // Turn pitch-bend off
+      snd_channel_reset_pitch_bend(pch);
+    }
   }
   // --------------------------------------------------------
   const uint16_t pitch = note << 8;
@@ -119,14 +112,14 @@ void snd_channel_set_period_bend(int8_t sign, uint16_t period_delta, struct snd_
   pch->period_delta = period_delta;
   pch->period_timer = 0;
   pch->period_sign = sign;
-  pch->period_triggered = true;
+  pch->flag |= PERIOD_TRIG;
 }
 
 void snd_channel_set_pitch_bend(uint8_t wait, int16_t pitch_delta, struct snd_channel * pch) {
   pch->pitch_wait = wait;
   pch->pitch_timer = 0;
   pch->pitch_delta = pitch_delta;
-  pch->pitch_triggered = true;
+  pch->flag |= PITCH_TRIG;
   pch->pitch_min = PITCH_MIN;
   pch->pitch_max = PITCH_MAX;
 }
@@ -135,7 +128,7 @@ void snd_channel_set_fade(int8_t fade, uint16_t speed, struct snd_channel * pch)
   pch->fade_speed = speed;
   pch->fade_timer = 0;
   pch->fade = fade;
-  pch->fade_triggered = true;
+  pch->flag |= FADE_TRIG;
 }
 
 void snd_channel_set_arpeggio(uint8_t wait, uint8_t arp_vec_len, uint16_t arp_vec, struct snd_channel * pch) {

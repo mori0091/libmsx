@@ -44,13 +44,13 @@ void snd_m__program_change_s(struct snd_m_ctx * ctx, const snd_Stream * m_stream
   }
 }
 
-static void snd_m__set_Pattern_by_index(struct snd_m_ctx * ctx, const snd_Program * pg, uint8_t index);
+static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Program * pg, const snd_Pattern * p);
 
 void snd_m__program_change_p(struct snd_m_ctx * ctx, const snd_Program * pg) {
   ctx->m_stream = 0;
   ctx->timer = 0;
   ctx->pindex = 0;
-  ctx->line = 1;
+  ctx->line = 0;
   if (!pg) {
     ctx->music = 0;
     ctx->isEnd = true;
@@ -58,12 +58,11 @@ void snd_m__program_change_p(struct snd_m_ctx * ctx, const snd_Program * pg) {
   else {
     ctx->music = pg;
     ctx->isEnd = false;
-    snd_m__set_Pattern_by_index(ctx, pg, 0);
+    snd_m__set_Pattern(ctx, pg, &pg->patterns.data[0]);
   }
 }
 
-static void snd_m__set_Pattern_by_index(struct snd_m_ctx * ctx, const snd_Program * pg, uint8_t index) {
-  const snd_Pattern * p = &pg->patterns.data[index];
+static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Program * pg, const snd_Pattern * p) {
   for (uint8_t ch = 3; ch--; ) {
     struct snd_channel * pch = &ctx->channels[ch];
     const uint8_t trackNumber = p->channels[ch].track;
@@ -131,15 +130,17 @@ static void snd_m__decode_program(struct snd_m_ctx * ctx) {
   // ---------------------------------------------------
   const snd_Program * pg = ctx->music;
   const snd_Pattern * p = &pg->patterns.data[ctx->pindex];
-  if (ctx->line > p->height) {
+  if (p->height <= ctx->line) {
     // Proceed to the next pattern
-    ctx->line = 1;
+    ctx->line = 0;
     ctx->pindex++;
+    p++;
     if (pg->patterns.length <= ctx->pindex) {
       // End of the list of patterns
       if (pg->isLoop && pg->loopToIndex < pg->patterns.length) {
         // Loop back to the specified pattern
         ctx->pindex = pg->loopToIndex;
+        p = &pg->patterns.data[ctx->pindex];
       }
       else {
         // finish the program (unless 'auto-repeat' is set)
@@ -147,11 +148,7 @@ static void snd_m__decode_program(struct snd_m_ctx * ctx) {
         return;
       }
     }
-    snd_m__set_Pattern_by_index(ctx, pg, ctx->pindex);
-  }
-  else {
-    // Proceed to the next line of the current pattern
-    ctx->line++;
+    snd_m__set_Pattern(ctx, pg, p);
   }
   for (uint8_t ch = 3; ch--; ) {
     struct snd_channel * pch = &ctx->channels[ch];
@@ -164,14 +161,17 @@ static void snd_m__decode_program(struct snd_m_ctx * ctx) {
     }
   }
   // ----
-  ctx->timer = pg->initialSpeed;
   const uint8_t speedTrackNumber = p->specialChannels.speedTrack;
-  if (speedTrackNumber && speedTrackNumber < pg->speedTracks.length) {
+  if (speedTrackNumber < pg->speedTracks.length) {
     const snd_SpeedTrack * speedTrack = &pg->speedTracks.data[speedTrackNumber];
-    if (ctx->line < speedTrack->length) {
-      ctx->timer = speedTrack->data[ctx->line];
-    }
+    ctx->timer = speedTrack->data[ctx->line % speedTrack->length];
   }
+  else {
+    ctx->timer = pg->initialSpeed;
+  }
+
+  // Proceed to the next line of the current pattern
+  ctx->line++;
 }
 
 static uint8_t snd_m__stream_take(struct snd_m_ctx * ctx) {

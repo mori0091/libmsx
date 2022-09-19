@@ -34,7 +34,7 @@ struct snd_m_ctx {
   struct {                      // Sequencer for snd_Program
     const snd_Program * music;  // a music program
     uint8_t pindex;             // current pattern index (0..)
-    uint8_t line;               // current line number (1..height)
+    uint8_t line;               // current line number (0..height-1)
   };
   // ----
   struct snd_channel channels[3];

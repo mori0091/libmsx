@@ -16,10 +16,11 @@
 #include "snd_t.h"
 #include <stdint.h>
 
-void snd_t_program_change(const snd_Track * track, struct snd_t_ctx * ctx) {
+void snd_t_program_change(const snd_Track * track, int16_t detune, struct snd_t_ctx * ctx) {
   ctx->skip_count = 0;
   ctx->track = track;
   ctx->next = track->data;
+  ctx->detune = detune;
 }
 
 uint8_t snd_t_stream_take(struct snd_t_ctx * ctx) {

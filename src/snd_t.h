@@ -25,9 +25,10 @@ struct snd_t_ctx {
   uint8_t skip_count;           // number of subsequent lines to skip
   const snd_Track * track;      // pointer to a track
   const uint8_t * next;         // pointer to the next octet of the track data stream.
+  int16_t detune;
 };
 
-extern void snd_t_program_change(const snd_Track * track, struct snd_t_ctx * ctx);
+extern void snd_t_program_change(const snd_Track * track, int16_t detune, struct snd_t_ctx * ctx);
 extern uint8_t snd_t_stream_take(struct snd_t_ctx * ctx);
 
 #endif // SND_T_H_

@@ -41,7 +41,7 @@ void snd_channel_note_on(uint8_t note, uint8_t i_number, struct snd_channel * pc
     }
   }
   // --------------------------------------------------------
-  const uint16_t pitch = note << 8;
+  const uint16_t pitch = (note << 8) + pch->t.detune;
   // ---- Start pitch glide toward to the given note.
   if (0 <= pch->pitch && pch->pitch_glide) {
     // Turn pitch glide on

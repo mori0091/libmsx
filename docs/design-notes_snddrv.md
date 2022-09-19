@@ -12,8 +12,8 @@
   - Playing sound effects (SFX) during playing background music (BGM).
   - Same data format for BGM and SFX.
   - Two type of sound data formats
-    - `SND_STREAM`  : Interleaved multi-channel single stream, or
-    - `SND_PROGRAM` : Structured music program.
+    - `snd_Stream`  : Interleaved multi-channel single stream, or
+    - `snd_Program` : Structured music program.
 - Expressions
   - Arpeggio
   - Pitch slide
@@ -56,7 +56,7 @@ SNDDRV's sound processing pipeline is consisting of 3 part of components: some
 ```
 +---------------+
 | <<container>> |
-|   snd_Sound   | ---> (M streamer) --------------> music data stream --------> (M decoder) ---> (engine) ---> (sound chip)
+|   snd_Stream  | ---> (M streamer) --------------> music data stream --------> (M decoder) ---> (engine) ---> (sound chip)
 +---------------+         ↑    |                                                     |               ↑           i.e. PSG
                           `----' sequence control   (o) <------- note on/off --------'               |
                                                         (i) <--- I program change ---'               |
@@ -127,14 +127,16 @@ t_stream   := t_line*
 ; A line of track
 t_line     := t_chunk* EOL
 
+; A chunk in a line
 t_chunk    := Reset                     ; stops the sound of the instrument.
             | Note                      ; a note command
             | Exprs                     ; expressions
-            | ExprsNote                 ; expressions with a note command
+            | ExprsN t_chunk            ; expressions followed by t_chunk
 
+; end mark of line, and number of lines to be skipped.
 EOL        := 110b l:5                  ; l: number of lines - 1
 
-Reset      := 1110b _:4
+Reset      := 1110b _:4                 ; reset effect and set volume to 0
 
 Note       := NoteOff                   ; key off
             | NoteOn                    ; key on
@@ -145,7 +147,7 @@ Note       := NoteOff                   ; key off
    Legato  := 0b n:7 0:8                ; n: note # (1..127)
 
 Exprs      := 10_0b n:4 expr{n+1}       ; n: number of expressions - 1
-ExprsNote  := 10_1b n:4 expr{n+1} Note  ; expressions w/ note
+ExprsN     := 10_1b n:4 expr{n+1}       ;
 
    expr    := 0000b x:4                 ; reset effect and set volume to 15-x
             | 0001b x:4 y:4 _:4         ; arpeggio 3 notes (note +0, +x, +y)

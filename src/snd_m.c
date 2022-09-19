@@ -64,10 +64,10 @@ void snd_m__program_change_p(struct snd_m_ctx * ctx, const snd_Program * pg) {
 
 static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Program * pg, const snd_Pattern * p) {
   for (uint8_t ch = 3; ch--; ) {
-    struct snd_channel * pch = &ctx->channels[ch];
     const uint8_t trackNumber = p->channels[ch].track;
     const snd_Track * track = &pg->tracks.data[trackNumber];
-    snd_t_program_change(track, &pch->t);
+    struct snd_t_ctx * tctx = &ctx->channels[ch].t;
+    snd_t_program_change(track, tctx);
   }
 }
 

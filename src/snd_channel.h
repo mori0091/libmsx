@@ -63,7 +63,7 @@ struct snd_channel {
     uint16_t arp_wait;
     uint16_t arp_timer;
     uint16_t arp_vec_data;      // vector of 4bit values (0x0000: off)
-    uint8_t  arp_vec_lenth;     // 3: 3 notes, 4: 4 notes
+    uint8_t  arp_vec_length;    // 3: 3 notes, 4: 4 notes
   };
 };
 

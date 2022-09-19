@@ -141,7 +141,7 @@ void snd_channel_set_fade(int8_t fade, uint16_t speed, struct snd_channel * pch)
 void snd_channel_set_arpeggio(uint8_t wait, uint8_t arp_vec_len, uint16_t arp_vec, struct snd_channel * pch) {
   pch->arp_wait = wait;
   pch->arp_timer = 0;
-  pch->arp_vec_lenth = arp_vec_len;
+  pch->arp_vec_length = arp_vec_len;
   pch->arp_vec_data = arp_vec;
 }
 
@@ -239,13 +239,13 @@ static void snd_channel__update_arpeggio(struct snd_channel * pch) {
   }
   pch->arp_timer = pch->arp_wait;
   pch->arp = (pch->arp_vec_data >> 12) & 15;
-  if (pch->arp_vec_lenth == 4) {
+  if (pch->arp_vec_length == 4) {
     // pch->arp_vec_data &= 0x0fff;
     // pch->arp_vec_data <<= 4;
     // pch->arp_vec_data += pch->arp;
     pch->arp_vec_data = (pch->arp_vec_data << 4) + pch->arp;
   }
-  else if (pch->arp_vec_lenth == 3) {
+  else if (pch->arp_vec_length == 3) {
     // pch->arp_vec_data &= 0x0ff0;
     // pch->arp_vec_data += pch->arp;
     // pch->arp_vec_data <<= 4;

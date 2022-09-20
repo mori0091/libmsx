@@ -68,13 +68,14 @@ static void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch) {
   }
 }
 
+static int16_t snd_channel_calc_pitch(struct snd_channel * pch);
 static uint16_t snd_channel_calc_sw_period(uint16_t pitch, struct snd_channel * pch);
 static uint16_t snd_channel_calc_hw_period(uint16_t pitch, struct snd_channel * pch);
 inline void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period);
 inline void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period);
 
 static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
-  const int16_t pitch = pch->pitch + 256 * pch->arp + pch->p.pitch;
+  const int16_t pitch = snd_channel_calc_pitch(pch);
   uint16_t sw_period = 0;
   uint16_t hw_period = 0;
   switch (pch->i.modulation) {
@@ -109,13 +110,13 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
       break;
   }
   // ---- square wave ---------------------------------
-  if (sw_period) {
-    snd_channel_set_sw_period(ch, sw_period);
-  }
+  snd_channel_set_sw_period(ch, sw_period);
   // ---- saw / triangle wave -------------------------
-  if (hw_period) {
-    snd_channel_set_hw_period(pch, hw_period);
-  }
+  snd_channel_set_hw_period(pch, hw_period);
+}
+
+static int16_t snd_channel_calc_pitch(struct snd_channel * pch) {
+  return pch->pitch + 256 * pch->arp + pch->p.pitch;
 }
 
 static uint16_t snd_channel_calc_sw_period(uint16_t pitch, struct snd_channel * pch) {
@@ -145,16 +146,20 @@ static uint16_t snd_channel_calc_hw_period(uint16_t pitch, struct snd_channel * 
   }
 }
 inline void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period) {
-  ch <<= 1;
-  PSG(ch) = (sw_period     ) & 0xff;
-  ch++;
-  PSG(ch) = (sw_period >> 8) & 0x0f;
+  if (sw_period) {
+    ch <<= 1;
+    PSG(ch) = (sw_period     ) & 0xff;
+    ch++;
+    PSG(ch) = (sw_period >> 8) & 0x0f;
+  }
 }
 inline void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period) {
-  PSG(11) = (hw_period     ) & 0xff;
-  PSG(12) = (hw_period >> 8) & 0xff;
-  if (pch->i.retrig) {
-    // R13 = 8:Saw, 10:Triangle, 12:Inv-Saw, 14:Inv-Triangle
-    PSG(13) = pch->i.waveform;
+  if (hw_period) {
+    PSG(11) = (hw_period     ) & 0xff;
+    PSG(12) = (hw_period >> 8) & 0xff;
+    if (pch->i.retrig) {
+      // R13 = 8:Saw, 10:Triangle, 12:Inv-Saw, 14:Inv-Triangle
+      PSG(13) = pch->i.waveform;
+    }
   }
 }

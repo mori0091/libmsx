@@ -16,7 +16,6 @@
 #include <snddrv.h>
 #include <snd_i_table.h>
 #include <ay_3_8910.h>
-#include <stdint.h>
 
 #include "./screen1.h"
 
@@ -28,11 +27,9 @@ extern const struct snd_i_table * i_tables[];
 // Sound effect "coin" -------------------------------
 // \see 'sfx_coin.c'
 extern const snd_Stream sfx_coin;
-// extern const snd_Program sfx_coin;
 
 // Background music ----------------------------------
 // \see 'bgm_01.c'
-// extern const snd_Stream bgm_01;
 extern const snd_Program bgm_01;
 
 // Volume gauge --------------------------------------

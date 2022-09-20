@@ -24,7 +24,6 @@
 struct snd_i_ctx {
   uint8_t wait;
   uint8_t timer;
-  uint8_t i_number;                   // instrument table number
   const struct snd_i_table * i_table; // pointer to current instrument table
   const uint8_t * next;               // pointer to next lilne of table
   struct {

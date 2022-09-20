@@ -17,16 +17,6 @@
 
 #include "./snd_i.h"
 
-static const uint8_t i_table_00_data[] = {
-  0xff,
-};
-static const struct snd_i_table i_table_00 = {
-  .wait    = 255,
-  .ad_part = i_table_00_data + 0,
-  .s_part  = i_table_00_data + 0,
-  .r_part  = i_table_00_data + 0,
-};
-
 static const uint8_t i_table_01_a[] = {
   0x1e, 0x1c, 0x1a, 0x18, 0x16, 0x14, 0x12, /* 0xff, */
 };
@@ -75,14 +65,12 @@ void snd_i_note_off(struct snd_i_ctx * ctx) {
 
 void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx) {
   // set instrument table number
-  if (i_number_max < index) {
-    index = 0;
+  if (index && index <= i_number_max) {
+    ctx->i_table = i_tables[index-1];
+    ctx->wait = ctx->i_table->wait;
+    ctx->timer = 0;
+    ctx->next = ctx->i_table->ad_part;
   }
-  ctx->i_number = index;
-  ctx->i_table = !index ? &i_table_00 : i_tables[index-1];
-  ctx->wait = ctx->i_table->wait;
-  ctx->timer = 0;
-  ctx->next = ctx->i_table->ad_part;
 }
 
 static uint8_t snd_i__stream_take(struct snd_i_ctx * ctx) {

@@ -76,7 +76,7 @@ struct snd_channel {
  *
  * \param pchs    pointers to 3 channels.
  */
-void snd_channel_synthesis(struct snd_channel * pchs[3]);
+void snd_channel_synthesis(uint8_t ch, struct snd_channel * pch);
 
 // ------------------------------------------------------------------------------------
 

@@ -25,23 +25,19 @@ static void snd_channel_set_tone_flag(uint8_t ch, struct snd_channel * pch);
 static void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch);
 static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch);
 
-void snd_channel_synthesis(struct snd_channel * pchs[3]) {
-  PSG(7) = 0xb8;
-  for (uint8_t ch = 3; ch--; ) {
-    struct snd_channel * pch = pchs[ch];
-    if (pch->pitch < 0 || 4 < pch->i.modulation) {
-      PSG(ch+8) = 0;
-    }
-    else {
-      // noise -------------------------------------------
-      snd_channel_set_noise(ch, pch);
-      // tone on/off -------------------------------------
-      snd_channel_set_tone_flag(ch, pch);
-      // volume or enable hardware envelope --------------
-      snd_channel_set_volume(ch, pch);
-      // modulation --------------------------------------
-      snd_channel_set_modulation(ch, pch);
-    }
+void snd_channel_synthesis(uint8_t ch, struct snd_channel * pch) {
+  if (pch->pitch < 0 || 4 < pch->i.modulation) {
+    PSG(ch+8) = 0;
+  }
+  else {
+    // noise -------------------------------------------
+    snd_channel_set_noise(ch, pch);
+    // tone on/off -------------------------------------
+    snd_channel_set_tone_flag(ch, pch);
+    // volume or enable hardware envelope --------------
+    snd_channel_set_volume(ch, pch);
+    // modulation --------------------------------------
+    snd_channel_set_modulation(ch, pch);
   }
 }
 

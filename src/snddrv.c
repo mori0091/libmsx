@@ -23,6 +23,8 @@
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
 
+#define PSG(reg)                     (ay_3_8910_buffer[(reg)])
+
 static uint8_t volume[3];       // main volume
 static bool paused;
 static bool repeat;
@@ -192,9 +194,9 @@ void snd_play(void) {
 
 static void snd__decode(struct snd_ctx * ctx) {
   if (ctx->m.isEnd) return;
-  ctx->counter += ctx->play_freq;
-  while (vsync_freq <= ctx->counter) {
-    ctx->counter -= vsync_freq;
+  uint16_t counter = ctx->counter + ctx->play_freq;
+  while (vsync_freq <= counter) {
+    counter -= vsync_freq;
     // ----
     snd_m__decode(&ctx->m);
     struct snd_channel * pch = &ctx->m.channels[0];
@@ -204,6 +206,7 @@ static void snd__decode(struct snd_ctx * ctx) {
       snd_p__decode(&pch->p);
     }
   }
+  ctx->counter = counter;
 }
 
 // ------------------------------------------------
@@ -214,14 +217,15 @@ inline bool is_playing(struct snd_ctx * ctx, uint8_t ch) {
 }
 
 static void snd__synthesis(void) {
-  static struct snd_channel * pchs[3];
+  PSG(7) = 0xb8;
   for (uint8_t ch = 3; ch--;) {
+    struct snd_channel * pch;
     if (is_playing(&snd_sfx, ch)) {
-      pchs[ch] = &snd_sfx.m.channels[ch];
+      pch = &snd_sfx.m.channels[ch];
     }
     else {
-      pchs[ch] = &snd_bgm.m.channels[ch];
+      pch = &snd_bgm.m.channels[ch];
     }
+    snd_channel_synthesis(ch, pch);
   }
-  snd_channel_synthesis(pchs);
 }

@@ -207,21 +207,26 @@ static void snd__decode(struct snd_ctx * ctx) {
 
 // ------------------------------------------------
 
-inline bool is_playing(struct snd_ctx * ctx, uint8_t ch) {
-  struct snd_channel * pch = &ctx->m.channels[ch];
-  return !ctx->m.isEnd && 0 <= pch->pitch && !!pch->volume;
-}
+// inline bool is_playing(struct snd_ctx * ctx, uint8_t ch) {
+//   struct snd_channel * pch = &ctx->m.channels[ch];
+//   return !ctx->m.isEnd && 0 <= pch->pitch && !!pch->volume;
+// }
 
 static void snd__synthesis(void) {
   PSG(7) = 0xb8;
-  for (uint8_t ch = 3; ch--;) {
-    struct snd_channel * pch;
-    if (is_playing(&snd_sfx, ch)) {
-      pch = &snd_sfx.m.channels[ch];
+  if (snd_sfx.m.isEnd) {
+    struct snd_channel * pch = &snd_bgm.m.channels[2];
+    for (uint8_t ch = 3; ch--; pch--) {
+      snd_channel_synthesis(ch, pch);
     }
-    else {
-      pch = &snd_bgm.m.channels[ch];
+  }
+  else {
+    for (uint8_t ch = 3; ch--;) {
+      struct snd_channel * pch = &snd_sfx.m.channels[ch];
+      if (pch->pitch < 0 || !pch->volume) {
+        pch = &snd_bgm.m.channels[ch];
+      }
+      snd_channel_synthesis(ch, pch);
     }
-    snd_channel_synthesis(ch, pch);
   }
 }

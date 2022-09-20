@@ -17,35 +17,11 @@
 
 #include "./snd_i.h"
 
-static const uint8_t i_table_01_a[] = {
-  0x1e, 0x1c, 0x1a, 0x18, 0x16, 0x14, 0x12, /* 0xff, */
-};
-static const uint8_t i_table_01_s[] = {
-  0x10, 0xff,
-};
-static const uint8_t i_table_01_r[] = {
-  0x0e, 0x0c, 0x0a, 0x08, 0x06, 0x04, 0x02, 0x00, 0xff,
-};
-static const struct snd_i_table i_table_01 = {
-  .wait    = 1,
-  .ad_part = i_table_01_a,
-  .s_part  = i_table_01_s,
-  .r_part  = i_table_01_r,
-};
-
-static const struct snd_i_table * default_i_tables[] = {
-  &i_table_01,
-};
-
 static const struct snd_i_table ** i_tables;
 static uint8_t i_number_max;
 
 void snd_i__set_i_tables(uint8_t n, const struct snd_i_table ** i_tables_) {
-  if (!n || !i_tables_) {
-    i_tables = default_i_tables;
-    i_number_max = 1;
-  }
-  else {
+  if (i_tables_) {
     i_tables = i_tables_;
     i_number_max = n;
   }

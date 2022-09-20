@@ -62,4 +62,19 @@ struct snd_i_table {
  */
 void snd_set_i_tables(uint8_t n, const struct snd_i_table ** i_tables);
 
+/**
+ * Default instrument (timbre) tables.
+ *
+ * Predefined default instrument tables that contains only one instrument.
+ *
+ * If there is no user defined i_tables, you can use this predefined tables
+ * instead as follows:
+ * ~~~c
+ * snd_set_i_tables(1, snd_default_i_tables);
+ * ~~~
+ *
+ * \sa snd_set_i_tables()
+ */
+extern const struct snd_i_table * snd_default_i_tables[];
+
 #endif // SND_I_TABLE_H_

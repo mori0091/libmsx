@@ -45,8 +45,7 @@ static void snd__set_stream(struct snd_ctx * ctx, const snd_Stream * data) {
   snd__init_ctx(ctx);
   snd_m__program_change_s(&ctx->m, data);
   if (data && data->replayRate) {
-    ctx->song_freq = data->replayRate;
-    ctx->play_freq = data->replayRate;
+    ctx->song_freq = ctx->play_freq = data->replayRate;
   }
 }
 
@@ -54,8 +53,7 @@ static void snd__set_program(struct snd_ctx * ctx, const snd_Program * data) {
   snd__init_ctx(ctx);
   snd_m__program_change_p(&ctx->m, data);
   if (data && data->replayRate) {
-    ctx->song_freq = data->replayRate;
-    ctx->play_freq = data->replayRate;
+    ctx->song_freq = ctx->play_freq = data->replayRate;
   }
 }
 

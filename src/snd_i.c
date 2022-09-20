@@ -99,6 +99,10 @@ static uint8_t snd_i__stream_take(struct snd_i_ctx * ctx) {
   return x;
 }
 
+static uint16_t snd_i__stream_take_u16(struct snd_i_ctx * ctx) {
+  return (snd_i__stream_take(ctx) << 8) + snd_i__stream_take(ctx);
+}
+
 static void snd_i__init_state(struct snd_i_ctx * ctx) {
   ctx->volume = 0;
   ctx->tone_on = true;
@@ -157,20 +161,14 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
     if (!(x & 1)) {
       x >>= 1;
       if (!(x & 3)) {
-        ctx->sw_period
-          = (snd_i__stream_take(ctx) << 8)
-          + snd_i__stream_take(ctx);
+        ctx->sw_period = snd_i__stream_take_u16(ctx);
         continue;
       }
       if (x & 1) {
-        ctx->sw_period_delta
-          = (snd_i__stream_take(ctx) << 8)
-          + snd_i__stream_take(ctx);
+        ctx->sw_period_delta = snd_i__stream_take_u16(ctx);
       }
       if (x & 2) {
-        ctx->sw_pitch
-          = (snd_i__stream_take(ctx) << 8)
-          + snd_i__stream_take(ctx);
+        ctx->sw_pitch = snd_i__stream_take_u16(ctx);
       }
       continue;
     }
@@ -178,20 +176,14 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
     if (!(x & 1)) {
       x >>= 1;
       if (!(x & 3)) {
-        ctx->hw_period
-          = (snd_i__stream_take(ctx) << 8)
-          + snd_i__stream_take(ctx);
+        ctx->hw_period = snd_i__stream_take_u16(ctx);
         continue;
       }
       if (x & 1) {
-        ctx->hw_period_delta
-          = (snd_i__stream_take(ctx) << 8)
-          + snd_i__stream_take(ctx);
+        ctx->hw_period_delta = snd_i__stream_take_u16(ctx);
       }
       if (x & 2) {
-        ctx->hw_pitch
-          = (snd_i__stream_take(ctx) << 8)
-          + snd_i__stream_take(ctx);
+        ctx->hw_pitch = snd_i__stream_take_u16(ctx);
       }
       continue;
     }

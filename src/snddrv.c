@@ -114,7 +114,6 @@ void snd_set_bgm_stream(const snd_Stream * data) {
 }
 
 void snd_set_sfx_stream(const snd_Stream * data) {
-  (void)data;
   DI();
   snd__set_stream(&snd_sfx, data);
   EI();
@@ -127,7 +126,6 @@ void snd_set_bgm_program(const snd_Program * data) {
 }
 
 void snd_set_sfx_program(const snd_Program * data) {
-  (void)data;
   DI();
   snd__set_program(&snd_sfx, data);
   EI();

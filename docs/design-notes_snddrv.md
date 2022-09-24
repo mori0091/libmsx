@@ -113,120 +113,120 @@ This notation itself is described in BNF notation.
 The following is the sound data format for **music streams** and **track
 streams** written in the notation defined in the previous section.
 
+## Music stream
 ```
 ; Music stream
 m_stream   := ((channel t_chunk)* wait)* EOM
 
-wait       := 0b w:7                    ; w: wait count [ticks]
-channel    := 10b c:6                   ; c: channel # (0..63)
-EOM        := 1111b 1111b               ; end mark
+wait       := 0b w:7              ; w: wait count [ticks]
+channel    := 10b c:6             ; c: channel # (0..63)
+EOM        := 1111b 1111b         ; end mark
+```
 
+## Track stream
+```
 ; Track stream
 t_stream   := t_line*
 
 ; A line of track
 t_line     := t_chunk* EOL
 
-; A chunk in a line
-t_chunk    := Reset                     ; stops the sound of the instrument.
-            | Note                      ; a note command
-            | Exprs                     ; expressions
-            | ExprsN t_chunk            ; expressions followed by t_chunk
-
 ; end mark of line, and number of lines to be skipped.
-EOL        := 110b l:5                  ; l: number of lines - 1
+EOL        := 110b l:5            ; l: number of lines to be skipped (0..31)
+```
 
-Reset      := 1110b _:4                 ; reset effect and set volume to 0
+## Chunk of stream
+```
+; A chunk of stream
+t_chunk    := Reset               ; stops the sound of the instrument.
+            | Note                ; a note command
+            | Exprs               ; expressions
+            | ExprsN t_chunk      ; expressions followed by t_chunk
 
-Note       := NoteOff                   ; key off
-            | NoteOn                    ; key on
-            | Legato                    ; switch note w/o key on
+Reset      := 1110b _:4           ; reset effect and set volume to 0
+
+Note       := NoteOff             ; key off
+            | NoteOn              ; key on
+            | Legato              ; switch note w/o key on
 
    NoteOff := 0:8
-   NoteOn  := 0b n:7 i:8                ; n: note # (1..127), i: instrument # (1..255)
-   Legato  := 0b n:7 0:8                ; n: note # (1..127)
+   NoteOn  := 0b n:7 i:8          ; n: note # (1..127), i: instrument # (1..255)
+   Legato  := 0b n:7 0:8          ; n: note # (1..127)
 
-Exprs      := 10_0b n:4 expr{n+1}       ; n: number of expressions - 1
-ExprsN     := 10_1b n:4 expr{n+1}       ;
+Exprs      := 10_0b n:4 expr{n+1} ; n: number of expressions - 1
+ExprsN     := 10_1b n:4 expr{n+1} ;
 
-   expr    := 0000b x:4                 ; reset effect and set volume to 15-x
-            | 0001b x:4 y:4 _:4         ; arpeggio 3 notes (note +0, +x, +y)
-            | 0010b x:4 y:4 z:4         ; arpeggio 4 notes (note +0, +x, +y, +z)
-            | 0011b x:4 y:4 z:4         ; pitch up         (period -xyz/256 for each some ticks)
-            | 0100b x:4 y:4 z:4         ; pitch down       (period +xyz/256 for each some ticks)
-            | 0101b x:4 y:4 z:4         ; fast pitch up    (period -xyz/16 for each tick)
-            | 0110b x:4 y:4 z:4         ; fast pitch down  (period +xyz/16 for each tick)
-            | 0111b x:4 y:4 z:4         ; pitch glide      (pitch ±1 for each xyz+1 ticks)
-            | 1000b x:4                 ; set volume to x  (volume ← x)
-            | 1001b x:4 y:4 z:4         ; fade in          (volume +xyz/128 for each ticks)
-            | 1010b x:4 y:4 z:4         ; fade out         (volume -xyz/128 for each ticks)
-            | 1011b x:4 y:4 _:4         ; force the speed of an instrument (1 step for each xy+1 ticks)
-            | 1100b x:4 y:4 _:4         ; force the speed of an arpeggio   (1 step for each xy+1 ticks)
-            | 1101b x:4 y:4 _:4         ; force the speed of a pitch bend  (1 step for each xy+1 ticks)
-            | 1110b x:4 y:4 _:4         ; set arpeggio table # to xy (1..255) or turn arpeggio off (xy = 0)
-            | 1111b x:4 y:4 _:4         ; set pitch bend table # to xy (1..255) or turn pitch bend off (xy = 0)
+   expr    := 0000b x:4           ; reset effect and set volume to 15-x
+            | 0001b x:4 y:4 _:4   ; arpeggio 3 notes (note +0, +x, +y)
+            | 0010b x:4 y:4 z:4   ; arpeggio 4 notes (note +0, +x, +y, +z)
+            | 0011b x:4 y:4 z:4   ; pitch up         (period -xyz/256 for each ticks)
+            | 0100b x:4 y:4 z:4   ; pitch down       (period +xyz/256 for each ticks)
+            | 0101b x:4 y:4 z:4   ; fast pitch up    (period -xyz/16 for each tick)
+            | 0110b x:4 y:4 z:4   ; fast pitch down  (period +xyz/16 for each tick)
+            | 0111b x:4 y:4 z:4   ; pitch glide      (pitch ±1 for each xyz+1 ticks)
+            | 1000b x:4           ; set volume to x  (volume ← x)
+            | 1001b x:4 y:4 z:4   ; fade in          (volume +xyz/128 for each ticks)
+            | 1010b x:4 y:4 z:4   ; fade out         (volume -xyz/128 for each ticks)
+            | 1011b x:4 y:4 _:4   ; force the speed of an instrument (1 step for each xy+1 ticks)
+            | 1100b x:4 y:4 _:4   ; force the speed of an arpeggio   (1 step for each xy+1 ticks)
+            | 1101b x:4 y:4 _:4   ; force the speed of a pitch bend  (1 step for each xy+1 ticks)
+            | 1110b x:4 y:4 _:4   ; set arpeggio table # to xy (1..255) or turn arpeggio off (xy = 0)
+            | 1111b x:4 y:4 _:4   ; set pitch bend table # to xy (1..255) or turn pitch bend off (xy = 0)
 ```
+
 
 # Instrument (timbre) table
 
 ```
 ; list of instrument tables
-i_tables := i_table_addr*
+i_tables := address_of_i_table+
 
 ; an instrument table
-i_table  := i_header i_body
-i_header := AD_part_addr S_part_addr R_part_addr
-i_body   := AD_part S_part R_part
-AD_part  := i_chunk+
-S_part   := i_chunk* EOM
-R_part   := i_chunk* EOM
+i_table  := address_of_AD_part
+            address_of_S_part
+            address_of_R_part
+AD_part  := i_chunk* EOM          ; Attack to Decay phase
+S_part   := i_chunk* EOM          ; Sustain phase
+R_part   := i_chunk* EOM          ; Release phase
 
-i_stream := i_chunk* EOM
-i_chunk  := Ps? N? V
-          | Ps? Ph? N? R? H
+i_chunk  := N? Ps? (V | (R? Ph? H))
+EOM      := 11111111b
+
+; Volume
+V  := _:3 v:4 0b                  ; (___vvvv0) v = volume (0..15)
+
+; Noise generator and Mixer
+N  := n:5 t:1 01b                 ; (nnnnnt01) n = noise (0..31), t = mix_tone?
+
+; Hardware envelope and Modulation type
+H  := w:2 m:2 T:1 011b            ; (wwmmT011) w = waveform, m = modulation, T = retrig?
+  ; Waveform of hardware envelope
+  w := 00b ; Saw tooth (8)
+    |  01b ; Triangle (10)
+    |  10b ; Inverse Saw tooth (12)
+    |  11b ; Inverse Triangle (14)
+  ; Modulation type
+  m := 00b ; Hard only
+    |  01b ; Soft to Hard
+    |  10b ; Hard to Soft
+    |  11b ; Soft and Hard
+  ; Retrigger?
+  T := 0b  ; don't retrigger the hardware envelope
+    |  1b  ; retrigger the hardware envelope
+
+; Coefficients used in wavelength calculations for square wave and hardware envelope modulation.
+R  := _:1 r:3 0111b                           ; (_rrr0111) r = ratio (0..7)
+
+Ps := _00b 01111b period:16                   ; (_pa01111 period)
+   |  _01b 01111b period_delta:16             ; (_pa01111 period_delta)
+   |  _10b 01111b pitch:16                    ; (_pa01111 pitch)
+   |  _11b 01111b period_delta:16 pitch:16    ; (_pa01111 period_delta pitch)
+
+Ph := 00b 011111b period:16                   ; (pa011111 period)
+   |  01b 011111b period_delta:16             ; (pa011111 period_delta)
+   |  10b 011111b pitch:16                    ; (pa011111 pitch)
+   |  11b 011111b period_delta:16 pitch:16    ; (pa011111 period_delta pitch)
 ```
-
-  - V  
-    `___vvvv0` volume
-
-  - N  
-    `nnnnnt01` noise mix\_tone?
-
-  - H  
-    `wwmmT011` waveform modulation retrig.?
-    
-      - ww (waveform)
-          - 00 : Saw (8)
-          - 01 : Triangle (10)
-          - 10 : Inv Saw (12)
-          - 11 : Inv Triangle (14)
-      - mm (modulation)
-          - 00 : Hard only
-          - 01 : Soft to Hard
-          - 10 : Hard to Soft
-          - 11 : Soft + Hard
-
-  - R  
-    `_rrr0111` ratio
-
-  - Ps  
-    `_pa01111` pitch? period\_delta?
-    
-      - if pa == 01 period\_delta:16
-      - else if pa == 10 pitch:16
-      - else if pa == 11 period\_delta:16 pitch:16
-      - else period:16
-
-  - Ph  
-    `pa011111` pitch? period\_delta?
-    
-      - if pa == 01 period\_delta:16
-      - else if pa == 10 pitch:16
-      - else if pa == 11 period\_delta:16 pitch:16
-      - else period:16
-
-  - EOM  
-    `11111111`
 
 | OSC    | SW EG   | HW EG   | NG       | \+0        | \+1        | \+2        |
 |--------|---------|---------|----------|------------|------------|------------|

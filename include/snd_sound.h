@@ -100,7 +100,7 @@ typedef struct snd_Pattern    snd_Pattern;
  */
 #define vec_fields(T)                               \
   /** number of elements */                         \
-  const uint8_t length;                             \
+  const size_t length;                              \
   /** pointer to an array of `const T` */           \
   const T * data
 

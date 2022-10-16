@@ -20,6 +20,13 @@
 static const struct snd_i_table ** i_tables;
 static uint8_t i_number_max;
 
+static const uint8_t EMPTY_STREAM[] = {255};
+static const struct snd_i_table i_table0 = {
+  .ad_part = EMPTY_STREAM,
+  .s_part  = EMPTY_STREAM,
+  .r_part  = EMPTY_STREAM,
+};
+
 void snd_i__set_i_tables(uint8_t n, const struct snd_i_table ** i_tables_) {
   if (i_tables_) {
     i_tables = i_tables_;
@@ -47,6 +54,12 @@ void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx) {
     ctx->timer = 0;
     ctx->next = ctx->i_table->ad_part;
   }
+  else {
+    ctx->i_table = &i_table0;
+    ctx->wait = 0;
+    ctx->timer = 0;
+    ctx->next = i_table0.r_part;
+  }
 }
 
 static uint8_t snd_i__stream_take(struct snd_i_ctx * ctx) {
@@ -64,7 +77,14 @@ static uint8_t snd_i__stream_take(struct snd_i_ctx * ctx) {
 }
 
 static uint16_t snd_i__stream_take_u16(struct snd_i_ctx * ctx) {
-  return (snd_i__stream_take(ctx) << 8) + snd_i__stream_take(ctx);
+  /* return (snd_i__stream_take(ctx) << 8) + snd_i__stream_take(ctx); */
+  uint8_t x = *ctx->next++;
+  uint8_t y = *ctx->next++;
+  return (x << 8) + y;
+}
+
+inline int16_t snd_i__stream_take_i16(struct snd_i_ctx * ctx) {
+  return (int16_t)snd_i__stream_take_u16(ctx);
 }
 
 static void snd_i__init_state(struct snd_i_ctx * ctx) {
@@ -73,7 +93,7 @@ static void snd_i__init_state(struct snd_i_ctx * ctx) {
   ctx->noise_fdr = 0;
   ctx->retrig = false;
   ctx->modulation = 0;
-  ctx->waveform = 8;
+  ctx->waveform = 0;
   ctx->ratio = 4;
   ctx->sw_period = 0;
   ctx->sw_period_delta = 0;
@@ -89,6 +109,7 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
     return;
   }
   ctx->timer = ctx->wait;
+  uint8_t waveform = ctx->waveform;
   snd_i__init_state(ctx);
   for (;;) {
     uint8_t x = snd_i__stream_take(ctx);
@@ -108,15 +129,18 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
     x >>= 1;
     if (!(x & 1)) {
       x >>= 1;
-      ctx->retrig = x & 1;
-      x >>= 1;
       ctx->modulation = (x & 3) + 1;
       x >>= 2;
-      ctx->waveform = (x & 3) * 2 + 8;
+      ctx->waveform = (x & 7) + 8;
+      if (ctx->waveform != waveform) {
+        ctx->retrig = true;
+      }
       return;
     }
     x >>= 1;
     if (!(x & 1)) {
+      x >>= 1;
+      ctx->retrig = x & 1;
       x >>= 1;
       ctx->ratio = x & 7;
       continue;
@@ -129,10 +153,10 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
         continue;
       }
       if (x & 1) {
-        ctx->sw_period_delta = snd_i__stream_take_u16(ctx);
+        ctx->sw_period_delta = snd_i__stream_take_i16(ctx);
       }
       if (x & 2) {
-        ctx->sw_pitch = snd_i__stream_take_u16(ctx);
+        ctx->sw_pitch = snd_i__stream_take_i16(ctx);
       }
       continue;
     }
@@ -144,10 +168,10 @@ void snd_i__decode(struct snd_i_ctx * ctx) {
         continue;
       }
       if (x & 1) {
-        ctx->hw_period_delta = snd_i__stream_take_u16(ctx);
+        ctx->hw_period_delta = snd_i__stream_take_i16(ctx);
       }
       if (x & 2) {
-        ctx->hw_pitch = snd_i__stream_take_u16(ctx);
+        ctx->hw_pitch = snd_i__stream_take_i16(ctx);
       }
       continue;
     }

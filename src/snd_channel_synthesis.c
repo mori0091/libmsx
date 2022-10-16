@@ -69,8 +69,8 @@ static void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch) {
 }
 
 static int16_t snd_channel_calc_pitch(struct snd_channel * pch);
-static uint16_t snd_channel_calc_sw_period(uint16_t pitch, struct snd_channel * pch);
-static uint16_t snd_channel_calc_hw_period(uint16_t pitch, struct snd_channel * pch);
+static uint16_t snd_channel_calc_sw_period(int16_t pitch, struct snd_channel * pch);
+static uint16_t snd_channel_calc_hw_period(int16_t pitch, struct snd_channel * pch);
 inline void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period);
 inline void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period);
 
@@ -119,7 +119,7 @@ static int16_t snd_channel_calc_pitch(struct snd_channel * pch) {
   return pch->pitch + 256 * pch->arp + pch->p.pitch;
 }
 
-static uint16_t snd_channel_calc_sw_period(uint16_t pitch, struct snd_channel * pch) {
+static uint16_t snd_channel_calc_sw_period(int16_t pitch, struct snd_channel * pch) {
   if (!pch->i.sw_period) {
     return
       snd_osc_period(pitch + pch->i.sw_pitch)
@@ -132,7 +132,7 @@ static uint16_t snd_channel_calc_sw_period(uint16_t pitch, struct snd_channel * 
       + pch->period_offset;
   }
 }
-static uint16_t snd_channel_calc_hw_period(uint16_t pitch, struct snd_channel * pch) {
+static uint16_t snd_channel_calc_hw_period(int16_t pitch, struct snd_channel * pch) {
   if (!pch->i.hw_period) {
     return
       (snd_osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio)

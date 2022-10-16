@@ -22,7 +22,13 @@
 #include "../include/snd_sound.h"
 #include "./snd_channel.h"
 
+struct snd_u8_ctx {
+  uint8_t skip_count;           // number of subsequent lines to skip
+  const uint8_t * next;         // pointer to the next octet of the stream.
+};
+
 struct snd_m_ctx {
+  uint8_t wait;
   uint8_t timer;
   bool isEnd;
   // ----
@@ -35,6 +41,7 @@ struct snd_m_ctx {
     const snd_Program * music;  // a music program
     uint8_t pindex;             // current pattern index (0..)
     uint8_t line;               // current line number (0..height-1)
+    struct snd_u8_ctx spd;      // context for speed track
   };
   // ----
   struct snd_channel channels[3];

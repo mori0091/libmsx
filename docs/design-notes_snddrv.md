@@ -138,12 +138,12 @@ EOL        := 110b l:5            ; l: number of lines to be skipped (0..31)
 ## Chunk of stream
 ```
 ; A chunk of stream
-t_chunk    := Reset               ; stops the sound of the instrument.
+t_chunk    := RST                 ; stops the sound of the instrument.
             | Note                ; a note command
             | Exprs               ; expressions
             | ExprsN t_chunk      ; expressions followed by t_chunk
 
-Reset      := 1110b _:4           ; reset effect and set volume to 0
+RST        := 1110b _:4           ; reset effect and set volume to 0
 
 Note       := NoteOff             ; key off
             | NoteOn              ; key on
@@ -199,23 +199,24 @@ V  := _:3 v:4 0b                  ; (___vvvv0) v = volume (0..15)
 N  := n:5 t:1 01b                 ; (nnnnnt01) n = noise (0..31), t = mix_tone?
 
 ; Hardware envelope and Modulation type
-H  := w:2 m:2 T:1 011b            ; (wwmmT011) w = waveform, m = modulation, T = retrig?
+H  := w:3 m:2 011b                ; (wwmmT011) w = waveform, m = modulation
   ; Waveform of hardware envelope
-  w := 00b ; Saw tooth (8)
-    |  01b ; Triangle (10)
-    |  10b ; Inverse Saw tooth (12)
-    |  11b ; Inverse Triangle (14)
+  w := 000b ; ( 8) ◣◣◣◣ Saw tooth
+    |  001b ; ( 9) ◣___
+    |  010b ; (10) ◣◢◣◢ Triangle
+    |  011b ; (11) ◣■■■
+    |  100b ; (12) ◢◢◢◢ Inverse Saw tooth
+    |  101b ; (13) ◢■■■
+    |  110b ; (14) ◢◣◢◣ Inverse Triangle
+    |  111b ; (15) ◢___
   ; Modulation type
   m := 00b ; Hard only
     |  01b ; Soft to Hard
     |  10b ; Hard to Soft
     |  11b ; Soft and Hard
-  ; Retrigger?
-  T := 0b  ; don't retrigger the hardware envelope
-    |  1b  ; retrigger the hardware envelope
 
 ; Coefficients used in wavelength calculations for square wave and hardware envelope modulation.
-R  := _:1 r:3 0111b                           ; (_rrr0111) r = ratio (0..7)
+R  := r:3 T:1 0111b                           ; (rrrT0111) r = ratio (0..7) T = retrigger?
 
 Ps := _00b 01111b period:16                   ; (_pa01111 period)
    |  _01b 01111b period_delta:16             ; (_pa01111 period_delta)
@@ -233,14 +234,14 @@ Ph := 00b 011111b period:16                   ; (pa011111 period)
 | Square | x SW EG |         |          | `___vvvv0` |            |            |
 |        | x SW EG |         | \+ Noise | `nnnnn001` | `___vvvv0` |            |
 | Square | x SW EG |         | \+ Noise | `nnnnn101` | `___vvvv0` |            |
-|        |         | x HW EG |          | `wwmmT011` |            |            |
-|        |         | x HW EG |          | `_rrr0111` | `wwmmT011` |            |
-|        |         | x HW EG | \+ Noise | `nnnnn_01` | `wwmmT011` |            |
-|        |         | x HW EG | \+ Noise | `nnnnn_01` | `_rrr0111` | `wwmmT011` |
-| Square |         | x HW EG |          |            | `wwmmT011` |            |
-| Square |         | x HW EG |          | `_rrr0111` | `wwmmT011` |            |
-| Square |         | x HW EG | \+ Noise | `nnnnn_01` | `wwmmT011` |            |
-| Square |         | x HW EG | \+ Noise | `nnnnn_01` | `_rrr0111` | `wwmmT011` |
+|        |         | x HW EG |          | `wwwmm011` |            |            |
+|        |         | x HW EG |          | `rrrT0111` | `wwwmm011` |            |
+|        |         | x HW EG | \+ Noise | `nnnnn101` | `wwwmm011` |            |
+|        |         | x HW EG | \+ Noise | `nnnnn101` | `rrrT0111` | `wwwmm011` |
+| Square |         | x HW EG |          |            | `wwwmm011` |            |
+| Square |         | x HW EG |          | `rrrT0111` | `wwwmm011` |            |
+| Square |         | x HW EG | \+ Noise | `nnnnn101` | `wwwmm011` |            |
+| Square |         | x HW EG | \+ Noise | `nnnnn101` | `rrrT0111` | `wwwmm011` |
 
 - OSC  
   Oscillator  

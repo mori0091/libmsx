@@ -23,7 +23,7 @@ void snd_m__init(struct snd_m_ctx * ctx) {
   for (uint8_t ch = 3; ch--; pch++) {
     snd_i__program_change(1, &pch->i); // instrument #1
     snd_channel_reset_expression(pch);
-    pch->volume = 0;
+    pch->volume = 15;
     pch->pitch  = -1;
   }
 }
@@ -58,6 +58,7 @@ void snd_m__program_change_p(struct snd_m_ctx * ctx, const snd_Program * pg) {
   else {
     ctx->music = pg;
     ctx->isEnd = false;
+    ctx->wait = pg->initialSpeed;
     snd_m__set_Pattern(ctx, pg, &pg->patterns.data[0]);
   }
 }
@@ -69,6 +70,13 @@ static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Program * pg, c
     const snd_Track * track = &pg->tracks.data[trackNumber];
     struct snd_t_ctx * tctx = &ctx->channels[ch].t;
     snd_t_program_change(track, detune, tctx);
+  }
+  const uint8_t speedTrackNumber = p->specialChannels.speedTrack;
+  if (speedTrackNumber < pg->speedTracks.length) {
+    const snd_SpeedTrack * speedTrack = &pg->speedTracks.data[speedTrackNumber];
+    ctx->spd.next = speedTrack->data;
+    ctx->spd.skip_count = 0;
+    ctx->timer = 0;
   }
 }
 
@@ -162,14 +170,32 @@ static void snd_m__decode_program(struct snd_m_ctx * ctx) {
     }
   }
   // ----
-  const uint8_t speedTrackNumber = p->specialChannels.speedTrack;
-  if (speedTrackNumber < pg->speedTracks.length) {
-    const snd_SpeedTrack * speedTrack = &pg->speedTracks.data[speedTrackNumber];
-    ctx->timer = speedTrack->data[ctx->line % speedTrack->length];
+  if (ctx->spd.next) {
+    if (ctx->spd.skip_count) {
+      ctx->spd.skip_count--;
+    }
+    else {
+      // decode speed track
+      for (;;) {
+        uint8_t x = *ctx->spd.next;
+        if (x == 0xff) {
+          // EOM
+          break;
+        }
+        ctx->spd.next++;
+        if (0xc0 <= x) {
+          // EOL(skipLines)
+          ctx->spd.skip_count = x & 0x3f;
+          break;
+        }
+        else {
+          // change speed
+          ctx->wait = x;
+        }
+      }
+    }
   }
-  else {
-    ctx->timer = pg->initialSpeed;
-  }
+  ctx->timer = ctx->wait;
 
   // Proceed to the next line of the current pattern
   ctx->line++;

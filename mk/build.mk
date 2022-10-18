@@ -55,16 +55,19 @@ CFLAGS ?=
 CFLAGS += -mz80 -MMD
 CFLAGS += -I ${LIBMSX_HOME}/include
 
+LIBMSX = ${LIBMSX_HOME}/lib/libmsx.lib
+
 LIBS ?=
+LIBS += ${LIBMSX}
 
 LDFLAGS ?=
 LDFLAGS += --no-std-crt0 --code-loc ${ADDR_CODE} --data-loc ${ADDR_DATA}
 LDFLAGS += -L ${LIBMSX_HOME}/lib
 
 LDLIBS ?=
-LDLIBS += -llibmsx
+# LDLIBS += -llibmsx
 
-build: libmsx ${TARGETS}
+build: ${TARGETS}
 
 clean:
 	@rm -f ${TARGETS} ${OBJS} ${DEPS}
@@ -79,6 +82,8 @@ libmsx:
 	@${info LIBMSX_HOME shall be defined as follows:}
 	@${info LIBMSX_HOME = <path to top of libmsx>}
 endif
+
+${CRT0} ${LIBMSX}: libmsx
 
 %.rom: %.ihx
 	@${info [Build]	$@}

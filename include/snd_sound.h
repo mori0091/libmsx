@@ -21,35 +21,14 @@
 #include <stddef.h>
 
 /**
- * A music stream.
+ * Container of a music data.
  *
- * A `snd_Stream` object represents a non-structured single sound stream.
- * - Pros. :\n
- *   The replayer can read octets one by one until it reaches end of stream.\n
- *   (faster to process)
- * - Cons. : \n
- *   If the music was long or complex, the size of stream may be large.\n
- *   (larger memory consumption)
+ * A `snd_Program` object represents one music item.
  *
- * So it is used for container of a sound effect, typically.
- */
-typedef struct snd_Stream     snd_Stream;
-
-/**
- * A music program.
- *
- * A `snd_Program` object represents a structured music data.
- * - Pros. :\n
- *   Can compact long or complex multiple pieces of music.
- * - Cons. :\n
- *   Overhead in terms of processing time and memory space.
- *
- * So it is used for container of a background music, typically.
- *
- * A `snd_Program` contains:
- * - one music item,
+ * A `snd_Program` object contains:
  * - all tracks refered in the music item, and
  * - all special tracks refered in the music item.
+ * - a series of patterns that defines which track is played on which channel.
  */
 typedef struct snd_Program    snd_Program;
 
@@ -105,65 +84,14 @@ typedef struct snd_Pattern    snd_Pattern;
   const T * data
 
 /**
- * A music stream.
+ * Container of a sound data.
  *
- * A `snd_Stream` object represents a non-structured single sound stream.
- * - Pros. :\n
- *   The replayer can read octets one by one until it reaches end of stream.\n
- *   (faster to process)
- * - Cons. : \n
- *   If the music was long or complex, the size of stream may be large.\n
- *   (larger memory consumption)
+ * A `snd_Program` object represents one music item.
  *
- * So it is used for container of a sound effect, typically.
- *
- * Ex. Defining a music stream `music` as of snd_Stream type.
- * ~~~c
- * static const uint8_t stream[] = {
- *   // stream data...
- *   0xff, // end mark
- * };
- * const snd_Stream music = {
- *   .replayRate = 60,  // [Hz]
- *   .stream = stream,
- * };
- * ~~~
- *
- * \todo Write documents for defining of music stream.
- */
-struct snd_Stream {
-  /**
-   * Version number of this data format to be used for future compatibility.
-   *
-   * \note Currently not used, the `format_version` must be `0`.
-   */
-  const uint8_t       format_version;
-  /**
-   * Default player frequency that composer expecting, in [Hz].
-   */
-  const uint8_t       replayRate;
-  // ---------------------------------------------------------------------
-  /**
-   * Pointer to a stream data that ends with 0xff.
-   */
-  const uint8_t * const stream;
-};
-
-/**
- * A music program.
- *
- * A `snd_Program` object represents a structured music data.
- * - Pros. :\n
- *   Can compact long or complex multiple pieces of music.
- * - Cons. :\n
- *   Overhead in terms of processing time and memory space.
- *
- * So it is used for container of a background music, typically.
- *
- * A `snd_Program` contains:
- * - one music item,
+ * A `snd_Program` object contains:
  * - all tracks refered in the music item, and
  * - all special tracks refered in the music item.
+ * - a series of patterns that defines which track is played on which channel.
  *
  * Ex. Defining a music program `music` as of snd_Program type.
  * ~~~c
@@ -185,7 +113,6 @@ struct snd_Stream {
  * };
  * ~~~
  *
- * \todo Write documents for defining of music program.
  */
 struct snd_Program {
   /**

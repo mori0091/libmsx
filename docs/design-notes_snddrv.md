@@ -6,21 +6,18 @@
   - PSG (AY-3-8910)
 - Functionallity
   - NTSC (60Hz), PAL/SECAM (50Hz), auto detect and auto adjust.
-  - Available to specify default playing frequency that composer expecting.
+  - Available to specify default playing frequency that the sound data author expecting.
   - Run-time replay speed/frequency control.
   - Stop, Start, Pause, Resume, Auto-Repeat.
   - Playing sound effects (SFX) during playing background music (BGM).
   - Same data format for BGM and SFX.
-  - Two type of sound data formats
-    - `snd_Stream`  : Interleaved multi-channel single stream, or
-    - `snd_Program` : Structured music program.
 - Expressions
   - Arpeggio
   - Pitch slide
   - Pitch glide
   - Volume
-  - Fade in
-  - Fade out
+  - Volume fade in
+  - Volume fade out
   - User defined arpeggio tables
   - User defined pitch bend tables (e.g. for vibrato)
 - Instrument (timbre)
@@ -56,7 +53,7 @@ SNDDRV's sound processing pipeline is consisting of 3 part of components: some
 ```
 +---------------+
 | <<container>> |
-|   snd_Stream  | ---> (M streamer) --------------> music data stream --------> (M decoder) ---> (engine) ---> (sound chip)
+|  snd_Program  | ---> (M streamer) --------------> sound data stream --------> (M decoder) ---> (engine) ---> (sound chip)
 +---------------+         ↑    |                                                     |               ↑           i.e. PSG
                           `----' sequence control   (o) <------- note on/off --------'               |
                                                         (i) <--- I program change ---'               |
@@ -108,22 +105,18 @@ This notation itself is described in BNF notation.
             | '1'                 ; 1 bit one
             | '_'                 ; 1 bit wildcard
 
-# Definition of Music stream and Track stream
+# Definition of Sound data
 
-The following is the sound data format for **music streams** and **track
-streams** written in the notation defined in the previous section.
+## Definition of SpeedTrack stream
 
-## Music stream
-```
-; Music stream
-m_stream   := ((channel t_chunk)* wait)* EOM
+## Definition of EventTrack stream
 
-wait       := 0b w:7              ; w: wait count [ticks]
-channel    := 10b c:6             ; c: channel # (0..63)
-EOM        := 1111b 1111b         ; end mark
-```
+## Definition of Track stream
 
-## Track stream
+The following is the sound data format for **track streams** written in the
+notation defined in the previous section.
+
+### Track stream
 ```
 ; Track stream
 t_stream   := t_line*
@@ -135,13 +128,12 @@ t_line     := t_chunk* EOL
 EOL        := 110b l:5            ; l: number of lines to be skipped (0..31)
 ```
 
-## Chunk of stream
+### Chunk of Track stream
 ```
-; A chunk of stream
+; A chunk of track stream
 t_chunk    := RST                 ; stops the sound of the instrument.
             | Note                ; a note command
             | Exprs               ; expressions
-            | ExprsN t_chunk      ; expressions followed by t_chunk
 
 RST        := 1110b _:4           ; reset effect and set volume to 0
 
@@ -154,7 +146,6 @@ Note       := NoteOff             ; key off
    Legato  := 0b n:7 0:8          ; n: note # (1..127)
 
 Exprs      := 10_0b n:4 expr{n+1} ; n: number of expressions - 1
-ExprsN     := 10_1b n:4 expr{n+1} ;
 
    expr    := 0000b x:4           ; reset effect and set volume to 15-x
             | 0001b x:4 y:4 _:4   ; arpeggio 3 notes (note +0, +x, +y)
@@ -174,6 +165,7 @@ ExprsN     := 10_1b n:4 expr{n+1} ;
             | 1111b x:4 y:4 _:4   ; set pitch bend table # to xy (1..255) or turn pitch bend off (xy = 0)
 ```
 
+## Definition of Pattern table
 
 # Instrument (timbre) table
 

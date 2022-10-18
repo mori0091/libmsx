@@ -55,7 +55,7 @@ LIBS    =
 # Include one of the configuration.
 #   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
 #   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
-include ${LIBMSX_HOME}/mk/16k.4000.mk
+include ${LIBMSX_HOME}/mk/32k.4000.mk
 
 # [REQUIRED] (No need to modify)
 # Include common part of Makefile

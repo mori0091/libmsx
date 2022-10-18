@@ -13,24 +13,12 @@
  */
 
 #include <msx.h>
-#include <snddrv.h>
-#include <snd_i_table.h>
 #include <ay_3_8910.h>
 
 #include "./screen1.h"
 
-// User-defined instruments / timbres. ---------------
-// \see `instruments.c`
-extern const size_t i_tables_length;
-extern const struct snd_i_table * i_tables[];
-
-// Sound effect "coin" -------------------------------
-// \see 'sfx_coin.c'
-extern const snd_Stream sfx_coin;
-
-// Background music ----------------------------------
-// \see 'bgm_01.c'
-extern const snd_Program bgm_01;
+// Include the header file "bgm.h" auto-generated from "bgm.aks".
+#include "./bgm.h"
 
 // Volume gauge --------------------------------------
 // \see 'volume_gauge.c'
@@ -53,7 +41,7 @@ static void show_volume_levels(void) {
 static void show_frequency(void) {
   locate( 0, 0); puts("VSYNC:"); puti(msx_get_vsync_frequency());  puts("Hz");
   locate( 0, 1); puts(" PLAY:"); puti(snd_get_player_frequency()); puts("Hz");
-  locate( 0, 2); puts("  BGM:"); puti(snd_get_bgm_frequency());    puts("Hz(composer expecting)");
+  locate( 0, 2); puts("  BGM:"); puti(snd_get_bgm_frequency());    puts("Hz(author expecting)");
 }
 
 // Main loop -----------------------------------------
@@ -64,12 +52,15 @@ static void main_loop(void) {
   for (;;) {
     // await_vsync();
     show_volume_levels();
+
     // Is SPACE key pressed ?
     uint8_t pressed = joypad_get_state(0);
     uint8_t clicked = (old_pressed ^ pressed) & pressed;
+    old_pressed = pressed;
+
     if (clicked & VK_FIRE_0) {
       // sound effects "coiiiiiiin!"
-      snd_set_sfx(&sfx_coin);
+      snd_set_sfx(&bgm_music2);
     }
     uint8_t Hz = snd_get_player_frequency();
     int8_t x = 0;
@@ -84,7 +75,6 @@ static void main_loop(void) {
       snd_set_player_frequency(Hz);
       locate(6, 1); puti(Hz); puts("Hz ");
     }
-    old_pressed = pressed;
   }
 }
 
@@ -107,14 +97,14 @@ void main(void) {
   snd_init();
 
   // Register instruments (timbre) table.
-  snd_set_i_tables(i_tables_length, i_tables);
+  snd_set_i_tables(bgm_i_tables_length, bgm_i_tables);
 
   // Register the sound driver as VSYNC handler.
   set_vsync_handler(snd_play);
 
   snd_set_repeat(true);
-  snd_set_speed(SND_SPEED_1X * 1); // 1x
-  snd_set_bgm(&bgm_01);            // Register the BGM to be played.
+  // snd_set_speed(SND_SPEED_1X * 1); // 1x
+  snd_set_bgm(&bgm_music1);        // Register the BGM to be played.
   snd_start();                     // Start (or resume if paused) to play music.
 
   // snd_set_player_frequency(55); // Another method to control playing speed.

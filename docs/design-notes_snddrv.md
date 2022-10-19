@@ -1,5 +1,9 @@
 # DESIGN NOTE : SNDDRV - a sound driver
 
+# About
+
+SNDDRV is a new PSG sound driver inspired by [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
+
 # Features
 
 - Supported sound chip
@@ -18,31 +22,37 @@
   - Volume
   - Volume fade in
   - Volume fade out
-  - User defined arpeggio tables
-  - User defined pitch bend tables (e.g. for vibrato)
+  - User defined arpeggio / pitch-bend tables
+  - User defined period / wavelength modification tables (e.g. for vibrato)
 - Instrument (timbre)
   - User defined instrument (timbre) tables
-    - Oscillator (Square wave)
     - Software amplitude envelope generator
     - Noise generator
     - Tone / Noise mixing
     - Hardware amplitude envelope generator (Saw, Triangle, Inv-Saw, Inv-Triangle wave)
     - Use hardware envelope generator as **frequency modulator**!
-    - Arpeggio / Pitch-bend effect
-    - Period (wave cycle) modification
+    - Arpeggio / Pitch-bend
+    - Period / wavelength modification
+- Ease to integration
+  - A support tool `aks2c.sh` translates Arkos Tracker 2 song file (.aks) to C source file.
+  - The `libmsx`'s build system (makefiles) can automatically translates .aks
+    files into C source files and built them into your application. It automates
+    the following workflow.
+    1. Translate .aks files into C source files.
+    2. Compile translated C source files, all other C and ASM source files.
+    3. Build all of them into your application.
 
-# Internal of SNDDRV
+# SNDDRV's sound processing pipiline
 
 SNDDRV's sound processing pipeline is consisting of 3 part of components: some
 **streamers**, some **decorders**, and **engine**.
 
   - streamer  
-    The streamer converts multi-channel tracks, expression tables, and
-    instrument tables into octet streams consisting of interleaved
+    A streamer streams instructions in a track, arpeggio/pitch-bend table,
+    period table, or instrument table as an octet stream consisting of
     time-series data.
   - decoder  
-    The decoder decodes octet streams into a set of values for each
-    tick.
+    A decoder decodes octet streams into a set of values for each tick.
   - engine  
     The engine, for each tick, takes a set of values from decoder,
     converts / synthesis them into a set of register values, and set to
@@ -50,10 +60,17 @@ SNDDRV's sound processing pipeline is consisting of 3 part of components: some
 
 <!-- end list -->
 
+Sound processing pipeline is configured for each channel of sound chip.
+
+PSG (AY-3-8910) has 3 sound channels in total, so the SNDDRV configures and
+controls 3 sound processing pipelines for PSG.
+
+An overview of SNDDRV's sound processing pipeline is shown in the figure below.
+
 ```
 +---------------+
 | <<container>> |
-|  snd_Program  | ---> (M streamer) --------------> sound data stream --------> (M decoder) ---> (engine) ---> (sound chip)
+|   snd_Track   | ---> (T streamer) --------------> track data stream --------> (T decoder) ---> (engine) ---> (sound chip)
 +---------------+         ↑    |                                                     |               ↑           i.e. PSG
                           `----' sequence control   (o) <------- note on/off --------'               |
                                                         (i) <--- I program change ---'               |
@@ -61,26 +78,65 @@ SNDDRV's sound processing pipeline is consisting of 3 part of components: some
                                                         (p) <--- P program change ---'               |
 +---------------+                                                                                    |
 | <<container>> |                                                                                    |
-|    i_table    | ---> (I streamer) --------------> instrument data stream ---> (I decoder) ---------'
+|  snd_i_table  | ---> (I streamer) --------------> instrument data stream ---> (I decoder) ---------'
 +---------------+         ↑    |                                                                     |
                           `----' sequence control                                                    |
                           `----- note on/off ------ (o)                                              |
                           `----- I program change ----- (i)                                          |
 +---------------+                                                                                    |
 | <<container>> |                                                                                    |
-|    a_table    | ---> (A streamer) --------------> arpeggio data stream -----> (A decoder) ---------'
+|  snd_a_table  | ---> (A streamer) -----------> arpeggio/pitch-bend stream ---> (A decoder) --------'
 +---------------+         ↑    |                                                                     |
                           `----' sequence control                                                    |
                           `----- note on/off ------ (o)                                              |
                           `----- A program change ----- (a)                                          |
 +---------------+                                                                                    |
 | <<container>> |                                                                                    |
-|    p_table    | ---> (P streamer) --------------> pitch bend data stream ---> (P decoder) ---------'
+|  snd_p_table  | ---> (P streamer) -----------> period modification stream ---> (P decoder) --------'
 +---------------+         ↑    |
                           `----' sequence control
                           `----- note on/off ------ (o)
                           `----- P program change ----- (p)
 ```
+
+
+# Sound data structure
+
+The below table shows typical data types of SNDDRV and corresponding XML data
+type of Arkos Tracker 2 song file (.aks).
+
+| SNDDRV               | Arkos Tracker 2 (.aks) | explanation                                        |
+|----------------------|------------------------|----------------------------------------------------|
+| snd_MusicCollection  | aks:songType           | Music collection                                   |
+| struct snd\_a\_table | aks:arpeggioType       | Arpegio / Pitch-bend table                         |
+| struct snd\_p\_table | aks:pitchType          | Period / Wavelength modification table             |
+| struct snd\_i\_table | aks:fmInstrumentType   | Musical instrument / Timbre                        |
+| snd\_Music           | aks:subsongType        | Music                                              |
+| snd\_SpeedTrack      | aks:speedTrackType     | Special track for wait tick counts.                |
+| snd\_EventTrack      | aks:eventTrackType     | Special track for event signals.                   |
+| snd\_Track           | aks:trackType          | A series of musical notes and effects.             |
+| snd\_Pattern         | aks:patternType        | Determines which track is played on which channel. |
+
+~~~ mermaid
+classDiagram
+snd_MusicCollection *-- "1..*" snd_i_table : list of timbres
+snd_MusicCollection *-- "0..*" snd_a_table : list of arpeggio tables
+snd_MusicCollection *-- "0..*" snd_p_table : list of period tables
+snd_MusicCollection *-- "1..*" snd_Music   : list of musics
+
+snd_Music *-- "0..*" snd_SpeedTrack : speedTracks
+snd_Music *-- "0..*" snd_EventTrack : eventTracks
+snd_Music *-- "1..*" snd_Track      : tracks
+snd_Music *-- "1..*" snd_Pattern    : pattern sequence
+
+snd_SpeedTrack "1" <.. snd_Pattern : refers by index
+snd_EventTrack "1" <.. snd_Pattern : refers by index
+snd_Track      "3" <.. snd_Pattern : refers by index
+
+snd_i_table <.. snd_Track : refers by index
+snd_a_table <.. snd_Track : refers by index
+snd_p_table <.. snd_Track : refers by index
+~~~
 
 # Sound data format notation
 
@@ -109,7 +165,11 @@ This notation itself is described in BNF notation.
 
 ## Definition of SpeedTrack stream
 
+(snip)
+
 ## Definition of EventTrack stream
+
+(snip)
 
 ## Definition of Track stream
 
@@ -159,15 +219,17 @@ Exprs      := 10_0b n:4 expr{n+1} ; n: number of expressions - 1
             | 1001b x:4 y:4 z:4   ; fade in          (volume +xyz/128 for each ticks)
             | 1010b x:4 y:4 z:4   ; fade out         (volume -xyz/128 for each ticks)
             | 1011b x:4 y:4 _:4   ; force the speed of an instrument (1 step for each xy+1 ticks)
-            | 1100b x:4 y:4 _:4   ; force the speed of an arpeggio   (1 step for each xy+1 ticks)
-            | 1101b x:4 y:4 _:4   ; force the speed of a pitch bend  (1 step for each xy+1 ticks)
-            | 1110b x:4 y:4 _:4   ; set arpeggio table # to xy (1..255) or turn arpeggio off (xy = 0)
-            | 1111b x:4 y:4 _:4   ; set pitch bend table # to xy (1..255) or turn pitch bend off (xy = 0)
+            | 1100b x:4 y:4 _:4   ; force the speed of an arpeggio / pitch-bend table (1 step for each xy+1 ticks)
+            | 1101b x:4 y:4 _:4   ; force the speed of a period / wavelength table (1 step for each xy+1 ticks)
+            | 1110b x:4 y:4 _:4   ; set arpeggio / pitch-bend table # to xy (1..255) or turn off (xy = 0)
+            | 1111b x:4 y:4 _:4   ; set period / wavelength table # to xy (1..255) or turn off (xy = 0)
 ```
 
 ## Definition of Pattern table
 
-# Instrument (timbre) table
+(snip)
+
+# Definition of Instrument (timbre) table
 
 ```
 ; list of instrument tables
@@ -208,41 +270,22 @@ H  := w:3 m:2 011b                ; (wwmmT011) w = waveform, m = modulation
     |  11b ; Soft and Hard
 
 ; Coefficients used in wavelength calculations for square wave and hardware envelope modulation.
-R  := r:3 T:1 0111b                           ; (rrrT0111) r = ratio (0..7) T = retrigger?
+R  := r:3 T:1 0111b                           ; (rrrT0111) r = ratio (0..7), T = retrigger?
+  ; Ratio
+  ;    hw_period = sw_period >> r   if modulation type is "soft to hard"
+  ;    sw_period = hw_period << r   if modulation type is "hard to soft"
+  ;    r is unused                  otherwise
+  ; Retrigger?
+  T := 0 ; do not restart hardware envelope if its waveform is same as before.
+    |  1 ; force to restart hardware envelope.
 
-Ps := _00b 01111b period:16                   ; (_pa01111 period)
-   |  _01b 01111b period_delta:16             ; (_pa01111 period_delta)
-   |  _10b 01111b pitch:16                    ; (_pa01111 pitch)
-   |  _11b 01111b period_delta:16 pitch:16    ; (_pa01111 period_delta pitch)
+Ps := _00b 01111b period:16
+   |  _01b 01111b period_delta:16
+   |  _10b 01111b pitch_delta:16
+   |  _11b 01111b period_delta:16 pitch_delta:16
 
-Ph := 00b 011111b period:16                   ; (pa011111 period)
-   |  01b 011111b period_delta:16             ; (pa011111 period_delta)
-   |  10b 011111b pitch:16                    ; (pa011111 pitch)
-   |  11b 011111b period_delta:16 pitch:16    ; (pa011111 period_delta pitch)
+Ph := 00b 011111b period:16
+   |  01b 011111b period_delta:16
+   |  10b 011111b pitch_delta:16
+   |  11b 011111b period_delta:16 pitch_delta:16
 ```
-
-| OSC    | SW EG   | HW EG   | NG       | \+0        | \+1        | \+2        |
-|--------|---------|---------|----------|------------|------------|------------|
-| Square | x SW EG |         |          | `___vvvv0` |            |            |
-|        | x SW EG |         | \+ Noise | `nnnnn001` | `___vvvv0` |            |
-| Square | x SW EG |         | \+ Noise | `nnnnn101` | `___vvvv0` |            |
-|        |         | x HW EG |          | `wwwmm011` |            |            |
-|        |         | x HW EG |          | `rrrT0111` | `wwwmm011` |            |
-|        |         | x HW EG | \+ Noise | `nnnnn101` | `wwwmm011` |            |
-|        |         | x HW EG | \+ Noise | `nnnnn101` | `rrrT0111` | `wwwmm011` |
-| Square |         | x HW EG |          |            | `wwwmm011` |            |
-| Square |         | x HW EG |          | `rrrT0111` | `wwwmm011` |            |
-| Square |         | x HW EG | \+ Noise | `nnnnn101` | `wwwmm011` |            |
-| Square |         | x HW EG | \+ Noise | `nnnnn101` | `rrrT0111` | `wwwmm011` |
-
-- OSC  
-  Oscillator  
-  (Square wave generator / Tone generator)
-- SW EG  
-  Software Envelope Generator  
-  (Volume)
-- HW EG  
-  Hardware Envelope Generaor  
-  (Saw, Triangle, Inv-Saw, or Inv-Triangle wave generator)
-- NG  
-  Noise Generator

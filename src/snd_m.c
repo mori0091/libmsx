@@ -28,9 +28,9 @@ void snd_m__init(struct snd_m_ctx * ctx) {
   }
 }
 
-static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Program * pg, const snd_Pattern * p);
+static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Music * pg, const snd_Pattern * p);
 
-void snd_m__program_change(struct snd_m_ctx * ctx, const snd_Program * pg) {
+void snd_m__program_change(struct snd_m_ctx * ctx, const snd_Music * pg) {
   ctx->timer = 0;
   ctx->pindex = 0;
   ctx->line = 0;
@@ -46,7 +46,7 @@ void snd_m__program_change(struct snd_m_ctx * ctx, const snd_Program * pg) {
   }
 }
 
-static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Program * pg, const snd_Pattern * p) {
+static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Music * pg, const snd_Pattern * p) {
   for (uint8_t ch = 3; ch--; ) {
     const int16_t detune = p->channels[ch].detune;
     const uint8_t trackNumber = p->channels[ch].track;
@@ -82,7 +82,7 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
     return;
   }
   // ---------------------------------------------------
-  const snd_Program * pg = ctx->music;
+  const snd_Music * pg = ctx->music;
   const snd_Pattern * p = &pg->patterns.data[ctx->pindex];
   if (p->height <= ctx->line) {
     // Proceed to the next pattern

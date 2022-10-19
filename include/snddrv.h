@@ -98,14 +98,14 @@ void snd_set_repeat(bool repeat);
  *
  * \param data   Pointer to the music data to be played as BGM.
  */
-void snd_set_bgm(const snd_Program * data);
+void snd_set_bgm(const snd_Music * data);
 
 /**
  * Sets the specified music as SFX (sound effects) in the sound driver.
  *
  * \param data   Pointer to the music data to be played as SFX.
  */
-void snd_set_sfx(const snd_Program * data);
+void snd_set_sfx(const snd_Music * data);
 
 /**
  * Initialize the PSG and the sound driver.

@@ -82,7 +82,7 @@
 extern const struct snd_i_table * <xsl:value-of select="$i_tables"/>[];
 extern const uint8_t <xsl:value-of select="$i_tables"/>_length;
 
-<xsl:for-each select="//aks:subsong">extern const snd_Program <xsl:call-template name="music"/>;  // "<xsl:value-of select="aks:title"/>"
+<xsl:for-each select="//aks:subsong">extern const snd_Music <xsl:call-template name="music"/>;  // "<xsl:value-of select="aks:title"/>"
 </xsl:for-each>
 
   </xsl:template>
@@ -400,7 +400,7 @@ static const struct snd_i_table <xsl:value-of select="$i_table"/> = {
 <xsl:apply-templates select="aks:tracks"/>
 <xsl:apply-templates select="aks:patterns"/>
 
-const snd_Program <xsl:call-template name="music"/> = {
+const snd_Music <xsl:call-template name="music"/> = {
   .replayRate   = <xsl:value-of select="aks:replayFrequency"/>,
   .speedTracks  = VEC_FROM_ARRAY(<xsl:call-template name="speedTracks"/>),
   .eventTracks  = VEC_FROM_ARRAY(<xsl:call-template name="eventTracks"/>),

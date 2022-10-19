@@ -41,7 +41,7 @@ static void snd__init_ctx(struct snd_ctx * ctx) {
   ctx->counter = 0;
 }
 
-static void snd__set_program(struct snd_ctx * ctx, const snd_Program * data) {
+static void snd__set_program(struct snd_ctx * ctx, const snd_Music * data) {
   snd__init_ctx(ctx);
   snd_m__program_change(&ctx->m, data);
   if (data && data->replayRate) {
@@ -77,26 +77,26 @@ static void snd__init(void) {
 
 extern void snd__set_speed(uint8_t multiplier);
 
-static void snd__set_bgm(const snd_Program * data) {
+static void snd__set_bgm(const snd_Music * data) {
   snd__set_program(&snd_bgm, data);
   snd__set_speed(snd_speed_multiplier);
 }
 
 static void snd__stop(void) {
-  const snd_Program * p = snd_bgm.m.music;
+  const snd_Music * p = snd_bgm.m.music;
   snd__init();
   if (p) {
     snd__set_bgm(p);
   }
 }
 
-void snd_set_bgm(const snd_Program * data) {
+void snd_set_bgm(const snd_Music * data) {
   DI();
   snd__set_bgm(data);
   EI();
 }
 
-void snd_set_sfx(const snd_Program * data) {
+void snd_set_sfx(const snd_Music * data) {
   DI();
   snd__set_program(&snd_sfx, data);
   EI();

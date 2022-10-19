@@ -23,19 +23,19 @@
 /**
  * Container of a music data.
  *
- * A `snd_Program` object represents one music item.
+ * A `snd_Music` object represents one music item.
  *
- * A `snd_Program` object contains:
+ * A `snd_Music` object contains:
  * - all tracks refered in the music item, and
  * - all special tracks refered in the music item.
  * - a series of patterns that defines which track is played on which channel.
  */
-typedef struct snd_Program    snd_Program;
+typedef struct snd_Music snd_Music;
 
 /**
  * A fragment of single channel music score.
  */
-typedef struct snd_Track      snd_Track;
+typedef struct snd_Track snd_Track;
 
 /**
  * A special track to control speed of tracks.
@@ -54,7 +54,7 @@ typedef struct snd_EventTrack snd_EventTrack;
  * A `snd_Pattern` defines which track is played on which channel.\n
  * A vector / series of `snd_Pattern`s corresponds to a full-score of a music.
  */
-typedef struct snd_Pattern    snd_Pattern;
+typedef struct snd_Pattern snd_Pattern;
 
 /**
  * Define a type generic vector (as anonymous struct).
@@ -65,7 +65,7 @@ typedef struct snd_Pattern    snd_Pattern;
  * `snd_sound.h`.
  */
 #define vec(T)                                      \
-  struct {                                          \
+  struct vec_ ## T {                                \
     vec_fields(T);                                  \
   }
 
@@ -86,16 +86,16 @@ typedef struct snd_Pattern    snd_Pattern;
 /**
  * Container of a sound data.
  *
- * A `snd_Program` object represents one music item.
+ * A `snd_Music` object represents one music item.
  *
- * A `snd_Program` object contains:
+ * A `snd_Music` object contains:
  * - all tracks refered in the music item, and
  * - all special tracks refered in the music item.
  * - a series of patterns that defines which track is played on which channel.
  *
- * Ex. Defining a music program `music` as of snd_Program type.
+ * Ex. Defining a music program `music` as of snd_Music type.
  * ~~~c
- * static const snd_Program music = {
+ * static const snd_Music music = {
  *   .replayRate = 60,    // [Hz]
  *   .speedTracks = {0},  // no speed tracks
  *   .eventTracks = {0},  // no event tracks
@@ -114,7 +114,7 @@ typedef struct snd_Pattern    snd_Pattern;
  * ~~~
  *
  */
-struct snd_Program {
+struct snd_Music {
   /**
    * Version number of this data format to be used for future compatibility.
    *
@@ -171,13 +171,13 @@ struct snd_EventTrack {
  * A vector / series of `snd_Pattern`s corresponds to a full-score of a music.
  */
 struct snd_Pattern {
-  uint8_t height;             ///< Number of effective lines of track(s).
+  uint8_t height;               ///< Number of effective lines of track(s).
   struct {
-    uint8_t speedTrack;       ///< Index to the speed track, or `0` if not used.
-    uint8_t eventTrack;       ///< Index to the event track, or `0` if not used.
+    uint8_t speedTrack;         ///< Index to the speed track.
+    uint8_t eventTrack;         ///< Index to the event track.
   } specialChannels;
   struct {
-    uint8_t track;              ///< Index to the track, or `0` if not used.
+    uint8_t track;              ///< Index to the track.
     int16_t detune;             ///< Pitch shift [1/256 semi-note]
   } channels[3];
 };

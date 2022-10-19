@@ -32,8 +32,8 @@ struct snd_m_ctx {
   uint8_t timer;
   bool isEnd;
   // ----
-  struct {                      // Sequencer for snd_Program
-    const snd_Program * music;  // a music program
+  struct {                      // Sequencer for snd_Music
+    const snd_Music * music;    // a music program
     uint8_t pindex;             // current pattern index (0..)
     uint8_t line;               // current line number (0..height-1)
     struct snd_u8_ctx spd;      // context for speed track
@@ -43,7 +43,7 @@ struct snd_m_ctx {
 };
 
 void snd_m__init(struct snd_m_ctx * ctx);
-void snd_m__program_change(struct snd_m_ctx * ctx, const snd_Program * pg);
+void snd_m__program_change(struct snd_m_ctx * ctx, const snd_Music * pg);
 void snd_m__decode(struct snd_m_ctx * ctx);
 
 #endif // SND_M_H_

@@ -90,15 +90,15 @@ static void snd__stop(void) {
   }
 }
 
-void snd_set_bgm(const snd_Music * data) {
+void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa) {
   DI();
-  snd__set_bgm(data);
+  snd__set_bgm(&sa->musics.data[index]);
   EI();
 }
 
-void snd_set_sfx(const snd_Music * data) {
+void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa) {
   DI();
-  snd__set_program(&snd_sfx, data);
+  snd__set_program(&snd_sfx, &sa->musics.data[index]);
   EI();
 }
 

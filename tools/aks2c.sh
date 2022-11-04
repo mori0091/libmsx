@@ -12,7 +12,7 @@ The SNDDRV is a PSG sound driver library, and is a part of libmsx.
 Options:
   -h,      --help           Display this help and exits.
   -o FILE                   Place the output into FILE.
-  -p ARG,  --prefix ARG     Give ARG as the prefix of name of variables.
+  -n ARG,  --name ARG       Give ARG as the variable name of snd_SoundAssets type.
            --header         Output C header file.
 EOF
     exit 1
@@ -36,8 +36,8 @@ parse_args ()
                 XSLTPROC_FLAGS="${XSLTPROC_FLAGS} -o $2"
                 shift 2;
                 ;;
-            -p | --prefix )
-                XSLTPROC_FLAGS="${XSLTPROC_FLAGS} --stringparam prefix $2"
+            -n | --name )
+                XSLTPROC_FLAGS="${XSLTPROC_FLAGS} --stringparam soundAssets $2"
                 shift 2;
                 ;;
             --header )
@@ -62,6 +62,7 @@ parse_args ()
     if [ ! "${INPUT}" ] ; then
         error "No input file is given."
     fi
+    XSLTPROC_FLAGS="${XSLTPROC_FLAGS} --stringparam source_filename ${INPUT}";
 }
 
 require ()

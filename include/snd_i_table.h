@@ -33,8 +33,24 @@
  * - `r_part` :
  *   Release phase. (optional)\n
  *   That starts on `NoteOff` message.
+ */
+typedef struct snd_i_table snd_Instrument;
+
+/**
+ * Instrument (timbre) table.
  *
- * \todo Write documents for defining of instrument data stream.
+ * An instrument table defines a time series data of an instrument's sound.
+ *
+ * An instrument table contains 3 part of data streams:
+ * - `ad_part`:
+ *   **Attack** to **Decay** phase.\n
+ *   That starts on `NoteOn` message.
+ * - `s_part` :
+ *   **Sustain** phase. (optional)\n
+ *   That starts after `ad_part` and loopbacks until on `NoteOff` message.
+ * - `r_part` :
+ *   Release phase. (optional)\n
+ *   That starts on `NoteOff` message.
  */
 struct snd_i_table {
   /**
@@ -58,9 +74,9 @@ struct snd_i_table {
  * Register instrument (timbre) tables.
  *
  * \param n         number of instrument tables.
- * \param i_tables  array of pointers to instrument tables.
+ * \param i_tables  array of instrument tables.
  */
-void snd_set_i_tables(uint8_t n, const struct snd_i_table ** i_tables);
+void snd_set_i_tables(uint8_t n, const struct snd_i_table * i_tables);
 
 /**
  * Default instrument (timbre) tables.

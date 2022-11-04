@@ -20,13 +20,27 @@
 #include <stdint.h>
 #include <stddef.h>
 
+#include "snd_i_table.h"
+#include "snd_p_table.h"
+
+/**
+ * Container of musics, instruments, pitch-bend tables, and period-bend tables.
+ *
+ * A `snd_SoundAssets` object contains:
+ * - one or more instruments,
+ * - zero or more pitch-bend tables,
+ * - zero or more period-bend tables, and
+ * - one or more musics that shares and refers the above.
+  */
+typedef struct snd_SoundAssets snd_SoundAssets;
+
 /**
  * Container of a music data.
  *
- * A `snd_Music` object represents one music item.
+ * A `snd_Music` object represents one music.
  *
  * A `snd_Music` object contains:
- * - all tracks refered in the music item, and
+ * - all tracks refered in the music, and
  * - all special tracks refered in the music item.
  * - a series of patterns that defines which track is played on which channel.
  */
@@ -84,21 +98,43 @@ typedef struct snd_Pattern snd_Pattern;
   const T * data
 
 /**
- * Container of a sound data.
+ * Container of list of musics, instruments, arpeggio tables, and period tables.
  *
- * A `snd_Music` object represents one music item.
+ * A `snd_SoundAssets` object contains:
+ * - one or more instruments,
+ * - zero or more pitch-bend tables,
+ * - zero or more period-bend tables, and
+ * - one or more musics that shares and refers the above.
+ */
+struct snd_SoundAssets {
+  vec(snd_Instrument) instruments;
+  vec(snd_PitchBend)  pitchBendTables;
+  vec(snd_PeriodBend) periodBendTables;
+  vec(snd_Music)      musics;
+};
+
+/**
+ * Container of a music data.
+ *
+ * A `snd_Music` object represents one music.
  *
  * A `snd_Music` object contains:
- * - all tracks refered in the music item, and
- * - all special tracks refered in the music item.
+ * - all tracks refered in the music, and
+ * - all special tracks refered in the music.
  * - a series of patterns that defines which track is played on which channel.
  *
- * Ex. Defining a music program `music` as of snd_Music type.
+ * Ex. Defining a music `my_music` as of snd_Music type.
  * ~~~c
- * static const snd_Music music = {
+ * static const snd_Music my_music = {
  *   .replayRate = 60,    // [Hz]
- *   .speedTracks = {0},  // no speed tracks
- *   .eventTracks = {0},  // no event tracks
+ *   .speedTracks = {
+ *     .length = ...,     // number of speed tracks
+ *     .data = ...,       // pointer to an array of `snd_SpeedTrack`s
+ *   },
+ *   .eventTracks = {
+ *     .length = ...,     // number of event tracks
+ *     .data = ...,       // pointer to an array of `snd_EventTrack`s
+ *   },
  *   .tracks = {
  *     .length = ...,     // number of tracks
  *     .data = ...,       // pointer to an array of `snd_Track`s
@@ -122,7 +158,7 @@ struct snd_Music {
    */
   const uint8_t       format_version;
   /**
-   * Default player frequency that composer expecting, in [Hz].
+   * Default player frequency that author expecting, in [Hz].
    */
   const uint8_t       replayRate;
   // ---------------------------------------------------------------------

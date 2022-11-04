@@ -17,7 +17,7 @@
 
 #include "./snd_i.h"
 
-static const struct snd_i_table ** i_tables;
+static const struct snd_i_table * i_tables;
 static uint8_t i_number_max;
 
 static const uint8_t EMPTY_STREAM[] = {255};
@@ -27,7 +27,7 @@ static const struct snd_i_table i_table0 = {
   .r_part  = EMPTY_STREAM,
 };
 
-void snd_i__set_i_tables(uint8_t n, const struct snd_i_table ** i_tables_) {
+void snd_i__set_i_tables(uint8_t n, const struct snd_i_table * i_tables_) {
   if (i_tables_) {
     i_tables = i_tables_;
     i_number_max = n;
@@ -49,7 +49,7 @@ void snd_i_note_off(struct snd_i_ctx * ctx) {
 void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx) {
   // set instrument table number
   if (index && index <= i_number_max) {
-    ctx->i_table = i_tables[index-1];
+    ctx->i_table = &i_tables[index-1];
     ctx->wait = ctx->i_table->wait;
     ctx->timer = 0;
     ctx->next = ctx->i_table->ad_part;

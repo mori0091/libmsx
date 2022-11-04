@@ -3,12 +3,6 @@
                 xmlns:aks="http://www.julien-nevo.com/ArkosTrackerSong">
   <xsl:output method="text" encoding="utf-8"/>
 
-  <!-- =========== (optional) prefix of identifier ============= -->
-  <xsl:param name="prefix" select="''"/>
-
-  <!-- ========= (optional) output mode ('c' or 'h') =========== -->
-  <xsl:param name="output_mode" select="'c'"/>
-
   <!-- ============== default pattern templates ================ -->
   <!-- .name = value, -->
   <xsl:template match="*">.<xsl:value-of select="local-name(.)"/> = <xsl:value-of select="."/>, </xsl:template>
@@ -24,87 +18,98 @@
 </xsl:text>
   </xsl:variable>
 
+  <!-- ========= (optional) source_filename =========== -->
+  <xsl:param name="source_filename" select="'&lt;unknown&gt;.aks'"/>
+
+  <!-- ========= (optional) output mode ('c' or 'h') =========== -->
+  <xsl:param name="output_mode" select="'c'"/>
+
   <!-- ===================== identifiers ======================= -->
-  <!-- identifier: "${prefix}i_tables" -->
-  <xsl:variable name="i_tables"><xsl:value-of select="$prefix"/>i_tables</xsl:variable>
+  <!-- identifier: "soundAssets" -->
+  <xsl:param name="soundAssets" select="'soundAssets'"/>
 
-  <!-- identifier: "${prefix}music<i>", where <i> is 1, 2, ... -->
-  <xsl:template name="music">
-    <xsl:value-of select="$prefix"/>music<xsl:number count="aks:subsong" format="1"/>
-  </xsl:template>
+  <!-- identifier: "instruments" -->
+  <xsl:variable name="instruments" select="'instruments'"/>
 
-  <!-- identifier: "${prefix}music<i>_speedTracks", where <i> is 1, 2, ... -->
+  <!-- identifier: "musics" -->
+  <xsl:variable name="musics" select="'musics'"/>
+
+  <!-- identifier: "music<i>" -->
+  <xsl:template name="music">music<xsl:number count="aks:subsong" format="1"/></xsl:template>
+
+  <!-- identifier: "music<i>_speedTracks" -->
   <xsl:template name="speedTracks"><xsl:call-template name="music"/>_speedTracks</xsl:template>
 
-  <!-- identifier: "${prefix}music<i>_speedTrack<j>", where <i> is 1, 2, ... -->
+  <!-- identifier: "music<i>_speedTrack<j>" -->
   <xsl:template name="speedTrack">
     <xsl:call-template name="music"/>_speedTrack<xsl:value-of select="aks:number"/>
   </xsl:template>
 
-  <!-- identifier: "${prefix}music<i>_eventTracks", where <i> is 1, 2, ... -->
+  <!-- identifier: "music<i>_eventTracks" -->
   <xsl:template name="eventTracks"><xsl:call-template name="music"/>_eventTracks</xsl:template>
 
-  <!-- identifier: "${prefix}music<i>_eventTrack<j>", where <i> is 1, 2, ... -->
+  <!-- identifier: "music<i>_eventTrack<j>" -->
   <xsl:template name="eventTrack">
     <xsl:call-template name="music"/>_eventTrack<xsl:value-of select="aks:number"/>
   </xsl:template>
 
-  <!-- identifier: "${prefix}music<i>_tracks", where <i> is 1, 2, ... -->
+  <!-- identifier: "music<i>_tracks" -->
   <xsl:template name="tracks"><xsl:call-template name="music"/>_tracks</xsl:template>
 
-  <!-- identifier: "${prefix}music<i>_track<j>", where <i> is 1, 2, ... -->
+  <!-- identifier: "music<i>_track<j>" -->
   <xsl:template name="track">
     <xsl:call-template name="music"/>_track<xsl:value-of select="aks:number"/>
   </xsl:template>
 
-  <!-- identifier: "${prefix}music<i>_patterns", where <i> is 1, 2, ... -->
+  <!-- identifier: "music<i>_patterns" -->
   <xsl:template name="patterns"><xsl:call-template name="music"/>_patterns</xsl:template>
-
 
   <!-- ========================= template: / ============================ -->
   <xsl:template match="/">
     <xsl:choose>
       <xsl:when test="$output_mode = 'c'">
+        <xsl:apply-templates select="//aks:song" mode="preamble"/>
         <xsl:apply-templates select="//aks:song"/>
       </xsl:when>
       <xsl:when test="$output_mode = 'h'">
+        <xsl:apply-templates select="//aks:song" mode="preamble"/>
         <xsl:apply-templates select="//aks:song" mode="h"/>
       </xsl:when>
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="aks:song" mode="h">// -*- coding: utf-8-unix -*-
-
-#include &lt;snddrv.h&gt;
-#include &lt;snd_i_table.h&gt;
-#include &lt;snd_sound.h&gt;
-
-extern const struct snd_i_table * <xsl:value-of select="$i_tables"/>[];
-extern const uint8_t <xsl:value-of select="$i_tables"/>_length;
-
-<xsl:for-each select="//aks:subsong">extern const snd_Music <xsl:call-template name="music"/>;  // "<xsl:value-of select="aks:title"/>"
-</xsl:for-each>
-
-  </xsl:template>
-
   <!-- ===================== template: <aks:song> ======================= -->
-  <xsl:template match="aks:song">// -*- coding: utf-8-unix -*-
+  <xsl:template match="aks:song" mode="preamble">// -*- coding: utf-8-unix -*-
 /*
+ * THIS FILE WAS AUTOMATICALLY GENERATED FROM "<xsl:value-of select="$source_filename"/>".
+ *
  * <xsl:apply-templates select="aks:title"/>
  * <xsl:apply-templates select="aks:author"/>
  * <xsl:apply-templates select="aks:composer"/>
  * <xsl:apply-templates select="aks:comment"/>
  * <xsl:apply-templates select="aks:creationDate"/>
  * <xsl:apply-templates select="aks:modificationDate"/>
- * ---- play list ----<xsl:for-each select="//aks:subsong">
- * `<xsl:call-template name="music"/>`: <xsl:number value="position()" format="#1. "/>"<xsl:value-of select="aks:title"/>"</xsl:for-each>
+ * ---- arpeggios (pitch modulation patterns) ----<xsl:for-each select="//aks:arpeggio">
+ * #<xsl:value-of select="aks:index"/> "<xsl:value-of select="aks:name"/>"</xsl:for-each>
+ * ---- pitches (period modulation patterns) ----<xsl:for-each select="//aks:pitch">
+ * #<xsl:value-of select="aks:index"/> "<xsl:value-of select="aks:name"/>"</xsl:for-each>
+ * ---- instruments ----<xsl:for-each select="//aks:fmInstrument">
+ * #<xsl:value-of select="aks:number"/> "<xsl:value-of select="aks:title"/>"</xsl:for-each>
+ * ---- musics ----<xsl:for-each select="//aks:subsong">
+ * #<xsl:value-of select="position() - 1"/> "<xsl:value-of select="aks:title"/>"</xsl:for-each>
  */
+</xsl:template>
 
-#include &lt;stdbool.h&gt;
-#include &lt;stdint.h&gt;
+  <!-- ===================== template: <aks:song> ======================= -->
+  <xsl:template match="aks:song" mode="h">
+#include &lt;snddrv.h&gt;
 
-#include &lt;snd_i_table.h&gt;
-#include &lt;snd_sound.h&gt;
+extern const snd_SoundAssets <xsl:value-of select="$soundAssets"/>;
+</xsl:template>
+
+  <!-- ===================== template: <aks:song> ======================= -->
+  <xsl:template match="aks:song">
+#include &lt;snddrv.h&gt;
 
 #define ARRAY_SIZEOF(a)    (sizeof(a) / sizeof(a[0]))
 #define VEC_FROM_ARRAY(a)  {.length = ARRAY_SIZEOF(a), .data = (a)}
@@ -160,7 +165,12 @@ static const uint8_t EMPTY_STREAM[] = {EOM};
 
 <!-- Generates contents of each music data -->
 <xsl:apply-templates select="aks:subsongs"/>
-  </xsl:template>
+
+const snd_SoundAssets <xsl:value-of select="$soundAssets"/> = {
+  .instruments = VEC_FROM_ARRAY(<xsl:value-of select="$instruments"/>),
+  .musics = VEC_FROM_ARRAY(<xsl:value-of select="$musics"/>),
+};
+</xsl:template>
 
   <!-- ===================== template: <aks:fmInstruments> ======================= -->
   <xsl:template match="aks:fmInstruments">
@@ -169,19 +179,26 @@ static const uint8_t EMPTY_STREAM[] = {EOM};
 
 <xsl:apply-templates select="aks:fmInstrument"/>
 
-const struct snd_i_table * <xsl:value-of select="$i_tables"/>[] = {
-  <xsl:apply-templates select="aks:fmInstrument" mode="ref"/>
+static const snd_Instrument <xsl:value-of select="$instruments"/>[] = {<xsl:for-each select="aks:fmInstrument">
+<xsl:variable name="instrument">instrument<xsl:value-of select="aks:number"/></xsl:variable>
+<xsl:variable name="ad_part"><xsl:value-of select="$instrument"/>_a</xsl:variable>
+<xsl:variable name="s_part"><xsl:value-of select="$instrument"/>_s</xsl:variable>
+<xsl:variable name="r_part"><xsl:value-of select="$instrument"/>_r</xsl:variable>
+  {
+    .wait = <xsl:value-of select="aks:speed"/>,
+    .ad_part = <xsl:value-of select="$ad_part"/>,
+    .s_part = <xsl:value-of select="$s_part"/>,
+    .r_part = <xsl:value-of select="$r_part"/>,
+  },
+</xsl:for-each>
 };
-const uint8_t <xsl:value-of select="$i_tables"/>_length = ARRAY_SIZEOF(<xsl:value-of select="$i_tables"/>);
 </xsl:template>
 
-  <xsl:template match="aks:fmInstrument" mode="ref">&amp;i_table<xsl:value-of select="aks:number"/>, </xsl:template>
-
   <xsl:template match="aks:fmInstrument">
-    <xsl:variable name="i_table">i_table<xsl:value-of select="aks:number"/></xsl:variable>
-    <xsl:variable name="ad_part"><xsl:value-of select="$i_table"/>_a</xsl:variable>
-    <xsl:variable name="s_part"><xsl:value-of select="$i_table"/>_s</xsl:variable>
-    <xsl:variable name="r_part"><xsl:value-of select="$i_table"/>_r</xsl:variable>
+    <xsl:variable name="instrument">instrument<xsl:value-of select="aks:number"/></xsl:variable>
+    <xsl:variable name="ad_part"><xsl:value-of select="$instrument"/>_a</xsl:variable>
+    <xsl:variable name="s_part"><xsl:value-of select="$instrument"/>_s</xsl:variable>
+    <xsl:variable name="r_part"><xsl:value-of select="$instrument"/>_r</xsl:variable>
     <xsl:variable name="beg" select="aks:loopStartIndex + 1"/>
     <xsl:variable name="end" select="aks:endIndex + 1"/>
 // -----------------------------------------------------------------------
@@ -214,13 +231,6 @@ static const uint8_t <xsl:value-of select="$s_part"/>[] = {
 static const uint8_t <xsl:value-of select="$r_part"/>[] = {
 <xsl:apply-templates select="aks:fmInstrumentCell[position() > $end]"/>
   EOM,
-};
-
-static const struct snd_i_table <xsl:value-of select="$i_table"/> = {
-  .wait = <xsl:value-of select="aks:speed"/>,
-  .ad_part = <xsl:value-of select="$ad_part"/>,
-  .s_part = <xsl:value-of select="$s_part"/>,
-  .r_part = <xsl:value-of select="$r_part"/>,
 };
 </xsl:template>
 
@@ -387,29 +397,30 @@ static const struct snd_i_table <xsl:value-of select="$i_table"/> = {
 // Definition of music data.
 
 <xsl:apply-templates select="aks:subsong"/>
-  </xsl:template>
+static const snd_Music <xsl:value-of select="$musics"/>[] = {<xsl:for-each select="aks:subsong">
+  {
+    .replayRate   = <xsl:value-of select="aks:replayFrequency"/>,
+    .speedTracks  = VEC_FROM_ARRAY(<xsl:call-template name="speedTracks"/>),
+    .eventTracks  = VEC_FROM_ARRAY(<xsl:call-template name="eventTracks"/>),
+    .tracks       = VEC_FROM_ARRAY(<xsl:call-template name="tracks"/>),
+    .patterns     = VEC_FROM_ARRAY(<xsl:call-template name="patterns"/>),
+    .initialSpeed = <xsl:value-of select="aks:initialSpeed - 1"/>,
+    .isLoop       = <xsl:value-of select="aks:endIndex > aks:loopStartIndex"/>,
+    .loopToIndex  = <xsl:value-of select="aks:loopStartIndex"/>,
+  },</xsl:for-each>
+};
+</xsl:template>
 
   <!-- template: <aks:subsong> -->
   <xsl:template match="aks:subsong">
 // -----------------------------------------------------------------------
 // #<xsl:value-of select="position()"/>. "<xsl:value-of select="aks:title"/>"
-// as `<xsl:call-template name="music"/>`.
 
 <xsl:apply-templates select="aks:speedTracks"/>
 <xsl:apply-templates select="aks:eventTracks"/>
 <xsl:apply-templates select="aks:tracks"/>
 <xsl:apply-templates select="aks:patterns"/>
 
-const snd_Music <xsl:call-template name="music"/> = {
-  .replayRate   = <xsl:value-of select="aks:replayFrequency"/>,
-  .speedTracks  = VEC_FROM_ARRAY(<xsl:call-template name="speedTracks"/>),
-  .eventTracks  = VEC_FROM_ARRAY(<xsl:call-template name="eventTracks"/>),
-  .tracks       = VEC_FROM_ARRAY(<xsl:call-template name="tracks"/>),
-  .patterns     = VEC_FROM_ARRAY(<xsl:call-template name="patterns"/>),
-  .initialSpeed = <xsl:value-of select="aks:initialSpeed - 1"/>,
-  .isLoop       = <xsl:value-of select="aks:endIndex > aks:loopStartIndex"/>,
-  .loopToIndex  = <xsl:value-of select="aks:loopStartIndex"/>,
-};
 </xsl:template>
 
   <!-- ===================== template: <aks:speedTracks> ======================= -->

@@ -17,6 +17,7 @@
 #define SNDDRV_H_
 
 #include "./snd_sound.h"
+#include <stdint.h>
 
 /**
  * The value of the playback speed multiplier for 1.0x speed.
@@ -96,16 +97,18 @@ void snd_set_repeat(bool repeat);
 /**
  * Sets the specified music as BGM in the sound driver.
  *
- * \param data   Pointer to the music data to be played as BGM.
+ * \param index Number of a music to be played as BGM.
+ * \param sa    Pointer to the sound assets that contains the music.
  */
-void snd_set_bgm(const snd_Music * data);
+void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa);
 
 /**
  * Sets the specified music as SFX (sound effects) in the sound driver.
  *
- * \param data   Pointer to the music data to be played as SFX.
+ * \param index Number of a music to be played as SFX.
+ * \param sa    Pointer to the sound assets that contains the music.
  */
-void snd_set_sfx(const snd_Music * data);
+void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa);
 
 /**
  * Initialize the PSG and the sound driver.

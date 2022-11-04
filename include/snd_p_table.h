@@ -18,6 +18,9 @@
 
 #include <stdint.h>
 
+typedef struct snd_p_table snd_PitchBend;
+typedef struct snd_p_table snd_PeriodBend;
+
 /**
  * Pitch bend table.
  *

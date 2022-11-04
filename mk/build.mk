@@ -133,10 +133,10 @@ ${OBJDIR}/%.rel: ${SRCDIR}/%.s
 
 ${SRCS_AKS_C}: %.c: %.aks | %.h
 	@${info [AKS2C]	$< -> $@}
-	@${AKS2C} --prefix "$(notdir $(basename $<))_" -o $@ $<
+	@${AKS2C} --name "$(notdir $(basename $<))" -o $@ $<
 
 ${SRCS_AKS_H}: %.h: %.aks
 	@${info [AKS2C]	$< -> $@}
-	@${AKS2C} --prefix "$(notdir $(basename $<))_" -o $@ $< --header
+	@${AKS2C} --name "$(notdir $(basename $<))" -o $@ $< --header
 
 -include $(DEPS)

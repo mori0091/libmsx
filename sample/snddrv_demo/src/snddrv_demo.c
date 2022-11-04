@@ -60,7 +60,7 @@ static void main_loop(void) {
 
     if (clicked & VK_FIRE_0) {
       // sound effects "coiiiiiiin!"
-      snd_set_sfx(&bgm_music2);
+      snd_set_sfx(1, &bgm);
     }
     uint8_t Hz = snd_get_player_frequency();
     int8_t x = 0;
@@ -97,15 +97,15 @@ void main(void) {
   snd_init();
 
   // Register instruments (timbre) table.
-  snd_set_i_tables(bgm_i_tables_length, bgm_i_tables);
+  snd_set_i_tables(bgm.instruments.length, bgm.instruments.data);
 
   // Register the sound driver as VSYNC handler.
   set_vsync_handler(snd_play);
 
   snd_set_repeat(true);
-  // snd_set_speed(SND_SPEED_1X * 1); // 1x
-  snd_set_bgm(&bgm_music1);        // Register the BGM to be played.
-  snd_start();                     // Start (or resume if paused) to play music.
+  // snd_set_speed(SND_SPEED_1X * 1);  // 1x
+  snd_set_bgm(0, &bgm);         // Register the BGM to be played.
+  snd_start();                  // Start (or resume if paused) to play music.
 
   // snd_set_player_frequency(55); // Another method to control playing speed.
 

@@ -17,22 +17,12 @@
 
 #include "./snd_i.h"
 
-static const struct snd_i_table * i_tables;
-static uint8_t i_number_max;
-
 static const uint8_t EMPTY_STREAM[] = {255};
 static const struct snd_i_table i_table0 = {
   .ad_part = EMPTY_STREAM,
   .s_part  = EMPTY_STREAM,
   .r_part  = EMPTY_STREAM,
 };
-
-void snd_i__set_i_tables(uint8_t n, const struct snd_i_table * i_tables_) {
-  if (i_tables_) {
-    i_tables = i_tables_;
-    i_number_max = n;
-  }
-}
 
 void snd_i_note_on(struct snd_i_ctx * ctx) {
   // (re)start instrument
@@ -46,13 +36,12 @@ void snd_i_note_off(struct snd_i_ctx * ctx) {
   ctx->next = ctx->i_table->r_part;
 }
 
-void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx) {
-  // set instrument table number
-  if (index && index <= i_number_max) {
-    ctx->i_table = &i_tables[index-1];
-    ctx->wait = ctx->i_table->wait;
+void snd_i__program_change(struct snd_i_ctx * ctx, const snd_Instrument * inst) {
+  if (inst) {
+    ctx->i_table = inst;
+    ctx->wait = inst->wait;
     ctx->timer = 0;
-    ctx->next = ctx->i_table->ad_part;
+    ctx->next = inst->ad_part;
   }
   else {
     ctx->i_table = &i_table0;

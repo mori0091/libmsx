@@ -49,11 +49,9 @@ struct snd_i_ctx {
   };
 };
 
-extern void snd_i__set_i_tables(uint8_t n, const struct snd_i_table * i_tables_);
-
 extern void snd_i_note_on(struct snd_i_ctx * ctx);
 extern void snd_i_note_off(struct snd_i_ctx * ctx);
-extern void snd_i__program_change(uint8_t index, struct snd_i_ctx * ctx);
+extern void snd_i__program_change(struct snd_i_ctx * ctx, const snd_Instrument * inst);
 
 extern void snd_i__decode(struct snd_i_ctx * ctx);
 

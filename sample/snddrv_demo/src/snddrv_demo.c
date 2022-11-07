@@ -96,9 +96,6 @@ void main(void) {
   // This must be called once at least, before the snd_play() is called.
   snd_init();
 
-  // Register instruments (timbre) table.
-  snd_set_i_tables(bgm.instruments.length, bgm.instruments.data);
-
   // Register the sound driver as VSYNC handler.
   set_vsync_handler(snd_play);
 

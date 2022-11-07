@@ -21,7 +21,7 @@ void snd_m__init(struct snd_m_ctx * ctx) {
   // ----
   struct snd_channel * pch = &ctx->channels[0];
   for (uint8_t ch = 3; ch--; pch++) {
-    snd_i__program_change(1, &pch->i); // instrument #1
+    snd_i__program_change(&pch->i, NULL);
     snd_channel_reset_expression(pch);
     pch->volume = 15;
     pch->pitch  = -1;
@@ -159,7 +159,11 @@ static void snd_m__decode_channel(struct snd_m_ctx * ctx, struct snd_channel * p
     else if (!(x & 0x80)) {     // x == 0*******b
       // NoteOn i# (or Legato)
       const uint8_t i_number = snd_t_stream_take(&pch->t);
-      snd_channel_note_on(x, i_number, pch);
+      const snd_Instrument * inst = 0;
+      if (i_number && i_number <= ctx->sa->instruments.length) {
+        inst = &ctx->sa->instruments.data[i_number - 1];
+      }
+      snd_channel_note_on(x, inst, pch);
     }
     else if (!(x & 0x40)) {     // x == 10******b
       // expressions
@@ -175,7 +179,7 @@ static void snd_m__decode_channel(struct snd_m_ctx * ctx, struct snd_channel * p
     }
     else if (!(x & 0x10)) {     // x == 1110****b
       // Reset
-      snd_i__program_change(0, &pch->i);
+      snd_i__program_change(&pch->i, NULL);
     }
     else {                      // x == 1111****b
       return;

@@ -32,8 +32,6 @@ struct snd_p_ctx {
   };
 };
 
-extern void snd_p__set_p_tables(uint8_t n, const struct snd_p_table ** p_tables);
-
 extern void snd_p_note_on(struct snd_p_ctx * ctx);
 extern void snd_p_note_off(struct snd_p_ctx * ctx);
 extern void snd_p__program_change(uint8_t index, struct snd_p_ctx * ctx);

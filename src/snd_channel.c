@@ -22,7 +22,7 @@ static void snd_channel_reset_pitch_bend(struct snd_channel * pch);
 static void snd_channel_reset_pitch_glide(struct snd_channel * pch);
 static void snd_channel_reset_fade(struct snd_channel * pch);
 
-void snd_channel_note_on(uint8_t note, uint8_t i_number, struct snd_channel * pch) {
+void snd_channel_note_on(uint8_t note, const snd_Instrument * inst, struct snd_channel * pch) {
   pch->period_offset = 0;
   {
     uint8_t flag = pch->flag;
@@ -59,8 +59,8 @@ void snd_channel_note_on(uint8_t note, uint8_t i_number, struct snd_channel * pc
     // ---- Legato : switch to the given note w/o attack
     pch->pitch = pitch;
     // ---- Normal NoteOn (attack)
-    if (i_number) {
-      snd_i__program_change(i_number, &pch->i);
+    if (inst) {
+      snd_i__program_change(&pch->i, inst);
       snd_i_note_on(&pch->i);
       snd_a_note_on(&pch->a);
       snd_p_note_on(&pch->p);

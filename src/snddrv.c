@@ -66,8 +66,6 @@ static void snd__init(void) {
   // psg_init();
   ay_3_8910_init();
   snd__pause();
-  snd_i__set_i_tables(0, 0);
-  snd_p__set_p_tables(0, 0);
   snd__init_ctx(&snd_sfx);
   snd__init_ctx(&snd_bgm);
 }
@@ -92,12 +90,14 @@ static void snd__stop(void) {
 
 void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa) {
   DI();
+  snd_bgm.m.sa = sa;
   snd__set_bgm(&sa->musics.data[index]);
   EI();
 }
 
 void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa) {
   DI();
+  snd_sfx.m.sa = sa;
   snd__set_program(&snd_sfx, &sa->musics.data[index]);
   EI();
 }

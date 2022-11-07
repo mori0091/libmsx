@@ -90,7 +90,7 @@ void snd_channel_synthesis(uint8_t ch, struct snd_channel * pch);
  */
 void snd_channel_update(struct snd_channel * pch);
 
-void snd_channel_note_on(uint8_t note, uint8_t i_number, struct snd_channel * pch);
+void snd_channel_note_on(uint8_t note, const snd_Instrument * inst, struct snd_channel * pch);
 
 void snd_channel_note_off(struct snd_channel * pch);
 

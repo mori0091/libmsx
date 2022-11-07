@@ -17,30 +17,6 @@
 
 #define END_MARK   (-32768)
 
-static const int16_t p_table_00_data[] = {
-  END_MARK,
-};
-static const struct snd_p_table p_table_00 = {
-  .wait    = 255,
-  .ad_part = p_table_00_data + 0,
-  .s_part  = p_table_00_data + 0,
-  .r_part  = p_table_00_data + 0,
-};
-
-static const struct snd_p_table ** p_tables;
-static uint8_t p_number_max;
-
-void snd_p__set_p_tables(uint8_t n, const struct snd_p_table ** p_tables_) {
-  if (!n || !p_tables_) {
-    p_tables = 0;
-    p_number_max = 0;
-  }
-  else {
-    p_number_max = n;
-    p_tables = p_tables_;
-  }
-}
-
 void snd_p_note_on(struct snd_p_ctx * ctx) {
   // // (re)start pitch envelope
   // ctx->timer = 0;

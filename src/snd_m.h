@@ -33,7 +33,8 @@ struct snd_m_ctx {
   bool isEnd;
   // ----
   struct {                      // Sequencer for snd_Music
-    const snd_Music * music;    // a music program
+    const snd_SoundAssets * sa; // pointer to the current sound assets
+    const snd_Music * music;    // pointer to the current music
     uint8_t pindex;             // current pattern index (0..)
     uint8_t line;               // current line number (0..height-1)
     struct snd_u8_ctx spd;      // context for speed track

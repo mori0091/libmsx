@@ -62,7 +62,6 @@ parse_args ()
     if [ ! "${INPUT}" ] ; then
         error "No input file is given."
     fi
-    XSLTPROC_FLAGS="${XSLTPROC_FLAGS} --stringparam source_filename ${INPUT}";
 }
 
 require ()
@@ -79,4 +78,4 @@ XSLT="$(dirname $0)/aks2c.xsl"
 
 require zcat xsltproc
 parse_args "$@"
-zcat "${INPUT}" | xsltproc ${XSLTPROC_FLAGS} "${XSLT}" -
+zcat "${INPUT}" | xsltproc ${XSLTPROC_FLAGS} --stringparam source_filename "${INPUT}" "${XSLT}" -

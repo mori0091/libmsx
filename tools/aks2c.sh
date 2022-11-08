@@ -4,7 +4,7 @@
 usage_and_exit ()
 {
     cat 1>&2 <<EOF
-Usage: $( basename $0 ) [OPTION]... file
+Usage: $(basename "$0") [OPTION]... file
 
 Arakos Tracker 2 song file (.aks) to C source file translater for SNDDRV.
 The SNDDRV is a PSG sound driver library, and is a part of libmsx.
@@ -74,7 +74,7 @@ require ()
 INPUT=;
 XSLTPROC_FLAGS=;
 
-XSLT="$(dirname $0)/aks2c.xsl"
+XSLT="$(dirname "$0")/aks2c.xsl"
 
 require zcat xsltproc
 parse_args "$@"

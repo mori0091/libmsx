@@ -20,7 +20,7 @@
 #define EI() __asm__("ei")
 
 void snd__set_bgm_freq(uint8_t freq) {
-  if (freq <= 0) {
+  if (!freq) {
     freq = 1;
   }
   if (240 <= freq) {

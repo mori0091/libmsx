@@ -30,7 +30,19 @@ SRCDIR ?= src
 OBJDIR ?= obj
 BINDIR ?= bin
 
-SRCS_C = $(shell find ${SRCDIR} -type f -name '*.c')
+# list of auto-generated source files
+BUILT_SOURCES ?=
+
+AKS2C = ${LIBMSX_HOME}/tools/aks2c.sh
+
+SRCS_AKS ?= $(shell find ${SRCDIR} -type f -name '*.aks')
+SRCS_AKS_C = $(patsubst %.aks, %.c, ${SRCS_AKS})
+SRCS_AKS_H = $(patsubst %.aks, %.h, ${SRCS_AKS})
+
+BUILT_SOURCES += ${SRCS_AKS_C} ${SRCS_AKS_H}
+
+SRCS_C ?= $(filter %.c, ${BUILT_SOURCES})
+SRCS_C += $(shell find ${SRCDIR} -type f -name '*.c')
 OBJS_C = $(patsubst ${SRCDIR}/%.c, ${OBJDIR}/%.rel, ${SRCS_C})
 
 SRCS_ASM = $(shell find ${SRCDIR} -type f -name '*.s')
@@ -55,19 +67,22 @@ CFLAGS ?=
 CFLAGS += -mz80 -MMD
 CFLAGS += -I ${LIBMSX_HOME}/include
 
+LIBMSX = ${LIBMSX_HOME}/lib/libmsx.lib
+
 LIBS ?=
+LIBS += ${LIBMSX}
 
 LDFLAGS ?=
 LDFLAGS += --no-std-crt0 --code-loc ${ADDR_CODE} --data-loc ${ADDR_DATA}
 LDFLAGS += -L ${LIBMSX_HOME}/lib
 
 LDLIBS ?=
-LDLIBS += -llibmsx
+# LDLIBS += -llibmsx
 
-build: libmsx ${TARGETS}
+build: ${TARGETS}
 
 clean:
-	@rm -f ${TARGETS} ${OBJS} ${DEPS}
+	@rm -f ${TARGETS} ${OBJS} ${DEPS} ${BUILT_SOURCES}
 	@rm -rf ${OBJDIR} ${BINDIR}
 
 ifdef LIBMSX_HOME
@@ -79,6 +94,8 @@ libmsx:
 	@${info LIBMSX_HOME shall be defined as follows:}
 	@${info LIBMSX_HOME = <path to top of libmsx>}
 endif
+
+${CRT0} ${LIBMSX}: libmsx
 
 %.rom: %.ihx
 	@${info [Build]	$@}
@@ -113,5 +130,13 @@ ${OBJDIR}/%.rel: ${SRCDIR}/%.s
 	@${info [AS]	$<}
 	@mkdir -p $(dir $@)
 	@${AS} -o $@ $<
+
+${SRCS_AKS_C}: %.c: %.aks | %.h
+	@${info [AKS2C]	$< -> $@}
+	@${AKS2C} --name "$(notdir $(basename $<))" -o $@ $<
+
+${SRCS_AKS_H}: %.h: %.aks
+	@${info [AKS2C]	$< -> $@}
+	@${AKS2C} --name "$(notdir $(basename $<))" -o $@ $< --header
 
 -include $(DEPS)

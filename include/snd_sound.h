@@ -107,9 +107,9 @@ typedef struct snd_Pattern snd_Pattern;
  * - one or more musics that shares and refers the above.
  */
 struct snd_SoundAssets {
-  vec(snd_Instrument) instruments;
   vec(snd_PitchBend)  pitchBendTables;
   vec(snd_PeriodBend) periodBendTables;
+  vec(snd_Instrument) instruments;
   vec(snd_Music)      musics;
 };
 

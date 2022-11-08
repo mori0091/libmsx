@@ -34,7 +34,7 @@
  *   Release phase. (optional)\n
  *   That starts on `NoteOff` message.
  */
-typedef struct snd_i_table snd_Instrument;
+typedef struct snd_Instrument snd_Instrument;
 
 /**
  * Instrument (timbre) table.
@@ -52,7 +52,7 @@ typedef struct snd_i_table snd_Instrument;
  *   Release phase. (optional)\n
  *   That starts on `NoteOff` message.
  */
-struct snd_i_table {
+struct snd_Instrument {
   /**
    * Wait counts (ticks per data chunk).
    *

@@ -18,7 +18,7 @@
 #include "./snd_i.h"
 
 static const uint8_t EMPTY_STREAM[] = {255};
-static const struct snd_i_table i_table0 = {
+static const snd_Instrument i_table0 = {
   .ad_part = EMPTY_STREAM,
   .s_part  = EMPTY_STREAM,
   .r_part  = EMPTY_STREAM,

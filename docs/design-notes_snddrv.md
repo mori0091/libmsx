@@ -4,6 +4,15 @@
 
 SNDDRV is a new PSG sound driver inspired by [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
 
+SNDDRV covers almost feature of replayer of the Arkos Tracker 2.
+
+SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song
+file (.aks file) into your application.
+
+Let's make your music with Arkos Tracker 2. Place its .aks files in your
+application's repository, and build together with your application code that
+uses SNDDRV API.
+
 # Features
 
 - Supported sound chip
@@ -42,7 +51,17 @@ SNDDRV is a new PSG sound driver inspired by [Arkos Tracker 2](http://www.julien
     2. Compile translated C source files, all other C and ASM source files.
     3. Build all of them into your application.
 
-# SNDDRV's sound processing pipiline
+# How to integrate Arkos Tracker 2 .aks files into your application
+
+See also [snddrv_demo](https://github.com/mori0091/libmsx/tree/main/sample/snddrv_demo) the sample project.
+
+# Internal of SNDDRV
+
+The following sections shows the summary of internal design and specification of SNDDRV.
+
+Please note that this information is for reference only and need not be a concern.
+
+## SNDDRV's sound processing pipiline
 
 SNDDRV's sound processing pipeline is consisting of 3 part of components: some
 **streamers**, some **decorders**, and **engine**.
@@ -68,61 +87,61 @@ controls 3 sound processing pipelines for PSG.
 An overview of SNDDRV's sound processing pipeline is shown in the figure below.
 
 ```
-+---------------+
-| <<container>> |
-|   snd_Track   | ---> (T streamer) --------------> track data stream --------> (T decoder) ---> (engine) ---> (sound chip)
-+---------------+         ↑    |                                                     |               ↑           i.e. PSG
-                          `----' sequence control   (o) <------- note on/off --------'               |
-                                                        (i) <--- I program change ---'               |
-                                                        (a) <--- A program change ---'               |
-                                                        (p) <--- P program change ---'               |
-+---------------+                                                                                    |
-| <<container>> |                                                                                    |
-|  snd_i_table  | ---> (I streamer) --------------> instrument data stream ---> (I decoder) ---------'
-+---------------+         ↑    |                                                                     |
-                          `----' sequence control                                                    |
-                          `----- note on/off ------ (o)                                              |
-                          `----- I program change ----- (i)                                          |
-+---------------+                                                                                    |
-| <<container>> |                                                                                    |
-|  snd_a_table  | ---> (A streamer) -----------> arpeggio/pitch-bend stream ---> (A decoder) --------'
-+---------------+         ↑    |                                                                     |
-                          `----' sequence control                                                    |
-                          `----- note on/off ------ (o)                                              |
-                          `----- A program change ----- (a)                                          |
-+---------------+                                                                                    |
-| <<container>> |                                                                                    |
-|  snd_p_table  | ---> (P streamer) -----------> period modification stream ---> (P decoder) --------'
-+---------------+         ↑    |
-                          `----' sequence control
-                          `----- note on/off ------ (o)
-                          `----- P program change ----- (p)
++----------------+
+| <<container>>  |
+|   snd_Track    | ---> (T streamer) --------------> track data stream --------> (T decoder) ---> (engine) ---> (sound chip)
++----------------+         ↑    |                                                     |               ↑           i.e. PSG
+                           `----' sequence control   (o) <------- note on/off --------'               |
+                                                         (i) <--- I program change ---'               |
+                                                         (a) <--- A program change ---'               |
+                                                         (p) <--- P program change ---'               |
++----------------+                                                                                    |
+| <<container>>  |                                                                                    |
+| snd_Instrument | ---> (I streamer) --------------> instrument data stream ---> (I decoder) ---------'
++----------------+         ↑    |                                                                     |
+                           `----' sequence control                                                    |
+                           `----- note on/off ------ (o)                                              |
+                           `----- I program change ----- (i)                                          |
++----------------+                                                                                    |
+| <<container>>  |                                                                                    |
+|  snd_PitchBend | ---> (A streamer) -----------> arpeggio/pitch-bend stream ---> (A decoder) --------'
++----------------+         ↑    |                                                                     |
+                           `----' sequence control                                                    |
+                           `----- note on/off ------ (o)                                              |
+                           `----- A program change ----- (a)                                          |
++----------------+                                                                                    |
+| <<container>>  |                                                                                    |
+| snd_PeriodBend | ---> (P streamer) -----------> period modification stream ---> (P decoder) --------'
++----------------+         ↑    |
+                           `----' sequence control
+                           `----- note on/off ------ (o)
+                           `----- P program change ----- (p)
 ```
 
 
-# Sound data structure
+## Sound data structure
 
 The below table shows typical data types of SNDDRV and corresponding XML data
 type of Arkos Tracker 2 song file (.aks).
 
-| SNDDRV               | Arkos Tracker 2 (.aks) | explanation                                        |
-|----------------------|------------------------|----------------------------------------------------|
-| snd_MusicCollection  | aks:songType           | Music collection                                   |
-| struct snd\_a\_table | aks:arpeggioType       | Arpegio / Pitch-bend table                         |
-| struct snd\_p\_table | aks:pitchType          | Period / Wavelength modification table             |
-| struct snd\_i\_table | aks:fmInstrumentType   | Musical instrument / Timbre                        |
-| snd\_Music           | aks:subsongType        | Music                                              |
-| snd\_SpeedTrack      | aks:speedTrackType     | Special track for wait tick counts.                |
-| snd\_EventTrack      | aks:eventTrackType     | Special track for event signals.                   |
-| snd\_Track           | aks:trackType          | A series of musical notes and effects.             |
-| snd\_Pattern         | aks:patternType        | Determines which track is played on which channel. |
+| SNDDRV           | Arkos Tracker 2 (.aks) | explanation                                        |
+|------------------|------------------------|----------------------------------------------------|
+| snd\_SoundAssets | aks:songType           | Collection of sound assets                         |
+| snd\_PitchBend   | aks:arpeggioType       | Arpegio / Pitch-bend table                         |
+| snd\_PeriodBend  | aks:pitchType          | Period / Wavelength modification table             |
+| snd\_Instrument  | aks:fmInstrumentType   | Musical instrument / Timbre                        |
+| snd\_Music       | aks:subsongType        | Music                                              |
+| snd\_SpeedTrack  | aks:speedTrackType     | Special track for wait tick counts.                |
+| snd\_EventTrack  | aks:eventTrackType     | Special track for event signals.                   |
+| snd\_Track       | aks:trackType          | A series of musical notes and effects.             |
+| snd\_Pattern     | aks:patternType        | Determines which track is played on which channel. |
 
 ~~~ mermaid
 classDiagram
-snd_MusicCollection *-- "1..*" snd_i_table : list of timbres
-snd_MusicCollection *-- "0..*" snd_a_table : list of arpeggio tables
-snd_MusicCollection *-- "0..*" snd_p_table : list of period tables
-snd_MusicCollection *-- "1..*" snd_Music   : list of musics
+snd_SoundAssets *-- "0..*" snd_PitchBend  : list of arpeggio tables
+snd_SoundAssets *-- "0..*" snd_PeriodBend : list of period tables
+snd_SoundAssets *-- "1..*" snd_Instrument : list of timbres
+snd_SoundAssets *-- "1..*" snd_Music      : list of musics
 
 snd_Music *-- "0..*" snd_SpeedTrack : speedTracks
 snd_Music *-- "0..*" snd_EventTrack : eventTracks
@@ -133,12 +152,12 @@ snd_SpeedTrack "1" <.. snd_Pattern : refers by index
 snd_EventTrack "1" <.. snd_Pattern : refers by index
 snd_Track      "3" <.. snd_Pattern : refers by index
 
-snd_i_table <.. snd_Track : refers by index
-snd_a_table <.. snd_Track : refers by index
-snd_p_table <.. snd_Track : refers by index
+snd_PitchBend  <.. snd_Track : refers by index
+snd_PeriodBend <.. snd_Track : refers by index
+snd_Instrument <.. snd_Track : refers by index
 ~~~
 
-# Sound data format notation
+## Sound data format notation
 
 Here is the notation for defining our sound data format.  
 This notation itself is described in BNF notation.
@@ -161,22 +180,22 @@ This notation itself is described in BNF notation.
             | '1'                 ; 1 bit one
             | '_'                 ; 1 bit wildcard
 
-# Definition of Sound data
+## Definition of Sound data
 
-## Definition of SpeedTrack stream
-
-(snip)
-
-## Definition of EventTrack stream
+### Definition of SpeedTrack stream
 
 (snip)
 
-## Definition of Track stream
+### Definition of EventTrack stream
+
+(snip)
+
+### Definition of Track stream
 
 The following is the sound data format for **track streams** written in the
 notation defined in the previous section.
 
-### Track stream
+#### Track stream
 ```
 ; Track stream
 t_stream   := t_line*
@@ -188,7 +207,7 @@ t_line     := t_chunk* EOL
 EOL        := 110b l:5            ; l: number of lines to be skipped (0..31)
 ```
 
-### Chunk of Track stream
+#### Chunk of Track stream
 ```
 ; A chunk of track stream
 t_chunk    := RST                 ; stops the sound of the instrument.
@@ -225,11 +244,11 @@ Exprs      := 10_0b n:4 expr{n+1} ; n: number of expressions - 1
             | 1111b x:4 y:4 _:4   ; set period / wavelength table # to xy (1..255) or turn off (xy = 0)
 ```
 
-## Definition of Pattern table
+### Definition of Pattern table
 
 (snip)
 
-# Definition of Instrument (timbre) table
+## Definition of Instrument (timbre) table
 
 ```
 ; list of instrument tables

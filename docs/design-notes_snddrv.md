@@ -66,18 +66,15 @@ Please note that this information is for reference only and need not be a concer
 SNDDRV's sound processing pipeline is consisting of 3 part of components: some
 **streamers**, some **decorders**, and **engine**.
 
-  - streamer  
-    A streamer streams instructions in a track, arpeggio/pitch-bend table,
-    period table, or instrument table as an octet stream consisting of
-    time-series data.
-  - decoder  
-    A decoder decodes octet streams into a set of values for each tick.
-  - engine  
-    The engine, for each tick, takes a set of values from decoder,
-    converts / synthesis them into a set of register values, and set to
-    registers of sound chip.
-
-<!-- end list -->
+- streamer  
+  A streamer streams instructions in a track, arpeggio/pitch-bend table, period
+  table, or instrument table as an octet stream consisting of time-series data.
+- decoder  
+  A decoder decodes octet streams into a set of values for each tick.
+- engine  
+  The engine, for each tick, takes a set of values from decoder, converts /
+  synthesis them into a set of register values, and set to registers of sound
+  chip.
 
 Sound processing pipeline is configured for each channel of sound chip.
 

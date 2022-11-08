@@ -152,7 +152,7 @@ void snd_stop(void);
  * set_vsync_handler(snd_play);
  *
  * // And then, calls other APIs to start, stop, etc.
- * snd_set_bgm(&my_bgm);
+ * snd_set_bgm(0, &my_bgm);
  * snd_start();
  * ~~~
  *

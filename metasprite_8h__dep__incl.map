@@ -1,7 +1,4 @@
 <map id="include/metasprite.h" name="include/metasprite.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="272,5,411,32"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,107,107"/>
-<area shape="rect" id="node3" href="$vmem__set__metasprite__a_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="131,80,328,107"/>
-<area shape="rect" id="node4" href="$vmem__set__metasprite__m_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="353,80,554,107"/>
-<area shape="rect" id="node5" href="$vmem__set__metasprite__s_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="579,80,776,107"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="24,80,125,107"/>
 </map>

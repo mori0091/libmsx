@@ -1,0 +1,18 @@
+<map id="snd_SoundAssets" name="snd_SoundAssets">
+<area shape="rect" id="node1" title="Container of list of musics, instruments, arpeggio tables, and period tables." alt="" coords="969,111,1097,138"/>
+<area shape="rect" id="node2" href="$snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__PitchBend" title=" " alt="" coords="659,5,813,47"/>
+<area shape="rect" id="node3" href="$snd__p__table_8h.html#structsnd__p__table" title="Pitch bend table." alt="" coords="479,46,571,73"/>
+<area shape="rect" id="node4" href="$snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__PeriodBend" title=" " alt="" coords="659,71,813,112"/>
+<area shape="rect" id="node5" href="$snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Instrument" title=" " alt="" coords="659,136,813,177"/>
+<area shape="rect" id="node6" href="$snd__i__table_8h.html#structsnd__Instrument" title="Instrument (timbre) table." alt="" coords="469,143,581,170"/>
+<area shape="rect" id="node7" href="$snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Music" title=" " alt="" coords="659,201,813,243"/>
+<area shape="rect" id="node8" href="$snd__sound_8h.html#structsnd__Music" title="Container of a music data." alt="" coords="483,209,568,235"/>
+<area shape="rect" id="node9" href="$snd__sound_8h.html#structsnd__Music_1_1vec__snd__SpeedTrack" title="[optional] list of all speed tracks refered in items." alt="" coords="203,103,343,144"/>
+<area shape="rect" id="node10" href="$structsnd__SpeedTrack.html" title="A special track to control speed of tracks." alt="" coords="5,110,125,137"/>
+<area shape="rect" id="node11" href="$snd__sound_8h.html#structsnd__Music_1_1vec__snd__EventTrack" title="[optional] list of all event tracks refered in items." alt="" coords="203,168,343,209"/>
+<area shape="rect" id="node12" href="$structsnd__EventTrack.html" title="A special track to control event trigger of tracks." alt="" coords="7,175,123,202"/>
+<area shape="rect" id="node13" href="$snd__sound_8h.html#structsnd__Music_1_1vec__snd__Track" title="list of all tracks refered in items." alt="" coords="203,233,343,275"/>
+<area shape="rect" id="node14" href="$structsnd__Track.html" title="A fragment of single channel music score." alt="" coords="24,241,107,267"/>
+<area shape="rect" id="node15" href="$snd__sound_8h.html#structsnd__Music_1_1vec__snd__Pattern" title="list of patterns (pattern sequence)." alt="" coords="203,299,343,340"/>
+<area shape="rect" id="node16" href="$snd__sound_8h.html#structsnd__Pattern" title="A track pattern, that corresponds to a sub&#45;score of a music." alt="" coords="19,306,111,333"/>
+</map>

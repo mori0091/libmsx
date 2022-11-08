@@ -45,11 +45,33 @@ var NAVTREE =
         [ "Build your application", "index.html#autotoc_md15", null ]
       ] ]
     ] ],
+    [ "DESIGN NOTE : SNDDRV - a sound driver", "md_docs_design_notes_snddrv.html", [
+      [ "About", "md_docs_design_notes_snddrv.html#autotoc_md17", null ],
+      [ "Features", "md_docs_design_notes_snddrv.html#autotoc_md18", null ],
+      [ "How to integrate Arkos Tracker 2 .aks files into your application", "md_docs_design_notes_snddrv.html#autotoc_md19", null ],
+      [ "Internal of SNDDRV", "md_docs_design_notes_snddrv.html#autotoc_md20", [
+        [ "SNDDRV's sound processing pipiline", "md_docs_design_notes_snddrv.html#autotoc_md21", null ],
+        [ "Sound data structure", "md_docs_design_notes_snddrv.html#autotoc_md22", null ],
+        [ "Sound data format notation", "md_docs_design_notes_snddrv.html#autotoc_md23", null ],
+        [ "Definition of Sound data", "md_docs_design_notes_snddrv.html#autotoc_md24", [
+          [ "Definition of SpeedTrack stream", "md_docs_design_notes_snddrv.html#autotoc_md25", null ],
+          [ "Definition of EventTrack stream", "md_docs_design_notes_snddrv.html#autotoc_md26", null ],
+          [ "Definition of Track stream", "md_docs_design_notes_snddrv.html#autotoc_md27", [
+            [ "Track stream", "md_docs_design_notes_snddrv.html#autotoc_md28", null ],
+            [ "Chunk of Track stream", "md_docs_design_notes_snddrv.html#autotoc_md29", null ]
+          ] ],
+          [ "Definition of Pattern table", "md_docs_design_notes_snddrv.html#autotoc_md30", null ]
+        ] ],
+        [ "Definition of Instrument (timbre) table", "md_docs_design_notes_snddrv.html#autotoc_md31", null ]
+      ] ]
+    ] ],
+    [ "Todo List", "todo.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -57,7 +79,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", "globals_func" ],
+        [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
@@ -71,8 +93,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"sound_8c.html#a997355753e0e73b392a6c570246a2ae5",
-"vdp_8h.html#a8644c26f4880aa2d4ec82b0de3bc8deda0349315753336d9cbcca4494d2c04b70"
+"snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

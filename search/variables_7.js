@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['h_5fkeyi_0',['H_KEYI',['../interrupt_8c.html#ae2099c9daed9ab4fad701aa545575da7',1,'interrupt.c']]],
-  ['h_5ftimi_1',['H_TIMI',['../interrupt_8c.html#a5ff31b3f4a38d6d5d447d65fcea0f540',1,'interrupt.c']]],
-  ['hold_5ftime_2',['hold_time',['../structsound__eg__AHDSR.html#a21370f5de118aca5b633e0501a668892',1,'sound_eg_AHDSR']]],
-  ['hook_5fkeyi_3',['hook_keyi',['../interrupt_8c.html#a6ce62f96c8b7e90c140f2c085a916669',1,'interrupt.c']]],
-  ['hook_5ftimi_4',['hook_timi',['../interrupt_8c.html#ac9cc5fc93d7556e39b39a9ee0741d478',1,'interrupt.c']]],
-  ['hw_5fenvelope_5fenable_5',['hw_envelope_enable',['../structsound__channel.html#a08683c480a2ed674e7e8c5b666e173f1',1,'sound_channel']]]
+  ['layouts_0',['layouts',['../metasprite_8h.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
+  ['len_1',['len',['../sound__eg_8h.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM']]],
+  ['length_2',['length',['../snd__sound_8h.html#a3adbc261bf9d043bbf4aea962f0af3a2',1,'snd_SoundAssets::vec_snd_PitchBend::length()'],['../snd__sound_8h.html#afd37803289cd16f1a713ca806351f062',1,'snd_SoundAssets::vec_snd_PeriodBend::length()'],['../snd__sound_8h.html#a192ba80b3c4cfe2bd564837c105edaf1',1,'snd_SoundAssets::vec_snd_Instrument::length()'],['../snd__sound_8h.html#a67b31dec23cf4b682513ea7a9fb86cb6',1,'snd_SoundAssets::vec_snd_Music::length()'],['../snd__sound_8h.html#a67c3eb9566de09124727943bd6f32e52',1,'snd_Music::vec_snd_SpeedTrack::length()'],['../snd__sound_8h.html#ab8ce04d6fbc22adce69bcc28aaf92327',1,'snd_Music::vec_snd_EventTrack::length()'],['../snd__sound_8h.html#a0622d559822622bc8a2a509c9010e0ed',1,'snd_Music::vec_snd_Track::length()'],['../snd__sound_8h.html#ad1d7309c750455476eb0209244e992d7',1,'snd_Music::vec_snd_Pattern::length()']]],
+  ['looptoindex_3',['loopToIndex',['../snd__sound_8h.html#a3216f248df996913d722aea1db4a3d27',1,'snd_Music']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['libmsx_20_3b_20c_20library_20for_20msx_0',['libmsx ; C library for MSX',['../index.html',1,'']]]
+  ['design_20note_20_3a_20snddrv_20_2d_20a_20sound_20driver_0',['DESIGN NOTE : SNDDRV - a sound driver',['../md_docs_design_notes_snddrv.html',1,'']]]
 ];

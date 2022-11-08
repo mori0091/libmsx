@@ -1,6 +1,0 @@
-<map id="src/sound_eg_spi.h" name="src/sound_eg_spi.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="133,5,268,32"/>
-<area shape="rect" id="node2" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,95,107"/>
-<area shape="rect" id="node3" href="$sound__eg__AHDSR_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="119,80,282,107"/>
-<area shape="rect" id="node4" href="$sound__eg__LPCM_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="306,80,461,107"/>
-</map>

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['tagged_5fcolor_0',['tagged_color',['../structsprite.html#a938b2b6b7c016d1a538066f362f13d9c',1,'sprite']]],
-  ['tagged_5fcolor_5ft_1',['tagged_color_t',['../sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c',1,'sprite.h']]],
-  ['tagged_5fcolors_2',['tagged_colors',['../structsprite__color.html#a96825be5e00cd459cc7a1d7270daf13f',1,'sprite_color']]],
-  ['time_3',['time',['../structsound__eg.html#a11f3f809d824183971f03be159631cc0',1,'sound_eg']]]
+  ['x_0',['x',['../metasprite_8h.html#ac10174aae1d67addfa1b70df98c5faf3',1,'vec2i::x()'],['../sprite_8h.html#ae721ff1bb077d5d54ee08a4ea0ae607c',1,'sprite::x()']]]
 ];

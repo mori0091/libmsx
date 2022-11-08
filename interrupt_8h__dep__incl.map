@@ -1,7 +1,4 @@
 <map id="include/interrupt.h" name="include/interrupt.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="187,5,311,32"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,107,107"/>
-<area shape="rect" id="node3" href="$interrupt_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="131,80,232,107"/>
-<area shape="rect" id="node4" href="$sleep__millis_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="256,80,379,107"/>
-<area shape="rect" id="node5" href="$sleep__ticks_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="403,80,523,107"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="17,80,118,107"/>
 </map>

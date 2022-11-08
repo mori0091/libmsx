@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unused_5fin_5fsprite_5fmode_5f2_0',['unused_in_sprite_mode_2',['../structsprite.html#a4de588d4eca889c174cec87ac2c4ea67',1,'sprite']]],
-  ['update_1',['update',['../sound__eg__LPCM_8c.html#a41dabadefd3100dd868905714d7810c2',1,'sound_eg_LPCM.c']]]
+  ['y_0',['y',['../metasprite_8h.html#a22bb277fc71e43cb89c17cce26cb5503',1,'vec2i::y()'],['../sprite_8h.html#a640b2b10663ab61156302c3f64b37989',1,'sprite::y()']]]
 ];

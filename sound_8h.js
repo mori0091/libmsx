@@ -1,7 +1,13 @@
 var sound_8h =
 [
-    [ "sound_fragment", "structsound__fragment.html", "structsound__fragment" ],
-    [ "sound_clip", "structsound__clip.html", "structsound__clip" ],
+    [ "sound_fragment", "sound_8h.html#structsound__fragment", [
+      [ "streams", "sound_8h.html#afc3795cddeeb09bce0deef79daaa7e39", null ]
+    ] ],
+    [ "sound_clip", "sound_8h.html#structsound__clip", [
+      [ "priority", "sound_8h.html#aa50d220b45ae59eedb443b956ef1929d", null ],
+      [ "num_fragments", "sound_8h.html#ac4e8ddf6c34374903c6f859c4e4421eb", null ],
+      [ "fragments", "sound_8h.html#aae9c73220c1e3cf4037a6cf67dea650b", null ]
+    ] ],
     [ "SOUND_H", "sound_8h.html#abd9a4c21bcfb1e13af9948a03421c06c", null ],
     [ "SOUND_CHANNEL_A", "sound_8h.html#a466185ed37b39cb48ae0c4d966462cee", null ],
     [ "SOUND_CHANNEL_B", "sound_8h.html#af0aea604a4e0e8cc864f98be452d3752", null ],

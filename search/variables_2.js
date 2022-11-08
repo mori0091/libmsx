@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['ch_0',['ch',['../sound_8c.html#acbcf5f8de7895ca456bb39fbcccde1d1',1,'sound.c']]],
-  ['channel_5fmuted_1',['channel_muted',['../sound_8c.html#a31110db3dab8e3b627b8a1e7ba210617',1,'sound.c']]],
-  ['channels_2',['channels',['../structsound__state.html#ab61baff70bd11f96fd98b0b7f2154a6c',1,'sound_state']]],
-  ['chgcpu_3',['CHGCPU',['../bios__entry_8h.html#aeba5f9f725b4d999e89ef352fba7bace',1,'bios_entry.h']]],
-  ['cliksw_4',['CLIKSW',['../workarea_8h.html#aaa9abc23fbc4a9fd8cb1ad0e4be20fb1',1,'workarea.h']]],
-  ['clip_5',['clip',['../structsound__state.html#a2b0fe923df0afe7637210500ecb8a854',1,'sound_state']]],
-  ['clz_6',['clz',['../structsound__eg__attribute.html#afa6629c9b9efe819c7c36ccda1f47396',1,'sound_eg_attribute']]],
-  ['count_5fper_5ftick_7',['count_per_tick',['../structsound__state.html#a8dbfb37e52c8f4d3c98ad0db1848bf8d',1,'sound_state']]],
-  ['count_5fper_5ftick_8',['COUNT_PER_TICK',['../sound_8c.html#a47f92849930071d12da9acc7a7b37d68',1,'sound.c']]]
+  ['data_0',['data',['../snd__sound_8h.html#a70bc0cea4f47ea1671731c79afd896c9',1,'snd_SoundAssets::vec_snd_PitchBend::data()'],['../snd__sound_8h.html#ab91da21ec2e6e10299b6de87b195b87a',1,'snd_SoundAssets::vec_snd_PeriodBend::data()'],['../snd__sound_8h.html#afb26560335bf86ea6131b94539781e9e',1,'snd_SoundAssets::vec_snd_Instrument::data()'],['../snd__sound_8h.html#a7c1c28c337a1161bebd4980a8eed89cf',1,'snd_SoundAssets::vec_snd_Music::data()'],['../snd__sound_8h.html#a1c0e9283c8d7977cf503168fa4bdc021',1,'snd_Music::vec_snd_SpeedTrack::data()'],['../snd__sound_8h.html#a016dda8ebd10c9781a3d70cf51e6c8d2',1,'snd_Music::vec_snd_EventTrack::data()'],['../snd__sound_8h.html#a80ea8092de0cce9e4637c65489c336f8',1,'snd_Music::vec_snd_Track::data()'],['../snd__sound_8h.html#ad73c43c268b3c1fef85c50c157d8922a',1,'snd_Music::vec_snd_Pattern::data()'],['../sound__eg_8h.html#a7a482f814a0cb413be88ef7931779faf',1,'sound_eg_LPCM::data()']]],
+  ['decay_5frate_1',['decay_rate',['../sound__eg_8h.html#a29c9ae53b12db8c23db4d5484cfbad42',1,'sound_eg_AHDSR']]]
 ];

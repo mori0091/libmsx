@@ -1,14 +1,22 @@
 var searchData=
 [
-  ['sound_5fchannel_0',['sound_channel',['../structsound__channel.html',1,'']]],
-  ['sound_5fclip_1',['sound_clip',['../structsound__clip.html',1,'']]],
-  ['sound_5feg_2',['sound_eg',['../structsound__eg.html',1,'']]],
-  ['sound_5feg_5fahdsr_3',['sound_eg_AHDSR',['../structsound__eg__AHDSR.html',1,'']]],
-  ['sound_5feg_5fattribute_4',['sound_eg_attribute',['../structsound__eg__attribute.html',1,'']]],
-  ['sound_5feg_5flpcm_5',['sound_eg_LPCM',['../structsound__eg__LPCM.html',1,'']]],
-  ['sound_5feg_5fvtbl_6',['sound_eg_vtbl',['../structsound__eg__vtbl.html',1,'']]],
-  ['sound_5ffragment_7',['sound_fragment',['../structsound__fragment.html',1,'']]],
-  ['sound_5fstate_8',['sound_state',['../structsound__state.html',1,'']]],
-  ['sprite_9',['sprite',['../structsprite.html',1,'']]],
-  ['sprite_5fcolor_10',['sprite_color',['../structsprite__color.html',1,'']]]
+  ['snd_5feventtrack_0',['snd_EventTrack',['../structsnd__EventTrack.html',1,'']]],
+  ['snd_5finstrument_1',['snd_Instrument',['../snd__i__table_8h.html#structsnd__Instrument',1,'']]],
+  ['snd_5fmusic_2',['snd_Music',['../snd__sound_8h.html#structsnd__Music',1,'']]],
+  ['snd_5fp_5ftable_3',['snd_p_table',['../snd__p__table_8h.html#structsnd__p__table',1,'']]],
+  ['snd_5fpattern_4',['snd_Pattern',['../snd__sound_8h.html#structsnd__Pattern',1,'']]],
+  ['snd_5fpattern_2echannels_5',['snd_Pattern.channels',['../snd__sound_8h.html#structsnd__Pattern_8channels',1,'']]],
+  ['snd_5fpattern_2especialchannels_6',['snd_Pattern.specialChannels',['../snd__sound_8h.html#structsnd__Pattern_8specialChannels',1,'']]],
+  ['snd_5fsoundassets_7',['snd_SoundAssets',['../snd__sound_8h.html#structsnd__SoundAssets',1,'']]],
+  ['snd_5fspeedtrack_8',['snd_SpeedTrack',['../structsnd__SpeedTrack.html',1,'']]],
+  ['snd_5ftrack_9',['snd_Track',['../structsnd__Track.html',1,'']]],
+  ['sound_5fclip_10',['sound_clip',['../sound_8h.html#structsound__clip',1,'']]],
+  ['sound_5feg_5fahdsr_11',['sound_eg_AHDSR',['../sound__eg_8h.html#structsound__eg__AHDSR',1,'']]],
+  ['sound_5feg_5fattribute_12',['sound_eg_attribute',['../sound__eg_8h.html#structsound__eg__attribute',1,'']]],
+  ['sound_5feg_5fattribute_2e_5f_5funnamed3_5f_5f_13',['sound_eg_attribute.__unnamed3__',['../sound__eg_8h.html#unionsound__eg__attribute_8____unnamed3____',1,'']]],
+  ['sound_5feg_5flpcm_14',['sound_eg_LPCM',['../sound__eg_8h.html#structsound__eg__LPCM',1,'']]],
+  ['sound_5ffragment_15',['sound_fragment',['../sound_8h.html#structsound__fragment',1,'']]],
+  ['sprite_16',['sprite',['../sprite_8h.html#structsprite',1,'']]],
+  ['sprite_2e_5f_5funnamed5_5f_5f_17',['sprite.__unnamed5__',['../sprite_8h.html#unionsprite_8____unnamed5____',1,'']]],
+  ['sprite_5fcolor_18',['sprite_color',['../sprite__color_8h.html#structsprite__color',1,'']]]
 ];

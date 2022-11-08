@@ -1,17 +1,6 @@
 <map id="include/sprite.h" name="include/sprite.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="616,5,725,32"/>
-<area shape="rect" id="node2" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="335,80,473,107"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="227,162,328,189"/>
-<area shape="rect" id="node4" href="$vmem__set__metasprite__a_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,162,203,189"/>
-<area shape="rect" id="node5" href="$vmem__set__metasprite__m_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="353,162,554,189"/>
-<area shape="rect" id="node6" href="$vmem__set__metasprite__s_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="579,162,776,189"/>
-<area shape="rect" id="node7" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="599,80,743,107"/>
-<area shape="rect" id="node11" href="$sprite__set__color_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="767,80,913,107"/>
-<area shape="rect" id="node12" href="$sprite__set__pat_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="937,80,1073,107"/>
-<area shape="rect" id="node13" href="$sprite__set__x_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1097,80,1221,107"/>
-<area shape="rect" id="node14" href="$sprite__set__xy_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1244,80,1375,107"/>
-<area shape="rect" id="node15" href="$sprite__set__y_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1398,80,1522,107"/>
-<area shape="rect" id="node8" href="$vmem__set__sprite__color_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="800,155,944,196"/>
-<area shape="rect" id="node9" href="$vmem__set__sprite__color__m_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="968,155,1112,196"/>
-<area shape="rect" id="node10" href="$vmem__set__sprite__color__s_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1136,155,1280,196"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="127,5,236,32"/>
+<area shape="rect" id="node2" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="131,155,232,181"/>
+<area shape="rect" id="node4" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="219,80,363,107"/>
 </map>

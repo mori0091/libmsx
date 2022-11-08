@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['eg_0',['eg',['../structsound__channel.html#af098035dd00a87c20d3df7048ac8fc03',1,'sound_channel']]],
-  ['ei_1',['EI',['../sound_8c.html#a54322f0fb4209b096e8e3b5864b46875',1,'sound.c']]],
-  ['end_5fof_5fphase_2',['END_OF_PHASE',['../sound__eg__AHDSR_8c.html#a8034a0e7896d755615b8b0316dd303a0',1,'sound_eg_AHDSR.c']]],
-  ['envelope_5fcycle_5fhi_3',['envelope_cycle_hi',['../sound_8c.html#a2e193f6773a9d4e678d1b58b0d1f7392',1,'sound.c']]],
-  ['envelope_5fcycle_5flo_4',['envelope_cycle_lo',['../sound_8c.html#a3646dc2c758ca63359a925b8666f4b74',1,'sound.c']]],
-  ['envelope_5fpattern_5',['envelope_pattern',['../structsound__state.html#a72fa6811d7e77f68f21cb5ba0ce2a4f2',1,'sound_state']]]
+  ['eventtracks_0',['eventTracks',['../snd__sound_8h.html#a09ba99c768dde78cd241bb7e4aa78337',1,'snd_Music']]]
 ];

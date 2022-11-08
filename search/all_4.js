@@ -1,13 +1,7 @@
 var searchData=
 [
-  ['data_0',['data',['../structsound__eg__LPCM.html#a7a482f814a0cb413be88ef7931779faf',1,'sound_eg_LPCM']]],
-  ['data_1',['DATA',['../sound__eg__LPCM_8c.html#aad9ae913bdfab20dd94ad04ee2d5b045',1,'sound_eg_LPCM.c']]],
-  ['decay_5fphase_2',['DECAY_PHASE',['../sound__eg__AHDSR_8c.html#a2c65c583bd4b8ed85ed09ee45a97e5cc',1,'sound_eg_AHDSR.c']]],
-  ['decay_5fphase_3',['decay_phase',['../sound__eg__AHDSR_8c.html#afc599219cae74acd56bdfeb48973a9d0',1,'sound_eg_AHDSR.c']]],
-  ['decay_5frate_4',['decay_rate',['../structsound__eg__AHDSR.html#a29c9ae53b12db8c23db4d5484cfbad42',1,'sound_eg_AHDSR']]],
-  ['decay_5frate_5',['DECAY_RATE',['../sound__eg__AHDSR_8c.html#a34e67bacdf31e21c0bd9ef4542eaedf4',1,'sound_eg_AHDSR.c']]],
-  ['default_5finterrupt_5fhandler_6',['default_interrupt_handler',['../interrupt_8c.html#ac6548bcc365684e9fb3aa17bc368ff1d',1,'interrupt.c']]],
-  ['default_5fvsync_5fhandler_7',['default_vsync_handler',['../interrupt_8c.html#a6e200fba1ddc8911b390666c870ab39f',1,'interrupt.c']]],
-  ['di_8',['DI',['../sound_8c.html#a087fe5231de92285218140559b5b7886',1,'sound.c']]],
-  ['duration_9',['duration',['../structsound__channel.html#aab1ae9c0820b52d04dddbc63fe3aa943',1,'sound_channel']]]
+  ['data_0',['data',['../snd__sound_8h.html#a70bc0cea4f47ea1671731c79afd896c9',1,'snd_SoundAssets::vec_snd_PitchBend::data()'],['../snd__sound_8h.html#ab91da21ec2e6e10299b6de87b195b87a',1,'snd_SoundAssets::vec_snd_PeriodBend::data()'],['../snd__sound_8h.html#afb26560335bf86ea6131b94539781e9e',1,'snd_SoundAssets::vec_snd_Instrument::data()'],['../snd__sound_8h.html#a7c1c28c337a1161bebd4980a8eed89cf',1,'snd_SoundAssets::vec_snd_Music::data()'],['../snd__sound_8h.html#a1c0e9283c8d7977cf503168fa4bdc021',1,'snd_Music::vec_snd_SpeedTrack::data()'],['../snd__sound_8h.html#a016dda8ebd10c9781a3d70cf51e6c8d2',1,'snd_Music::vec_snd_EventTrack::data()'],['../snd__sound_8h.html#a80ea8092de0cce9e4637c65489c336f8',1,'snd_Music::vec_snd_Track::data()'],['../snd__sound_8h.html#ad73c43c268b3c1fef85c50c157d8922a',1,'snd_Music::vec_snd_Pattern::data()'],['../sound__eg_8h.html#a7a482f814a0cb413be88ef7931779faf',1,'sound_eg_LPCM::data()']]],
+  ['decay_5frate_1',['decay_rate',['../sound__eg_8h.html#a29c9ae53b12db8c23db4d5484cfbad42',1,'sound_eg_AHDSR']]],
+  ['design_20note_20_3a_20snddrv_20_2d_20a_20sound_20driver_2',['DESIGN NOTE : SNDDRV - a sound driver',['../md_docs_design_notes_snddrv.html',1,'']]],
+  ['design_2dnotes_5fsnddrv_2emd_3',['design-notes_snddrv.md',['../design-notes__snddrv_8md.html',1,'']]]
 ];

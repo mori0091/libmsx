@@ -1,23 +1,4 @@
 var searchData=
 [
-  ['screen_5fmode_0',['screen_mode',['../vdp_8c.html#ad7f208183d1b0993bf96986850e8de81',1,'screen_mode():&#160;vdp.c'],['../vdp__internal_8h.html#ad7f208183d1b0993bf96986850e8de81',1,'screen_mode():&#160;vdp.c']]],
-  ['se_1',['se',['../sound_8c.html#a0e45ff5f5ef6b20fde45be41f63998cf',1,'sound.c']]],
-  ['section_2',['section',['../structsound__state.html#a95f4f8ab996ee399057134258c6b1ca3',1,'sound_state']]],
-  ['sound_3',['sound',['../sound_8c.html#a997355753e0e73b392a6c570246a2ae5',1,'sound.c']]],
-  ['sound_5fadvance_5fcount_4',['sound_advance_count',['../sound_8c.html#ab70a16dd5e9d01bdbc35764102ac04e4',1,'sound.c']]],
-  ['sound_5feg_5fahdsr_5',['sound_eg_AHDSR',['../sound__eg__AHDSR_8c.html#a380105d26608f74823f014bfbfcdaa04',1,'sound_eg_AHDSR():&#160;sound_eg_AHDSR.c'],['../sound_8c.html#a380105d26608f74823f014bfbfcdaa04',1,'sound_eg_AHDSR():&#160;sound_eg_AHDSR.c']]],
-  ['sound_5feg_5fahdsr_5fdefault_6',['sound_eg_AHDSR_DEFAULT',['../sound_8c.html#aba5e5e90b3803a5ed385aaa72726e0d0',1,'sound.c']]],
-  ['sound_5feg_5fclasses_7',['sound_eg_classes',['../sound_8c.html#aae5b5b111aa60e4a7440174b0bbaa66e',1,'sound.c']]],
-  ['sound_5feg_5flpcm_8',['sound_eg_LPCM',['../sound_8c.html#a0a7b65d0dca89f6c9f929533a89fe485',1,'sound_eg_LPCM():&#160;sound_eg_LPCM.c'],['../sound__eg__LPCM_8c.html#a0a7b65d0dca89f6c9f929533a89fe485',1,'sound_eg_LPCM():&#160;sound_eg_LPCM.c']]],
-  ['sound_5feg_5flpcm_5fdefault_9',['sound_eg_LPCM_DEFAULT',['../sound_8c.html#ab4dfe34426ce3df01f838f3bbdbb739b',1,'sound.c']]],
-  ['sound_5feg_5ftable_10',['sound_eg_table',['../sound_8c.html#a39dd3ddfce9dede068b34facf8b5122a',1,'sound.c']]],
-  ['sound_5feg_5ftable_5fdefault_11',['sound_eg_table_default',['../sound_8c.html#aec659755c83dd8b156005b6791a37974',1,'sound.c']]],
-  ['sound_5fplayer_5fctx_12',['sound_player_ctx',['../sound_8c.html#a643b50270112ac546d61dfd9fadfb843',1,'sound.c']]],
-  ['sound_5ftick_13',['sound_tick',['../sound_8c.html#a2b1447dc233b19e8c36c251305ae12bc',1,'sound.c']]],
-  ['sprite_5fmode_14',['sprite_mode',['../vdp__internal_8h.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c',1,'sprite_mode():&#160;vdp.c'],['../vdp_8c.html#aedaf0b3b96cebe0a1ca1c7f1e35bb40c',1,'sprite_mode():&#160;vdp.c']]],
-  ['st_15',['st',['../sound_8c.html#adef2683c40153538e8ce6de5eb3305fd',1,'sound.c']]],
-  ['state_16',['state',['../structsound__eg.html#af0ad44ad1ad0d31adbb3a01fbe1c0ae8',1,'sound_eg']]],
-  ['stch_17',['stch',['../sound_8c.html#aa4a70da2d11b6e2437c49999958ebbfa',1,'sound.c']]],
-  ['streams_18',['streams',['../structsound__fragment.html#afc3795cddeeb09bce0deef79daaa7e39',1,'sound_fragment']]],
-  ['sustain_5flevel_19',['sustain_level',['../structsound__eg__AHDSR.html#adc973360e68d9c031ab40af9f5d36708',1,'sound_eg_AHDSR']]]
+  ['x_0',['x',['../metasprite_8h.html#ac10174aae1d67addfa1b70df98c5faf3',1,'vec2i::x()'],['../sprite_8h.html#ae721ff1bb077d5d54ee08a4ea0ae607c',1,'sprite::x()']]]
 ];

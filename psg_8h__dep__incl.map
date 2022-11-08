@@ -1,10 +1,5 @@
 <map id="include/psg.h" name="include/psg.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="291,5,390,32"/>
-<area shape="rect" id="node2" href="$ay__3__8910_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="14,80,153,107"/>
-<area shape="rect" id="node4" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="145,155,235,181"/>
-<area shape="rect" id="node5" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="227,80,329,107"/>
-<area shape="rect" id="node6" href="$psg__get_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="353,80,453,107"/>
-<area shape="rect" id="node7" href="$psg__init_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="478,80,577,107"/>
-<area shape="rect" id="node8" href="$psg__set_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="601,80,701,107"/>
-<area shape="rect" id="node3" href="$ay__3__8910_8c.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="5,155,121,181"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="97,5,196,32"/>
+<area shape="rect" id="node2" href="$ay__3__8910_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="168,80,269,107"/>
 </map>

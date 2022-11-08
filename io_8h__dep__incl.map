@@ -1,52 +1,11 @@
 <map id="include/io.h" name="include/io.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1983,5,2069,32"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6422,326,6523,353"/>
-<area shape="rect" id="node3" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="382,80,481,107"/>
-<area shape="rect" id="node10" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="3571,155,3670,181"/>
-<area shape="rect" id="node48" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="6523,80,6636,107"/>
-<area shape="rect" id="node4" href="$ay__3__8910_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="43,155,182,181"/>
-<area shape="rect" id="node6" href="$sound_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="184,237,273,263"/>
-<area shape="rect" id="node7" href="$psg__get_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="257,155,357,181"/>
-<area shape="rect" id="node8" href="$psg__init_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="382,155,481,181"/>
-<area shape="rect" id="node9" href="$psg__set_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="505,155,605,181"/>
-<area shape="rect" id="node5" href="$ay__3__8910_8c.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="44,237,160,263"/>
-<area shape="rect" id="node11" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6510,237,6649,263"/>
-<area shape="rect" id="node13" href="$vdp_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="4931,237,5006,263"/>
-<area shape="rect" id="node14" href="$vdp__cmd__execute_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5031,237,5189,263"/>
-<area shape="rect" id="node15" href="$vdp__cmd__execute__HMMM_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5214,229,5363,271"/>
-<area shape="rect" id="node16" href="$vdp__cmd__execute__HMMV_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5387,229,5537,271"/>
-<area shape="rect" id="node17" href="$vdp__cmd__execute__LMMM_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5561,229,5710,271"/>
-<area shape="rect" id="node18" href="$vdp__cmd__execute__LMMV_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5734,229,5883,271"/>
-<area shape="rect" id="node19" href="$vdp__cmd__set__unrestricted_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5908,237,6115,263"/>
-<area shape="rect" id="node20" href="$vdp__get__sprite__mode_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6139,229,6268,271"/>
-<area shape="rect" id="node21" href="$vdp__get__status_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6292,237,6435,263"/>
-<area shape="rect" id="node22" href="$vdp__set__adjust_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="732,237,875,263"/>
-<area shape="rect" id="node23" href="$vdp__set__color_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="899,237,1033,263"/>
-<area shape="rect" id="node24" href="$vdp__set__color__table_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1058,237,1229,263"/>
-<area shape="rect" id="node25" href="$vdp__set__control_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1253,237,1399,263"/>
-<area shape="rect" id="node26" href="$vdp__set__hscroll_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1424,237,1569,263"/>
-<area shape="rect" id="node27" href="$vdp__set__hscroll__dual__page_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1593,229,1728,271"/>
-<area shape="rect" id="node28" href="$vdp__set__hscroll__mask_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1752,229,1887,271"/>
-<area shape="rect" id="node29" href="$vdp__set__image__table_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1911,237,2088,263"/>
-<area shape="rect" id="node30" href="$vdp__set__palette_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2113,237,2259,263"/>
-<area shape="rect" id="node31" href="$vdp__set__pattern__table_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2284,229,2421,271"/>
-<area shape="rect" id="node32" href="$vdp__set__screen__lines_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2446,229,2582,271"/>
-<area shape="rect" id="node33" href="$vdp__set__screen__mode_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2606,229,2742,271"/>
-<area shape="rect" id="node34" href="$vdp__set__sprite__attribute__table_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2765,229,2895,271"/>
-<area shape="rect" id="node35" href="$vdp__set__sprite__pattern__table_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="2919,229,3048,271"/>
-<area shape="rect" id="node36" href="$vdp__set__sprite__size_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3072,229,3201,271"/>
-<area shape="rect" id="node37" href="$vdp__set__sprite__visible_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3225,229,3355,271"/>
-<area shape="rect" id="node38" href="$vdp__set__visible_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3379,237,3523,263"/>
-<area shape="rect" id="node39" href="$vdp__set__vscroll_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3548,237,3693,263"/>
-<area shape="rect" id="node40" href="$vdp__write__control_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3717,237,3873,263"/>
-<area shape="rect" id="node41" href="$vdp__write__palette_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="3897,237,4053,263"/>
-<area shape="rect" id="node42" href="$vmem__memset_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="4078,237,4222,263"/>
-<area shape="rect" id="node43" href="$vmem__read_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="4246,237,4369,263"/>
-<area shape="rect" id="node44" href="$vmem__set__read__address_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="4393,237,4593,263"/>
-<area shape="rect" id="node45" href="$vmem__set__sprite__color__s_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6825,319,6969,360"/>
-<area shape="rect" id="node46" href="$vmem__set__write__address_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="4617,229,4757,271"/>
-<area shape="rect" id="node47" href="$vmem__write_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="4782,237,4907,263"/>
-<area shape="rect" id="node12" href="$vmem__set__metasprite__a_8c.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6575,326,6773,353"/>
-<area shape="rect" id="node49" href="$sprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6631,155,6741,181"/>
-<area shape="rect" id="node50" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="6825,237,6969,263"/>
+<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="125,5,212,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="225,304,326,331"/>
+<area shape="rect" id="node3" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="53,80,151,107"/>
+<area shape="rect" id="node5" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="195,155,294,181"/>
+<area shape="rect" id="node7" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="291,80,404,107"/>
+<area shape="rect" id="node4" href="$ay__3__8910_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="33,155,171,181"/>
+<area shape="rect" id="node6" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="206,229,345,256"/>
+<area shape="rect" id="node8" href="$sprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="419,155,529,181"/>
+<area shape="rect" id="node9" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="470,229,614,256"/>
 </map>

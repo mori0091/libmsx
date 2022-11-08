@@ -19,15 +19,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-struct snd_a_ctx {
-  uint8_t wait;
-  uint8_t timer;
-  uint8_t a_number;             // arpeggio table number
-};
+#include "../include/snd_p_table.h"
 
-extern void snd_a_note_on(struct snd_a_ctx * ctx);
-extern void snd_a_note_off(struct snd_a_ctx * ctx);
-extern void snd_a__program_change(uint8_t index, struct snd_a_ctx * ctx);
-extern void snd_a__decode(struct snd_a_ctx * ctx);
+#define snd_a_note_on(ctx) snd_p_note_on(ctx)
+#define snd_a_note_off(ctx) snd_p_note_off(ctx)
+#define snd_a__program_change(ctx, p) snd_p__program_change(ctx, p)
+#define snd_a__decode(ctx) snd_p__decode(ctx)
 
 #endif // SND_A_H_

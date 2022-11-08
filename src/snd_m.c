@@ -65,7 +65,7 @@ static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Music * pg, con
 
 static uint8_t snd_m__stream_take(struct snd_m_ctx * ctx);
 static void snd_m__decode_channel(struct snd_m_ctx * ctx, struct snd_channel * pch);
-static void snd_m__decode_expression_command(struct snd_channel * pch);
+static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch);
 
 inline void snd_m__update(struct snd_m_ctx * ctx) {
   struct snd_channel * pch = ctx->channels;
@@ -169,7 +169,7 @@ static void snd_m__decode_channel(struct snd_m_ctx * ctx, struct snd_channel * p
       // expressions
       uint8_t n = x & 0x0f;
       do {
-        snd_m__decode_expression_command(pch);
+        snd_m__decode_expression_command(ctx, pch);
       } while (n--);
     }
     else if (!(x & 0x20)) {     // x == 110*****b
@@ -187,7 +187,7 @@ static void snd_m__decode_channel(struct snd_m_ctx * ctx, struct snd_channel * p
   }
 }
 
-static void snd_m__decode_expression_command(struct snd_channel * pch) {
+static void snd_m__decode_expression_command(struct snd_m_ctx * ctx, struct snd_channel * pch) {
   // decode an expression command
   uint8_t x = snd_t_stream_take(&pch->t);
   const uint8_t tag = x >> 4;
@@ -256,10 +256,20 @@ static void snd_m__decode_expression_command(struct snd_channel * pch) {
       pch->p.wait = pch->pitch_wait = xyz >> 4;
     }
     else if (tag == 14) {
-      snd_a__program_change(xyz >> 4, &pch->a);
+      uint8_t idx = xyz >> 4;
+      const snd_PitchBend * p = 0;
+      if (idx && idx <= ctx->sa->pitchBendTables.length) {
+        p = &ctx->sa->pitchBendTables.data[idx - 1];
+      }
+      snd_a__program_change(&pch->a, p);
     }
     else if (tag == 15) {
-      snd_p__program_change(xyz >> 4, &pch->p);
+      uint8_t idx = xyz >> 4;
+      const snd_PeriodBend * p = 0;
+      if (idx && idx <= ctx->sa->periodBendTables.length) {
+        p = &ctx->sa->periodBendTables.data[idx - 1];
+      }
+      snd_p__program_change(&pch->p, p);
     }
   }
 }

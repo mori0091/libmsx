@@ -28,6 +28,9 @@
   <!-- identifier: "soundAssets" -->
   <xsl:param name="soundAssets" select="'soundAssets'"/>
 
+  <!-- identifier: "arpeggios" -->
+  <xsl:variable name="arpeggios" select="'arpeggios'"/>
+
   <!-- identifier: "instruments" -->
   <xsl:variable name="instruments" select="'instruments'"/>
 
@@ -160,6 +163,9 @@ extern const snd_SoundAssets <xsl:value-of select="$soundAssets"/>;
 
 static const uint8_t EMPTY_STREAM[] = {EOM};
 
+<!-- Generates contents of arpeggio data tables -->
+<xsl:apply-templates select="aks:arpeggios"/>
+
 <!-- Generates contents of instrument data tables -->
 <xsl:apply-templates select="aks:fmInstruments"/>
 
@@ -167,9 +173,62 @@ static const uint8_t EMPTY_STREAM[] = {EOM};
 <xsl:apply-templates select="aks:subsongs"/>
 
 const snd_SoundAssets <xsl:value-of select="$soundAssets"/> = {
+  .pitchBendTables = VEC_FROM_ARRAY(<xsl:value-of select="$arpeggios"/>),
   .instruments = VEC_FROM_ARRAY(<xsl:value-of select="$instruments"/>),
   .musics = VEC_FROM_ARRAY(<xsl:value-of select="$musics"/>),
 };
+</xsl:template>
+
+  <!-- ===================== template: <aks:arpeggios> ======================= -->
+  <xsl:template match="aks:arpeggios">
+// =======================================================================
+// Arpeggio data tables (pitch-bend tables)
+
+<xsl:apply-templates select="aks:arpeggio"/>
+
+static const snd_PitchBend <xsl:value-of select="$arpeggios"/>[] = {<xsl:for-each select="aks:arpeggio">
+<xsl:variable name="arpeggio">arpeggio<xsl:value-of select="aks:index"/></xsl:variable>
+<xsl:variable name="ad_part"><xsl:value-of select="$arpeggio"/>_a</xsl:variable>
+<xsl:variable name="s_part"><xsl:value-of select="$arpeggio"/>_s</xsl:variable>
+<xsl:variable name="r_part"><xsl:value-of select="$arpeggio"/>_r</xsl:variable>
+  {
+    .wait = <xsl:value-of select="aks:speed"/>,
+    .ad_part = <xsl:value-of select="$ad_part"/>,
+    .s_part = <xsl:value-of select="$s_part"/>,
+    .r_part = <xsl:value-of select="$r_part"/>,
+  },
+</xsl:for-each>
+  {0},
+};
+</xsl:template>
+
+  <xsl:template match="aks:arpeggio">
+    <xsl:variable name="arpeggio">arpeggio<xsl:value-of select="aks:index"/></xsl:variable>
+    <xsl:variable name="ad_part"><xsl:value-of select="$arpeggio"/>_a</xsl:variable>
+    <xsl:variable name="s_part"><xsl:value-of select="$arpeggio"/>_s</xsl:variable>
+    <xsl:variable name="r_part"><xsl:value-of select="$arpeggio"/>_r</xsl:variable>
+    <xsl:variable name="beg" select="aks:loopStartIndex + 1"/>
+    <xsl:variable name="end" select="aks:endIndex + 1"/>
+// -----------------------------------------------------------------------
+// <xsl:value-of select="aks:index"/>. "<xsl:value-of select="aks:name"/>"
+
+static const int16_t <xsl:value-of select="$ad_part"/>[] = {
+<xsl:apply-templates select="aks:arpeggioCell[$beg > position()]"/>
+  0,
+};
+
+static const int16_t <xsl:value-of select="$s_part"/>[] = {
+<xsl:apply-templates select="aks:arpeggioCell[(position() >= $beg) and ($end >= position())]"/>
+  0,
+};
+
+static const int16_t <xsl:value-of select="$r_part"/>[] = {
+<xsl:apply-templates select="aks:arpeggioCell[position() > $end]"/>
+  0,
+};
+</xsl:template>
+
+  <xsl:template match="aks:arpeggioCell">  (int16_t)(0x8000 + <xsl:value-of select="(aks:note + 12 * aks:octave) * 256"/>),
 </xsl:template>
 
   <!-- ===================== template: <aks:fmInstruments> ======================= -->

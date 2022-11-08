@@ -17,6 +17,7 @@
 #include "./snd_osc_period.h"
 
 #include "../include/ay_3_8910.h"
+#include <stdint.h>
 
 #define PSG(reg)                     (ay_3_8910_buffer[(reg)])
 
@@ -78,14 +79,15 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
   const int16_t pitch = snd_channel_calc_pitch(pch);
   uint16_t sw_period = 0;
   uint16_t hw_period = 0;
+  int16_t period_offset = pch->p.value;
   switch (pch->i.modulation) {
     case 0:
       // ---- SW only ------------------------------------
-      sw_period = snd_channel_calc_sw_period(pitch, pch);
+      sw_period = snd_channel_calc_sw_period(pitch, pch) + period_offset;
       break;
     case 1:
       // ---- HW only ------------------------------------
-      hw_period = snd_channel_calc_hw_period(pitch, pch);
+      hw_period = snd_channel_calc_hw_period(pitch, pch) + period_offset;
       break;
     case 2:
       // ---- SW -> HW -----------------------------------
@@ -94,6 +96,8 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
       if (!hw_period) {
         hw_period = (sw_period >> pch->i.ratio) + pch->i.hw_period_delta;
       }
+      sw_period += period_offset;
+      hw_period += period_offset;
       break;
     case 3:
       // ----- HW -> SW -----------------------------------
@@ -102,11 +106,13 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
       if (!sw_period) {
         sw_period = (hw_period << pch->i.ratio) + pch->i.sw_period_delta;
       }
+      sw_period += period_offset;
+      hw_period += period_offset;
       break;
     case 4:
       // ----- SW + HW ------------------------------------
-      sw_period = snd_channel_calc_sw_period(pitch, pch);
-      hw_period = snd_channel_calc_hw_period(pitch, pch);
+      sw_period = snd_channel_calc_sw_period(pitch, pch) + period_offset;
+      hw_period = snd_channel_calc_hw_period(pitch, pch) + period_offset;
       break;
   }
   // ---- square wave ---------------------------------
@@ -116,7 +122,7 @@ static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
 }
 
 static int16_t snd_channel_calc_pitch(struct snd_channel * pch) {
-  return pch->pitch + 256 * pch->arp + pch->p.pitch;
+  return pch->pitch + 256 * pch->arp + pch->a.value;
 }
 
 static uint16_t snd_channel_calc_sw_period(int16_t pitch, struct snd_channel * pch) {

@@ -25,7 +25,7 @@ typedef struct snd_p_table snd_PeriodBend;
  * Pitch bend table.
  *
  * A pitch bend table defines a time series data of a pitch envelope such as
- * pitch slide (pitch bend), vibrato.
+ * pitch slide (pitch bend), vibrato, arpeggio.
  *
  * An pitch bend table contains 3 part of data streams:
  * - `ad_part`:

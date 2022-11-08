@@ -191,7 +191,7 @@ static const snd_PitchBend <xsl:value-of select="$arpeggios"/>[] = {<xsl:for-eac
 <xsl:variable name="ad_part"><xsl:value-of select="$arpeggio"/>_a</xsl:variable>
 <xsl:variable name="s_part"><xsl:value-of select="$arpeggio"/>_s</xsl:variable>
 <xsl:variable name="r_part"><xsl:value-of select="$arpeggio"/>_r</xsl:variable>
-  {
+  [<xsl:value-of select="aks:index - 1"/>] = {
     .wait = <xsl:value-of select="aks:speed"/>,
     .ad_part = <xsl:value-of select="$ad_part"/>,
     .s_part = <xsl:value-of select="$s_part"/>,
@@ -243,7 +243,7 @@ static const snd_Instrument <xsl:value-of select="$instruments"/>[] = {<xsl:for-
 <xsl:variable name="ad_part"><xsl:value-of select="$instrument"/>_a</xsl:variable>
 <xsl:variable name="s_part"><xsl:value-of select="$instrument"/>_s</xsl:variable>
 <xsl:variable name="r_part"><xsl:value-of select="$instrument"/>_r</xsl:variable>
-  {
+  [<xsl:value-of select="aks:number - 1"/>] = {
     .wait = <xsl:value-of select="aks:speed"/>,
     .ad_part = <xsl:value-of select="$ad_part"/>,
     .s_part = <xsl:value-of select="$s_part"/>,
@@ -308,7 +308,7 @@ static const uint8_t <xsl:value-of select="$r_part"/>[] = {
         <xsl:call-template name="noise">
           <xsl:with-param name="mix" select="0"/>
         </xsl:call-template>
-        <xsl:call-template name="ratio"/>
+        <!-- <xsl:call-template name="ratio"/> -->
         <xsl:call-template name="hardwarePitchBend"/>
         <xsl:call-template name="hardwareEnvelope">
           <xsl:with-param name="modulation" select="0"/>
@@ -486,7 +486,7 @@ static const snd_Music <xsl:value-of select="$musics"/>[] = {<xsl:for-each selec
   <xsl:template match="//aks:speedTracks">
     <xsl:apply-templates select="aks:speedTrack"/>
 static const snd_SpeedTrack <xsl:call-template name="speedTracks"/>[] = {
-<xsl:for-each select="aks:speedTrack">  VEC_FROM_ARRAY(<xsl:call-template name="speedTrack"/>),
+<xsl:for-each select="aks:speedTrack">  [<xsl:value-of select="aks:number"/>] = VEC_FROM_ARRAY(<xsl:call-template name="speedTrack"/>),
 </xsl:for-each>
 };
 </xsl:template>
@@ -532,7 +532,7 @@ static const uint8_t <xsl:call-template name="speedTrack"/>[] = {
   <xsl:template match="//aks:eventTracks">
     <xsl:apply-templates select="aks:eventTrack"/>
 static const snd_EventTrack <xsl:call-template name="eventTracks"/>[] = {
-<xsl:for-each select="aks:eventTrack">  VEC_FROM_ARRAY(<xsl:call-template name="eventTrack"/>),
+<xsl:for-each select="aks:eventTrack">  [<xsl:value-of select="aks:number"/>] = VEC_FROM_ARRAY(<xsl:call-template name="eventTrack"/>),
 </xsl:for-each>
 };
 </xsl:template>
@@ -577,7 +577,7 @@ static const uint8_t <xsl:call-template name="eventTrack"/>[] = {
   <xsl:template match="//aks:tracks">
     <xsl:apply-templates select="aks:track"/>
 static const snd_Track <xsl:call-template name="tracks"/>[] = {
-<xsl:for-each select="aks:track">  VEC_FROM_ARRAY(<xsl:call-template name="track"/>),
+<xsl:for-each select="aks:track">  [<xsl:value-of select="aks:number"/>] = VEC_FROM_ARRAY(<xsl:call-template name="track"/>),
 </xsl:for-each>
 };
 </xsl:template>

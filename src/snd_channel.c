@@ -80,6 +80,8 @@ void snd_channel_note_off(struct snd_channel * pch) {
 }
 
 void snd_channel_reset_expression(struct snd_channel * pch) {
+  snd_a__program_change(&pch->a, NULL); // arpeggio off
+  snd_p__program_change(&pch->p, NULL); // pitch envelope off
   snd_channel_reset_arpeggio(pch);
   snd_channel_reset_period_bend(pch);
   snd_channel_reset_pitch_bend(pch);
@@ -88,7 +90,6 @@ void snd_channel_reset_expression(struct snd_channel * pch) {
 }
 
 static void snd_channel_reset_arpeggio(struct snd_channel * pch) {
-  snd_a__program_change(&pch->a, NULL); // arpeggio off
   pch->arp = 0;
   pch->arp_vec_data = 0;
 }
@@ -99,7 +100,6 @@ static void snd_channel_reset_period_bend(struct snd_channel * pch) {
   // pch->pitch_max = PITCH_MAX;
 }
 static void snd_channel_reset_pitch_bend(struct snd_channel * pch) {
-  snd_p__program_change(&pch->p, NULL); // pitch envelope off
   pch->pitch_delta = 0;
 }
 static void snd_channel_reset_pitch_glide(struct snd_channel * pch) {

@@ -141,7 +141,7 @@ static uint16_t snd_channel_calc_sw_period(int16_t pitch, struct snd_channel * p
 static uint16_t snd_channel_calc_hw_period(int16_t pitch, struct snd_channel * pch) {
   if (!pch->i.hw_period) {
     return
-      (snd_osc_period(pitch + pch->i.hw_pitch) >> pch->i.ratio)
+      snd_osc_period(pitch + pch->i.hw_pitch)
       + pch->period_offset      // !?
       + pch->i.hw_period_delta;
   }

@@ -83,7 +83,7 @@ static void snd_i__init_state(struct snd_i_ctx * ctx) {
   ctx->retrig = false;
   ctx->modulation = 0;
   ctx->waveform = 0;
-  ctx->ratio = 4;
+  ctx->ratio = 0;
   ctx->sw_period = 0;
   ctx->sw_period_delta = 0;
   ctx->sw_pitch = 0;

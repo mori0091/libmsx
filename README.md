@@ -63,17 +63,14 @@ The below functionality is supported.
   - PSG (AY-3-8910)
 
 - Sound driver
-  - Start / Stop / Pause / Mute the BGM.
-  - Playing sound effects.
-    - While a sound effect is playing, the channels of BGM that conflicts with
-      sound effects are automatically muted.
-  - NTSC (60Hz) and PAL/SECAM (50Hz) are supported.
-  - All functionality of PSG is supported.
-  - Software envelope generator is supported.
-    - AHDSR (attack / hold / decay / sustain / release) type envelope generator
-    - LPCM (8-bit 60Hz linear PCM) type envelope generator
-    - Up to 16 user-defined envelope patterns can be used.
-  - (A MML compiler for the sound driver is not developped yet.)
+  - **NEW** SNDDRV a PSG sound driver
+    - SNDDRV covers almost feature of replayer of the [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
+    - SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song
+file (.aks file) into your application.
+    - See also the [design note of SNDDRV](docs/design-notes_snddrv.md)
+
+  - Another **OLD** PSG sound driver (sound.h, sound_eg.h) is still available,
+    but is no longer maintained.
 
 - MegaROM Mapper
   - SDCC `__banked` functions support (SDCC 4.2.0 or later)

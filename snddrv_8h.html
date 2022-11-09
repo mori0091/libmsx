@@ -501,7 +501,7 @@ Default frequency that the music composer assumed may not be the same. Therefore
 <div class="line"><a class="code hl_function" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a>(<a class="code hl_function" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d">snd_play</a>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// And then, calls other APIs to start, stop, etc.</span></div>
-<div class="line"><a class="code hl_function" href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">snd_set_bgm</a>(&amp;my_bgm);</div>
+<div class="line"><a class="code hl_function" href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">snd_set_bgm</a>(0, &amp;my_bgm);</div>
 <div class="line"><a class="code hl_function" href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">snd_start</a>();</div>
 <div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">Register user defined VSYNC interrupt handler.</div></div>
 <div class="ttc" id="asnddrv_8h_html_a0c1bbeef31103b115cb8fe721082ae9e"><div class="ttname"><a href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">snd_start</a></div><div class="ttdeci">void snd_start(void)</div><div class="ttdoc">Start / Resume music.</div></div>

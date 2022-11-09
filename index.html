@@ -139,20 +139,13 @@ Supported functionality</h1>
 </ul>
 </li>
 <li>Sound driver<ul>
-<li>Start / Stop / Pause / Mute the BGM.</li>
-<li>Playing sound effects.<ul>
-<li>While a sound effect is playing, the channels of BGM that conflicts with sound effects are automatically muted.</li>
+<li><b>NEW</b> SNDDRV a PSG sound driver<ul>
+<li>SNDDRV covers almost feature of replayer of the <a href="http://www.julien-nevo.com/arkostracker/">Arkos Tracker 2</a>.</li>
+<li>SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song file (.aks file) into your application.</li>
+<li>See also the <a class="el" href="md_docs_design_notes_snddrv.html">design note of SNDDRV</a></li>
 </ul>
 </li>
-<li>NTSC (60Hz) and PAL/SECAM (50Hz) are supported.</li>
-<li>All functionality of PSG is supported.</li>
-<li>Software envelope generator is supported.<ul>
-<li>AHDSR (attack / hold / decay / sustain / release) type envelope generator</li>
-<li>LPCM (8-bit 60Hz linear PCM) type envelope generator</li>
-<li>Up to 16 user-defined envelope patterns can be used.</li>
-</ul>
-</li>
-<li>(A MML compiler for the sound driver is not developped yet.)</li>
+<li>Another <b>OLD</b> PSG sound driver (<a class="el" href="sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)">sound.h</a>, <a class="el" href="sound__eg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)">sound_eg.h</a>) is still available, but is no longer maintained.</li>
 </ul>
 </li>
 <li>MegaROM Mapper<ul>

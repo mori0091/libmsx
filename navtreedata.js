@@ -48,22 +48,22 @@ var NAVTREE =
     [ "DESIGN NOTE : SNDDRV - a sound driver", "md_docs_design_notes_snddrv.html", [
       [ "About", "md_docs_design_notes_snddrv.html#autotoc_md17", null ],
       [ "Features", "md_docs_design_notes_snddrv.html#autotoc_md18", null ],
-      [ "How to integrate Arkos Tracker 2 .aks files into your application", "md_docs_design_notes_snddrv.html#autotoc_md19", null ],
-      [ "Internal of SNDDRV", "md_docs_design_notes_snddrv.html#autotoc_md20", [
-        [ "SNDDRV's sound processing pipiline", "md_docs_design_notes_snddrv.html#autotoc_md21", null ],
-        [ "Sound data structure", "md_docs_design_notes_snddrv.html#autotoc_md22", null ],
-        [ "Sound data format notation", "md_docs_design_notes_snddrv.html#autotoc_md23", null ],
-        [ "Definition of Sound data", "md_docs_design_notes_snddrv.html#autotoc_md24", [
-          [ "Definition of SpeedTrack stream", "md_docs_design_notes_snddrv.html#autotoc_md25", null ],
-          [ "Definition of EventTrack stream", "md_docs_design_notes_snddrv.html#autotoc_md26", null ],
-          [ "Definition of Track stream", "md_docs_design_notes_snddrv.html#autotoc_md27", [
-            [ "Track stream", "md_docs_design_notes_snddrv.html#autotoc_md28", null ],
-            [ "Chunk of Track stream", "md_docs_design_notes_snddrv.html#autotoc_md29", null ]
-          ] ],
-          [ "Definition of Pattern table", "md_docs_design_notes_snddrv.html#autotoc_md30", null ]
+      [ "How to integrate Arkos Tracker 2 .aks files into your application", "md_docs_design_notes_snddrv.html#autotoc_md19", null ]
+    ] ],
+    [ "DESIGN NOTE : Internal of SNDDRV", "md_docs_design_notes_snddrv_internal.html", [
+      [ "SNDDRV's sound processing pipiline", "md_docs_design_notes_snddrv_internal.html#autotoc_md21", null ],
+      [ "Sound data structure", "md_docs_design_notes_snddrv_internal.html#autotoc_md22", null ],
+      [ "Sound data format notation", "md_docs_design_notes_snddrv_internal.html#autotoc_md23", null ],
+      [ "Definition of Sound data", "md_docs_design_notes_snddrv_internal.html#autotoc_md24", [
+        [ "Definition of SpeedTrack stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md25", null ],
+        [ "Definition of EventTrack stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md26", null ],
+        [ "Definition of Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md27", [
+          [ "Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md28", null ],
+          [ "Chunk of Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md29", null ]
         ] ],
-        [ "Definition of Instrument (timbre) table", "md_docs_design_notes_snddrv.html#autotoc_md31", null ]
-      ] ]
+        [ "Definition of Pattern table", "md_docs_design_notes_snddrv_internal.html#autotoc_md30", null ]
+      ] ],
+      [ "Definition of Instrument (timbre) table", "md_docs_design_notes_snddrv_internal.html#autotoc_md31", null ]
     ] ],
     [ "Todo List", "todo.html", null ],
     [ "Data Structures", "annotated.html", [

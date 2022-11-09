@@ -147,15 +147,15 @@ Features</h1>
 <h1><a class="anchor" id="autotoc_md19"></a>
 How to integrate Arkos Tracker 2 .aks files into your application</h1>
 <ol type="1">
-<li>Make music with Arkos Tracker 2, and save as .aks file.<ul>
-<li>Note that the filename of .aks file is also used as name of corresponding C source files and/or name of variable of <code><a class="el" href="snd__sound_8h.html#structsnd__SoundAssets" title="Container of list of musics, instruments, arpeggio tables, and period tables.">snd_SoundAssets</a></code> type. Therefore it must be a legal identifier in C language.</li>
-<li>For example, <code>my_bgm.aks</code>, <code>playlist000.aks</code> are okay.</li>
-<li>But <code>my bgm.aks</code>, <code>2022_Greatest_Hits.aks</code>, <code>My favorite songs.aks</code> are invalid.</li>
-</ul>
-</li>
+<li>Make music with Arkos Tracker 2, and save as .aks file.</li>
 <li>Place .aks file(s) into <code>src</code> folder of your repository.</li>
 <li>Write application source code, for example such as the following, and place it into <code>src</code> folder:</li>
 </ol>
+<blockquote class="doxtable">
+<p >&zwj;Note that the filename of .aks file is also used as name of corresponding C source files and/or name of variable of <code><a class="el" href="snd__sound_8h.html#structsnd__SoundAssets" title="Container of list of musics, instruments, arpeggio tables, and period tables.">snd_SoundAssets</a></code> type. Therefore it must be a legal identifier in C language.</p>
+<p >For example, <code>my_bgm.aks</code>, <code>playlist000.aks</code> are okay.</p>
+<p >But <code>my bgm.aks</code>, <code>2022_Greatest_Hits.aks</code>, <code>My favorite songs.aks</code> are invalid. </p>
+</blockquote>
 <div class="fragment"><div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment"> * \file main.c</span></div>
 <div class="line"><span class="comment"> * </span></div>

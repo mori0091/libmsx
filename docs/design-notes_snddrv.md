@@ -43,7 +43,8 @@ uses SNDDRV API.
     - Arpeggio / Pitch-bend
     - Period / wavelength modification
 - Ease to integration
-  - A support tool `aks2c.sh` translates Arkos Tracker 2 song file (.aks) to C source file.
+  - A support tool `aks2c.sh` translates Arkos Tracker 2 song file (.aks) to C
+    source file.
   - The `libmsx`'s build system (makefiles) can automatically translates .aks
     files into C source files and built them into your application. It automates
     the following workflow.
@@ -54,14 +55,17 @@ uses SNDDRV API.
 # How to integrate Arkos Tracker 2 .aks files into your application
 
 1. Make music with Arkos Tracker 2, and save as .aks file.
-  - Note that the filename of .aks file is also used as name of corresponding C
-    source files and/or name of variable of `snd_SoundAssets` type. Therefore it
-    must be a legal identifier in C language.
-  - For example, `my_bgm.aks`, `playlist000.aks` are okay.
-  - But `my bgm.aks`, `2022_Greatest_Hits.aks`, `My favorite songs.aks` are invalid.
 2. Place .aks file(s) into `src` folder of your repository.
-3. Write application source code, for example such as the following, and place it into `src`
-   folder:
+3. Write application source code, for example such as the following, and place
+   it into `src` folder:
+
+> Note that the filename of .aks file is also used as name of corresponding C
+> source files and/or name of variable of `snd_SoundAssets` type. Therefore it
+> must be a legal identifier in C language.
+>
+> For example, `my_bgm.aks`, `playlist000.aks` are okay.
+> 
+> But `my bgm.aks`, `2022_Greatest_Hits.aks`, `My favorite songs.aks` are invalid.
 
 ~~~c
 /*

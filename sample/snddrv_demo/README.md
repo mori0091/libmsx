@@ -1,5 +1,9 @@
 # sample: SNDDRV demo
 
+
+https://user-images.githubusercontent.com/659805/200720906-7409fd6c-ee62-4f37-89bf-ba6645ebfc65.mp4
+
+
 This sample shows usecase of SNDDRV a PSG sound driver.
 
 SNDDRV covers almost feature of replayer of the [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).

@@ -138,4 +138,46 @@ void msx_CHGCPU(const uint8_t mode);
  */
 void msx_set_cpu_mode(const uint8_t mode);
 
+/**
+ * BIOS : GETCPU (0183H/MAIN) `MSXturboR`
+ *
+ * Get the CPU mode.
+ *
+ * \return  cpu mode:
+ *          - `0` : Z80 mode
+ *          - `1` : R800 ROM mode
+ *          - `2` : R800 DRAM mode
+ *
+ * \note
+ * This is a C language wrapper for the BIOS function `GETCPU (0183H/MAIN)` for
+ * MSXturboR.
+ *
+ * \attention
+ * For MSX, MSX2, and MSX2+, the behavior is undefined.\n
+ * Therefore, msx_get_cpu_mode() is recommended instead.
+ *
+ * \sa msx_get_cpu_mode()
+ */
+uint8_t msx_GETCPU(void);
+
+/**
+ * Get the CPU mode.
+ *
+ * \return  cpu mode:
+ *          - `0` : Z80 mode
+ *          - `1` : R800 ROM mode
+ *          - `2` : R800 DRAM mode
+ *
+ * \note
+ * This function is the C interface for the BIOS function`GETCPU (0183H/MAIN)`
+ * for MSXturboR.
+ *
+ * \note
+ * For MSX, MSX2, and MSX2+, this function always returns `0` (Z80 mode).\n
+ * Therefore, unlike msx_GETCPU(), this function can be used on any MSX platform.
+ *
+ * \sa msx_GETCPU()
+ */
+uint8_t msx_get_cpu_mode(void);
+
 #endif

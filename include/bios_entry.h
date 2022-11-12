@@ -120,4 +120,23 @@ static __at(0x00D8) const uint8_t GTTRIG;
  */
 static __at(0x0180) const uint8_t CHGCPU;
 
+/**
+ * BIOS : GETCPU (0183H/MAIN) `MSXturboR`
+ *
+ * Get the CPU mode.
+ *
+ * \return A  cpu mode:
+ *         - `0` : Z80 mode
+ *         - `1` : R800 ROM mode
+ *         - `2` : R800 DRAM mode
+ *
+ * \post `F` register will be changed.
+ *
+ * \sa msx_GETCPU()
+ * \sa msx_get_cpu_mode()
+ * \sa MSX Datapack Volume 3, pp.13
+ * \sa MSX Datapack Volume 3, pp.27
+ */
+static __at(0x0183) const uint8_t GETCPU;
+
 #endif

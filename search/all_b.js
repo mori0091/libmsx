@@ -1,18 +1,8 @@
 var searchData=
 [
-  ['metasprite_0',['metasprite',['../metasprite_8h.html#structmetasprite',1,'']]],
-  ['metasprite_2eh_1',['metasprite.h',['../metasprite_8h.html',1,'']]],
-  ['metasprite_5fh_2',['METASPRITE_H',['../metasprite_8h.html#a4b2523870ebd0bc58f65a5138affe961',1,'metasprite.h']]],
-  ['metasprite_5ft_3',['metasprite_t',['../metasprite_8h.html#aaa450295993f973fb05ebda45d8d14bf',1,'metasprite.h']]],
-  ['msx_2eh_4',['msx.h',['../msx_8h.html',1,'']]],
-  ['msx_5fchgcpu_5',['msx_CHGCPU',['../bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1',1,'bios.h']]],
-  ['msx_5fget_5fcpu_5fmode_6',['msx_get_cpu_mode',['../bios_8h.html#a9b18d372e5dc2d30439e273e5d4343f3',1,'bios.h']]],
-  ['msx_5fget_5fversion_7',['msx_get_version',['../bios_8h.html#a19b4876435ca81258934f0d78d6cae07',1,'bios.h']]],
-  ['msx_5fget_5fvsync_5ffrequency_8',['msx_get_vsync_frequency',['../bios_8h.html#a92e83309660f10fadbd038807b69b56f',1,'bios.h']]],
-  ['msx_5fgetcpu_9',['msx_GETCPU',['../bios_8h.html#ad7a3a4e8570a8bd076740f64b34d3e53',1,'bios.h']]],
-  ['msx_5fgtstck_10',['msx_GTSTCK',['../bios_8h.html#a221aeb5b2cb8816e03b9413e7c945ed8',1,'bios.h']]],
-  ['msx_5fgttrig_11',['msx_GTTRIG',['../bios_8h.html#a68a83910179dac98a2d038c99ea55abf',1,'bios.h']]],
-  ['msx_5fh_12',['MSX_H',['../msx_8h.html#a21c5b669b24a0dd185d8dafdc7023878',1,'msx.h']]],
-  ['msx_5fset_5fcpu_5fmode_13',['msx_set_cpu_mode',['../bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af',1,'bios.h']]],
-  ['musics_14',['musics',['../snd__sound_8h.html#ab3ebb5d3d3c59d8e17b6ecb07c898c1c',1,'snd_SoundAssets']]]
+  ['layouts_0',['layouts',['../metasprite_8h.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
+  ['len_1',['len',['../sound__eg_8h.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM']]],
+  ['length_2',['length',['../snd__sound_8h.html#a3adbc261bf9d043bbf4aea962f0af3a2',1,'snd_SoundAssets::vec_snd_PitchBend::length()'],['../snd__sound_8h.html#afd37803289cd16f1a713ca806351f062',1,'snd_SoundAssets::vec_snd_PeriodBend::length()'],['../snd__sound_8h.html#a192ba80b3c4cfe2bd564837c105edaf1',1,'snd_SoundAssets::vec_snd_Instrument::length()'],['../snd__sound_8h.html#a67b31dec23cf4b682513ea7a9fb86cb6',1,'snd_SoundAssets::vec_snd_Music::length()'],['../snd__sound_8h.html#a67c3eb9566de09124727943bd6f32e52',1,'snd_Music::vec_snd_SpeedTrack::length()'],['../snd__sound_8h.html#ab8ce04d6fbc22adce69bcc28aaf92327',1,'snd_Music::vec_snd_EventTrack::length()'],['../snd__sound_8h.html#a0622d559822622bc8a2a509c9010e0ed',1,'snd_Music::vec_snd_Track::length()'],['../snd__sound_8h.html#ad1d7309c750455476eb0209244e992d7',1,'snd_Music::vec_snd_Pattern::length()']]],
+  ['libmsx_20_3b_20c_20library_20for_20msx_3',['libmsx ; C library for MSX',['../index.html',1,'']]],
+  ['looptoindex_4',['loopToIndex',['../snd__sound_8h.html#a3216f248df996913d722aea1db4a3d27',1,'snd_Music']]]
 ];

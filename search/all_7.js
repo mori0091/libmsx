@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['height_0',['height',['../snd__sound_8h.html#ae5a0c0a1bd5ca96115ce6a87458b87fd',1,'snd_Pattern']]],
-  ['hold_5ftime_1',['hold_time',['../sound__eg_8h.html#a21370f5de118aca5b633e0501a668892',1,'sound_eg_AHDSR']]]
+  ['getcpu_0',['GETCPU',['../bios__entry_8h.html#a91fd124d4b8b97fcc19dfe2b08d64d75',1,'bios_entry.h']]],
+  ['gtstck_1',['GTSTCK',['../bios__entry_8h.html#a7dfb0604fdb04a3a658b5e1db04cdefa',1,'bios_entry.h']]],
+  ['gttrig_2',['GTTRIG',['../bios__entry_8h.html#a64496cb8cdbabc91bcf6d1b4eb4d7795',1,'bios_entry.h']]]
 ];

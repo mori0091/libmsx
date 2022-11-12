@@ -139,6 +139,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af">msx_set_cpu_mode</a> (const uint8_t mode)</td></tr>
 <tr class="memdesc:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the CPU mode.  <a href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af">More...</a><br /></td></tr>
 <tr class="separator:a4bb01de7baaae78f6cc43e81ba88d9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a3a4e8570a8bd076740f64b34d3e53"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#ad7a3a4e8570a8bd076740f64b34d3e53">msx_GETCPU</a> (void)</td></tr>
+<tr class="memdesc:ad7a3a4e8570a8bd076740f64b34d3e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">BIOS : GETCPU (0183H/MAIN) <code>MSXturboR</code>  <a href="bios_8h.html#ad7a3a4e8570a8bd076740f64b34d3e53">More...</a><br /></td></tr>
+<tr class="separator:ad7a3a4e8570a8bd076740f64b34d3e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b18d372e5dc2d30439e273e5d4343f3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bios_8h.html#a9b18d372e5dc2d30439e273e5d4343f3">msx_get_cpu_mode</a> (void)</td></tr>
+<tr class="memdesc:a9b18d372e5dc2d30439e273e5d4343f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the CPU mode.  <a href="bios_8h.html#a9b18d372e5dc2d30439e273e5d4343f3">More...</a><br /></td></tr>
+<tr class="separator:a9b18d372e5dc2d30439e273e5d4343f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Copyright (c) 2021 Daishi Mori (mori0091) </p>
@@ -402,6 +408,68 @@ Therefore, <a class="el" href="bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af" t
 For MSX, MSX2, and MSX2+, this function does nothing.<br  />
 Therefore, unlike <a class="el" href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1" title="BIOS : CHGCPU (0180H/MAIN) MSXturboR">msx_CHGCPU()</a>, this function can be used on any MSX platform.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="bios_8h.html#ade3c2351bf7f00eb60bd423e0b6fa4d1" title="BIOS : CHGCPU (0180H/MAIN) MSXturboR">msx_CHGCPU()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad7a3a4e8570a8bd076740f64b34d3e53" name="ad7a3a4e8570a8bd076740f64b34d3e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a3a4e8570a8bd076740f64b34d3e53">&#9670;&nbsp;</a></span>msx_GETCPU()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t msx_GETCPU </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BIOS : GETCPU (0183H/MAIN) <code>MSXturboR</code> </p>
+<p >Get the CPU mode.</p>
+<dl class="section return"><dt>Returns</dt><dd>cpu mode:<ul>
+<li><code>0</code> : Z80 mode</li>
+<li><code>1</code> : R800 ROM mode</li>
+<li><code>2</code> : R800 DRAM mode</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a C language wrapper for the BIOS function <code>GETCPU (0183H/MAIN)</code> for MSXturboR.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>For MSX, MSX2, and MSX2+, the behavior is undefined.<br  />
+Therefore, <a class="el" href="bios_8h.html#a9b18d372e5dc2d30439e273e5d4343f3" title="Get the CPU mode.">msx_get_cpu_mode()</a> is recommended instead.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="bios_8h.html#a9b18d372e5dc2d30439e273e5d4343f3" title="Get the CPU mode.">msx_get_cpu_mode()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a9b18d372e5dc2d30439e273e5d4343f3" name="a9b18d372e5dc2d30439e273e5d4343f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b18d372e5dc2d30439e273e5d4343f3">&#9670;&nbsp;</a></span>msx_get_cpu_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t msx_get_cpu_mode </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the CPU mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>cpu mode:<ul>
+<li><code>0</code> : Z80 mode</li>
+<li><code>1</code> : R800 ROM mode</li>
+<li><code>2</code> : R800 DRAM mode</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is the C interface for the BIOS function<code>GETCPU (0183H/MAIN)</code> for MSXturboR.</dd>
+<dd>
+For MSX, MSX2, and MSX2+, this function always returns <code>0</code> (Z80 mode).<br  />
+Therefore, unlike <a class="el" href="bios_8h.html#ad7a3a4e8570a8bd076740f64b34d3e53" title="BIOS : GETCPU (0183H/MAIN) MSXturboR">msx_GETCPU()</a>, this function can be used on any MSX platform.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="bios_8h.html#ad7a3a4e8570a8bd076740f64b34d3e53" title="BIOS : GETCPU (0183H/MAIN) MSXturboR">msx_GETCPU()</a> </dd></dl>
 
 </div>
 </div>

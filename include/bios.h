@@ -1,6 +1,7 @@
 // -*- coding: utf-8-unix -*-
 /**
  * \file bios.h
+ * \brief C language I/F for MSX BIOS routines.
  *
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
@@ -13,6 +14,7 @@
 
 #pragma once
 
+#include <stdint.h>
 #ifndef BIOS_H
 #define BIOS_H
 
@@ -36,6 +38,72 @@ inline uint8_t msx_get_version(void) {
 inline uint8_t msx_get_vsync_frequency(void) {
   return ((INTERNATIONAL_ID_1 & 0x80) ? 50 : 60);
 }
+
+/**
+ * BIOS : RDSLT (000CH / MAIN) `MSX`.
+ *
+ * Read value from the given address of the given slot.
+ *
+ * \param slot  the slot
+ * \param addr  the address to read
+ *
+ * \return value of the address of the slot.
+ *
+ * \post Interrupt is disabled.
+ */
+uint8_t msx_RDSLT(uint8_t slot, void * addr);
+
+/**
+ * BIOS : WRSLT (0014H / MAIN) `MSX`.
+ *
+ * Write a value to the given address of the given slot.
+ *
+ * \param slot  the slot
+ * \param addr  the address to write
+ * \param value a value to be written
+ *
+ * \post Interrupt is disabled.
+ */
+void msx_WRSLT(uint8_t slot, void * addr, uint8_t value);
+
+/**
+ * BIOS : ENASLT (0024H / MAIN) `MSX`.
+ *
+ * Switch the page including the given address to the given slot's corresponding page.
+ *
+ * \param slot  the slot
+ * \param addr  an address in the page
+ *
+ * \post Interrupt is disabled.
+ */
+void msx_ENASLT(uint8_t slot, void * addr);
+
+/**
+ * Get the current slot of a 16KiB page that including the given address.
+ *
+ * \param addr  the address
+ *
+ * \return the current slot of that page.
+ */
+uint8_t msx_get_slot(void * addr);
+
+/**
+ * BIOS : RSLREG (0138H / MAIN) `MSX`.
+ *
+ * Read value from the primary slot select register.
+ *
+ * \return value read from the primary slot select register.
+ */
+uint8_t msx_RSLREG(void);
+
+/**
+ * BIOS : WSLREG (013BH / MAIN) `MSX`.
+ *
+ * Write a value to the primary slot select register.
+ *
+ * \param value a value to be written to the primary slot select register.
+ */
+void msx_WSLREG(uint8_t value);
 
 /**
  * BIOS : GTSTCK (00D5H / MAIN) `MSX`

@@ -27,9 +27,9 @@ const uint8_t psg_reg_initial_vector[14] = {
 };
 
 void psg_init(void) {
-  __critical {
-    for (uint8_t i = 0; i < sizeof(psg_reg_initial_vector); ++i) {
-      psg_set(i, psg_reg_initial_vector[i]);
-    }
+  __asm__("di");
+  for (uint8_t i = 0; i < sizeof(psg_reg_initial_vector); ++i) {
+    psg_set(i, psg_reg_initial_vector[i]);
   }
+  __asm__("ei");
 }

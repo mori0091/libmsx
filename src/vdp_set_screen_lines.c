@@ -16,8 +16,8 @@
 #include "vdp_internal.h"
 
 void vdp_set_screen_lines(enum vdp_screen_lines lines) {
-  __critical {
-    RG9SAV = (RG9SAV & ~0x80) | lines;
-    VDP_SET_CONTROL_REGISTER(9, RG9SAV);
-  }
+  __asm__("di");
+  RG9SAV = (RG9SAV & ~0x80) | lines;
+  VDP_SET_CONTROL_REGISTER(9, RG9SAV);
+  __asm__("ei");
 }

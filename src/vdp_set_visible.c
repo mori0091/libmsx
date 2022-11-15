@@ -16,12 +16,12 @@
 #include "vdp_internal.h"
 
 void vdp_set_visible(bool visible) {
-  __critical {
-    if (visible) {
-      RG1SAV |= 0x40;
-    } else {
-      RG1SAV &= ~0x40;
-    }
-    VDP_SET_CONTROL_REGISTER(1, RG1SAV);
+  __asm__("di");
+  if (visible) {
+    RG1SAV |= 0x40;
+  } else {
+    RG1SAV &= ~0x40;
   }
+  VDP_SET_CONTROL_REGISTER(1, RG1SAV);
+  __asm__("ei");
 }

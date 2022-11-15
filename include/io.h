@@ -29,4 +29,7 @@ static volatile __sfr __at (0x0a0) psg_port0; /* address latch */
 static volatile __sfr __at (0x0a1) psg_port1; /* data write */
 static volatile __sfr __at (0x0a2) psg_port2; /* data read */
 
+// ---- Slot I/O ports
+static volatile __sfr __at (0x0a8) primary_slot_select_port;
+
 #endif

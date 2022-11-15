@@ -23,6 +23,98 @@
 #include "config.h"
 
 /**
+ * BIOS : RDSLT (000CH / MAIN) `MSX`.
+ *
+ * Read value from the given address of the given slot.
+ *
+ * \param A  slot
+ * \param HL address to read
+ *
+ * \retval A value of the address of the slot.
+ *
+ * \post AF, BC, DE registers will be changed.
+ * \post Interrupt is disabled.
+ *
+ * \sa msx_RDSLT()
+ */
+static __at(0x000c) const uint8_t RDSLT;
+
+/**
+ * BIOS : WRSLT (0014H / MAIN) `MSX`.
+ *
+ * Write a value to the given address of the given slot.
+ *
+ * \param A  slot
+ * \param HL address to write
+ * \param E  a value to be written
+ *
+ * \post AF, BC, D registers are changed.
+ * \post Interrupt is disabled.
+ *
+ * \sa msx_WRSLT()
+ */
+static __at(0x0014) const uint8_t WRSLT;
+
+/**
+ * BIOS : CALSLT (001CH / MAIN) `MSX`.
+ *
+ * Inter slot call to the given address of the given slot.
+ *
+ * \param IY slot (higher byte of `IY` register)
+ * \param IX address to be called
+ *
+ * \post CPU registers are changed according to the results of the routines called.
+ */
+static __at(0x001c) const uint8_t CALSLT;
+
+/**
+ * BIOS : ENASLT (0024H / MAIN) `MSX`.
+ *
+ * Switch the page including the given address to the given slot's corresponding page.
+ *
+ * \param A  slot
+ * \param HL address
+ *
+ * \post All registers are changed.
+ * \post Interrupt is disabled.
+ */
+static __at(0x0024) const uint8_t ENASLT;
+
+/**
+ * BIOS : CALLF (0030H / MAIN) `MSX`.
+ *
+ * Inter slot call to the given address of the given slot.
+ *
+ * Parameters shall be passed as inline parameter forms as follows:
+ * ~~~ asm
+ * rst 30h    ; same as "call _CALLF"
+ * db  00h    ; slot #0
+ * dw  006ch  ; address 006ch
+ * ~~~
+ *
+ * \post CPU registers are changed according to the results of the routines called.
+ */
+static __at(0x0030) const uint8_t CALLF;
+
+/**
+ * BIOS : RSLREG (0138H / MAIN) `MSX`.
+ *
+ * Read value from the primary slot select register.
+ *
+ * \retval A value
+ */
+static __at(0x0138) const uint8_t RSLREG;
+
+/**
+ * BIOS : WSLREG (013BH / MAIN) `MSX`.
+ *
+ * Write a value to the primary slot select register.
+ *
+ * \param A value
+ */
+static __at(0x013b) const uint8_t WSLREG;
+
+/**
  * BIOS : GTSTCK (00D5H / MAIN) `MSX`.
  *
  * Get the status of the eight-way lever on the joystick or the arrow keys on
@@ -125,7 +217,7 @@ static __at(0x0180) const uint8_t CHGCPU;
  *
  * Get the CPU mode.
  *
- * \return A  cpu mode:
+ * \retval A  cpu mode:
  *         - `0` : Z80 mode
  *         - `1` : R800 ROM mode
  *         - `2` : R800 DRAM mode

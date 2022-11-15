@@ -16,10 +16,10 @@
 #include "vdp_internal.h"
 
 void vdp_write_control(uint8_t reg, void* src, uint8_t len) {
-  __critical {
-    VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(reg);
-    for (uint8_t* p = src; len--; ) {
-      VDP_SET_CONTROL_REGISTER_VALUE(*p++);
-    }
+  __asm__("di");
+  VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(reg);
+  for (uint8_t* p = src; len--; ) {
+    VDP_SET_CONTROL_REGISTER_VALUE(*p++);
   }
+  __asm__("ei");
 }

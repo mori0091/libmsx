@@ -17,10 +17,10 @@
 
 uint8_t vdp_get_status(uint8_t reg) {
   volatile uint8_t x;
-  __critical {
-    VDP_SET_STATUS_REGISTER_POINTER(reg);
-    x = VDP_GET_STATUS_REGISTER_VALUE();
-    VDP_SET_STATUS_REGISTER_POINTER(0);
-  }
+  __asm__("di");
+  VDP_SET_STATUS_REGISTER_POINTER(reg);
+  x = VDP_GET_STATUS_REGISTER_VALUE();
+  VDP_SET_STATUS_REGISTER_POINTER(0);
+  __asm__("ei");
   return x;
 }

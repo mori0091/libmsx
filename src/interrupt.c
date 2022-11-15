@@ -72,15 +72,15 @@ void libmsx___init_intr(void) {
 }
 
 void set_interrupt_handler(void (*handler)(void)) {
-  __critical {
-    interrupt_handler = (handler ? handler : null_handler);
-  }
+  __asm__("di");
+  interrupt_handler = (handler ? handler : null_handler);
+  __asm__("ei");
 }
 
 void set_vsync_handler(void (*handler)(void)) {
-  __critical {
-    vsync_handler = (handler ? handler : null_handler);
-  }
+  __asm__("di");
+  vsync_handler = (handler ? handler : null_handler);
+  __asm__("ei");
 }
 
 void await_vsync(void) {

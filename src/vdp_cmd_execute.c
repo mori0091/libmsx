@@ -15,9 +15,9 @@
 
 static void vdp_cmd_exec_r32(const struct vdp_cmd * c, enum vdp_cmd_op opcode) {
   vdp_cmd_await();
-  __critical {
-    VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(32);
-  }
+  __asm__("di");
+  VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(32);
+  __asm__("ei");
   const uint8_t * p = &c->r32;
   VDP_SET_CONTROL_REGISTER_VALUE(*p++);
   VDP_SET_CONTROL_REGISTER_VALUE(*p++);
@@ -38,9 +38,9 @@ static void vdp_cmd_exec_r32(const struct vdp_cmd * c, enum vdp_cmd_op opcode) {
 
 static void vdp_cmd_exec_r36(const struct vdp_cmd * c, enum vdp_cmd_op opcode) {
   vdp_cmd_await();
-  __critical {
-    VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(36);
-  }
+  __asm__("di");
+  VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(36);
+  __asm__("ei");
   const uint8_t * p = &c->r36;
   VDP_SET_CONTROL_REGISTER_VALUE(*p++);
   VDP_SET_CONTROL_REGISTER_VALUE(*p++);

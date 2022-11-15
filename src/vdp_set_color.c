@@ -16,8 +16,8 @@
 #include "vdp_internal.h"
 
 void vdp_set_color(uint8_t c) {
-  __critical {
-    RG7SAV = c;
-    VDP_SET_CONTROL_REGISTER(7, c);
-  }
+  __asm__("di");
+  RG7SAV = c;
+  VDP_SET_CONTROL_REGISTER(7, c);
+  __asm__("ei");
 }

@@ -22,8 +22,8 @@ void vdp_set_adjust(int8_t x, int8_t y) {
   if (8 < y) y = 8;
   x = (0 < x) ? 16 - x : -x;
   y = (0 < y) ? 16 - y : -y;
-  __critical {
-    RG18SA = (y << 4) | x;
-    VDP_SET_CONTROL_REGISTER(18, RG18SA);
-  }
+  __asm__("di");
+  RG18SA = (y << 4) | x;
+  VDP_SET_CONTROL_REGISTER(18, RG18SA);
+  __asm__("ei");
 }

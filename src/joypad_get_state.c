@@ -38,21 +38,21 @@
 //   }
 //   for (;;) {
 //     volatile uint8_t x;
-//     __critical {
+//     __asm__("di");
 //       psg_set(15, r15 | KANA_LAMP_OFF);
 //       x = psg_get(14);
 //       // bit #3..#0 of PSG port B (PSG #15) shall be H level
 //       // during the PSG port B is not used for output.
 //       // (see MSX Datapack Volume 1, pp.44)
 //       psg_set(15, 0x0f | KANA_LAMP_OFF);
-//     }
+//     __asm__("ei");
 //     if (r14 == x) break;
 //     r14 = x;
 //   }
 //   return (~r14 & 0x3f);
 // }
 
-static const uint8_t lot[] = {
+static const uint8_t lut[] = {
   [0] = 0,
   [1] = VK_UP,
   [2] = VK_UP   | VK_RIGHT,
@@ -68,16 +68,16 @@ uint8_t joypad_get_state(uint8_t controller) {
   uint8_t joy;
   switch (controller) {
   case 0:
-    joy = lot[msx_GTSTCK(0)];
+    joy = lut[msx_GTSTCK(0)];
     joy |= msx_GTTRIG(0) & VK_FIRE_0;
     return joy;
   case 1:
-    joy = lot[msx_GTSTCK(1)];
+    joy = lut[msx_GTSTCK(1)];
     joy |= msx_GTTRIG(1) & VK_FIRE_0;
     joy |= msx_GTTRIG(3) & VK_FIRE_1;
     return joy;
   case 2:
-    joy = lot[msx_GTSTCK(2)];
+    joy = lut[msx_GTSTCK(2)];
     joy |= msx_GTTRIG(2) & VK_FIRE_0;
     joy |= msx_GTTRIG(4) & VK_FIRE_1;
     return joy;

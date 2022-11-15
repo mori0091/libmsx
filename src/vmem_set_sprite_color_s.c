@@ -20,10 +20,8 @@ void vmem_set_sprite_color_s(vmemptr_t base, uint8_t plane,
   const int m = vdp_get_sprite_mode();
   if (!m) return;
   if (m == 1) {
-    __critical {
-      vmem_set_write_address(base + plane * sizeof(struct sprite) + 3);
-      vmem_set(tagged_color);
-    }
+    vmem_set_write_address(base + plane * sizeof(struct sprite) + 3);
+    vmem_set(tagged_color);
     return;
   }
   vmem_memset(base - 0x0200 + plane * sizeof(struct sprite_color),

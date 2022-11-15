@@ -1,5 +1,5 @@
 <map id="include/bios.h" name="include/bios.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node1" title="C language I/F for MSX BIOS routines." alt="" coords="5,5,107,32"/>
 <area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="13,229,115,256"/>
 <area shape="rect" id="node3" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="51,80,149,107"/>
 <area shape="rect" id="node4" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="101,155,240,181"/>

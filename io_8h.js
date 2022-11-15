@@ -7,5 +7,6 @@ var io_8h =
     [ "vdp_port3", "io_8h.html#a9ee87b9d8167d1b4f01a4380a4cd7f68", null ],
     [ "psg_port0", "io_8h.html#a3f3ee8eddfe62ac3846c34227fc62c56", null ],
     [ "psg_port1", "io_8h.html#ae513155a83d71ab12033bbf82b70f721", null ],
-    [ "psg_port2", "io_8h.html#a901f03d5ca82e8e40201c6b57fc7f34c", null ]
+    [ "psg_port2", "io_8h.html#a901f03d5ca82e8e40201c6b57fc7f34c", null ],
+    [ "primary_slot_select_port", "io_8h.html#ab7de9d6187b106c61ffd34a12404b9c3", null ]
 ];

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="bios_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node2"><a xlink:href="bios_8h.html" target="_top" xlink:title="C language I/F for MSX BIOS routines.">
 <polygon fill="none" stroke="black" points="14.5,-168.5 14.5,-187.5 90.5,-187.5 90.5,-168.5 14.5,-168.5"/>
 <text text-anchor="middle" x="52.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/bios.h</text>
 </a>

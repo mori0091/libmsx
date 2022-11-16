@@ -133,4 +133,71 @@ static volatile __at (0xfcc9) uint8_t SLTATR[64];
  */
 static volatile __at (0xfd09) uint8_t SLTWRK[128];
 
+// ---- FDC workarea ----
+
+/**
+ * Slot address of page #0 of RAM.
+ *
+ * \note
+ * Available only if a Floppy Disk Controller (FDC) exists and was initialized
+ * at system startup.
+ */
+static volatile __at (0xf341) uint8_t RAMAD0;
+
+/**
+ * Slot address of page #1 of RAM.
+ *
+ * \note
+ * Available only if a Floppy Disk Controller (FDC) exists and was initialized
+ * at system startup.
+ */
+static volatile __at (0xf342) uint8_t RAMAD1;
+
+/**
+ * Slot address of page #2 of RAM.
+ *
+ * \note
+ * Available only if a Floppy Disk Controller (FDC) exists and was initialized
+ * at system startup.
+ */
+static volatile __at (0xf343) uint8_t RAMAD2;
+
+/**
+ * Slot address of page #3 of RAM.
+ *
+ * \note
+ * Available only if a Floppy Disk Controller (FDC) exists and was initialized
+ * at system startup.
+ */
+static volatile __at (0xf344) uint8_t RAMAD3;
+
+/**
+ * Slot address of the master FDC cartridge.
+ *
+ * \note
+ * Available only if a Floppy Disk Controller (FDC) exists and was initialized
+ * at system startup.
+ */
+static volatile __at (0xf348) uint8_t MASTERS;
+
+/**
+ * Slot and number of drives for each Floppy Disk Controller (FDC).
+ *
+ * | DRVTBL[*] | explanation                     |
+ * | --------- | ------------------------------- |
+ * | DRVTBL[0] | Number of drives of the 1st FDC |
+ * | DRVTBL[1] | Slot address of the 1st FDC     |
+ * | DRVTBL[2] | Number of drives of the 2nd FDC |
+ * | DRVTBL[3] | Slot address of the 2nd FDC     |
+ * | DRVTBL[4] | Number of drives of the 3rd FDC |
+ * | DRVTBL[5] | Slot address of the 3rd FDC     |
+ * | DRVTBL[6] | Number of drives of the 4th FDC |
+ * | DRVTBL[7] | Slot address of the 4th FDC     |
+ *
+ * \note
+ * Available only if a Floppy Disk Controller (FDC) exists and was initialized
+ * at system startup.
+ */
+static volatile __at (0xfb21) uint8_t DRVTBL[8];
+
 #endif

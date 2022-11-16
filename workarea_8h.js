@@ -33,5 +33,11 @@ var workarea_8h =
     [ "EXPTBL", "workarea_8h.html#afc8f51562ab661ad80617b5076d36852", null ],
     [ "SLTTBL", "workarea_8h.html#acc116fbdbb141b5894e049e7c4213ffe", null ],
     [ "SLTATR", "workarea_8h.html#ace31752cc587174a0decb486ca5ef111", null ],
-    [ "SLTWRK", "workarea_8h.html#a28bf501aad0fdda7262f0b7b7bd4be36", null ]
+    [ "SLTWRK", "workarea_8h.html#a28bf501aad0fdda7262f0b7b7bd4be36", null ],
+    [ "RAMAD0", "workarea_8h.html#a29207b937b0dd93c0a5def5a6f1d0aaf", null ],
+    [ "RAMAD1", "workarea_8h.html#ac7afe2e62b114a319e95061cc4c6b911", null ],
+    [ "RAMAD2", "workarea_8h.html#ad30b27ae783ca417488e821658745fa6", null ],
+    [ "RAMAD3", "workarea_8h.html#a9faabe22c95ffcd4d74c719c8039a58d", null ],
+    [ "MASTERS", "workarea_8h.html#a1250a3a4d9e79ca2cbe2ff9fb7826284", null ],
+    [ "DRVTBL", "workarea_8h.html#abd77dd54308020af3bf857186a157424", null ]
 ];

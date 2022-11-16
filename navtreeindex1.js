@@ -1,20 +1,21 @@
 var NAVTREEINDEX1 =
 {
+"snd__sound_8h.html#afee653099de4f647d4f617e797fffa8b":[5,0,1,13,17],
 "snd__sound_8h.html#structsnd__Music":[5,0,1,13,5],
 "snd__sound_8h.html#structsnd__Music_1_1vec__snd__EventTrack":[5,0,1,13,7],
 "snd__sound_8h.html#structsnd__Music_1_1vec__snd__EventTrack":[5,0,1,13,5,0],
-"snd__sound_8h.html#structsnd__Music_1_1vec__snd__Pattern":[5,0,1,13,5,1],
 "snd__sound_8h.html#structsnd__Music_1_1vec__snd__Pattern":[5,0,1,13,9],
-"snd__sound_8h.html#structsnd__Music_1_1vec__snd__SpeedTrack":[5,0,1,13,6],
+"snd__sound_8h.html#structsnd__Music_1_1vec__snd__Pattern":[5,0,1,13,5,1],
 "snd__sound_8h.html#structsnd__Music_1_1vec__snd__SpeedTrack":[5,0,1,13,5,2],
+"snd__sound_8h.html#structsnd__Music_1_1vec__snd__SpeedTrack":[5,0,1,13,6],
 "snd__sound_8h.html#structsnd__Music_1_1vec__snd__Track":[5,0,1,13,8],
 "snd__sound_8h.html#structsnd__Music_1_1vec__snd__Track":[5,0,1,13,5,3],
 "snd__sound_8h.html#structsnd__Pattern":[5,0,1,13,13],
 "snd__sound_8h.html#structsnd__Pattern_8channels":[5,0,1,13,15],
 "snd__sound_8h.html#structsnd__Pattern_8specialChannels":[5,0,1,13,14],
 "snd__sound_8h.html#structsnd__SoundAssets":[5,0,1,13,0],
-"snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Instrument":[5,0,1,13,3],
 "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Instrument":[5,0,1,13,0,0],
+"snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Instrument":[5,0,1,13,3],
 "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Music":[5,0,1,13,0,1],
 "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Music":[5,0,1,13,4],
 "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__PeriodBend":[5,0,1,13,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "vmem_8h.html#a99cbd2a385cef65e129ab37d4dd9bb2e":[5,0,1,20,4],
 "vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8":[5,0,1,20,1],
 "vmem_8h.html#ab433fbefdc4e89e70e13080e74d35bc7":[5,0,1,20,8],
-"vmem_8h_source.html":[5,0,1,20],
-"workarea_8h.html":[5,0,1,21]
+"vmem_8h_source.html":[5,0,1,20]
 };

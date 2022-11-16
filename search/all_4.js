@@ -5,5 +5,6 @@ var searchData=
   ['design_20note_20_3a_20internal_20of_20snddrv_2',['DESIGN NOTE : Internal of SNDDRV',['../md_docs_design_notes_snddrv_internal.html',1,'']]],
   ['design_20note_20_3a_20snddrv_20_2d_20a_20sound_20driver_3',['DESIGN NOTE : SNDDRV - a sound driver',['../md_docs_design_notes_snddrv.html',1,'']]],
   ['design_2dnotes_5fsnddrv_2emd_4',['design-notes_snddrv.md',['../design-notes__snddrv_8md.html',1,'']]],
-  ['design_2dnotes_5fsnddrv_5finternal_2emd_5',['design-notes_snddrv_internal.md',['../design-notes__snddrv__internal_8md.html',1,'']]]
+  ['design_2dnotes_5fsnddrv_5finternal_2emd_5',['design-notes_snddrv_internal.md',['../design-notes__snddrv__internal_8md.html',1,'']]],
+  ['drvtbl_6',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]]
 ];

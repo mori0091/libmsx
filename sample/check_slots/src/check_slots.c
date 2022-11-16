@@ -155,11 +155,24 @@ void main(void) {
   puts(" MAIN ROM  : "); print_slot(EXPTBL[0]); putc('\n');
   if (0 < msx_get_version()) {
     // MSX2 or later
-    puts(" SUB ROM   : "); print_slot(EXBRSA);    putc('\n');
+    puts(" SUB ROM   : "); print_slot(EXBRSA); putc('\n');
   }
   putc('\n');
   if (find_OPLL()) {
     list_OPLL();
+  }
+  putc('\n');
+  if (DRVTBL[0]) {
+    puts("FDC        : slot"); putc('\n');
+    const volatile uint8_t * p = DRVTBL;
+    while (*p) {
+      puts("   "); puti(p[0]); puts(" drives: "); print_slot(p[1]);
+      if (p[1] == MASTERS) {
+        puts(" (master slot)");
+      }
+      putc('\n');
+      p += 2;
+    }
   }
 
   for (;;) {

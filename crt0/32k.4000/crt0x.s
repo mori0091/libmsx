@@ -8,14 +8,17 @@
 ;;; GitHub libmsx project
 ;;; https://github.com/mori0091/libmsx
 
-;;; \file crt0/32k.4000/crt0.s
+;;; \file crt0/32k.4000/crt0x.s
 ;;;
 ;;; crt0 for MSX ROM of 32KB starting at 0x4000
 ;;; suggested options: --code-loc 0x4010 --data-loc 0xc000
 ;;; `main` should be `void main(void)`
 ;;; `return` from `main` causes soft reset.
+;;;
+;;; `main` starts after ALL cartridges are ready.
+;;; Thus, for example, BDOS is available if FDD exists.
 
-        .module crt0
+        .module crt0x
         .globl  _main
         .globl  _exit
         .globl  _libmsx___init_intr
@@ -49,7 +52,19 @@
 
         .area   _CODE
 init:
-boot:
+        H_STKE = 0xfeda
+        ld      hl, #boot
+        ld      de, #H_STKE
+        ld      bc, #5
+        ldir
+        call    get_slot_page1
+        ld      (H_STKE+1), a
+        ret
+boot:   ;; template for H.STKE hook
+        rst     0x30
+        .db     1
+        .dw     start
+        ret
 start:
         HIMEM  = 0xfc4a         ; (2 bytes) Pointer to upper limit address of free area
         ld      sp, (HIMEM)

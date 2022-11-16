@@ -51,10 +51,20 @@ LIBS    =
 # (default is 'bin', if omitted)
 # BINDIR = bin
 
+# [OPTIONAL]
+# If `USE_ALL_EXTENSIONS` is set to `1`, all connected system extensions (e.g.
+# disk drive, RS-232C cartridge) are initialized and ready for use before your
+# `main()` function starts. Maybe some RAM space and startup time are consumed
+# though.
+# (default is undefined, if omitted)
+USE_ALL_EXTENSIONS = 1
+
 # [REQUIRED]
 # Include one of the configuration.
 #   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
 #   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
+#   - ${LIBMSX_HOME}/mk/ascii16.mk  : to make MegaROM image (ROM type: ASCII16)
+#   - ${LIBMSX_HOME}/mk/ascii8.mk   : to make MegaROM image (ROM type: ASCII8)
 include ${LIBMSX_HOME}/mk/16k.4000.mk
 
 # [REQUIRED] (No need to modify)

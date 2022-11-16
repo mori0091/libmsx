@@ -1,7 +1,5 @@
 ;;; -*- mode: asm; coding: utf-8-unix; tab-width: 8 -*-
 
-;;; \file crt0/16k.4000/crt0.s
-;;;
 ;;; Copyright (c) 2021 Daishi Mori (mori0091)
 ;;;
 ;;; This software is released under the MIT License.
@@ -10,6 +8,8 @@
 ;;; GitHub libmsx project
 ;;; https://github.com/mori0091/libmsx
 
+;;; \file crt0/16k.4000/crt0.s
+;;;
 ;;; crt0 for MSX ROM of 16KB starting at 0x4000
 ;;; suggested options: --code-loc 0x4010 --data-loc 0xc000
 ;;; `main` should be `void main(void)`
@@ -19,8 +19,6 @@
         .globl  _main
         .globl  _exit
         .globl  _libmsx___init_intr
-
-        HIMEM  = 0xfc4a
 
         .area   _HEADER (ABS)
         ;; ROM header
@@ -41,16 +39,19 @@
         .area   _CODE
         .area   _INITIALIZER
         .area   _GSINIT
-	.area   _GSFINAL
-	.area	_DATA
-	.area	_INITIALIZED
-	.area	_BSEG
-	.area   _BSS
-	.area   _HEAP
+        .area   _GSFINAL
+        .area   _DATA
+        .area   _INITIALIZED
+        .area   _BSEG
+        .area   _BSS
+        .area   _HEAP
         ;; ----
 
-	.area   _CODE
+        .area   _CODE
 init:
+boot:
+start:
+        HIMEM  = 0xfc4a
         ld      sp,(HIMEM)
         call    gsinit
         call    _libmsx___init_intr

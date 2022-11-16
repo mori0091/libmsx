@@ -19,4 +19,8 @@ ADDR_DATA = 0xc000
 
 IHX2BIN_FLAGS = -s ${IMAGE_SIZE} -b ${ADDR_HEAD}
 
+ifeq (${USE_ALL_EXTENSIONS}, 1)
+CRT0 = ${LIBMSX_HOME}/lib/32k.4000/crt0x.rel
+else
 CRT0 = ${LIBMSX_HOME}/lib/32k.4000/crt0.rel
+endif

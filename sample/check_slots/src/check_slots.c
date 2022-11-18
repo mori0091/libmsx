@@ -141,6 +141,45 @@ void list_OPLL(void) {
 
 // -----------------------------------------------------------------------
 
+struct z80_reg {
+  uint16_t af;
+  uint16_t bc;
+  uint16_t de;
+  uint16_t hl;
+};
+
+/**
+ * Wrapper for BDOS call.
+ * \param reg [inout]  pointer to value of CPU registers.
+ */
+void bdos(uint8_t c, struct z80_reg * reg) {
+  (void)c;                      // A  --> C
+  (void)reg;                    // de --> IX
+  __asm__("push ix");
+  __asm__("ld c, a");
+  __asm__("push de");
+  __asm__("pop ix");
+  __asm__("ld a, 1 (ix)");
+  __asm__("ld b, 3 (ix)");
+  __asm__("ld e, 4 (ix)");
+  __asm__("ld d, 5 (ix)");
+  __asm__("ld l, 6 (ix)");
+  __asm__("ld h, 7 (ix)");
+  __asm__("push ix");
+  __asm__("call 0xf37d");
+  __asm__("pop ix");
+  __asm__("ld 1 (ix), a");
+  __asm__("ld 2 (ix), c");
+  __asm__("ld 3 (ix), b");
+  __asm__("ld 4 (ix), e");
+  __asm__("ld 5 (ix), d");
+  __asm__("ld 6 (ix), l");
+  __asm__("ld 7 (ix), h");
+  __asm__("pop ix");
+}
+
+// -----------------------------------------------------------------------
+
 static volatile __at (0xfc9e) uint16_t JIFFY;
 
 void main(void) {
@@ -161,6 +200,7 @@ void main(void) {
   if (find_OPLL()) {
     list_OPLL();
   }
+
   putc('\n');
   if (DRVTBL[0]) {
     puts("FDC        : slot"); putc('\n');
@@ -172,6 +212,23 @@ void main(void) {
       }
       putc('\n');
       p += 2;
+    }
+
+    struct z80_reg reg;
+    bdos(0x6f, &reg);           // _DOSVER `DOS2` : Get MSX-DOS version
+    if (!(reg.af >> 8) && 2 <= (reg.bc >> 8)) {
+      // MSX-DOS 2.xx
+      putc('\n');
+      puts("MSX-DOS 2.x / Disk BASIC 2.x"); putc('\n');
+      puts(" kernel version ");
+      puti(reg.bc >> 8); putc('.'); puti((reg.bc >> 4) & 15); puti((reg.bc) & 15); putc('\n');
+    }
+    else {
+      bdos(0x0c, &reg);         // _CPMVER `DOS1` `CP/M` : Get CP/M version
+      if (reg.hl == 0x0022) {
+        putc('\n');
+        puts("MSX-DOS 1.x / Disk BASIC 1.x");
+      }
     }
   }
 

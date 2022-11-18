@@ -51,11 +51,23 @@ LIBS    =
 # (default is 'bin', if omitted)
 # BINDIR = bin
 
+# [OPTIONAL]
+# If `CONFIG_CRT0_MOD_INIT` is set to `init_x` or `init_r`, all connected system
+# extensions (e.g. disk drive, RS-232C cartridge) are initialized and ready for
+# use before your `main()` function starts. Maybe some RAM space and startup
+# time are consumed though.
+# (default is `init_0`, if omitted)
+# \see https://github.com/mori0091/libmsx/blob/main/docs/design-notes_crt0.md
+# CONFIG_CRT0_MOD_INIT = init_0
+
 # [REQUIRED]
-# Include one of the configuration.
-#   - ${LIBMSX_HOME}/mk/16k.4000.mk : to make 16KB rom image (0x4000-0x7fff)
-#   - ${LIBMSX_HOME}/mk/32k.4000.mk : to make 32KB rom image (0x4000-0xbfff)
-include ${LIBMSX_HOME}/mk/16k.4000.mk
+# Select ROM type.
+# - 16k     : to make 16KiB rom image (0x4000-0x7fff)
+# - 32k     : to make 32KiB rom image (0x4000-0xbfff)
+# - ascii16 : to make MegaROM image (ROM type: ASCII16)
+# - ascii8  : to make MegaROM image (ROM type: ASCII8)
+# \see https://github.com/mori0091/libmsx/blob/main/docs/design-notes_crt0.md
+CONFIG_ROM_TYPE = 16k
 
 # [REQUIRED] (No need to modify)
 # Include common part of Makefile

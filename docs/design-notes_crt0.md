@@ -1,4 +1,3 @@
-<!-- -*- coding: utf-8-unix -*- -->
 # DESIGN NOTE : crt0 - C startup routine
 
 The `crt0` - C startup routine - shall be configured accoring to ROM image size
@@ -25,7 +24,7 @@ application, in addition to the above, set `CONFIG_CRT0_MOD_INIT` to `init_x` or
 CONFIG_CRT0_MOD_INIT = init_x
 ~~~
 
-# `make` variables for crt0 configuration
+# Make-variables for crt0 configuration
 
 ## CONFIG\_ROM\_TYPE
 
@@ -65,20 +64,20 @@ cartridge. No other system extension is initialized.
 
 The table below shows the runtime environment at application startup:
 
-| value    | CPU mode            | BDOS                                 | other system extension |
-|----------|---------------------|--------------------------------------|------------------------|
-| `init_0` | Z80 mode            | N/A                                  | N/A                    |
-| `init_x` | Z80 mode            | MSX-DOS 1 / Disk BASIC 1.x [^1]      | available if exists    |
-| `init_r` | R800 DRAM mode [^2] | MSX-DOS 2 / Disk BASIC 2.x [^1] [^2] | available if exists    |
+| value    | CPU mode            | BDOS                               | other system extension |
+|----------|---------------------|------------------------------------|------------------------|
+| `init_0` | Z80 mode            | N/A                                | N/A                    |
+| `init_x` | Z80 mode            | MSX-DOS 1 / Disk BASIC 1.x (1)     | available if exists    |
+| `init_r` | R800 DRAM mode (2)] | MSX-DOS 2 / Disk BASIC 2.x (1) (2) | available if exists    |
 
-[^1]: Available only if a FDC exists.  
-      If `Shift` key was pressed during startup time, BDOS is not available even
-      if a Floppy Disk Controller (FDC) exists.
+(1): Available only if a FDC exists.  
+     If `Shift` key was pressed during startup time, BDOS is not available even
+     if a Floppy Disk Controller (FDC) exists.
 
-[^2]: `MSXturboR` or later.  
-      On `MSX`, `MSX2`, or `MSX2+` the behaviour is same as `init_x`.  
-      If `1` key was pressed during startup time, the behaviour will be same as
-      `init_x` even if on `MSXturboR`.
+(2): `MSXturboR` or later.  
+     On `MSX`, `MSX2`, or `MSX2+` the behaviour is same as `init_x`.  
+     If `1` key was pressed during startup time, the behaviour will be same as
+     `init_x` even if on `MSXturboR`.
 
 ## CONFIG\_CRT0\_MOD\_START
 
@@ -131,19 +130,19 @@ into the `Makefile`.
 The below table shows that which component is integrated into `crt0`, for each
 pre-defined configuration:
 
-|                              | 16k.4000.mk           | 32k.4000.mk      | ascii8.mk            | ascii16.mk           |
-|------------------------------|-----------------------|------------------|----------------------|----------------------|
-| `CONFIG_CRT0_MOD_ROM_HEADER` | `app_rom_header`      | `app_rom_header` | `app_megarom_header` | `app_megarom_header` |
-| `CONFIG_CRT0_MOD_INIT`       | [^3]                  | [^3]             | [^3]                 | [^3]                 |
-| `CONFIG_CRT0_MOD_START`      | `start_16k`           | `start_32k`      | `start_megarom`      | `start_megarom`      |
-| `CONFIG_CRT0_MOD_ROM_MAPPER` |                       |                  | `rom_ascii8`         | `rom_ascii16`        |
-| `CONFIG_CRT0_MOD_LIBS`       | `get_slot_page1` [^4] | `get_slot_page1` | `get_slot_page1`     | `get_slot_page1`     |
-|                              |                       | `set_slot_page2` | `set_slot_page2`     | `set_slot_page2`     |
+|                              | 16k.4000.mk          | 32k.4000.mk      | ascii8.mk            | ascii16.mk           |
+|------------------------------|----------------------|------------------|----------------------|----------------------|
+| `CONFIG_CRT0_MOD_ROM_HEADER` | `app_rom_header`     | `app_rom_header` | `app_megarom_header` | `app_megarom_header` |
+| `CONFIG_CRT0_MOD_INIT`       | (3)                  | (3)              | (3)                  | (3)                  |
+| `CONFIG_CRT0_MOD_START`      | `start_16k`          | `start_32k`      | `start_megarom`      | `start_megarom`      |
+| `CONFIG_CRT0_MOD_ROM_MAPPER` |                      |                  | `rom_ascii8`         | `rom_ascii16`        |
+| `CONFIG_CRT0_MOD_LIBS`       | `get_slot_page1` (4) | `get_slot_page1` | `get_slot_page1`     | `get_slot_page1`     |
+|                              |                      | `set_slot_page2` | `set_slot_page2`     | `set_slot_page2`     |
 
-[^3]: Choose one of the `init` module; `init_0`, `init_x`, or `init_r`. `init_0`
+(3): Choose one of the `init` module; `init_0`, `init_x`, or `init_r`. `init_0`
 is selected in default.
 
-[^4]: Selected (implied) only if `init_x` or `init_r` is selected as the init
+(4): Selected (implied) only if `init_x` or `init_r` is selected as the init
 module.
 
 ## \${LIBMSX\_HOME}/mk/16k.4000.mk

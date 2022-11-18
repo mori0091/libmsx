@@ -22,9 +22,95 @@
 # ADDR_DATA = 0xc000
 # CRT0 = ${LIBMSX_HOME}/lib/32k.4000/crt0.rel
 
+
 .PHONY: all build clean libmsx
 
 all: build
+
+# ------------------------------------------------------------------------------
+# crt0 configuration
+IMAGE_SIZE ?= 16384
+ADDR_HEAD = 0x4000
+ADDR_CODE = 0x4010
+ADDR_DATA = 0xc000
+
+CONFIG_ROM_TYPE            ?= 16k
+CONFIG_CRT0_MOD_ROM_HEADER ?= app_rom_header
+CONFIG_CRT0_MOD_INIT       ?= init_0
+CONFIG_CRT0_MOD_START      ?= start_16k
+CONFIG_CRT0_MOD_ROM_MAPPER ?=
+CONFIG_CRT0_MOD_LIBS       ?=
+
+# for backward compatibility
+ifeq (${USE_ALL_EXTENSIONS}, 1)
+CONFIG_CRT0_MOD_INIT       = init_x
+endif
+
+ifeq (${CONFIG_ROM_TYPE}, 16k)
+IMAGE_SIZE = 16384
+CONFIG_CRT0_MOD_ROM_HEADER = app_rom_header
+CONFIG_CRT0_MOD_START      = start_16k
+else ifeq (${CONFIG_ROM_TYPE}, 32k)
+IMAGE_SIZE = 32768
+CONFIG_CRT0_MOD_ROM_HEADER = app_rom_header
+CONFIG_CRT0_MOD_START      = start_32k
+else ifeq (${CONFIG_ROM_TYPE}, ascii8)
+IMAGE_SIZE = 16384
+CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header
+CONFIG_CRT0_MOD_START      = start_megarom
+CONFIG_CRT0_MOD_ROM_MAPPER = rom_ascii8
+else ifeq (${CONFIG_ROM_TYPE}, ascii16)
+IMAGE_SIZE = 16384
+CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header
+CONFIG_CRT0_MOD_START      = start_megarom
+CONFIG_CRT0_MOD_ROM_MAPPER = rom_ascii8
+else
+IMAGE_SIZE = 16384
+CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header
+CONFIG_CRT0_MOD_START      = start_megarom
+CONFIG_CRT0_MOD_ROM_MAPPER ?= rom_ascii16
+endif
+
+ifneq (${CONFIG_CRT0_MOD_START}, start_16k)
+CONFIG_CRT0_MOD_LIBS       = get_slot_page1 \
+                             set_slot_page2
+else ifneq (${CONFIG_CRT0_MOD_INIT}, init_0)
+CONFIG_CRT0_MOD_LIBS       = get_slot_page1
+endif
+
+ifneq (${CONFIG_CRT0_MOD_ROM_HEADER}, app_megarom_header)
+IHX2BIN_FLAGS = -s ${IMAGE_SIZE} -b ${ADDR_HEAD}
+else
+LDFLAGS += \
+	-Wl-b_BANK0=0x08000 \
+	-Wl-b_BANK1=0x18000 \
+	-Wl-b_BANK2=0x28000 \
+	-Wl-b_BANK3=0x38000 \
+	-Wl-b_BANK4=0x48000 \
+	-Wl-b_BANK5=0x58000 \
+	-Wl-b_BANK6=0x68000
+
+IHX2BIN_FLAGS = -s ${IMAGE_SIZE} -b ${ADDR_HEAD} \
+		-s 16384			 \
+		-b 0x08000			 \
+		-b 0x18000			 \
+		-b 0x28000			 \
+		-b 0x38000			 \
+		-b 0x48000			 \
+		-b 0x58000			 \
+		-b 0x68000			 \
+		--pow2
+endif
+
+CRT0 =
+CRT0 += ${LIBMSX_HOME}/lib/crt0_mod_rom_header/${CONFIG_CRT0_MOD_ROM_HEADER}.rel
+CRT0 += ${LIBMSX_HOME}/lib/crt0_mod_init/${CONFIG_CRT0_MOD_INIT}.rel
+CRT0 += ${LIBMSX_HOME}/lib/crt0_mod_start/${CONFIG_CRT0_MOD_START}.rel
+ifneq (${CONFIG_CRT0_MOD_ROM_MAPPER},)
+CRT0 += ${LIBMSX_HOME}/lib/crt0_mod_rom_mapper/${CONFIG_CRT0_MOD_ROM_MAPPER}.rel
+endif
+CRT0 += $(patsubst %,${LIBMSX_HOME}/lib/crt0_mod_libs/%.rel,${CONFIG_CRT0_MOD_LIBS})
+# ------------------------------------------------------------------------------
 
 SRCDIR ?= src
 OBJDIR ?= obj

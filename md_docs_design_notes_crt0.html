@@ -145,13 +145,13 @@ CONFIG_CRT0_MOD_INIT</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>init_0</code>   </td><td class="markdownTableBodyNone">Z80 mode   </td><td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">N/A    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>init_x</code>   </td><td class="markdownTableBodyNone">Z80 mode   </td><td class="markdownTableBodyNone">MSX-DOS 1 / Disk BASIC 1.x <b>[1]</b>   </td><td class="markdownTableBodyNone">available if exists    </td></tr>
+<td class="markdownTableBodyNone"><code>init_x</code>   </td><td class="markdownTableBodyNone">Z80 mode   </td><td class="markdownTableBodyNone">MSX-DOS 1 / Disk BASIC 1.x [^1]   </td><td class="markdownTableBodyNone">available if exists    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>init_r</code>   </td><td class="markdownTableBodyNone">R800 DRAM mode <b>[2]</b>   </td><td class="markdownTableBodyNone">MSX-DOS 2 / Disk BASIC 2.x <b>[1]</b> <b>[2]</b>   </td><td class="markdownTableBodyNone">available if exists   </td></tr>
+<td class="markdownTableBodyNone"><code>init_r</code>   </td><td class="markdownTableBodyNone">R800 DRAM mode [^2]   </td><td class="markdownTableBodyNone">MSX-DOS 2 / Disk BASIC 2.x [^1] [^2]   </td><td class="markdownTableBodyNone">available if exists   </td></tr>
 </table>
-<p ><b>[1]</b> Available only if a FDC exists. <br  />
+<p >[^1]: Available only if a FDC exists. <br  />
  If <code>Shift</code> key was pressed during startup time, BDOS is not available even if a Floppy Disk Controller (FDC) exists.</p>
-<p ><b>[2]</b> <code>MSXturboR</code> or later. <br  />
+<p >[^2]: <code>MSXturboR</code> or later. <br  />
  On <code>MSX</code>, <code>MSX2</code>, or <code>MSX2+</code> the behaviour is same as <code>init_x</code>. <br  />
  If <code>1</code> key was pressed during startup time, the behaviour will be same as <code>init_x</code> even if on <code>MSXturboR</code>.</p>
 <h2><a class="anchor" id="autotoc_md21"></a>
@@ -209,18 +209,18 @@ Pre-defined crt0 configurations</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_ROM_HEADER</code>   </td><td class="markdownTableBodyNone"><code>app_rom_header</code>   </td><td class="markdownTableBodyNone"><code>app_rom_header</code>   </td><td class="markdownTableBodyNone"><code>app_megarom_header</code>   </td><td class="markdownTableBodyNone"><code>app_megarom_header</code>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_INIT</code>   </td><td class="markdownTableBodyNone"><b>[1]</b>   </td><td class="markdownTableBodyNone"><b>[1]</b>   </td><td class="markdownTableBodyNone"><b>[1]</b>   </td><td class="markdownTableBodyNone"><b>[1]</b>    </td></tr>
+<td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_INIT</code>   </td><td class="markdownTableBodyNone">[^3]   </td><td class="markdownTableBodyNone">[^3]   </td><td class="markdownTableBodyNone">[^3]   </td><td class="markdownTableBodyNone">[^3]    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_START</code>   </td><td class="markdownTableBodyNone"><code>start_16k</code>   </td><td class="markdownTableBodyNone"><code>start_32k</code>   </td><td class="markdownTableBodyNone"><code>start_megarom</code>   </td><td class="markdownTableBodyNone"><code>start_megarom</code>    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_ROM_MAPPER</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><code>rom_ascii8</code>   </td><td class="markdownTableBodyNone"><code>rom_ascii16</code>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_LIBS</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code> <b>[2]</b>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>    </td></tr>
+<td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_LIBS</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code> [^4]   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><code>set_slot_page2</code>   </td><td class="markdownTableBodyNone"><code>set_slot_page2</code>   </td><td class="markdownTableBodyNone"><code>set_slot_page2</code>   </td></tr>
 </table>
-<p ><b>[1]</b> Choose one of the <code>init</code> module; <code>init_0</code>, <code>init_x</code>, or <code>init_r</code>. <code>init_0</code> is selected in default.</p>
-<p ><b>[2]</b> Selected (implied) only if <code>init_x</code> or <code>init_r</code> is selected as the init module.</p>
+<p >[^3]: Choose one of the <code>init</code> module; <code>init_0</code>, <code>init_x</code>, or <code>init_r</code>. <code>init_0</code> is selected in default.</p>
+<p >module.</p>
 <h2><a class="anchor" id="autotoc_md26"></a>
 ${LIBMSX_HOME}/mk/16k.4000.mk</h2>
 <div class="fragment"><div class="line">CONFIG_ROM_TYPE = 16k</div>

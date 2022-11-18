@@ -45,9 +45,8 @@ var NAVTREE =
         [ "Build your application", "index.html#autotoc_md15", null ]
       ] ]
     ] ],
-    [ "design-notes_crt0", "md_docs_design_notes_crt0.html", [
-      [ "DESIGN NOTE : crt0 - C startup routine", "md_docs_design_notes_crt0.html#autotoc_md16", null ],
-      [ "<tt>make</tt> variables for crt0 configuration", "md_docs_design_notes_crt0.html#autotoc_md17", [
+    [ "DESIGN NOTE : crt0 - C startup routine", "md_docs_design_notes_crt0.html", [
+      [ "Make-variables for crt0 configuration", "md_docs_design_notes_crt0.html#autotoc_md17", [
         [ "CONFIG_ROM_TYPE", "md_docs_design_notes_crt0.html#autotoc_md18", null ],
         [ "CONFIG_CRT0_MOD_ROM_HEADER", "md_docs_design_notes_crt0.html#autotoc_md19", null ],
         [ "CONFIG_CRT0_MOD_INIT", "md_docs_design_notes_crt0.html#autotoc_md20", null ],
@@ -112,7 +111,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "snd__sound_8h.html#ab8ce04d6fbc22adce69bcc28aaf92327",
-"vdp_8h.html#afdffcc91a0792402633458501bdb287a"
+"vdp_8h.html#aff9c85cefd095ae4e78e73cb6f848663"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

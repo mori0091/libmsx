@@ -64,11 +64,11 @@ cartridge. No other system extension is initialized.
 
 The table below shows the runtime environment at application startup:
 
-| value    | CPU mode            | BDOS                               | other system extension |
-|----------|---------------------|------------------------------------|------------------------|
-| `init_0` | Z80 mode            | N/A                                | N/A                    |
-| `init_x` | Z80 mode            | MSX-DOS 1 / Disk BASIC 1.x (1)     | available if exists    |
-| `init_r` | R800 DRAM mode (2)] | MSX-DOS 2 / Disk BASIC 2.x (1) (2) | available if exists    |
+| value    | CPU mode           | BDOS                               | other system extension |
+|----------|--------------------|------------------------------------|------------------------|
+| `init_0` | Z80 mode           | N/A                                | N/A                    |
+| `init_x` | Z80 mode           | MSX-DOS 1 / Disk BASIC 1.x (1)     | available if exists    |
+| `init_r` | R800 DRAM mode (2) | MSX-DOS 2 / Disk BASIC 2.x (1) (2) | available if exists    |
 
 (1): Available only if a FDC exists.  
      If `Shift` key was pressed during startup time, BDOS is not available even

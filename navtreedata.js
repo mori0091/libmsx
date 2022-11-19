@@ -36,51 +36,58 @@ var NAVTREE =
         [ "Build tools", "index.html#autotoc_md8", null ]
       ] ],
       [ "Install instructions of Build tools", "index.html#autotoc_md9", [
-        [ "Ubuntu", "index.html#autotoc_md10", null ],
-        [ "Windows", "index.html#autotoc_md11", null ]
+        [ "Ubuntu 22.04", "index.html#autotoc_md10", [
+          [ "1. Install SDCC", "index.html#autotoc_md11", null ],
+          [ "2. Install other toolchain", "index.html#autotoc_md12", null ]
+        ] ],
+        [ "Windows (Ubuntu on WSL2)", "index.html#autotoc_md13", null ],
+        [ "Windows (MSYS2)", "index.html#autotoc_md14", [
+          [ "1. Install SDCC", "index.html#autotoc_md15", null ],
+          [ "2. Install other toolchain", "index.html#autotoc_md16", null ]
+        ] ]
       ] ],
-      [ "Build instructions of the library and sample projects", "index.html#autotoc_md12", null ],
-      [ "Build instructions of user applications", "index.html#autotoc_md13", [
-        [ "Preparation", "index.html#autotoc_md14", null ],
-        [ "Build your application", "index.html#autotoc_md15", null ]
+      [ "Build instructions of the library and sample projects", "index.html#autotoc_md17", null ],
+      [ "Build instructions of user applications", "index.html#autotoc_md18", [
+        [ "Preparation", "index.html#autotoc_md19", null ],
+        [ "Build your application", "index.html#autotoc_md20", null ]
       ] ]
     ] ],
     [ "DESIGN NOTE : crt0 - C startup routine", "md_docs_design_notes_crt0.html", [
-      [ "Make-variables for crt0 configuration", "md_docs_design_notes_crt0.html#autotoc_md17", [
-        [ "CONFIG_ROM_TYPE", "md_docs_design_notes_crt0.html#autotoc_md18", null ],
-        [ "CONFIG_CRT0_MOD_ROM_HEADER", "md_docs_design_notes_crt0.html#autotoc_md19", null ],
-        [ "CONFIG_CRT0_MOD_INIT", "md_docs_design_notes_crt0.html#autotoc_md20", null ],
-        [ "CONFIG_CRT0_MOD_START", "md_docs_design_notes_crt0.html#autotoc_md21", null ],
-        [ "CONFIG_CRT0_MOD_ROM_MAPPER", "md_docs_design_notes_crt0.html#autotoc_md22", null ],
-        [ "CONFIG_CRT0_MOD_LIBS", "md_docs_design_notes_crt0.html#autotoc_md23", null ],
-        [ "USE_ALL_EXTENSIONS (deprecated)", "md_docs_design_notes_crt0.html#autotoc_md24", null ]
+      [ "Make-variables for crt0 configuration", "md_docs_design_notes_crt0.html#autotoc_md22", [
+        [ "CONFIG_ROM_TYPE", "md_docs_design_notes_crt0.html#autotoc_md23", null ],
+        [ "CONFIG_CRT0_MOD_ROM_HEADER", "md_docs_design_notes_crt0.html#autotoc_md24", null ],
+        [ "CONFIG_CRT0_MOD_INIT", "md_docs_design_notes_crt0.html#autotoc_md25", null ],
+        [ "CONFIG_CRT0_MOD_START", "md_docs_design_notes_crt0.html#autotoc_md26", null ],
+        [ "CONFIG_CRT0_MOD_ROM_MAPPER", "md_docs_design_notes_crt0.html#autotoc_md27", null ],
+        [ "CONFIG_CRT0_MOD_LIBS", "md_docs_design_notes_crt0.html#autotoc_md28", null ],
+        [ "USE_ALL_EXTENSIONS (deprecated)", "md_docs_design_notes_crt0.html#autotoc_md29", null ]
       ] ],
-      [ "Pre-defined crt0 configurations", "md_docs_design_notes_crt0.html#autotoc_md25", [
-        [ "${LIBMSX_HOME}/mk/16k.4000.mk", "md_docs_design_notes_crt0.html#autotoc_md26", null ],
-        [ "${LIBMSX_HOME}/mk/32k.4000.mk", "md_docs_design_notes_crt0.html#autotoc_md27", null ],
-        [ "${LIBMSX_HOME}/mk/ascii8.mk", "md_docs_design_notes_crt0.html#autotoc_md28", null ],
-        [ "${LIBMSX_HOME}/mk/ascii16.mk", "md_docs_design_notes_crt0.html#autotoc_md29", null ]
+      [ "Pre-defined crt0 configurations", "md_docs_design_notes_crt0.html#autotoc_md30", [
+        [ "${LIBMSX_HOME}/mk/16k.4000.mk", "md_docs_design_notes_crt0.html#autotoc_md31", null ],
+        [ "${LIBMSX_HOME}/mk/32k.4000.mk", "md_docs_design_notes_crt0.html#autotoc_md32", null ],
+        [ "${LIBMSX_HOME}/mk/ascii8.mk", "md_docs_design_notes_crt0.html#autotoc_md33", null ],
+        [ "${LIBMSX_HOME}/mk/ascii16.mk", "md_docs_design_notes_crt0.html#autotoc_md34", null ]
       ] ]
     ] ],
     [ "DESIGN NOTE : SNDDRV - a sound driver", "md_docs_design_notes_snddrv.html", [
-      [ "About", "md_docs_design_notes_snddrv.html#autotoc_md31", null ],
-      [ "Features", "md_docs_design_notes_snddrv.html#autotoc_md32", null ],
-      [ "How to integrate Arkos Tracker 2 .aks files into your application", "md_docs_design_notes_snddrv.html#autotoc_md33", null ]
+      [ "About", "md_docs_design_notes_snddrv.html#autotoc_md36", null ],
+      [ "Features", "md_docs_design_notes_snddrv.html#autotoc_md37", null ],
+      [ "How to integrate Arkos Tracker 2 .aks files into your application", "md_docs_design_notes_snddrv.html#autotoc_md38", null ]
     ] ],
     [ "DESIGN NOTE : Internal of SNDDRV", "md_docs_design_notes_snddrv_internal.html", [
-      [ "SNDDRV's sound processing pipiline", "md_docs_design_notes_snddrv_internal.html#autotoc_md35", null ],
-      [ "Sound data structure", "md_docs_design_notes_snddrv_internal.html#autotoc_md36", null ],
-      [ "Sound data format notation", "md_docs_design_notes_snddrv_internal.html#autotoc_md37", null ],
-      [ "Definition of Sound data", "md_docs_design_notes_snddrv_internal.html#autotoc_md38", [
-        [ "Definition of SpeedTrack stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md39", null ],
-        [ "Definition of EventTrack stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md40", null ],
-        [ "Definition of Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md41", [
-          [ "Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md42", null ],
-          [ "Chunk of Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md43", null ]
+      [ "SNDDRV's sound processing pipiline", "md_docs_design_notes_snddrv_internal.html#autotoc_md40", null ],
+      [ "Sound data structure", "md_docs_design_notes_snddrv_internal.html#autotoc_md41", null ],
+      [ "Sound data format notation", "md_docs_design_notes_snddrv_internal.html#autotoc_md42", null ],
+      [ "Definition of Sound data", "md_docs_design_notes_snddrv_internal.html#autotoc_md43", [
+        [ "Definition of SpeedTrack stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md44", null ],
+        [ "Definition of EventTrack stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md45", null ],
+        [ "Definition of Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md46", [
+          [ "Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md47", null ],
+          [ "Chunk of Track stream", "md_docs_design_notes_snddrv_internal.html#autotoc_md48", null ]
         ] ],
-        [ "Definition of Pattern table", "md_docs_design_notes_snddrv_internal.html#autotoc_md44", null ]
+        [ "Definition of Pattern table", "md_docs_design_notes_snddrv_internal.html#autotoc_md49", null ]
       ] ],
-      [ "Definition of Instrument (timbre) table", "md_docs_design_notes_snddrv_internal.html#autotoc_md45", null ]
+      [ "Definition of Instrument (timbre) table", "md_docs_design_notes_snddrv_internal.html#autotoc_md50", null ]
     ] ],
     [ "Todo List", "todo.html", null ],
     [ "Data Structures", "annotated.html", [
@@ -110,8 +117,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"snd__sound_8h.html#ab8ce04d6fbc22adce69bcc28aaf92327",
-"vdp_8h.html#aff9c85cefd095ae4e78e73cb6f848663"
+"snd__sound_8h.html#a840618a1671578118fbfda650ec98e4c",
+"vdp_8h.html#af9dda09b05a98b20905b6a6ace2a7d30"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

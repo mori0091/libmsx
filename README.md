@@ -142,14 +142,16 @@ To use `libmsx`,
 
 ### 1. Install SDCC
 
-Download a SDCC pre-built binary for Linux from http://sdcc.sourceforge.net/ and
-install it.
+Download a SDCC pre-built binary for Linux from <http://sdcc.sourceforge.net/>
+and install it.
 
 SDCC 4.2.0 or later is recommended.
 
 Don't forget adding SDCC to `PATH` environment variable.  
 Add the below to `~/.bashrc` or `~/.bash_profile`.  
+
 > At here it is assuming that the SDCC 4.2.0 is installed under `~/sdcc-4.2.0`.
+
 ```shell
 export PATH=${PATH}:~/sdcc-4.2.0/bin
 ```
@@ -182,7 +184,7 @@ The 2nd case is using MSYS2 UCRT64 environment.
 
 ### 1. Install SDCC
 
-Download a SDCC pre-built binary for Windows from http://sdcc.sourceforge.net/
+Download a SDCC pre-built binary for Windows from <http://sdcc.sourceforge.net/>
 and install it.
 
 ### 2. Install other toolchain
@@ -196,7 +198,9 @@ pacman -S coreutils findutils make gcc gzip libxslt git
 
 Don't forget adding SDCC to `PATH` environment variable.  
 Add the below to `~/.bashrc` or `~/.bash_profile`, on MSYS2 UCRT64 environment.  
+
 > At here it is assuming that the SDCC 4.2.0 is installed under `C:\Program Files\SDCC`.
+
 ```shell
 export PATH=${PATH}:/c/Program\ Files/SDCC/bin
 ```

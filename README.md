@@ -105,11 +105,6 @@ The below functionality is NOT supported yet.
 
 | Host Platform | SDCC version | status          |
 |---------------|--------------|-----------------|
-| Ubuntu 20.04  | 3.8.0        | ✔ (outdated)    |
-|               | 3.9.0        | (not tested)    |
-|               | 4.0.0        | (not tested)    |
-|               | 4.1.0        | (not tested)    |
-|               | 4.2.0        | ❌              |
 | Ubuntu 22.04  | 4.0.0        | ✔ (outdated)    |
 |               | 4.1.0        | (not tested)    |
 |               | 4.2.0        | ✔ (recommended) |
@@ -118,7 +113,7 @@ The below functionality is NOT supported yet.
 
 | Host Platform | SDCC version | status          |
 |---------------|--------------|-----------------|
-| MSYS2 MINGW64 | 4.0.0        | (not tested)    |
+| MSYS2 UCRT64  | 4.0.0        | (not tested)    |
 |               | 4.1.0        | (not tested)    |
 |               | 4.2.0        | ✔ (recommended) |
 
@@ -133,45 +128,79 @@ Ofcourse, Ubuntu on **WSL** is okey. 😄
 
 > SDCC 4.2.0 or later is recommended.
 
-… and some popular standard Linux/Unix commands:
+- Other toolchain required for libmsx  
+  GNU `find`, `make`, `gcc`, `gzip`, `zcat`, `xsltproc`, and so on.
 
-- GNU `find`, `make`,
-- and so on.
 
 # Install instructions of Build tools
 
-## Ubuntu
+To use `libmsx`,
+1. Install SDCC.
+2. Install other toolchain.
 
-``` shell
-sudo apt update
-sudo apt install build-essential
-sudo apt install sdcc
+## Ubuntu 22.04
+
+### 1. Install SDCC
+
+Download a SDCC pre-built binary for Linux from http://sdcc.sourceforge.net/ and
+install it.
+
+SDCC 4.2.0 or later is recommended.
+
+Don't forget adding SDCC to `PATH` environment variable.  
+Add the below to `~/.bashrc` or `~/.bash_profile`.  
+> At here it is assuming that the SDCC 4.2.0 is installed under `~/sdcc-4.2.0`.
+```shell
+export PATH=${PATH}:~/sdcc-4.2.0/bin
 ```
 
-> Note that the latest version of SDCC may not be installed by the above
-> instruction. In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we
+> Why don't we install sdcc by `sudo apt install sdcc` ?
+> 
+> Because the latest version of SDCC may not be installed by `apt`.
+> In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we
 > recommend that you download SDCC 4.2.0 pre-built binary and use it on Ubuntu
 > 22.04 or later.
 
-## Windows
+### 2. Install other toolchain
 
-There are two recommended ways to setup build tools:
+``` shell
+sudo apt update
+sudo apt install build-essential make gcc gzip xsltproc git
+```
 
-CASE 1. Use Ubuntu on WSL environment, and proceed with the above instructions.
+## Windows (Ubuntu on WSL2)
 
-CASE 2. Use MSYS2 MINGW64 environment.
-- Download and install [SDCC](http://sdcc.sourceforge.net/).
-- Download and install [MSYS2](https://www.msys2.org/).  
-  Then install the required build tools as described in "MSYS2 Getting Started"
-  https://www.msys2.org/.
+The 1st case is using Ubuntu on WSL2 environment.  
+In this case, it is same as for Ubuntu 22.04.
 
-> See carefully "MSYS2 Getting Started" https://www.msys2.org/ for detail.
+Launch a terminal of *Ubuntu on WSL2*, and proceed with the above instructions.
 
-Finally, don't forget adding SDCC to `PATH` environment variable.  
-(add the below to `~/.bashrc` or `~/.bash_profile`)
+
+## Windows (MSYS2)
+
+The 2nd case is using MSYS2 UCRT64 environment.
+
+### 1. Install SDCC
+
+Download a SDCC pre-built binary for Windows from http://sdcc.sourceforge.net/
+and install it.
+
+### 2. Install other toolchain
+
+Download and install [MSYS2](https://www.msys2.org/).
+
+Then launch a terminal for the MSYS2 UCRT64 environment, and do as follows:
+~~~ shell
+pacman -S coreutils findutils make gcc gzip libxslt git
+~~~
+
+Don't forget adding SDCC to `PATH` environment variable.  
+Add the below to `~/.bashrc` or `~/.bash_profile`, on MSYS2 UCRT64 environment.  
+> At here it is assuming that the SDCC 4.2.0 is installed under `C:\Program Files\SDCC`.
 ```shell
 export PATH=${PATH}:/c/Program\ Files/SDCC/bin
 ```
+
 
 # Build instructions of the library and sample projects
 

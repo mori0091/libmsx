@@ -12,6 +12,6 @@ var searchData=
   ['msx_5frdslt_9',['msx_RDSLT',['../bios_8h.html#aeb4cd6909bffe2fdc4ab12f034ea5f40',1,'bios.h']]],
   ['msx_5frslreg_10',['msx_RSLREG',['../bios_8h.html#aedc2e35feb1d1e15d8c84588b0369f46',1,'bios.h']]],
   ['msx_5fset_5fcpu_5fmode_11',['msx_set_cpu_mode',['../bios_8h.html#a4bb01de7baaae78f6cc43e81ba88d9af',1,'bios.h']]],
-  ['msx_5fwrslt_12',['msx_WRSLT',['../bios_8h.html#a4307482507e2b65ceaf4bc50726a1403',1,'bios.h']]],
+  ['msx_5fwrslt_12',['msx_WRSLT',['../bios_8h.html#a5508e48b4a3b786bb8c347c428e56d8e',1,'bios.h']]],
   ['msx_5fwslreg_13',['msx_WSLREG',['../bios_8h.html#add657fb7bd235f898e14bd825dd03ac8',1,'bios.h']]]
 ];

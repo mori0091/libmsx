@@ -1,10 +1,11 @@
 var bios_8h =
 [
     [ "BIOS_H", "bios_8h.html#a1c92f825a1fef0fbf75ab1b2cfd7475b", null ],
+    [ "__sdcccall", "bios_8h.html#ac16e864cb65407e92cf2a98d1f4fbb8b", null ],
     [ "msx_get_version", "bios_8h.html#a19b4876435ca81258934f0d78d6cae07", null ],
     [ "msx_get_vsync_frequency", "bios_8h.html#a92e83309660f10fadbd038807b69b56f", null ],
     [ "msx_RDSLT", "bios_8h.html#aeb4cd6909bffe2fdc4ab12f034ea5f40", null ],
-    [ "msx_WRSLT", "bios_8h.html#a4307482507e2b65ceaf4bc50726a1403", null ],
+    [ "msx_WRSLT", "bios_8h.html#a5508e48b4a3b786bb8c347c428e56d8e", null ],
     [ "msx_ENASLT", "bios_8h.html#a32ae6eade2e5890bf5403adff996965e", null ],
     [ "msx_get_slot", "bios_8h.html#addf1dd3c3bcc20397dd9ca1d47dd2c14", null ],
     [ "msx_RSLREG", "bios_8h.html#aedc2e35feb1d1e15d8c84588b0369f46", null ],

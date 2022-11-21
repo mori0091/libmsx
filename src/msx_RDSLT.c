@@ -18,9 +18,20 @@
 uint8_t msx_RDSLT(uint8_t slot, void * addr) __naked {
   (void)slot;                   // A  --> A
   (void)addr;                   // DE --> HL
+  __asm__("push bc");
+  __asm__("push de");
+  __asm__("push hl");
+
   __asm__("ld h, d");
   __asm__("ld l, e");
-  __asm__("jp _RDSLT");
+
+  __asm__("call _RDSLT");
+
+  __asm__("pop hl");
+  __asm__("pop de");
+  __asm__("pop bc");
+
+  __asm__("ret");
 }
 
 #else
@@ -28,15 +39,27 @@ uint8_t msx_RDSLT(uint8_t slot, void * addr) __naked {
 uint8_t msx_RDSLT(uint8_t slot, void * addr) __naked {
   (void)slot;                   // (SP+2) --> A
   (void)addr;                   // (SP+3) --> HL
+  __asm__("push af");
+  __asm__("push bc");
+  __asm__("push de");
+  __asm__("push hl");
   __asm__("push ix");
-  __asm__("ld ix, #0");
+
+  __asm__("ld ix, #10");
   __asm__("add ix, sp");
-  __asm__("ld a, 4 (ix)");
-  __asm__("ld l, 5 (ix)");
-  __asm__("ld h, 6 (ix)");
-  __asm__("pop ix");
+  __asm__("ld a, 2 (ix)");
+  __asm__("ld l, 3 (ix)");
+  __asm__("ld h, 4 (ix)");
+
   __asm__("call _RDSLT");
+
+  __asm__("pop ix");
+  __asm__("pop hl");
   __asm__("ld l, a");
+  __asm__("pop de");
+  __asm__("pop bc");
+  __asm__("pop af");
+
   __asm__("ret");
 }
 

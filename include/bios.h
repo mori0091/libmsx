@@ -21,6 +21,10 @@
 #include "bios_const.h"
 #include "bios_entry.h"
 
+#ifndef __SDCCCALL
+#define __sdcccall(x)
+#endif
+
 /**
  * Returns MSX system version code.
  *
@@ -64,7 +68,8 @@ uint8_t msx_RDSLT(uint8_t slot, void * addr);
  *
  * \post Interrupt is disabled.
  */
-void msx_WRSLT(uint8_t slot, void * addr, uint8_t value);
+void msx_WRSLT(uint8_t slot, void * addr, uint8_t value) __sdcccall(0);
+
 
 /**
  * BIOS : ENASLT (0024H / MAIN) `MSX`.
@@ -247,5 +252,9 @@ uint8_t msx_GETCPU(void);
  * \sa msx_GETCPU()
  */
 uint8_t msx_get_cpu_mode(void);
+
+#ifndef __SDCCCALL
+#undef __sdcccall
+#endif
 
 #endif

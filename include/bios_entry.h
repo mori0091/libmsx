@@ -32,7 +32,7 @@
  *
  * \retval A value of the address of the slot.
  *
- * \post AF, BC, DE registers will be changed.
+ * \post AF, BC, DE registers are changed.
  * \post Interrupt is disabled.
  *
  * \sa msx_RDSLT()

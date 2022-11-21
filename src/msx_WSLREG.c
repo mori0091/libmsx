@@ -24,12 +24,15 @@ void msx_WSLREG(uint8_t value) __naked {
 
 void msx_WSLREG(uint8_t value) __naked {
   (void)value;                  // (sp+2) --> A
+  __asm__("push af");
   __asm__("push ix");
-  __asm__("ld ix, #0");
+  __asm__("ld ix, #4");
   __asm__("add ix, sp");
-  __asm__("ld a, 4 (ix)");
+  __asm__("ld a, 2 (ix)");
   __asm__("pop ix");
-  __asm__("jp _WSLREG");
+  __asm__("call _WSLREG");
+  __asm__("pop af");
+  __asm__("ret");
 }
 
 #endif

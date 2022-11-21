@@ -18,9 +18,44 @@
 void msx_ENASLT(uint8_t slot, void * addr) __naked {
   (void)slot;                   // A  --> A
   (void)addr;                   // DE --> HL
+  __asm__("push af");
+  __asm__("push bc");
+  __asm__("push de");
+  __asm__("push hl");
+  __asm__("push ix");
+  __asm__("push iy");
+
   __asm__("ld h, d");
   __asm__("ld l, e");
-  __asm__("jp _ENASLT");
+
+  __asm__("ex af, af'");
+  __asm__("exx");
+  __asm__("push af");
+  __asm__("push bc");
+  __asm__("push de");
+  __asm__("push hl");
+  __asm__("ex af, af'");
+  __asm__("exx");
+
+  __asm__("call _ENASLT");
+
+  __asm__("ex af, af'");
+  __asm__("exx");
+  __asm__("pop hl");
+  __asm__("pop de");
+  __asm__("pop bc");
+  __asm__("pop af");
+  __asm__("ex af, af'");
+  __asm__("exx");
+
+  __asm__("pop iy");
+  __asm__("pop ix");
+  __asm__("pop hl");
+  __asm__("pop de");
+  __asm__("pop bc");
+  __asm__("pop af");
+
+  __asm__("ret");
 }
 
 #else
@@ -28,14 +63,47 @@ void msx_ENASLT(uint8_t slot, void * addr) __naked {
 void msx_ENASLT(uint8_t slot, void * addr) __naked {
   (void)slot;                   // (SP+2) --> A
   (void)addr;                   // (SP+3) --> HL
+  __asm__("push af");
+  __asm__("push bc");
+  __asm__("push de");
+  __asm__("push hl");
   __asm__("push ix");
-  __asm__("ld ix, #0");
+  __asm__("push iy");
+
+  __asm__("ld ix, #12");
   __asm__("add ix, sp");
-  __asm__("ld a, 4 (ix)");
-  __asm__("ld l, 5 (ix)");
-  __asm__("ld h, 6 (ix)");
+  __asm__("ld a, 2 (ix)");
+  __asm__("ld l, 3 (ix)");
+  __asm__("ld h, 4 (ix)");
+
+  __asm__("ex af, af'");
+  __asm__("exx");
+  __asm__("push af");
+  __asm__("push bc");
+  __asm__("push de");
+  __asm__("push hl");
+  __asm__("ex af, af'");
+  __asm__("exx");
+
+  __asm__("call _ENASLT");
+
+  __asm__("ex af, af'");
+  __asm__("exx");
+  __asm__("pop hl");
+  __asm__("pop de");
+  __asm__("pop bc");
+  __asm__("pop af");
+  __asm__("ex af, af'");
+  __asm__("exx");
+
+  __asm__("pop iy");
   __asm__("pop ix");
-  __asm__("jp _ENASLT");
+  __asm__("pop hl");
+  __asm__("pop de");
+  __asm__("pop bc");
+  __asm__("pop af");
+
+  __asm__("ret");
 }
 
 #endif

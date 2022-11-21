@@ -22,8 +22,10 @@ uint8_t msx_GETCPU(void) __naked {
 #else
 
 uint8_t msx_GETCPU(void) __naked {
+  __asm__("push af");
   __asm__("call _GETCPU");
   __asm__("ld l, a");
+  __asm__("pop af");
   __asm__("ret");
 }
 

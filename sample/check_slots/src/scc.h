@@ -17,51 +17,111 @@
 #ifndef SCC_H_
 #define SCC_H_
 
-#include <stdbool.h>
 #include <stdint.h>
 
-#include <config.h>
-
-volatile static __at(0x5000) uint8_t  SCC_BANK_SELECT_0;
-volatile static __at(0x7000) uint8_t  SCC_BANK_SELECT_1;
-volatile static __at(0x9000) uint8_t  SCC_BANK_SELECT_2;
-volatile static __at(0xb000) uint8_t  SCC_BANK_SELECT_3;
-
-volatile static __at(0x9800) int8_t   SCC_waveform[4][32]; // channel 1..4
-volatile static __at(0x9880) uint16_t SCC_fdr[5];
-volatile static __at(0x988a) uint8_t  SCC_volume[5];
-volatile static __at(0x988f) uint8_t  SCC_channel_mask;
-
-volatile static __at(0x98a0) int8_t   SCC_waveform5[32]; // channel 5 (readonly)
-volatile static __at(0x98e0) uint8_t  SCC_deformation;
-
-volatile static __at(0xb800) int8_t   SCCPlus_waveform[5][32];
-volatile static __at(0xb8a0) uint16_t SCCPlus_fdr[5];
-volatile static __at(0xb8aa) uint8_t  SCCPlus_volume[5];
-volatile static __at(0xb8af) uint8_t  SCCPlus_channel_mask;
-
-volatile static __at(0xb8c0) uint8_t  SCCPlus_deformation;
-
-volatile static __at(0xbffe) uint8_t  SCCPlus_mode_select;
-
-struct SCC_channel {
-  void (* read_waveform)(int8_t data[32]);
-  void (* write_waveform)(const int8_t data[32]);
-  void (* read_fdr)(uint16_t * fdr);
-  void (* write_fdr)(const uint16_t fdr);
-  void (* read_volume)(uint8_t * volume);
-  void (* write_volume)(const uint8_t volume);
+/**
+ * Device interface for a sound channel of SCC/SCC+ sound chip.
+ */
+struct SCC_Channel {
+  /**
+   * Pointer to read data from the 32 bytes waveform data register.
+   * \note Read Only.
+   */
+  volatile const int8_t * ro_waveform;
+  /**
+   * Pointer to write data to the 32 bytes waveform data register.
+   * \note Write Only.
+   */
+  volatile int8_t * wo_waveform;
+  /**
+   * Pointer to read/write data from/to the frequency division ratio register.
+   */
+  volatile uint16_t * rw_fdr;
+  /**
+   * Pointer to read/write data from/to the volume register.
+   */
+  volatile uint8_t * rw_volume;
 };
+
+/**
+ * Device interface for SCC/SCC+ sound chip.
+ */
+struct SCC_Device {
+  /**
+   * Pointer to read/write a value from/to the channel mask register.
+   */
+  volatile uint8_t * rw_channel_mask;
+  /**
+   * Pointer to write a value to the deformation register.
+   * \note Write Only.
+   */
+  volatile uint8_t * wo_deformation;
+  /**
+   * Device interface for each 5 channels.
+   */
+  struct SCC_Channel channels[5];
+};
+
+/**
+ * SCC Handle.
+ *
+ * \sa SCC_find()
+ * \sa SCC_expose()
+ * \sa SCC_unexpose()
+ */
 struct SCC {
-  uint8_t slot;
-  uint8_t version;              // 1: SCC, 2: SCC+
-  uint8_t (* read_channel_mask)(void);
-  void (* write_channel_mask)(const uint8_t mask);
-  void (* write_deformation)(const uint8_t value);
-  struct SCC_channel channels[5];
+  uint8_t slot;                 ///< Slot address of the SCC/SCC+.
+  uint8_t version;              ///< `1` if SCC, `2` or greater value if `SCC+`.
+  const struct SCC_Device * device; ///< Pointer to device interface.
 };
 
+/**
+ * Inspect whether SCC/SCC+ is on the given slot.
+ *
+ * \param slot  a slot address
+ *
+ * \return `0` if neither SCC or SCC+, `1` if SCC, `2` or greater value if SCC+.
+ */
 uint8_t SCC_inspect(uint8_t slot);
-void SCC_find(struct SCC * scc);
+
+/**
+ * Find SCC/SCC+ sound chip.
+ *
+ * \param scc [out]  pointer to a SCC handle to be initialized.
+ *
+ * \return the slot address of SCC/SCC if found, `0` otherwise.
+ *
+ * \post  If no SCC/SCC+ found, `0` is set to `scc->slot`.
+ * \post  If a SCC/SCC+ found;
+ *        - the slot address of SCC/SCC+ is set to `scc->slot`,
+ *        - `1` is set to `scc->version` if SCC, or
+ *        - `2` or greater value is set to `scc->version` if SCC+.
+ *        - the device interface is set to `scc->device`.
+ */
+uint8_t SCC_find(struct SCC * scc);
+
+/**
+ * Expose SCC/SCC+ sound chip.
+ *
+ * Expose SCC/SCC+ sound chip on the slot `scc->slot` and enable to access
+ * registers of the sound chip by inter-slot read/write BIOS function.
+ *
+ * The `scc` shall point to a SCC handle initialized by SCC_find().
+ *
+ * \param scc  pointer to the SCC handle.
+ */
+void SCC_expose(const struct SCC * scc);
+
+/**
+ * Unexpose SCC/SCC+ sound chip.
+ *
+ * Unexpose SCC/SCC+ sound chip on the slot `scc->slot` and disable to access
+ * registers of the sound chip.
+ *
+ * The `scc` shall point to a SCC handle initialized by SCC_find().
+ *
+ * \param scc  pointer to the SCC handle.
+ */
+void SCC_unexpose(const struct SCC * scc);
 
 #endif // SCC_H_

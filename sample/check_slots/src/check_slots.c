@@ -149,6 +149,22 @@ bool is_ROM(uint8_t slot) {
   return (is_ROM_p1(slot) || is_ROM_p2(slot));
 }
 
+/**
+ * Tests whether a given memory address of the given slot is read-only.
+ *
+ * This tests, in exact, whether a value read from the address is differ from
+ * the value written before.
+ *
+ * In other words, if it returns `false`, it means that the memory address is
+ * RAM or a typical R/W register. However, if it returns `true`, it does not
+ * necessarily mean that the memory address is read-only, but could be a
+ * write-only register, for example.
+ *
+ * \param slot  slot address
+ * \param addr  address
+ *
+ * \return `true` if it seems not a RAM, `false` otherwise.
+ */
 bool is_read_only(uint8_t slot, void * addr) {
   const uint8_t x = msx_RDSLT(slot, addr);
   msx_WRSLT(slot, addr, ~x);
@@ -275,8 +291,6 @@ void print_DOS_version(void) {
 
 // -----------------------------------------------------------------------
 
-static void list_slot_callback(uint8_t slot, void * arg);
-
 /**
  * Print the current memory map of CPU address space.
  */
@@ -289,9 +303,6 @@ void show_memory_map(void) {
   puts(" 4000..7FFF "); print_slot(msx_get_slot((void *)0x4000)); putc('\n');
   puts(" 0000..3FFF "); print_slot(msx_get_slot((void *)0x0000)); putc('\n');
   putc('\n');
-  // puts("slot page"); putc('\n');
-  // puts("---- ---- ----------------"); putc('\n');
-  // foreach_slot(list_slot_callback, 0);
 }
 
 static void list_slot_callback(uint8_t slot, void * arg) {
@@ -363,6 +374,56 @@ void list_slots(void) {
 
 // -----------------------------------------------------------------------
 
+const int8_t sawtooth[32] = {
+  0, 16, 32, 48, 64, 80, 96, 112,
+  127, 112, 96, 80, 64, 48, 32, 16,
+  0, -16, -32, -48, -64, -80, -96, -112,
+  -128, -112, -96, -80, -64, -48, -32, -16,
+};
+
+#include <string.h>
+
+static struct SCC scc;
+
+void test_SCC(void) {
+  if (!scc.slot) return;
+  SCC_expose(&scc);
+  {
+    uint8_t slot_p2 = msx_get_slot((void *)0x8000);
+    msx_ENASLT(scc.slot, (void *)0x8000);
+    {
+      memcpy((void *)scc.device->channels[0].wo_waveform, sawtooth, 32);
+      *scc.device->rw_channel_mask = 0x01; // unmute ch1
+      *scc.device->channels[0].rw_volume = 15;
+      *scc.device->channels[0].rw_fdr = 0x11d; // O4 G
+    }
+    msx_ENASLT(slot_p2, (void *)0x8000);
+    __asm__("ei");
+  }
+  SCC_unexpose(&scc);
+  locate(0, 22); puts("Playing test tone with SCC/SCC+");
+}
+
+void stop_SCC(void) {
+  if (!scc.slot) return;
+  SCC_expose(&scc);
+  {
+    uint8_t slot_p2 = msx_get_slot((void *)0x8000);
+    msx_ENASLT(scc.slot, (void *)0x8000);
+    {
+      *scc.device->rw_channel_mask = 0x00; // mute all channels
+      *scc.device->channels[0].rw_volume = 0;
+      *scc.device->channels[1].rw_volume = 0;
+      *scc.device->channels[2].rw_volume = 0;
+      *scc.device->channels[3].rw_volume = 0;
+      *scc.device->channels[4].rw_volume = 0;
+    }
+    msx_ENASLT(slot_p2, (void *)0x8000);
+    __asm__("ei");
+  }
+  SCC_unexpose(&scc);
+}
+
 void show_system_environment(void) {
   cls();
   puts("MSX BIOS   : slot"); putc('\n');
@@ -376,9 +437,7 @@ void show_system_environment(void) {
     list_OPLL();
   }
 
-  struct SCC scc;
-  SCC_find(&scc);
-  if (scc.slot) {
+  if (SCC_find(&scc)) {
     putc('\n');
     list_SCC();
   }
@@ -416,6 +475,8 @@ void main(void) {
     show_timer_loop();
 
     show_system_environment();
+    test_SCC();
     show_timer_loop();
+    stop_SCC();
   }
 }

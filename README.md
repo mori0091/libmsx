@@ -61,15 +61,19 @@ The below functionality is supported.
 
 - Sound output
   - PSG (AY-3-8910)
+  - **NEW** Konami SCC/SCC+ Sound Cartridge
+    - SCC/SCC+ sound cartridge inspection, discovery,
+    - Enabling/Disabling register access, and
+    - Read/Write registers.
 
 - Sound driver
-  - **NEW** SNDDRV a PSG sound driver
+  - SNDDRV a PSG sound driver
     - SNDDRV covers almost feature of replayer of the [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
     - SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song
 file (.aks file) into your application.
     - See also the [design note of SNDDRV](docs/design-notes_snddrv.md)
 
-  - Another **OLD** PSG sound driver (sound.h, sound_eg.h) is still available,
+  - Another OLD PSG sound driver (sound.h, sound_eg.h) is still available,
     but is no longer maintained.
 
 - MegaROM Mapper
@@ -78,6 +82,14 @@ file (.aks file) into your application.
     - ASCII8 ROM mapper
     - ASCII16 ROM mapper
 
+- **NEW** Utility functions for inspecting MSX slot mechanisms.
+  - Various inspection functions; inspect slot contents.
+    - MAIN ROM, SUB-ROM, BDOS/FDC,
+    - MSX-MUSIC, SCC/SCC+,
+    - Internal RAM,
+    - ROM cartridges.
+  - Iteration function; invoke user-defined callbacks for each slot.
+ 
 ## Unsupported functionality
 
 The below functionality is NOT supported yet.

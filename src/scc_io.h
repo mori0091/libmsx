@@ -9,18 +9,16 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file scc.h
+ * \file scc_io.h
  */
 
 #pragma once
 
-#ifndef SCC_H_
-#define SCC_H_
-
-#include <stdbool.h>
-#include <stdint.h>
+#ifndef SCC_IO_H_
+#define SCC_IO_H_
 
 #include <config.h>
+#include <stdint.h>
 
 volatile static __at(0x5000) uint8_t  SCC_BANK_SELECT_0;
 volatile static __at(0x7000) uint8_t  SCC_BANK_SELECT_1;
@@ -44,24 +42,4 @@ volatile static __at(0xb8c0) uint8_t  SCCPlus_deformation;
 
 volatile static __at(0xbffe) uint8_t  SCCPlus_mode_select;
 
-struct SCC_channel {
-  void (* read_waveform)(int8_t data[32]);
-  void (* write_waveform)(const int8_t data[32]);
-  void (* read_fdr)(uint16_t * fdr);
-  void (* write_fdr)(const uint16_t fdr);
-  void (* read_volume)(uint8_t * volume);
-  void (* write_volume)(const uint8_t volume);
-};
-struct SCC {
-  uint8_t slot;
-  uint8_t version;              // 1: SCC, 2: SCC+
-  uint8_t (* read_channel_mask)(void);
-  void (* write_channel_mask)(const uint8_t mask);
-  void (* write_deformation)(const uint8_t value);
-  struct SCC_channel channels[5];
-};
-
-uint8_t SCC_inspect(uint8_t slot);
-void SCC_find(struct SCC * scc);
-
-#endif // SCC_H_
+#endif // SCC_IO_H_

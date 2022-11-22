@@ -17,8 +17,10 @@
 
 #include <msx.h>
 #include <stdint.h>
+#include <string.h>
 
 #include "screen1.h"
+#include "slot.h"
 #include "scc.h"
 #include "bdos.h"
 
@@ -46,131 +48,16 @@ void print_slot(uint8_t slot) {
   }
 }
 
-/**
- * For each slot, invoke the given callback with the given arguments.
- *
- * \param callback  a user defined callback function that takes `slot` and `arg`.
- * \param arg       argument to be passed to the `callback`.
- */
-void foreach_slot(void (*callback)(uint8_t slot, void * arg), void * arg) {
-  for (uint8_t i = 0; i < 4; ++i) {
-    uint8_t slot = i;
-    if (EXPTBL[i] & 0x80) {
-      slot |= 0x80;
-      for (uint8_t j = 0; j < 4; ++j) {
-        callback(slot | (j << 2), arg);
-      }
-    }
-    else {
-      callback(slot, arg);
-    }
-  }
-}
-
-/**
- * Compare the byte sequence to the one present at the given address in the given slot.
- *
- * \param slot,&nbsp;addr  a pair of slot address and address, of the one compared to.
- * \param s                pointer to the byte sequence.
- * \param len              length of the byte sequence.
- *
- * \return 0 if two byte sequence is same (or len was 0), otherwise non-zero value.
- */
-int slot_bcmp(uint8_t slot, const void * addr, const void * s, size_t len) {
-  const char * p = (const char *)addr;
-  const char * q = (const char *)s;
-  while (len--) {
-    uint8_t c = msx_RDSLT(slot, (void *)p);
-    __asm__("ei");
-    if (c != *q) {
-      return -1;
-    }
-    p++;
-    q++;
-  }
-  return 0;
-}
-
-// -----------------------------------------------------------------------
-
-bool is_MAIN_ROM(uint8_t slot) {
-  return (slot == EXPTBL[0]);
-}
-
-bool is_SUB_ROM(uint8_t slot) {
-  return (EXBRSA && slot == EXBRSA || !slot_bcmp(slot, (const void *)0x0000, "CD", 2));
-}
-
-bool is_RAM(uint8_t slot) {
-  return (slot == msx_get_slot((void *)0xc000));
-}
-
-bool is_internal_OPLL(uint8_t slot) {
-  return (!slot_bcmp(slot, (const void *)0x4018, "APRLOPLL", 8));
-}
-
-bool is_FMPAC(uint8_t slot) {
-  return (!slot_bcmp(slot, (const void *)0x4018, "PAC2OPLL", 8));
-}
-
-bool is_OPLL(uint8_t slot) {
-  return (!slot_bcmp(slot, (const void *)0x401c, "OPLL", 4));
-}
-
-bool is_SCC(uint8_t slot) {
-  return (0 < SCC_inspect(slot));
-}
-
-bool is_SCCPlus(uint8_t slot) {
-  return (1 < SCC_inspect(slot));
-}
-
-bool is_BDOS(uint8_t slot) {
-  if (!DRVTBL[0]) return false;
-  const volatile uint8_t * p = DRVTBL;
-  while (*p) {
-    if (slot == p[1]) {
-      return true;
-    }
-    p += 2;
-  }
-  return false;
-}
-
-bool is_ROM_p1(uint8_t slot) {
-  return (!slot_bcmp(slot, (const void *)0x4000, "AB", 2));
-}
-
-bool is_ROM_p2(uint8_t slot) {
-  return (!slot_bcmp(slot, (const void *)0x8000, "AB", 2));
-}
-
-bool is_ROM(uint8_t slot) {
-  return (is_ROM_p1(slot) || is_ROM_p2(slot));
-}
-
-bool is_read_only(uint8_t slot, void * addr) {
-  const uint8_t x = msx_RDSLT(slot, addr);
-  msx_WRSLT(slot, addr, ~x);
-  if (!(x ^ msx_RDSLT(slot, addr))) {
-    __asm__("ei");
-    return true;
-  }
-  msx_WRSLT(slot, addr, x);
-  __asm__("ei");
-  return false;
-}
-
 // -----------------------------------------------------------------------
 
 static void find_internal_OPLL_callback(uint8_t slot, void * arg) {
-  if (is_internal_OPLL(slot)) {
+  if (slot_is_internal_OPLL(slot)) {
     *((uint8_t *)arg) = slot;
   }
 }
 
 static void find_any_OPLL_callback(uint8_t slot, void * arg) {
-  if (is_OPLL(slot)) {
+  if (slot_is_OPLL(slot)) {
     *((uint8_t *)arg) = slot;
   }
 }
@@ -187,9 +74,9 @@ static void find_any_OPLL_callback(uint8_t slot, void * arg) {
  */
 uint8_t find_OPLL(void) {
   uint8_t slot = 0;
-  foreach_slot(find_internal_OPLL_callback, &slot);
+  slot_iterate(find_internal_OPLL_callback, &slot);
   if (!slot) {
-    foreach_slot(find_any_OPLL_callback, &slot);
+    slot_iterate(find_any_OPLL_callback, &slot);
   }
   return slot;
 }
@@ -198,10 +85,10 @@ uint8_t find_OPLL(void) {
 
 static void list_OPLL_callback(uint8_t slot, void * arg) {
   (void)arg;                    // unused
-  if (is_internal_OPLL(slot)) {
+  if (slot_is_internal_OPLL(slot)) {
     puts(" (internal): "); print_slot(slot); putc('\n');
   }
-  else if (is_OPLL(slot)) {
+  else if (slot_is_OPLL(slot)) {
     puts(" \"");
     for (uint8_t i = 0; i < 8; ++i) {
       putc(msx_RDSLT(slot, (void *)(uintptr_t)(0x4018 + i)));
@@ -216,7 +103,7 @@ static void list_OPLL_callback(uint8_t slot, void * arg) {
  */
 void list_OPLL(void) {
   puts("MSX-MUSIC  : slot"); putc('\n');
-  foreach_slot(list_OPLL_callback, 0);
+  slot_iterate(list_OPLL_callback, 0);
 }
 
 // -----------------------------------------------------------------------
@@ -237,7 +124,7 @@ static void list_SCC_callback(uint8_t slot, void * arg) {
  */
 void list_SCC(void) {
   puts("Konami SCC : slot"); putc('\n');
-  foreach_slot(list_SCC_callback, 0);
+  slot_iterate(list_SCC_callback, 0);
 }
 
 // -----------------------------------------------------------------------
@@ -275,8 +162,6 @@ void print_DOS_version(void) {
 
 // -----------------------------------------------------------------------
 
-static void list_slot_callback(uint8_t slot, void * arg);
-
 /**
  * Print the current memory map of CPU address space.
  */
@@ -289,31 +174,28 @@ void show_memory_map(void) {
   puts(" 4000..7FFF "); print_slot(msx_get_slot((void *)0x4000)); putc('\n');
   puts(" 0000..3FFF "); print_slot(msx_get_slot((void *)0x0000)); putc('\n');
   putc('\n');
-  // puts("slot page"); putc('\n');
-  // puts("---- ---- ----------------"); putc('\n');
-  // foreach_slot(list_slot_callback, 0);
 }
 
 static void list_slot_callback(uint8_t slot, void * arg) {
   (void)arg;
   puts(" "); print_slot(slot); puts(" ");
 
-  if (is_MAIN_ROM(slot)) {
+  if (slot_is_MAIN_ROM(slot)) {
     puts("01__ MAIN ROM");
   }
-  else if (is_SUB_ROM(slot)) {
+  else if (slot_is_SUB_ROM(slot)) {
     puts("0___ SUB ROM");
   }
-  else if (is_RAM(slot)) {
+  else if (slot_is_RAM(slot)) {
     puts("0123 RAM");
   }
-  else if (is_internal_OPLL(slot)) {
+  else if (slot_is_internal_OPLL(slot)) {
     puts("_12_ MSX-MUSIC");
   }
-  else if (is_FMPAC(slot)) {
+  else if (slot_is_FMPAC(slot)) {
     puts("_12_ MSX-MUSIC (FMPAC)");
   }
-  else if (is_OPLL(slot)) {
+  else if (slot_is_OPLL(slot)) {
     puts("_12_ MSX-MUSIC");
     if (slot_bcmp(slot, (const void *)0x4018, "APRL", 4)) {
       puts(" (");
@@ -325,17 +207,17 @@ static void list_slot_callback(uint8_t slot, void * arg) {
       putc(')');
     }
   }
-  else if (is_SCCPlus(slot)) {
+  else if (slot_is_SCCPlus(slot)) {
     puts("_12_ SCC+ Sound Cartridge");
   }
-  else if (is_SCC(slot)) {
+  else if (slot_is_SCC(slot)) {
     puts("_12_ SCC MegaROM");
   }
-  else if (is_BDOS(slot)) {
+  else if (slot_is_BDOS(slot)) {
     puts("_1__ BDOS/FDC");
   }
-  else if (is_ROM_p1(slot)) {
-    if (is_ROM_p2(slot)) {
+  else if (slot_is_ROM_p1(slot)) {
+    if (slot_is_ROM_p2(slot)) {
       // probably mirrored
       puts("_1__ 16K ROM");
     }
@@ -343,7 +225,7 @@ static void list_slot_callback(uint8_t slot, void * arg) {
       puts("_12_ 32K ROM");
     }
   }
-  else if (is_ROM_p2(slot)) {
+  else if (slot_is_ROM_p2(slot)) {
     puts("__2_ 16K ROM");
   }
   else {
@@ -358,10 +240,58 @@ static void list_slot_callback(uint8_t slot, void * arg) {
 void list_slots(void) {
   puts("slot page"); putc('\n');
   puts("---- ---- ----------------"); putc('\n');
-  foreach_slot(list_slot_callback, 0);
+  slot_iterate(list_slot_callback, 0);
 }
 
 // -----------------------------------------------------------------------
+
+const int8_t triangle[32] = {
+  0, 16, 32, 48, 64, 80, 96, 112,
+  127, 112, 96, 80, 64, 48, 32, 16,
+  0, -16, -32, -48, -64, -80, -96, -112,
+  -128, -112, -96, -80, -64, -48, -32, -16,
+};
+
+static struct SCC scc;
+
+void test_SCC(void) {
+  if (!scc.slot) return;
+  SCC_enable(&scc);
+  {
+    uint8_t slot_p2 = msx_get_slot((void *)0x8000);
+    msx_ENASLT(scc.slot, (void *)0x8000);
+    {
+      memcpy((void *)scc.device->channels[0].wo_waveform, triangle, 32);
+      *scc.device->rw_channel_mask = 0x01; // unmute ch1
+      *scc.device->channels[0].rw_volume = 15;
+      *scc.device->channels[0].rw_fdr = 0x11d; // O4 G
+    }
+    msx_ENASLT(slot_p2, (void *)0x8000);
+    __asm__("ei");
+  }
+  SCC_disable(&scc);
+  locate(0, 22); puts("Playing test tone with SCC/SCC+");
+}
+
+void stop_SCC(void) {
+  if (!scc.slot) return;
+  SCC_enable(&scc);
+  {
+    uint8_t slot_p2 = msx_get_slot((void *)0x8000);
+    msx_ENASLT(scc.slot, (void *)0x8000);
+    {
+      *scc.device->rw_channel_mask = 0x00; // mute all channels
+      *scc.device->channels[0].rw_volume = 0;
+      *scc.device->channels[1].rw_volume = 0;
+      *scc.device->channels[2].rw_volume = 0;
+      *scc.device->channels[3].rw_volume = 0;
+      *scc.device->channels[4].rw_volume = 0;
+    }
+    msx_ENASLT(slot_p2, (void *)0x8000);
+    __asm__("ei");
+  }
+  SCC_disable(&scc);
+}
 
 void show_system_environment(void) {
   cls();
@@ -376,9 +306,7 @@ void show_system_environment(void) {
     list_OPLL();
   }
 
-  struct SCC scc;
-  SCC_find(&scc);
-  if (scc.slot) {
+  if (SCC_find(&scc)) {
     putc('\n');
     list_SCC();
   }
@@ -416,6 +344,8 @@ void main(void) {
     show_timer_loop();
 
     show_system_environment();
+    test_SCC();
     show_timer_loop();
+    stop_SCC();
   }
 }

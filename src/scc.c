@@ -39,6 +39,12 @@ static void expose_SCCPlus(uint8_t slot) {
 }
 
 uint8_t SCC_inspect(uint8_t slot) {
+  if (slot_is_MAIN_ROM(slot) ||
+      slot_is_SUB_ROM(slot)  ||
+      slot_is_BDOS(slot)     ||
+      slot_is_OPLL(slot)) {
+    return 0;
+  }
   if (!slot_is_read_only(slot, (void *)0x8000)) {
     return 0;
   }

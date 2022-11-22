@@ -16,10 +16,7 @@
 
 #include "scc.h"
 #include "scc_io.h"
-
-extern int slot_bcmp(uint8_t slot, const void * addr, const void * s, size_t len);
-extern void foreach_slot(void (*callback)(uint8_t slot, void * arg), void * arg);
-extern bool is_read_only(uint8_t slot, void * addr);
+#include "slot.h"
 
 static void unexpose_SCCPlus(uint8_t slot) {
   //msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x20);
@@ -42,23 +39,23 @@ static void expose_SCCPlus(uint8_t slot) {
 }
 
 uint8_t SCC_inspect(uint8_t slot) {
-  if (!is_read_only(slot, (void *)0x8000)) {
+  if (!slot_is_read_only(slot, (void *)0x8000)) {
     return 0;
   }
 
   unexpose_SCC(slot);
-  if (!is_read_only(slot, (void *)SCC_waveform)) {
+  if (!slot_is_read_only(slot, (void *)SCC_waveform)) {
     return 0;
   }
 
   expose_SCC(slot);
-  if (is_read_only(slot, (void *)SCC_waveform)) {
+  if (slot_is_read_only(slot, (void *)SCC_waveform)) {
     return 0;
   }
 
   expose_SCCPlus(slot);
   uint8_t ver;
-  if (is_read_only(slot, (void *)SCCPlus_waveform)) {
+  if (slot_is_read_only(slot, (void *)SCCPlus_waveform)) {
     ver = 1;                    // SCC MegaROM
   }
   else {
@@ -93,7 +90,7 @@ uint8_t SCC_find(struct SCC * scc) {
   if (!scc) return 0;
   scc->slot = 0;
   scc->version = 0;
-  foreach_slot(SCC_find_callback, scc);
+  slot_iterate(SCC_find_callback, scc);
   return scc->slot;
 }
 

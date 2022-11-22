@@ -9,13 +9,13 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file slot_is_SUB_ROM.c
+ * \file slot_is_RAM.c
  */
 
 #include "slot.h"
 
-#include <workarea.h>
+#include "bios.h"
 
-bool slot_is_SUB_ROM(uint8_t slot) {
-  return (EXBRSA && slot == EXBRSA || !slot_bcmp(slot, (const void *)0x0000, "CD", 2));
+bool slot_is_RAM(uint8_t slot) {
+  return (slot == msx_get_slot((void *)0xc000));
 }

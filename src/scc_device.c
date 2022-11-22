@@ -14,6 +14,7 @@
 
 #include "scc.h"
 #include "scc_io.h"
+
 #include <stdint.h>
 
 const struct SCC_Device SCC_device = {

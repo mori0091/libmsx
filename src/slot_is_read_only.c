@@ -9,21 +9,21 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file slot_is_BDOS.c
+ * \file slot_is_read_only.c
  */
 
 #include "slot.h"
 
-#include <workarea.h>
+#include "bios.h"
 
-bool slot_is_BDOS(uint8_t slot) {
-  if (!DRVTBL[0]) return false;
-  const volatile uint8_t * p = DRVTBL;
-  while (*p) {
-    if (slot == p[1]) {
-      return true;
-    }
-    p += 2;
+bool slot_is_read_only(uint8_t slot, void * addr) {
+  const uint8_t x = msx_RDSLT(slot, addr);
+  msx_WRSLT(slot, addr, ~x);
+  if (!(x ^ msx_RDSLT(slot, addr))) {
+    __asm__("ei");
+    return true;
   }
+  msx_WRSLT(slot, addr, x);
+  __asm__("ei");
   return false;
 }

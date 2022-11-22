@@ -14,7 +14,7 @@
 
 #include "slot.h"
 
-#include <workarea.h>
+#include "workarea.h"
 
 bool slot_is_MAIN_ROM(uint8_t slot) {
   return (slot == EXPTBL[0]);

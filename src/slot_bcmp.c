@@ -14,7 +14,7 @@
 
 #include "slot.h"
 
-#include <bios.h>
+#include "bios.h"
 
 /**
  * Compare the byte sequence to the one present at the given address in the given slot.

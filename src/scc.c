@@ -12,10 +12,10 @@
  * \file scc.c
  */
 
-#include <msx.h>
-
 #include "scc.h"
 #include "scc_io.h"
+
+#include "bios.h"
 #include "slot.h"
 
 static void unexpose_SCCPlus(uint8_t slot) {
@@ -94,7 +94,7 @@ uint8_t SCC_find(struct SCC * scc) {
   return scc->slot;
 }
 
-void SCC_expose(const struct SCC * scc) {
+void SCC_enable(const struct SCC * scc) {
   if (scc && scc->slot) {
     if (1 < scc->version) {
       // Expose SCC+ on the `scc->slot`
@@ -107,7 +107,7 @@ void SCC_expose(const struct SCC * scc) {
   }
 }
 
-void SCC_unexpose(const struct SCC * scc) {
+void SCC_disable(const struct SCC * scc) {
   if (scc && scc->slot) {
     // Unexpose SCC/SCC+ on the `scc->slot`
     unexpose_SCC(scc->slot);

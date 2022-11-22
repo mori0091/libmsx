@@ -17,6 +17,7 @@
 
 #include <msx.h>
 #include <stdint.h>
+#include <string.h>
 
 #include "screen1.h"
 #include "slot.h"
@@ -244,25 +245,23 @@ void list_slots(void) {
 
 // -----------------------------------------------------------------------
 
-const int8_t sawtooth[32] = {
+const int8_t triangle[32] = {
   0, 16, 32, 48, 64, 80, 96, 112,
   127, 112, 96, 80, 64, 48, 32, 16,
   0, -16, -32, -48, -64, -80, -96, -112,
   -128, -112, -96, -80, -64, -48, -32, -16,
 };
 
-#include <string.h>
-
 static struct SCC scc;
 
 void test_SCC(void) {
   if (!scc.slot) return;
-  SCC_expose(&scc);
+  SCC_enable(&scc);
   {
     uint8_t slot_p2 = msx_get_slot((void *)0x8000);
     msx_ENASLT(scc.slot, (void *)0x8000);
     {
-      memcpy((void *)scc.device->channels[0].wo_waveform, sawtooth, 32);
+      memcpy((void *)scc.device->channels[0].wo_waveform, triangle, 32);
       *scc.device->rw_channel_mask = 0x01; // unmute ch1
       *scc.device->channels[0].rw_volume = 15;
       *scc.device->channels[0].rw_fdr = 0x11d; // O4 G
@@ -270,13 +269,13 @@ void test_SCC(void) {
     msx_ENASLT(slot_p2, (void *)0x8000);
     __asm__("ei");
   }
-  SCC_unexpose(&scc);
+  SCC_disable(&scc);
   locate(0, 22); puts("Playing test tone with SCC/SCC+");
 }
 
 void stop_SCC(void) {
   if (!scc.slot) return;
-  SCC_expose(&scc);
+  SCC_enable(&scc);
   {
     uint8_t slot_p2 = msx_get_slot((void *)0x8000);
     msx_ENASLT(scc.slot, (void *)0x8000);
@@ -291,7 +290,7 @@ void stop_SCC(void) {
     msx_ENASLT(slot_p2, (void *)0x8000);
     __asm__("ei");
   }
-  SCC_unexpose(&scc);
+  SCC_disable(&scc);
 }
 
 void show_system_environment(void) {

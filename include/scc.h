@@ -10,6 +10,53 @@
  */
 /**
  * \file scc.h
+ * \brief Device interface for Konami SCC/SCC+ sound cartridge.
+ *
+ * *Example*\n
+ * The following code detects the Konami SCC/SCC+ sound chip and plays a
+ * triangular wave test tone if detected.
+ * ~~~ c
+ * #include <string.h>
+ *
+ * #include <msx.h>
+ * #include <scc.h>
+ *
+ * const int8_t triangle[32] = {
+ *  0, 16, 32, 48, 64, 80, 96, 112,
+ *  127, 112, 96, 80, 64, 48, 32, 16,
+ *  0, -16, -32, -48, -64, -80, -96, -112,
+ *  -128, -112, -96, -80, -64, -48, -32, -16,
+ * };
+ *
+ * static struct SCC scc;
+ *
+ * void test_SCC(void) {
+ *   if (!scc.slot) return;
+ *   SCC_enable(&scc);
+ *   {
+ *     uint8_t slot_p2 = msx_get_slot((void *)0x8000);
+ *     msx_ENASLT(scc.slot, (void *)0x8000);
+ *     {
+ *       memcpy((void *)scc.device->channels[0].wo_waveform, triangle, 32);
+ *       *scc.device->rw_channel_mask = 0x01; // unmute ch1
+ *       *scc.device->channels[0].rw_volume = 15;
+ *       *scc.device->channels[0].rw_fdr = 0x11d; // O4 G
+ *     }
+ *     msx_ENASLT(slot_p2, (void *)0x8000);
+ *     __asm__("ei");
+ *   }
+ *   SCC_disable(&scc);
+ * }
+ *
+ * void main(void) {
+ *   if (SCC_find(&scc)) {
+ *     test_SCC();
+ *   }
+ *   for (;;) {
+ *     await_vsync();
+ *   }
+ * }
+ * ~~~
  */
 
 #pragma once
@@ -66,8 +113,8 @@ struct SCC_Device {
  * SCC Handle.
  *
  * \sa SCC_find()
- * \sa SCC_expose()
- * \sa SCC_unexpose()
+ * \sa SCC_enable()
+ * \sa SCC_disable()
  */
 struct SCC {
   uint8_t slot;                 ///< Slot address of the SCC/SCC+.
@@ -89,7 +136,7 @@ uint8_t SCC_inspect(uint8_t slot);
  *
  * \param scc [out]  pointer to a SCC handle to be initialized.
  *
- * \return the slot address of SCC/SCC if found, `0` otherwise.
+ * \return the slot address of SCC/SCC+ if found, `0` otherwise.
  *
  * \post  If no SCC/SCC+ found, `0` is set to `scc->slot`.
  * \post  If a SCC/SCC+ found;
@@ -101,7 +148,7 @@ uint8_t SCC_inspect(uint8_t slot);
 uint8_t SCC_find(struct SCC * scc);
 
 /**
- * Expose SCC/SCC+ sound chip.
+ * Enable SCC/SCC+ sound chip.
  *
  * Expose SCC/SCC+ sound chip on the slot `scc->slot` and enable to access
  * registers of the sound chip by inter-slot read/write BIOS function.
@@ -110,10 +157,10 @@ uint8_t SCC_find(struct SCC * scc);
  *
  * \param scc  pointer to the SCC handle.
  */
-void SCC_expose(const struct SCC * scc);
+void SCC_enable(const struct SCC * scc);
 
 /**
- * Unexpose SCC/SCC+ sound chip.
+ * Disable SCC/SCC+ sound chip.
  *
  * Unexpose SCC/SCC+ sound chip on the slot `scc->slot` and disable to access
  * registers of the sound chip.
@@ -122,6 +169,6 @@ void SCC_expose(const struct SCC * scc);
  *
  * \param scc  pointer to the SCC handle.
  */
-void SCC_unexpose(const struct SCC * scc);
+void SCC_disable(const struct SCC * scc);
 
 #endif // SCC_H_

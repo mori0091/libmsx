@@ -14,7 +14,7 @@
 
 #include "slot.h"
 
-#include <workarea.h>
+#include "workarea.h"
 
 /**
  * For each slot, invoke the given callback with the given arguments.

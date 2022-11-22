@@ -10,6 +10,35 @@
  */
 /**
  * \file slot.h
+ * \brief Utility functions to inspect the slot mechanism of MSX.
+ *
+ * *Example*\n
+ * The following code detects MSX-MUSIC (OPLL) by inspecting each slot.
+ * ~~~ c
+ * #include <msx.h>
+ * #include <slot.h>
+ *
+ * void find_OPLL_callback(uint8_t slot, void * arg) {
+ *   uint8_t * p_slot = (uint8_t *)arg;
+ *   if (slot_is_internal_OPLL(slot)) {
+ *     *p_slot = slot;
+ *   }
+ *   else if (!*p_slot && slot_is_OPLL(slot)) {
+ *     *p_slot = slot;
+ *   }
+ * }
+ *
+ * void main(void) {
+ *   uint8_t slot = 0;
+ *   slot_iterate(find_OPLL_callback, &slot);
+ *   if (slot) {
+ *     // a MSX-MUSIC (OPLL) found on the slot `slot`.
+ *   }
+ *   for (;;) {
+ *     await_vsync();
+ *   }
+ * }
+ * ~~~
  */
 
 #pragma once
@@ -32,9 +61,10 @@ void slot_iterate(void (*callback)(uint8_t slot, void * arg), void * arg);
 /**
  * Compare the byte sequence to the one present at the given address in the given slot.
  *
- * \param slot,&nbsp;addr  a pair of slot address and address, of the one compared to.
- * \param s                pointer to the byte sequence.
- * \param len              length of the byte sequence.
+ * \param slot  slot address of the one compared to.
+ * \param addr  address of the one compared to.
+ * \param s     pointer to the byte sequence.
+ * \param len   length of the byte sequence.
  *
  * \return 0 if two byte sequence is same (or len was 0), otherwise non-zero value.
  */

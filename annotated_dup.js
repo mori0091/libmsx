@@ -1,6 +1,9 @@
 var annotated_dup =
 [
     [ "metasprite", "metasprite_8h.html#structmetasprite", "metasprite_8h_structmetasprite" ],
+    [ "SCC", "scc_8h.html#structSCC", "scc_8h_structSCC" ],
+    [ "SCC_Channel", "scc_8h.html#structSCC__Channel", "scc_8h_structSCC__Channel" ],
+    [ "SCC_Device", "scc_8h.html#structSCC__Device", "scc_8h_structSCC__Device" ],
     [ "snd_EventTrack", "structsnd__EventTrack.html", "structsnd__EventTrack" ],
     [ "snd_Instrument", "snd__i__table_8h.html#structsnd__Instrument", "snd__i__table_8h_structsnd__Instrument" ],
     [ "snd_Music", "snd__sound_8h.html#structsnd__Music", "snd__sound_8h_structsnd__Music" ],

@@ -8,5 +8,6 @@ var searchData=
   ['design_2dnotes_5fcrt0_2emd_5',['design-notes_crt0.md',['../design-notes__crt0_8md.html',1,'']]],
   ['design_2dnotes_5fsnddrv_2emd_6',['design-notes_snddrv.md',['../design-notes__snddrv_8md.html',1,'']]],
   ['design_2dnotes_5fsnddrv_5finternal_2emd_7',['design-notes_snddrv_internal.md',['../design-notes__snddrv__internal_8md.html',1,'']]],
-  ['drvtbl_8',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]]
+  ['device_8',['device',['../scc_8h.html#a1e35422951aaf250205c345a99b9ef96',1,'SCC']]],
+  ['drvtbl_9',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]]
 ];

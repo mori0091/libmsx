@@ -11,6 +11,8 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "metasprite.h", "metasprite_8h.html", "metasprite_8h" ],
     [ "msx.h", "msx_8h.html", "msx_8h" ],
     [ "psg.h", "psg_8h.html", "psg_8h" ],
+    [ "scc.h", "scc_8h.html", "scc_8h" ],
+    [ "slot.h", "slot_8h.html", "slot_8h" ],
     [ "snd_i_table.h", "snd__i__table_8h.html", "snd__i__table_8h" ],
     [ "snd_p_table.h", "snd__p__table_8h.html", "snd__p__table_8h" ],
     [ "snd_sound.h", "snd__sound_8h.html", "snd__sound_8h" ],

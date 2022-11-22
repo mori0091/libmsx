@@ -1,0 +1,5 @@
+<map id="SCC" name="SCC">
+<area shape="rect" id="node1" title="SCC Handle." alt="" coords="32,184,81,211"/>
+<area shape="rect" id="node2" href="$scc_8h.html#structSCC__Device" title="Device interface for SCC/SCC+ sound chip." alt="" coords="9,95,105,121"/>
+<area shape="rect" id="node3" href="$scc_8h.html#structSCC__Channel" title="Device interface for a sound channel of SCC/SCC+ sound chip." alt="" coords="5,5,108,32"/>
+</map>

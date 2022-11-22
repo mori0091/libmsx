@@ -52,5 +52,9 @@ var searchData=
   ['rg8sav_49',['RG8SAV',['../workarea_8h.html#a35206e339da39f453c194db0b1938f0e',1,'workarea.h']]],
   ['rg9sav_50',['RG9SAV',['../workarea_8h.html#af38cfb9a0cc661cf1378dd07e2b756c3',1,'workarea.h']]],
   ['rgb_51',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]],
-  ['rslreg_52',['RSLREG',['../bios__entry_8h.html#a5c563194a879f039db48e020bd87fb36',1,'bios_entry.h']]]
+  ['ro_5fwaveform_52',['ro_waveform',['../scc_8h.html#ab8a80f4b8140516a32feffaeb47a920b',1,'SCC_Channel']]],
+  ['rslreg_53',['RSLREG',['../bios__entry_8h.html#a5c563194a879f039db48e020bd87fb36',1,'bios_entry.h']]],
+  ['rw_5fchannel_5fmask_54',['rw_channel_mask',['../scc_8h.html#a7ffeb1c81b7440da91bcaf25e6419ae7',1,'SCC_Device']]],
+  ['rw_5ffdr_55',['rw_fdr',['../scc_8h.html#af193ce6ca5ea312fa46a4abd4e2c9d9c',1,'SCC_Channel']]],
+  ['rw_5fvolume_56',['rw_volume',['../scc_8h.html#a2a4a7b1b57d33f2f9f4b6ad3c487a5d0',1,'SCC_Channel']]]
 ];

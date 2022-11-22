@@ -136,16 +136,22 @@ Supported functionality</h1>
 </li>
 <li>Sound output<ul>
 <li>PSG (AY-3-8910)</li>
+<li><b>NEW</b> Konami SCC/SCC+ Sound Cartridge<ul>
+<li>SCC/SCC+ sound cartridge inspection, discovery,</li>
+<li>Enabling/Disabling register access, and</li>
+<li>Read/Write registers.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Sound driver<ul>
-<li><b>NEW</b> SNDDRV a PSG sound driver<ul>
+<li>SNDDRV a PSG sound driver<ul>
 <li>SNDDRV covers almost feature of replayer of the <a href="http://www.julien-nevo.com/arkostracker/">Arkos Tracker 2</a>.</li>
 <li>SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song file (.aks file) into your application.</li>
 <li>See also the <a class="el" href="md_docs_design_notes_snddrv.html">design note of SNDDRV</a></li>
 </ul>
 </li>
-<li>Another <b>OLD</b> PSG sound driver (<a class="el" href="sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)">sound.h</a>, <a class="el" href="sound__eg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)">sound_eg.h</a>) is still available, but is no longer maintained.</li>
+<li>Another OLD PSG sound driver (<a class="el" href="sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)">sound.h</a>, <a class="el" href="sound__eg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)">sound_eg.h</a>) is still available, but is no longer maintained.</li>
 </ul>
 </li>
 <li>MegaROM Mapper<ul>
@@ -155,6 +161,17 @@ Supported functionality</h1>
 <li>ASCII16 ROM mapper</li>
 </ul>
 </li>
+</ul>
+</li>
+<li><b>NEW</b> Utility functions for inspecting MSX slot mechanisms.<ul>
+<li>Various inspection functions; inspect slot contents.<ul>
+<li>MAIN ROM, SUB-ROM, BDOS/FDC,</li>
+<li>MSX-MUSIC, SCC/SCC+,</li>
+<li>Internal RAM,</li>
+<li>ROM cartridges.</li>
+</ul>
+</li>
+<li>Iteration function; invoke user-defined callbacks for each slot.</li>
 </ul>
 </li>
 </ul>

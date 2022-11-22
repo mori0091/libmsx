@@ -72,7 +72,6 @@ The below functionality is supported.
     - SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song
 file (.aks file) into your application.
     - See also the [design note of SNDDRV](docs/design-notes_snddrv.md)
-
   - Another OLD PSG sound driver (sound.h, sound_eg.h) is still available,
     but is no longer maintained.
 

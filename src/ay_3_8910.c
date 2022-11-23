@@ -19,28 +19,31 @@ uint8_t ay_3_8910_buffer[14];
 void ay_3_8910_init(void) {
   memset(ay_3_8910_buffer, 0, sizeof(ay_3_8910_buffer));
   ay_3_8910_buffer[7] = 0xb8;
-  ay_3_8910_buffer[13] = 0xff;
+  ay_3_8910_buffer[13] = 0x80;
   ay_3_8910_play();
 }
 
+#define psg_set(r, x) \
+  psg_port0 = r;      \
+  psg_port1 = x
+
 void ay_3_8910_play(void) {
-  {
-    uint8_t x = ay_3_8910_buffer[7];
-    x &= 0x3f;
-    x |= 0x80;
-    ay_3_8910_buffer[7] = x;
+  uint8_t * p = &ay_3_8910_buffer[0];
+  psg_set( 0, *p++);
+  psg_set( 1, *p++);
+  psg_set( 2, *p++);
+  psg_set( 3, *p++);
+  psg_set( 4, *p++);
+  psg_set( 5, *p++);
+  psg_set( 6, *p++);
+  psg_set( 7, (*p++) & 0x3f | 0x80);
+  psg_set( 8, *p++);
+  psg_set( 9, *p++);
+  psg_set(10, *p++);
+  psg_set(11, *p++);
+  psg_set(12, *p++);
+  if (!(*p & 0x80)) {
+    psg_set(13, *p);
+    *p = 0x80;
   }
-  uint8_t * p = ay_3_8910_buffer;
-  uint8_t reg = 0;
-  /* R#0..R#10 */
-  while (reg < 11) {
-    psg_set(reg++, *p++);
-  }
-  /* R#11..R#13 */
-  if (ay_3_8910_buffer[13] < 16) {
-    psg_set(reg++, *p++);
-    psg_set(reg++, *p++);
-    psg_set(reg++, *p++);
-  }
-  ay_3_8910_buffer[13] = 0xff;
 }

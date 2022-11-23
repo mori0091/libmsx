@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['psg_5fh_0',['PSG_H',['../psg_8h.html#a100342e1bbe5281caf6c68ed9879d6fe',1,'psg.h']]]
+  ['opll_5fh_5f_0',['OPLL_H_',['../opll_8h.html#a161c5320f0c42edfd7957094e260e7f4',1,'opll.h']]]
 ];

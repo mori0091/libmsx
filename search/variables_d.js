@@ -1,7 +1,7 @@
 var searchData=
 [
   ['s_5fpart_0',['s_part',['../snd__i__table_8h.html#ab1ed6f568364769db751510d85fff1d4',1,'snd_Instrument::s_part()'],['../snd__p__table_8h.html#a15915380e319701fb580ec49b74fd586',1,'snd_p_table::s_part()']]],
-  ['slot_1',['slot',['../scc_8h.html#a451ffb6f9dbecfb1fd4078d3ad5f0bcf',1,'SCC']]],
+  ['slot_1',['slot',['../opll_8h.html#ae7f81dbf9dced3cc5cf19827ee23f3de',1,'OPLL::slot()'],['../scc_8h.html#a451ffb6f9dbecfb1fd4078d3ad5f0bcf',1,'SCC::slot()']]],
   ['sltatr_2',['SLTATR',['../workarea_8h.html#ace31752cc587174a0decb486ca5ef111',1,'workarea.h']]],
   ['slttbl_3',['SLTTBL',['../workarea_8h.html#acc116fbdbb141b5894e049e7c4213ffe',1,'workarea.h']]],
   ['sltwrk_4',['SLTWRK',['../workarea_8h.html#a28bf501aad0fdda7262f0b7b7bd4be36',1,'workarea.h']]],

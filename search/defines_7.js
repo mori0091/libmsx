@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rgb_0',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
+  ['psg_5fh_0',['PSG_H',['../psg_8h.html#a100342e1bbe5281caf6c68ed9879d6fe',1,'psg.h']]]
 ];

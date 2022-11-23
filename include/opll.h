@@ -32,7 +32,13 @@ struct OPLL_Device {
   /**
    * Function pointer to write data to a OPLL register.
    *
-   * \param reg    OPLL register number (0..38)
+   * \param reg    OPLL register number
+   *               - 0x00..0x07 : INSTURUMENT DATA registers
+   *               - 0x0e       : RHYTHM control register
+   *               - 0x0f       : TEST register
+   *               - 0x10..0x18 : F-Number (LSB 8 bits) registers
+   *               - 0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers
+   *               - 0x30..0x38 : INSTRUMENT/VOLUME registers
    * \param value  a value to be written.
    *
    * \post Interrupt is disabled.

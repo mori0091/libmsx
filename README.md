@@ -61,8 +61,12 @@ The below functionality is supported.
 
 - Sound output
   - PSG (AY-3-8910)
-  - **NEW** Konami SCC/SCC+ Sound Cartridge
-    - SCC/SCC+ sound cartridge inspection, discovery,
+  - **NEW** OPLL (YM2413 / MSX-MUSIC)
+    - OPLL sound chip inspection, discovery,
+    - Enabling/Disabling register access, and
+    - Write registers.
+  - **NEW** Konami SCC / SCC+ Sound Cartridge
+    - SCC / SCC+ sound cartridge inspection, discovery,
     - Enabling/Disabling register access, and
     - Read/Write registers.
 
@@ -96,7 +100,7 @@ The below functionality is NOT supported yet.
 - Keyboard input
 - Sound output
   - ~~PSG (AY-3-8910)~~ `supported`
-  - OPLL (YM2413 / MSX-MUSIC)
+  - ~~OPLL (YM2413 / MSX-MUSIC)~~ `supported`
 - ~~BGM driver~~ `supported`
 - ~~Sound effect driver~~ `supported`
 - … and so on

@@ -121,14 +121,22 @@ Data Fields</h2></td></tr>
 <p>Function pointer to write data to a <a class="el" href="opll_8h.html#structOPLL" title="OPLL Handle.">OPLL</a> register. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">reg</td><td><a class="el" href="opll_8h.html#structOPLL" title="OPLL Handle.">OPLL</a> register number (0..38) </td></tr>
+    <tr><td class="paramname">reg</td><td><a class="el" href="opll_8h.html#structOPLL" title="OPLL Handle.">OPLL</a> register number<ul>
+<li>0x00..0x07 : INSTURUMENT DATA registers</li>
+<li>0x0e : RHYTHM control register</li>
+<li>0x0f : TEST register</li>
+<li>0x10..0x18 : F-Number (LSB 8 bits) registers</li>
+<li>0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers</li>
+<li>0x30..0x38 : INSTRUMENT/VOLUME registers </li>
+</ul>
+</td></tr>
     <tr><td class="paramname">value</td><td>a value to be written.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Interrupt is disabled. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opll_8h_source.html#l00040">40</a> of file <a class="el" href="opll_8h_source.html">opll.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opll_8h_source.html#l00046">46</a> of file <a class="el" href="opll_8h_source.html">opll.h</a>.</p>
 
 </div>
 </div>

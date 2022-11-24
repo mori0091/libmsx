@@ -1,8 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file vmem.h
- * \brief Data types and functions for VRAM access.
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -10,6 +7,10 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file vmem.h
+ * \brief Data types and functions for VRAM access.
  */
 
 #pragma once
@@ -29,7 +30,7 @@
 typedef uint32_t vmemptr_t;
 
 /**
- * Set VRAM address for sequential reading of VRAM.
+ * `MSX` Set VRAM address for sequential reading of VRAM.
  *
  * This function sets the VRAM access base address register (R#14) and/or the
  * VRAM address counter to a value based on `loc` for sequential reading of VRAM
@@ -42,7 +43,7 @@ typedef uint32_t vmemptr_t;
 void vmem_set_read_address(vmemptr_t loc);
 
 /**
- * Set VRAM address for sequential writing of VRAM.
+ * `MSX` Set VRAM address for sequential writing of VRAM.
  *
  * This function sets the VRAM access base address register (R#14) and/or the
  * VRAM address counter to a value based on `loc` for sequential writing of VRAM
@@ -55,7 +56,7 @@ void vmem_set_read_address(vmemptr_t loc);
 void vmem_set_write_address(vmemptr_t loc);
 
 /**
- * Read 1 byte from VRAM.
+ * `MSX` Read 1 byte from VRAM.
  *
  * \return a value read from VRAM.
  *
@@ -72,7 +73,7 @@ inline uint8_t vmem_get(void) {
 }
 
 /**
- * Write 1 byte to VRAM.
+ * `MSX` Write 1 byte to VRAM.
  *
  * \param val  a value to be written to VRAM.
  *
@@ -89,7 +90,7 @@ inline void vmem_set(uint8_t val) {
 }
 
 /**
- * Read a series of bytes from VRAM.
+ * `MSX` Read a series of bytes from VRAM.
  *
  * This function copies `len` bytes from VRAM to RAM.
  *
@@ -108,7 +109,7 @@ inline void vmem_set(uint8_t val) {
 void vmem_read(vmemptr_t src, void* dst, uint16_t len);
 
 /**
- * Write a series of bytes to VRAM.
+ * `MSX` Write a series of bytes to VRAM.
  *
  * This function copies `len` bytes from ROM/RAM to VRAM.
  *
@@ -127,7 +128,7 @@ void vmem_read(vmemptr_t src, void* dst, uint16_t len);
 void vmem_write(vmemptr_t dst, void* src, uint16_t len);
 
 /**
- * Fill a series of bytes in VRAM with the specified value.
+ * `MSX` Fill a series of bytes in VRAM with the specified value.
  *
  * That is almost same as the below code:
  * ~~~

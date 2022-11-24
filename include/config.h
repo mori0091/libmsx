@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file config.h
- *
+/*
  * Copyright (c) 2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,10 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file config.h
+ * \brief Hack for C Compiler portability.
  */
 
 #pragma once
@@ -23,6 +25,7 @@
 #  define __critical
 #  define __naked
 #  define __banked
+#  define __sdcccall(x)
 #endif
 
 #endif // CONFIG_H_

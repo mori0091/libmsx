@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file metasprite.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,10 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file metasprite.h
+ * \brief Meta-sprite ; an aggregate of sprites.
  */
 
 #pragma once
@@ -64,13 +66,13 @@ typedef struct metasprite {
    */
   vec2i_t* layouts;
   /**
-   * `n` element array of thesprite pattern numbers
+   * `n` element array of the sprite pattern numbers.
    */
   uint8_t* pats;
 } metasprite_t;
 
 /**
- * Display single colored metasprite.
+ * `MSX` Display / Move single colored metasprite.
  *
  * \param base  Base address of the sprite attribute table in VRAM.
  * \param plane The plane number on which the 1st sprite of the metasprite is
@@ -87,7 +89,7 @@ void vmem_set_metasprite_s(vmemptr_t base, uint8_t plane, int x, int y,
                            const tagged_color_t tagged_color);
 
 /**
- * Display multi colored metasprite.
+ * `MSX` Display / Move multi colored metasprite.
  *
  * \param base  Base address of the sprite attribute table in VRAM.
  * \param plane The plane number on which the 1st sprite of the metasprite is
@@ -104,7 +106,7 @@ void vmem_set_metasprite_m(vmemptr_t base, uint8_t plane, int x, int y,
                            const tagged_color_t* tagged_colors);
 
 /**
- * Display / Move metasprite.
+ * `MSX` Display / Move metasprite.
  *
  * \note
  * This function does not change the sprite's color, tag bits, or the contents

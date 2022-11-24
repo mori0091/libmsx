@@ -51,7 +51,7 @@
 #include <stddef.h>
 
 /**
- * For each slot, invoke the given callback with the given arguments.
+ * `MSX` For each slot, invoke the given callback with the given arguments.
  *
  * \param callback  a user defined callback function that takes `slot` and `arg`.
  * \param arg       argument to be passed to the `callback`.
@@ -59,7 +59,8 @@
 void slot_iterate(void (*callback)(uint8_t slot, void * arg), void * arg);
 
 /**
- * Compare the byte sequence to the one present at the given address in the given slot.
+ * `MSX` Compare the byte sequence to the one present at the given address in
+ * the given slot.
  *
  * \param slot  slot address of the one compared to.
  * \param addr  address of the one compared to.
@@ -71,7 +72,7 @@ void slot_iterate(void (*callback)(uint8_t slot, void * arg), void * arg);
 int slot_bcmp(uint8_t slot, const void * addr, const void * s, size_t len);
 
 /**
- * Tests whether a given memory address of the given slot is read-only.
+ * `MSX` Tests whether a given memory address of the given slot is read-only.
  *
  * This tests, in exact, whether a value read from the address is differ from
  * the value written before.
@@ -89,7 +90,7 @@ int slot_bcmp(uint8_t slot, const void * addr, const void * s, size_t len);
 bool slot_is_read_only(uint8_t slot, void * addr);
 
 /**
- * Inspects if the slot is MAIN ROM.
+ * `MSX` Inspects if the slot is MAIN ROM.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is MAIN ROM.
@@ -97,7 +98,7 @@ bool slot_is_read_only(uint8_t slot, void * addr);
 bool slot_is_MAIN_ROM(uint8_t slot);
 
 /**
- * Inspects if the slot is SUB ROM.
+ * `MSX` Inspects if the slot is SUB ROM.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is SUB ROM.
@@ -105,7 +106,7 @@ bool slot_is_MAIN_ROM(uint8_t slot);
 bool slot_is_SUB_ROM(uint8_t slot);
 
 /**
- * Inspects if the slot is RAM.
+ * `MSX` Inspects if the slot is RAM.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is RAM.
@@ -118,7 +119,7 @@ bool slot_is_SUB_ROM(uint8_t slot);
 bool slot_is_RAM(uint8_t slot);
 
 /**
- * Inspects if the slot is the internal MSX-MUSIC.
+ * `MSX` Inspects if the slot is the internal MSX-MUSIC.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is the internal MSX-MUSIC.
@@ -126,7 +127,7 @@ bool slot_is_RAM(uint8_t slot);
 bool slot_is_internal_OPLL(uint8_t slot);
 
 /**
- * Inspects if the slot is the FMPAC.
+ * `MSX` Inspects if the slot is the FMPAC.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is the FMPAC.
@@ -134,7 +135,7 @@ bool slot_is_internal_OPLL(uint8_t slot);
 bool slot_is_FMPAC(uint8_t slot);
 
 /**
- * Inspects if the slot is a MSX-MUSIC.
+ * `MSX` Inspects if the slot is a MSX-MUSIC.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is a MSX-MUSIC.
@@ -142,7 +143,7 @@ bool slot_is_FMPAC(uint8_t slot);
 bool slot_is_OPLL(uint8_t slot);
 
 /**
- * Inspects if the slot is a Konami SCC/SCC+.
+ * `MSX` Inspects if the slot is a Konami SCC/SCC+.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is a Konami SCC/SCC+.
@@ -150,7 +151,7 @@ bool slot_is_OPLL(uint8_t slot);
 bool slot_is_SCC(uint8_t slot);
 
 /**
- * Inspects if the slot is a Konami SCC+.
+ * `MSX` Inspects if the slot is a Konami SCC+.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is a Konami SCC+.
@@ -158,7 +159,7 @@ bool slot_is_SCC(uint8_t slot);
 bool slot_is_SCCPlus(uint8_t slot);
 
 /**
- * Inspects if the slot is a BDOS/FDC.
+ * `MSX` Inspects if the slot is a BDOS/FDC.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is a BDOS/FDC.
@@ -166,7 +167,7 @@ bool slot_is_SCCPlus(uint8_t slot);
 bool slot_is_BDOS(uint8_t slot);
 
 /**
- * Inspects if the slot is a ROM starting at 0x4000.
+ * `MSX` Inspects if the slot is a ROM starting at 0x4000.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is a ROM starting at 0x4000.
@@ -177,7 +178,7 @@ bool slot_is_BDOS(uint8_t slot);
 bool slot_is_ROM_p1(uint8_t slot);
 
 /**
- * Inspects if the slot is a ROM starting at 0x8000.
+ * `MSX` Inspects if the slot is a ROM starting at 0x8000.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is a ROM starting at 0x8000.
@@ -188,7 +189,7 @@ bool slot_is_ROM_p1(uint8_t slot);
 bool slot_is_ROM_p2(uint8_t slot);
 
 /**
- * Inspects if the slot is a ROM starting at 0x4000 or 0x8000.
+ * `MSX` Inspects if the slot is a ROM starting at 0x4000 or 0x8000.
  *
  * \param slot  a slot address.
  * \return `true` if the slot is a ROM starting at 0x4000 or 0x8000.

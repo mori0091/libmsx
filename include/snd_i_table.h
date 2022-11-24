@@ -10,7 +10,10 @@
  */
 /**
  * \file snd_i_table.h
+ * \brief Instrument data type for SNDDRV.
  *
+ * \sa snddrv.h
+ * \sa snd_sound.h
  */
 
 #ifndef SND_I_TABLE_H_
@@ -31,7 +34,7 @@
  *   **Sustain** phase. (optional)\n
  *   That starts after `ad_part` and loopbacks until on `NoteOff` message.
  * - `r_part` :
- *   Release phase. (optional)\n
+ *   **Release** phase. (optional)\n
  *   That starts on `NoteOff` message.
  */
 typedef struct snd_Instrument snd_Instrument;
@@ -49,7 +52,7 @@ typedef struct snd_Instrument snd_Instrument;
  *   **Sustain** phase. (optional)\n
  *   That starts after `ad_part` and loopbacks until on `NoteOff` message.
  * - `r_part` :
- *   Release phase. (optional)\n
+ *   **Release** phase. (optional)\n
  *   That starts on `NoteOff` message.
  */
 struct snd_Instrument {

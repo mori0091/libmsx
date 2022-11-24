@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file msx.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,11 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file msx.h
+ * \brief Using `#include <msx.h>` includes almost all C header files in
+ * `libmsx`, for ease to use.
  */
 
 #pragma once

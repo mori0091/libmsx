@@ -30,7 +30,7 @@
  */
 struct OPLL_Device {
   /**
-   * Function pointer to write data to a OPLL register.
+   * `MSX` Function pointer to write data to a OPLL register.
    *
    * \param reg    OPLL register number
    *               - 0x00..0x07 : INSTURUMENT DATA registers
@@ -72,7 +72,7 @@ struct OPLL {
 };
 
 /**
- * Inspect whether OPLL is on the given slot.
+ * `MSX` Inspect whether OPLL is on the given slot.
  *
  * \param slot  a slot address
  *
@@ -85,7 +85,7 @@ struct OPLL {
 uint8_t OPLL_inspect(uint8_t slot);
 
 /**
- * Find OPLL sound chip.
+ * `MSX` Find OPLL sound chip.
  *
  * \param opll [out]  pointer to a OPLL handle to be initialized.
  *
@@ -102,7 +102,7 @@ uint8_t OPLL_inspect(uint8_t slot);
 uint8_t OPLL_find(struct OPLL * opll);
 
 /**
- * Enable OPLL sound chip.
+ * `MSX` Enable OPLL sound chip.
  *
  * Expose OPLL sound chip on the slot `opll->slot` and enable to access
  * registers of the sound chip.
@@ -114,7 +114,7 @@ uint8_t OPLL_find(struct OPLL * opll);
 void OPLL_enable(const struct OPLL * opll);
 
 /**
- * Disable OPLL sound chip.
+ * `MSX` Disable OPLL sound chip.
  *
  * Unexpose OPLL sound chip on the slot `opll->slot` and disable to access
  * registers of the sound chip.

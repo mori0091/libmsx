@@ -1,9 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file bios_entry.h
- * \brief Assembler entry points for MSX BIOS functions.
- * \note This defines address and name of entry points.
- *
+/*
  * Copyright (c) 2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -11,6 +7,11 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file bios_entry.h
+ * \brief Assembler entry points for MSX BIOS functions.
+ * \note This defines address and name of entry points.
  */
 
 #pragma once
@@ -23,7 +24,7 @@
 #include "config.h"
 
 /**
- * BIOS : RDSLT (000CH / MAIN) `MSX`.
+ * `MSX` BIOS : RDSLT (000CH / MAIN).
  *
  * Read value from the given address of the given slot.
  *
@@ -40,7 +41,7 @@
 static __at(0x000c) const uint8_t RDSLT;
 
 /**
- * BIOS : WRSLT (0014H / MAIN) `MSX`.
+ * `MSX` BIOS : WRSLT (0014H / MAIN).
  *
  * Write a value to the given address of the given slot.
  *
@@ -56,7 +57,7 @@ static __at(0x000c) const uint8_t RDSLT;
 static __at(0x0014) const uint8_t WRSLT;
 
 /**
- * BIOS : CALSLT (001CH / MAIN) `MSX`.
+ * `MSX` BIOS : CALSLT (001CH / MAIN).
  *
  * Inter slot call to the given address of the given slot.
  *
@@ -68,7 +69,7 @@ static __at(0x0014) const uint8_t WRSLT;
 static __at(0x001c) const uint8_t CALSLT;
 
 /**
- * BIOS : ENASLT (0024H / MAIN) `MSX`.
+ * `MSX` BIOS : ENASLT (0024H / MAIN).
  *
  * Switch the page including the given address to the given slot's corresponding page.
  *
@@ -81,7 +82,7 @@ static __at(0x001c) const uint8_t CALSLT;
 static __at(0x0024) const uint8_t ENASLT;
 
 /**
- * BIOS : CALLF (0030H / MAIN) `MSX`.
+ * `MSX` BIOS : CALLF (0030H / MAIN).
  *
  * Inter slot call to the given address of the given slot.
  *
@@ -97,7 +98,7 @@ static __at(0x0024) const uint8_t ENASLT;
 static __at(0x0030) const uint8_t CALLF;
 
 /**
- * BIOS : RSLREG (0138H / MAIN) `MSX`.
+ * `MSX` BIOS : RSLREG (0138H / MAIN).
  *
  * Read value from the primary slot select register.
  *
@@ -106,7 +107,7 @@ static __at(0x0030) const uint8_t CALLF;
 static __at(0x0138) const uint8_t RSLREG;
 
 /**
- * BIOS : WSLREG (013BH / MAIN) `MSX`.
+ * `MSX` BIOS : WSLREG (013BH / MAIN).
  *
  * Write a value to the primary slot select register.
  *
@@ -115,7 +116,7 @@ static __at(0x0138) const uint8_t RSLREG;
 static __at(0x013b) const uint8_t WSLREG;
 
 /**
- * BIOS : GTSTCK (00D5H / MAIN) `MSX`.
+ * `MSX` BIOS : GTSTCK (00D5H / MAIN).
  *
  * Get the status of the eight-way lever on the joystick or the arrow keys on
  * the keyboard.
@@ -146,7 +147,7 @@ static __at(0x013b) const uint8_t WSLREG;
 static __at(0x00D5) const uint8_t GTSTCK;
 
 /**
- * BIOS : GTTRIG (00D8H / MAIN) `MSX`
+ * `MSX` BIOS : GTTRIG (00D8H / MAIN).
  *
  * Get the status of the trigger button on the joystick or the SPACE key on the
  * keyboard.
@@ -170,7 +171,7 @@ static __at(0x00D5) const uint8_t GTSTCK;
 static __at(0x00D8) const uint8_t GTTRIG;
 
 /**
- * BIOS : CHGCPU (0180H/MAIN) `MSXturboR`
+ * `MSXturboR` BIOS : CHGCPU (0180H/MAIN).
  *
  * Change the CPU mode.
  *
@@ -213,7 +214,7 @@ static __at(0x00D8) const uint8_t GTTRIG;
 static __at(0x0180) const uint8_t CHGCPU;
 
 /**
- * BIOS : GETCPU (0183H/MAIN) `MSXturboR`
+ * `MSXturboR` BIOS : GETCPU (0183H/MAIN).
  *
  * Get the CPU mode.
  *

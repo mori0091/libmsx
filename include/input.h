@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file input.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,10 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file input.h
+ * \brief Input devices such as Joypad, for example.
  */
 
 #pragma once
@@ -61,7 +63,7 @@
 #define VK_FIRE_1 (1 << 5)
 
 /**
- * Get the status of the joystick buttons and levers.
+ * `MSX` Get the status of the joystick buttons and levers.
  *
  * Get the status of the two trigger buttons and eight-way lever of the
  * specified joystick (or SPACE key and arrow keys of the keyboard).

@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file sound.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,11 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file sound.h
+ * \brief A PSG sound driver.
+ * \note This is old and no longer maintained.
  */
 
 #pragma once
@@ -170,7 +173,7 @@ struct sound_clip {
 };
 
 /**
- * This function initializes the PSG and the sound driver.
+ * `MSX` This function initializes the PSG and the sound driver.
  *
  * This function must be called at least once. In particular, it must be called
  * before the first call to sound_player().
@@ -183,7 +186,7 @@ struct sound_clip {
 void sound_init(void);
 
 /**
- * Sets the playback speed multiplier for background music.
+ * `MSX` Sets the playback speed multiplier for background music.
  *
  * This function is used to control the playback speed of background music.
  *
@@ -207,21 +210,21 @@ void sound_init(void);
 void sound_set_speed(uint8_t multiplier);
 
 /**
- * Set main volume level.
+ * `MSX` Set main volume level.
  *
  * \param volume   main volume level (0..15)
  */
 void sound_set_volume(uint8_t volume);
 
 /**
- * Turn on/off the auto-repeat of the BGM.
+ * `MSX` Turn on/off the auto-repeat of the BGM.
  *
  * \param repeat   `true`: turn on, `false`: turn off
  */
 void sound_set_repeat(bool repeat);
 
 /**
- * Mute/unmute for each sound channel.
+ * `MSX` Mute/unmute for each sound channel.
  *
  * The parameter `mute` is a bit-set of the mute switches.
  *
@@ -237,7 +240,7 @@ void sound_set_repeat(bool repeat);
 void sound_set_mute(uint8_t mute);
 
 /**
- * Plays the specified music clip as sound effect.
+ * `MSX` Plays the specified music clip as sound effect.
  *
  * **Priority of the sound effect**
  *
@@ -270,29 +273,29 @@ void sound_set_mute(uint8_t mute);
 void sound_effect(const struct sound_clip* s);
 
 /**
- * Sets the specified music clip as BGM in the sound driver.
+ * `MSX` Sets the specified music clip as BGM in the sound driver.
  *
  * \param s Pointer to the music clip structure to be played as BGM.
  */
 void sound_set_bgm(const struct sound_clip* s);
 
 /**
- * Start the BGM.
+ * `MSX` Start the BGM.
  */
 void sound_start(void);
 
 /**
- * Stop the BGM.
+ * `MSX` Stop the BGM.
  */
 void sound_stop(void);
 
 /**
- * Pause the BGM.
+ * `MSX` Pause the BGM.
  */
 void sound_pause(void);
 
 /**
- * Main routine of the sound driver.
+ * `MSX` Main routine of the sound driver.
  *
  * To play the background music and/or sound effects, you need to call this
  * function at every VSYNC timing. The easiest way is to set this function as

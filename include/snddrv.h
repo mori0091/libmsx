@@ -10,7 +10,7 @@
  */
 /**
  * \file snddrv.h
- *
+ * \brief SNDDRV a PSG sound driver.
  */
 
 #ifndef SNDDRV_H_
@@ -26,7 +26,7 @@
 #define SND_SPEED_1X      (16)
 
 /**
- * Returns default frequency of the background music.
+ * `MSX` Returns default frequency of the background music.
  *
  * \return frequency in Hz.
  * \sa snd_get_player_frequency()
@@ -36,7 +36,7 @@
 uint8_t snd_get_bgm_frequency(void);
 
 /**
- * Returns current player frequency of the background music.
+ * `MSX` Returns current player frequency of the background music.
  *
  * \return frequency in Hz.
  * \sa snd_get_bgm_frequency()
@@ -46,7 +46,7 @@ uint8_t snd_get_bgm_frequency(void);
 uint8_t snd_get_player_frequency(void);
 
 /**
- * Force player frequency of the background music.
+ * `MSX` Force player frequency of the background music.
  *
  * \param freq    frequency in Hz.
  * \sa snd_get_bgm_frequency()
@@ -65,7 +65,7 @@ uint8_t snd_get_player_frequency(void);
 void snd_set_player_frequency(uint8_t freq);
 
 /**
- * Sets the playback speed multiplier for background music.
+ * `MSX` Sets the playback speed multiplier for background music.
  *
  * This function is used to control the playback speed of background music.
  *
@@ -88,14 +88,14 @@ void snd_set_player_frequency(uint8_t freq);
 void snd_set_speed(uint8_t multiplier);
 
 /**
- * Turn on/off the auto-repeat of the BGM.
+ * `MSX` Turn on/off the auto-repeat of the BGM.
  *
  * \param repeat   `true`: turn on, `false`: turn off
  */
 void snd_set_repeat(bool repeat);
 
 /**
- * Sets the specified music as BGM in the sound driver.
+ * `MSX` Sets the specified music as BGM in the sound driver.
  *
  * \param index Number of a music to be played as BGM.
  * \param sa    Pointer to the sound assets that contains the music.
@@ -103,7 +103,7 @@ void snd_set_repeat(bool repeat);
 void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa);
 
 /**
- * Sets the specified music as SFX (sound effects) in the sound driver.
+ * `MSX` Sets the specified music as SFX (sound effects) in the sound driver.
  *
  * \param index Number of a music to be played as SFX.
  * \param sa    Pointer to the sound assets that contains the music.
@@ -111,7 +111,7 @@ void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa);
 void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa);
 
 /**
- * Initialize the PSG and the sound driver.
+ * `MSX` Initialize the PSG and the sound driver.
  *
  * This function must be called at least once. In particular, it must be called
  * before the first call to snd_play().
@@ -123,22 +123,22 @@ void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa);
 void snd_init(void);
 
 /**
- * Start / Resume music.
+ * `MSX` Start / Resume music.
  */
 void snd_start(void);
 
 /**
- * Pause music.
+ * `MSX` Pause music.
  */
 void snd_pause(void);
 
 /**
- * Stop music.
+ * `MSX` Stop music.
  */
 void snd_stop(void);
 
 /**
- * Main routine of the sound driver.
+ * `MSX` Main routine of the sound driver.
  *
  * To play the background music and/or sound effects, you need to call this
  * function at every VSYNC timing. The easiest way is to set this function as

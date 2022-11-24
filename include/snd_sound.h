@@ -71,7 +71,7 @@ typedef struct snd_EventTrack snd_EventTrack;
 typedef struct snd_Pattern snd_Pattern;
 
 /**
- * Define a type generic vector (as anonymous struct).
+ * Define a type generic vector (as named struct).
  * \param T   typename
  *
  * \note

@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file sound_eg.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,11 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file sound_eg.h
+ * \brief Software envelope genenator interface for `sound.h`.
+ * \note This is old and no longer maintained.
  */
 
 #pragma once
@@ -95,7 +98,7 @@ struct sound_eg_attribute {
 };
 
 /**
- * (Re)set the software envelope generator attribute table.
+ * `MSX` (Re)set the software envelope generator attribute table.
  *
  * This function sets the base address of the software envelope generator table
  * to the given address `table`, or reset to the default if `table` was `NULL`.

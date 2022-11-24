@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file psg.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,10 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file psg.h
+ * \brief Device interface for PSG (AY-3-8910) an internal sound chip.
  */
 
 #pragma once
@@ -26,12 +28,12 @@
 extern const uint8_t psg_reg_initial_vector[14];
 
 /**
- * Initialize PSG registers R#0 to R#13 with `psg_reg_initial_vector`.
+ * `MSX` Initialize PSG registers R#0 to R#13 with `psg_reg_initial_vector`.
  */
 void psg_init(void);
 
 /**
- * Read the PSG register value.
+ * `MSX` Read the PSG register value.
  *
  * \param reg    PSG register number.
  */
@@ -41,7 +43,7 @@ inline uint8_t psg_get(uint8_t reg) {
 }
 
 /**
- * Write the PSG register value.
+ * `MSX` Write the PSG register value.
  *
  * \param reg    PSG register number.
  * \param val    the value.

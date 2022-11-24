@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file io.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,10 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file io.h
+ * \brief Definition of I/O ports.
  */
 
 #pragma once

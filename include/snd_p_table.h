@@ -10,7 +10,10 @@
  */
 /**
  * \file snd_p_table.h
+ * \brief Pitch-bend table data type for SNDDRV.
  *
+ * \sa snddrv.h
+ * \sa snd_sound.h
  */
 
 #ifndef SND_P_TABLE_H_
@@ -18,7 +21,13 @@
 
 #include <stdint.h>
 
+/**
+ * Type alias for arpeggio/pitch-bend table.
+ */
 typedef struct snd_p_table snd_PitchBend;
+/**
+ * Type alias for wave-length/period modification table.
+ */
 typedef struct snd_p_table snd_PeriodBend;
 
 /**
@@ -35,10 +44,8 @@ typedef struct snd_p_table snd_PeriodBend;
  *   **Sustain** phase. (optional)\n
  *   That starts after `ad_part` and loopbacks until on `NoteOff` message.
  * - `r_part` :
- *   Release phase. (optional)\n
+ *   **Release** phase. (optional)\n
  *   That starts on `NoteOff` message.
- *
- * \todo Write documents for defining of pitch bend data stream.
  */
 struct snd_p_table {
   /**

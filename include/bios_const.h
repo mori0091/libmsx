@@ -1,9 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file bios_const.h
- * \brief Constant variables in the MSX BIOS ROM.
- * \note This defines address, type, and name of variables.
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -11,6 +7,11 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file bios_const.h
+ * \brief Constant variables in the MSX BIOS ROM.
+ * \note This defines address, type, and name of variables.
  */
 
 #pragma once
@@ -22,21 +23,21 @@
 #include "config.h"
 
 /**
- * International identifier code #1 of MSX BIOS (002BH / MAIN).
+ * `MSX` International identifier code #1 of MSX BIOS (002BH / MAIN).
  *
  * \sa MSX Datapack Volume 1, pp.322
  */
 static __at (0x002b) const uint8_t INTERNATIONAL_ID_1;
 
 /**
- * International identifier code #2 of MSX BIOS (002CH / MAIN).
+ * `MSX` International identifier code #2 of MSX BIOS (002CH / MAIN).
  *
  * \sa MSX Datapack Volume 1, pp.322
  */
 static __at (0x002c) const uint8_t INTERNATIONAL_ID_2;
 
 /**
- * System version code of MSX BIOS (002DH / MAIN).
+ * `MSX` System version code of MSX BIOS (002DH / MAIN).
  *
  * The system version code written to address 002DH in MAIN ROM is as follows:
  *

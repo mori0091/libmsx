@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file interrupt.h
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -9,6 +7,11 @@
  *
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file interrupt.h
+ * \brief Interrupts relevant functions and Pluggable interrupts handler
+ * interface.
  */
 
 #pragma once
@@ -20,7 +23,7 @@
 #include <stdint.h>
 
 /**
- * "Busy" flag for VSYNC interrupt routine.
+ * `MSX` "Busy" flag for VSYNC interrupt routine.
  *
  * `vsync_busy` is set to `false` when the VSYNC interrupt routine finished.
  *
@@ -33,7 +36,7 @@
 extern volatile bool vsync_busy;
 
 /**
- * Waits for next interrupt.
+ * `MSX` Waits for next interrupt.
  *
  * Calling to `await_interrupt()` waits for next interrupt and blocks until the
  * interrupt would to be processed.
@@ -59,7 +62,7 @@ extern volatile bool vsync_busy;
   __asm__("halt")
 
 /**
- * Waits for next VSYNC interrupt.
+ * `MSX` Waits for next VSYNC interrupt.
  *
  * Calling to `await_vsync()` waits for next VSYNC interrupt and blocks until
  * the interrupt would to be processed.
@@ -77,7 +80,7 @@ extern volatile bool vsync_busy;
 void await_vsync(void);
 
 /**
- * Register user defined interrupt handler.
+ * `MSX` Register user defined interrupt handler.
  *
  * After this function is called, the given user-defined handler will be called
  * from the H.KEYI hook each time an interrupt occurs. When the user-defined
@@ -96,7 +99,7 @@ void await_vsync(void);
 void set_interrupt_handler(void (*handler)(void));
 
 /**
- * Register user defined VSYNC interrupt handler.
+ * `MSX` Register user defined VSYNC interrupt handler.
  *
  * After this function is called, the given user-defined handler will be called
  * from the H.TIMI hook each time a VSYNC interrupt occurs. When the
@@ -115,14 +118,14 @@ void set_interrupt_handler(void (*handler)(void));
 void set_vsync_handler(void (*handler)(void));
 
 /**
- * Wait for the specified number of VSYNCs to occur.
+ * `MSX` Wait for the specified number of VSYNCs to occur.
  *
  * \param ticks   number of VSYNCs
  */
 void sleep_ticks(uint16_t ticks);
 
 /**
- * Wait for the specified time to elapse in milliseconds.
+ * `MSX` Wait for the specified time to elapse in milliseconds.
  *
  * \param ms    time to elapse in milliseconds.
  */

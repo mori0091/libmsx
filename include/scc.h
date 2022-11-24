@@ -89,7 +89,7 @@ struct SCC {
 };
 
 /**
- * Inspect whether SCC/SCC+ is on the given slot.
+ * `MSX` Inspect whether SCC/SCC+ is on the given slot.
  *
  * \param slot  a slot address
  *
@@ -98,7 +98,7 @@ struct SCC {
 uint8_t SCC_inspect(uint8_t slot);
 
 /**
- * Find SCC/SCC+ sound chip.
+ * `MSX` Find SCC/SCC+ sound chip.
  *
  * \param scc [out]  pointer to a SCC handle to be initialized.
  *
@@ -114,7 +114,7 @@ uint8_t SCC_inspect(uint8_t slot);
 uint8_t SCC_find(struct SCC * scc);
 
 /**
- * Enable SCC/SCC+ sound chip.
+ * `MSX` Enable SCC/SCC+ sound chip.
  *
  * Expose SCC/SCC+ sound chip on the slot `scc->slot` and enable to access
  * registers of the sound chip by inter-slot read/write BIOS function.
@@ -126,7 +126,7 @@ uint8_t SCC_find(struct SCC * scc);
 void SCC_enable(const struct SCC * scc);
 
 /**
- * Disable SCC/SCC+ sound chip.
+ * `MSX` Disable SCC/SCC+ sound chip.
  *
  * Unexpose SCC/SCC+ sound chip on the slot `scc->slot` and disable to access
  * registers of the sound chip.

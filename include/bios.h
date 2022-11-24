@@ -1,8 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file bios.h
- * \brief C language I/F for MSX BIOS routines.
- *
+/*
  * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -11,13 +8,17 @@
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
+/**
+ * \file bios.h
+ * \brief C language I/F for MSX BIOS routines.
+ */
 
 #pragma once
 
-#include <stdint.h>
 #ifndef BIOS_H
 #define BIOS_H
 
+#include <stdint.h>
 #include "bios_const.h"
 #include "bios_entry.h"
 
@@ -26,7 +27,7 @@
 #endif
 
 /**
- * Returns MSX system version code.
+ * `MSX` Returns MSX system version code.
  *
  * \return 0 (MSX1), 1 (MSX2), 2 (MSX2+), 3 (MSXturboR), or else.
  */
@@ -35,7 +36,7 @@ inline uint8_t msx_get_version(void) {
 }
 
 /**
- * Returns VSYNC frequency in Hz.
+ * `MSX` Returns VSYNC frequency in Hz.
  *
  * \return 50 (PAL/SECAM), or 60 (NTSC)
  */
@@ -44,7 +45,7 @@ inline uint8_t msx_get_vsync_frequency(void) {
 }
 
 /**
- * BIOS : RDSLT (000CH / MAIN) `MSX`.
+ * `MSX` BIOS : RDSLT (000CH / MAIN).
  *
  * Read value from the given address of the given slot.
  *
@@ -58,7 +59,7 @@ inline uint8_t msx_get_vsync_frequency(void) {
 uint8_t msx_RDSLT(uint8_t slot, void * addr);
 
 /**
- * BIOS : WRSLT (0014H / MAIN) `MSX`.
+ * `MSX` BIOS : WRSLT (0014H / MAIN).
  *
  * Write a value to the given address of the given slot.
  *
@@ -72,7 +73,7 @@ void msx_WRSLT(uint8_t slot, void * addr, uint8_t value) __sdcccall(0);
 
 
 /**
- * BIOS : ENASLT (0024H / MAIN) `MSX`.
+ * `MSX` BIOS : ENASLT (0024H / MAIN).
  *
  * Switch the page including the given address to the given slot's corresponding page.
  *
@@ -84,7 +85,7 @@ void msx_WRSLT(uint8_t slot, void * addr, uint8_t value) __sdcccall(0);
 void msx_ENASLT(uint8_t slot, void * addr);
 
 /**
- * Get the current slot of a 16KiB page that including the given address.
+ * `MSX` Get the current slot of a 16KiB page that including the given address.
  *
  * \param addr  the address
  *
@@ -93,7 +94,7 @@ void msx_ENASLT(uint8_t slot, void * addr);
 uint8_t msx_get_slot(void * addr);
 
 /**
- * BIOS : RSLREG (0138H / MAIN) `MSX`.
+ * `MSX` BIOS : RSLREG (0138H / MAIN).
  *
  * Read value from the primary slot select register.
  *
@@ -102,7 +103,7 @@ uint8_t msx_get_slot(void * addr);
 uint8_t msx_RSLREG(void);
 
 /**
- * BIOS : WSLREG (013BH / MAIN) `MSX`.
+ * `MSX` BIOS : WSLREG (013BH / MAIN).
  *
  * Write a value to the primary slot select register.
  *
@@ -111,7 +112,7 @@ uint8_t msx_RSLREG(void);
 void msx_WSLREG(uint8_t value);
 
 /**
- * BIOS : GTSTCK (00D5H / MAIN) `MSX`
+ * `MSX` BIOS : GTSTCK (00D5H / MAIN)
  *
  * Get the status of the eight-way lever on the joystick or the arrow keys on
  * the keyboard.
@@ -137,7 +138,7 @@ void msx_WSLREG(uint8_t value);
 uint8_t msx_GTSTCK(const uint8_t a);
 
 /**
- * BIOS : GTTRIG (00D8H / MAIN) `MSX`
+ * `MSX` BIOS : GTTRIG (00D8H / MAIN)
  *
  * Get the status of the trigger button on the joystick or the SPACE key on the
  * keyboard.
@@ -158,7 +159,7 @@ uint8_t msx_GTSTCK(const uint8_t a);
 uint8_t msx_GTTRIG(const uint8_t a);
 
 /**
- * BIOS : CHGCPU (0180H/MAIN) `MSXturboR`
+ * `MSXturboR` BIOS : CHGCPU (0180H/MAIN)
  *
  * Change the CPU mode.
  *
@@ -186,7 +187,7 @@ uint8_t msx_GTTRIG(const uint8_t a);
 void msx_CHGCPU(const uint8_t mode);
 
 /**
- * Change the CPU mode.
+ * `MSX` Change the CPU mode.
  *
  * \param mode  cpu mode, that shall be the following bit pattern:
  *           - `bit #7` : `LED`
@@ -212,7 +213,7 @@ void msx_CHGCPU(const uint8_t mode);
 void msx_set_cpu_mode(const uint8_t mode);
 
 /**
- * BIOS : GETCPU (0183H/MAIN) `MSXturboR`
+ * `MSXturboR` BIOS : GETCPU (0183H/MAIN)
  *
  * Get the CPU mode.
  *
@@ -234,7 +235,7 @@ void msx_set_cpu_mode(const uint8_t mode);
 uint8_t msx_GETCPU(void);
 
 /**
- * Get the CPU mode.
+ * `MSX` Get the CPU mode.
  *
  * \return  cpu mode:
  *          - `0` : Z80 mode

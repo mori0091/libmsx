@@ -26,19 +26,26 @@
 #include <stdint.h>
 
 /**
+ * The structure of the SCC/SCC+ 32-byte waveform data register.
+ */
+struct SCC_Waveform {
+  int8_t data[32];
+};
+
+/**
  * Device interface for a sound channel of SCC/SCC+ sound chip.
  */
 struct SCC_Channel {
   /**
-   * Pointer to read data from the 32 bytes waveform data register.
+   * Pointer to read data from the 32-byte waveform data register.
    * \note Read Only.
    */
-  volatile const int8_t * ro_waveform;
+  volatile const struct SCC_Waveform * ro_waveform;
   /**
-   * Pointer to write data to the 32 bytes waveform data register.
+   * Pointer to write data to the 32-byte waveform data register.
    * \note Write Only.
    */
-  volatile int8_t * wo_waveform;
+  volatile struct SCC_Waveform * wo_waveform;
   /**
    * Pointer to read/write data from/to the frequency division ratio register.
    */

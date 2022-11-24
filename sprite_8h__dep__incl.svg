@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node1"><a xlink:title="Sprites.">
 <polygon fill="#bfbfbf" stroke="black" points="91,-112.5 91,-131.5 173,-131.5 173,-112.5 91,-112.5"/>
 <text text-anchor="middle" x="132" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/sprite.h</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="metasprite_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node2"><a xlink:href="metasprite_8h.html" target="_top" xlink:title="Meta&#45;sprite ; an aggregate of sprites.">
 <polygon fill="none" stroke="black" points="0,-56.5 0,-75.5 104,-75.5 104,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="52" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/metasprite.h</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="msx_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node3"><a xlink:href="msx_8h.html" target="_top" xlink:title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.">
 <polygon fill="none" stroke="black" points="94,-0.5 94,-19.5 170,-19.5 170,-0.5 94,-0.5"/>
 <text text-anchor="middle" x="132" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/msx.h</text>
 </a>
@@ -50,7 +50,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="sprite__color_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node4"><a xlink:href="sprite__color_8h.html" target="_top" xlink:title="Sprite color table interface.">
 <polygon fill="none" stroke="black" points="160,-56.5 160,-75.5 268,-75.5 268,-56.5 160,-56.5"/>
 <text text-anchor="middle" x="214" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/sprite_color.h</text>
 </a>

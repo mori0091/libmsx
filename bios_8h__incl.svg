@@ -71,7 +71,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="config_8h.html" target="_top" xlink:title="Copyright (c) 2022 Daishi Mori (mori0091)">
+<g id="a_node4"><a xlink:href="config_8h.html" target="_top" xlink:title="Hack for C Compiler portability.">
 <polygon fill="none" stroke="black" points="97.28,-0.5 97.28,-19.5 147.28,-19.5 147.28,-0.5 97.28,-0.5"/>
 <text text-anchor="middle" x="122.28" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">config.h</text>
 </a>

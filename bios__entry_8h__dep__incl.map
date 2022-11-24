@@ -1,7 +1,7 @@
 <map id="include/bios_entry.h" name="include/bios_entry.h">
 <area shape="rect" id="node1" title="Assembler entry points for MSX BIOS functions." alt="" coords="5,5,141,32"/>
 <area shape="rect" id="node2" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="23,80,124,107"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="31,304,132,331"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="31,304,132,331"/>
 <area shape="rect" id="node4" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="68,155,167,181"/>
-<area shape="rect" id="node5" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="119,229,257,256"/>
+<area shape="rect" id="node5" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="119,229,257,256"/>
 </map>

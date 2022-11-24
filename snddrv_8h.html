@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('snddrv_8h.html',''); initResizable(); 
   <div class="headertitle"><div class="title">snddrv.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>SNDDRV a PSG sound driver.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="snd__sound_8h_source.html">./snd_sound.h</a>&quot;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -112,43 +115,47 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aae4ecf12afd5ab51e4dc1b8d55f9efa4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4">snd_get_bgm_frequency</a> (void)</td></tr>
-<tr class="memdesc:aae4ecf12afd5ab51e4dc1b8d55f9efa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns default frequency of the background music.  <a href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4">More...</a><br /></td></tr>
+<tr class="memdesc:aae4ecf12afd5ab51e4dc1b8d55f9efa4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Returns default frequency of the background music.  <a href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4">More...</a><br /></td></tr>
 <tr class="separator:aae4ecf12afd5ab51e4dc1b8d55f9efa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a428b323a2091903bd69209591f7bb3c2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2">snd_get_player_frequency</a> (void)</td></tr>
-<tr class="memdesc:a428b323a2091903bd69209591f7bb3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns current player frequency of the background music.  <a href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2">More...</a><br /></td></tr>
+<tr class="memdesc:a428b323a2091903bd69209591f7bb3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Returns current player frequency of the background music.  <a href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2">More...</a><br /></td></tr>
 <tr class="separator:a428b323a2091903bd69209591f7bb3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcbe84be1632f90b2caa283bd3c9f76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76">snd_set_player_frequency</a> (uint8_t freq)</td></tr>
-<tr class="memdesc:aadcbe84be1632f90b2caa283bd3c9f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force player frequency of the background music.  <a href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76">More...</a><br /></td></tr>
+<tr class="memdesc:aadcbe84be1632f90b2caa283bd3c9f76"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Force player frequency of the background music.  <a href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76">More...</a><br /></td></tr>
 <tr class="separator:aadcbe84be1632f90b2caa283bd3c9f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87c11bc841b809b3770261547c710a5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e">snd_set_speed</a> (uint8_t multiplier)</td></tr>
-<tr class="memdesc:a87c11bc841b809b3770261547c710a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the playback speed multiplier for background music.  <a href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e">More...</a><br /></td></tr>
+<tr class="memdesc:a87c11bc841b809b3770261547c710a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Sets the playback speed multiplier for background music.  <a href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e">More...</a><br /></td></tr>
 <tr class="separator:a87c11bc841b809b3770261547c710a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac229a8a7b5d17dabacaf37db595181e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#ac229a8a7b5d17dabacaf37db595181e1">snd_set_repeat</a> (bool repeat)</td></tr>
-<tr class="memdesc:ac229a8a7b5d17dabacaf37db595181e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on/off the auto-repeat of the BGM.  <a href="snddrv_8h.html#ac229a8a7b5d17dabacaf37db595181e1">More...</a><br /></td></tr>
+<tr class="memdesc:ac229a8a7b5d17dabacaf37db595181e1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Turn on/off the auto-repeat of the BGM.  <a href="snddrv_8h.html#ac229a8a7b5d17dabacaf37db595181e1">More...</a><br /></td></tr>
 <tr class="separator:ac229a8a7b5d17dabacaf37db595181e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7d178deaf1d7d9621cb4321d5226a51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">snd_set_bgm</a> (uint8_t index, const <a class="el" href="snd__sound_8h.html#structsnd__SoundAssets">snd_SoundAssets</a> *sa)</td></tr>
-<tr class="memdesc:aa7d178deaf1d7d9621cb4321d5226a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified music as BGM in the sound driver.  <a href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">More...</a><br /></td></tr>
+<tr class="memdesc:aa7d178deaf1d7d9621cb4321d5226a51"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Sets the specified music as BGM in the sound driver.  <a href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">More...</a><br /></td></tr>
 <tr class="separator:aa7d178deaf1d7d9621cb4321d5226a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04cfd2561ae473a9b16bd5fdd8168388"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#a04cfd2561ae473a9b16bd5fdd8168388">snd_set_sfx</a> (uint8_t index, const <a class="el" href="snd__sound_8h.html#structsnd__SoundAssets">snd_SoundAssets</a> *sa)</td></tr>
-<tr class="memdesc:a04cfd2561ae473a9b16bd5fdd8168388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified music as SFX (sound effects) in the sound driver.  <a href="snddrv_8h.html#a04cfd2561ae473a9b16bd5fdd8168388">More...</a><br /></td></tr>
+<tr class="memdesc:a04cfd2561ae473a9b16bd5fdd8168388"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Sets the specified music as SFX (sound effects) in the sound driver.  <a href="snddrv_8h.html#a04cfd2561ae473a9b16bd5fdd8168388">More...</a><br /></td></tr>
 <tr class="separator:a04cfd2561ae473a9b16bd5fdd8168388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24fde7ac311197e186232be3f2f5ae7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b">snd_init</a> (void)</td></tr>
-<tr class="memdesc:a24fde7ac311197e186232be3f2f5ae7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PSG and the sound driver.  <a href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b">More...</a><br /></td></tr>
+<tr class="memdesc:a24fde7ac311197e186232be3f2f5ae7b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Initialize the PSG and the sound driver.  <a href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b">More...</a><br /></td></tr>
 <tr class="separator:a24fde7ac311197e186232be3f2f5ae7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c1bbeef31103b115cb8fe721082ae9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">snd_start</a> (void)</td></tr>
-<tr class="memdesc:a0c1bbeef31103b115cb8fe721082ae9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start / Resume music.  <a href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">More...</a><br /></td></tr>
+<tr class="memdesc:a0c1bbeef31103b115cb8fe721082ae9e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Start / Resume music.  <a href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">More...</a><br /></td></tr>
 <tr class="separator:a0c1bbeef31103b115cb8fe721082ae9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d9e434c71c03c381646afb4792e662f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#a9d9e434c71c03c381646afb4792e662f">snd_pause</a> (void)</td></tr>
-<tr class="memdesc:a9d9e434c71c03c381646afb4792e662f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause music.  <a href="snddrv_8h.html#a9d9e434c71c03c381646afb4792e662f">More...</a><br /></td></tr>
+<tr class="memdesc:a9d9e434c71c03c381646afb4792e662f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Pause music.  <a href="snddrv_8h.html#a9d9e434c71c03c381646afb4792e662f">More...</a><br /></td></tr>
 <tr class="separator:a9d9e434c71c03c381646afb4792e662f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b7dae51f611ad630252baad7c0e342d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#a7b7dae51f611ad630252baad7c0e342d">snd_stop</a> (void)</td></tr>
-<tr class="memdesc:a7b7dae51f611ad630252baad7c0e342d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop music.  <a href="snddrv_8h.html#a7b7dae51f611ad630252baad7c0e342d">More...</a><br /></td></tr>
+<tr class="memdesc:a7b7dae51f611ad630252baad7c0e342d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Stop music.  <a href="snddrv_8h.html#a7b7dae51f611ad630252baad7c0e342d">More...</a><br /></td></tr>
 <tr class="separator:a7b7dae51f611ad630252baad7c0e342d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5de8e41f8ba2fd124dbf38aa6bd609d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d">snd_play</a> (void)</td></tr>
-<tr class="memdesc:aa5de8e41f8ba2fd124dbf38aa6bd609d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main routine of the sound driver.  <a href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d">More...</a><br /></td></tr>
+<tr class="memdesc:aa5de8e41f8ba2fd124dbf38aa6bd609d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Main routine of the sound driver.  <a href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d">More...</a><br /></td></tr>
 <tr class="separator:aa5de8e41f8ba2fd124dbf38aa6bd609d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >SNDDRV a PSG sound driver. </p>
+
+<p class="definition">Definition in file <a class="el" href="snddrv_8h_source.html">snddrv.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ac471cd048a903e718b845d72c030dd7d" name="ac471cd048a903e718b845d72c030dd7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac471cd048a903e718b845d72c030dd7d">&#9670;&nbsp;</a></span>SND_SPEED_1X</h2>
 
@@ -162,7 +169,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The value of the playback speed multiplier for 1.0x speed. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="Sets the playback speed multiplier for background music.">snd_set_speed()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="snddrv_8h_source.html#l00026">26</a> of file <a class="el" href="snddrv_8h_source.html">snddrv.h</a>.</p>
 
@@ -185,13 +192,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns default frequency of the background music. </p>
+<p><code>MSX</code> Returns default frequency of the background music. </p>
 <dl class="section return"><dt>Returns</dt><dd>frequency in Hz. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2" title="Returns current player frequency of the background music.">snd_get_player_frequency()</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2" title="MSX Returns current player frequency of the background music.">snd_get_player_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76" title="Force player frequency of the background music.">snd_set_player_frequency()</a> </dd>
+<a class="el" href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76" title="MSX Force player frequency of the background music.">snd_set_player_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="Sets the playback speed multiplier for background music.">snd_set_speed()</a> </dd></dl>
+<a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a> </dd></dl>
 
 </div>
 </div>
@@ -211,13 +218,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns current player frequency of the background music. </p>
+<p><code>MSX</code> Returns current player frequency of the background music. </p>
 <dl class="section return"><dt>Returns</dt><dd>frequency in Hz. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4" title="Returns default frequency of the background music.">snd_get_bgm_frequency()</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4" title="MSX Returns default frequency of the background music.">snd_get_bgm_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76" title="Force player frequency of the background music.">snd_set_player_frequency()</a> </dd>
+<a class="el" href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76" title="MSX Force player frequency of the background music.">snd_set_player_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="Sets the playback speed multiplier for background music.">snd_set_speed()</a> </dd></dl>
+<a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a> </dd></dl>
 
 </div>
 </div>
@@ -237,21 +244,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Force player frequency of the background music. </p>
+<p><code>MSX</code> Force player frequency of the background music. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">freq</td><td>frequency in Hz. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4" title="Returns default frequency of the background music.">snd_get_bgm_frequency()</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4" title="MSX Returns default frequency of the background music.">snd_get_bgm_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2" title="Returns current player frequency of the background music.">snd_get_player_frequency()</a> </dd>
+<a class="el" href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2" title="MSX Returns current player frequency of the background music.">snd_get_player_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="Sets the playback speed multiplier for background music.">snd_set_speed()</a></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>When a music is set by <a class="el" href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51" title="Sets the specified music as BGM in the sound driver.">snd_set_bgm()</a>, the player frequency is calculated regarding to the default frequency of the music and the speed set by <a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="Sets the playback speed multiplier for background music.">snd_set_speed()</a>.</dd>
+<a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>When a music is set by <a class="el" href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51" title="MSX Sets the specified music as BGM in the sound driver.">snd_set_bgm()</a>, the player frequency is calculated regarding to the default frequency of the music and the speed set by <a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a>.</dd>
 <dd>
-Default frequency that the music composer assumed may not be the same. Therefore <a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="Sets the playback speed multiplier for background music.">snd_set_speed()</a> is recommended instead. </dd></dl>
+Default frequency that the music composer assumed may not be the same. Therefore <a class="el" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a> is recommended instead. </dd></dl>
 
 </div>
 </div>
@@ -271,12 +278,12 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Sets the playback speed multiplier for background music. </p>
+<p><code>MSX</code> Sets the playback speed multiplier for background music. </p>
 <p >This function is used to control the playback speed of background music.</p>
 <p >The playback speed multiplier is specified by a value of 16 times. For example, a value of 16 means a playback speed of 1.0x, and a value of 24 means 1.5x. (i.e. Speed multiplier values are fixed-point numbers with a 4-bit integer part and a 4-bit decimal part.)</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e">snd_set_speed</a>(<a class="code hl_define" href="snddrv_8h.html#ac471cd048a903e718b845d72c030dd7d">SND_SPEED_1X</a> * 2);  <span class="comment">// 2.0x faster playback</span></div>
 <div class="line"><a class="code hl_function" href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e">snd_set_speed</a>(<a class="code hl_define" href="snddrv_8h.html#ac471cd048a903e718b845d72c030dd7d">SND_SPEED_1X</a> / 4);  <span class="comment">// 1/4x slower playback</span></div>
-<div class="ttc" id="asnddrv_8h_html_a87c11bc841b809b3770261547c710a5e"><div class="ttname"><a href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e">snd_set_speed</a></div><div class="ttdeci">void snd_set_speed(uint8_t multiplier)</div><div class="ttdoc">Sets the playback speed multiplier for background music.</div></div>
+<div class="ttc" id="asnddrv_8h_html_a87c11bc841b809b3770261547c710a5e"><div class="ttname"><a href="snddrv_8h.html#a87c11bc841b809b3770261547c710a5e">snd_set_speed</a></div><div class="ttdeci">void snd_set_speed(uint8_t multiplier)</div><div class="ttdoc">MSX Sets the playback speed multiplier for background music.</div></div>
 <div class="ttc" id="asnddrv_8h_html_ac471cd048a903e718b845d72c030dd7d"><div class="ttname"><a href="snddrv_8h.html#ac471cd048a903e718b845d72c030dd7d">SND_SPEED_1X</a></div><div class="ttdeci">#define SND_SPEED_1X</div><div class="ttdoc">The value of the playback speed multiplier for 1.0x speed.</div><div class="ttdef"><b>Definition:</b> <a href="snddrv_8h_source.html#l00026">snddrv.h:26</a></div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -286,11 +293,11 @@ Default frequency that the music composer assumed may not be the same. Therefore
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html#ac471cd048a903e718b845d72c030dd7d" title="The value of the playback speed multiplier for 1.0x speed.">SND_SPEED_1X</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4" title="Returns default frequency of the background music.">snd_get_bgm_frequency()</a> </dd>
+<a class="el" href="snddrv_8h.html#aae4ecf12afd5ab51e4dc1b8d55f9efa4" title="MSX Returns default frequency of the background music.">snd_get_bgm_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2" title="Returns current player frequency of the background music.">snd_get_player_frequency()</a> </dd>
+<a class="el" href="snddrv_8h.html#a428b323a2091903bd69209591f7bb3c2" title="MSX Returns current player frequency of the background music.">snd_get_player_frequency()</a> </dd>
 <dd>
-<a class="el" href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76" title="Force player frequency of the background music.">snd_set_player_frequency()</a> </dd></dl>
+<a class="el" href="snddrv_8h.html#aadcbe84be1632f90b2caa283bd3c9f76" title="MSX Force player frequency of the background music.">snd_set_player_frequency()</a> </dd></dl>
 
 </div>
 </div>
@@ -310,7 +317,7 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Turn on/off the auto-repeat of the BGM. </p>
+<p><code>MSX</code> Turn on/off the auto-repeat of the BGM. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">repeat</td><td><code>true</code>: turn on, <code>false</code>: turn off </td></tr>
@@ -346,7 +353,7 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Sets the specified music as BGM in the sound driver. </p>
+<p><code>MSX</code> Sets the specified music as BGM in the sound driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>Number of a music to be played as BGM. </td></tr>
@@ -383,7 +390,7 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Sets the specified music as SFX (sound effects) in the sound driver. </p>
+<p><code>MSX</code> Sets the specified music as SFX (sound effects) in the sound driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>Number of a music to be played as SFX. </td></tr>
@@ -410,9 +417,9 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the PSG and the sound driver. </p>
-<p >This function must be called at least once. In particular, it must be called before the first call to <a class="el" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d" title="Main routine of the sound driver.">snd_play()</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d" title="Main routine of the sound driver.">snd_play()</a> is called without <a class="el" href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b" title="Initialize the PSG and the sound driver.">snd_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
+<p><code>MSX</code> Initialize the PSG and the sound driver. </p>
+<p >This function must be called at least once. In particular, it must be called before the first call to <a class="el" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d" title="MSX Main routine of the sound driver.">snd_play()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d" title="MSX Main routine of the sound driver.">snd_play()</a> is called without <a class="el" href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b" title="MSX Initialize the PSG and the sound driver.">snd_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
 </div>
 </div>
@@ -432,7 +439,7 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Start / Resume music. </p>
+<p><code>MSX</code> Start / Resume music. </p>
 
 </div>
 </div>
@@ -452,7 +459,7 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Pause music. </p>
+<p><code>MSX</code> Pause music. </p>
 
 </div>
 </div>
@@ -472,7 +479,7 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Stop music. </p>
+<p><code>MSX</code> Stop music. </p>
 
 </div>
 </div>
@@ -492,8 +499,8 @@ Default frequency that the music composer assumed may not be the same. Therefore
       </table>
 </div><div class="memdoc">
 
-<p>Main routine of the sound driver. </p>
-<p >To play the background music and/or sound effects, you need to call this function at every VSYNC timing. The easiest way is to set this function as the VSYNC interrupt handler by calling <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</p>
+<p><code>MSX</code> Main routine of the sound driver. </p>
+<p >To play the background music and/or sound effects, you need to call this function at every VSYNC timing. The easiest way is to set this function as the VSYNC interrupt handler by calling <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="MSX Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</p>
 <div class="fragment"><div class="line"><span class="comment">// At first, initialize the sound driver.</span></div>
 <div class="line"><a class="code hl_function" href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b">snd_init</a>();</div>
 <div class="line"> </div>
@@ -503,12 +510,12 @@ Default frequency that the music composer assumed may not be the same. Therefore
 <div class="line"><span class="comment">// And then, calls other APIs to start, stop, etc.</span></div>
 <div class="line"><a class="code hl_function" href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">snd_set_bgm</a>(0, &amp;my_bgm);</div>
 <div class="line"><a class="code hl_function" href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">snd_start</a>();</div>
-<div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">Register user defined VSYNC interrupt handler.</div></div>
-<div class="ttc" id="asnddrv_8h_html_a0c1bbeef31103b115cb8fe721082ae9e"><div class="ttname"><a href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">snd_start</a></div><div class="ttdeci">void snd_start(void)</div><div class="ttdoc">Start / Resume music.</div></div>
-<div class="ttc" id="asnddrv_8h_html_a24fde7ac311197e186232be3f2f5ae7b"><div class="ttname"><a href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b">snd_init</a></div><div class="ttdeci">void snd_init(void)</div><div class="ttdoc">Initialize the PSG and the sound driver.</div></div>
-<div class="ttc" id="asnddrv_8h_html_aa5de8e41f8ba2fd124dbf38aa6bd609d"><div class="ttname"><a href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d">snd_play</a></div><div class="ttdeci">void snd_play(void)</div><div class="ttdoc">Main routine of the sound driver.</div></div>
-<div class="ttc" id="asnddrv_8h_html_aa7d178deaf1d7d9621cb4321d5226a51"><div class="ttname"><a href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">snd_set_bgm</a></div><div class="ttdeci">void snd_set_bgm(uint8_t index, const snd_SoundAssets *sa)</div><div class="ttdoc">Sets the specified music as BGM in the sound driver.</div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If <a class="el" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d" title="Main routine of the sound driver.">snd_play()</a> is called without <a class="el" href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b" title="Initialize the PSG and the sound driver.">snd_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
+<div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">MSX Register user defined VSYNC interrupt handler.</div></div>
+<div class="ttc" id="asnddrv_8h_html_a0c1bbeef31103b115cb8fe721082ae9e"><div class="ttname"><a href="snddrv_8h.html#a0c1bbeef31103b115cb8fe721082ae9e">snd_start</a></div><div class="ttdeci">void snd_start(void)</div><div class="ttdoc">MSX Start / Resume music.</div></div>
+<div class="ttc" id="asnddrv_8h_html_a24fde7ac311197e186232be3f2f5ae7b"><div class="ttname"><a href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b">snd_init</a></div><div class="ttdeci">void snd_init(void)</div><div class="ttdoc">MSX Initialize the PSG and the sound driver.</div></div>
+<div class="ttc" id="asnddrv_8h_html_aa5de8e41f8ba2fd124dbf38aa6bd609d"><div class="ttname"><a href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d">snd_play</a></div><div class="ttdeci">void snd_play(void)</div><div class="ttdoc">MSX Main routine of the sound driver.</div></div>
+<div class="ttc" id="asnddrv_8h_html_aa7d178deaf1d7d9621cb4321d5226a51"><div class="ttname"><a href="snddrv_8h.html#aa7d178deaf1d7d9621cb4321d5226a51">snd_set_bgm</a></div><div class="ttdeci">void snd_set_bgm(uint8_t index, const snd_SoundAssets *sa)</div><div class="ttdoc">MSX Sets the specified music as BGM in the sound driver.</div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If <a class="el" href="snddrv_8h.html#aa5de8e41f8ba2fd124dbf38aa6bd609d" title="MSX Main routine of the sound driver.">snd_play()</a> is called without <a class="el" href="snddrv_8h.html#a24fde7ac311197e186232be3f2f5ae7b" title="MSX Initialize the PSG and the sound driver.">snd_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
 </div>
 </div>

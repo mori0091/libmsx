@@ -1,4 +1,4 @@
 <map id="include/sprite_color.h" name="include/sprite_color.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,5,149,32"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="27,80,128,107"/>
+<area shape="rect" id="node1" title="Sprite color table interface." alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="27,80,128,107"/>
 </map>

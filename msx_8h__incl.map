@@ -1,19 +1,19 @@
 <map id="include/msx.h" name="include/msx.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="459,5,560,32"/>
-<area shape="rect" id="node2" href="$config_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="119,379,185,405"/>
-<area shape="rect" id="node3" href="$interrupt_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="859,155,938,181"/>
-<area shape="rect" id="node6" href="$io_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="43,304,85,331"/>
+<area shape="rect" id="node1" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="459,5,560,32"/>
+<area shape="rect" id="node2" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="119,379,185,405"/>
+<area shape="rect" id="node3" href="$interrupt_8h.html" title="Interrupts relevant functions and Pluggable interrupts handler interface." alt="" coords="859,155,938,181"/>
+<area shape="rect" id="node6" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="43,304,85,331"/>
 <area shape="rect" id="node7" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="339,229,395,256"/>
-<area shape="rect" id="node10" href="$workarea_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="109,304,195,331"/>
+<area shape="rect" id="node10" href="$workarea_8h.html" title="Definitions of MSX SYSTEM Workarea." alt="" coords="109,304,195,331"/>
 <area shape="rect" id="node11" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="389,155,443,181"/>
 <area shape="rect" id="node13" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="563,229,631,256"/>
-<area shape="rect" id="node14" href="$sprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="619,155,683,181"/>
-<area shape="rect" id="node15" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="673,80,772,107"/>
-<area shape="rect" id="node16" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="505,80,599,107"/>
-<area shape="rect" id="node17" href="$input_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="797,80,857,107"/>
-<area shape="rect" id="node18" href="$psg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="211,229,264,256"/>
-<area shape="rect" id="node19" href="$sound_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="1075,155,1141,181"/>
-<area shape="rect" id="node21" href="$sound__eg_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="963,155,1051,181"/>
+<area shape="rect" id="node14" href="$sprite_8h.html" title="Sprites." alt="" coords="619,155,683,181"/>
+<area shape="rect" id="node15" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="673,80,772,107"/>
+<area shape="rect" id="node16" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="505,80,599,107"/>
+<area shape="rect" id="node17" href="$input_8h.html" title="Input devices such as Joypad, for example." alt="" coords="797,80,857,107"/>
+<area shape="rect" id="node18" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="211,229,264,256"/>
+<area shape="rect" id="node19" href="$sound_8h.html" title="A PSG sound driver." alt="" coords="1075,155,1141,181"/>
+<area shape="rect" id="node21" href="$sound__eg_8h.html" title="Software envelope genenator interface for sound.h." alt="" coords="963,155,1051,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="909,229,984,256"/>
 <area shape="rect" id="node5" title=" " alt="" coords="612,379,676,405"/>
 <area shape="rect" id="node8" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="219,304,314,331"/>

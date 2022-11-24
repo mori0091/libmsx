@@ -88,27 +88,36 @@ $(document).ready(function(){initNavTree('bios__const_8h_source.html',''); initR
 </div><!--header-->
 <div class="contents">
 <a href="bios__const_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"></span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifndef BIOS_CONST_H</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="bios__const_8h.html#ad8c0bb04896170083efc8c7d7d423967">   19</a></span><span class="preprocessor">#define BIOS_CONST_H</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">   29</a></span><span class="keyword">static</span> <a class="code hl_define" href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a> (0x002b) const uint8_t <a class="code hl_variable" href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">   36</a></span>static <a class="code hl_define" href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a> (0x002c) const uint8_t <a class="code hl_variable" href="bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">INTERNATIONAL_ID_2</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">   53</a></span>static <a class="code hl_define" href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a> (0x002d) const uint8_t <a class="code hl_variable" href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (c) 2021 Daishi Mori (mori0091)</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * This software is released under the MIT License.\n</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * See https://github.com/mori0091/libmsx/blob/main/LICENSE</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * GitHub libmsx project\n</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * https://github.com/mori0091/libmsx</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef BIOS_CONST_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="bios__const_8h.html#ad8c0bb04896170083efc8c7d7d423967">   20</a></span><span class="preprocessor">#define BIOS_CONST_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">   30</a></span><span class="keyword">static</span> <a class="code hl_define" href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a> (0x002b) const uint8_t <a class="code hl_variable" href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">   37</a></span>static <a class="code hl_define" href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a> (0x002c) const uint8_t <a class="code hl_variable" href="bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">INTERNATIONAL_ID_2</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">   54</a></span>static <a class="code hl_define" href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a> (0x002d) const uint8_t <a class="code hl_variable" href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a>;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="abios__const_8h_html_a0c64be4c8a1cc67033892d7f4d83ac7a"><div class="ttname"><a href="bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">INTERNATIONAL_ID_2</a></div><div class="ttdeci">static const uint8_t INTERNATIONAL_ID_2</div><div class="ttdoc">International identifier code #2 of MSX BIOS (002CH / MAIN).</div><div class="ttdef"><b>Definition:</b> <a href="bios__const_8h_source.html#l00036">bios_const.h:36</a></div></div>
-<div class="ttc" id="abios__const_8h_html_a6affd3a7801ad8c6c255400f0a391cda"><div class="ttname"><a href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a></div><div class="ttdeci">static const uint8_t MSX_SYSTEM_VERSION_CODE</div><div class="ttdoc">System version code of MSX BIOS (002DH / MAIN).</div><div class="ttdef"><b>Definition:</b> <a href="bios__const_8h_source.html#l00053">bios_const.h:53</a></div></div>
-<div class="ttc" id="abios__const_8h_html_a91e2a52aaf73b50f909f12bb9f9fc9bc"><div class="ttname"><a href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a></div><div class="ttdeci">static const uint8_t INTERNATIONAL_ID_1</div><div class="ttdoc">International identifier code #1 of MSX BIOS (002BH / MAIN).</div><div class="ttdef"><b>Definition:</b> <a href="bios__const_8h_source.html#l00029">bios_const.h:29</a></div></div>
-<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div><div class="ttdoc">Copyright (c) 2022 Daishi Mori (mori0091)</div></div>
-<div class="ttc" id="aconfig_8h_html_aa7b47c6c9d2c52ae7e092150af9e8556"><div class="ttname"><a href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a></div><div class="ttdeci">#define __at(x)</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00021">config.h:21</a></div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="abios__const_8h_html_a0c64be4c8a1cc67033892d7f4d83ac7a"><div class="ttname"><a href="bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a">INTERNATIONAL_ID_2</a></div><div class="ttdeci">static const uint8_t INTERNATIONAL_ID_2</div><div class="ttdoc">MSX International identifier code #2 of MSX BIOS (002CH / MAIN).</div><div class="ttdef"><b>Definition:</b> <a href="bios__const_8h_source.html#l00037">bios_const.h:37</a></div></div>
+<div class="ttc" id="abios__const_8h_html_a6affd3a7801ad8c6c255400f0a391cda"><div class="ttname"><a href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a></div><div class="ttdeci">static const uint8_t MSX_SYSTEM_VERSION_CODE</div><div class="ttdoc">MSX System version code of MSX BIOS (002DH / MAIN).</div><div class="ttdef"><b>Definition:</b> <a href="bios__const_8h_source.html#l00054">bios_const.h:54</a></div></div>
+<div class="ttc" id="abios__const_8h_html_a91e2a52aaf73b50f909f12bb9f9fc9bc"><div class="ttname"><a href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a></div><div class="ttdeci">static const uint8_t INTERNATIONAL_ID_1</div><div class="ttdoc">MSX International identifier code #1 of MSX BIOS (002BH / MAIN).</div><div class="ttdef"><b>Definition:</b> <a href="bios__const_8h_source.html#l00030">bios_const.h:30</a></div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div><div class="ttdoc">Hack for C Compiler portability.</div></div>
+<div class="ttc" id="aconfig_8h_html_aa7b47c6c9d2c52ae7e092150af9e8556"><div class="ttname"><a href="config_8h.html#aa7b47c6c9d2c52ae7e092150af9e8556">__at</a></div><div class="ttdeci">#define __at(x)</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00023">config.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

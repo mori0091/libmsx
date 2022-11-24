@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node1"><a xlink:title="Definition of I/O ports.">
 <polygon fill="#bfbfbf" stroke="black" points="89.91,-224.5 89.91,-243.5 154.91,-243.5 154.91,-224.5 89.91,-224.5"/>
 <text text-anchor="middle" x="122.41" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/io.h</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="msx_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node2"><a xlink:href="msx_8h.html" target="_top" xlink:title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.">
 <polygon fill="none" stroke="black" points="164.41,-0.5 164.41,-19.5 240.41,-19.5 240.41,-0.5 164.41,-0.5"/>
 <text text-anchor="middle" x="202.41" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/msx.h</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="psg_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node3"><a xlink:href="psg_8h.html" target="_top" xlink:title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip.">
 <polygon fill="none" stroke="black" points="35.41,-168.5 35.41,-187.5 109.41,-187.5 109.41,-168.5 35.41,-168.5"/>
 <text text-anchor="middle" x="72.41" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/psg.h</text>
 </a>
@@ -86,7 +86,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="ay__3__8910_8h.html" target="_top" xlink:title="Copyright (c) 2022 Daishi Mori (mori0091)">
+<g id="a_node4"><a xlink:href="ay__3__8910_8h.html" target="_top" xlink:title="Buffer for PSG (AY&#45;3&#45;8910) registers.">
 <polygon fill="none" stroke="black" points="20.41,-112.5 20.41,-131.5 124.41,-131.5 124.41,-112.5 20.41,-112.5"/>
 <text text-anchor="middle" x="72.41" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/ay_3_8910.h</text>
 </a>
@@ -107,7 +107,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="metasprite_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node6"><a xlink:href="metasprite_8h.html" target="_top" xlink:title="Meta&#45;sprite ; an aggregate of sprites.">
 <polygon fill="none" stroke="black" points="150.41,-56.5 150.41,-75.5 254.41,-75.5 254.41,-56.5 150.41,-56.5"/>
 <text text-anchor="middle" x="202.41" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/metasprite.h</text>
 </a>
@@ -146,7 +146,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="sprite_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node8"><a xlink:href="sprite_8h.html" target="_top" xlink:title="Sprites.">
 <polygon fill="none" stroke="black" points="310.41,-112.5 310.41,-131.5 392.41,-131.5 392.41,-112.5 310.41,-112.5"/>
 <text text-anchor="middle" x="351.41" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/sprite.h</text>
 </a>
@@ -161,7 +161,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="sprite__color_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node9"><a xlink:href="sprite__color_8h.html" target="_top" xlink:title="Sprite color table interface.">
 <polygon fill="none" stroke="black" points="348.41,-56.5 348.41,-75.5 456.41,-75.5 456.41,-56.5 348.41,-56.5"/>
 <text text-anchor="middle" x="402.41" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/sprite_color.h</text>
 </a>

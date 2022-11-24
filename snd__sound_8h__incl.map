@@ -3,6 +3,6 @@
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,80,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="265,155,329,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="155,80,223,107"/>
-<area shape="rect" id="node5" href="$snd__i__table_8h.html" title=" " alt="" coords="248,80,347,107"/>
-<area shape="rect" id="node6" href="$snd__p__table_8h.html" title=" " alt="" coords="371,80,474,107"/>
+<area shape="rect" id="node5" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." alt="" coords="248,80,347,107"/>
+<area shape="rect" id="node6" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="371,80,474,107"/>
 </map>

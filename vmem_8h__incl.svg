@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="io_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node3"><a xlink:href="io_8h.html" target="_top" xlink:title="Definition of I/O ports.">
 <polygon fill="none" stroke="black" points="66,-56.5 66,-75.5 98,-75.5 98,-56.5 66,-56.5"/>
 <text text-anchor="middle" x="82" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">io.h</text>
 </a>
@@ -50,7 +50,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="config_8h.html" target="_top" xlink:title="Copyright (c) 2022 Daishi Mori (mori0091)">
+<g id="a_node4"><a xlink:href="config_8h.html" target="_top" xlink:title="Hack for C Compiler portability.">
 <polygon fill="none" stroke="black" points="57,-0.5 57,-19.5 107,-19.5 107,-0.5 57,-0.5"/>
 <text text-anchor="middle" x="82" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">config.h</text>
 </a>

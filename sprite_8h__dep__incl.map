@@ -1,6 +1,6 @@
 <map id="include/sprite.h" name="include/sprite.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="127,5,236,32"/>
-<area shape="rect" id="node2" href="$metasprite_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,80,144,107"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="131,155,232,181"/>
-<area shape="rect" id="node4" href="$sprite__color_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="219,80,363,107"/>
+<area shape="rect" id="node1" title="Sprites." alt="" coords="127,5,236,32"/>
+<area shape="rect" id="node2" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="131,155,232,181"/>
+<area shape="rect" id="node4" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="219,80,363,107"/>
 </map>

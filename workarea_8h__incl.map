@@ -1,5 +1,5 @@
 <map id="include/workarea.h" name="include/workarea.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="16,5,147,32"/>
+<area shape="rect" id="node1" title="Definitions of MSX SYSTEM Workarea." alt="" coords="16,5,147,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,69,107"/>
-<area shape="rect" id="node3" href="$config_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="93,80,160,107"/>
+<area shape="rect" id="node3" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="93,80,160,107"/>
 </map>

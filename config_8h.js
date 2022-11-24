@@ -5,5 +5,6 @@ var config_8h =
     [ "__sfr", "config_8h.html#ac6697545fa668cd6d830013d8c6a3fc3", null ],
     [ "__critical", "config_8h.html#adf60f22bd0a17f4f67e98819a5fdb056", null ],
     [ "__naked", "config_8h.html#abcaf90e207efed7e5d0887aee08c7338", null ],
-    [ "__banked", "config_8h.html#af666593cde636407eb5fc23658dc14d5", null ]
+    [ "__banked", "config_8h.html#af666593cde636407eb5fc23658dc14d5", null ],
+    [ "__sdcccall", "config_8h.html#ac16e864cb65407e92cf2a98d1f4fbb8b", null ]
 ];

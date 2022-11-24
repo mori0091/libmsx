@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="SNDDRV a PSG sound driver.">
 <polygon fill="#bfbfbf" stroke="black" points="215.5,-168.5 215.5,-187.5 302.5,-187.5 302.5,-168.5 215.5,-168.5"/>
 <text text-anchor="middle" x="259" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/snddrv.h</text>
 </a>
@@ -86,7 +86,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="snd__i__table_8h.html" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="snd__i__table_8h.html" target="_top" xlink:title="Instrument data type for SNDDRV.">
 <polygon fill="none" stroke="black" points="182,-56.5 182,-75.5 256,-75.5 256,-56.5 182,-56.5"/>
 <text text-anchor="middle" x="219" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">snd_i_table.h</text>
 </a>
@@ -101,7 +101,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="snd__p__table_8h.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="snd__p__table_8h.html" target="_top" xlink:title="Pitch&#45;bend table data type for SNDDRV.">
 <polygon fill="none" stroke="black" points="274.5,-56.5 274.5,-75.5 351.5,-75.5 351.5,-56.5 274.5,-56.5"/>
 <text text-anchor="middle" x="313" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">snd_p_table.h</text>
 </a>

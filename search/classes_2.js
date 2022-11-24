@@ -21,6 +21,5 @@ var searchData=
   ['sound_5feg_5flpcm_18',['sound_eg_LPCM',['../sound__eg_8h.html#structsound__eg__LPCM',1,'']]],
   ['sound_5ffragment_19',['sound_fragment',['../sound_8h.html#structsound__fragment',1,'']]],
   ['sprite_20',['sprite',['../sprite_8h.html#structsprite',1,'']]],
-  ['sprite_2e_5f_5funnamed5_5f_5f_21',['sprite.__unnamed5__',['../sprite_8h.html#unionsprite_8____unnamed5____',1,'']]],
-  ['sprite_5fcolor_22',['sprite_color',['../sprite__color_8h.html#structsprite__color',1,'']]]
+  ['sprite_5fcolor_21',['sprite_color',['../sprite__color_8h.html#structsprite__color',1,'']]]
 ];

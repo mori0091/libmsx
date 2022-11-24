@@ -9,7 +9,7 @@ var indexSectionsWithContent =
   6: "sv",
   7: "sv",
   8: "_abcimoprsvw",
-  9: "dlt"
+  9: "dl"
 };
 
 var indexSectionNames =

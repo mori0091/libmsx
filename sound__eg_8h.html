@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('sound__eg_8h.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
-<p>Copyright (c) 2021 Daishi Mori (mori0091)  
+<p>Software envelope genenator interface for <code><a class="el" href="sound_8h.html" title="A PSG sound driver.">sound.h</a></code>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
@@ -146,15 +146,12 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac5838ecb113e8d1ef6af4cae7690de3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound__eg_8h.html#ac5838ecb113e8d1ef6af4cae7690de3c">sound_set_eg_table</a> (const struct <a class="el" href="sound__eg_8h.html#structsound__eg__attribute">sound_eg_attribute</a> *table)</td></tr>
-<tr class="memdesc:ac5838ecb113e8d1ef6af4cae7690de3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Re)set the software envelope generator attribute table.  <a href="sound__eg_8h.html#ac5838ecb113e8d1ef6af4cae7690de3c">More...</a><br /></td></tr>
+<tr class="memdesc:ac5838ecb113e8d1ef6af4cae7690de3c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> (Re)set the software envelope generator attribute table.  <a href="sound__eg_8h.html#ac5838ecb113e8d1ef6af4cae7690de3c">More...</a><br /></td></tr>
 <tr class="separator:ac5838ecb113e8d1ef6af4cae7690de3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Copyright (c) 2021 Daishi Mori (mori0091) </p>
-<p >This software is released under the MIT License.<br  />
-See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
-<p >GitHub libmsx project<br  />
-<a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
+<div class="textblock"><p >Software envelope genenator interface for <code><a class="el" href="sound_8h.html" title="A PSG sound driver.">sound.h</a></code>. </p>
+<dl class="section note"><dt>Note</dt><dd>This is old and no longer maintained. </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 </div><hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -171,7 +168,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 </div><div class="memdoc">
 <div class="textblock"><p >Parameters for AHDSR envelope generator. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00031">31</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00034">34</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -221,7 +218,7 @@ desccendant velocity of release phase </td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p >Parameters for linear PCM (8-bit, 60Hz) envelope generator. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00045">45</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00048">48</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -266,7 +263,7 @@ time series of the sampled signal levels (i.e. <p >wave form) </p>
 <li><code>lpcm</code> of <code>const struct <a class="el" href="sound__eg_8h.html#structsound__eg__LPCM" title="Parameters for linear PCM (8-bit, 60Hz) envelope generator.">sound_eg_LPCM</a> *</code> type for 8-bit 60Hz Linear PCM type envelope generator. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00070">70</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00073">73</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -297,7 +294,7 @@ __unnamed__</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00075">75</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00078">78</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -337,7 +334,7 @@ Pointer to parameter constants for this instance of the SOUND_EG_LPCM class. <p 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00017">17</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00020">20</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 
 </div>
 </div>
@@ -355,7 +352,7 @@ Pointer to parameter constants for this instance of the SOUND_EG_LPCM class. <p 
 
 <p>The maximum number of elements for the envelope generator attribute table. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00023">23</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00026">26</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 
 </div>
 </div>
@@ -373,7 +370,7 @@ Pointer to parameter constants for this instance of the SOUND_EG_LPCM class. <p 
 
 <p>The class identifier for AHDSR envelope generator. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00026">26</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00029">29</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 
 </div>
 </div>
@@ -391,7 +388,7 @@ Pointer to parameter constants for this instance of the SOUND_EG_LPCM class. <p 
 
 <p>The class identifier for LPCM envelope generator. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00028">28</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound__eg_8h_source.html#l00031">31</a> of file <a class="el" href="sound__eg_8h_source.html">sound_eg.h</a>.</p>
 
 </div>
 </div>
@@ -412,7 +409,7 @@ Pointer to parameter constants for this instance of the SOUND_EG_LPCM class. <p 
       </table>
 </div><div class="memdoc">
 
-<p>(Re)set the software envelope generator attribute table. </p>
+<p><code>MSX</code> (Re)set the software envelope generator attribute table. </p>
 <p >This function sets the base address of the software envelope generator table to the given address <code>table</code>, or reset to the default if <code>table</code> was <code>NULL</code>.</p>
 <p >The table should be an array of <code>struct <a class="el" href="sound__eg_8h.html#structsound__eg__attribute" title="Attributes of a software envelope generator object.">sound_eg_attribute</a></code> with a maximum of 16 elements. Each element can contain the individual parameter settings of an envelope generator of type AHDSR or LPCM.</p>
 <dl class="params"><dt>Parameters</dt><dd>

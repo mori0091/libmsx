@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('sound_8h.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 
-<p>Copyright (c) 2021 Daishi Mori (mori0091)  
+<p>A PSG sound driver.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
@@ -154,45 +154,42 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a90e396bab2471f72285f290ce7a5cab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a> (void)</td></tr>
-<tr class="memdesc:a90e396bab2471f72285f290ce7a5cab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function initializes the PSG and the sound driver.  <a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">More...</a><br /></td></tr>
+<tr class="memdesc:a90e396bab2471f72285f290ce7a5cab1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> This function initializes the PSG and the sound driver.  <a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">More...</a><br /></td></tr>
 <tr class="separator:a90e396bab2471f72285f290ce7a5cab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e978bf0d3673790d9cdb40fa03ce41a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a">sound_set_speed</a> (uint8_t multiplier)</td></tr>
-<tr class="memdesc:a0e978bf0d3673790d9cdb40fa03ce41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the playback speed multiplier for background music.  <a href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a">More...</a><br /></td></tr>
+<tr class="memdesc:a0e978bf0d3673790d9cdb40fa03ce41a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Sets the playback speed multiplier for background music.  <a href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a">More...</a><br /></td></tr>
 <tr class="separator:a0e978bf0d3673790d9cdb40fa03ce41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a316d8aea0d56999411d02edef8466374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a316d8aea0d56999411d02edef8466374">sound_set_volume</a> (uint8_t volume)</td></tr>
-<tr class="memdesc:a316d8aea0d56999411d02edef8466374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set main volume level.  <a href="sound_8h.html#a316d8aea0d56999411d02edef8466374">More...</a><br /></td></tr>
+<tr class="memdesc:a316d8aea0d56999411d02edef8466374"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set main volume level.  <a href="sound_8h.html#a316d8aea0d56999411d02edef8466374">More...</a><br /></td></tr>
 <tr class="separator:a316d8aea0d56999411d02edef8466374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7e35fd4fef3532ed0c5e5bc3548d4ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a> (bool repeat)</td></tr>
-<tr class="memdesc:ad7e35fd4fef3532ed0c5e5bc3548d4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on/off the auto-repeat of the BGM.  <a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">More...</a><br /></td></tr>
+<tr class="memdesc:ad7e35fd4fef3532ed0c5e5bc3548d4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Turn on/off the auto-repeat of the BGM.  <a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">More...</a><br /></td></tr>
 <tr class="separator:ad7e35fd4fef3532ed0c5e5bc3548d4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85593d9f7d37f53db1258f624f2a98c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#ac85593d9f7d37f53db1258f624f2a98c">sound_set_mute</a> (uint8_t mute)</td></tr>
-<tr class="memdesc:ac85593d9f7d37f53db1258f624f2a98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mute/unmute for each sound channel.  <a href="sound_8h.html#ac85593d9f7d37f53db1258f624f2a98c">More...</a><br /></td></tr>
+<tr class="memdesc:ac85593d9f7d37f53db1258f624f2a98c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Mute/unmute for each sound channel.  <a href="sound_8h.html#ac85593d9f7d37f53db1258f624f2a98c">More...</a><br /></td></tr>
 <tr class="separator:ac85593d9f7d37f53db1258f624f2a98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a93615db20eb70cf9df084778d9a9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a9a93615db20eb70cf9df084778d9a9ee">sound_effect</a> (const struct <a class="el" href="sound_8h.html#structsound__clip">sound_clip</a> *s)</td></tr>
-<tr class="memdesc:a9a93615db20eb70cf9df084778d9a9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the specified music clip as sound effect.  <a href="sound_8h.html#a9a93615db20eb70cf9df084778d9a9ee">More...</a><br /></td></tr>
+<tr class="memdesc:a9a93615db20eb70cf9df084778d9a9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Plays the specified music clip as sound effect.  <a href="sound_8h.html#a9a93615db20eb70cf9df084778d9a9ee">More...</a><br /></td></tr>
 <tr class="separator:a9a93615db20eb70cf9df084778d9a9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3465ea25875e5461142411740aa69e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a> (const struct <a class="el" href="sound_8h.html#structsound__clip">sound_clip</a> *s)</td></tr>
-<tr class="memdesc:af3465ea25875e5461142411740aa69e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified music clip as BGM in the sound driver.  <a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">More...</a><br /></td></tr>
+<tr class="memdesc:af3465ea25875e5461142411740aa69e3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Sets the specified music clip as BGM in the sound driver.  <a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">More...</a><br /></td></tr>
 <tr class="separator:af3465ea25875e5461142411740aa69e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a893fbd47631ab99368244cfbd0854b36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a> (void)</td></tr>
-<tr class="memdesc:a893fbd47631ab99368244cfbd0854b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the BGM.  <a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">More...</a><br /></td></tr>
+<tr class="memdesc:a893fbd47631ab99368244cfbd0854b36"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Start the BGM.  <a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">More...</a><br /></td></tr>
 <tr class="separator:a893fbd47631ab99368244cfbd0854b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05ffba4b6e960e4a0699f50b8a72d795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#a05ffba4b6e960e4a0699f50b8a72d795">sound_stop</a> (void)</td></tr>
-<tr class="memdesc:a05ffba4b6e960e4a0699f50b8a72d795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the BGM.  <a href="sound_8h.html#a05ffba4b6e960e4a0699f50b8a72d795">More...</a><br /></td></tr>
+<tr class="memdesc:a05ffba4b6e960e4a0699f50b8a72d795"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Stop the BGM.  <a href="sound_8h.html#a05ffba4b6e960e4a0699f50b8a72d795">More...</a><br /></td></tr>
 <tr class="separator:a05ffba4b6e960e4a0699f50b8a72d795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa69657f5f366eef034685b19c9c0ea3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#aa69657f5f366eef034685b19c9c0ea3f">sound_pause</a> (void)</td></tr>
-<tr class="memdesc:aa69657f5f366eef034685b19c9c0ea3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause the BGM.  <a href="sound_8h.html#aa69657f5f366eef034685b19c9c0ea3f">More...</a><br /></td></tr>
+<tr class="memdesc:aa69657f5f366eef034685b19c9c0ea3f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Pause the BGM.  <a href="sound_8h.html#aa69657f5f366eef034685b19c9c0ea3f">More...</a><br /></td></tr>
 <tr class="separator:aa69657f5f366eef034685b19c9c0ea3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca95ae20cf6bbdedef623278c7c44f5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a> (void)</td></tr>
-<tr class="memdesc:aca95ae20cf6bbdedef623278c7c44f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main routine of the sound driver.  <a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">More...</a><br /></td></tr>
+<tr class="memdesc:aca95ae20cf6bbdedef623278c7c44f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Main routine of the sound driver.  <a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">More...</a><br /></td></tr>
 <tr class="separator:aca95ae20cf6bbdedef623278c7c44f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Copyright (c) 2021 Daishi Mori (mori0091) </p>
-<p >This software is released under the MIT License.<br  />
-See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
-<p >GitHub libmsx project<br  />
-<a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
+<div class="textblock"><p >A PSG sound driver. </p>
+<dl class="section note"><dt>Note</dt><dd>This is old and no longer maintained. </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 </div><hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -265,7 +262,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 <div class="line">+-----------------------+  -----</div>
 <div class="line">The body is a sequence of one or more commands.</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00137">137</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00140">140</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -293,7 +290,7 @@ A list of pointers to the sound data stream for each channel. </td></tr>
 <p >The sound clip structure is a list of sound fragments. It represents the entire logical data stream of music.</p>
 <p >This structure also stores the priority order when the sound clip is used as a sound effect. (If the sound clip is to be used as background music, its priority has no meaning and will be ignored.) </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00153">153</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00156">156</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 </div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for sound_clip:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -340,7 +337,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00017">17</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00020">20</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -358,7 +355,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 
 <p>The bit-mask to specify PSG channel A. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00026">26</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00029">29</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -376,7 +373,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 
 <p>The bit-mask to specify PSG channel B. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00031">31</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00034">34</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -394,7 +391,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 
 <p>The bit-mask to specify PSG channel C. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00036">36</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00039">39</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -412,7 +409,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 
 <p>The bit-mask to specify all PSG channels. </p>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00041">41</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00044">44</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -429,9 +426,9 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 </div><div class="memdoc">
 
 <p>The value of the playback speed multiplier for 1.0x speed. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a" title="Sets the playback speed multiplier for background music.">sound_set_speed()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a" title="MSX Sets the playback speed multiplier for background music.">sound_set_speed()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00047">47</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00050">50</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -448,9 +445,9 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 </div><div class="memdoc">
 
 <p>Minimum value of playback speed multiplier. </p>
-<p >Equivalent to <code>SOUND_SPEED_1X / 4</code> (i.e., 0.25x speed). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a" title="Sets the playback speed multiplier for background music.">sound_set_speed()</a> </dd></dl>
+<p >Equivalent to <code>SOUND_SPEED_1X / 4</code> (i.e., 0.25x speed). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a" title="MSX Sets the playback speed multiplier for background music.">sound_set_speed()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00054">54</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00057">57</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -467,9 +464,9 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 </div><div class="memdoc">
 
 <p>Maximum value of playback speed multiplier. </p>
-<p >Equivalent to <code>SOUND_SPEED_1X * 2</code> (i.e., 2.0x speed). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a" title="Sets the playback speed multiplier for background music.">sound_set_speed()</a> </dd></dl>
+<p >Equivalent to <code>SOUND_SPEED_1X * 2</code> (i.e., 2.0x speed). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="sound_8h.html#a0e978bf0d3673790d9cdb40fa03ce41a" title="MSX Sets the playback speed multiplier for background music.">sound_set_speed()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00061">61</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sound_8h_source.html#l00064">64</a> of file <a class="el" href="sound_8h_source.html">sound.h</a>.</p>
 
 </div>
 </div>
@@ -490,9 +487,9 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>This function initializes the PSG and the sound driver. </p>
-<p >This function must be called at least once. In particular, it must be called before the first call to <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
+<p><code>MSX</code> This function initializes the PSG and the sound driver. </p>
+<p >This function must be called at least once. In particular, it must be called before the first call to <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="MSX Main routine of the sound driver.">sound_player()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="MSX Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="MSX This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
 </div>
 </div>
@@ -512,7 +509,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Sets the playback speed multiplier for background music. </p>
+<p><code>MSX</code> Sets the playback speed multiplier for background music. </p>
 <p >This function is used to control the playback speed of background music.</p>
 <p >The playback speed multiplier is specified by a value of 4 times. For example, a value of 4 means a playback speed of 1.0x, and a value of 6 means 1.5x.</p>
 <dl class="section note"><dt>Note</dt><dd><ul>
@@ -553,7 +550,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Set main volume level. </p>
+<p><code>MSX</code> Set main volume level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">volume</td><td>main volume level (0..15) </td></tr>
@@ -579,7 +576,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Turn on/off the auto-repeat of the BGM. </p>
+<p><code>MSX</code> Turn on/off the auto-repeat of the BGM. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">repeat</td><td><code>true</code>: turn on, <code>false</code>: turn off </td></tr>
@@ -605,7 +602,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Mute/unmute for each sound channel. </p>
+<p><code>MSX</code> Mute/unmute for each sound channel. </p>
 <p >The parameter <code>mute</code> is a bit-set of the mute switches.</p>
 <ul>
 <li>bit #0 (SOUND_CHANNEL_A) is for PSG channel A</li>
@@ -638,7 +635,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Plays the specified music clip as sound effect. </p>
+<p><code>MSX</code> Plays the specified music clip as sound effect. </p>
 <p ><b>Priority of the sound effect</b></p>
 <p >The priority of the sound effect is specified by <code>s-&gt;priority</code>. The larger the value, the higher the priority. This priority determines whether or not the sound driver will play the specified sound clip, as follows</p>
 <ul>
@@ -674,7 +671,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Sets the specified music clip as BGM in the sound driver. </p>
+<p><code>MSX</code> Sets the specified music clip as BGM in the sound driver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>Pointer to the music clip structure to be played as BGM. </td></tr>
@@ -700,7 +697,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Start the BGM. </p>
+<p><code>MSX</code> Start the BGM. </p>
 
 </div>
 </div>
@@ -720,7 +717,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Stop the BGM. </p>
+<p><code>MSX</code> Stop the BGM. </p>
 
 </div>
 </div>
@@ -740,7 +737,7 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Pause the BGM. </p>
+<p><code>MSX</code> Pause the BGM. </p>
 
 </div>
 </div>
@@ -760,8 +757,8 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
       </table>
 </div><div class="memdoc">
 
-<p>Main routine of the sound driver. </p>
-<p >To play the background music and/or sound effects, you need to call this function at every VSYNC timing. The easiest way is to set this function as the VSYNC interrupt handler by calling <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</p>
+<p><code>MSX</code> Main routine of the sound driver. </p>
+<p >To play the background music and/or sound effects, you need to call this function at every VSYNC timing. The easiest way is to set this function as the VSYNC interrupt handler by calling <a class="el" href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c" title="MSX Register user defined VSYNC interrupt handler.">set_vsync_handler()</a>.</p>
 <div class="fragment"><div class="line"><span class="comment">// At first, initialize the sound driver.</span></div>
 <div class="line"><a class="code hl_function" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a>();</div>
 <div class="line"> </div>
@@ -772,13 +769,13 @@ Pointer to an array of pointers to sound fragments. <p >The pair of <code>fragme
 <div class="line"><a class="code hl_function" href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a class="code hl_function" href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a>(&amp;my_bgm);</div>
 <div class="line"><a class="code hl_function" href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a>();</div>
-<div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">Register user defined VSYNC interrupt handler.</div></div>
-<div class="ttc" id="asound_8h_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">Start the BGM.</div></div>
-<div class="ttc" id="asound_8h_html_a90e396bab2471f72285f290ce7a5cab1"><div class="ttname"><a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a></div><div class="ttdeci">void sound_init(void)</div><div class="ttdoc">This function initializes the PSG and the sound driver.</div></div>
-<div class="ttc" id="asound_8h_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">Main routine of the sound driver.</div></div>
-<div class="ttc" id="asound_8h_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">Turn on/off the auto-repeat of the BGM.</div></div>
-<div class="ttc" id="asound_8h_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">Sets the specified music clip as BGM in the sound driver.</div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
+<div class="ttc" id="ainterrupt_8h_html_a92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="interrupt_8h.html#a92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">MSX Register user defined VSYNC interrupt handler.</div></div>
+<div class="ttc" id="asound_8h_html_a893fbd47631ab99368244cfbd0854b36"><div class="ttname"><a href="sound_8h.html#a893fbd47631ab99368244cfbd0854b36">sound_start</a></div><div class="ttdeci">void sound_start(void)</div><div class="ttdoc">MSX Start the BGM.</div></div>
+<div class="ttc" id="asound_8h_html_a90e396bab2471f72285f290ce7a5cab1"><div class="ttname"><a href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1">sound_init</a></div><div class="ttdeci">void sound_init(void)</div><div class="ttdoc">MSX This function initializes the PSG and the sound driver.</div></div>
+<div class="ttc" id="asound_8h_html_aca95ae20cf6bbdedef623278c7c44f5f"><div class="ttname"><a href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f">sound_player</a></div><div class="ttdeci">void sound_player(void)</div><div class="ttdoc">MSX Main routine of the sound driver.</div></div>
+<div class="ttc" id="asound_8h_html_ad7e35fd4fef3532ed0c5e5bc3548d4ee"><div class="ttname"><a href="sound_8h.html#ad7e35fd4fef3532ed0c5e5bc3548d4ee">sound_set_repeat</a></div><div class="ttdeci">void sound_set_repeat(bool repeat)</div><div class="ttdoc">MSX Turn on/off the auto-repeat of the BGM.</div></div>
+<div class="ttc" id="asound_8h_html_af3465ea25875e5461142411740aa69e3"><div class="ttname"><a href="sound_8h.html#af3465ea25875e5461142411740aa69e3">sound_set_bgm</a></div><div class="ttdeci">void sound_set_bgm(const struct sound_clip *s)</div><div class="ttdoc">MSX Sets the specified music clip as BGM in the sound driver.</div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>If <a class="el" href="sound_8h.html#aca95ae20cf6bbdedef623278c7c44f5f" title="MSX Main routine of the sound driver.">sound_player()</a> is called without <a class="el" href="sound_8h.html#a90e396bab2471f72285f290ce7a5cab1" title="MSX This function initializes the PSG and the sound driver.">sound_init()</a> being called, its behavior is undefined and, in the worst case, may cause damage to the (real) MSX machine. </dd></dl>
 
 </div>
 </div>

@@ -3,11 +3,8 @@ var sprite_8h =
     [ "sprite", "sprite_8h.html#structsprite", [
       [ "y", "sprite_8h.html#a640b2b10663ab61156302c3f64b37989", null ],
       [ "x", "sprite_8h.html#ae721ff1bb077d5d54ee08a4ea0ae607c", null ],
-      [ "pat", "sprite_8h.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed", null ]
-    ] ],
-    [ "sprite.__unnamed5__", "sprite_8h.html#unionsprite_8____unnamed5____", [
-      [ "tagged_color", "sprite_8h.html#ab691e8bc98712a5cc27056bcdf02a2f1", null ],
-      [ "unused_in_sprite_mode_2", "sprite_8h.html#a094746cc88df9f1984421e2b2c0e3366", null ]
+      [ "pat", "sprite_8h.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed", null ],
+      [ "tagged_color", "sprite_8h.html#a938b2b6b7c016d1a538066f362f13d9c", null ]
     ] ],
     [ "SPRITE_H", "sprite_8h.html#ae87d4efcec93345966e6ef936b562875", null ],
     [ "tagged_color_t", "sprite_8h.html#a605f045b10596303a46a2ba2ba343e1c", null ],

@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('psg_8h.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 
-<p>Copyright (c) 2021 Daishi Mori (mori0091)  
+<p>Device interface for PSG (AY-3-8910) an internal sound chip.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="io_8h_source.html">io.h</a>&quot;</code><br />
@@ -123,13 +123,13 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a084b8c48834b59dc9af0978ad53357c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="psg_8h.html#a084b8c48834b59dc9af0978ad53357c3">psg_init</a> (void)</td></tr>
-<tr class="memdesc:a084b8c48834b59dc9af0978ad53357c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize PSG registers R#0 to R#13 with <code>psg_reg_initial_vector</code>.  <a href="psg_8h.html#a084b8c48834b59dc9af0978ad53357c3">More...</a><br /></td></tr>
+<tr class="memdesc:a084b8c48834b59dc9af0978ad53357c3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Initialize PSG registers R#0 to R#13 with <code>psg_reg_initial_vector</code>.  <a href="psg_8h.html#a084b8c48834b59dc9af0978ad53357c3">More...</a><br /></td></tr>
 <tr class="separator:a084b8c48834b59dc9af0978ad53357c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2935306349193999a8ed884fff7ed597"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="psg_8h.html#a2935306349193999a8ed884fff7ed597">psg_get</a> (uint8_t reg)</td></tr>
-<tr class="memdesc:a2935306349193999a8ed884fff7ed597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the PSG register value.  <a href="psg_8h.html#a2935306349193999a8ed884fff7ed597">More...</a><br /></td></tr>
+<tr class="memdesc:a2935306349193999a8ed884fff7ed597"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Read the PSG register value.  <a href="psg_8h.html#a2935306349193999a8ed884fff7ed597">More...</a><br /></td></tr>
 <tr class="separator:a2935306349193999a8ed884fff7ed597"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae76dc7a8f615f828df6c22c7bf180577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">psg_set</a> (uint8_t reg, uint8_t val)</td></tr>
-<tr class="memdesc:ae76dc7a8f615f828df6c22c7bf180577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the PSG register value.  <a href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">More...</a><br /></td></tr>
+<tr class="memdesc:ae76dc7a8f615f828df6c22c7bf180577"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Write the PSG register value.  <a href="psg_8h.html#ae76dc7a8f615f828df6c22c7bf180577">More...</a><br /></td></tr>
 <tr class="separator:ae76dc7a8f615f828df6c22c7bf180577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -139,11 +139,7 @@ Variables</h2></td></tr>
 <tr class="separator:a5fe004c472dfaef154f795a07d39ce94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Copyright (c) 2021 Daishi Mori (mori0091) </p>
-<p >This software is released under the MIT License.<br  />
-See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
-<p >GitHub libmsx project<br  />
-<a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
+<div class="textblock"><p >Device interface for PSG (AY-3-8910) an internal sound chip. </p>
 
 <p class="definition">Definition in file <a class="el" href="psg_8h_source.html">psg.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -159,7 +155,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="psg_8h_source.html#l00017">17</a> of file <a class="el" href="psg_8h_source.html">psg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="psg_8h_source.html#l00019">19</a> of file <a class="el" href="psg_8h_source.html">psg.h</a>.</p>
 
 </div>
 </div>
@@ -180,7 +176,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
       </table>
 </div><div class="memdoc">
 
-<p>Initialize PSG registers R#0 to R#13 with <code>psg_reg_initial_vector</code>. </p>
+<p><code>MSX</code> Initialize PSG registers R#0 to R#13 with <code>psg_reg_initial_vector</code>. </p>
 
 </div>
 </div>
@@ -208,7 +204,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 </table>
 </div><div class="memdoc">
 
-<p>Read the PSG register value. </p>
+<p><code>MSX</code> Read the PSG register value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reg</td><td>PSG register number. </td></tr>
@@ -216,7 +212,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="psg_8h_source.html#l00038">38</a> of file <a class="el" href="psg_8h_source.html">psg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="psg_8h_source.html#l00040">40</a> of file <a class="el" href="psg_8h_source.html">psg.h</a>.</p>
 
 </div>
 </div>
@@ -254,7 +250,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
 </table>
 </div><div class="memdoc">
 
-<p>Write the PSG register value. </p>
+<p><code>MSX</code> Write the PSG register value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reg</td><td>PSG register number. </td></tr>
@@ -263,7 +259,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="psg_8h_source.html#l00049">49</a> of file <a class="el" href="psg_8h_source.html">psg.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="psg_8h_source.html#l00051">51</a> of file <a class="el" href="psg_8h_source.html">psg.h</a>.</p>
 
 </div>
 </div>

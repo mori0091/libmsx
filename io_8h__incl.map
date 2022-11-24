@@ -1,4 +1,4 @@
 <map id="include/io.h" name="include/io.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,5,92,32"/>
-<area shape="rect" id="node2" href="$config_8h.html" title="Copyright (c) 2022 Daishi Mori (mori0091)" alt="" coords="15,80,82,107"/>
+<area shape="rect" id="node1" title="Definition of I/O ports." alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node2" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="15,80,82,107"/>
 </map>

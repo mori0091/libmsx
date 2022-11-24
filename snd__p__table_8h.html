@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('snd__p__table_8h.html',''); initResiza
   <div class="headertitle"><div class="title">snd_p_table.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Pitch-bend table data type for SNDDRV.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for snd_p_table.h:</div>
@@ -119,11 +122,20 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a305d35e9184301195b2003b80a0f2cef"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="snd__p__table_8h.html#structsnd__p__table">snd_p_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snd__p__table_8h.html#a305d35e9184301195b2003b80a0f2cef">snd_PitchBend</a></td></tr>
+<tr class="memdesc:a305d35e9184301195b2003b80a0f2cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for arpeggio/pitch-bend table.  <a href="snd__p__table_8h.html#a305d35e9184301195b2003b80a0f2cef">More...</a><br /></td></tr>
 <tr class="separator:a305d35e9184301195b2003b80a0f2cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34d4f33a404cf11d0d1a514459514b6c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="snd__p__table_8h.html#structsnd__p__table">snd_p_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snd__p__table_8h.html#a34d4f33a404cf11d0d1a514459514b6c">snd_PeriodBend</a></td></tr>
+<tr class="memdesc:a34d4f33a404cf11d0d1a514459514b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for wave-length/period modification table.  <a href="snd__p__table_8h.html#a34d4f33a404cf11d0d1a514459514b6c">More...</a><br /></td></tr>
 <tr class="separator:a34d4f33a404cf11d0d1a514459514b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Pitch-bend table data type for SNDDRV. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="snddrv_8h.html" title="SNDDRV a PSG sound driver.">snddrv.h</a> </dd>
+<dd>
+<a class="el" href="snd__sound_8h.html" title="Sound / Music data structure for snddrv.">snd_sound.h</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="snd__p__table_8h_source.html">snd_p_table.h</a>.</p>
+</div><hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structsnd__p__table" id="structsnd__p__table"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structsnd__p__table">&#9670;&nbsp;</a></span>snd_p_table</h2>
 
@@ -142,13 +154,11 @@ Typedefs</h2></td></tr>
  That starts on <code>NoteOn</code> message.</li>
 <li><code>s_part</code> : <b>Sustain</b> phase. (optional)<br  />
  That starts after <code>ad_part</code> and loopbacks until on <code>NoteOff</code> message.</li>
-<li><p class="startli"><code>r_part</code> : Release phase. (optional)<br  />
- That starts on <code>NoteOff</code> message.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Write documents for defining of pitch bend data stream. </dd></dl>
-</li>
+<li><code>r_part</code> : <b>Release</b> phase. (optional)<br  />
+ That starts on <code>NoteOff</code> message. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="snd__p__table_8h_source.html#l00043">43</a> of file <a class="el" href="snd__p__table_8h_source.html">snd_p_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="snd__p__table_8h_source.html#l00050">50</a> of file <a class="el" href="snd__p__table_8h_source.html">snd_p_table.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -198,7 +208,9 @@ Pointer to Release part of data stream. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="snd__p__table_8h_source.html#l00021">21</a> of file <a class="el" href="snd__p__table_8h_source.html">snd_p_table.h</a>.</p>
+<p>Type alias for arpeggio/pitch-bend table. </p>
+
+<p class="definition">Definition at line <a class="el" href="snd__p__table_8h_source.html#l00027">27</a> of file <a class="el" href="snd__p__table_8h_source.html">snd_p_table.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +226,9 @@ Pointer to Release part of data stream. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="snd__p__table_8h_source.html#l00022">22</a> of file <a class="el" href="snd__p__table_8h_source.html">snd_p_table.h</a>.</p>
+<p>Type alias for wave-length/period modification table. </p>
+
+<p class="definition">Definition at line <a class="el" href="snd__p__table_8h_source.html#l00031">31</a> of file <a class="el" href="snd__p__table_8h_source.html">snd_p_table.h</a>.</p>
 
 </div>
 </div>

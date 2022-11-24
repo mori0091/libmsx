@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node1"><a xlink:title="Sprite color table interface.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-224.5 0,-243.5 108,-243.5 108,-224.5 0,-224.5"/>
 <text text-anchor="middle" x="54" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/sprite_color.h</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="sprite_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node3"><a xlink:href="sprite_8h.html" target="_top" xlink:title="Sprites.">
 <polygon fill="none" stroke="black" points="30,-168.5 30,-187.5 78,-187.5 78,-168.5 30,-168.5"/>
 <text text-anchor="middle" x="54" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">sprite.h</text>
 </a>
@@ -83,7 +83,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="io_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node5"><a xlink:href="io_8h.html" target="_top" xlink:title="Definition of I/O ports.">
 <polygon fill="none" stroke="black" points="87,-56.5 87,-75.5 119,-75.5 119,-56.5 87,-56.5"/>
 <text text-anchor="middle" x="103" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">io.h</text>
 </a>
@@ -98,7 +98,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="config_8h.html" target="_top" xlink:title="Copyright (c) 2022 Daishi Mori (mori0091)">
+<g id="a_node6"><a xlink:href="config_8h.html" target="_top" xlink:title="Hack for C Compiler portability.">
 <polygon fill="none" stroke="black" points="78,-0.5 78,-19.5 128,-19.5 128,-0.5 78,-0.5"/>
 <text text-anchor="middle" x="103" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">config.h</text>
 </a>

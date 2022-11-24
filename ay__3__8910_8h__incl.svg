@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Copyright (c) 2022 Daishi Mori (mori0091)">
+<g id="a_node1"><a xlink:title="Buffer for PSG (AY&#45;3&#45;8910) registers.">
 <polygon fill="#bfbfbf" stroke="black" points="1,-168.5 1,-187.5 105,-187.5 105,-168.5 1,-168.5"/>
 <text text-anchor="middle" x="53" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">include/ay_3_8910.h</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="psg_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node2"><a xlink:href="psg_8h.html" target="_top" xlink:title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip.">
 <polygon fill="none" stroke="black" points="33,-112.5 33,-131.5 73,-131.5 73,-112.5 33,-112.5"/>
 <text text-anchor="middle" x="53" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">psg.h</text>
 </a>
@@ -50,7 +50,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="io_8h.html" target="_top" xlink:title="Copyright (c) 2021 Daishi Mori (mori0091)">
+<g id="a_node4"><a xlink:href="io_8h.html" target="_top" xlink:title="Definition of I/O ports.">
 <polygon fill="none" stroke="black" points="66,-56.5 66,-75.5 98,-75.5 98,-56.5 66,-56.5"/>
 <text text-anchor="middle" x="82" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">io.h</text>
 </a>
@@ -65,7 +65,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="config_8h.html" target="_top" xlink:title="Copyright (c) 2022 Daishi Mori (mori0091)">
+<g id="a_node5"><a xlink:href="config_8h.html" target="_top" xlink:title="Hack for C Compiler portability.">
 <polygon fill="none" stroke="black" points="57,-0.5 57,-19.5 107,-19.5 107,-0.5 57,-0.5"/>
 <text text-anchor="middle" x="82" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">config.h</text>
 </a>

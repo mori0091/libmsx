@@ -1,4 +1,4 @@
 <map id="include/input.h" name="include/input.h">
-<area shape="rect" id="node1" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="5,5,111,32"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Copyright (c) 2021 Daishi Mori (mori0091)" alt="" coords="7,80,109,107"/>
+<area shape="rect" id="node1" title="Input devices such as Joypad, for example." alt="" coords="5,5,111,32"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="7,80,109,107"/>
 </map>

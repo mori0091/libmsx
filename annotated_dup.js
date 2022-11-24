@@ -24,7 +24,6 @@ var annotated_dup =
     [ "sound_eg_LPCM", "sound__eg_8h.html#structsound__eg__LPCM", "sound__eg_8h_structsound__eg__LPCM" ],
     [ "sound_fragment", "sound_8h.html#structsound__fragment", "sound_8h_structsound__fragment" ],
     [ "sprite", "sprite_8h.html#structsprite", "sprite_8h_structsprite" ],
-    [ "sprite.__unnamed5__", "sprite_8h.html#unionsprite_8____unnamed5____", "sprite_8h_unionsprite_8____unnamed5____" ],
     [ "sprite_color", "sprite__color_8h.html#structsprite__color", "sprite__color_8h_structsprite__color" ],
     [ "vdp_cmd", "vdp_8h.html#structvdp__cmd", "vdp_8h_structvdp__cmd" ],
     [ "vec2i", "metasprite_8h.html#structvec2i", "metasprite_8h_structvec2i" ]

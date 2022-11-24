@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('ay__3__8910_8h.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
-<p>Copyright (c) 2022 Daishi Mori (mori0091)  
+<p>Buffer for PSG (AY-3-8910) registers.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="psg_8h_source.html">psg.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -114,21 +114,20 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac0fa68a646b8593944f5f8243b371a0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ay__3__8910_8h.html#ac0fa68a646b8593944f5f8243b371a0c">ay_3_8910_init</a> (void)</td></tr>
+<tr class="memdesc:ac0fa68a646b8593944f5f8243b371a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Initialize ay_3_8910_buffer[].  <a href="ay__3__8910_8h.html#ac0fa68a646b8593944f5f8243b371a0c">More...</a><br /></td></tr>
 <tr class="separator:ac0fa68a646b8593944f5f8243b371a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a549cb1b577a2dc0269c4744aa8dba0d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ay__3__8910_8h.html#a549cb1b577a2dc0269c4744aa8dba0d3">ay_3_8910_play</a> (void)</td></tr>
+<tr class="memdesc:a549cb1b577a2dc0269c4744aa8dba0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Write the buffer contents to PSG registers.  <a href="ay__3__8910_8h.html#a549cb1b577a2dc0269c4744aa8dba0d3">More...</a><br /></td></tr>
 <tr class="separator:a549cb1b577a2dc0269c4744aa8dba0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a2ee75153f949aaf13e5aa0dea52fb72f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ay__3__8910_8h.html#a2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a> [14]</td></tr>
+<tr class="memdesc:a2ee75153f949aaf13e5aa0dea52fb72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer for PSG (AY-3-8910) registers.  <a href="ay__3__8910_8h.html#a2ee75153f949aaf13e5aa0dea52fb72f">More...</a><br /></td></tr>
 <tr class="separator:a2ee75153f949aaf13e5aa0dea52fb72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Copyright (c) 2022 Daishi Mori (mori0091) </p>
-<p >This software is released under the MIT License.<br  />
-See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://github.com/mori0091/libmsx/blob/main/LICENSE</a></p>
-<p >GitHub libmsx project<br  />
-<a href="https://github.com/mori0091/libmsx">https://github.com/mori0091/libmsx</a> </p>
+<div class="textblock"><p >Buffer for PSG (AY-3-8910) registers. </p>
 
 <p class="definition">Definition in file <a class="el" href="ay__3__8910_8h_source.html">ay_3_8910.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -144,7 +143,7 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ay__3__8910_8h_source.html#l00017">17</a> of file <a class="el" href="ay__3__8910_8h_source.html">ay_3_8910.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ay__3__8910_8h_source.html#l00019">19</a> of file <a class="el" href="ay__3__8910_8h_source.html">ay_3_8910.h</a>.</p>
 
 </div>
 </div>
@@ -165,6 +164,8 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
       </table>
 </div><div class="memdoc">
 
+<p><code>MSX</code> Initialize ay_3_8910_buffer[]. </p>
+
 </div>
 </div>
 <a id="a549cb1b577a2dc0269c4744aa8dba0d3" name="a549cb1b577a2dc0269c4744aa8dba0d3"></a>
@@ -182,6 +183,11 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><code>MSX</code> Write the buffer contents to PSG registers. </p>
+<dl class="section note"><dt>Note</dt><dd>PSG R#13 register is overwritten only if ay_3_8910_buffer[13] had been updated, and then the ay_3_8910_buffer[13] is reinitialized.</dd>
+<dd>
+Any other PSG registers (R#0..12) are always overwritten with corresponding buffer value. </dd></dl>
 
 </div>
 </div>
@@ -205,6 +211,8 @@ See <a href="https://github.com/mori0091/libmsx/blob/main/LICENSE">https://githu
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Buffer for PSG (AY-3-8910) registers. </p>
 
 </div>
 </div>

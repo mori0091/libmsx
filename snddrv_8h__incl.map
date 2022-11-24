@@ -1,9 +1,9 @@
 <map id="include/snddrv.h" name="include/snddrv.h">
-<area shape="rect" id="node1" title=" " alt="" coords="293,5,409,32"/>
+<area shape="rect" id="node1" title="SNDDRV a PSG sound driver." alt="" coords="293,5,409,32"/>
 <area shape="rect" id="node2" href="$snd__sound_8h.html" title="Sound / Music data structure for snddrv." alt="" coords="193,80,295,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="328,229,392,256"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,80,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="155,155,223,181"/>
-<area shape="rect" id="node6" href="$snd__i__table_8h.html" title=" " alt="" coords="248,155,347,181"/>
-<area shape="rect" id="node7" href="$snd__p__table_8h.html" title=" " alt="" coords="371,155,474,181"/>
+<area shape="rect" id="node6" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." alt="" coords="248,155,347,181"/>
+<area shape="rect" id="node7" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="371,155,474,181"/>
 </map>

@@ -1,8 +1,11 @@
 var scc_8h =
 [
+    [ "SCC_Waveform", "scc_8h.html#structSCC__Waveform", [
+      [ "data", "scc_8h.html#a6018cde76f96ab8206b200933ad7bf2c", null ]
+    ] ],
     [ "SCC_Channel", "scc_8h.html#structSCC__Channel", [
-      [ "ro_waveform", "scc_8h.html#ab8a80f4b8140516a32feffaeb47a920b", null ],
-      [ "wo_waveform", "scc_8h.html#a1edeed5325631b5a25ed0a01827d07b9", null ],
+      [ "ro_waveform", "scc_8h.html#a75d3c9e5c159abe58c44ec698bea7a6f", null ],
+      [ "wo_waveform", "scc_8h.html#a9a5f48a6d6c43bc153f511430049612b", null ],
       [ "rw_fdr", "scc_8h.html#af193ce6ca5ea312fa46a4abd4e2c9d9c", null ],
       [ "rw_volume", "scc_8h.html#a2a4a7b1b57d33f2f9f4b6ad3c487a5d0", null ]
     ] ],

@@ -33,6 +33,8 @@ static volatile __at (0xf3e4) uint8_t RG5SAV; ///< `MSX` Saved value for VDP R#5
 static volatile __at (0xf3e5) uint8_t RG6SAV; ///< `MSX` Saved value for VDP R#6 register.
 static volatile __at (0xf3e6) uint8_t RG7SAV; ///< `MSX` Saved value for VDP R#7 register.
 
+static volatile __at (0xf3e7) uint8_t STATFL; ///< `MSX` Saved value for VDP S#0 register.
+
 static volatile __at (0xffe7) uint8_t RG8SAV; ///< `MSX2` Saved value for VDP R#8 register.
 static volatile __at (0xffe8) uint8_t RG9SAV; ///< `MSX2` Saved value for VDP R#9 register.
 static volatile __at (0xffe9) uint8_t RG10SA; ///< `MSX2` Saved value for VDP R#10 register.

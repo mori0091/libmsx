@@ -83,7 +83,21 @@ inline uint8_t VDP_GET_VMEM_VALUE(void) {
  * `MSX` Read from a VDP status register.
  *
  * \param reg  VDP status register number.
+ *             - `MSX` : `0`
+ *             - `MSX2`: `0`..`9`
+ *             - If any other value was specified, behaviour is undefined.
  * \return     Value of the VDP status register.
+ *             - If `reg != 0`, returns the value of the status register #`reg`
+ *             - If `reg == 0`, returns the value of `STATFL` instead of
+ *               reading the status register #0 (S#0).
+ *
+ * \note
+ * The MSX SYSTEM interrupt routine reads S#0 to see if an interrupt due to
+ * VSYNC has occurred. Also, reading S#0 resets bit #7 (VSYNC interrupt flag) of
+ * S#0, so the latest value read from S#0 is stored in `STATFL` for other uses.
+ * Therefore, this function reads `STATFL` instead of S#0 if `reg == 0`.
+ *
+ * \sa STATFL
  */
 uint8_t vdp_get_status(uint8_t reg);
 

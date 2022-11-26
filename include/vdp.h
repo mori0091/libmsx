@@ -293,7 +293,7 @@ void vdp_set_image_table(vmemptr_t table);
  * \param table  VRAM address of the pattern generator table.
  *
  * \note
- * In the bitmap graphics mode (GRAPHIC 4 to 7), you may not call this function.
+ * In bitmap graphic mode (GRAPHIC 4 to 7), this function need not be called.
  */
 void vdp_set_pattern_table(vmemptr_t table);
 
@@ -303,7 +303,13 @@ void vdp_set_pattern_table(vmemptr_t table);
  * \param table  VRAM address of the color table.
  *
  * \note
- * In the bitmap graphics mode (GRAPHIC 4 to 7), you may not call this function.
+ * In bitmap graphic mode (GRAPHIC 4 to 7), this function need not be called.
+ *
+ * \note
+ * In TEXT 1 mode, this function need not be called.
+ *
+ * \note
+ * In TEXT 2 mode, this function is used to set the **blink table**.
  */
 void vdp_set_color_table(vmemptr_t table);
 

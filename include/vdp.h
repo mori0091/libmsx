@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /*
- * Copyright (c) 2021 Daishi Mori (mori0091)
+ * Copyright (c) 2021-2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -119,25 +119,25 @@ void vdp_write_palette(const palette_t palettes[16]);
  */
 enum vdp_screen_mode {
   /** `MSX` GRAPHIC 1 (SCREEN 1) */
-  VDP_SCREEN_MODE_GRAPHIC_1   = 0, // 00000b (00) SCREEN 1
+  VDP_SCREEN_MODE_GRAPHIC_1   = 0, // SCREEN 1
   /** `MSX` TEXT 1 (SCREEN 0, WIDTH 40)*/
-  VDP_SCREEN_MODE_TEXT_1      = 1, // 00001b (01) SCREEN 0: WIDTH 40
+  VDP_SCREEN_MODE_TEXT_1      = 1, // SCREEN 0: WIDTH 40
   /** `MSX` MULTI COLOR (SCREEN 3) */
-  VDP_SCREEN_MODE_MULTI_COLOR = 2, // 00010b (02) SCREEN 3
+  VDP_SCREEN_MODE_MULTI_COLOR = 2, // SCREEN 3
   /** `MSX` GRAPHIC 2 (SCREEN 2) */
-  VDP_SCREEN_MODE_GRAPHIC_2   = 3, // 00100b (04) SCREEN 2
+  VDP_SCREEN_MODE_GRAPHIC_2   = 3, // SCREEN 2
   /** `MSX2` GRAPHIC 3 (SCREEN 4) */
-  VDP_SCREEN_MODE_GRAPHIC_3   = 4, // 01000b (08) SCREEN 4
+  VDP_SCREEN_MODE_GRAPHIC_3   = 4, // SCREEN 4
   /** `MSX2` TEXT 2 (SCREEN 0, WIDTH 80)*/
-  VDP_SCREEN_MODE_TEXT_2      = 5, // 01001b (09) SCREEN 0: WIDTH 80
+  VDP_SCREEN_MODE_TEXT_2      = 5, // SCREEN 0: WIDTH 80
   /** `MSX2` GRAPHIC 4 (SCREEN 5) */
-  VDP_SCREEN_MODE_GRAPHIC_4   = 6, // 01100b (0C) SCREEN 5
+  VDP_SCREEN_MODE_GRAPHIC_4   = 6, // SCREEN 5
   /** `MSX2` GRAPHIC 5 (SCREEN 6) */
-  VDP_SCREEN_MODE_GRAPHIC_5   = 7, // 10000b (10) SCREEN 6
+  VDP_SCREEN_MODE_GRAPHIC_5   = 7, // SCREEN 6
   /** `MSX2` GRAPHIC 6 (SCREEN 7) */
-  VDP_SCREEN_MODE_GRAPHIC_6   = 8, // 10100b (14) SCREEN 7
+  VDP_SCREEN_MODE_GRAPHIC_6   = 8, // SCREEN 7
   /** `MSX2` GRAPHIC 7 (SCREEN 8) */
-  VDP_SCREEN_MODE_GRAPHIC_7   = 9, // 11100b (1C) SCREEN 8
+  VDP_SCREEN_MODE_GRAPHIC_7   = 9, // SCREEN 8
 };
 
 /**

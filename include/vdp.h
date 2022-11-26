@@ -112,7 +112,7 @@ uint8_t vdp_get_status(uint8_t reg);
 void vdp_set_control(uint8_t reg, uint8_t x);
 
 /**
- * `MSX` Write to a series of VDP control registers.
+ * `MSX2` Write to a series of VDP control registers.
  *
  * \param reg  First number of the VDP control register.
  * \param src  Pointer to the beginning of the value to be written.

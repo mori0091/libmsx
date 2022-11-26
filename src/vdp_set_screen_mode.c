@@ -24,7 +24,7 @@ void vdp_set_screen_mode(enum vdp_screen_mode mode) {
       sprite_mode = 0;
       break;
     case VDP_SCREEN_MODE_TEXT_2:
-      r0 = 0x08; r1 = 0x10;
+      r0 = 0x04; r1 = 0x10;
       sprite_mode = 0;
       break;
     case VDP_SCREEN_MODE_MULTI_COLOR:

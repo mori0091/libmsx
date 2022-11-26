@@ -335,7 +335,7 @@ void vdp_set_sprite_attribute_table(vmemptr_t table);
 void vdp_set_sprite_size(enum vdp_sprite_size size);
 
 /**
- * `MSX` Show / hide sprites.
+ * `MSX2` Show / hide sprites.
  *
  * \param visible  show sprites if `true`, hide otherwise.
  */

@@ -317,6 +317,9 @@ void vdp_set_color_table(vmemptr_t table);
  * `MSX` Set VRAM address of the sprite pattern generator table.
  *
  * \param table  VRAM address of the sprite pattern generator table.
+ *
+ * \note
+ * In text mode (TEXT 1 or TEXT 2), this function need not be called.
  */
 void vdp_set_sprite_pattern_table(vmemptr_t table);
 
@@ -330,6 +333,9 @@ void vdp_set_sprite_pattern_table(vmemptr_t table);
  * \note
  * The sprite color table is (implicitlly) placed at `SAT - 0x0200` ; where
  * `SAT` is the base address of sprite attribute table.
+ *
+ * \note
+ * In text mode (TEXT 1 or TEXT 2), this function need not be called.
  */
 void vdp_set_sprite_attribute_table(vmemptr_t table);
 
@@ -351,6 +357,34 @@ void vdp_set_sprite_visible(bool visible);
  * `MSX` Set VDP color register.
  *
  * \param c  value to be set to VDP color register (R#7)
+ *
+ * \note
+ * In TEXT 1 and TEXT 2 mode:
+ * - bit #7..#4 : foreground color of text. (`0`..`15`)
+ * - bit #3..#0 : background color of text. (`0`..`15`)
+ *
+ * \note
+ * In MULTI COLOR mode:
+ * - bit #7..#4 : (unused)
+ * - bit #3..#0 : color of the backdrop plane. (`0`..`15`)
+ * - Color of patterns are given by the **pattern generator table**.
+ *
+ * \note
+ * In GRAPHIC 1..3 mode:
+ * - bit #7..#4 : (unused)
+ * - bit #3..#0 : color of the backdrop plane. (`0`..`15`)
+ * - Color of patterns are given by the **color table**.
+ *
+ * \note
+ * In GRAPHIC 4..6 mode:
+ * - bit #7..#4 : (unused)
+ * - bit #3..#0 : color of the backdrop plane. (`0`..`15`)
+ * - Color of pixels are given by the **pattern name table**.
+ *
+ * \note
+ * In GRAPHIC 7 mode:
+ * - bit #7..#0 : color of the backdrop plane. (`0`..`255`)
+ * - Color of pixels are given by the **pattern name table**.
  */
 void vdp_set_color(uint8_t c);  // set color register R#7
 

@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /*
- * Copyright (c) 2021 Daishi Mori (mori0091)
+ * Copyright (c) 2021-2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -24,58 +24,10 @@
 
 #include "io.h"
 #include "vmem.h"
+#include "vdp_unsafe.h"
 
 #include "bios.h"
 #include "workarea.h"
-
-inline void VDP_SET_CONTROL_REGISTER(uint8_t reg, uint8_t val) {
-  vdp_port1 = val;
-  vdp_port1 = reg | 0x80;
-}
-
-inline void VDP_SET_CONTROL_REGISTER_POINTER(uint8_t reg) {
-  VDP_SET_CONTROL_REGISTER(17, reg | 0x80);
-}
-
-inline void VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(uint8_t reg) {
-  VDP_SET_CONTROL_REGISTER(17, reg);
-}
-
-inline void VDP_SET_CONTROL_REGISTER_VALUE(uint8_t val) {
-  vdp_port3 = val;
-}
-
-inline void VDP_SET_STATUS_REGISTER_POINTER(uint8_t reg) {
-  VDP_SET_CONTROL_REGISTER(15, reg);
-}
-
-inline uint8_t VDP_GET_STATUS_REGISTER_VALUE(void) {
-  return vdp_port1;
-}
-
-inline void VDP_SET_VMEM_WRITE_POINTER(vmemptr_t loc) {
-  if (0 < msx_get_version()) {
-    VDP_SET_CONTROL_REGISTER(14, (uint8_t)(((loc) >> 14) & 7));
-  }
-  vdp_port1 = (uint8_t)((loc) & 255);
-  vdp_port1 = (uint8_t)(((loc) >> 8) & 0x3F | 0x40);
-}
-
-inline void VDP_SET_VMEM_READ_POINTER(vmemptr_t loc) {
-  if (0 < msx_get_version()) {
-    VDP_SET_CONTROL_REGISTER(14, (uint8_t)(((loc) >> 14) & 7));
-  }
-  vdp_port1 = (uint8_t)((loc) & 255);
-  vdp_port1 = (uint8_t)(((loc) >> 8) & 0x3F);
-}
-
-inline void VDP_SET_VMEM_VALUE(uint8_t val) {
-  vdp_port0 = val;
-}
-
-inline uint8_t VDP_GET_VMEM_VALUE(void) {
-  return vdp_port0;
-}
 
 // ---- VDP status register
 
@@ -83,7 +35,21 @@ inline uint8_t VDP_GET_VMEM_VALUE(void) {
  * `MSX` Read from a VDP status register.
  *
  * \param reg  VDP status register number.
+ *             - `MSX` : `0`
+ *             - `MSX2`: `0`..`9`
+ *             - If any other value was specified, behaviour is undefined.
  * \return     Value of the VDP status register.
+ *             - If `reg != 0`, returns the value of the status register #`reg`
+ *             - If `reg == 0`, returns the value of `STATFL` instead of
+ *               reading the status register #0 (S#0).
+ *
+ * \note
+ * The MSX SYSTEM interrupt routine reads S#0 to see if an interrupt due to
+ * VSYNC has occurred. Also, reading S#0 resets bit #7 (VSYNC interrupt flag) of
+ * S#0, so the latest value read from S#0 is stored in `STATFL` for other uses.
+ * Therefore, this function reads `STATFL` instead of S#0 if `reg == 0`.
+ *
+ * \sa STATFL
  */
 uint8_t vdp_get_status(uint8_t reg);
 
@@ -98,7 +64,7 @@ uint8_t vdp_get_status(uint8_t reg);
 void vdp_set_control(uint8_t reg, uint8_t x);
 
 /**
- * `MSX` Write to a series of VDP control registers.
+ * `MSX2` Write to a series of VDP control registers.
  *
  * \param reg  First number of the VDP control register.
  * \param src  Pointer to the beginning of the value to be written.
@@ -153,25 +119,25 @@ void vdp_write_palette(const palette_t palettes[16]);
  */
 enum vdp_screen_mode {
   /** `MSX` GRAPHIC 1 (SCREEN 1) */
-  VDP_SCREEN_MODE_GRAPHIC_1   = 0, // 00000b (00) SCREEN 1
+  VDP_SCREEN_MODE_GRAPHIC_1   = 0, // SCREEN 1
   /** `MSX` TEXT 1 (SCREEN 0, WIDTH 40)*/
-  VDP_SCREEN_MODE_TEXT_1      = 1, // 00001b (01) SCREEN 0: WIDTH 40
+  VDP_SCREEN_MODE_TEXT_1      = 1, // SCREEN 0: WIDTH 40
   /** `MSX` MULTI COLOR (SCREEN 3) */
-  VDP_SCREEN_MODE_MULTI_COLOR = 2, // 00010b (02) SCREEN 3
+  VDP_SCREEN_MODE_MULTI_COLOR = 2, // SCREEN 3
   /** `MSX` GRAPHIC 2 (SCREEN 2) */
-  VDP_SCREEN_MODE_GRAPHIC_2   = 3, // 00100b (04) SCREEN 2
+  VDP_SCREEN_MODE_GRAPHIC_2   = 3, // SCREEN 2
   /** `MSX2` GRAPHIC 3 (SCREEN 4) */
-  VDP_SCREEN_MODE_GRAPHIC_3   = 4, // 01000b (08) SCREEN 4
+  VDP_SCREEN_MODE_GRAPHIC_3   = 4, // SCREEN 4
   /** `MSX2` TEXT 2 (SCREEN 0, WIDTH 80)*/
-  VDP_SCREEN_MODE_TEXT_2      = 5, // 01001b (09) SCREEN 0: WIDTH 80
+  VDP_SCREEN_MODE_TEXT_2      = 5, // SCREEN 0: WIDTH 80
   /** `MSX2` GRAPHIC 4 (SCREEN 5) */
-  VDP_SCREEN_MODE_GRAPHIC_4   = 6, // 01100b (0C) SCREEN 5
+  VDP_SCREEN_MODE_GRAPHIC_4   = 6, // SCREEN 5
   /** `MSX2` GRAPHIC 5 (SCREEN 6) */
-  VDP_SCREEN_MODE_GRAPHIC_5   = 7, // 10000b (10) SCREEN 6
+  VDP_SCREEN_MODE_GRAPHIC_5   = 7, // SCREEN 6
   /** `MSX2` GRAPHIC 6 (SCREEN 7) */
-  VDP_SCREEN_MODE_GRAPHIC_6   = 8, // 10100b (14) SCREEN 7
+  VDP_SCREEN_MODE_GRAPHIC_6   = 8, // SCREEN 7
   /** `MSX2` GRAPHIC 7 (SCREEN 8) */
-  VDP_SCREEN_MODE_GRAPHIC_7   = 9, // 11100b (1C) SCREEN 8
+  VDP_SCREEN_MODE_GRAPHIC_7   = 9, // SCREEN 8
 };
 
 /**

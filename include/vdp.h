@@ -24,58 +24,10 @@
 
 #include "io.h"
 #include "vmem.h"
+#include "vdp_unsafe.h"
 
 #include "bios.h"
 #include "workarea.h"
-
-inline void VDP_SET_CONTROL_REGISTER(uint8_t reg, uint8_t val) {
-  vdp_port1 = val;
-  vdp_port1 = reg | 0x80;
-}
-
-inline void VDP_SET_CONTROL_REGISTER_POINTER(uint8_t reg) {
-  VDP_SET_CONTROL_REGISTER(17, reg | 0x80);
-}
-
-inline void VDP_SET_CONTROL_REGISTER_POINTER_AUTO_INCREMENT(uint8_t reg) {
-  VDP_SET_CONTROL_REGISTER(17, reg);
-}
-
-inline void VDP_SET_CONTROL_REGISTER_VALUE(uint8_t val) {
-  vdp_port3 = val;
-}
-
-inline void VDP_SET_STATUS_REGISTER_POINTER(uint8_t reg) {
-  VDP_SET_CONTROL_REGISTER(15, reg);
-}
-
-inline uint8_t VDP_GET_STATUS_REGISTER_VALUE(void) {
-  return vdp_port1;
-}
-
-inline void VDP_SET_VMEM_WRITE_POINTER(vmemptr_t loc) {
-  if (0 < msx_get_version()) {
-    VDP_SET_CONTROL_REGISTER(14, (uint8_t)(((loc) >> 14) & 7));
-  }
-  vdp_port1 = (uint8_t)((loc) & 255);
-  vdp_port1 = (uint8_t)(((loc) >> 8) & 0x3F | 0x40);
-}
-
-inline void VDP_SET_VMEM_READ_POINTER(vmemptr_t loc) {
-  if (0 < msx_get_version()) {
-    VDP_SET_CONTROL_REGISTER(14, (uint8_t)(((loc) >> 14) & 7));
-  }
-  vdp_port1 = (uint8_t)((loc) & 255);
-  vdp_port1 = (uint8_t)(((loc) >> 8) & 0x3F);
-}
-
-inline void VDP_SET_VMEM_VALUE(uint8_t val) {
-  vdp_port0 = val;
-}
-
-inline uint8_t VDP_GET_VMEM_VALUE(void) {
-  return vdp_port0;
-}
 
 // ---- VDP status register
 

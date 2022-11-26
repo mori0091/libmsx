@@ -10,6 +10,7 @@ var workarea_8h =
     [ "RG5SAV", "workarea_8h.html#a761c70f9d2e3d9bacea64674d52cd7d0", null ],
     [ "RG6SAV", "workarea_8h.html#a8e7b435d1887305da3603b5466ef9cdf", null ],
     [ "RG7SAV", "workarea_8h.html#a38e4780e32e165787f69e4cf5fae9c63", null ],
+    [ "STATFL", "workarea_8h.html#a2e079145bd0592ebbc90b0c2de5c6b53", null ],
     [ "RG8SAV", "workarea_8h.html#a35206e339da39f453c194db0b1938f0e", null ],
     [ "RG9SAV", "workarea_8h.html#af38cfb9a0cc661cf1378dd07e2b756c3", null ],
     [ "RG10SA", "workarea_8h.html#a6273cb9410411dcbd5f391b2418d7e53", null ],

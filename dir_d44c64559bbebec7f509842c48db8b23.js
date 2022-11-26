@@ -23,6 +23,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "sprite.h", "sprite_8h.html", "sprite_8h" ],
     [ "sprite_color.h", "sprite__color_8h.html", "sprite__color_8h" ],
     [ "vdp.h", "vdp_8h.html", "vdp_8h" ],
+    [ "vdp_unsafe.h", "vdp__unsafe_8h.html", "vdp__unsafe_8h" ],
     [ "vmem.h", "vmem_8h.html", "vmem_8h" ],
     [ "workarea.h", "workarea_8h.html", "workarea_8h" ]
 ];

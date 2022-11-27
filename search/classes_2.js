@@ -1,25 +1,4 @@
 var searchData=
 [
-  ['scc_0',['SCC',['../scc_8h.html#structSCC',1,'']]],
-  ['scc_5fchannel_1',['SCC_Channel',['../scc_8h.html#structSCC__Channel',1,'']]],
-  ['scc_5fdevice_2',['SCC_Device',['../scc_8h.html#structSCC__Device',1,'']]],
-  ['scc_5fwaveform_3',['SCC_Waveform',['../scc_8h.html#structSCC__Waveform',1,'']]],
-  ['snd_5feventtrack_4',['snd_EventTrack',['../structsnd__EventTrack.html',1,'']]],
-  ['snd_5finstrument_5',['snd_Instrument',['../snd__i__table_8h.html#structsnd__Instrument',1,'']]],
-  ['snd_5fmusic_6',['snd_Music',['../snd__sound_8h.html#structsnd__Music',1,'']]],
-  ['snd_5fp_5ftable_7',['snd_p_table',['../snd__p__table_8h.html#structsnd__p__table',1,'']]],
-  ['snd_5fpattern_8',['snd_Pattern',['../snd__sound_8h.html#structsnd__Pattern',1,'']]],
-  ['snd_5fpattern_2echannels_9',['snd_Pattern.channels',['../snd__sound_8h.html#structsnd__Pattern_8channels',1,'']]],
-  ['snd_5fpattern_2especialchannels_10',['snd_Pattern.specialChannels',['../snd__sound_8h.html#structsnd__Pattern_8specialChannels',1,'']]],
-  ['snd_5fsoundassets_11',['snd_SoundAssets',['../snd__sound_8h.html#structsnd__SoundAssets',1,'']]],
-  ['snd_5fspeedtrack_12',['snd_SpeedTrack',['../structsnd__SpeedTrack.html',1,'']]],
-  ['snd_5ftrack_13',['snd_Track',['../structsnd__Track.html',1,'']]],
-  ['sound_5fclip_14',['sound_clip',['../sound_8h.html#structsound__clip',1,'']]],
-  ['sound_5feg_5fahdsr_15',['sound_eg_AHDSR',['../sound__eg_8h.html#structsound__eg__AHDSR',1,'']]],
-  ['sound_5feg_5fattribute_16',['sound_eg_attribute',['../sound__eg_8h.html#structsound__eg__attribute',1,'']]],
-  ['sound_5feg_5fattribute_2e_5f_5funnamed3_5f_5f_17',['sound_eg_attribute.__unnamed3__',['../sound__eg_8h.html#unionsound__eg__attribute_8____unnamed3____',1,'']]],
-  ['sound_5feg_5flpcm_18',['sound_eg_LPCM',['../sound__eg_8h.html#structsound__eg__LPCM',1,'']]],
-  ['sound_5ffragment_19',['sound_fragment',['../sound_8h.html#structsound__fragment',1,'']]],
-  ['sprite_20',['sprite',['../sprite_8h.html#structsprite',1,'']]],
-  ['sprite_5fcolor_21',['sprite_color',['../sprite__color_8h.html#structsprite__color',1,'']]]
+  ['metasprite_0',['metasprite',['../metasprite_8h.html#structmetasprite',1,'']]]
 ];

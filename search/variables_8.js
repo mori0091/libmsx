@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['layouts_0',['layouts',['../metasprite_8h.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
-  ['len_1',['len',['../sound__eg_8h.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM']]],
-  ['length_2',['length',['../snd__sound_8h.html#a3adbc261bf9d043bbf4aea962f0af3a2',1,'snd_SoundAssets::vec_snd_PitchBend::length()'],['../snd__sound_8h.html#afd37803289cd16f1a713ca806351f062',1,'snd_SoundAssets::vec_snd_PeriodBend::length()'],['../snd__sound_8h.html#a192ba80b3c4cfe2bd564837c105edaf1',1,'snd_SoundAssets::vec_snd_Instrument::length()'],['../snd__sound_8h.html#a67b31dec23cf4b682513ea7a9fb86cb6',1,'snd_SoundAssets::vec_snd_Music::length()'],['../snd__sound_8h.html#a67c3eb9566de09124727943bd6f32e52',1,'snd_Music::vec_snd_SpeedTrack::length()'],['../snd__sound_8h.html#ab8ce04d6fbc22adce69bcc28aaf92327',1,'snd_Music::vec_snd_EventTrack::length()'],['../snd__sound_8h.html#a0622d559822622bc8a2a509c9010e0ed',1,'snd_Music::vec_snd_Track::length()'],['../snd__sound_8h.html#ad1d7309c750455476eb0209244e992d7',1,'snd_Music::vec_snd_Pattern::length()']]],
-  ['looptoindex_3',['loopToIndex',['../snd__sound_8h.html#a3216f248df996913d722aea1db4a3d27',1,'snd_Music']]]
+  ['initialspeed_0',['initialSpeed',['../snd__sound_8h.html#afeac8f9845a21b0c8dcb3fe9722c8b3f',1,'snd_Music']]],
+  ['instruments_1',['instruments',['../snd__sound_8h.html#a4c2b9c5d52e89f648ebd3d5df34b0a94',1,'snd_SoundAssets']]],
+  ['international_5fid_5f1_2',['INTERNATIONAL_ID_1',['../bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc',1,'bios_const.h']]],
+  ['international_5fid_5f2_3',['INTERNATIONAL_ID_2',['../bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a',1,'bios_const.h']]],
+  ['isloop_4',['isLoop',['../snd__sound_8h.html#a8235e7d4e853b68b722090b9f037394c',1,'snd_Music']]]
 ];

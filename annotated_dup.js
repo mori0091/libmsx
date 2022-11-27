@@ -1,5 +1,7 @@
 var annotated_dup =
 [
+    [ "cgpnt", "workarea_8h.html#structcgpnt", "workarea_8h_structcgpnt" ],
+    [ "font", "bios__const_8h.html#structfont", "bios__const_8h_structfont" ],
     [ "metasprite", "metasprite_8h.html#structmetasprite", "metasprite_8h_structmetasprite" ],
     [ "OPLL", "opll_8h.html#structOPLL", "opll_8h_structOPLL" ],
     [ "OPLL_Device", "structOPLL__Device.html", "structOPLL__Device" ],

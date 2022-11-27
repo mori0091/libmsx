@@ -1,17 +1,17 @@
 <map id="include/config.h" name="include/config.h">
-<area shape="rect" id="node1" title="Hack for C Compiler portability." alt="" coords="654,5,765,32"/>
-<area shape="rect" id="node2" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="639,80,779,107"/>
-<area shape="rect" id="node4" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="384,453,485,480"/>
-<area shape="rect" id="node8" href="$bios__entry_8h.html" title="Assembler entry points for MSX BIOS functions." alt="" coords="804,80,940,107"/>
-<area shape="rect" id="node9" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="487,80,574,107"/>
-<area shape="rect" id="node15" href="$workarea_8h.html" title="Definitions of MSX SYSTEM Workarea." alt="" coords="1011,229,1141,256"/>
-<area shape="rect" id="node3" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="821,155,923,181"/>
-<area shape="rect" id="node5" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="489,304,588,331"/>
-<area shape="rect" id="node7" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="528,229,672,256"/>
-<area shape="rect" id="node6" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="312,379,451,405"/>
-<area shape="rect" id="node10" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="699,155,797,181"/>
-<area shape="rect" id="node12" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="238,155,351,181"/>
-<area shape="rect" id="node11" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="696,229,835,256"/>
-<area shape="rect" id="node13" href="$sprite_8h.html" title="Sprites." alt="" coords="203,304,312,331"/>
-<area shape="rect" id="node14" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="93,379,237,405"/>
+<area shape="rect" id="node1" title="Hack for C Compiler portability." alt="" coords="109,5,219,32"/>
+<area shape="rect" id="node2" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="94,80,234,107"/>
+<area shape="rect" id="node4" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="437,453,539,480"/>
+<area shape="rect" id="node8" href="$workarea_8h.html" title="Definitions of MSX SYSTEM Workarea." alt="" coords="43,229,173,256"/>
+<area shape="rect" id="node9" href="$bios__entry_8h.html" title="Assembler entry points for MSX BIOS functions." alt="" coords="259,80,395,107"/>
+<area shape="rect" id="node10" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="479,80,566,107"/>
+<area shape="rect" id="node3" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="173,155,275,181"/>
+<area shape="rect" id="node5" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="335,304,433,331"/>
+<area shape="rect" id="node7" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="349,229,493,256"/>
+<area shape="rect" id="node6" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="472,379,611,405"/>
+<area shape="rect" id="node11" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="924,155,1023,181"/>
+<area shape="rect" id="node13" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="525,155,638,181"/>
+<area shape="rect" id="node12" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="904,229,1043,256"/>
+<area shape="rect" id="node14" href="$sprite_8h.html" title="Sprites." alt="" coords="720,304,829,331"/>
+<area shape="rect" id="node15" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="635,379,779,405"/>
 </map>

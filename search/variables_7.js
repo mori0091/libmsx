@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['initialspeed_0',['initialSpeed',['../snd__sound_8h.html#afeac8f9845a21b0c8dcb3fe9722c8b3f',1,'snd_Music']]],
-  ['instruments_1',['instruments',['../snd__sound_8h.html#a4c2b9c5d52e89f648ebd3d5df34b0a94',1,'snd_SoundAssets']]],
-  ['international_5fid_5f1_2',['INTERNATIONAL_ID_1',['../bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc',1,'bios_const.h']]],
-  ['international_5fid_5f2_3',['INTERNATIONAL_ID_2',['../bios__const_8h.html#a0c64be4c8a1cc67033892d7f4d83ac7a',1,'bios_const.h']]],
-  ['isloop_4',['isLoop',['../snd__sound_8h.html#a8235e7d4e853b68b722090b9f037394c',1,'snd_Music']]]
+  ['h_5fkeyi_0',['H_KEYI',['../workarea_8h.html#adcf57c23398c01d242ba9f52ba3ddb42',1,'workarea.h']]],
+  ['h_5ftimi_1',['H_TIMI',['../workarea_8h.html#a90cce1deaa8182e449a61239ed8a5d19',1,'workarea.h']]],
+  ['height_2',['height',['../snd__sound_8h.html#ae5a0c0a1bd5ca96115ce6a87458b87fd',1,'snd_Pattern']]],
+  ['hokvld_3',['HOKVLD',['../workarea_8h.html#a050cb8b40a02c7513c1013b8c03c4d6a',1,'workarea.h']]],
+  ['hold_5ftime_4',['hold_time',['../sound__eg_8h.html#a21370f5de118aca5b633e0501a668892',1,'sound_eg_AHDSR']]]
 ];

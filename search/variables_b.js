@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['pat_0',['pat',['../sprite_8h.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed',1,'sprite']]],
-  ['pats_1',['pats',['../metasprite_8h.html#af6153ac51d17e154142232f0a7b63d2c',1,'metasprite']]],
-  ['patterns_2',['patterns',['../snd__sound_8h.html#a5cded21659082464ff25c2b208772e89',1,'snd_Music']]],
-  ['periodbendtables_3',['periodBendTables',['../snd__sound_8h.html#a840618a1671578118fbfda650ec98e4c',1,'snd_SoundAssets']]],
-  ['pitchbendtables_4',['pitchBendTables',['../snd__sound_8h.html#a93d194f957739bf0b7eb2cdab42873d7',1,'snd_SoundAssets']]],
-  ['primary_5fslot_5fselect_5fport_5',['primary_slot_select_port',['../io_8h.html#ab7de9d6187b106c61ffd34a12404b9c3',1,'io.h']]],
-  ['priority_6',['priority',['../sound_8h.html#aa50d220b45ae59eedb443b956ef1929d',1,'sound_clip']]],
-  ['psg_5fport0_7',['psg_port0',['../io_8h.html#a3f3ee8eddfe62ac3846c34227fc62c56',1,'io.h']]],
-  ['psg_5fport1_8',['psg_port1',['../io_8h.html#ae513155a83d71ab12033bbf82b70f721',1,'io.h']]],
-  ['psg_5fport2_9',['psg_port2',['../io_8h.html#a901f03d5ca82e8e40201c6b57fc7f34c',1,'io.h']]],
-  ['psg_5freg_5finitial_5fvector_10',['psg_reg_initial_vector',['../psg_8h.html#a5fe004c472dfaef154f795a07d39ce94',1,'psg.h']]]
+  ['masters_0',['MASTERS',['../workarea_8h.html#a1250a3a4d9e79ca2cbe2ff9fb7826284',1,'workarea.h']]],
+  ['maxupd_1',['MAXUPD',['../workarea_8h.html#a4be2db156d55ae71aaedc5698e656bda',1,'workarea.h']]],
+  ['minupd_2',['MINUPD',['../workarea_8h.html#a7148e99e9f0ce5d64d6aff154cedc2df',1,'workarea.h']]],
+  ['mltatr_3',['MLTATR',['../workarea_8h.html#afa872c54daa79fe885b0ab0084af6718',1,'workarea.h']]],
+  ['mltcgp_4',['MLTCGP',['../workarea_8h.html#a8c9a5737a2198d41dbcb0779aa8cc97e',1,'workarea.h']]],
+  ['mltcol_5',['MLTCOL',['../workarea_8h.html#ae05fcdd37a1ee36aef7a406b7831e6ab',1,'workarea.h']]],
+  ['mltnam_6',['MLTNAM',['../workarea_8h.html#ac477f08586b8b147d6dc85abc0664d87',1,'workarea.h']]],
+  ['mltpat_7',['MLTPAT',['../workarea_8h.html#ae11cccd86098c3f6009e16d542c223a9',1,'workarea.h']]],
+  ['msx_5fsystem_5fversion_5fcode_8',['MSX_SYSTEM_VERSION_CODE',['../bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda',1,'bios_const.h']]],
+  ['musics_9',['musics',['../snd__sound_8h.html#ab3ebb5d3d3c59d8e17b6ecb07c898c1c',1,'snd_SoundAssets']]]
 ];

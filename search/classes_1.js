@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['opll_0',['OPLL',['../opll_8h.html#structOPLL',1,'']]],
-  ['opll_5fdevice_1',['OPLL_Device',['../structOPLL__Device.html',1,'']]]
+  ['font_0',['font',['../bios__const_8h.html#structfont',1,'']]]
 ];

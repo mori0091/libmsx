@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['metasprite_0',['metasprite',['../metasprite_8h.html#structmetasprite',1,'']]]
+  ['cgpnt_0',['cgpnt',['../workarea_8h.html#structcgpnt',1,'']]]
 ];

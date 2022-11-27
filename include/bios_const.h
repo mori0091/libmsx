@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /*
- * Copyright (c) 2021 Daishi Mori (mori0091)
+ * Copyright (c) 2021-2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -21,6 +21,21 @@
 
 #include <stdint.h>
 #include "config.h"
+
+/**
+ * `MSX` Structure of MSX bitmap fonts (256 pattern x 8x8 pix x 1bpp).
+ * \sa CGTBL
+ * \sa CGPNT
+ */
+struct font {
+  uint8_t data[256][8];
+};
+
+/**
+ * `MSX` Pointer to MSX fonts in MAIN ROM (0004H / MAIN).
+ * \sa CGPNT
+ */
+static __at (0x0004) const struct font * const CGTBL;
 
 /**
  * `MSX` International identifier code #1 of MSX BIOS (002BH / MAIN).
@@ -52,6 +67,5 @@ static __at (0x002c) const uint8_t INTERNATIONAL_ID_2;
  * \sa MSX Datapack Volume 3, pp.43
  */
 static __at (0x002d) const uint8_t MSX_SYSTEM_VERSION_CODE;
-
 
 #endif

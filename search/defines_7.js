@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['psg_5fh_0',['PSG_H',['../psg_8h.html#a100342e1bbe5281caf6c68ed9879d6fe',1,'psg.h']]]
+  ['metasprite_5fh_0',['METASPRITE_H',['../metasprite_8h.html#a4b2523870ebd0bc58f65a5138affe961',1,'metasprite.h']]],
+  ['msx_5fh_1',['MSX_H',['../msx_8h.html#a21c5b669b24a0dd185d8dafdc7023878',1,'msx.h']]]
 ];

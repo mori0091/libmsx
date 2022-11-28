@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rgb_0',['RGB',['../vdp_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'vdp.h']]]
+  ['newline_0',['newline',['../text_8h.html#a054f5cd2b2c05f05cd186238a6d39dbe',1,'text.h']]]
 ];

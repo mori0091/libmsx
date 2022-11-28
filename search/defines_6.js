@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opll_5fh_5f_0',['OPLL_H_',['../opll_8h.html#a161c5320f0c42edfd7957094e260e7f4',1,'opll.h']]]
+  ['locate_0',['locate',['../text_8h.html#a425d46e75566dfa7bd78ee07a984692d',1,'text.h']]]
 ];

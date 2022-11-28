@@ -9,9 +9,10 @@ var searchData=
   ['tagged_5fcolors_6',['tagged_colors',['../sprite__color_8h.html#a96825be5e00cd459cc7a1d7270daf13f',1,'sprite_color']]],
   ['tracks_7',['tracks',['../snd__sound_8h.html#a0897b44785be680c60b5d3fe09b3010a',1,'snd_Music']]],
   ['trgflg_8',['TRGFLG',['../workarea_8h.html#ae009ed1e5b41e5c15a7926073da5b7da',1,'workarea.h']]],
-  ['txtatr_9',['TXTATR',['../workarea_8h.html#abb7f3ac7638d19ce1cbb36456188bd31',1,'workarea.h']]],
-  ['txtcgp_10',['TXTCGP',['../workarea_8h.html#a9c9ab2040bc5bbe709bdf363cd6075a5',1,'workarea.h']]],
-  ['txtcol_11',['TXTCOL',['../workarea_8h.html#ad205a0312389828ac9136717be3a9210',1,'workarea.h']]],
-  ['txtnam_12',['TXTNAM',['../workarea_8h.html#a6e5a627ee87aa2a7e53a422ac1c26271',1,'workarea.h']]],
-  ['txtpat_13',['TXTPAT',['../workarea_8h.html#ab956fd1fd22e261a2be1ccdb9a4fc140',1,'workarea.h']]]
+  ['tty_5fdevice_9',['TTY_device',['../tty_8h.html#a7f4f67b3e359dffc816aa5f2c43290ae',1,'tty.h']]],
+  ['txtatr_10',['TXTATR',['../workarea_8h.html#abb7f3ac7638d19ce1cbb36456188bd31',1,'workarea.h']]],
+  ['txtcgp_11',['TXTCGP',['../workarea_8h.html#a9c9ab2040bc5bbe709bdf363cd6075a5',1,'workarea.h']]],
+  ['txtcol_12',['TXTCOL',['../workarea_8h.html#ad205a0312389828ac9136717be3a9210',1,'workarea.h']]],
+  ['txtnam_13',['TXTNAM',['../workarea_8h.html#a6e5a627ee87aa2a7e53a422ac1c26271',1,'workarea.h']]],
+  ['txtpat_14',['TXTPAT',['../workarea_8h.html#ab956fd1fd22e261a2be1ccdb9a4fc140',1,'workarea.h']]]
 ];

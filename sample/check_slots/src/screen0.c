@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /*
- * Copyright (c) 2021-2022 Daishi Mori (mori0091)
+ * Copyright (c) 2021 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -9,28 +9,23 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file screen1.c
+ * \file screen0.c
  */
 
 #include "screen.h"
 
 #include "tty.h"
-#include <stdint.h>
 #include <vdp.h>
 #include <vmem.h>
 
-/* Configurations for GRAPHIC 1 mode (SCREEN 1) */
-#define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_1
-#define PATTERNS        (0x00000) // pattern generator table
-#define IMAGE           (0x01800) // pattern name table
-#define COLORS          (0x02000) // color table
-#define SPRITES         (0x01B00) // sprite attribute table
-#define SPRITE_PATTERNS (0x03800) // sprite pattern generator table
+/* Configurations for TEXT 1 mode (SCREEN 0, WIDTH 40) */
+#define SCREEN_MODE     VDP_SCREEN_MODE_TEXT_1
+#define PATTERNS        (0x00800) // pattern generator table
+#define IMAGE           (0x00000) // pattern name table
 #define SIZE_OF_PATTERNS (0x0800) // size of pattern generator table
-#define SIZE_OF_IMAGE    (0x0300) // size of pattern name table
-#define SIZE_OF_COLORS   (32)     // size of color table
+#define SIZE_OF_IMAGE    (0x03c0) // size of pattern name table
 
-#define COLUMNS (32)
+#define COLUMNS (40)
 #define LINES   (24)
 #define POS     (COLUMNS * CSRY + CSRX)
 
@@ -43,12 +38,8 @@ static void render_char(uint8_t c) {
 }
 
 static void set_text_color(uint8_t fg, uint8_t bg) {
-  /* Set foreground and background color */
-  vmem_memset(COLORS, ((fg & 15) << 4) | (bg & 15), SIZE_OF_COLORS);
-}
-static void set_border_color(uint8_t border) {
   /* Set backdrop color (border color of the screen) */
-  vdp_set_color(border & 15);
+  vdp_set_color(((fg & 15) << 4) | (bg & 15));
 }
 
 static const struct TTY_Device dev = {
@@ -57,10 +48,10 @@ static const struct TTY_Device dev = {
   .clear_screen = clear_screen,
   .render_char = render_char,
   .set_text_color = set_text_color,
-  .set_border_color = set_border_color,
+  .set_border_color = 0,
 };
 
-void screen1(void) {
+void screen0(void) {
   if (msx_get_version()) {
     vdp_set_screen_lines(VDP_SCREEN_LINES_192);
   }
@@ -72,10 +63,6 @@ void screen1(void) {
 
   vdp_set_image_table(IMAGE);
   vdp_set_pattern_table(PATTERNS);
-  vdp_set_color_table(COLORS);
-
-  vdp_set_sprite_attribute_table(SPRITES);
-  vdp_set_sprite_pattern_table(SPRITE_PATTERNS);
 
   // Copy MSX fonts into VRAM
   vmem_write(PATTERNS, (void *)CGTBL, 8*256);

@@ -10,6 +10,7 @@
  */
 /**
  * \file tty.h
+ * \brief Teletype/console device interface.
  */
 
 #ifndef TTY_H_
@@ -18,7 +19,7 @@
 #include <stdint.h>
 
 /**
- * CUI device interface.
+ * Teletype/console device interface for hardware / screen mode abstraction.
  */
 struct TTY_Device {
   /** Columns of the text screen. */

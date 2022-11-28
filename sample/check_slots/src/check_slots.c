@@ -16,15 +16,15 @@
  */
 
 #include <msx.h>
+#include <screen.h>
+#include <text.h>
+#include <slot.h>
+#include <scc.h>
+
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
 
-#include "screen.h"
-#include "text.h"
-
-#include "slot.h"
-#include "scc.h"
 #include "bdos.h"
 
 /**

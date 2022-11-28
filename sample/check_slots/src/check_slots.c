@@ -302,9 +302,9 @@ void show_system_environment(void) {
   newline();
   print("MSX FONT   : slot\n");
   print(" ROM FONT  : "); print_slot(EXPTBL[0]);  putchar(' ');
-  printf("%04X\n", (const uintptr_t)CGTBL);
+  printf("%04X\n", (const unsigned int)(const uintptr_t)CGTBL);
   print(" (current) : "); print_slot(CGPNT.slot); putchar(' ');
-  printf("%04X\n", (const uintptr_t)CGPNT.addr);
+  printf("%04X\n", (const unsigned int)(const uintptr_t)CGPNT.addr);
 
   if (find_OPLL()) {
     newline();

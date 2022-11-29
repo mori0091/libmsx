@@ -13,7 +13,8 @@
  */
 
 #include <vmem.h>
-#include "./screen1.h"
+
+#define PATTERNS        (0x00000) // pattern generator table
 
 const char volume_gauge[17][5] = {
   [ 0] = { 32,  32,  32,  32, 0},
@@ -35,15 +36,14 @@ const char volume_gauge[17][5] = {
   [16] = {132, 132, 132, 132, 0}, // Saw wave pattern
 };
 
-const uint8_t saw_pat[8] = {
-  0x40, 0x40, 0x50, 0x50, 0x54, 0x54, 0x55, 0x00,
+static const uint8_t pats[] = {
+  0x40, 0x40, 0x40, 0x40, 0x40, 0x40, 0x40, 0x40, // '|   '
+  0x50, 0x50, 0x50, 0x50, 0x50, 0x50, 0x50, 0x50, // '||  '
+  0x54, 0x54, 0x54, 0x54, 0x54, 0x54, 0x54, 0x54, // '||| '
+  0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, 0x55, // '||||'
+  0x40, 0x40, 0x50, 0x50, 0x54, 0x54, 0x55, 0x00, // Saw tooth
 };
 
 void init_volume_gauge_chars(void) {
-  vmem_memset(PATTERNS+128*8, 0, 4*8);
-  vmem_memset(PATTERNS+128*8, 0x40, 7); // '|   '
-  vmem_memset(PATTERNS+129*8, 0x50, 7); // '||  '
-  vmem_memset(PATTERNS+130*8, 0x54, 7); // '||| '
-  vmem_memset(PATTERNS+131*8, 0x55, 7); // '||||'
-  vmem_write(PATTERNS+132*8, (void *)saw_pat, 8);
+  vmem_write(PATTERNS+128*8, (void *)pats, sizeof(pats));
 }

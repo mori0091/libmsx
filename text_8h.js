@@ -1,5 +1,6 @@
 var text_8h =
 [
+    [ "TEXT_H_", "text_8h.html#ab7f3167032ab06eb412dc08478b07117", null ],
     [ "locate", "text_8h.html#a425d46e75566dfa7bd78ee07a984692d", null ],
     [ "newline", "text_8h.html#a054f5cd2b2c05f05cd186238a6d39dbe", null ],
     [ "cls", "text_8h.html#aeb099188725f62d354969227cd359f00", null ],

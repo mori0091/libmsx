@@ -9,9 +9,16 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file tty.c
+ * \file tty_set_border_color.c
  */
 
 #include "../include/tty.h"
 
-const struct TTY_Device * TTY_device;
+#include "../include/workarea.h"
+
+void TTY_set_border_color(uint8_t border) {
+  BDRCLR = border;
+  if (TTY_device && TTY_device->set_border_color) {
+    TTY_device->set_border_color(border);
+  }
+}

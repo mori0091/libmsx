@@ -9,9 +9,14 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file tty.c
+ * \file tty_cls.c
  */
 
 #include "../include/tty.h"
 
-const struct TTY_Device * TTY_device;
+void TTY_cls(void) {
+  if (TTY_device && TTY_device->clear_screen) {
+    TTY_device->clear_screen();
+  }
+  TTY_locate(0, 0);
+}

@@ -9,9 +9,12 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file tty.c
+ * \file tty_set_color.c
  */
 
 #include "../include/tty.h"
 
-const struct TTY_Device * TTY_device;
+void TTY_set_color(uint8_t fg, uint8_t bg, uint8_t border) {
+  TTY_set_text_color(fg, bg);
+  TTY_set_border_color(border);
+}

@@ -62,7 +62,7 @@ static void render_char(uint8_t c) {
 
 static void set_border_color(uint8_t border) {
   /* Set backdrop color (border color of the screen) */
-  vdp_set_color(border & 15);
+  vdp_set_color((border & 3) * 0x55);
 }
 
 static const struct TTY_Device dev = {

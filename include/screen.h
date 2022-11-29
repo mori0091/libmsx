@@ -13,11 +13,17 @@
  * \brief SCREEN mode initialization function like MSX-BASIC.
  *
  * Functions corresponding to MSX-BASIC's following SCREEN modes:
- * - screen0()     : `SCREEN 0: WIDTH 40` (TEXT 1 mdoe),
- * - screen0_W80() : `SCREEN 0: WIDTH 80` (TEXT 2 mode) `MSX2` or later,
- * - screen1()     : `SCREEN 1: WIDTH 32` (GRAPHIC 1 mode),
- * - screen2()     : `SCREEN 2: WIDTH 32` (GRAPHIC 2 mode),
- * - screen2_PCG() : `SCREEN 2: WIDTH 32` (GRAPHIC 2 mode; PCG mode like as SCREEN 1).
+ * - `MSX`  screen0()     : `SCREEN 0: WIDTH 40` (TEXT 1 mdoe),
+ * - `MSX`  screen1()     : `SCREEN 1: WIDTH 32` (GRAPHIC 1 mode),
+ * - `MSX`  screen2()     : `SCREEN 2: WIDTH 32` (GRAPHIC 2 mode),
+ * - `MSX`  screen2_PCG() : `SCREEN 2: WIDTH 32` (GRAPHIC 2 mode; PCG mode like as SCREEN 1).
+ * - `MSX2` screen0_W80() : `SCREEN 0: WIDTH 80` (TEXT 2 mode),
+ * - `MSX2` screen4()     : `SCREEN 4: WIDTH 32` (GRAPHIC 3 mode),
+ * - `MSX2` screen4_PCG() : `SCREEN 4: WIDTH 32` (GRAPHIC 3 mode; PCG mode like as SCREEN 1).
+ * - `MSX2` screen5()     : `SCREEN 5`           (GRAPHIC 4 mode; 256x212 pix, 4-bpp),
+ * - `MSX2` screen6()     : `SCREEN 6`           (GRAPHIC 5 mode; 512x212 pix, 2-bpp),
+ * - `MSX2` screen7()     : `SCREEN 7`           (GRAPHIC 6 mode; 512x212 pix, 4-bpp),
+ * - `MSX2` screen8()     : `SCREEN 8`           (GRAPHIC 7 mode; 256x212 pix, 8-bpp),
  *
  * **All** above SCREEN modes supports:
  * - printf() and putchar() standard C library functions (`#include <stdio.h>`), and
@@ -34,6 +40,9 @@
 /**
  * `MSX` SCREEN 0: WIDTH 40 (TEXT 1 mode).
  *
+ * - 40 columns x 24 lines text mode.
+ * - No sprites.
+ *
  * **VRAM memory map**
  * | VRAM address | size   | contents                        |
  * |--------------|--------|---------------------------------|
@@ -48,6 +57,9 @@ void screen0(void);
 
 /**
  * `MSX` SCREEN 1: WIDTH 32 (GRAPHIC 1 mode).
+ *
+ * - 32 columns x 24 lines tiled graphics mode.
+ * - Sprite mode 1.
  *
  * **VRAM memory map**
  * | VRAM address | size   | contents                        |
@@ -70,6 +82,9 @@ void screen1(void);
 
 /**
  * `MSX` SCREEN 2: WIDTH 32 (GRAPHIC 2 mode).
+ *
+ * - 32 columns x 24 lines tiled graphics mode.
+ * - Sprite mode 1.
  *
  * **VRAM memory map**
  * | VRAM address | size   | contents                        |
@@ -104,6 +119,9 @@ void screen2(void);
 /**
  * `MSX` SCREEN 2: WIDTH 32 (GRAPHIC 2 mode; PCG mode like as SCREEN 1).
  *
+ * - 32 columns x 24 lines tiled graphics mode.
+ * - Sprite mode 1.
+ *
  * **VRAM memory map**
  * | VRAM address | size   | contents                        |
  * |--------------|--------|---------------------------------|
@@ -125,6 +143,9 @@ void screen2_PCG(void);
 /**
  * `MSX2` SCREEN 0: WIDTH 80 (TEXT 2 mode).
  *
+ * - 80 columns x 24 lines text mode.
+ * - No sprites.
+ *
  * **VRAM memory map**
  * | VRAM address | size   | contents                        |
  * |--------------|--------|---------------------------------|
@@ -141,5 +162,149 @@ void screen2_PCG(void);
  * table** in VRAM).
  */
 void screen0_W80(void);
+
+/**
+ * `MSX2` SCREEN 4: WIDTH 32 (GRAPHIC 3 mode).
+ *
+ * - 32 columns x 24 lines tiled graphics mode.
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0x1800 | Pattern generator table         |
+ * | 0x01800      | 0x0300 | Pattern name table              |
+ * | 0x01C00      | 0x0200 | Sprite color table              |
+ * | 0x01E00      | 0x0080 | Sprite attribute table          |
+ * | 0x02000      | 0x1800 | Color table                     |
+ * | 0x03800      | 0x0300 | Sprite pattern generator table  |
+ *
+ * The **pattern name table** is initialized as follows and will not be changed
+ * thereafter:
+ * ~~~ c
+ * uint8_t pattern_name_table[0x0300] = {
+ *   0x00, 0x01, ..., 0xff,  // (0, 0) .. (31, 7) ; top of screen
+ *   0x00, 0x01, ..., 0xff,  // (0, 8) .. (31,15) ; middle of screen
+ *   0x00, 0x01, ..., 0xff,  // (0,16) .. (31,23) ; bottom of screen
+ * };
+ * ~~~
+ *
+ * The **pattern generator table** and **color table** are then used as the
+ * canvas for the graphics screen. Thus, the characters in the text are also
+ * drawn as images one by one. Thus, the text will be more colorful, but a
+ * little slower.
+ *
+ * \note
+ * In this mode, text is drawn as individual color text.
+ * (i.e., text is drawn as a two-tone color graphic).
+ */
+void screen4(void);
+
+/**
+ * `MSX2` SCREEN 4: WIDTH 32 (GRAPHIC 3 mode; PCG mode like as SCREEN 1).
+ *
+ * - 32 columns x 24 lines tiled graphics mode.
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0x1800 | Pattern generator table         |
+ * | 0x01800      | 0x0300 | Pattern name table              |
+ * | 0x01C00      | 0x0200 | Sprite color table              |
+ * | 0x01E00      | 0x0080 | Sprite attribute table          |
+ * | 0x02000      | 0x1800 | Color table                     |
+ * | 0x03800      | 0x0300 | Sprite pattern generator table  |
+ *
+ * \note
+ * For each 256-character font, three patterns/colors can be defined for the
+ * top, middle, and bottom of the screen (**pattern generator table** and
+ * **color table** in VRAM).
+ */
+void screen4_PCG(void);
+
+/**
+ * `MSX2` SCREEN 5 (GRAPHIC 4 mode).
+ *
+ * - 256 x 212 pixel, 4-bpp graphics mode.
+ * - 16 colors/pixel of 512 colors (RGB333).
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0x6A00 | Pattern name table              |
+ * | 0x07400      | 0x0200 | Sprite color table              |
+ * | 0x07600      | 0x0080 | Sprite attribute table          |
+ * | 0x07800      | 0x0300 | Sprite pattern generator table  |
+ *
+ * \note
+ * In this mode, text is drawn as individual color text.
+ * (i.e., text is drawn as a two-tone color graphic).
+ */
+void screen5(void);
+
+/**
+ * `MSX2` SCREEN 6 (GRAPHIC 5 mode).
+ *
+ * - 256 x 212 pixel, 2-bpp graphics mode.
+ * - 4 colors/pixel of 512 colors (RGB333).
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0x6A00 | Pattern name table              |
+ * | 0x07400      | 0x0200 | Sprite color table              |
+ * | 0x07600      | 0x0080 | Sprite attribute table          |
+ * | 0x07800      | 0x0300 | Sprite pattern generator table  |
+ *
+ * \note
+ * In this mode, text is drawn as individual color text.
+ * (i.e., text is drawn as a two-tone color graphic).
+ */
+void screen6(void);
+
+/**
+ * `MSX2` SCREEN 7 (GRAPHIC 6 mode).
+ *
+ * - 512 x 212 pixels, 4-bpp graphics mode.
+ * - 16 colors/pixel of 512 colors (RGB333).
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0xD400 | Pattern name table              |
+ * | 0x0F000      | 0x0300 | Sprite pattern generator table  |
+ * | 0x0F800      | 0x0200 | Sprite color table              |
+ * | 0x0FA00      | 0x0080 | Sprite attribute table          |
+ *
+ * \note
+ * In this mode, text is drawn as individual color text.
+ * (i.e., text is drawn as a two-tone color graphic).
+ */
+void screen7(void);
+
+/**
+ * `MSX2` SCREEN 8 (GRAPHIC 7 mode).
+ *
+ * - 256 x 212 pixel, 8-bpp graphics mode.
+ * - 256 colors/pixel of 256 colors (RGB332).
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0xD400 | Pattern name table              |
+ * | 0x0F000      | 0x0300 | Sprite pattern generator table  |
+ * | 0x0F800      | 0x0200 | Sprite color table              |
+ * | 0x0FA00      | 0x0080 | Sprite attribute table          |
+ *
+ * \note
+ * In this mode, text is drawn as individual color text.
+ * (i.e., text is drawn as a two-tone color graphic).
+ */
+void screen8(void);
 
 #endif // SCREEN_H_

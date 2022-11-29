@@ -9,7 +9,7 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file screen2_PCG.c
+ * \file screen4_PCG.c
  */
 
 #include "screen.h"
@@ -19,12 +19,12 @@
 #include <vmem.h>
 #include <sprite.h>
 
-/* Configurations for GRAPHIC 2 mode (SCREEN 2) */
-#define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_2
+/* Configurations for GRAPHIC 3 mode (SCREEN 4) */
+#define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_3
 #define PATTERNS        (0x00000) // pattern generator table
 #define IMAGE           (0x01800) // pattern name table
 #define COLORS          (0x02000) // color table
-#define SPRITES         (0x01B00) // sprite attribute table
+#define SPRITES         (0x01E00) // sprite attribute table
 #define SPRITE_PATTERNS (0x03800) // sprite pattern generator table
 #define SIZE_OF_PATTERNS (0x1800) // size of pattern generator table
 #define SIZE_OF_IMAGE    (0x0300) // size of pattern name table
@@ -60,10 +60,8 @@ static const struct TTY_Device dev = {
   .set_border_color = set_border_color,
 };
 
-void screen2_PCG(void) {
-  if (msx_get_version()) {
-    vdp_set_screen_lines(VDP_SCREEN_LINES_192);
-  }
+void screen4_PCG(void) {
+  vdp_set_screen_lines(VDP_SCREEN_LINES_192);
 
   /* zero clear 16KiB VRAM */
   vmem_memset(0, 0, 16384);

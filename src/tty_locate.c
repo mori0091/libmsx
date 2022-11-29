@@ -9,9 +9,17 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file tty.c
+ * \file tty_locate.c
  */
 
 #include "../include/tty.h"
 
-const struct TTY_Device * TTY_device;
+#include "../include/workarea.h"
+
+extern void TTY_check_pos(void);
+
+void TTY_locate(uint8_t x, uint8_t y) {
+  CSRX = x;
+  CSRY = y;
+  TTY_check_pos();
+}

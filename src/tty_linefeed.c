@@ -9,9 +9,17 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file tty.c
+ * \file tty_linefeed.c
  */
 
 #include "../include/tty.h"
 
-const struct TTY_Device * TTY_device;
+#include "../include/workarea.h"
+
+extern void TTY_check_pos(void);
+
+void TTY_linefeed(void) {
+  CSRX = 0;
+  CSRY++;
+  TTY_check_pos();
+}

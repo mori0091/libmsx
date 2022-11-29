@@ -18,6 +18,7 @@
 #include <stdint.h>
 #include <vdp.h>
 #include <vmem.h>
+#include <sprite.h>
 
 /* Configurations for GRAPHIC 1 mode (SCREEN 1) */
 #define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_1
@@ -76,6 +77,7 @@ void screen1(void) {
 
   vdp_set_sprite_attribute_table(SPRITES);
   vdp_set_sprite_pattern_table(SPRITE_PATTERNS);
+  vmem_init_sprites(SPRITES);
 
   // Copy MSX fonts into VRAM
   vmem_write(PATTERNS, (void *)CGTBL, 8*256);

@@ -18,6 +18,7 @@
 #include <stdint.h>
 #include <vdp.h>
 #include <vmem.h>
+#include <sprite.h>
 
 /* Configurations for GRAPHIC 2 mode (SCREEN 2) */
 #define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_2
@@ -76,6 +77,7 @@ void screen2(void) {
 
   vdp_set_sprite_attribute_table(SPRITES);
   vdp_set_sprite_pattern_table(SPRITE_PATTERNS);
+  vmem_init_sprites(SPRITES);
 
   vmem_set_write_address(IMAGE);
   for (int c = 0; c < 768; c++) {

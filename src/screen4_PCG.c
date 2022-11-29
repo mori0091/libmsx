@@ -17,6 +17,7 @@
 #include "tty.h"
 #include <vdp.h>
 #include <vmem.h>
+#include <sprite.h>
 
 /* Configurations for GRAPHIC 3 mode (SCREEN 4) */
 #define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_3
@@ -73,6 +74,7 @@ void screen4_PCG(void) {
 
   vdp_set_sprite_attribute_table(SPRITES);
   vdp_set_sprite_pattern_table(SPRITE_PATTERNS);
+  vmem_init_sprites(SPRITES);
 
   // Copy MSX fonts into VRAM
   vmem_write(PATTERNS+0x0000, (void *)CGTBL, 0x0800);

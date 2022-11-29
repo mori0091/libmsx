@@ -163,6 +163,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a4d424f5d339662168ed48c3c0667f1d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">vmem_set_sprite</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> base, uint8_t plane, const struct <a class="el" href="sprite_8h.html#structsprite">sprite</a> *s)</td></tr>
 <tr class="memdesc:a4d424f5d339662168ed48c3c0667f1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set sprite attribute table element.  <a href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">More...</a><br /></td></tr>
 <tr class="separator:a4d424f5d339662168ed48c3c0667f1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa958108a02a6d272f6aaba4d3e67239c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sprite_8h.html#aa958108a02a6d272f6aaba4d3e67239c">vmem_init_sprites</a> (<a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> base)</td></tr>
+<tr class="memdesc:aa958108a02a6d272f6aaba4d3e67239c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Initialize the sprite attribute table.  <a href="sprite_8h.html#aa958108a02a6d272f6aaba4d3e67239c">More...</a><br /></td></tr>
+<tr class="separator:aa958108a02a6d272f6aaba4d3e67239c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Sprites. </p>
@@ -517,6 +520,44 @@ tagged_color</td>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="sprite_8h_source.html#l00092">92</a> of file <a class="el" href="sprite_8h_source.html">sprite.h</a>.</p>
+
+</div>
+</div>
+<a id="aa958108a02a6d272f6aaba4d3e67239c" name="aa958108a02a6d272f6aaba4d3e67239c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa958108a02a6d272f6aaba4d3e67239c">&#9670;&nbsp;</a></span>vmem_init_sprites()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vmem_init_sprites </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vmem_8h.html#aaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a>&#160;</td>
+          <td class="paramname"><em>base</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Initialize the sprite attribute table. </p>
+<p >Same as the following code: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (uint8_t plane = 0; plane &lt; 32; plane++) {</div>
+<div class="line">  <span class="keyword">struct </span><a class="code hl_struct" href="sprite_8h.html#structsprite">sprite</a> s = {</div>
+<div class="line">    .<a class="code hl_variable" href="sprite_8h.html#a640b2b10663ab61156302c3f64b37989">y</a> = 217,</div>
+<div class="line">    .x = 0,</div>
+<div class="line">    .pat = plane,</div>
+<div class="line">    .tagged_color = 0,</div>
+<div class="line">  };</div>
+<div class="line">  <a class="code hl_function" href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">vmem_set_sprite</a>(base, plane, &amp;s);</div>
+<div class="line">}</div>
+<div class="ttc" id="asprite_8h_html_a4d424f5d339662168ed48c3c0667f1d2"><div class="ttname"><a href="sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2">vmem_set_sprite</a></div><div class="ttdeci">void vmem_set_sprite(vmemptr_t base, uint8_t plane, const struct sprite *s)</div><div class="ttdoc">MSX Set sprite attribute table element.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00092">sprite.h:92</a></div></div>
+<div class="ttc" id="asprite_8h_html_a640b2b10663ab61156302c3f64b37989"><div class="ttname"><a href="sprite_8h.html#a640b2b10663ab61156302c3f64b37989">sprite::y</a></div><div class="ttdeci">uint8_t y</div><div class="ttdoc">y coordinates</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00045">sprite.h:45</a></div></div>
+<div class="ttc" id="asprite_8h_html_structsprite"><div class="ttname"><a href="sprite_8h.html#structsprite">sprite</a></div><div class="ttdoc">Element of sprite attribute table.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8h_source.html#l00044">sprite.h:44</a></div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>Base address of the SPRITE ATTRIBUTE TABLE in VRAM. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

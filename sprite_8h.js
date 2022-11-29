@@ -18,5 +18,6 @@ var sprite_8h =
     [ "sprite_set_xy", "sprite_8h.html#abfb561ba9c7d0a8d93cd4d776c0b5b93", null ],
     [ "sprite_set_pat", "sprite_8h.html#a0e5f09efae319ad69d5828e962ece788", null ],
     [ "sprite_set_color", "sprite_8h.html#adfaf95fcc3973b026552c7c11235547e", null ],
-    [ "vmem_set_sprite", "sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2", null ]
+    [ "vmem_set_sprite", "sprite_8h.html#a4d424f5d339662168ed48c3c0667f1d2", null ],
+    [ "vmem_init_sprites", "sprite_8h.html#aa958108a02a6d272f6aaba4d3e67239c", null ]
 ];

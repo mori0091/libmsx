@@ -247,7 +247,7 @@ void screen5(void);
 /**
  * `MSX2` SCREEN 6 (GRAPHIC 5 mode).
  *
- * - 256 x 212 pixel, 2-bpp graphics mode.
+ * - 512 x 212 pixel, 2-bpp graphics mode.
  * - 4 colors/pixel of 512 colors (RGB333).
  * - Sprite mode 2.
  *

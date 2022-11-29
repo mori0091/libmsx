@@ -49,10 +49,10 @@ static void render_char(uint8_t c) {
     dst += BYTES_PER_LINE;
     uint8_t bits = *p++;
     for (uint8_t i = 4; i--; ) {
-      uint8_t c
+      uint8_t x
         = (((bits & 0x80) ? FORCLR : BAKCLR) << 4)
         | (((bits & 0x40) ? FORCLR : BAKCLR) & 15);
-      vmem_set(c);
+      vmem_set(x);
       bits <<= 2;
     }
   }

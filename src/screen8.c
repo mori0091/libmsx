@@ -49,8 +49,8 @@ static void render_char(uint8_t c) {
     dst += BYTES_PER_LINE;
     uint8_t bits = *p++;
     for (uint8_t i = 8; i--; ) {
-      uint8_t c = ((bits & 0x80) ? FORCLR : BAKCLR);
-      vmem_set(c);
+      uint8_t x = ((bits & 0x80) ? FORCLR : BAKCLR);
+      vmem_set(x);
       bits <<= 1;
     }
   }

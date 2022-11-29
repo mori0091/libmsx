@@ -50,12 +50,12 @@ static void render_char(uint8_t c) {
     dst += BYTES_PER_LINE;
     uint8_t bits = *p++;
     for (uint8_t i = 2; i--; ) {
-      uint8_t c
+      uint8_t x
         = ((((bits & 0x80) ? FORCLR : BAKCLR) & 3) << 6)
         | ((((bits & 0x40) ? FORCLR : BAKCLR) & 3) << 4)
         | ((((bits & 0x20) ? FORCLR : BAKCLR) & 3) << 2)
         | ((((bits & 0x10) ? FORCLR : BAKCLR) & 3) << 0);
-      vmem_set(c);
+      vmem_set(x);
       bits <<= 4;
     }
   }

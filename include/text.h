@@ -26,6 +26,8 @@
  * \sa screen.h
  */
 
+#pragma once
+
 #ifndef TEXT_H_
 #define TEXT_H_
 

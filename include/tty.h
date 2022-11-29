@@ -13,6 +13,8 @@
  * \brief Teletype/console device interface.
  */
 
+#pragma once
+
 #ifndef TTY_H_
 #define TTY_H_
 

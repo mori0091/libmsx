@@ -93,4 +93,24 @@ void vmem_set_sprite(vmemptr_t base, uint8_t plane, const struct sprite* s) {
   vmem_write(base + plane * sizeof(struct sprite), (void*)s, sizeof(struct sprite));
 }
 
+/**
+ * `MSX` Initialize the sprite attribute table.
+ *
+ * Same as the following code:
+ * ~~~ c
+ * for (uint8_t plane = 0; plane < 32; plane++) {
+ *   struct sprite s = {
+ *     .y = 217,
+ *     .x = 0,
+ *     .pat = plane,
+ *     .tagged_color = 0,
+ *   };
+ *   vmem_set_sprite(base, plane, &s);
+ * }
+ * ~~~
+ *
+ * \param base  Base address of the SPRITE ATTRIBUTE TABLE in VRAM.
+ */
+void vmem_init_sprites(vmemptr_t base);
+
 #endif

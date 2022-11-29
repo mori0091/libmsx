@@ -38,6 +38,7 @@
 
 static void clear_screen(void) {
   vdp_cmd_execute_HMMV(0, 0, WIDTH, HEIGHT, ((BAKCLR & 15) << 4) | (BAKCLR & 15));
+  vdp_cmd_await();
 }
 
 static void render_char(uint8_t c) {

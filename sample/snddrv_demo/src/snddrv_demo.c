@@ -14,8 +14,8 @@
 
 #include <msx.h>
 #include <ay_3_8910.h>
-
-#include "./screen1.h"
+#include <screen.h>
+#include <text.h>
 
 // Include the header file "bgm.h" auto-generated from "bgm.aks".
 #include "./bgm.h"
@@ -33,15 +33,15 @@ static void show_volume_levels(void) {
       vol = 16;
     }
     locate(10, 10+ch);
-    puts("VOL.#"); putc('0'+ch); puts(":"); puts(volume_gauge[vol]);
+    print("VOL.#"); printc((char)'0'+ch); print(":"); print(volume_gauge[vol]);
   }
 }
 
 // Frequency -----------------------------------------
 static void show_frequency(void) {
-  locate( 0, 0); puts("VSYNC:"); puti(msx_get_vsync_frequency());  puts("Hz");
-  locate( 0, 1); puts(" PLAY:"); puti(snd_get_player_frequency()); puts("Hz");
-  locate( 0, 2); puts("  BGM:"); puti(snd_get_bgm_frequency());    puts("Hz(author expecting)");
+  locate( 0, 0); print("VSYNC:"); printi(msx_get_vsync_frequency());  print("Hz");
+  locate( 0, 1); print(" PLAY:"); printi(snd_get_player_frequency()); print("Hz");
+  locate( 0, 2); print("  BGM:"); printi(snd_get_bgm_frequency());    print("Hz(author expecting)");
 }
 
 // Main loop -----------------------------------------
@@ -73,7 +73,7 @@ static void main_loop(void) {
     if (x) {
       Hz += x;
       snd_set_player_frequency(Hz);
-      locate(6, 1); puti(Hz); puts("Hz ");
+      locate(6, 1); printi(Hz); print("Hz ");
     }
   }
 }
@@ -84,10 +84,10 @@ void main(void) {
   CLIKSW = 0;
   // Initiallize SCREEN mode
   screen1();
-  locate(10,  7); puts("- libmsx -");
-  locate(10,  8); puts("SNDDRV demo");
-  locate( 1, 20); puts("HIT SPACE TO PLAY SOUND EFFECT");
-  locate( 3, 22); puts("(Arrow key: speed up/down)");
+  locate(10,  7); print("- libmsx -");
+  locate(10,  8); print("SNDDRV demo");
+  locate( 1, 20); print("HIT SPACE TO PLAY SOUND EFFECT");
+  locate( 3, 22); print("(Arrow key: speed up/down)");
 
   // Set character patterns for volume bar.
   init_volume_gauge_chars();

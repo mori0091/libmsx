@@ -9,7 +9,7 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file screen2.c
+ * \file screen2_PCG.c
  */
 
 #include "screen.h"
@@ -60,6 +60,10 @@ static const struct TTY_Device dev = {
 };
 
 void screen2_PCG(void) {
+  if (msx_get_version()) {
+    vdp_set_screen_lines(VDP_SCREEN_LINES_192);
+  }
+
   /* zero clear 16KiB VRAM */
   vmem_memset(0, 0, 16384);
 

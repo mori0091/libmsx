@@ -26,7 +26,7 @@
 struct TTY_Device {
   /** Columns of the text screen. */
   uint8_t columns;
-  /** Linex of the text screen. */
+  /** Lines of the text screen. */
   uint8_t lines;
   /** Clear the text screen. */
   void (* clear_screen)(void);

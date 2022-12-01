@@ -1,4 +1,0 @@
-<map id="snd_Music::vec_snd_Pattern" name="snd_Music::vec_snd_Pattern">
-<area shape="rect" id="node1" title="list of patterns (pattern sequence)." alt="" coords="5,95,145,136"/>
-<area shape="rect" id="node2" href="$snd__sound_8h.html#structsnd__Pattern" title="A track pattern, that corresponds to a sub&#45;score of a music." alt="" coords="29,5,121,32"/>
-</map>

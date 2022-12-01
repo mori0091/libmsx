@@ -1,4 +1,0 @@
-<map id="snd_Music::vec_snd_SpeedTrack" name="snd_Music::vec_snd_SpeedTrack">
-<area shape="rect" id="node1" title="[optional] list of all speed tracks refered in items." alt="" coords="5,95,145,136"/>
-<area shape="rect" id="node2" href="$structsnd__SpeedTrack.html" title="A special track to control speed of tracks." alt="" coords="15,5,135,32"/>
-</map>

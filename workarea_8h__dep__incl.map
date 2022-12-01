@@ -1,6 +1,6 @@
 <map id="include/workarea.h" name="include/workarea.h">
-<area shape="rect" id="node1" title="Definitions of MSX SYSTEM Workarea." alt="" coords="5,5,136,32"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="28,229,129,256"/>
-<area shape="rect" id="node3" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="65,80,164,107"/>
-<area shape="rect" id="node4" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="116,155,255,181"/>
+<area shape="rect" id="node1" title="Definitions of MSX SYSTEM Workarea." coords="5,5,136,31"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." coords="28,225,129,251"/>
+<area shape="rect" id="node3" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." coords="65,79,164,104"/>
+<area shape="rect" id="node4" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." coords="116,152,255,177"/>
 </map>

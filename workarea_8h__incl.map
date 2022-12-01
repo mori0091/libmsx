@@ -1,6 +1,6 @@
 <map id="include/workarea.h" name="include/workarea.h">
-<area shape="rect" id="node1" title="Definitions of MSX SYSTEM Workarea." alt="" coords="17,5,148,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,155,69,181"/>
-<area shape="rect" id="node3" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="113,155,180,181"/>
-<area shape="rect" id="node4" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="35,80,130,107"/>
+<area shape="rect" id="node1" title="Definitions of MSX SYSTEM Workarea." coords="17,5,148,31"/>
+<area shape="rect" id="node2" title=" " coords="5,152,69,177"/>
+<area shape="rect" id="node3" href="$config_8h.html" title="Hack for C Compiler portability." coords="113,152,180,177"/>
+<area shape="rect" id="node4" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." coords="35,79,130,104"/>
 </map>

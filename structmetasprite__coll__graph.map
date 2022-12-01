@@ -1,4 +1,4 @@
 <map id="metasprite" name="metasprite">
-<area shape="rect" id="node1" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="5,109,88,136"/>
-<area shape="rect" id="node2" href="$metasprite_8h.html#structvec2i" title=" " alt="" coords="20,5,73,32"/>
+<area shape="rect" id="node1" title="Meta&#45;sprite ; an aggregate of sprites." coords="5,108,88,133"/>
+<area shape="rect" id="node2" href="$metasprite_8h.html#structvec2i" title=" " coords="20,5,73,31"/>
 </map>

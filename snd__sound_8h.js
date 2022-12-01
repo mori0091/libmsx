@@ -1,59 +1,39 @@
 var snd__sound_8h =
 [
     [ "snd_SoundAssets", "snd__sound_8h.html#structsnd__SoundAssets", [
-      [ "vec_snd_Instrument", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Instrument", [
-        [ "length", "snd__sound_8h.html#a192ba80b3c4cfe2bd564837c105edaf1", null ],
-        [ "data", "snd__sound_8h.html#afb26560335bf86ea6131b94539781e9e", null ]
+      [ "vec_snd_Instrument", "structsnd__SoundAssets_1_1vec__snd__Instrument.html", [
+        [ "vec_fields", "structsnd__SoundAssets_1_1vec__snd__Instrument.html#a3cd7cfe894264a73de85ef4e881030db", null ]
       ] ],
-      [ "vec_snd_Music", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Music", [
-        [ "length", "snd__sound_8h.html#a67b31dec23cf4b682513ea7a9fb86cb6", null ],
-        [ "data", "snd__sound_8h.html#a7c1c28c337a1161bebd4980a8eed89cf", null ]
+      [ "vec_snd_Music", "structsnd__SoundAssets_1_1vec__snd__Music.html", [
+        [ "vec_fields", "structsnd__SoundAssets_1_1vec__snd__Music.html#a580706a69230364316e7316ef744b67b", null ]
       ] ],
-      [ "vec_snd_PeriodBend", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__PeriodBend", [
-        [ "length", "snd__sound_8h.html#afd37803289cd16f1a713ca806351f062", null ],
-        [ "data", "snd__sound_8h.html#ab91da21ec2e6e10299b6de87b195b87a", null ]
+      [ "vec_snd_PeriodBend", "structsnd__SoundAssets_1_1vec__snd__PeriodBend.html", [
+        [ "vec_fields", "structsnd__SoundAssets_1_1vec__snd__PeriodBend.html#a1fc40f31b7d274bb004f34982469aca6", null ]
       ] ],
-      [ "vec_snd_PitchBend", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__PitchBend", [
-        [ "length", "snd__sound_8h.html#a3adbc261bf9d043bbf4aea962f0af3a2", null ],
-        [ "data", "snd__sound_8h.html#a70bc0cea4f47ea1671731c79afd896c9", null ]
+      [ "vec_snd_PitchBend", "structsnd__SoundAssets_1_1vec__snd__PitchBend.html", [
+        [ "vec_fields", "structsnd__SoundAssets_1_1vec__snd__PitchBend.html#a83ad7fea21cd6d77c1ea67b4b4970fdd", null ]
       ] ],
       [ "pitchBendTables", "snd__sound_8h.html#a93d194f957739bf0b7eb2cdab42873d7", null ],
       [ "periodBendTables", "snd__sound_8h.html#a840618a1671578118fbfda650ec98e4c", null ],
       [ "instruments", "snd__sound_8h.html#a4c2b9c5d52e89f648ebd3d5df34b0a94", null ],
       [ "musics", "snd__sound_8h.html#ab3ebb5d3d3c59d8e17b6ecb07c898c1c", null ]
     ] ],
-    [ "snd_SoundAssets::vec_snd_PitchBend", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__PitchBend", [
-      [ "length", "snd__sound_8h.html#a3adbc261bf9d043bbf4aea962f0af3a2", null ],
-      [ "data", "snd__sound_8h.html#a70bc0cea4f47ea1671731c79afd896c9", null ]
-    ] ],
-    [ "snd_SoundAssets::vec_snd_PeriodBend", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__PeriodBend", [
-      [ "length", "snd__sound_8h.html#afd37803289cd16f1a713ca806351f062", null ],
-      [ "data", "snd__sound_8h.html#ab91da21ec2e6e10299b6de87b195b87a", null ]
-    ] ],
-    [ "snd_SoundAssets::vec_snd_Instrument", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Instrument", [
-      [ "length", "snd__sound_8h.html#a192ba80b3c4cfe2bd564837c105edaf1", null ],
-      [ "data", "snd__sound_8h.html#afb26560335bf86ea6131b94539781e9e", null ]
-    ] ],
-    [ "snd_SoundAssets::vec_snd_Music", "snd__sound_8h.html#structsnd__SoundAssets_1_1vec__snd__Music", [
-      [ "length", "snd__sound_8h.html#a67b31dec23cf4b682513ea7a9fb86cb6", null ],
-      [ "data", "snd__sound_8h.html#a7c1c28c337a1161bebd4980a8eed89cf", null ]
-    ] ],
+    [ "snd_SoundAssets::vec_snd_PitchBend", "structsnd__SoundAssets_1_1vec__snd__PitchBend.html", "structsnd__SoundAssets_1_1vec__snd__PitchBend" ],
+    [ "snd_SoundAssets::vec_snd_PeriodBend", "structsnd__SoundAssets_1_1vec__snd__PeriodBend.html", "structsnd__SoundAssets_1_1vec__snd__PeriodBend" ],
+    [ "snd_SoundAssets::vec_snd_Instrument", "structsnd__SoundAssets_1_1vec__snd__Instrument.html", "structsnd__SoundAssets_1_1vec__snd__Instrument" ],
+    [ "snd_SoundAssets::vec_snd_Music", "structsnd__SoundAssets_1_1vec__snd__Music.html", "structsnd__SoundAssets_1_1vec__snd__Music" ],
     [ "snd_Music", "snd__sound_8h.html#structsnd__Music", [
-      [ "vec_snd_EventTrack", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__EventTrack", [
-        [ "length", "snd__sound_8h.html#ab8ce04d6fbc22adce69bcc28aaf92327", null ],
-        [ "data", "snd__sound_8h.html#a016dda8ebd10c9781a3d70cf51e6c8d2", null ]
+      [ "vec_snd_EventTrack", "structsnd__Music_1_1vec__snd__EventTrack.html", [
+        [ "vec_fields", "structsnd__Music_1_1vec__snd__EventTrack.html#a31cda3718471667a32cd569e99ed9ee4", null ]
       ] ],
-      [ "vec_snd_Pattern", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__Pattern", [
-        [ "length", "snd__sound_8h.html#ad1d7309c750455476eb0209244e992d7", null ],
-        [ "data", "snd__sound_8h.html#ad73c43c268b3c1fef85c50c157d8922a", null ]
+      [ "vec_snd_Pattern", "structsnd__Music_1_1vec__snd__Pattern.html", [
+        [ "vec_fields", "structsnd__Music_1_1vec__snd__Pattern.html#a0175c89e37dab082aaa8f98804660ea2", null ]
       ] ],
-      [ "vec_snd_SpeedTrack", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__SpeedTrack", [
-        [ "length", "snd__sound_8h.html#a67c3eb9566de09124727943bd6f32e52", null ],
-        [ "data", "snd__sound_8h.html#a1c0e9283c8d7977cf503168fa4bdc021", null ]
+      [ "vec_snd_SpeedTrack", "structsnd__Music_1_1vec__snd__SpeedTrack.html", [
+        [ "vec_fields", "structsnd__Music_1_1vec__snd__SpeedTrack.html#a2b8714563fc832a257b500036d8c8d8e", null ]
       ] ],
-      [ "vec_snd_Track", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__Track", [
-        [ "length", "snd__sound_8h.html#a0622d559822622bc8a2a509c9010e0ed", null ],
-        [ "data", "snd__sound_8h.html#a80ea8092de0cce9e4637c65489c336f8", null ]
+      [ "vec_snd_Track", "structsnd__Music_1_1vec__snd__Track.html", [
+        [ "vec_fields", "structsnd__Music_1_1vec__snd__Track.html#a27e9267c36ea0b3584dbf632fb79ed1a", null ]
       ] ],
       [ "format_version", "snd__sound_8h.html#a73713cc5ca4d186b6c4946a4d3a64e83", null ],
       [ "replayRate", "snd__sound_8h.html#a030abb37b6c192bfdc9fd62278bb0826", null ],
@@ -65,22 +45,10 @@ var snd__sound_8h =
       [ "isLoop", "snd__sound_8h.html#a8235e7d4e853b68b722090b9f037394c", null ],
       [ "loopToIndex", "snd__sound_8h.html#a3216f248df996913d722aea1db4a3d27", null ]
     ] ],
-    [ "snd_Music::vec_snd_SpeedTrack", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__SpeedTrack", [
-      [ "length", "snd__sound_8h.html#a67c3eb9566de09124727943bd6f32e52", null ],
-      [ "data", "snd__sound_8h.html#a1c0e9283c8d7977cf503168fa4bdc021", null ]
-    ] ],
-    [ "snd_Music::vec_snd_EventTrack", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__EventTrack", [
-      [ "length", "snd__sound_8h.html#ab8ce04d6fbc22adce69bcc28aaf92327", null ],
-      [ "data", "snd__sound_8h.html#a016dda8ebd10c9781a3d70cf51e6c8d2", null ]
-    ] ],
-    [ "snd_Music::vec_snd_Track", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__Track", [
-      [ "length", "snd__sound_8h.html#a0622d559822622bc8a2a509c9010e0ed", null ],
-      [ "data", "snd__sound_8h.html#a80ea8092de0cce9e4637c65489c336f8", null ]
-    ] ],
-    [ "snd_Music::vec_snd_Pattern", "snd__sound_8h.html#structsnd__Music_1_1vec__snd__Pattern", [
-      [ "length", "snd__sound_8h.html#ad1d7309c750455476eb0209244e992d7", null ],
-      [ "data", "snd__sound_8h.html#ad73c43c268b3c1fef85c50c157d8922a", null ]
-    ] ],
+    [ "snd_Music::vec_snd_SpeedTrack", "structsnd__Music_1_1vec__snd__SpeedTrack.html", "structsnd__Music_1_1vec__snd__SpeedTrack" ],
+    [ "snd_Music::vec_snd_EventTrack", "structsnd__Music_1_1vec__snd__EventTrack.html", "structsnd__Music_1_1vec__snd__EventTrack" ],
+    [ "snd_Music::vec_snd_Track", "structsnd__Music_1_1vec__snd__Track.html", "structsnd__Music_1_1vec__snd__Track" ],
+    [ "snd_Music::vec_snd_Pattern", "structsnd__Music_1_1vec__snd__Pattern.html", "structsnd__Music_1_1vec__snd__Pattern" ],
     [ "snd_Track", "structsnd__Track.html", "structsnd__Track" ],
     [ "snd_SpeedTrack", "structsnd__SpeedTrack.html", "structsnd__SpeedTrack" ],
     [ "snd_EventTrack", "structsnd__EventTrack.html", "structsnd__EventTrack" ],

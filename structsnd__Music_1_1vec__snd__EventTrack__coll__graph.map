@@ -1,4 +1,0 @@
-<map id="snd_Music::vec_snd_EventTrack" name="snd_Music::vec_snd_EventTrack">
-<area shape="rect" id="node1" title="[optional] list of all event tracks refered in items." alt="" coords="5,95,145,136"/>
-<area shape="rect" id="node2" href="$structsnd__EventTrack.html" title="A special track to control event trigger of tracks." alt="" coords="17,5,133,32"/>
-</map>

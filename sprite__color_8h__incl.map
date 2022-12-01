@@ -1,8 +1,8 @@
 <map id="include/sprite_color.h" name="include/sprite_color.h">
-<area shape="rect" id="node1" title="Sprite color table interface." alt="" coords="5,5,149,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="33,229,97,256"/>
-<area shape="rect" id="node3" href="$sprite_8h.html" title="Sprites." alt="" coords="45,80,109,107"/>
-<area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="107,155,175,181"/>
-<area shape="rect" id="node5" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="121,229,164,256"/>
-<area shape="rect" id="node6" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="109,304,176,331"/>
+<area shape="rect" id="node1" title="Sprite color table interface." coords="5,5,149,31"/>
+<area shape="rect" id="node2" title=" " coords="33,225,97,251"/>
+<area shape="rect" id="node3" href="$sprite_8h.html" title="Sprites." coords="45,79,109,104"/>
+<area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." coords="107,152,175,177"/>
+<area shape="rect" id="node5" href="$io_8h.html" title="Definition of I/O ports." coords="121,225,164,251"/>
+<area shape="rect" id="node6" href="$config_8h.html" title="Hack for C Compiler portability." coords="109,299,176,324"/>
 </map>

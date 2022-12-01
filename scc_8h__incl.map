@@ -1,4 +1,4 @@
 <map id="include/scc.h" name="include/scc.h">
-<area shape="rect" id="node1" title="Device interface for Konami SCC/SCC+ sound cartridge." alt="" coords="5,5,104,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="23,80,87,107"/>
+<area shape="rect" id="node1" title="Device interface for Konami SCC/SCC+ sound cartridge." coords="5,5,104,31"/>
+<area shape="rect" id="node2" title=" " coords="23,79,87,104"/>
 </map>

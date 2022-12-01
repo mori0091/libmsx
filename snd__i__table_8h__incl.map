@@ -1,4 +1,4 @@
 <map id="include/snd_i_table.h" name="include/snd_i_table.h">
-<area shape="rect" id="node1" title="Instrument data type for SNDDRV." alt="" coords="5,5,148,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="45,80,109,107"/>
+<area shape="rect" id="node1" title="Instrument data type for SNDDRV." coords="5,5,148,31"/>
+<area shape="rect" id="node2" title=" " coords="45,79,109,104"/>
 </map>

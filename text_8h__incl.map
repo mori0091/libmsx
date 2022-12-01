@@ -1,5 +1,5 @@
 <map id="include/text.h" name="include/text.h">
-<area shape="rect" id="node1" title="Utility functions for text ouput." alt="" coords="10,5,109,32"/>
-<area shape="rect" id="node2" href="$tty_8h.html" title="Teletype/console device interface." alt="" coords="5,80,52,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="27,155,91,181"/>
+<area shape="rect" id="node1" title="Utility functions for text ouput." coords="10,5,109,31"/>
+<area shape="rect" id="node2" href="$tty_8h.html" title="Teletype/console device interface." coords="5,79,52,104"/>
+<area shape="rect" id="node3" title=" " coords="27,152,91,177"/>
 </map>

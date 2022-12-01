@@ -1,4 +1,4 @@
 <map id="include/input.h" name="include/input.h">
-<area shape="rect" id="node1" title="Input devices such as Joypad, for example." alt="" coords="5,5,111,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="26,80,90,107"/>
+<area shape="rect" id="node1" title="Input devices such as Joypad, for example." coords="5,5,111,31"/>
+<area shape="rect" id="node2" title=" " coords="26,79,90,104"/>
 </map>

@@ -29,5 +29,5 @@ void printx(uint16_t x) {
   if (15 < x) {
     printx(x / 16);
   }
-  putxdigit(x);
+  putxdigit(x & 15);
 }

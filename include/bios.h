@@ -11,6 +11,11 @@
 /**
  * \file bios.h
  * \brief C language I/F for MSX BIOS routines.
+ * \ingroup BIOS
+ */
+/**
+ * \defgroup BIOS BIOS - Basic Input/Output System
+ * `#include <bios.h>`
  */
 
 #pragma once
@@ -25,6 +30,13 @@
 #ifndef __SDCCCALL
 #define __sdcccall(x)
 #endif
+
+/**
+ * \defgroup BIOS_CONFIG System configuration
+ * \ingroup BIOS
+ * Get the system version, VSYNC frequency, etc.
+ * @{
+ */
 
 /**
  * `MSX` Returns MSX system version code.
@@ -43,6 +55,15 @@ inline uint8_t msx_get_version(void) {
 inline uint8_t msx_get_vsync_frequency(void) {
   return ((INTERNATIONAL_ID_1 & 0x80) ? 50 : 60);
 }
+
+/** @} */
+
+/**
+ * \defgroup BIOS_SLOT Inter-slot Read / Write / Call
+ * \ingroup BIOS
+ * Inter-slot Read / Write / Call interface.
+ * @{
+ */
 
 /**
  * `MSX` BIOS : RDSLT (000CH / MAIN).
@@ -70,7 +91,6 @@ uint8_t msx_RDSLT(uint8_t slot, void * addr);
  * \post Interrupt is disabled.
  */
 void msx_WRSLT(uint8_t slot, void * addr, uint8_t value) __sdcccall(0);
-
 
 /**
  * `MSX` BIOS : ENASLT (0024H / MAIN).
@@ -110,6 +130,15 @@ uint8_t msx_RSLREG(void);
  * \param value a value to be written to the primary slot select register.
  */
 void msx_WSLREG(uint8_t value);
+
+/** @} */
+
+/**
+ * \defgroup BIOS_JOYPAD Joystick / Joypad
+ * \ingroup BIOS
+ * Joystick / Joypad interface.
+ * @{
+ */
 
 /**
  * `MSX` BIOS : GTSTCK (00D5H / MAIN)
@@ -157,6 +186,15 @@ uint8_t msx_GTSTCK(const uint8_t a);
  * \sa joypad_get_state()
  */
 uint8_t msx_GTTRIG(const uint8_t a);
+
+/** @} */
+
+/**
+ * \defgroup BIOS_CPU Z80 / R800 CPU mode
+ * \ingroup BIOS
+ * Change / Get CPU mode.
+ * @{
+ */
 
 /**
  * `MSXturboR` BIOS : CHGCPU (0180H/MAIN)
@@ -253,6 +291,8 @@ uint8_t msx_GETCPU(void);
  * \sa msx_GETCPU()
  */
 uint8_t msx_get_cpu_mode(void);
+
+/** @} */
 
 #ifndef __SDCCCALL
 #undef __sdcccall

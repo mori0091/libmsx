@@ -11,6 +11,7 @@
 /**
  * \file metasprite.h
  * \brief Meta-sprite ; an aggregate of sprites.
+ * \ingroup SPRITES
  */
 
 #pragma once
@@ -23,6 +24,13 @@
 #include "vdp.h"
 #include "vmem.h"
 #include "sprite.h"
+
+/**
+ * \defgroup SPRITES_METASPRITE Meta-sprite interface.
+ * \ingroup SPRITES
+ * Meta-sprite interface.
+ * @{
+ */
 
 typedef struct vec2i {
   int x;
@@ -139,5 +147,7 @@ void vmem_set_metasprite_m(vmemptr_t base, uint8_t plane, int x, int y,
  */
 void vmem_set_metasprite_a(vmemptr_t base, uint8_t plane, int x, int y,
                            const metasprite_t* ms);
+
+/** @} */
 
 #endif

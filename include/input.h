@@ -11,6 +11,11 @@
 /**
  * \file input.h
  * \brief Input devices such as Joypad, for example.
+ * \ingroup INPUT
+ */
+/**
+ * \defgroup INPUT Input device
+ * `#include <input.h>`
  */
 
 #pragma once
@@ -19,6 +24,13 @@
 #define INPUT_H
 
 #include <stdint.h>
+
+/**
+ * \defgroup INPUT_JOYPAD Joystick / Joypad inteface
+ * \ingroup INPUT
+ * Get Joypad button state.
+ * @{
+ */
 
 /**
  * Bitmask for UP direction of joystick or UP arrow key.
@@ -97,5 +109,7 @@
  * \sa msx_GTTRIG()
  */
 uint8_t joypad_get_state(uint8_t controller);
+
+/** @} */
 
 #endif

@@ -11,6 +11,7 @@
 /**
  * \file snd_p_table.h
  * \brief Pitch-bend table data type for SNDDRV.
+ * \ingroup SNDDRV
  *
  * \sa snddrv.h
  * \sa snd_sound.h
@@ -20,6 +21,11 @@
 #define SND_P_TABLE_H_
 
 #include <stdint.h>
+
+/**
+ * \addtogroup SNDDRV_DATA
+ * @{
+ */
 
 /**
  * Type alias for arpeggio/pitch-bend table.
@@ -64,5 +70,7 @@ struct snd_p_table {
   /** Pointer to Release part of data stream. */
   const int16_t * r_part;
 };
+
+/** @} */
 
 #endif // SND_P_TABLE_H_

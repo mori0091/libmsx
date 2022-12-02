@@ -11,7 +11,12 @@
 /**
  * \file sound.h
  * \brief A PSG sound driver.
+ * \ingroup SOUND_OLD
  * \note This is old and no longer maintained.
+ */
+/**
+ * \defgroup SOUND_OLD Sound - Old PSG sound driver
+ * `#include <sound.h>`, `#include <sound_eg.h>`
  */
 
 #pragma once
@@ -22,6 +27,13 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
+
+/**
+ * \defgroup SOUND_OLD_API Old PSG sound driver APIs
+ * \ingroup SOUND_OLD
+ * Old PSG sound driver APIs.
+ * @{
+ */
 
 /**
  * The bit-mask to specify PSG channel A.
@@ -320,5 +332,7 @@ void sound_pause(void);
  * machine.
  */
 void sound_player(void);
+
+/** @} */
 
 #endif

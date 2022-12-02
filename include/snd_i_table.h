@@ -11,6 +11,7 @@
 /**
  * \file snd_i_table.h
  * \brief Instrument data type for SNDDRV.
+ * \ingroup SNDDRV
  *
  * \sa snddrv.h
  * \sa snd_sound.h
@@ -20,6 +21,11 @@
 #define SND_I_TABLE_H_
 
 #include <stdint.h>
+
+/**
+ * \addtogroup SNDDRV_DATA
+ * @{
+ */
 
 /**
  * Instrument (timbre) table.
@@ -72,5 +78,7 @@ struct snd_Instrument {
   /** Pointer to Release part of data stream. */
   const uint8_t * r_part;
 };
+
+/** @} */
 
 #endif // SND_I_TABLE_H_

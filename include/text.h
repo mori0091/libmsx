@@ -11,6 +11,11 @@
 /**
  * \file text.h
  * \brief Utility functions for text ouput.
+ * \ingroup CUI
+ */
+/**
+ * \defgroup CUI Text output
+ * `#include <text.h>`
  *
  * The `text.h` provides some MSX-BASIC like utility functions for text output.
  * - locate(),
@@ -35,6 +40,13 @@
 #include <stdint.h>
 
 /**
+ * \defgroup CUI_CONTROL Cursor position, Control characters.
+ * \ingroup CUI
+ * Cursor position, Control characters, Clear screen, etc.
+ * @{
+ */
+
+/**
  * `MSX` Set cursor position.
  * \param x   x coordinate.
  * \param y   y coordinate.
@@ -53,6 +65,15 @@
  */
 #define cls()                                   \
   TTY_cls()
+
+/** @} */
+
+/**
+ * \defgroup CUI_COLOR Text color, Backdrop color
+ * \ingroup CUI
+ * Text color, Background color, Backdrop color.
+ * @{
+ */
 
 /**
  * `MSX` Set foreground color.
@@ -92,6 +113,15 @@
 #define color(fg, bg, border)                   \
   TTY_set_color(fg, bg, border)
 
+/** @} */
+
+/**
+ * \defgroup CUI_PRINT Text output
+ * \ingroup CUI
+ * Simple `print` functions.
+ * @{
+ */
+
 /**
  * `MSX` Print string on the screen.
  * \param str  string
@@ -121,5 +151,7 @@ void printi(int i);
  * \param x   unsigned integer
  */
 void printx(uint16_t x);
+
+/** @} */
 
 #endif // TEXT_H_

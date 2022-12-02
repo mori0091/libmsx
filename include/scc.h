@@ -11,11 +11,16 @@
 /**
  * \file scc.h
  * \brief Device interface for Konami SCC/SCC+ sound cartridge.
+ * \ingroup SCC
  *
  * *Example*\n
  * The following code detects the Konami SCC/SCC+ sound chip and plays a
  * triangular wave test tone if detected.
  * \include scc_example/src/scc_example.c
+ */
+/**
+ * \defgroup SCC Konami SCC/SCC+ sound cartridge
+ * `#include <scc.h>`
  */
 
 #pragma once
@@ -24,6 +29,13 @@
 #define SCC_H_
 
 #include <stdint.h>
+
+/**
+ * \defgroup SCC_DEVICE SCC/SCC+ device interface
+ * \ingroup SCC
+ * Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip.
+ * @{
+ */
 
 /**
  * The structure of the SCC/SCC+ 32-byte waveform data register.
@@ -136,5 +148,7 @@ void SCC_enable(const struct SCC * scc);
  * \param scc  pointer to the SCC handle.
  */
 void SCC_disable(const struct SCC * scc);
+
+/** @} */
 
 #endif // SCC_H_

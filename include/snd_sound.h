@@ -11,6 +11,7 @@
 /**
  * \file snd_sound.h
  * Sound / Music data structure for `snddrv`.
+ * \ingroup SNDDRV
  */
 
 #ifndef SND_SOUND_H_
@@ -22,6 +23,13 @@
 
 #include "snd_i_table.h"
 #include "snd_p_table.h"
+
+/**
+ * \defgroup SNDDRV_DATA Sound data structure
+ * \ingroup SNDDRV
+ * Sound data structure for SNDDRV.
+ * @{
+ */
 
 /**
  * Container of musics, instruments, pitch-bend tables, and period-bend tables.
@@ -220,5 +228,7 @@ struct snd_Pattern {
 
 #undef vec
 #undef vec_fields
+
+/** @} */
 
 #endif // SND_SOUND_H_

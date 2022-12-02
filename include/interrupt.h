@@ -10,8 +10,12 @@
  */
 /**
  * \file interrupt.h
- * \brief Interrupts relevant functions and Pluggable interrupts handler
- * interface.
+ * \brief Interrupts relevant functions and Pluggable interrupts handler interface.
+ * \ingroup INTERRUPT
+ */
+/**
+ * \defgroup INTERRUPT Interrupts
+ * `#include <interrupt.h>`
  */
 
 #pragma once
@@ -21,6 +25,13 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+
+/**
+ * \defgroup INTERRUPT_AWAIT Await interrupts
+ * \ingroup INTERRUPT
+ * Await interrupts.
+ * @{
+ */
 
 /**
  * `MSX` "Busy" flag for VSYNC interrupt routine.
@@ -79,6 +90,15 @@ extern volatile bool vsync_busy;
  */
 void await_vsync(void);
 
+/** @} */
+
+/**
+ * \defgroup INTERRUPT_HANDLER Interrupts handler
+ * \ingroup INTERRUPT
+ * Pluggable interrupts handler interface.
+ * @{
+ */
+
 /**
  * `MSX` Register user defined interrupt handler.
  *
@@ -117,6 +137,15 @@ void set_interrupt_handler(void (*handler)(void));
  */
 void set_vsync_handler(void (*handler)(void));
 
+/** @} */
+
+/**
+ * \defgroup INTERRUPT_SLEEP Sleep
+ * \ingroup INTERRUPT
+ * Sleep functions.
+ * @{
+ */
+
 /**
  * `MSX` Wait for the specified number of VSYNCs to occur.
  *
@@ -130,5 +159,7 @@ void sleep_ticks(uint16_t ticks);
  * \param ms    time to elapse in milliseconds.
  */
 void sleep_millis(uint16_t ms);
+
+/** @} */
 
 #endif

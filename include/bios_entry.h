@@ -11,6 +11,7 @@
 /**
  * \file bios_entry.h
  * \brief Assembler entry points for MSX BIOS functions.
+ * \ingroup BIOS
  * \note This defines address and name of entry points.
  */
 

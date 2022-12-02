@@ -11,6 +11,7 @@
 /**
  * \file slot.h
  * \brief Utility functions to inspect the slot mechanism of MSX.
+ * \ingroup SLOT
  *
  * *Example*\n
  * The following code detects MSX-MUSIC (OPLL) by inspecting each slot.
@@ -40,6 +41,10 @@
  * }
  * ~~~
  */
+/**
+ * \defgroup SLOT Slot - Individual Address Spaces of devices.
+ * `#include <slot.h>`
+ */
 
 #pragma once
 
@@ -49,6 +54,13 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stddef.h>
+
+/**
+ * \defgroup SLOT_INSPECT Slot inspection
+ * \ingroup SLOT
+ * Inspect the slot mechanism of MSX.
+ * @{
+ */
 
 /**
  * `MSX` For each slot, invoke the given callback with the given arguments.
@@ -199,5 +211,7 @@ bool slot_is_ROM_p2(uint8_t slot);
  * specified slot.
  */
 bool slot_is_ROM(uint8_t slot);
+
+/** @} */
 
 #endif // SLOT_H_

@@ -11,6 +11,7 @@
 /**
  * \file sprite_color.h
  * \brief Sprite color table interface.
+ * \ingroup SPRITES
  */
 
 #pragma once
@@ -22,6 +23,13 @@
 
 #include "sprite.h"
 #include "vmem.h"
+
+/**
+ * \defgroup SPRITES_COLOR Sprite color table
+ * \ingroup SPRITES
+ * Sprite color table interface.
+ * @{
+ */
 
 /**
  * `MSX2` Element of sprite color table (for sprite mode 2).
@@ -73,5 +81,7 @@ void vmem_set_sprite_color_s(vmemptr_t base, uint8_t plane,
  */
 void vmem_set_sprite_color_m(vmemptr_t base, uint8_t plane, uint8_t n,
                              const tagged_color_t* tagged_colors);
+
+/** @} */
 
 #endif

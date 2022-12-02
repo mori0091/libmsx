@@ -11,6 +11,7 @@
 /**
  * \file bios_const.h
  * \brief Constant variables in the MSX BIOS ROM.
+ * \ingroup BIOS
  * \note This defines address, type, and name of variables.
  */
 

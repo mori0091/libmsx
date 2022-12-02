@@ -11,11 +11,16 @@
 /**
  * \file opll.h
  * \brief Device interface for MSX-MUSIC (OPLL).
+ * \ingroup OPLL
  *
  * *Example*\n
  * The following code detects the MSX-MUSIC (OPLL) and plays a test tone if
  * detected.
  * \include opll_example/src/opll_example.c
+ */
+/**
+ * \defgroup OPLL OPLL - YM2413 / MSX-MUSIC
+ * `#include <opll.h>`
  */
 
 #pragma once
@@ -24,6 +29,13 @@
 #define OPLL_H_
 
 #include <stdint.h>
+
+/**
+ * \defgroup OPLL_DEVICE OPLL device interface
+ * \ingroup OPLL
+ * Inspect, discover, enable/disable to access registers, of the OPLL sound chip.
+ * @{
+ */
 
 /**
  * Device interface for OPLL sound chip.
@@ -124,5 +136,7 @@ void OPLL_enable(const struct OPLL * opll);
  * \param opll  pointer to the OPLL handle.
  */
 void OPLL_disable(const struct OPLL * opll);
+
+/** @} */
 
 #endif // OPLL_H_

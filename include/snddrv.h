@@ -11,6 +11,34 @@
 /**
  * \file snddrv.h
  * \brief SNDDRV a PSG sound driver.
+ * \ingroup SNDDRV
+ */
+/**
+ * \defgroup SNDDRV SNDDRV - PSG sound driver
+ * `#include <snddrv.h>`
+ *
+ * SNDDRV is a new PSG sound driver inspired by [Arkos Tracker
+ * 2](http://www.julien-nevo.com/arkostracker/).
+ *
+ * SNDDRV covers almost feature of replayer of the Arkos Tracker 2.
+ *
+ * SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2
+ * song file (.aks file) into your application.
+ *
+ * Let's make your music with Arkos Tracker 2. Place its .aks files in your
+ * application's repository, and build together with your application code that
+ * uses SNDDRV API.
+ *
+ * See also
+ * - [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
+ * - [snddrv_demo](https://github.com/mori0091/libmsx/tree/main/sample/snddrv_demo) the sample project.
+ * - libmsx API reference
+ *  - [snddrv.h](https://mori0091.github.io/libmsx/snddrv_8h.html)
+ *  - [snd_sound.h](https://mori0091.github.io/libmsx/snd__sound_8h.html)
+ * - "Build instructions of user applications" section of libmsx's
+ *   [README.md](https://github.com/mori0091/libmsx)
+ * - [DESIGN NOTE: SNDDRV - a sound driver](https://github.com/mori0091/libmsx/blob/main/docs/design-notes_snddrv.md)
+ * - [DESIGN NOTE: Internal of SNDDRV](https://github.com/mori0091/libmsx/blob/main/docs/design-notes_snddrv_internal.md)
  */
 
 #ifndef SNDDRV_H_
@@ -18,6 +46,13 @@
 
 #include "./snd_sound.h"
 #include <stdint.h>
+
+/**
+ * \defgroup SNDDRV_API SNDDRV APIs
+ * \ingroup SNDDRV
+ * SNDDRV APIs.
+ * @{
+ */
 
 /**
  * The value of the playback speed multiplier for 1.0x speed.
@@ -161,5 +196,7 @@ void snd_stop(void);
  * undefined and, in the worst case, may cause damage to the (real) MSX machine.
  */
 void snd_play(void);
+
+/** @} */
 
 #endif // SNDDRV_H_

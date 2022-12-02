@@ -11,6 +11,11 @@
 /**
  * \file vmem.h
  * \brief Data types and functions for VRAM access.
+ * \ingroup VMEM
+ */
+/**
+ * \defgroup VMEM VRAM - Video RAM
+ * `#include <vmem.h>`
  */
 
 #pragma once
@@ -23,6 +28,12 @@
 #include "io.h"
 
 // ---- VRAM access
+/**
+ * \defgroup VMEM_ACCESS VRAM access interface
+ * \ingroup VMEM
+ * Read / Write VRAM.
+ * @{
+ */
 
 /**
  * Type for VRAM address.
@@ -143,5 +154,7 @@ void vmem_write(vmemptr_t dst, void* src, uint16_t len);
  * \param len  number of bytes to be written.
  */
 void vmem_memset(vmemptr_t dst, uint8_t val, uint16_t len);
+
+/** @} */
 
 #endif

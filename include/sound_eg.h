@@ -11,6 +11,7 @@
 /**
  * \file sound_eg.h
  * \brief Software envelope genenator interface for `sound.h`.
+ * \ingroup SOUND_OLD
  * \note This is old and no longer maintained.
  */
 
@@ -21,6 +22,13 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+
+/**
+ * \defgroup SOUND_OLD_EG_API Software envelope generator APIs
+ * \ingroup SOUND_OLD
+ * Software envelope generator interface
+ * @{
+ */
 
 /** The maximum number of elements for the envelope generator attribute table. */
 #define SOUND_EG_TABLE_MAX   (16)
@@ -110,5 +118,7 @@ struct sound_eg_attribute {
  * \param table    base address of the attribute table.
  */
 void sound_set_eg_table(const struct sound_eg_attribute * table);
+
+/** @} */
 
 #endif

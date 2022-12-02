@@ -11,6 +11,7 @@
 /**
  * \file ay_3_8910.h
  * \brief Buffer for PSG (AY-3-8910) registers.
+ * \ingroup PSG
  */
 
 #pragma once
@@ -19,6 +20,13 @@
 #define AY_3_8910_H
 
 #include "psg.h"
+
+/**
+ * \defgroup PSG_BUFFER PSG Buffer
+ * \ingroup PSG
+ * Buffered access to PSG registers.
+ * @{
+ */
 
 /**
  * Buffer for PSG (AY-3-8910) registers.
@@ -42,5 +50,7 @@ void ay_3_8910_init(void);
  * buffer value.
  */
 void ay_3_8910_play(void);
+
+/** @} */
 
 #endif

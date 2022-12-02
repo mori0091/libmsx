@@ -11,6 +11,19 @@
 /**
  * \file tty.h
  * \brief Teletype/console device interface.
+ * \ingroup TTY
+ */
+/**
+ * \defgroup TTY Teletype/console device.
+ * `#include <tty.h>`
+ *
+ * \note
+ * These functions (and also printf() standard C library functions) are
+ * available after call to one of a SCREEN mode initialization function defined
+ * in `screen.h`.
+ *
+ * \sa screen.h
+ * \sa text.h
  */
 
 #pragma once
@@ -19,6 +32,13 @@
 #define TTY_H_
 
 #include <stdint.h>
+
+/**
+ * \defgroup TTY_DEVICE Teletype/console device interface.
+ * \ingroup TTY
+ * Teletype/console device interface for hardware / screen mode abstraction.
+ * @{
+ */
 
 /**
  * Teletype/console device interface for hardware / screen mode abstraction.
@@ -95,5 +115,7 @@ void TTY_set_text_color(uint8_t fg, uint8_t bg);
  * \param border  border color of the screen.
  */
 void TTY_set_color(uint8_t fg, uint8_t bg, uint8_t border);
+
+/** @} */
 
 #endif // TTY_H_

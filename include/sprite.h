@@ -11,6 +11,11 @@
 /**
  * \file sprite.h
  * \brief Sprites.
+ * \ingroup SPRITES
+ */
+/**
+ * \defgroup SPRITES Sprites / Meta-Sprites
+ * `#include <sprite.h>`, `#include <sprite_color.h>`, `#include <metasprite.h>`
  */
 
 #pragma once
@@ -23,6 +28,12 @@
 #include "vmem.h"
 
 // ---- Sprite
+/**
+ * \defgroup SPRITES_ATTR Sprite attribute table
+ * \ingroup SPRITES
+ * Sprite attribute table interface.
+ * @{
+ */
 
 /**
  * Enumerations for tags of sprite attribute table.
@@ -112,5 +123,7 @@ void vmem_set_sprite(vmemptr_t base, uint8_t plane, const struct sprite* s) {
  * \param base  Base address of the SPRITE ATTRIBUTE TABLE in VRAM.
  */
 void vmem_init_sprites(vmemptr_t base);
+
+/** @} */
 
 #endif

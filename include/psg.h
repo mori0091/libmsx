@@ -11,6 +11,11 @@
 /**
  * \file psg.h
  * \brief Device interface for PSG (AY-3-8910) an internal sound chip.
+ * \ingroup PSG
+ */
+/**
+ * \defgroup PSG PSG - AY-3-8910 / Programmable Sound Generator
+ * `#include <psg.h>`, `#include <ay_3_8910.h>`
  */
 
 #pragma once
@@ -21,6 +26,13 @@
 #include <stdint.h>
 
 #include "io.h"
+
+/**
+ * \defgroup PSG_REGISTER PSG registers
+ * \ingroup PSG
+ * Read / Write PSG registers
+ * @{
+ */
 
 /**
  * Initial values for PSG registers R#0 to R#13.
@@ -52,5 +64,7 @@ inline void psg_set(uint8_t reg, uint8_t val) {
   psg_port0 = reg;
   psg_port1 = val;
 }
+
+/** @} */
 
 #endif

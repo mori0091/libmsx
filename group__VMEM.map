@@ -1,0 +1,4 @@
+<map id="VRAM &#45; Video RAM" name="VRAM &#45; Video RAM">
+<area shape="rect" id="node1" title="#include &lt;vmem.h&gt;" coords="5,5,140,31"/>
+<area shape="rect" id="node2" href="$group__VMEM__ACCESS.html" title="Read / Write VRAM." coords="188,5,347,31"/>
+</map>

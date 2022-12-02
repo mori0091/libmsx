@@ -1,0 +1,4 @@
+<map id="Input device" name="Input device">
+<area shape="rect" id="node1" title="#include &lt;input.h&gt;" coords="5,5,97,31"/>
+<area shape="rect" id="node2" href="$group__INPUT__JOYPAD.html" title="Get Joypad button state." coords="145,5,316,31"/>
+</map>

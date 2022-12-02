@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['palette_20registers_0',['Palette registers',['../group__VDP__PALETTE__REGISTER.html',1,'']]]
+  ['display_20registers_0',['Display registers',['../group__VDP__DISPLAY__REGISTER.html',1,'']]]
 ];

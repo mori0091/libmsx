@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unsafe_20primitive_20functions_0',['Unsafe primitive functions',['../group__VDP__UNSAFE.html',1,'']]]
+  ['konami_20scc_2fscc_2b_20sound_20cartridge_0',['Konami SCC/SCC+ sound cartridge',['../group__SCC.html',1,'']]]
 ];

@@ -1,0 +1,4 @@
+<map id="Sprite color table" name="Sprite color table">
+<area shape="rect" id="node1" href="$group__SPRITES.html" title="#include &lt;sprite.h&gt;, #include &lt;sprite_color.h&gt;, #include &lt;metasprite.h&gt;" coords="5,5,152,31"/>
+<area shape="rect" id="node2" title="Sprite color table interface." coords="200,5,319,31"/>
+</map>

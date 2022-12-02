@@ -1,0 +1,6 @@
+<map id="Text output" name="Text output">
+<area shape="rect" id="node1" title="#include &lt;text.h&gt;" coords="5,77,92,102"/>
+<area shape="rect" id="node2" href="$group__CUI__COLOR.html" title="Text color, Background color, Backdrop color." coords="148,5,288,45"/>
+<area shape="rect" id="node3" href="$group__CUI__CONTROL.html" title="Cursor position, Control characters, Clear screen, etc." coords="140,69,296,109"/>
+<area shape="rect" id="node4" href="$group__CUI__PRINT.html" title="Simple print functions." coords="175,134,261,159"/>
+</map>

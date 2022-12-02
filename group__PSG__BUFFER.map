@@ -1,0 +1,4 @@
+<map id="PSG Buffer" name="PSG Buffer">
+<area shape="rect" id="node1" href="$group__PSG.html" title="#include &lt;psg.h&gt;, #include &lt;ay_3_8910.h&gt;" coords="5,5,220,45"/>
+<area shape="rect" id="node2" title="Buffered access to PSG registers." coords="268,13,355,38"/>
+</map>

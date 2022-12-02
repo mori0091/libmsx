@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="metasprite_8h.html#structvec2i" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="group__SPRITES__METASPRITE.html#structvec2i" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="51,-96 11,-96 11,-77 51,-77 51,-96"/>
 <text text-anchor="middle" x="31" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">vec2i</text>
 </a>

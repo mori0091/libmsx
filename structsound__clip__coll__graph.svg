@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sound_8h.html#structsound__fragment" target="_top" xlink:title="The sound fragment structure.">
+<g id="a_node2"><a xlink:href="group__SOUND__OLD__API.html#structsound__fragment" target="_top" xlink:title="The sound fragment structure.">
 <polygon fill="white" stroke="#666666" points="86,-85 0,-85 0,-66 86,-66 86,-85"/>
 <text text-anchor="middle" x="43" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">sound_fragment</text>
 </a>

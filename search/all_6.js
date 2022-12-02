@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['fcall_0',['FCALL',['../workarea_8h.html#a48f294b976f327be7046434a73cffbd3',1,'workarea.h']]],
-  ['fg_5fcolor_1',['fg_color',['../text_8h.html#aae980932e8bf1260cf651093bef5d9b0',1,'text.h']]],
-  ['fnkstr_2',['FNKSTR',['../workarea_8h.html#accc20ece9730cd3c92bb721db4e66773',1,'workarea.h']]],
-  ['font_3',['font',['../bios__const_8h.html#structfont',1,'']]],
-  ['forclr_4',['FORCLR',['../workarea_8h.html#ab36c2be4a568640a5609475f4fc7a22f',1,'workarea.h']]],
-  ['format_5fversion_5',['format_version',['../snd__sound_8h.html#a73713cc5ca4d186b6c4946a4d3a64e83',1,'snd_Music']]],
-  ['fragments_6',['fragments',['../sound_8h.html#aae9c73220c1e3cf4037a6cf67dea650b',1,'sound_clip']]],
-  ['frcnew_7',['FRCNEW',['../workarea_8h.html#a28df2f5017327dc437d049caf313ab0b',1,'workarea.h']]]
+  ['getcpu_0',['GETCPU',['../bios__entry_8h.html#a91fd124d4b8b97fcc19dfe2b08d64d75',1,'bios_entry.h']]],
+  ['getpnt_1',['GETPNT',['../workarea_8h.html#a93546723a1bd791feacced8cb0b21070',1,'workarea.h']]],
+  ['grpatr_2',['GRPATR',['../workarea_8h.html#abe6c935e737dbd8e65b68beb6419e729',1,'workarea.h']]],
+  ['grpcgp_3',['GRPCGP',['../workarea_8h.html#a460d91305a8daa5ccfe78837cfe334ee',1,'workarea.h']]],
+  ['grpcol_4',['GRPCOL',['../workarea_8h.html#a487975287bf01003c227261241e0284f',1,'workarea.h']]],
+  ['grpnam_5',['GRPNAM',['../workarea_8h.html#ab476c7368621ce13387522e1ac7d00a6',1,'workarea.h']]],
+  ['grppat_6',['GRPPAT',['../workarea_8h.html#a1796ce5b6e58daf37b5f1673f9a24290',1,'workarea.h']]],
+  ['gtstck_7',['GTSTCK',['../bios__entry_8h.html#a7dfb0604fdb04a3a658b5e1db04cdefa',1,'bios_entry.h']]],
+  ['gttrig_8',['GTTRIG',['../bios__entry_8h.html#a64496cb8cdbabc91bcf6d1b4eb4d7795',1,'bios_entry.h']]]
 ];

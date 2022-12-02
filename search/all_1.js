@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['ad_5fpart_0',['ad_part',['../snd__i__table_8h.html#a63bbf3c349f095a6dfa7321a8550393c',1,'snd_Instrument::ad_part()'],['../snd__p__table_8h.html#ab1bb9d69795dd8a5ff0dd1d530961269',1,'snd_p_table::ad_part()']]],
-  ['addr_1',['addr',['../workarea_8h.html#abe25ac2a9c407e3223f0e1051cd8ae0b',1,'cgpnt']]],
-  ['anchor_2',['anchor',['../metasprite_8h.html#a8cff0a450c6cc8ed07f5d13a79a84395',1,'metasprite']]],
-  ['atrbas_3',['ATRBAS',['../workarea_8h.html#a482140ed9755984293c5c697df6158cf',1,'workarea.h']]],
-  ['atrbyt_4',['ATRBYT',['../workarea_8h.html#a8728a088ea2728106b1c3441f2ede115',1,'workarea.h']]],
-  ['attack_5frate_5',['attack_rate',['../sound__eg_8h.html#a4a1388e1f7cf928ec13f1b3a7ae53b8b',1,'sound_eg_AHDSR']]],
-  ['await_5finterrupt_6',['await_interrupt',['../interrupt_8h.html#a3f08e4b2ce13ca2eba9bb0338d93d7d4',1,'interrupt.h']]],
-  ['await_5fvsync_7',['await_vsync',['../interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27',1,'interrupt.h']]],
-  ['ay_5f3_5f8910_2eh_8',['ay_3_8910.h',['../ay__3__8910_8h.html',1,'']]],
-  ['ay_5f3_5f8910_5fbuffer_9',['ay_3_8910_buffer',['../ay__3__8910_8h.html#a2ee75153f949aaf13e5aa0dea52fb72f',1,'ay_3_8910.h']]],
-  ['ay_5f3_5f8910_5fh_10',['AY_3_8910_H',['../ay__3__8910_8h.html#a9f9c6b9c24e1e59a3703c006bcd85551',1,'ay_3_8910.h']]],
-  ['ay_5f3_5f8910_5finit_11',['ay_3_8910_init',['../ay__3__8910_8h.html#ac0fa68a646b8593944f5f8243b371a0c',1,'ay_3_8910.h']]],
-  ['ay_5f3_5f8910_5fplay_12',['ay_3_8910_play',['../ay__3__8910_8h.html#a549cb1b577a2dc0269c4744aa8dba0d3',1,'ay_3_8910.h']]]
+  ['bakclr_0',['BAKCLR',['../workarea_8h.html#add30676e4e66ea74a5832266afce7990',1,'workarea.h']]],
+  ['bdrclr_1',['BDRCLR',['../workarea_8h.html#a9d3db6839070865c2c45f05bc0e4cd33',1,'workarea.h']]],
+  ['bg_5fcolor_2',['bg_color',['../group__CUI__COLOR.html#ga5110e0d226f85fdd71c01c3e16640cdc',1,'text.h']]],
+  ['bios_20_2d_20basic_20input_2foutput_20system_3',['BIOS - Basic Input/Output System',['../group__BIOS.html',1,'']]],
+  ['bios_2eh_4',['bios.h',['../bios_8h.html',1,'']]],
+  ['bios_5fconst_2eh_5',['bios_const.h',['../bios__const_8h.html',1,'']]],
+  ['bios_5fconst_5fh_6',['BIOS_CONST_H',['../bios__const_8h.html#ad8c0bb04896170083efc8c7d7d423967',1,'bios_const.h']]],
+  ['bios_5fentry_2eh_7',['bios_entry.h',['../bios__entry_8h.html',1,'']]],
+  ['bios_5fentry_5fh_8',['BIOS_ENTRY_H',['../bios__entry_8h.html#a43cf7de11d57db1dc1ef1ae8d1d3acba',1,'bios_entry.h']]],
+  ['bios_5fh_9',['BIOS_H',['../bios_8h.html#a1c92f825a1fef0fbf75ab1b2cfd7475b',1,'bios.h']]],
+  ['bitmap_20graphics_20mode_10',['Bitmap graphics mode',['../group__SCREEN__BITMAP.html',1,'']]],
+  ['border_5fcolor_11',['border_color',['../group__CUI__COLOR.html#gac440a784fa312eb98b047edc1e43436d',1,'text.h']]],
+  ['breakv_12',['BREAKV',['../workarea_8h.html#a442970aa12f6341ef93c08051c065737',1,'workarea.h']]]
 ];

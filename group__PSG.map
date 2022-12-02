@@ -1,0 +1,5 @@
+<map id="PSG &#45; AY&#45;3&#45;8910 / Programmable Sound Generator" name="PSG &#45; AY&#45;3&#45;8910 / Programmable Sound Generator">
+<area shape="rect" id="node1" title="#include &lt;psg.h&gt;, #include &lt;ay_3_8910.h&gt;" coords="5,23,220,63"/>
+<area shape="rect" id="node2" href="$group__PSG__BUFFER.html" title="Buffered access to PSG registers." coords="276,5,363,31"/>
+<area shape="rect" id="node3" href="$group__PSG__REGISTER.html" title="Read / Write PSG registers." coords="268,55,371,80"/>
+</map>

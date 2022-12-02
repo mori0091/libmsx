@@ -1,0 +1,5 @@
+<map id="Sound &#45; Old PSG sound driver" name="Sound &#45; Old PSG sound driver">
+<area shape="rect" id="node1" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" coords="5,23,164,63"/>
+<area shape="rect" id="node2" href="$group__SOUND__OLD__API.html" title="Old PSG sound driver APIs." coords="232,5,411,31"/>
+<area shape="rect" id="node3" href="$group__SOUND__OLD__EG__API.html" title="Software envelope generator interface." coords="212,55,431,80"/>
+</map>

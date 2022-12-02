@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="scc_8h.html#structSCC__Waveform" target="_top" xlink:title="The structure of the SCC/SCC+ 32&#45;byte waveform data register.">
+<g id="a_node2"><a xlink:href="group__SCC__DEVICE.html#structSCC__Waveform" target="_top" xlink:title="The structure of the SCC/SCC+ 32&#45;byte waveform data register.">
 <polygon fill="white" stroke="#666666" points="86,-96 0,-96 0,-77 86,-77 86,-96"/>
 <text text-anchor="middle" x="43" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">SCC_Waveform</text>
 </a>

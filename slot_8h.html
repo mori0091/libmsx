@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('slot_8h.html',''); initResizable(); })
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">slot.h File Reference</div></div>
+  <div class="headertitle"><div class="title">slot.h File Reference<div class="ingroups"><a class="el" href="group__SLOT.html">Slot - Individual Address Spaces of devices.</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -121,84 +121,84 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2c8c03184807b1465775cd4efef5f5b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a2c8c03184807b1465775cd4efef5f5b2">slot_iterate</a> (void(*callback)(uint8_t slot, void *arg), void *arg)</td></tr>
-<tr class="memdesc:a2c8c03184807b1465775cd4efef5f5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> For each slot, invoke the given callback with the given arguments.  <a href="slot_8h.html#a2c8c03184807b1465775cd4efef5f5b2">More...</a><br /></td></tr>
-<tr class="separator:a2c8c03184807b1465775cd4efef5f5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f43fbf77e1266643924c6455c042e4b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a9f43fbf77e1266643924c6455c042e4b">slot_bcmp</a> (uint8_t slot, const void *addr, const void *s, size_t len)</td></tr>
-<tr class="memdesc:a9f43fbf77e1266643924c6455c042e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Compare the byte sequence to the one present at the given address in the given slot.  <a href="slot_8h.html#a9f43fbf77e1266643924c6455c042e4b">More...</a><br /></td></tr>
-<tr class="separator:a9f43fbf77e1266643924c6455c042e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea2253319a5b8b5bbaa3a6320cea2075"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#aea2253319a5b8b5bbaa3a6320cea2075">slot_is_read_only</a> (uint8_t slot, void *addr)</td></tr>
-<tr class="memdesc:aea2253319a5b8b5bbaa3a6320cea2075"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Tests whether a given memory address of the given slot is read-only.  <a href="slot_8h.html#aea2253319a5b8b5bbaa3a6320cea2075">More...</a><br /></td></tr>
-<tr class="separator:aea2253319a5b8b5bbaa3a6320cea2075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a834e4b217038a0781469486d32624c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a8a834e4b217038a0781469486d32624c">slot_is_MAIN_ROM</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:a8a834e4b217038a0781469486d32624c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is MAIN ROM.  <a href="slot_8h.html#a8a834e4b217038a0781469486d32624c">More...</a><br /></td></tr>
-<tr class="separator:a8a834e4b217038a0781469486d32624c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdab46fcf620ffa341915721efd9db26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#acdab46fcf620ffa341915721efd9db26">slot_is_SUB_ROM</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:acdab46fcf620ffa341915721efd9db26"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is SUB ROM.  <a href="slot_8h.html#acdab46fcf620ffa341915721efd9db26">More...</a><br /></td></tr>
-<tr class="separator:acdab46fcf620ffa341915721efd9db26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5085c9edbfb246f2e9a8e773b53e6fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#ae5085c9edbfb246f2e9a8e773b53e6fb">slot_is_RAM</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:ae5085c9edbfb246f2e9a8e773b53e6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is RAM.  <a href="slot_8h.html#ae5085c9edbfb246f2e9a8e773b53e6fb">More...</a><br /></td></tr>
-<tr class="separator:ae5085c9edbfb246f2e9a8e773b53e6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57b116a7697ed50994806b7a795832dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a57b116a7697ed50994806b7a795832dd">slot_is_internal_OPLL</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:a57b116a7697ed50994806b7a795832dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is the internal MSX-MUSIC.  <a href="slot_8h.html#a57b116a7697ed50994806b7a795832dd">More...</a><br /></td></tr>
-<tr class="separator:a57b116a7697ed50994806b7a795832dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe2639287b06e6021b98852d6a8376c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#afe2639287b06e6021b98852d6a8376c7">slot_is_FMPAC</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:afe2639287b06e6021b98852d6a8376c7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is the FMPAC.  <a href="slot_8h.html#afe2639287b06e6021b98852d6a8376c7">More...</a><br /></td></tr>
-<tr class="separator:afe2639287b06e6021b98852d6a8376c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1280eec56e0da827b8ce301db173560"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#ae1280eec56e0da827b8ce301db173560">slot_is_OPLL</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:ae1280eec56e0da827b8ce301db173560"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a MSX-MUSIC.  <a href="slot_8h.html#ae1280eec56e0da827b8ce301db173560">More...</a><br /></td></tr>
-<tr class="separator:ae1280eec56e0da827b8ce301db173560"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d6bae9480df0e3b8aa99a31f548ee1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a4d6bae9480df0e3b8aa99a31f548ee1c">slot_is_SCC</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:a4d6bae9480df0e3b8aa99a31f548ee1c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a Konami SCC/SCC+.  <a href="slot_8h.html#a4d6bae9480df0e3b8aa99a31f548ee1c">More...</a><br /></td></tr>
-<tr class="separator:a4d6bae9480df0e3b8aa99a31f548ee1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a268ecf45982d4a607d5d67098d16446f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a268ecf45982d4a607d5d67098d16446f">slot_is_SCCPlus</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:a268ecf45982d4a607d5d67098d16446f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a Konami SCC+.  <a href="slot_8h.html#a268ecf45982d4a607d5d67098d16446f">More...</a><br /></td></tr>
-<tr class="separator:a268ecf45982d4a607d5d67098d16446f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b4c6e935a856b03506c04cc9948cb68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a1b4c6e935a856b03506c04cc9948cb68">slot_is_BDOS</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:a1b4c6e935a856b03506c04cc9948cb68"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a BDOS/FDC.  <a href="slot_8h.html#a1b4c6e935a856b03506c04cc9948cb68">More...</a><br /></td></tr>
-<tr class="separator:a1b4c6e935a856b03506c04cc9948cb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70120a1fc1222cb231bbfb42897c0162"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a70120a1fc1222cb231bbfb42897c0162">slot_is_ROM_p1</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:a70120a1fc1222cb231bbfb42897c0162"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a ROM starting at 0x4000.  <a href="slot_8h.html#a70120a1fc1222cb231bbfb42897c0162">More...</a><br /></td></tr>
-<tr class="separator:a70120a1fc1222cb231bbfb42897c0162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3515d988d6af7b78006fdf071cb46591"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#a3515d988d6af7b78006fdf071cb46591">slot_is_ROM_p2</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:a3515d988d6af7b78006fdf071cb46591"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a ROM starting at 0x8000.  <a href="slot_8h.html#a3515d988d6af7b78006fdf071cb46591">More...</a><br /></td></tr>
-<tr class="separator:a3515d988d6af7b78006fdf071cb46591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea03700a14c0b8adf2846256373d3840"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slot_8h.html#aea03700a14c0b8adf2846256373d3840">slot_is_ROM</a> (uint8_t slot)</td></tr>
-<tr class="memdesc:aea03700a14c0b8adf2846256373d3840"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a ROM starting at 0x4000 or 0x8000.  <a href="slot_8h.html#aea03700a14c0b8adf2846256373d3840">More...</a><br /></td></tr>
-<tr class="separator:aea03700a14c0b8adf2846256373d3840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c8c03184807b1465775cd4efef5f5b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga2c8c03184807b1465775cd4efef5f5b2">slot_iterate</a> (void(*callback)(uint8_t slot, void *arg), void *arg)</td></tr>
+<tr class="memdesc:ga2c8c03184807b1465775cd4efef5f5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> For each slot, invoke the given callback with the given arguments.  <a href="group__SLOT__INSPECT.html#ga2c8c03184807b1465775cd4efef5f5b2">More...</a><br /></td></tr>
+<tr class="separator:ga2c8c03184807b1465775cd4efef5f5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f43fbf77e1266643924c6455c042e4b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga9f43fbf77e1266643924c6455c042e4b">slot_bcmp</a> (uint8_t slot, const void *addr, const void *s, size_t len)</td></tr>
+<tr class="memdesc:ga9f43fbf77e1266643924c6455c042e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Compare the byte sequence to the one present at the given address in the given slot.  <a href="group__SLOT__INSPECT.html#ga9f43fbf77e1266643924c6455c042e4b">More...</a><br /></td></tr>
+<tr class="separator:ga9f43fbf77e1266643924c6455c042e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea2253319a5b8b5bbaa3a6320cea2075"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#gaea2253319a5b8b5bbaa3a6320cea2075">slot_is_read_only</a> (uint8_t slot, void *addr)</td></tr>
+<tr class="memdesc:gaea2253319a5b8b5bbaa3a6320cea2075"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Tests whether a given memory address of the given slot is read-only.  <a href="group__SLOT__INSPECT.html#gaea2253319a5b8b5bbaa3a6320cea2075">More...</a><br /></td></tr>
+<tr class="separator:gaea2253319a5b8b5bbaa3a6320cea2075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a834e4b217038a0781469486d32624c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga8a834e4b217038a0781469486d32624c">slot_is_MAIN_ROM</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:ga8a834e4b217038a0781469486d32624c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is MAIN ROM.  <a href="group__SLOT__INSPECT.html#ga8a834e4b217038a0781469486d32624c">More...</a><br /></td></tr>
+<tr class="separator:ga8a834e4b217038a0781469486d32624c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacdab46fcf620ffa341915721efd9db26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#gacdab46fcf620ffa341915721efd9db26">slot_is_SUB_ROM</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:gacdab46fcf620ffa341915721efd9db26"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is SUB ROM.  <a href="group__SLOT__INSPECT.html#gacdab46fcf620ffa341915721efd9db26">More...</a><br /></td></tr>
+<tr class="separator:gacdab46fcf620ffa341915721efd9db26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5085c9edbfb246f2e9a8e773b53e6fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#gae5085c9edbfb246f2e9a8e773b53e6fb">slot_is_RAM</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:gae5085c9edbfb246f2e9a8e773b53e6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is RAM.  <a href="group__SLOT__INSPECT.html#gae5085c9edbfb246f2e9a8e773b53e6fb">More...</a><br /></td></tr>
+<tr class="separator:gae5085c9edbfb246f2e9a8e773b53e6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57b116a7697ed50994806b7a795832dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga57b116a7697ed50994806b7a795832dd">slot_is_internal_OPLL</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:ga57b116a7697ed50994806b7a795832dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is the internal MSX-MUSIC.  <a href="group__SLOT__INSPECT.html#ga57b116a7697ed50994806b7a795832dd">More...</a><br /></td></tr>
+<tr class="separator:ga57b116a7697ed50994806b7a795832dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe2639287b06e6021b98852d6a8376c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#gafe2639287b06e6021b98852d6a8376c7">slot_is_FMPAC</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:gafe2639287b06e6021b98852d6a8376c7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is the FMPAC.  <a href="group__SLOT__INSPECT.html#gafe2639287b06e6021b98852d6a8376c7">More...</a><br /></td></tr>
+<tr class="separator:gafe2639287b06e6021b98852d6a8376c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1280eec56e0da827b8ce301db173560"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#gae1280eec56e0da827b8ce301db173560">slot_is_OPLL</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:gae1280eec56e0da827b8ce301db173560"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a MSX-MUSIC.  <a href="group__SLOT__INSPECT.html#gae1280eec56e0da827b8ce301db173560">More...</a><br /></td></tr>
+<tr class="separator:gae1280eec56e0da827b8ce301db173560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d6bae9480df0e3b8aa99a31f548ee1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga4d6bae9480df0e3b8aa99a31f548ee1c">slot_is_SCC</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:ga4d6bae9480df0e3b8aa99a31f548ee1c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a Konami SCC/SCC+.  <a href="group__SLOT__INSPECT.html#ga4d6bae9480df0e3b8aa99a31f548ee1c">More...</a><br /></td></tr>
+<tr class="separator:ga4d6bae9480df0e3b8aa99a31f548ee1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga268ecf45982d4a607d5d67098d16446f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga268ecf45982d4a607d5d67098d16446f">slot_is_SCCPlus</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:ga268ecf45982d4a607d5d67098d16446f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a Konami SCC+.  <a href="group__SLOT__INSPECT.html#ga268ecf45982d4a607d5d67098d16446f">More...</a><br /></td></tr>
+<tr class="separator:ga268ecf45982d4a607d5d67098d16446f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b4c6e935a856b03506c04cc9948cb68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga1b4c6e935a856b03506c04cc9948cb68">slot_is_BDOS</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:ga1b4c6e935a856b03506c04cc9948cb68"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a BDOS/FDC.  <a href="group__SLOT__INSPECT.html#ga1b4c6e935a856b03506c04cc9948cb68">More...</a><br /></td></tr>
+<tr class="separator:ga1b4c6e935a856b03506c04cc9948cb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70120a1fc1222cb231bbfb42897c0162"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga70120a1fc1222cb231bbfb42897c0162">slot_is_ROM_p1</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:ga70120a1fc1222cb231bbfb42897c0162"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a ROM starting at 0x4000.  <a href="group__SLOT__INSPECT.html#ga70120a1fc1222cb231bbfb42897c0162">More...</a><br /></td></tr>
+<tr class="separator:ga70120a1fc1222cb231bbfb42897c0162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3515d988d6af7b78006fdf071cb46591"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#ga3515d988d6af7b78006fdf071cb46591">slot_is_ROM_p2</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:ga3515d988d6af7b78006fdf071cb46591"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a ROM starting at 0x8000.  <a href="group__SLOT__INSPECT.html#ga3515d988d6af7b78006fdf071cb46591">More...</a><br /></td></tr>
+<tr class="separator:ga3515d988d6af7b78006fdf071cb46591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea03700a14c0b8adf2846256373d3840"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SLOT__INSPECT.html#gaea03700a14c0b8adf2846256373d3840">slot_is_ROM</a> (uint8_t slot)</td></tr>
+<tr class="memdesc:gaea03700a14c0b8adf2846256373d3840"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Inspects if the slot is a ROM starting at 0x4000 or 0x8000.  <a href="group__SLOT__INSPECT.html#gaea03700a14c0b8adf2846256373d3840">More...</a><br /></td></tr>
+<tr class="separator:gaea03700a14c0b8adf2846256373d3840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Utility functions to inspect the slot mechanism of MSX. </p>
 <p ><em>Example</em><br  />
-The following code detects MSX-MUSIC (<a class="el" href="opll_8h.html#structOPLL" title="OPLL Handle.">OPLL</a>) by inspecting each slot. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="msx_8h.html">msx.h</a>&gt;</span></div>
+The following code detects MSX-MUSIC (<a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a>) by inspecting each slot. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="msx_8h.html">msx.h</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="slot_8h.html">slot.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> find_OPLL_callback(uint8_t slot, <span class="keywordtype">void</span> * arg) {</div>
 <div class="line">  uint8_t * p_slot = (uint8_t *)arg;</div>
-<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="slot_8h.html#a57b116a7697ed50994806b7a795832dd">slot_is_internal_OPLL</a>(slot)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__SLOT__INSPECT.html#ga57b116a7697ed50994806b7a795832dd">slot_is_internal_OPLL</a>(slot)) {</div>
 <div class="line">    *p_slot = slot;</div>
 <div class="line">  }</div>
-<div class="line">  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!*p_slot &amp;&amp; <a class="code hl_function" href="slot_8h.html#ae1280eec56e0da827b8ce301db173560">slot_is_OPLL</a>(slot)) {</div>
+<div class="line">  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!*p_slot &amp;&amp; <a class="code hl_function" href="group__SLOT__INSPECT.html#gae1280eec56e0da827b8ce301db173560">slot_is_OPLL</a>(slot)) {</div>
 <div class="line">    *p_slot = slot;</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> main(<span class="keywordtype">void</span>) {</div>
 <div class="line">  uint8_t slot = 0;</div>
-<div class="line">  <a class="code hl_function" href="slot_8h.html#a2c8c03184807b1465775cd4efef5f5b2">slot_iterate</a>(find_OPLL_callback, &amp;slot);</div>
+<div class="line">  <a class="code hl_function" href="group__SLOT__INSPECT.html#ga2c8c03184807b1465775cd4efef5f5b2">slot_iterate</a>(find_OPLL_callback, &amp;slot);</div>
 <div class="line">  <span class="keywordflow">if</span> (slot) {</div>
 <div class="line">    <span class="comment">// a MSX-MUSIC (OPLL) found on the slot `slot`.</span></div>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {</div>
-<div class="line">    <a class="code hl_function" href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
+<div class="line">    <a class="code hl_function" href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="ainterrupt_8h_html_abdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="interrupt_8h.html#abdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">MSX Waits for next VSYNC interrupt.</div></div>
+<div class="ttc" id="agroup__INTERRUPT__AWAIT_html_gabdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">MSX Waits for next VSYNC interrupt.</div></div>
+<div class="ttc" id="agroup__SLOT__INSPECT_html_ga2c8c03184807b1465775cd4efef5f5b2"><div class="ttname"><a href="group__SLOT__INSPECT.html#ga2c8c03184807b1465775cd4efef5f5b2">slot_iterate</a></div><div class="ttdeci">void slot_iterate(void(*callback)(uint8_t slot, void *arg), void *arg)</div><div class="ttdoc">MSX For each slot, invoke the given callback with the given arguments.</div></div>
+<div class="ttc" id="agroup__SLOT__INSPECT_html_ga57b116a7697ed50994806b7a795832dd"><div class="ttname"><a href="group__SLOT__INSPECT.html#ga57b116a7697ed50994806b7a795832dd">slot_is_internal_OPLL</a></div><div class="ttdeci">bool slot_is_internal_OPLL(uint8_t slot)</div><div class="ttdoc">MSX Inspects if the slot is the internal MSX-MUSIC.</div></div>
+<div class="ttc" id="agroup__SLOT__INSPECT_html_gae1280eec56e0da827b8ce301db173560"><div class="ttname"><a href="group__SLOT__INSPECT.html#gae1280eec56e0da827b8ce301db173560">slot_is_OPLL</a></div><div class="ttdeci">bool slot_is_OPLL(uint8_t slot)</div><div class="ttdoc">MSX Inspects if the slot is a MSX-MUSIC.</div></div>
 <div class="ttc" id="amsx_8h_html"><div class="ttname"><a href="msx_8h.html">msx.h</a></div><div class="ttdoc">Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.</div></div>
 <div class="ttc" id="aslot_8h_html"><div class="ttname"><a href="slot_8h.html">slot.h</a></div><div class="ttdoc">Utility functions to inspect the slot mechanism of MSX.</div></div>
-<div class="ttc" id="aslot_8h_html_a2c8c03184807b1465775cd4efef5f5b2"><div class="ttname"><a href="slot_8h.html#a2c8c03184807b1465775cd4efef5f5b2">slot_iterate</a></div><div class="ttdeci">void slot_iterate(void(*callback)(uint8_t slot, void *arg), void *arg)</div><div class="ttdoc">MSX For each slot, invoke the given callback with the given arguments.</div></div>
-<div class="ttc" id="aslot_8h_html_a57b116a7697ed50994806b7a795832dd"><div class="ttname"><a href="slot_8h.html#a57b116a7697ed50994806b7a795832dd">slot_is_internal_OPLL</a></div><div class="ttdeci">bool slot_is_internal_OPLL(uint8_t slot)</div><div class="ttdoc">MSX Inspects if the slot is the internal MSX-MUSIC.</div></div>
-<div class="ttc" id="aslot_8h_html_ae1280eec56e0da827b8ce301db173560"><div class="ttname"><a href="slot_8h.html#ae1280eec56e0da827b8ce301db173560">slot_is_OPLL</a></div><div class="ttdeci">bool slot_is_OPLL(uint8_t slot)</div><div class="ttdoc">MSX Inspects if the slot is a MSX-MUSIC.</div></div>
 </div><!-- fragment --> 
 <p class="definition">Definition in file <a class="el" href="slot_8h_source.html">slot.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -214,465 +214,7 @@ The following code detects MSX-MUSIC (<a class="el" href="opll_8h.html#structOPL
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="slot_8h_source.html#l00047">47</a> of file <a class="el" href="slot_8h_source.html">slot.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a2c8c03184807b1465775cd4efef5f5b2" name="a2c8c03184807b1465775cd4efef5f5b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c8c03184807b1465775cd4efef5f5b2">&#9670;&#160;</a></span>slot_iterate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void slot_iterate </td>
-          <td>(</td>
-          <td class="paramtype">void(*)(uint8_t slot, void *arg)&#160;</td>
-          <td class="paramname"><em>callback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> For each slot, invoke the given callback with the given arguments. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">callback</td><td>a user defined callback function that takes <code>slot</code> and <code>arg</code>. </td></tr>
-    <tr><td class="paramname">arg</td><td>argument to be passed to the <code>callback</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9f43fbf77e1266643924c6455c042e4b" name="a9f43fbf77e1266643924c6455c042e4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f43fbf77e1266643924c6455c042e4b">&#9670;&#160;</a></span>slot_bcmp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int slot_bcmp </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>s</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Compare the byte sequence to the one present at the given address in the given slot. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>slot address of the one compared to. </td></tr>
-    <tr><td class="paramname">addr</td><td>address of the one compared to. </td></tr>
-    <tr><td class="paramname">s</td><td>pointer to the byte sequence. </td></tr>
-    <tr><td class="paramname">len</td><td>length of the byte sequence.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if two byte sequence is same (or len was 0), otherwise non-zero value. </dd></dl>
-
-</div>
-</div>
-<a id="aea2253319a5b8b5bbaa3a6320cea2075" name="aea2253319a5b8b5bbaa3a6320cea2075"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea2253319a5b8b5bbaa3a6320cea2075">&#9670;&#160;</a></span>slot_is_read_only()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_read_only </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>addr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Tests whether a given memory address of the given slot is read-only. </p>
-<p >This tests, in exact, whether a value read from the address is differ from the value written before.</p>
-<p >In other words, if it returns <code>false</code>, it means that the memory address is RAM or a typical R/W register. However, if it returns <code>true</code>, it does not necessarily mean that the memory address is read-only, but could be a write-only register, for example.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>slot address </td></tr>
-    <tr><td class="paramname">addr</td><td>address</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if it seems not a RAM, <code>false</code> otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="a8a834e4b217038a0781469486d32624c" name="a8a834e4b217038a0781469486d32624c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a834e4b217038a0781469486d32624c">&#9670;&#160;</a></span>slot_is_MAIN_ROM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_MAIN_ROM </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is MAIN ROM. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is MAIN ROM. </dd></dl>
-
-</div>
-</div>
-<a id="acdab46fcf620ffa341915721efd9db26" name="acdab46fcf620ffa341915721efd9db26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdab46fcf620ffa341915721efd9db26">&#9670;&#160;</a></span>slot_is_SUB_ROM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_SUB_ROM </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is SUB ROM. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is SUB ROM. </dd></dl>
-
-</div>
-</div>
-<a id="ae5085c9edbfb246f2e9a8e773b53e6fb" name="ae5085c9edbfb246f2e9a8e773b53e6fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5085c9edbfb246f2e9a8e773b53e6fb">&#9670;&#160;</a></span>slot_is_RAM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_RAM </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is RAM. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is RAM.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Since page 3 of the default internal RAM is always selected, this test only tests if the specified slot is the same as the slot selected on page 3 (0xC000.0xFFFF). However, maybe there is extra RAM in other slots. </dd></dl>
-
-</div>
-</div>
-<a id="a57b116a7697ed50994806b7a795832dd" name="a57b116a7697ed50994806b7a795832dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57b116a7697ed50994806b7a795832dd">&#9670;&#160;</a></span>slot_is_internal_OPLL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_internal_OPLL </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is the internal MSX-MUSIC. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is the internal MSX-MUSIC. </dd></dl>
-
-</div>
-</div>
-<a id="afe2639287b06e6021b98852d6a8376c7" name="afe2639287b06e6021b98852d6a8376c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe2639287b06e6021b98852d6a8376c7">&#9670;&#160;</a></span>slot_is_FMPAC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_FMPAC </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is the FMPAC. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is the FMPAC. </dd></dl>
-
-</div>
-</div>
-<a id="ae1280eec56e0da827b8ce301db173560" name="ae1280eec56e0da827b8ce301db173560"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1280eec56e0da827b8ce301db173560">&#9670;&#160;</a></span>slot_is_OPLL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_OPLL </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is a MSX-MUSIC. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is a MSX-MUSIC. </dd></dl>
-
-</div>
-</div>
-<a id="a4d6bae9480df0e3b8aa99a31f548ee1c" name="a4d6bae9480df0e3b8aa99a31f548ee1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d6bae9480df0e3b8aa99a31f548ee1c">&#9670;&#160;</a></span>slot_is_SCC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_SCC </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is a Konami SCC/SCC+. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is a Konami SCC/SCC+. </dd></dl>
-
-</div>
-</div>
-<a id="a268ecf45982d4a607d5d67098d16446f" name="a268ecf45982d4a607d5d67098d16446f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268ecf45982d4a607d5d67098d16446f">&#9670;&#160;</a></span>slot_is_SCCPlus()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_SCCPlus </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is a Konami SCC+. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is a Konami SCC+. </dd></dl>
-
-</div>
-</div>
-<a id="a1b4c6e935a856b03506c04cc9948cb68" name="a1b4c6e935a856b03506c04cc9948cb68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b4c6e935a856b03506c04cc9948cb68">&#9670;&#160;</a></span>slot_is_BDOS()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_BDOS </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is a BDOS/FDC. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is a BDOS/FDC. </dd></dl>
-
-</div>
-</div>
-<a id="a70120a1fc1222cb231bbfb42897c0162" name="a70120a1fc1222cb231bbfb42897c0162"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70120a1fc1222cb231bbfb42897c0162">&#9670;&#160;</a></span>slot_is_ROM_p1()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_ROM_p1 </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is a ROM starting at 0x4000. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is a ROM starting at 0x4000.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This test only tests if a ROM header exists at 0x4000 of the specified slot. </dd></dl>
-
-</div>
-</div>
-<a id="a3515d988d6af7b78006fdf071cb46591" name="a3515d988d6af7b78006fdf071cb46591"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3515d988d6af7b78006fdf071cb46591">&#9670;&#160;</a></span>slot_is_ROM_p2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_ROM_p2 </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is a ROM starting at 0x8000. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is a ROM starting at 0x8000.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This test only tests if a ROM header exists at 0x8000 of the specified slot. </dd></dl>
-
-</div>
-</div>
-<a id="aea03700a14c0b8adf2846256373d3840" name="aea03700a14c0b8adf2846256373d3840"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea03700a14c0b8adf2846256373d3840">&#9670;&#160;</a></span>slot_is_ROM()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool slot_is_ROM </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>slot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Inspects if the slot is a ROM starting at 0x4000 or 0x8000. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">slot</td><td>a slot address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the slot is a ROM starting at 0x4000 or 0x8000.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This test only tests if a ROM header exists at 0x4000 or 0x8000 of the specified slot. </dd></dl>
+<p class="definition">Definition at line <a class="el" href="slot_8h_source.html#l00052">52</a> of file <a class="el" href="slot_8h_source.html">slot.h</a>.</p>
 
 </div>
 </div>

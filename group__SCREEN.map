@@ -1,0 +1,6 @@
+<map id="SCREEN mode initialization" name="SCREEN mode initialization">
+<area shape="rect" id="node1" title="#include &lt;screen.h&gt;" coords="5,55,185,80"/>
+<area shape="rect" id="node2" href="$group__SCREEN__BITMAP.html" title="Initialization functions for GRAPHIC 4, 5, 6, and 7 mode." coords="233,5,384,31"/>
+<area shape="rect" id="node3" href="$group__SCREEN__PCG.html" title="Initialization functions for GRAPHIC 1, 2, and 3 mode." coords="240,55,377,80"/>
+<area shape="rect" id="node4" href="$group__SCREEN__TEXT.html" title="Initialization functions for TEXT 1 and 2 mode." coords="263,104,354,129"/>
+</map>

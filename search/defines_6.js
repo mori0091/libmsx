@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['locate_0',['locate',['../text_8h.html#a425d46e75566dfa7bd78ee07a984692d',1,'text.h']]]
+  ['psg_5fh_0',['PSG_H',['../psg_8h.html#a100342e1bbe5281caf6c68ed9879d6fe',1,'psg.h']]]
 ];

@@ -1,0 +1,4 @@
+<map id="Konami SCC/SCC+ sound cartridge" name="Konami SCC/SCC+ sound cartridge">
+<area shape="rect" id="node1" title="#include &lt;scc.h&gt;" coords="5,5,179,45"/>
+<area shape="rect" id="node2" href="$group__SCC__DEVICE.html" title="Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip." coords="227,13,409,38"/>
+</map>

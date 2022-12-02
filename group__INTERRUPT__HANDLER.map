@@ -1,0 +1,4 @@
+<map id="Interrupts handler" name="Interrupts handler">
+<area shape="rect" id="node1" href="$group__INTERRUPT.html" title="#include &lt;interrupt.h&gt;" coords="5,5,83,31"/>
+<area shape="rect" id="node2" title="Pluggable interrupts handler interface." coords="131,5,253,31"/>
+</map>

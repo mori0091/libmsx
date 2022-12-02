@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="scc_8h.html#structSCC__Device" target="_top" xlink:title="Device interface for SCC/SCC+ sound chip.">
+<g id="a_node2"><a xlink:href="group__SCC__DEVICE.html#structSCC__Device" target="_top" xlink:title="Device interface for SCC/SCC+ sound chip.">
 <polygon fill="white" stroke="#666666" points="79,-85 7,-85 7,-66 79,-66 79,-85"/>
 <text text-anchor="middle" x="43" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">SCC_Device</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="scc_8h.html#structSCC__Channel" target="_top" xlink:title="Device interface for a sound channel of SCC/SCC+ sound chip.">
+<g id="a_node3"><a xlink:href="group__SCC__DEVICE.html#structSCC__Channel" target="_top" xlink:title="Device interface for a sound channel of SCC/SCC+ sound chip.">
 <polygon fill="white" stroke="#666666" points="81.5,-151 4.5,-151 4.5,-132 81.5,-132 81.5,-151"/>
 <text text-anchor="middle" x="43" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">SCC_Channel</text>
 </a>
@@ -52,7 +52,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="scc_8h.html#structSCC__Waveform" target="_top" xlink:title="The structure of the SCC/SCC+ 32&#45;byte waveform data register.">
+<g id="a_node4"><a xlink:href="group__SCC__DEVICE.html#structSCC__Waveform" target="_top" xlink:title="The structure of the SCC/SCC+ 32&#45;byte waveform data register.">
 <polygon fill="white" stroke="#666666" points="86,-228 0,-228 0,-209 86,-209 86,-228"/>
 <text text-anchor="middle" x="43" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00">SCC_Waveform</text>
 </a>

@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['enaint_0',['ENAINT',['../workarea_8h.html#a4dfa6ca3a9f148a0f8ccdc031b5cef64',1,'workarea.h']]],
-  ['enaslt_1',['ENASLT',['../bios__entry_8h.html#aa5bcf953fc662dce83ebf1a81d4010e3',1,'bios_entry.h']]],
-  ['eventtracks_2',['eventTracks',['../snd__sound_8h.html#a09ba99c768dde78cd241bb7e4aa78337',1,'snd_Music']]],
-  ['exbrsa_3',['EXBRSA',['../workarea_8h.html#a7f75e5c017cfa82ce06680f829439296',1,'workarea.h']]],
-  ['exptbl_4',['EXPTBL',['../workarea_8h.html#afc8f51562ab661ad80617b5076d36852',1,'workarea.h']]]
+  ['fcall_0',['FCALL',['../workarea_8h.html#a48f294b976f327be7046434a73cffbd3',1,'workarea.h']]],
+  ['fg_5fcolor_1',['fg_color',['../group__CUI__COLOR.html#gaae980932e8bf1260cf651093bef5d9b0',1,'text.h']]],
+  ['fnkstr_2',['FNKSTR',['../workarea_8h.html#accc20ece9730cd3c92bb721db4e66773',1,'workarea.h']]],
+  ['font_3',['font',['../bios__const_8h.html#structfont',1,'']]],
+  ['forclr_4',['FORCLR',['../workarea_8h.html#ab36c2be4a568640a5609475f4fc7a22f',1,'workarea.h']]],
+  ['format_5fversion_5',['format_version',['../group__SNDDRV__DATA.html#a73713cc5ca4d186b6c4946a4d3a64e83',1,'snd_Music']]],
+  ['fragments_6',['fragments',['../group__SOUND__OLD__API.html#aae9c73220c1e3cf4037a6cf67dea650b',1,'sound_clip']]],
+  ['frcnew_7',['FRCNEW',['../workarea_8h.html#a28df2f5017327dc437d049caf313ab0b',1,'workarea.h']]]
 ];

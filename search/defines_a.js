@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['psg_5fh_0',['PSG_H',['../psg_8h.html#a100342e1bbe5281caf6c68ed9879d6fe',1,'psg.h']]]
+  ['workarea_5fh_0',['WORKAREA_H',['../workarea_8h.html#ab17199beb488baf080e336e3d3577f57',1,'workarea.h']]]
 ];

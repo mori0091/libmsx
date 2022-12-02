@@ -107,6 +107,8 @@ void random_print(uint8_t LorH, const char * s) {
 }
 
 // -- LMCM -----------------------------------------------------
+static uint8_t buf[8*8];
+
 void read_image_LMCM(void) {
   color(15, 4, 7);
   cls();
@@ -130,11 +132,10 @@ void read_image_LMCM(void) {
     // Read 8x8 pixels of the above.
     const uint16_t x = 8 * 7;
     const uint16_t y = 8 * 12;
-    static uint8_t buf[8*8];
     uint8_t *p = &buf[0];
-    uint8_t n = sizeof(buf);
+    uint8_t m = sizeof(buf);
     vdp_cmd_execute_LMCM(x, y, 8, 8, VDP_CMD_LRTB);
-    while (n--) {
+    while (m--) {
       vdp_cmd_read(p++);
     }
 

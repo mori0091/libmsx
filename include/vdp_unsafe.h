@@ -11,6 +11,7 @@
 /**
  * \file vdp_unsafe.h
  * \brief Unsafe primitive functions for VDP (Video Display Proccessor) access.
+ * \ingroup VDP
  */
 
 #pragma once
@@ -23,6 +24,13 @@
 #include "io.h"
 #include "vmem.h"
 #include "bios.h"
+
+/**
+ * \defgroup VDP_UNSAFE Unsafe primitive functions
+ * \ingroup VDP
+ * Unsafe primitive functions for VDP (Video Display Proccessor) access.
+ * @{
+ */
 
 /**
  * `MSX` Write a value to the specified VDP control register.
@@ -195,5 +203,7 @@ inline void VDP_SET_VMEM_VALUE(uint8_t val) {
 inline uint8_t VDP_GET_VMEM_VALUE(void) {
   return vdp_port0;
 }
+
+/** @} */
 
 #endif // VDP_UNSAFE_H_

@@ -11,5 +11,6 @@ var searchData=
   ['device_8',['device',['../opll_8h.html#a2c1af86d17c104c65519e93f3c21f925',1,'OPLL::device()'],['../scc_8h.html#a1e35422951aaf250205c345a99b9ef96',1,'SCC::device()']]],
   ['disint_9',['DISINT',['../workarea_8h.html#a366afc24d7362980e4b79caffa07161c',1,'workarea.h']]],
   ['diskve_10',['DISKVE',['../workarea_8h.html#a0e0ffe25ca63aaa5c3e6007a930e11fe',1,'workarea.h']]],
-  ['drvtbl_11',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]]
+  ['display_20registers_11',['Display registers',['../group__VDP__DISPLAY__REGISTER.html',1,'']]],
+  ['drvtbl_12',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]]
 ];

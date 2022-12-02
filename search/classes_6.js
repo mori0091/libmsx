@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['vdp_5fcmd_0',['vdp_cmd',['../vdp_8h.html#structvdp__cmd',1,'']]],
+  ['vdp_5fcmd_0',['vdp_cmd',['../group__VDP__COMMANDS__LOW.html#structvdp__cmd',1,'']]],
   ['vec2i_1',['vec2i',['../metasprite_8h.html#structvec2i',1,'']]],
   ['vec_5fsnd_5feventtrack_2',['vec_snd_EventTrack',['../structsnd__Music_1_1vec__snd__EventTrack.html',1,'snd_Music']]],
   ['vec_5fsnd_5finstrument_3',['vec_snd_Instrument',['../structsnd__SoundAssets_1_1vec__snd__Instrument.html',1,'snd_SoundAssets']]],

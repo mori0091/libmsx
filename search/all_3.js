@@ -16,10 +16,12 @@ var searchData=
   ['clz_13',['clz',['../sound__eg_8h.html#afa6629c9b9efe819c7c36ccda1f47396',1,'sound_eg_attribute']]],
   ['cnsdfg_14',['CNSDFG',['../workarea_8h.html#a7cc5399c258b56e0abba72f9f1e0999f',1,'workarea.h']]],
   ['color_15',['color',['../text_8h.html#aa2487bdb9e077e4858fcb541a145d19b',1,'text.h']]],
-  ['columns_16',['columns',['../structTTY__Device.html#ab73862e783047a69318bb4542174661f',1,'TTY_Device']]],
-  ['config_2eh_17',['config.h',['../config_8h.html',1,'']]],
-  ['config_5fh_5f_18',['CONFIG_H_',['../config_8h.html#adc93aad2d95fad610df4cc0260c65dc1',1,'config.h']]],
-  ['crtcnt_19',['CRTCNT',['../workarea_8h.html#aa15624c073db8ebb6597e278d20e9e7d',1,'workarea.h']]],
-  ['csrx_20',['CSRX',['../workarea_8h.html#a0d61d5ee2d4bd4023e264b1adf1305d2',1,'workarea.h']]],
-  ['csry_21',['CSRY',['../workarea_8h.html#aedbd534ef607b72971cf2077b9eee0da',1,'workarea.h']]]
+  ['color_20registers_16',['Color registers',['../group__VDP__COLOR__REGISTER.html',1,'']]],
+  ['columns_17',['columns',['../structTTY__Device.html#ab73862e783047a69318bb4542174661f',1,'TTY_Device']]],
+  ['config_2eh_18',['config.h',['../config_8h.html',1,'']]],
+  ['config_5fh_5f_19',['CONFIG_H_',['../config_8h.html#adc93aad2d95fad610df4cc0260c65dc1',1,'config.h']]],
+  ['control_20registers_20',['Control registers',['../group__VDP__CONTROL__REGISTER.html',1,'']]],
+  ['crtcnt_21',['CRTCNT',['../workarea_8h.html#aa15624c073db8ebb6597e278d20e9e7d',1,'workarea.h']]],
+  ['csrx_22',['CSRX',['../workarea_8h.html#a0d61d5ee2d4bd4023e264b1adf1305d2',1,'workarea.h']]],
+  ['csry_23',['CSRY',['../workarea_8h.html#aedbd534ef607b72971cf2077b9eee0da',1,'workarea.h']]]
 ];

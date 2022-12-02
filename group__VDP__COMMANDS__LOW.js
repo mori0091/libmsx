@@ -1,0 +1,45 @@
+var group__VDP__COMMANDS__LOW =
+[
+    [ "vdp_cmd", "group__VDP__COMMANDS__LOW.html#structvdp__cmd", [
+      [ "r32", "group__VDP__COMMANDS__LOW.html#adffb3dff81792127c3237a7a007d51ca", null ],
+      [ "r33", "group__VDP__COMMANDS__LOW.html#a0743603166fbefc51673d0729383124f", null ],
+      [ "r34", "group__VDP__COMMANDS__LOW.html#ae5f7e7185ca8d8d37ff830b142bae2e7", null ],
+      [ "r35", "group__VDP__COMMANDS__LOW.html#a3495c3849dcef3ec13b166585c54baab", null ],
+      [ "r36", "group__VDP__COMMANDS__LOW.html#ae37e7f549e115e4cdf4eef0f49309286", null ],
+      [ "r37", "group__VDP__COMMANDS__LOW.html#adab628c22d73bf9f305245d4b7a35f97", null ],
+      [ "r38", "group__VDP__COMMANDS__LOW.html#aad7bb7489f5d17c6cf69a613b4a97671", null ],
+      [ "r39", "group__VDP__COMMANDS__LOW.html#a3afc82059d1cc97479f87946869e20e0", null ],
+      [ "r40", "group__VDP__COMMANDS__LOW.html#a447c576d47b798afcb2c95b6886a7350", null ],
+      [ "r41", "group__VDP__COMMANDS__LOW.html#afb372d6b23511208995733bb9826fe20", null ],
+      [ "r42", "group__VDP__COMMANDS__LOW.html#ab0182c2a6759d986d044e46ea5616afe", null ],
+      [ "r43", "group__VDP__COMMANDS__LOW.html#a9077e2830392a7e8d0eb8b53234d5a53", null ],
+      [ "r44", "group__VDP__COMMANDS__LOW.html#a0ec5533d6ba0dd58cbd20a7c4b98881d", null ],
+      [ "r45", "group__VDP__COMMANDS__LOW.html#a21066c5249d7ed332096c3ff57a21598", null ],
+      [ "r46", "group__VDP__COMMANDS__LOW.html#af0ee51e6846dd236e4ecbfb7632d23e8", null ]
+    ] ],
+    [ "vdp_cmd_op", "group__VDP__COMMANDS__LOW.html#ga8644c26f4880aa2d4ec82b0de3bc8ded", [
+      [ "VDP_CMD_STOP", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda35c720b673854b1e96dd4d0812d502e2", null ],
+      [ "VDP_CMD_POINT", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda9109a8f3b0d85245f419f5f6a4066a7c", null ],
+      [ "VDP_CMD_PSET", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda6e40e2c49371ee180ef4cef4be8caa25", null ],
+      [ "VDP_CMD_SRCH", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda2935786214504f4592dedef4a6782f84", null ],
+      [ "VDP_CMD_LINE", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda52b97666f5b315264826ba5f3ae1431d", null ],
+      [ "VDP_CMD_LMMV", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda6f768637cb4f1d724f853c4c061d1c05", null ],
+      [ "VDP_CMD_LMMM", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda2a8db7f645f4f80ca1f6730329b8bfa7", null ],
+      [ "VDP_CMD_LMCM", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda0349315753336d9cbcca4494d2c04b70", null ],
+      [ "VDP_CMD_LMMC", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda68a2287f76d0c2e35b369ebbe350a889", null ],
+      [ "VDP_CMD_HMMV", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda3c650b04b29de4d9f870a0dc71b442c5", null ],
+      [ "VDP_CMD_HMMM", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda9ebbe650db52f80d69c52152d1b5bed3", null ],
+      [ "VDP_CMD_YMMM", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda42c812e77ed5b7d3339a21735ca3aab6", null ],
+      [ "VDP_CMD_HMMC", "group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8dedaf90ff06014f702cb577d6cfa41793316", null ]
+    ] ],
+    [ "vdp_cmd_set_SX", "group__VDP__COMMANDS__LOW.html#ga365bbf8b0c100ccc6f069bc45e1d6370", null ],
+    [ "vdp_cmd_set_SY", "group__VDP__COMMANDS__LOW.html#ga06d40a54ded58c30c885cf0de48bdb57", null ],
+    [ "vdp_cmd_set_DX", "group__VDP__COMMANDS__LOW.html#ga65efa5e431eff15a57d9b092610b8edb", null ],
+    [ "vdp_cmd_set_DY", "group__VDP__COMMANDS__LOW.html#ga612592dd23f62875d3fb55ae1b497242", null ],
+    [ "vdp_cmd_set_NX", "group__VDP__COMMANDS__LOW.html#gaea64672ade0f3b169abeced91a198847", null ],
+    [ "vdp_cmd_set_NY", "group__VDP__COMMANDS__LOW.html#gab297213010a03d7237910ce72934f4f7", null ],
+    [ "vdp_cmd_set_CLR", "group__VDP__COMMANDS__LOW.html#gaccb32ceabc58747ddf52f2af53fb15f1", null ],
+    [ "vdp_cmd_set_ARG", "group__VDP__COMMANDS__LOW.html#ga695575c1ece47e0b0ec0c00a7df45f1a", null ],
+    [ "vdp_cmd_set_logop", "group__VDP__COMMANDS__LOW.html#gab2c2102d96581f5961af3d04340e1ea2", null ],
+    [ "vdp_cmd_execute", "group__VDP__COMMANDS__LOW.html#ga713522050128f19e20c19e2556398914", null ]
+];

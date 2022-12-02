@@ -1,0 +1,13 @@
+<map id="VDP &#45; Video Display Processor" name="VDP &#45; Video Display Processor">
+<area shape="rect" id="node1" title="#include &lt;vdp.h&gt;" coords="5,251,143,291"/>
+<area shape="rect" id="node2" href="$group__VDP__COLOR__REGISTER.html" title="Text and background color in TEXT 1 and 2 mode, and Backdrop color." coords="227,5,333,31"/>
+<area shape="rect" id="node3" href="$group__VDP__COMMANDS__HIGH.html" title="Execute, Stop, and Await VDP commands." coords="205,55,355,95"/>
+<area shape="rect" id="node4" href="$group__VDP__COMMANDS__LOW.html" title="Write to command registers." coords="191,119,369,159"/>
+<area shape="rect" id="node5" href="$group__VDP__CONTROL__REGISTER.html" title="Write to control registers." coords="222,184,338,209"/>
+<area shape="rect" id="node6" href="$group__VDP__DISPLAY__REGISTER.html" title="Dispalay area adjust / Hardware scroll." coords="221,233,339,259"/>
+<area shape="rect" id="node7" href="$group__VDP__MODE__REGISTER.html" title="Screen / Sprite mode setting." coords="227,283,333,308"/>
+<area shape="rect" id="node8" href="$group__VDP__PALETTE__REGISTER.html" title="Color palettes." coords="222,332,338,357"/>
+<area shape="rect" id="node9" href="$group__VDP__STATUS__REGISTER.html" title="Read from status registers." coords="223,381,337,407"/>
+<area shape="rect" id="node10" href="$group__VDP__TABLE__BASE__ADDRESS__REGISTER.html" title="VRAM memory map setting." coords="213,431,347,471"/>
+<area shape="rect" id="node11" href="$group__VDP__UNSAFE.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." coords="194,496,366,521"/>
+</map>

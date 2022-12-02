@@ -1,0 +1,4 @@
+<map id="Palette registers" name="Palette registers">
+<area shape="rect" id="node1" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" coords="5,5,143,45"/>
+<area shape="rect" id="node2" title="Color palettes." coords="191,13,307,38"/>
+</map>

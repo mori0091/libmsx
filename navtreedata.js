@@ -89,6 +89,7 @@ var NAVTREE =
       ] ],
       [ "Definition of Instrument (timbre) table", "md_docs_design_notes_snddrv_internal.html#autotoc_md50", null ]
     ] ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -116,8 +117,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"screen_8h_source.html",
-"vdp_8h.html#a6b69e895f7f0faa700cffcd2ef60e6d5"
+"index.html#autotoc_md4",
+"sound_8h.html#afc3795cddeeb09bce0deef79daaa7e39"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

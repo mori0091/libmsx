@@ -121,17 +121,16 @@ void read_image_LMCM(void) {
   const uint16_t t0 = JIFFY;
   for (; JIFFY - t0 < n; ) {
     // print a character
-    uint8_t ch = rand() % 256;
-    uint8_t fg = rand() % 16;
-    uint8_t bg = rand() % 16;
+    const uint8_t ch = rand() % 256;
+    const uint8_t fg = rand() % 16;
+    const uint8_t bg = rand() % 16;
+    const uint16_t x = 8 * 7;
+    const uint16_t y = 8 * 12;
     text_color(fg, bg);
-    locate(7, 12);
-    printc(ch);
+    putchar_HMMC(ch, x, y);
     sleep_ticks(2);             // why needs this??
 
     // Read 8x8 pixels of the above.
-    const uint16_t x = 8 * 7;
-    const uint16_t y = 8 * 12;
     uint8_t *p = &buf[0];
     uint8_t m = sizeof(buf);
     vdp_cmd_execute_LMCM(x, y, 8, 8, VDP_CMD_LRTB);

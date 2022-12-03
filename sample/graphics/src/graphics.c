@@ -107,8 +107,6 @@ void random_print(uint8_t LorH, const char * s) {
 }
 
 // -- LMCM -----------------------------------------------------
-static uint8_t buf[8*8];
-
 void read_image_LMCM(void) {
   color(15, 4, 7);
   cls();
@@ -128,21 +126,17 @@ void read_image_LMCM(void) {
     const uint16_t y = 8 * 12;
     text_color(fg, bg);
     putchar_HMMC(ch, x, y);
-    sleep_ticks(2);             // why needs this??
 
-    // Read 8x8 pixels of the above.
-    uint8_t *p = &buf[0];
-    uint8_t m = sizeof(buf);
+    sleep_ticks(1);             // why needs this??
+
+    // Read 8x8 pixels of the above,
+    // and show it in HEX
     vdp_cmd_execute_LMCM(x, y, 8, 8, VDP_CMD_LRTB);
-    while (m--) {
-      vdp_cmd_read(p++);
-    }
-
-    // Show it in HEX
     for (uint8_t i = 0; i < 8; i++) {
       locate(16, 8+i);
       for (uint8_t j = 0; j < 8; j++) {
-        uint8_t c = buf[i*8+j];
+        uint8_t c;
+        vdp_cmd_read(&c);
         text_color(15 - c, c);
         printx(c);
       }
@@ -220,9 +214,6 @@ void random_box(uint8_t LorH) {
     uint16_t y1 = rand() % 200;
     uint16_t y2 = rand() % 200;
     uint8_t color = rand() % 16;
-    // if (x1 == x2 || y1 == y2) {
-    //   continue;
-    // }
     if (LorH) {
       // 4-bpp ; 2 pix per byte
       x1 &= ~1;
@@ -286,7 +277,7 @@ void rect_move(uint8_t LorH) {
       y = 200 - h;
       vy = -vy;
     }
-    // await_vsync();
+
     if (LorH) {
       vdp_cmd_execute_HMMM(x0, y0, w, h, x, y);
     }

@@ -144,6 +144,165 @@ void read_image_LMCM(void) {
   }
 }
 
+// -- LMCM -----------------------------------------------------
+// LRTB : copy
+// RLTB : horizontal flip
+// LRBT : vertical flip
+// RLBT : rotate 180 deg
+void copy_rect(uint16_t x, uint16_t y,
+               uint16_t w, uint16_t h,
+               uint16_t dx, uint16_t dy,
+               enum vdp_cmd_dir dir) {
+  uint16_t sx = x;
+  uint16_t sy = y;
+  switch (dir) {
+    case VDP_CMD_LRTB:
+      break;
+    case VDP_CMD_RLTB:
+      sx += w - 1;
+      break;
+    case VDP_CMD_LRBT:
+      sy += h - 1;
+      break;
+    case VDP_CMD_RLBT:
+      sx += w - 1;
+      sy += h - 1;
+      break;
+  }
+
+  sleep_ticks(1);               // why needs this??
+
+  vmemptr_t p = 128 * dy + dx / 2; // 256 pix width, 4-bpp
+  vdp_cmd_execute_LMCM(sx, sy, w, h, dir);
+  for (uint16_t i = h; i--; ) {
+    vmem_set_write_address(p);
+    for (uint16_t j = w / 2; j--; ) {
+      // 4-bpp ; 2 pix per byte
+      uint8_t c0, c1;
+      vdp_cmd_read(&c0);
+      vdp_cmd_read(&c1);
+      vmem_set((c0 << 4) | (c1 & 15));
+    }
+    p += 128;
+  }
+}
+
+void flip(void) {
+  color(15, 4, 7);
+  cls();
+
+  text_color(15, 1);
+  locate(0, 25);
+  print("GRAPHIC 4 (SCREEN 5) / LMCM");
+
+  for (int ch = 0; ch < 256; ++ch) {
+    fg_color(rand() % 14 + 2);
+    putchar_HMMC(ch, (ch & 15) * 8, ch / 16 * 8);
+  }
+
+  text_color(15, 1);
+
+  // Copy.
+  locate(16, 17); print("Copy            ");
+  copy_rect(0, 0, 128, 128, 128, 0, VDP_CMD_LRTB);
+  sleep_millis(2500);
+
+  // Horizontal flip.
+  locate(16, 17); print("Horizontal flip ");
+  copy_rect(0, 0, 128, 128, 128, 0, VDP_CMD_RLTB);
+  sleep_millis(2500);
+
+  // Vertical flip.
+  locate(16, 17); print("Vertical flip   ");
+  copy_rect(0, 0, 128, 128, 128, 0, VDP_CMD_LRBT);
+  sleep_millis(2500);
+
+  // Horizontal & Vertical flip.
+  locate(16, 17); print("Rotate 180 deg  ");
+  copy_rect(0, 0, 128, 128, 128, 0, VDP_CMD_RLBT);
+  sleep_millis(2500);
+}
+
+// -- LMMC -----------------------------------------------------
+// LRTB : transpose
+// RLTB : rotate 90 deg cw
+// LRBT : rotate 90 deg ccw
+// RLBT : diagonal transpose
+void copy_rect2(uint16_t x, uint16_t y,
+                uint16_t w, uint16_t h,
+                uint16_t dx, uint16_t dy,
+                enum vdp_cmd_dir dir) {
+  uint16_t sx = x;
+  uint16_t sy = y;
+  int8_t d = 1;
+  switch (dir) {
+    case VDP_CMD_LRTB:
+      break;
+    case VDP_CMD_RLTB:
+      dx += w - 1;
+      d = -1;
+      break;
+    case VDP_CMD_LRBT:
+      dy += h - 1;
+      break;
+    case VDP_CMD_RLBT:
+      dx += w - 1;
+      dy += h - 1;
+      d = -1;
+      break;
+  }
+
+  vmemptr_t p = 128 * sy + sx / 2; // 256 pix width, 4-bpp
+  for (uint8_t i = 0; i < h; i++) {
+    sleep_ticks(1);
+    vmem_set_read_address(p);
+    vdp_cmd_execute_LMMC(dx, dy, 1, h, dir, VDP_CMD_IMP);
+    for (uint8_t j = 0; j < w/2; j++) {
+      uint8_t c = vmem_get();
+      vdp_cmd_write(c >> 4);
+      vdp_cmd_write(c & 15);
+    }
+    dx += d;
+    p += 128;
+  }
+}
+
+void rotate(void) {
+  color(15, 4, 7);
+  cls();
+
+  text_color(15, 1);
+  locate(0, 25);
+  print("GRAPHIC 4 (SCREEN 5) / LMMC");
+
+  for (int ch = 0; ch < 256; ++ch) {
+    fg_color(rand() % 14 + 2);
+    putchar_HMMC(ch, (ch & 15) * 8, ch / 16 * 8);
+  }
+
+  text_color(15, 1);
+
+  // Transpose.
+  locate(16, 17); print("Transpose       ");
+  copy_rect2(0, 0, 128, 128, 128, 0, VDP_CMD_LRTB);
+  sleep_millis(2500);
+
+  // Rotate 90 deg clockwise.
+  locate(16, 17); print("Rotate 90deg CW ");
+  copy_rect2(0, 0, 128, 128, 128, 0, VDP_CMD_RLTB);
+  sleep_millis(2500);
+
+  // Rotate 90 deg counter clockwise
+  locate(16, 17); print("Rotate 90deg CCW");
+  copy_rect2(0, 0, 128, 128, 128, 0, VDP_CMD_LRBT);
+  sleep_millis(2500);
+
+  // Diagonal transpose.
+  locate(16, 17); print("Diag. Transpose ");
+  copy_rect2(0, 0, 128, 128, 128, 0, VDP_CMD_RLBT);
+  sleep_millis(2500);
+}
+
 // -- PSET -----------------------------------------------------
 void random_dot(void) {
   color(15, 4, 7);
@@ -341,6 +500,10 @@ void main(void) {
     random_print(1, "HELLO");
     // Read rectanguler area (LMCM)
     read_image_LMCM();
+    // Copy, Horizontal/Vertical flip, Rotate 180deg (LMCM)
+    flip();
+    // Transpose, Rotate 90deg CW/CCW, Diagonal Transpose (LMMC)
+    rotate();
     // Random dot (PSET)
     random_dot();
     // Random lines (LINE)

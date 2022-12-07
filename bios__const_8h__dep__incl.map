@@ -1,9 +1,9 @@
 <map id="include/bios_const.h" name="include/bios_const.h">
-<area shape="rect" id="node1" title="Constant variables in the MSX BIOS ROM." coords="75,5,215,31"/>
-<area shape="rect" id="node2" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." coords="5,79,107,104"/>
-<area shape="rect" id="node7" href="$workarea_8h.html" title="Definitions of MSX SYSTEM Workarea." coords="216,152,347,177"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." coords="29,372,131,397"/>
-<area shape="rect" id="node4" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." coords="71,225,169,251"/>
-<area shape="rect" id="node6" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." coords="48,152,192,177"/>
-<area shape="rect" id="node5" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." coords="64,299,203,324"/>
+<area shape="rect" id="node1" title="Constant variables in the MSX BIOS ROM." alt="" coords="75,5,215,31"/>
+<area shape="rect" id="node2" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="5,79,107,104"/>
+<area shape="rect" id="node7" href="$workarea_8h.html" title="Definitions of MSX SYSTEM Workarea." alt="" coords="216,152,347,177"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="29,372,131,397"/>
+<area shape="rect" id="node4" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="71,225,169,251"/>
+<area shape="rect" id="node6" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="48,152,192,177"/>
+<area shape="rect" id="node5" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="64,299,203,324"/>
 </map>

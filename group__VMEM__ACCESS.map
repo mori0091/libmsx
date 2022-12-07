@@ -1,4 +1,4 @@
 <map id="VRAM access interface" name="VRAM access interface">
-<area shape="rect" id="node1" href="$group__VMEM.html" title="#include &lt;vmem.h&gt;" coords="5,5,140,31"/>
-<area shape="rect" id="node2" title="Read / Write VRAM." coords="188,5,347,31"/>
+<area shape="rect" id="node1" href="$group__VMEM.html" title="#include &lt;vmem.h&gt;" alt="" coords="5,5,140,31"/>
+<area shape="rect" id="node2" title="Read / Write VRAM." alt="" coords="188,5,347,31"/>
 </map>

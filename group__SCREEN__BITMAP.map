@@ -1,4 +1,4 @@
 <map id="Bitmap graphics mode" name="Bitmap graphics mode">
-<area shape="rect" id="node1" href="$group__SCREEN.html" title="#include &lt;screen.h&gt;" coords="5,5,185,31"/>
-<area shape="rect" id="node2" title="Initialization functions for GRAPHIC 4, 5, 6, and 7 mode." coords="233,5,384,31"/>
+<area shape="rect" id="node1" href="$group__SCREEN.html" title="#include &lt;screen.h&gt;" alt="" coords="5,5,185,31"/>
+<area shape="rect" id="node2" title="Initialization functions for GRAPHIC 4, 5, 6, and 7 mode." alt="" coords="233,5,384,31"/>
 </map>

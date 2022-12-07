@@ -1,4 +1,4 @@
 <map id="Sprite attribute table" name="Sprite attribute table">
-<area shape="rect" id="node1" href="$group__SPRITES.html" title="#include &lt;sprite.h&gt;, #include &lt;sprite_color.h&gt;, #include &lt;metasprite.h&gt;" coords="5,5,152,31"/>
-<area shape="rect" id="node2" title="Sprite attribute table interface." coords="200,5,337,31"/>
+<area shape="rect" id="node1" href="$group__SPRITES.html" title="#include &lt;sprite.h&gt;, #include &lt;sprite_color.h&gt;, #include &lt;metasprite.h&gt;" alt="" coords="5,5,152,31"/>
+<area shape="rect" id="node2" title="Sprite attribute table interface." alt="" coords="200,5,337,31"/>
 </map>

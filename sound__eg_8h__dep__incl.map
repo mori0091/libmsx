@@ -1,4 +1,4 @@
 <map id="include/sound_eg.h" name="include/sound_eg.h">
-<area shape="rect" id="node1" title="Software envelope genenator interface for sound.h." coords="5,5,139,31"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." coords="21,79,123,104"/>
+<area shape="rect" id="node1" title="Software envelope genenator interface for sound.h." alt="" coords="5,5,139,31"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="21,79,123,104"/>
 </map>

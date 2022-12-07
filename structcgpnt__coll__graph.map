@@ -1,4 +1,4 @@
 <map id="cgpnt" name="cgpnt">
-<area shape="rect" id="node1" title="MSX Structure of CGPNT." coords="5,93,60,119"/>
-<area shape="rect" id="node2" href="$bios__const_8h.html#structfont" title="MSX Structure of MSX bitmap fonts (256 pattern x 8x8 pix x 1bpp)." coords="11,5,55,31"/>
+<area shape="rect" id="node1" title="MSX Structure of CGPNT." alt="" coords="5,93,60,119"/>
+<area shape="rect" id="node2" href="$bios__const_8h.html#structfont" title="MSX Structure of MSX bitmap fonts (256 pattern x 8x8 pix x 1bpp)." alt="" coords="11,5,55,31"/>
 </map>

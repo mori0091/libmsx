@@ -25,6 +25,11 @@ var vdp_8h =
       [ "VDP_SPRITE_SIZE_16x16", "group__VDP__MODE__REGISTER.html#gga91cf075ff9817fd8e552c6f055ce8b95a021c502522980336404e5701e1595d8f", null ],
       [ "VDP_SPRITE_SIZE_16x16_MAGNIFIED", "group__VDP__MODE__REGISTER.html#gga91cf075ff9817fd8e552c6f055ce8b95a5945ead7a5701be6567dd360c0a6d22c", null ]
     ] ],
+    [ "vdp_yjk_mode", "group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee", [
+      [ "VDP_RGB", "group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea71d362963a7f9753eb7fd4473de5cd0b", null ],
+      [ "VDP_YJK", "group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea0c656c504f19130b1bdb8bd0987cd0e9", null ],
+      [ "VDP_YJK_RGB", "group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea8b70f2f0c57e9bdb401048a9c43abb8f", null ]
+    ] ],
     [ "vdp_cmd_logop", "group__VDP__COMMANDS__HIGH.html#gad5a2110934821d4a04c4f412cea3160f", [
       [ "VDP_CMD_IMP", "group__VDP__COMMANDS__HIGH.html#ggad5a2110934821d4a04c4f412cea3160fac40e1f6a4e9356599cc1dfb0a0f7223d", null ],
       [ "VDP_CMD_AND", "group__VDP__COMMANDS__HIGH.html#ggad5a2110934821d4a04c4f412cea3160fa684a4f46ecc82abb7a998bd827599520", null ],
@@ -82,6 +87,7 @@ var vdp_8h =
     [ "vdp_set_hscroll", "group__VDP__DISPLAY__REGISTER.html#ga7e46df6cf6d6959b4232cb7cd7d5feb2", null ],
     [ "vdp_set_hscroll_mask", "group__VDP__DISPLAY__REGISTER.html#ga9bec57b16ef92a033f6046a62475e178", null ],
     [ "vdp_set_hscroll_dual_page", "group__VDP__DISPLAY__REGISTER.html#gafad0198c990fd23d914c6ae6fda4d175", null ],
+    [ "vdp_set_yjk_mode", "group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2", null ],
     [ "vdp_cmd_is_running", "group__VDP__COMMANDS__HIGH.html#gaa461d4bee77f7d945adde5648a7b7be2", null ],
     [ "vdp_cmd_await", "group__VDP__COMMANDS__HIGH.html#gabe88a78350fc63e2c03970acbd30dcdb", null ],
     [ "vdp_cmd_set_unrestricted", "group__VDP__COMMANDS__HIGH.html#gaff9c85cefd095ae4e78e73cb6f848663", null ],

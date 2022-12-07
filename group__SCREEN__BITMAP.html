@@ -122,6 +122,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gad21925bfe1b1c2ed2961eaa36a890127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCREEN__BITMAP.html#gad21925bfe1b1c2ed2961eaa36a890127">screen8</a> (void)</td></tr>
 <tr class="memdesc:gad21925bfe1b1c2ed2961eaa36a890127"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX2</code> SCREEN 8 (GRAPHIC 7 mode).  <a href="group__SCREEN__BITMAP.html#gad21925bfe1b1c2ed2961eaa36a890127">More...</a><br /></td></tr>
 <tr class="separator:gad21925bfe1b1c2ed2961eaa36a890127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9e640110975fa52e903459b8f2262b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCREEN__BITMAP.html#gaf9e640110975fa52e903459b8f2262b4">screen10</a> (void)</td></tr>
+<tr class="memdesc:gaf9e640110975fa52e903459b8f2262b4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX2+</code> SCREEN 10 (GRAPHIC 7 YJK/RGB mode).  <a href="group__SCREEN__BITMAP.html#gaf9e640110975fa52e903459b8f2262b4">More...</a><br /></td></tr>
+<tr class="separator:gaf9e640110975fa52e903459b8f2262b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga266ffb0556afacd9958b037cab14101e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCREEN__BITMAP.html#ga266ffb0556afacd9958b037cab14101e">screen12</a> (void)</td></tr>
+<tr class="memdesc:ga266ffb0556afacd9958b037cab14101e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX2+</code> SCREEN 12 (GRAPHIC 7 YJK mode).  <a href="group__SCREEN__BITMAP.html#ga266ffb0556afacd9958b037cab14101e">More...</a><br /></td></tr>
+<tr class="separator:ga266ffb0556afacd9958b037cab14101e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Initialization functions for GRAPHIC 4, 5, 6, and 7 mode. </p>
@@ -261,6 +267,8 @@ Functions</h2></td></tr>
 <li>256 x 212 pixel, 8-bpp graphics mode.</li>
 <li>256 colors/pixel of 256 colors (RGB332).</li>
 <li>Sprite mode 2.</li>
+<li>Pre-defined 16 colors for sprites.</li>
+<li>No color palette.</li>
 </ul>
 <p ><b>VRAM memory map</b> </p><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -275,6 +283,86 @@ Functions</h2></td></tr>
 <td class="markdownTableBodyNone">0x0FA00   </td><td class="markdownTableBodyNone">0x0080   </td><td class="markdownTableBodyNone">Sprite attribute table   </td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>In this mode, text is drawn as individual color text. (i.e., text is drawn as a two-tone color graphic). </dd></dl>
+
+</div>
+</div>
+<a id="gaf9e640110975fa52e903459b8f2262b4" name="gaf9e640110975fa52e903459b8f2262b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9e640110975fa52e903459b8f2262b4">&#9670;&#160;</a></span>screen10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void screen10 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX2+</code> SCREEN 10 (GRAPHIC 7 YJK/RGB mode). </p>
+<ul>
+<li>256 x 212 pixel, 8-bpp graphics mode.</li>
+<li>12,499 colors (YJK), or 16 colors/pixel of 512 colors (RGB333).</li>
+<li>Sprite mode 2.</li>
+</ul>
+<p ><b>VRAM memory map</b> </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">VRAM address   </th><th class="markdownTableHeadNone">size   </th><th class="markdownTableHeadNone">contents    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x00000   </td><td class="markdownTableBodyNone">0xD400   </td><td class="markdownTableBodyNone">Pattern name table    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x0F000   </td><td class="markdownTableBodyNone">0x0300   </td><td class="markdownTableBodyNone">Sprite pattern generator table    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x0F800   </td><td class="markdownTableBodyNone">0x0200   </td><td class="markdownTableBodyNone">Sprite color table    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x0FA00   </td><td class="markdownTableBodyNone">0x0080   </td><td class="markdownTableBodyNone">Sprite attribute table   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>In this mode, text is drawn as individual color text. (i.e., text is drawn as a two-tone color graphic).</dd>
+<dd>
+In this mode, text is drawn in the colors of the color palette as in SCREEN 5 and 7. </dd></dl>
+
+</div>
+</div>
+<a id="ga266ffb0556afacd9958b037cab14101e" name="ga266ffb0556afacd9958b037cab14101e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga266ffb0556afacd9958b037cab14101e">&#9670;&#160;</a></span>screen12()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void screen12 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX2+</code> SCREEN 12 (GRAPHIC 7 YJK mode). </p>
+<ul>
+<li>256 x 212 pixel, 8-bpp graphics mode.</li>
+<li>19,268 colors (YJK).</li>
+<li>Sprite mode 2.</li>
+</ul>
+<p ><b>VRAM memory map</b> </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">VRAM address   </th><th class="markdownTableHeadNone">size   </th><th class="markdownTableHeadNone">contents    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x00000   </td><td class="markdownTableBodyNone">0xD400   </td><td class="markdownTableBodyNone">Pattern name table    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x0F000   </td><td class="markdownTableBodyNone">0x0300   </td><td class="markdownTableBodyNone">Sprite pattern generator table    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0x0F800   </td><td class="markdownTableBodyNone">0x0200   </td><td class="markdownTableBodyNone">Sprite color table    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0x0FA00   </td><td class="markdownTableBodyNone">0x0080   </td><td class="markdownTableBodyNone">Sprite attribute table   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>In this mode, text is drawn as individual color text. (i.e., text is drawn as a two-tone color graphic).</dd>
+<dd>
+The pixel format for this mode is YJK/RGB, but it handles text foreground and background colors in the same way as SCREEN 8. This may result in unexpected colors in the text output feature. </dd></dl>
 
 </div>
 </div>

@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('group__VDP__DISPLAY__REGISTER.html',''
 
 <div class="header">
   <div class="summary">
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Display registers<div class="ingroups"><a class="el" href="group__VDP.html">VDP - Video Display Processor</a></div></div></div>
 </div><!--header-->
@@ -108,6 +109,15 @@ $(document).ready(function(){initNavTree('group__VDP__DISPLAY__REGISTER.html',''
 </div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gad7c7b08e837dc7963769b2f01ab13dee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee">vdp_yjk_mode</a> { <a class="el" href="group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea71d362963a7f9753eb7fd4473de5cd0b">VDP_RGB</a> = 0x00
+, <a class="el" href="group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea0c656c504f19130b1bdb8bd0987cd0e9">VDP_YJK</a> = 0x08
+, <a class="el" href="group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea8b70f2f0c57e9bdb401048a9c43abb8f">VDP_YJK_RGB</a> = 0x18
+ }</td></tr>
+<tr class="memdesc:gad7c7b08e837dc7963769b2f01ab13dee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX2+</code> Enumeration of V9958 VDP's color space.  <a href="group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee">More...</a><br /></td></tr>
+<tr class="separator:gad7c7b08e837dc7963769b2f01ab13dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gac0bd7ff710cf49c932e253ec30c5f873"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VDP__DISPLAY__REGISTER.html#gac0bd7ff710cf49c932e253ec30c5f873">vdp_set_adjust</a> (int8_t x, int8_t y)</td></tr>
@@ -125,9 +135,80 @@ Functions</h2></td></tr>
 <tr class="memitem:gafad0198c990fd23d914c6ae6fda4d175"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VDP__DISPLAY__REGISTER.html#gafad0198c990fd23d914c6ae6fda4d175">vdp_set_hscroll_dual_page</a> (bool enable)</td></tr>
 <tr class="memdesc:gafad0198c990fd23d914c6ae6fda4d175"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX2+</code> Enable/disable horizontal scrolling for two pages.  <a href="group__VDP__DISPLAY__REGISTER.html#gafad0198c990fd23d914c6ae6fda4d175">More...</a><br /></td></tr>
 <tr class="separator:gafad0198c990fd23d914c6ae6fda4d175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdd7b719bcc3ec4ecc7d56e811b5c5c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2">vdp_set_yjk_mode</a> (enum <a class="el" href="group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee">vdp_yjk_mode</a> yjk)</td></tr>
+<tr class="memdesc:gabdd7b719bcc3ec4ecc7d56e811b5c5c2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX2+</code> Set V9958 VDP's color space to RGB, YJK, or YJK/RGB.  <a href="group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2">More...</a><br /></td></tr>
+<tr class="separator:gabdd7b719bcc3ec4ecc7d56e811b5c5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Dispalay area adjust / Hardware scroll. </p>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gad7c7b08e837dc7963769b2f01ab13dee" name="gad7c7b08e837dc7963769b2f01ab13dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7c7b08e837dc7963769b2f01ab13dee">&#9670;&#160;</a></span>vdp_yjk_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee">vdp_yjk_mode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX2+</code> Enumeration of V9958 VDP's color space. </p>
+<p ><code>VDP_RGB</code> can be used to reset to default color space for each screen mode.</p>
+<p ><code>VDP_YJK</code> and <code>VDP_YJK_RGB</code> are supposed to use with GRAPHIC 7 screen mode, and not with any other screen mode.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2" title="MSX2+ Set V9958 VDP&#39;s color space to RGB, YJK, or YJK/RGB.">vdp_set_yjk_mode()</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggad7c7b08e837dc7963769b2f01ab13deea71d362963a7f9753eb7fd4473de5cd0b" name="ggad7c7b08e837dc7963769b2f01ab13deea71d362963a7f9753eb7fd4473de5cd0b"></a>VDP_RGB&#160;</td><td class="fielddoc"><p >Default color space of the V9958 (same as the V9938). </p>
+<p >In case of GRAPHIC 7 screen mode:</p><ul>
+<li>256 colors<ul>
+<li>3-bits per pixel of R component (<code>0</code>..<code>7</code>)</li>
+<li>3-bits per pixel of G component (<code>0</code>..<code>7</code>)</li>
+<li>2-bits per pixel of B component (<code>0</code>..<code>3</code>)</li>
+</ul>
+</li>
+<li>Pre-defined 16 colors for sprites.</li>
+<li>No color palette.</li>
+</ul>
+<p >Any other screen mode:</p><ul>
+<li>According to colors for each screen mode. </li>
+</ul>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad7c7b08e837dc7963769b2f01ab13deea0c656c504f19130b1bdb8bd0987cd0e9" name="ggad7c7b08e837dc7963769b2f01ab13deea0c656c504f19130b1bdb8bd0987cd0e9"></a>VDP_YJK&#160;</td><td class="fielddoc"><p >YJK mode. </p>
+<p >In case of GRAPHIC 7 screen mode:</p><ul>
+<li>19,268 colors<ul>
+<li>5-bits per pixel of Y component (<code>0</code>..<code>31</code>)</li>
+<li>6-bits per 4-pixels of J component (<code>-32</code>..<code>+31</code>)</li>
+<li>6-bits per 4-pixels of K component (<code>-32</code>..<code>+31</code>)</li>
+</ul>
+</li>
+<li>16 colors out of 512 colors (color palette) for sprites.</li>
+</ul>
+<p >Any other screen mode:</p><ul>
+<li>Not supposed to use with. </li>
+</ul>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad7c7b08e837dc7963769b2f01ab13deea8b70f2f0c57e9bdb401048a9c43abb8f" name="ggad7c7b08e837dc7963769b2f01ab13deea8b70f2f0c57e9bdb401048a9c43abb8f"></a>VDP_YJK_RGB&#160;</td><td class="fielddoc"><p >YJK / RGB mixed mode. </p>
+<p >In case of GRAPHIC 7 screen mode:</p><ul>
+<li>12,499 colors<ul>
+<li>4-bits per pixel of Y component (<code>0</code>..<code>15</code>)</li>
+<li>6-bits per 4-pixels of J component (<code>-32</code>..<code>+31</code>)</li>
+<li>6-bits per 4-pixels of K component (<code>-32</code>..<code>+31</code>)</li>
+</ul>
+</li>
+<li>or 16 colors out of 512 colors (color palette).</li>
+<li>16 colors out of 512 colors (color palette) for sprites.</li>
+</ul>
+<p >Any other screen mode:</p><ul>
+<li>Not supposed to use with. </li>
+</ul>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00518">518</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gac0bd7ff710cf49c932e253ec30c5f873" name="gac0bd7ff710cf49c932e253ec30c5f873"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac0bd7ff710cf49c932e253ec30c5f873">&#9670;&#160;</a></span>vdp_set_adjust()</h2>
@@ -270,6 +351,36 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">enable</td><td>scrolling two pages if <code>true</code>, one page otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabdd7b719bcc3ec4ecc7d56e811b5c5c2" name="gabdd7b719bcc3ec4ecc7d56e811b5c5c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabdd7b719bcc3ec4ecc7d56e811b5c5c2">&#9670;&#160;</a></span>vdp_set_yjk_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vdp_set_yjk_mode </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee">vdp_yjk_mode</a>&#160;</td>
+          <td class="paramname"><em>yjk</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX2+</code> Set V9958 VDP's color space to RGB, YJK, or YJK/RGB. </p>
+<p >Set / Reset YJK/YAE bit of V9958 VDP register R#25.</p>
+<p >Affects GRAPHIC 7 screen mode color space and pixel format.</p>
+<p ><code>VDP_RGB</code> can be used to reset to default color space for each screen mode.</p>
+<p ><code>VDP_YJK</code> and <code>VDP_YJK_RGB</code> are supposed to use with GRAPHIC 7 screen mode, and not with any other screen mode.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">yjk</td><td>color space </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,5 +1,5 @@
 <map id="include/vdp.h" name="include/vdp.h">
-<area shape="rect" id="node1" title="Data types and functions for VDP (Video Display Proccessor) access." coords="79,5,177,31"/>
-<area shape="rect" id="node2" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." coords="5,79,144,104"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." coords="77,152,179,177"/>
+<area shape="rect" id="node1" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="79,5,177,31"/>
+<area shape="rect" id="node2" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="5,79,144,104"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="77,152,179,177"/>
 </map>

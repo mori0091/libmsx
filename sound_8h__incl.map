@@ -1,6 +1,6 @@
 <map id="include/sound.h" name="include/sound.h">
-<area shape="rect" id="node1" title="A PSG sound driver." coords="80,5,192,31"/>
-<area shape="rect" id="node2" title=" " coords="5,79,80,104"/>
-<area shape="rect" id="node3" title=" " coords="104,79,168,104"/>
-<area shape="rect" id="node4" title=" " coords="193,79,255,104"/>
+<area shape="rect" id="node1" title="A PSG sound driver." alt="" coords="80,5,192,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,80,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="104,79,168,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="193,79,255,104"/>
 </map>

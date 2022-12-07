@@ -1,7 +1,7 @@
 <map id="snd_SoundAssets" name="snd_SoundAssets">
-<area shape="rect" id="node1" title="Container of list of musics, instruments, arpeggio tables, and period tables." coords="316,109,444,134"/>
-<area shape="rect" id="node2" href="$structsnd__SoundAssets_1_1vec__snd__PitchBend.html" title=" " coords="5,5,160,45"/>
-<area shape="rect" id="node3" href="$structsnd__SoundAssets_1_1vec__snd__PeriodBend.html" title=" " coords="5,69,160,109"/>
-<area shape="rect" id="node4" href="$structsnd__SoundAssets_1_1vec__snd__Instrument.html" title=" " coords="5,133,160,173"/>
-<area shape="rect" id="node5" href="$structsnd__SoundAssets_1_1vec__snd__Music.html" title=" " coords="5,197,160,237"/>
+<area shape="rect" id="node1" title="Container of list of musics, instruments, arpeggio tables, and period tables." alt="" coords="316,109,444,134"/>
+<area shape="rect" id="node2" href="$structsnd__SoundAssets_1_1vec__snd__PitchBend.html" title=" " alt="" coords="5,5,160,45"/>
+<area shape="rect" id="node3" href="$structsnd__SoundAssets_1_1vec__snd__PeriodBend.html" title=" " alt="" coords="5,69,160,109"/>
+<area shape="rect" id="node4" href="$structsnd__SoundAssets_1_1vec__snd__Instrument.html" title=" " alt="" coords="5,133,160,173"/>
+<area shape="rect" id="node5" href="$structsnd__SoundAssets_1_1vec__snd__Music.html" title=" " alt="" coords="5,197,160,237"/>
 </map>

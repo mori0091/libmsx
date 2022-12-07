@@ -1,4 +1,4 @@
 <map id="OPLL &#45; YM2413 / MSX&#45;MUSIC" name="OPLL &#45; YM2413 / MSX&#45;MUSIC">
-<area shape="rect" id="node1" title="#include &lt;opll.h&gt;" coords="5,5,160,45"/>
-<area shape="rect" id="node2" href="$group__OPLL__DEVICE.html" title="Inspect, discover, enable/disable to access registers, of the OPLL sound chip." coords="208,13,359,38"/>
+<area shape="rect" id="node1" title="#include &lt;opll.h&gt;" alt="" coords="5,5,160,45"/>
+<area shape="rect" id="node2" href="$group__OPLL__DEVICE.html" title="Inspect, discover, enable/disable to access registers, of the OPLL sound chip." alt="" coords="208,13,359,38"/>
 </map>

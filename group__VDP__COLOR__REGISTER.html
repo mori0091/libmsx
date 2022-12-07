@@ -167,8 +167,22 @@ In GRAPHIC 4..6 mode:<ul>
 </ul>
 </dd>
 <dd>
-In GRAPHIC 7 mode:<ul>
+In GRAPHIC 7 mode (default):<ul>
 <li>bit #7..#0 : color of the backdrop plane. (<code>0</code>..<code>255</code>)</li>
+<li>Color of pixels are given by the <b>pattern name table</b>.</li>
+</ul>
+</dd>
+<dd>
+In GRAPHIC 7 mode (YJK):<ul>
+<li>bit #7..#4 : (unused)</li>
+<li>bit #3..#0 : color of the backdrop plane. (<code>0</code>..<code>15</code>)</li>
+<li>Color of pixels are given by the <b>pattern name table</b>.</li>
+</ul>
+</dd>
+<dd>
+In GRAPHIC 7 mode (YJK/RGB mixed):<ul>
+<li>bit #7..#4 : (unused)</li>
+<li>bit #3..#0 : color of the backdrop plane. (<code>0</code>..<code>15</code>)</li>
 <li>Color of pixels are given by the <b>pattern name table</b>. </li>
 </ul>
 </dd></dl>

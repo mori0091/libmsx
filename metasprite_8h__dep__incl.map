@@ -1,4 +1,4 @@
 <map id="include/metasprite.h" name="include/metasprite.h">
-<area shape="rect" id="node1" title="Meta&#45;sprite ; an aggregate of sprites." coords="5,5,144,31"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." coords="24,79,125,104"/>
+<area shape="rect" id="node1" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="5,5,144,31"/>
+<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="24,79,125,104"/>
 </map>

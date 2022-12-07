@@ -1,8 +1,8 @@
 <map id="include/snd_sound.h" name="include/snd_sound.h">
-<area shape="rect" id="node1" title="Sound / Music data structure for snddrv." coords="119,5,259,31"/>
-<area shape="rect" id="node2" title=" " coords="5,79,80,104"/>
-<area shape="rect" id="node3" title=" " coords="265,152,329,177"/>
-<area shape="rect" id="node4" title=" " coords="155,79,223,104"/>
-<area shape="rect" id="node5" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." coords="248,79,347,104"/>
-<area shape="rect" id="node6" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." coords="371,79,474,104"/>
+<area shape="rect" id="node1" title="Sound / Music data structure for snddrv." alt="" coords="119,5,259,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,80,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="265,152,329,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="155,79,223,104"/>
+<area shape="rect" id="node5" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." alt="" coords="248,79,347,104"/>
+<area shape="rect" id="node6" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="371,79,474,104"/>
 </map>

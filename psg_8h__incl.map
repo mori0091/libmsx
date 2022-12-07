@@ -1,6 +1,6 @@
 <map id="include/psg.h" name="include/psg.h">
-<area shape="rect" id="node1" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." coords="27,5,125,31"/>
-<area shape="rect" id="node2" title=" " coords="5,79,69,104"/>
-<area shape="rect" id="node3" href="$io_8h.html" title="Definition of I/O ports." coords="93,79,136,104"/>
-<area shape="rect" id="node4" href="$config_8h.html" title="Hack for C Compiler portability." coords="81,152,148,177"/>
+<area shape="rect" id="node1" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="27,5,125,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,69,104"/>
+<area shape="rect" id="node3" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="93,79,136,104"/>
+<area shape="rect" id="node4" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="81,152,148,177"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="Tiled graphics mode" name="Tiled graphics mode">
-<area shape="rect" id="node1" href="$group__SCREEN.html" title="#include &lt;screen.h&gt;" coords="5,5,185,31"/>
-<area shape="rect" id="node2" title="Initialization functions for GRAPHIC 1, 2, and 3 mode." coords="233,5,371,31"/>
+<area shape="rect" id="node1" href="$group__SCREEN.html" title="#include &lt;screen.h&gt;" alt="" coords="5,5,185,31"/>
+<area shape="rect" id="node2" title="Initialization functions for GRAPHIC 1, 2, and 3 mode." alt="" coords="233,5,371,31"/>
 </map>

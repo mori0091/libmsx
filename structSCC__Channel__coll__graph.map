@@ -1,4 +1,4 @@
 <map id="SCC_Channel" name="SCC_Channel">
-<area shape="rect" id="node1" title="Device interface for a sound channel of SCC/SCC+ sound chip." coords="11,108,114,133"/>
-<area shape="rect" id="node2" href="$group__SCC__DEVICE.html#structSCC__Waveform" title="The structure of the SCC/SCC+ 32&#45;byte waveform data register." coords="5,5,120,31"/>
+<area shape="rect" id="node1" title="Device interface for a sound channel of SCC/SCC+ sound chip." alt="" coords="11,108,114,133"/>
+<area shape="rect" id="node2" href="$group__SCC__DEVICE.html#structSCC__Waveform" title="The structure of the SCC/SCC+ 32&#45;byte waveform data register." alt="" coords="5,5,120,31"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="PSG registers" name="PSG registers">
-<area shape="rect" id="node1" href="$group__PSG.html" title="#include &lt;psg.h&gt;, #include &lt;ay_3_8910.h&gt;" coords="5,5,220,45"/>
-<area shape="rect" id="node2" title="Read / Write PSG registers." coords="268,13,371,38"/>
+<area shape="rect" id="node1" href="$group__PSG.html" title="#include &lt;psg.h&gt;, #include &lt;ay_3_8910.h&gt;" alt="" coords="5,5,220,45"/>
+<area shape="rect" id="node2" title="Read / Write PSG registers." alt="" coords="268,13,371,38"/>
 </map>

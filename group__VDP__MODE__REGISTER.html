@@ -202,7 +202,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00200">200</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00212">212</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -227,7 +227,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00227">227</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00239">239</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -256,7 +256,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00238">238</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vdp_8h_source.html#l00250">250</a> of file <a class="el" href="vdp_8h_source.html">vdp.h</a>.</p>
 
 </div>
 </div>
@@ -322,7 +322,7 @@ Therefore you should do the following after this function if needed:<ul>
 <li>Address of <b>sprite attribute table</b> shall be set by calling <a class="el" href="group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaa6a6414b4ac931ef585a34dda4dcf419" title="MSX Set VRAM address of the sprite attribute table.">vdp_set_sprite_attribute_table()</a>.</li>
 <li><b>Sprite size</b> shall be set by calling <a class="el" href="group__VDP__MODE__REGISTER.html#ga804e31e6ebc463c819e59e5f17e49657" title="MSX Set sprite size.">vdp_set_sprite_size()</a>.</li>
 <li>In case of MSX2 or later, <b>number of visible lines</b> shall be set by calling <a class="el" href="group__VDP__MODE__REGISTER.html#gaa2cc4f9210a437505437273e1db868ae" title="MSX2 Set number of visible lines.">vdp_set_screen_lines()</a>.</li>
-<li>In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e., SCREEN 10, 11, or 12), <b>YJK/YAE bits</b> shall be set manually by calling <a class="el" href="group__VDP__CONTROL__REGISTER.html#gaf9ead93518d9dab82fdfbe29dc6bd10f" title="MSX Write to a VDP control register.">vdp_set_control()</a>. (There is no dedicated functions for setting YJK/YAE bits.)</li>
+<li>In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e., SCREEN 10, 11, or 12), <b>YJK/YAE bits</b> shall be set/reset by calling <a class="el" href="group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2" title="MSX2+ Set V9958 VDP&#39;s color space to RGB, YJK, or YJK/RGB.">vdp_set_yjk_mode()</a>.</li>
 <li>etc.</li>
 </ul>
 </dd></dl>
@@ -333,6 +333,8 @@ Therefore you should do the following after this function if needed:<ul>
 <a class="el" href="group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaa8c6e5071b94616225f70959001afe2b" title="MSX Set VRAM address of the color table.">vdp_set_color_table()</a> </dd>
 <dd>
 <a class="el" href="group__VDP__MODE__REGISTER.html#gaa2cc4f9210a437505437273e1db868ae" title="MSX2 Set number of visible lines.">vdp_set_screen_lines()</a> </dd>
+<dd>
+<a class="el" href="group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2" title="MSX2+ Set V9958 VDP&#39;s color space to RGB, YJK, or YJK/RGB.">vdp_set_yjk_mode()</a> </dd>
 <dd>
 <a class="el" href="group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#ga785c8cbb6c9e3f15400eb49691f32d5e" title="MSX Set VRAM address of the sprite pattern generator table.">vdp_set_sprite_pattern_table()</a> </dd>
 <dd>

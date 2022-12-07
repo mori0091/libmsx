@@ -1,7 +1,7 @@
 <map id="snd_Music" name="snd_Music">
-<area shape="rect" id="node1" title="Container of a music data." coords="272,109,357,134"/>
-<area shape="rect" id="node2" href="$structsnd__Music_1_1vec__snd__SpeedTrack.html" title="[optional] list of all speed tracks refered in items." coords="5,5,145,45"/>
-<area shape="rect" id="node3" href="$structsnd__Music_1_1vec__snd__EventTrack.html" title="[optional] list of all event tracks refered in items." coords="5,69,145,109"/>
-<area shape="rect" id="node4" href="$structsnd__Music_1_1vec__snd__Track.html" title="list of all tracks refered in items." coords="5,133,145,173"/>
-<area shape="rect" id="node5" href="$structsnd__Music_1_1vec__snd__Pattern.html" title="list of patterns (pattern sequence)." coords="5,197,145,237"/>
+<area shape="rect" id="node1" title="Container of a music data." alt="" coords="272,109,357,134"/>
+<area shape="rect" id="node2" href="$structsnd__Music_1_1vec__snd__SpeedTrack.html" title="[optional] list of all speed tracks refered in items." alt="" coords="5,5,145,45"/>
+<area shape="rect" id="node3" href="$structsnd__Music_1_1vec__snd__EventTrack.html" title="[optional] list of all event tracks refered in items." alt="" coords="5,69,145,109"/>
+<area shape="rect" id="node4" href="$structsnd__Music_1_1vec__snd__Track.html" title="list of all tracks refered in items." alt="" coords="5,133,145,173"/>
+<area shape="rect" id="node5" href="$structsnd__Music_1_1vec__snd__Pattern.html" title="list of patterns (pattern sequence)." alt="" coords="5,197,145,237"/>
 </map>

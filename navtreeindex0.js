@@ -144,9 +144,11 @@ var NAVTREEINDEX0 =
 "group__SCREEN.html":[4,6],
 "group__SCREEN__BITMAP.html":[4,6,2],
 "group__SCREEN__BITMAP.html#ga1827e3a2a2ef9778ada89048e80f7221":[4,6,2,0],
+"group__SCREEN__BITMAP.html#ga266ffb0556afacd9958b037cab14101e":[4,6,2,5],
 "group__SCREEN__BITMAP.html#ga85488f498679bc6feec298f2ea19bfb3":[4,6,2,2],
 "group__SCREEN__BITMAP.html#gaa17c4390b43d6f6f29b525c7c3ebc1a8":[4,6,2,1],
 "group__SCREEN__BITMAP.html#gad21925bfe1b1c2ed2961eaa36a890127":[4,6,2,3],
+"group__SCREEN__BITMAP.html#gaf9e640110975fa52e903459b8f2262b4":[4,6,2,4],
 "group__SCREEN__PCG.html":[4,6,1],
 "group__SCREEN__PCG.html#ga25c3fec7cc51ccc93c2d2d8c769acafc":[4,6,1,0],
 "group__SCREEN__PCG.html#ga335c1b4caf4e925867b6db2aa47707e7":[4,6,1,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "group__SOUND__OLD__API.html#ga36e8cb5d3fb282c7f17d51ab50011865":[4,9,0,7],
 "group__SOUND__OLD__API.html#ga466185ed37b39cb48ae0c4d966462cee":[4,9,0,2],
 "group__SOUND__OLD__API.html#ga5bcbcc6b811e8134f67e7553fd089bd3":[4,9,0,4],
-"group__SOUND__OLD__API.html#ga893fbd47631ab99368244cfbd0854b36":[4,9,0,16],
-"group__SOUND__OLD__API.html#ga898b0b5807cfd2a8e15db8aa8198dcb3":[4,9,0,8],
-"group__SOUND__OLD__API.html#ga90e396bab2471f72285f290ce7a5cab1":[4,9,0,9]
+"group__SOUND__OLD__API.html#ga893fbd47631ab99368244cfbd0854b36":[4,9,0,16]
 };

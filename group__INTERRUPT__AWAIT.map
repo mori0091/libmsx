@@ -1,4 +1,4 @@
 <map id="Await interrupts" name="Await interrupts">
-<area shape="rect" id="node1" href="$group__INTERRUPT.html" title="#include &lt;interrupt.h&gt;" coords="5,5,83,31"/>
-<area shape="rect" id="node2" title="Await interrupts." coords="131,5,243,31"/>
+<area shape="rect" id="node1" href="$group__INTERRUPT.html" title="#include &lt;interrupt.h&gt;" alt="" coords="5,5,83,31"/>
+<area shape="rect" id="node2" title="Await interrupts." alt="" coords="131,5,243,31"/>
 </map>

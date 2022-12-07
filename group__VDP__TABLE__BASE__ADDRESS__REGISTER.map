@@ -1,4 +1,4 @@
 <map id="Table base address registers" name="Table base address registers">
-<area shape="rect" id="node1" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" coords="5,5,143,45"/>
-<area shape="rect" id="node2" title="VRAM memory map setting." coords="191,5,325,45"/>
+<area shape="rect" id="node1" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" alt="" coords="5,5,143,45"/>
+<area shape="rect" id="node2" title="VRAM memory map setting." alt="" coords="191,5,325,45"/>
 </map>

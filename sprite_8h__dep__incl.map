@@ -1,6 +1,6 @@
 <map id="include/sprite.h" name="include/sprite.h">
-<area shape="rect" id="node1" title="Sprites." coords="127,5,236,31"/>
-<area shape="rect" id="node2" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." coords="5,79,144,104"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." coords="131,152,232,177"/>
-<area shape="rect" id="node4" href="$sprite__color_8h.html" title="Sprite color table interface." coords="219,79,363,104"/>
+<area shape="rect" id="node1" title="Sprites." alt="" coords="127,5,236,31"/>
+<area shape="rect" id="node2" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="5,79,144,104"/>
+<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="131,152,232,177"/>
+<area shape="rect" id="node4" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="219,79,363,104"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="Status registers" name="Status registers">
-<area shape="rect" id="node1" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" coords="5,5,143,45"/>
-<area shape="rect" id="node2" title="Read from status registers." coords="191,13,304,38"/>
+<area shape="rect" id="node1" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" alt="" coords="5,5,143,45"/>
+<area shape="rect" id="node2" title="Read from status registers." alt="" coords="191,13,304,38"/>
 </map>

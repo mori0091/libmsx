@@ -15,6 +15,7 @@
 
 #include <msx.h>
 #include <screen.h>
+#include <stdint.h>
 #include <text.h>
 
 void main(void) {
@@ -33,10 +34,10 @@ void main(void) {
       vmem_set_write_address((vmemptr_t)256 * 64 * (y % 3));
       for (int8_t k = -32; k < 32; k++) {
         for (int8_t j = -32; j < 32; j++) {
-          vmem_set((y << 3) | (k & 7));
-          vmem_set((y << 3) | ((k >> 3) & 7));
-          vmem_set((y << 3) | (j & 7));
-          vmem_set((y << 3) | ((j >> 3) & 7));
+          vmem_set(((uint8_t)y << 3) | ((uint8_t)k & 7));
+          vmem_set(((uint8_t)y << 3) | (((uint8_t)k >> 3) & 7));
+          vmem_set(((uint8_t)y << 3) | ((uint8_t)j & 7));
+          vmem_set(((uint8_t)y << 3) | (((uint8_t)j >> 3) & 7));
         }
       }
       if (y % 3 == 2) {
@@ -56,10 +57,10 @@ void main(void) {
       vmem_set_write_address((vmemptr_t)256 * 32 * ((k+32) % 6));
       for (int8_t y = 0; y < 32; y++) {
         for (int8_t j = -32; j < 32; j++) {
-          vmem_set((y << 3) | (k & 7));
-          vmem_set((y << 3) | ((k >> 3) & 7));
-          vmem_set((y << 3) | (j & 7));
-          vmem_set((y << 3) | ((j >> 3) & 7));
+          vmem_set(((uint8_t)y << 3) | ((uint8_t)k & 7));
+          vmem_set(((uint8_t)y << 3) | (((uint8_t)k >> 3) & 7));
+          vmem_set(((uint8_t)y << 3) | ((uint8_t)j & 7));
+          vmem_set(((uint8_t)y << 3) | (((uint8_t)j >> 3) & 7));
         }
       }
       if ((k+32) % 6 == 5) {
@@ -79,10 +80,10 @@ void main(void) {
       vmem_set_write_address((vmemptr_t)256 * 32 * ((j+32) % 6));
       for (int8_t y = 0; y < 32; y++) {
         for (int8_t k = -32; k < 32; k++) {
-          vmem_set((y << 3) | (k & 7));
-          vmem_set((y << 3) | ((k >> 3) & 7));
-          vmem_set((y << 3) | (j & 7));
-          vmem_set((y << 3) | ((j >> 3) & 7));
+          vmem_set(((uint8_t)y << 3) | ((uint8_t)k & 7));
+          vmem_set(((uint8_t)y << 3) | (((uint8_t)k >> 3) & 7));
+          vmem_set(((uint8_t)y << 3) | ((uint8_t)j & 7));
+          vmem_set(((uint8_t)y << 3) | (((uint8_t)j >> 3) & 7));
         }
       }
       if ((j+32) % 6 == 5) {

@@ -61,6 +61,9 @@ static const struct TTY_Device dev = {
 };
 
 void screen2_PCG(void) {
+  if (1 < msx_get_version()) {
+    vdp_set_yjk_mode(VDP_RGB);
+  }
   if (msx_get_version()) {
     vdp_set_screen_lines(VDP_SCREEN_LINES_192);
   }

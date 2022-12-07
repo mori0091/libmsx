@@ -28,7 +28,9 @@
  * - `MSX2` screen5()     : `SCREEN 5`           (GRAPHIC 4 mode; 256x212 pix, 4-bpp),
  * - `MSX2` screen6()     : `SCREEN 6`           (GRAPHIC 5 mode; 512x212 pix, 2-bpp),
  * - `MSX2` screen7()     : `SCREEN 7`           (GRAPHIC 6 mode; 512x212 pix, 4-bpp),
- * - `MSX2` screen8()     : `SCREEN 8`           (GRAPHIC 7 mode; 256x212 pix, 8-bpp),
+ * - `MSX2` screen8()     : `SCREEN 8`           (GRAPHIC 7 mode; 256x212 pix, 8-bpp RGB332),
+ * - `MSX2+` screen10()   : `SCREEN 10`          (GRAPHIC 7 mode; 256x212 pix, 8-bpp YJK/RGB),
+ * - `MSX2+` screen12()   : `SCREEN 12`          (GRAPHIC 7 mode; 256x212 pix, 8-bpp YJK),
  *
  * **All** above SCREEN modes supports:
  * - printf() and putchar() standard C library functions (`#include <stdio.h>`), and
@@ -322,6 +324,8 @@ void screen7(void);
  * - 256 x 212 pixel, 8-bpp graphics mode.
  * - 256 colors/pixel of 256 colors (RGB332).
  * - Sprite mode 2.
+ * - Pre-defined 16 colors for sprites.
+ * - No color palette.
  *
  * **VRAM memory map**
  * | VRAM address | size   | contents                        |
@@ -336,6 +340,57 @@ void screen7(void);
  * (i.e., text is drawn as a two-tone color graphic).
  */
 void screen8(void);
+
+/**
+ * `MSX2+` SCREEN 10 (GRAPHIC 7 YJK/RGB mode).
+ *
+ * - 256 x 212 pixel, 8-bpp graphics mode.
+ * - 12,499 colors (YJK), or 16 colors/pixel of 512 colors (RGB333).
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0xD400 | Pattern name table              |
+ * | 0x0F000      | 0x0300 | Sprite pattern generator table  |
+ * | 0x0F800      | 0x0200 | Sprite color table              |
+ * | 0x0FA00      | 0x0080 | Sprite attribute table          |
+ *
+ * \note
+ * In this mode, text is drawn as individual color text.
+ * (i.e., text is drawn as a two-tone color graphic).
+ *
+ * \note
+ * In this mode, text is drawn in the colors of the color palette as in SCREEN 5
+ * and 7.
+ */
+void screen10(void);
+
+/**
+ * `MSX2+` SCREEN 12 (GRAPHIC 7 YJK mode).
+ *
+ * - 256 x 212 pixel, 8-bpp graphics mode.
+ * - 19,268 colors (YJK).
+ * - Sprite mode 2.
+ *
+ * **VRAM memory map**
+ * | VRAM address | size   | contents                        |
+ * |--------------|--------|---------------------------------|
+ * | 0x00000      | 0xD400 | Pattern name table              |
+ * | 0x0F000      | 0x0300 | Sprite pattern generator table  |
+ * | 0x0F800      | 0x0200 | Sprite color table              |
+ * | 0x0FA00      | 0x0080 | Sprite attribute table          |
+ *
+ * \note
+ * In this mode, text is drawn as individual color text.
+ * (i.e., text is drawn as a two-tone color graphic).
+ *
+ * \note
+ * The pixel format for this mode is YJK/RGB, but it handles text foreground and
+ * background colors in the same way as SCREEN 8. This may result in unexpected
+ * colors in the text output feature.
+ */
+void screen12(void);
 
 /** @} */
 

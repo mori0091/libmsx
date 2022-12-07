@@ -54,6 +54,9 @@ static const struct TTY_Device dev = {
 };
 
 void screen0_W80(void) {
+  if (1 < msx_get_version()) {
+    vdp_set_yjk_mode(VDP_RGB);
+  }
   vdp_set_screen_lines(VDP_SCREEN_LINES_192);
 
   /* zero clear 16KiB VRAM */

@@ -130,8 +130,20 @@ void vdp_write_control(uint8_t reg, void* src, uint8_t len);
  * - Color of pixels are given by the **pattern name table**.
  *
  * \note
- * In GRAPHIC 7 mode:
+ * In GRAPHIC 7 mode (default):
  * - bit #7..#0 : color of the backdrop plane. (`0`..`255`)
+ * - Color of pixels are given by the **pattern name table**.
+ *
+ * \note
+ * In GRAPHIC 7 mode (YJK):
+ * - bit #7..#4 : (unused)
+ * - bit #3..#0 : color of the backdrop plane. (`0`..`15`)
+ * - Color of pixels are given by the **pattern name table**.
+ *
+ * \note
+ * In GRAPHIC 7 mode (YJK/RGB mixed):
+ * - bit #7..#4 : (unused)
+ * - bit #3..#0 : color of the backdrop plane. (`0`..`15`)
  * - Color of pixels are given by the **pattern name table**.
  */
 void vdp_set_color(uint8_t c);  // set color register R#7
@@ -285,14 +297,15 @@ enum vdp_sprite_size {
  * - In case of MSX2 or later, **number of visible lines** shall be set by calling
  *   vdp_set_screen_lines().
  * - In case of MSX2+ or later and If you want to use YJK mode of V9958 (i.e.,
- *   SCREEN 10, 11, or 12), **YJK/YAE bits** shall be set manually by calling
- *   vdp_set_control(). (There is no dedicated functions for setting YJK/YAE bits.)
+ *   SCREEN 10, 11, or 12), **YJK/YAE bits** shall be set/reset by calling
+ *   vdp_set_yjk_mode().
  * - etc.
  *
  * \sa vdp_set_image_table()
  * \sa vdp_set_pattern_table()
  * \sa vdp_set_color_table()
  * \sa vdp_set_screen_lines()
+ * \sa vdp_set_yjk_mode()
  * \sa vdp_set_sprite_pattern_table()
  * \sa vdp_set_sprite_attribute_table()
  * \sa vdp_set_sprite_size()
@@ -491,6 +504,79 @@ void vdp_set_hscroll_mask(bool enable);
  * \param enable  scrolling two pages if `true`, one page otherwise.
  */
 void vdp_set_hscroll_dual_page(bool enable);
+
+/**
+ * `MSX2+` Enumeration of V9958 VDP's color space.
+ *
+ * `VDP_RGB` can be used to reset to default color space for each screen mode.
+ *
+ * `VDP_YJK` and `VDP_YJK_RGB` are supposed to use with GRAPHIC 7 screen mode,
+ * and not with any other screen mode.
+ *
+ * \sa vdp_set_yjk_mode()
+ */
+enum vdp_yjk_mode {
+  /**
+   * Default color space of the V9958 (same as the V9938).
+   *
+   * In case of GRAPHIC 7 screen mode:
+   * - 256 colors
+   *   - 3-bits per pixel of R component (`0`..`7`)
+   *   - 3-bits per pixel of G component (`0`..`7`)
+   *   - 2-bits per pixel of B component (`0`..`3`)
+   * - Pre-defined 16 colors for sprites.
+   * - No color palette.
+   *
+   * Any other screen mode:
+   * - According to colors for each screen mode.
+   */
+  VDP_RGB     = 0x00,
+  /**
+   * YJK mode.
+   *
+   * In case of GRAPHIC 7 screen mode:
+   * - 19,268 colors
+   *   - 5-bits per pixel of Y component (`0`..`31`)
+   *   - 6-bits per 4-pixels of J component (`-32`..`+31`)
+   *   - 6-bits per 4-pixels of K component (`-32`..`+31`)
+   * - 16 colors out of 512 colors (color palette) for sprites.
+   *
+   * Any other screen mode:
+   * - Not supposed to use with.
+   */
+  VDP_YJK     = 0x08,
+  /**
+   * YJK / RGB mixed mode.
+   *
+   * In case of GRAPHIC 7 screen mode:
+   * - 12,499 colors
+   *   - 4-bits per pixel of Y component (`0`..`15`)
+   *   - 6-bits per 4-pixels of J component (`-32`..`+31`)
+   *   - 6-bits per 4-pixels of K component (`-32`..`+31`)
+   * - or 16 colors out of 512 colors (color palette).
+   * - 16 colors out of 512 colors (color palette) for sprites.
+   *
+   * Any other screen mode:
+   * - Not supposed to use with.
+   */
+  VDP_YJK_RGB = 0x18,
+};
+
+/**
+ * `MSX2+` Set V9958 VDP's color space to RGB, YJK, or YJK/RGB.
+ *
+ * Set / Reset YJK/YAE bit of V9958 VDP register R#25.
+ *
+ * Affects GRAPHIC 7 screen mode color space and pixel format.
+ *
+ * `VDP_RGB` can be used to reset to default color space for each screen mode.
+ *
+ * `VDP_YJK` and `VDP_YJK_RGB` are supposed to use with GRAPHIC 7 screen mode,
+ * and not with any other screen mode.
+ *
+ * \param yjk    color space
+ */
+void vdp_set_yjk_mode(enum vdp_yjk_mode yjk);
 
 /** @} */
 
@@ -1051,7 +1137,7 @@ enum vdp_cmd_op {
   VDP_CMD_HMMM = 0xd0,
   /**
    * Operation code "YMMM" : Copy rectangular area from VRAM to VRAM vertically.
-   *
+   * \sa vdp_cmd_execute_YMMM()
    */
   VDP_CMD_YMMM = 0xe0,
   /**

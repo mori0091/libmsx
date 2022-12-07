@@ -72,6 +72,49 @@
  * \defgroup CUI_COLOR Text color, Backdrop color
  * \ingroup CUI
  * Text color, Background color, Backdrop color.
+ *
+ * | SCREEN mode                   | Text foregrond    | Text background    | Backdrop         |
+ * |-------------------------------|-------------------|--------------------|------------------|
+ * | SCREEN 0 (TEXT 1)             | 16 color palette  | 16 color palette   | N/A              |
+ * | SCREEN 0 (TEXT 2)             | 16 color palette  | 16 color palette   | N/A              |
+ * | SCREEN 1 (GRAPHIC 1)          | 16 color palette  | 16 color palette   | 16 color palette |
+ * | SCREEN 2 (GRAPHIC 2)          | 16 color palette  | 16 color palette   | 16 color palette |
+ * | SCREEN 4 (GRAPHIC 3)          | 16 color palette  | 16 color palette   | 16 color palette |
+ * | SCREEN 5 (GRAPHIC 4)          | 16 color palette  | 16 color palette   | 16 color palette |
+ * | SCREEN 6 (GRAPHIC 5)          |  4 color palette  |  4 color palette   |  4 color palette |
+ * | SCREEN 7 (GRAPHIC 6)          | 16 color palette  | 16 color palette   | 16 color palette |
+ * | SCREEN 8 (GRAPHIC 7)          | RGB332            | RGB332             | RGB332           |
+ * | SCREEN 10 (GRAPHIC 7 YJK/RGB) | 16 color palette  | 16 color palette   | 16 color palette |
+ * | SCREEN 12 (GRAPHIC 7 YJK)     | A portion of YJK  | A portion of YJK   | 16 color palette |
+ *
+ * - 16 color palette (`0`..`15`)
+ *   - `MSX`  Pre-defined 16 colors.
+ *   - `MSX2` 16 colors out of 512 colors (RGB333).
+ * - 4 color palette (`0`..`3`)
+ *   - `MSX2` 4 colors out of 512 colors (RGB333).
+ * - RGB332 (`0`..`255`)
+ *   - `MSX2` 256 colors (RGB332).
+ * - A portion of YJK (`0`..`255`)
+ *   - `MSX2+` 19,268 colors (YJK)
+ *   - A single YJK color value spans 4 pixels as follows:
+ *     - 5-bits per pixel of Y component (`0`..`31`)
+ *     - 6-bits per 4-pixels of J component (`-32`..`+31`)
+ *     - 6-bits per 4-pixels of K component (`-32`..`+31`)
+ *
+ * \note
+ * In YJK mode (SCREEN 12), text colors `0`-`255` are treated as in SCREEN 8.
+ *
+ * \note
+ * However, a single YJK color value (especially the J and K components) spans 4
+ * pixels. This can result in unexpected colors; in YJK mode, pixel-by-pixel
+ * coloring is difficult to achieve.
+ *
+ * \note
+ * In mixed YJK/RGB mode (SCREEN 10), unlike YJK mode (SCREEN 12), it is
+ * possible to use YJK (12,499 colors) or a color palette (16 of 512 colors) per
+ * pixel. Therefore, in mixed YJK/RGB mode, text are drawn with a color palette
+ * of 16 colors.
+ *
  * @{
  */
 

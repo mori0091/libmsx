@@ -9,7 +9,7 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file screen7.c
+ * \file screen10.c
  */
 
 #include "screen.h"
@@ -20,24 +20,24 @@
 #include <vmem.h>
 #include <sprite.h>
 
-/* Configurations for GRAPHIC 6 mode (SCREEN 7) */
-#define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_6
+/* Configurations for GRAPHIC 7 mode (SCREEN 10) */
+#define SCREEN_MODE     VDP_SCREEN_MODE_GRAPHIC_7
 #define IMAGE           (0x00000) // pattern name table
 #define SPRITES         (0x0FA00) // sprite attribute table
 #define SPRITE_PATTERNS (0x0F000) // sprite pattern generator table
 #define SIZE_OF_IMAGE    (0xD400) // size of pattern name table
 
-#define WIDTH           (512)             // number of pixels per line
+#define WIDTH           (256)             // number of pixels per line
 #define HEIGHT          (212)             // number of lines
-#define BPP             (4)               // nuber of bits per pixel
+#define BPP             (8)               // nuber of bits per pixel
 #define BYTES_PER_LINE  (WIDTH * BPP / 8) // number of bytes per line
 
-#define COLUMNS (64)
+#define COLUMNS (32)
 #define LINES   (26)
 #define POS     ((vmemptr_t)BYTES_PER_LINE * 8 * CSRY + BPP * CSRX)
 
 static void clear_screen(void) {
-  vdp_cmd_execute_HMMV(0, 0, WIDTH, HEIGHT, ((BAKCLR & 15) << 4) | (BAKCLR & 15));
+  vdp_cmd_execute_HMMV(0, 0, WIDTH, HEIGHT, (uint8_t)((BAKCLR << 4) | 0x08));
   vdp_cmd_await();
 }
 
@@ -48,12 +48,10 @@ static void render_char(uint8_t c) {
     vmem_set_write_address(dst);
     dst += BYTES_PER_LINE;
     uint8_t bits = *p++;
-    for (uint8_t i = 4; i--; ) {
-      uint8_t x
-        = (((bits & 0x80) ? FORCLR : BAKCLR) << 4)
-        | (((bits & 0x40) ? FORCLR : BAKCLR) & 15);
-      vmem_set(x);
-      bits <<= 2;
+    for (uint8_t i = 8; i--; ) {
+      uint8_t x = ((bits & 0x80) ? FORCLR : BAKCLR);
+      vmem_set((uint8_t)((x << 4) | 0x08));
+      bits <<= 1;
     }
   }
 }
@@ -72,10 +70,9 @@ static const struct TTY_Device dev = {
   .set_border_color = set_border_color,
 };
 
-void screen7(void) {
-  if (1 < msx_get_version()) {
-    vdp_set_yjk_mode(VDP_RGB);
-  }
+void screen10(void) {
+  vdp_set_yjk_mode(VDP_YJK_RGB);
+
   vdp_set_screen_lines(VDP_SCREEN_LINES_212);
 
   vdp_set_screen_mode(SCREEN_MODE);

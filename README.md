@@ -15,6 +15,9 @@ cartridge image (16KiB, 32KiB, or MegaROM).
 
 _Pull requests (PRs) and issues (bug reports, feature requests) are welcome._ 😉
 
+<https://user-images.githubusercontent.com/659805/206341437-fcef9dde-8317-4727-ad16-a30b34b1d287.mp4>
+
+
 ## LICENSE
 
 Copyright (c) 2021-2022 Daishi Mori (mori0091)

@@ -4,10 +4,10 @@
 ;;;
 ;;; Copyright (c) 2021-2022 Daishi Mori (mori0091)
 ;;;
-;;; This software is released under the MIT License.
+;;; This software is released under the MIT License.\n
 ;;; See https://github.com/mori0091/libmsx/blob/main/LICENSE
 ;;;
-;;; GitHub libmsx project
+;;; GitHub libmsx project\n
 ;;; https://github.com/mori0091/libmsx
 
         .module crt0
@@ -21,15 +21,14 @@ rom_init::
         xor     a
         ld      (ROM_MAPPER_REGISTER_0), a ; segment #0
         inc     a
-        ld      (ROM_MAPPER_REGISTER_1), a ; segment #1 (bank #0)
+        ld      (ROM_MAPPER_REGISTER_1), a ; segment #1 (bank #1)
         ret
 
 ;------------------------------------------------
 set_bank::
         ld      (cur_bank), a
         ;; one 16KiB page per one bank
-        inc     a
-        ld      (ROM_MAPPER_REGISTER_1), a ; segment #n+1 (bank #n)
+        ld      (ROM_MAPPER_REGISTER_1), a ; segment #n (bank #n)
         ret
 
 ;------------------------------------------------
@@ -40,4 +39,4 @@ get_bank::
 ;------------------------------------------------
         .area   _DATA
 cur_bank:
-        .ds     1
+        .db     1

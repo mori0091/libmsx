@@ -127,6 +127,27 @@ uint16_t bmem_get_u16(bmemptr_t src);
  * \param src source address of banked memory.
  * \param dst destination address.
  * \param len number of bytes to be read.
+ *
+ * \note
+ * This function is supposed to copy from banked memory to page 3 of main RAM.
+ * Thus the destination area specified by `dst` and `len` must be in range of
+ * `0xc000` to `0xfffe`. In `libmsx`, the `DATA` segment and stack areas are
+ * placed on page 3 so this is reasonable.
+ *
+ * \note
+ * In particular, page 2 is used to access banked memory so the destination
+ * areas cannot be in page 2. Page 0 is MAIN ROM, page 1 is `CODE` segment, and
+ * the library code itself is included in `CODE` segment. So these areas cannot
+ * be specified as the destination areas.
+ *
+ * \note
+ * Address `0xffff` is not memory, that is "extended slot selector" register.
+ *
+ * \attention
+ * Stack areas and work areas are overridden if they intersect the destination
+ * area specified by `dst` and `len`. Unfortunately, however, the library cannot
+ * determine the appropriate bounds. The application programmer must deal with
+ * this.
  */
 void bmem_read(bmemptr_t src, void* dst, uint16_t len);
 

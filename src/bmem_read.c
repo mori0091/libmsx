@@ -14,9 +14,29 @@
 
 #include "bmem.h"
 
+#include <stdint.h>
 #include <string.h>
 
 void bmem_read(bmemptr_t src, void* dst, uint16_t len) {
+  uint8_t * q = (uint8_t *)dst;
+
+  // Overflow check.
+  //
+  // \note
+  // Page 0..2 (0x0000..0xbfff) are ROM.
+  //
+  // \note
+  // Address 0xffff is not memory, that is "extended slot selector" register.
+  //
+  // \attention
+  // Stack areas and work areas are overridden if they intersect the destination
+  // area specified by `dst` and `len`. Unfortunately, however, the library
+  // cannot determine the appropriate bounds. The application programmer must
+  // deal with this.
+  if ((uintptr_t)q < 0xc000 || len < ~((uintptr_t)q)) {
+    return;
+  }
+
   uint8_t bank = bmem_bank_of(src);
   const uint16_t offset = (uint16_t)(src & 0x3fff);
   const uint8_t * p = (const uint8_t *)0x8000 + offset;
@@ -29,8 +49,8 @@ void bmem_read(bmemptr_t src, void* dst, uint16_t len) {
     }
     len -= n;
     bmem_set_bank(bank);
-    memcpy(dst, p, n);
-    dst = (uint8_t *)dst + n;
+    memcpy(q, p, n);
+    q += n;
     bank++;
     p = (const uint8_t *)0x8000;
     n = 0x4000;

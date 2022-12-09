@@ -221,10 +221,16 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">src</td><td>source address of banked memory. </td></tr>
     <tr><td class="paramname">dst</td><td>destination address. </td></tr>
-    <tr><td class="paramname">len</td><td>number of bytes to be read. </td></tr>
+    <tr><td class="paramname">len</td><td>number of bytes to be read.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>This function is supposed to copy from banked memory to page 3 of main RAM. Thus the destination area specified by <code>dst</code> and <code>len</code> must be in range of <code>0xc000</code> to <code>0xfffe</code>. In <code>libmsx</code>, the <code>DATA</code> segment and stack areas are placed on page 3 so this is reasonable.</dd>
+<dd>
+In particular, page 2 is used to access banked memory so the destination areas cannot be in page 2. Page 0 is MAIN ROM, page 1 is <code>CODE</code> segment, and the library code itself is included in <code>CODE</code> segment. So these areas cannot be specified as the destination areas.</dd>
+<dd>
+Address <code>0xffff</code> is not memory, that is "extended slot selector" register.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Stack areas and work areas are overridden if they intersect the destination area specified by <code>dst</code> and <code>len</code>. Unfortunately, however, the library cannot determine the appropriate bounds. The application programmer must deal with this. </dd></dl>
 
 </div>
 </div>

@@ -1,9 +1,10 @@
 <map id="include/vmem.h" name="include/vmem.h">
-<area shape="rect" id="node1" title="Data types and functions for VRAM access." alt="" coords="97,5,211,31"/>
-<area shape="rect" id="node2" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="33,225,171,251"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="158,299,259,324"/>
-<area shape="rect" id="node4" href="$sprite_8h.html" title="Sprites." alt="" coords="111,152,221,177"/>
-<area shape="rect" id="node5" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="246,225,390,251"/>
-<area shape="rect" id="node6" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="245,152,343,177"/>
-<area shape="rect" id="node7" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="217,79,361,104"/>
+<area shape="rect" id="node1" title="Data types and functions for VRAM access." alt="" coords="201,5,315,31"/>
+<area shape="rect" id="node2" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node3" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="194,225,333,251"/>
+<area shape="rect" id="node4" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="319,299,421,324"/>
+<area shape="rect" id="node5" href="$sprite_8h.html" title="Sprites." alt="" coords="249,152,358,177"/>
+<area shape="rect" id="node6" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="407,225,551,251"/>
+<area shape="rect" id="node7" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="389,152,487,177"/>
+<area shape="rect" id="node8" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="295,79,439,104"/>
 </map>

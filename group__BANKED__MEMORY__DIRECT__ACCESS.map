@@ -1,0 +1,4 @@
+<map id="Direct access to banked memory by switching page 2." name="Direct access to banked memory by switching page 2.">
+<area shape="rect" id="node1" href="$group__BANKED__MEMORY.html" title="#include &lt;bmem.h&gt;" alt="" coords="5,5,173,45"/>
+<area shape="rect" id="node2" title="APIs for direct access to 16KiB segments of banked memory." alt="" coords="221,5,411,45"/>
+</map>

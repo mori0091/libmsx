@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['palette_5ft_0',['palette_t',['../group__VDP__PALETTE__REGISTER.html#ga33595fdc0e04957d3dd734d82e10d55d',1,'vdp.h']]]
+  ['metasprite_5ft_0',['metasprite_t',['../group__SPRITES__METASPRITE.html#gaaa450295993f973fb05ebda45d8d14bf',1,'metasprite.h']]]
 ];

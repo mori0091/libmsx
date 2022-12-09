@@ -8,9 +8,10 @@ var searchData=
   ['design_2dnotes_5fcrt0_2emd_5',['design-notes_crt0.md',['../design-notes__crt0_8md.html',1,'']]],
   ['design_2dnotes_5fsnddrv_2emd_6',['design-notes_snddrv.md',['../design-notes__snddrv_8md.html',1,'']]],
   ['design_2dnotes_5fsnddrv_5finternal_2emd_7',['design-notes_snddrv_internal.md',['../design-notes__snddrv__internal_8md.html',1,'']]],
-  ['device_8',['device',['../group__OPLL__DEVICE.html#a2c1af86d17c104c65519e93f3c21f925',1,'OPLL::device()'],['../group__SCC__DEVICE.html#a1e35422951aaf250205c345a99b9ef96',1,'SCC::device()']]],
-  ['disint_9',['DISINT',['../workarea_8h.html#a366afc24d7362980e4b79caffa07161c',1,'workarea.h']]],
-  ['diskve_10',['DISKVE',['../workarea_8h.html#a0e0ffe25ca63aaa5c3e6007a930e11fe',1,'workarea.h']]],
-  ['display_20registers_11',['Display registers',['../group__VDP__DISPLAY__REGISTER.html',1,'']]],
-  ['drvtbl_12',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]]
+  ['device_8',['device',['../group__SCC__DEVICE.html#a1e35422951aaf250205c345a99b9ef96',1,'SCC::device()'],['../group__OPLL__DEVICE.html#a2c1af86d17c104c65519e93f3c21f925',1,'OPLL::device()']]],
+  ['direct_20access_20to_20banked_20memory_20by_20switching_20page_202_2e_9',['Direct access to banked memory by switching page 2.',['../group__BANKED__MEMORY__DIRECT__ACCESS.html',1,'']]],
+  ['disint_10',['DISINT',['../workarea_8h.html#a366afc24d7362980e4b79caffa07161c',1,'workarea.h']]],
+  ['diskve_11',['DISKVE',['../workarea_8h.html#a0e0ffe25ca63aaa5c3e6007a930e11fe',1,'workarea.h']]],
+  ['display_20registers_12',['Display registers',['../group__VDP__DISPLAY__REGISTER.html',1,'']]],
+  ['drvtbl_13',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]]
 ];

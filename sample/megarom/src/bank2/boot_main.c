@@ -11,7 +11,7 @@
  * https://github.com/mori0091/libmsx
  */
 
-#pragma codeseg BANK1
+#pragma codeseg BANK2
 
 #include "boot_main.h"
 #include "macros.h"

@@ -2,10 +2,10 @@
 
 # Copyright (c) 2022 Daishi Mori (mori0091)
 #
-# This software is released under the MIT License.
+# This software is released under the MIT License.\n
 # See https://github.com/mori0091/libmsx/blob/main/LICENSE
 #
-# GitHub libmsx project
+# GitHub libmsx project\n
 # https://github.com/mori0091/libmsx
 
 # ------------------------------------------------------------------------
@@ -20,15 +20,15 @@
 #         |            |     segment names                           /   |            |
 # 0x04000 |------------|.....+------------+..........................   .|------------| 0x04000
 #         | page #1    |     | HEADER     |                            / | segment #1 |
-#         |            | --> | CODE       |                           /  |  (BANK0)   |
+#         |            | --> | CODE       |                           /  |  (BANK1)   |
 #         |            |     | etc.       |                          /   |            |
 # 0x08000 |------------|.....|------------+------------+------------+    |------------| 0x08000
-#         | page #2    |     | BANK0      | BANK1      | BANK2      |    | segment #2 |
-#         |            | --> |            |            |            |    |  (BANK1)   |
+#         | page #2    |     | BANK1      | BANK2      | BANK3      |    | segment #2 |
+#         |            | --> |            |            |            |    |  (BANK2)   |
 #         |            |     |            |            |            |    |            |
 # 0x0C000 |------------|.....+------------+------------+------------+    |------------| 0x0C000
 #         | page #3    |                                             .   | segment #3 |
-#         | RAM        | page #1 is mapped to segment #0 (always)     .  |  (BANK2)   |
+#         | RAM        | page #1 is mapped to segment #0 (always)     .  |  (BANK3)   |
 #         |            | page #2 is mapped to segment #1 (initially)   . |            |
 # 0x10000 +------------+ page #2 is used as 16 KiB banked ROM area      .|------------| 0x10000
 #

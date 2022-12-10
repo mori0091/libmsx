@@ -45,7 +45,8 @@ static void OPLL_write_turboR(uint8_t reg, uint8_t value) {
   opll_port1 = value;
   // wait for 23.52us at least
   const uint8_t t0 = system_timer_lo_port;
-  for (; (uint8_t)(system_timer_lo_port - t0) < 7; );
+  for (; (uint8_t)(system_timer_lo_port - t0) < 7; )
+    ;
 }
 
 const struct OPLL_Device OPLL_device = {

@@ -20,7 +20,7 @@ list () {
     shift
     offset="$(( 16384 * ( $(max_bank_of "$@") + 1 ) ))";
     find "${resources_dir}" -type f -printf '%s\t%P\n' |
-        while read s n;
+        while read -r s n;
         do
             printf '  {0x%08XL, %8dL, \"%s\"},\n' "${offset}" "${s}" "${n}";
             offset=$((offset + s));

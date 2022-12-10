@@ -1,11 +1,11 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-# Copyright (c) 2021 Daishi Mori (mori0091)
+# Copyright (c) 2021-2022 Daishi Mori (mori0091)
 #
-# This software is released under the MIT License.
+# This software is released under the MIT License.\n
 # See https://github.com/mori0091/libmsx/blob/main/LICENSE
 #
-# GitHub libmsx project
+# GitHub libmsx project\n
 # https://github.com/mori0091/libmsx
 
 # ---------------------------------------------------------------
@@ -49,6 +49,18 @@ LIBS    =
 # You may specify a folder where your rom image would to be made.
 # (default is 'bin', if omitted)
 # BINDIR = bin
+
+# [OPTIONAL]
+# You may specify a folder where your resource files exists.
+# (default is 'resources', if omitted)
+# The files in the ${RSCDIR} folder and its subfolders are concatenated at the
+# end of the ROM image as NAMED RESOURCE and can be searched by name or read at
+# run time.
+# \note This feature is only available for MegaROM image. Thus `CONFIG_ROM_TYPE`
+#       must be `ascii8` or `ascii16`, if you use resource files.
+# \see bmem.h
+# \see resources.h
+# RSCDIR = resources
 
 # [OPTIONAL]
 # If `CONFIG_CRT0_MOD_INIT` is set to `init_x` or `init_r`, all connected system

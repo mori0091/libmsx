@@ -1,5 +1,7 @@
 # sample: `MSX2+` YJK color, raster scroll, and resource files usecase
 
+<https://user-images.githubusercontent.com/659805/206873387-0f5f6584-1250-4a0f-b129-44a2b617eb67.mp4>
+
 This sample loads and shows an embedded YJK image file in MegaROM.
 
 Such embedded files are called **resource**.

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 # -*- coding: utf-8-unix -*-
 
 list_used_banks () {
@@ -62,6 +62,9 @@ parse_args ()
                 usage_and_exit;
                 ;;
             -o )
+                if [ $# -lt 2 ] ; then
+                    error "Argument required: '-o'"
+                fi
                 OUTPUT="$2";
                 shift 2;
                 ;;
@@ -101,7 +104,7 @@ EOF
 OUTPUT=;
 ARGS=;
 parse_args "$@";
-set -- ${ARGS}
+eval "set -- ${ARGS}"
 
 if [ $# -lt 1 ] ; then
     error "requires a resource folder."

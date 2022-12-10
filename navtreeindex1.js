@@ -1,5 +1,17 @@
 var NAVTREEINDEX1 =
 {
+"group__SNDDRV__DATA.html#ga5321e55e38c2c81ab0ea52c4060bb36c":[4,9,0,15],
+"group__SNDDRV__DATA.html#ga5d780b938ed0336b0e5807a47bfd8e33":[4,9,0,18],
+"group__SNDDRV__DATA.html#ga603e7de873558643233af1d8da254d48":[4,9,0,12],
+"group__SNDDRV__DATA.html#ga674ac95e9e4263e6dce0de0aaabef09d":[4,9,0,10],
+"group__SNDDRV__DATA.html#gae8a42bd495f3a6e469537aec784cb90f":[4,9,0,16],
+"group__SNDDRV__DATA.html#gafee653099de4f647d4f617e797fffa8b":[4,9,0,11],
+"group__SNDDRV__DATA.html#structsnd__Instrument":[4,9,0,0],
+"group__SNDDRV__DATA.html#structsnd__Music":[4,9,0,3],
+"group__SNDDRV__DATA.html#structsnd__Pattern":[4,9,0,7],
+"group__SNDDRV__DATA.html#structsnd__Pattern_8channels":[4,9,0,9],
+"group__SNDDRV__DATA.html#structsnd__Pattern_8specialChannels":[4,9,0,8],
+"group__SNDDRV__DATA.html#structsnd__SoundAssets":[4,9,0,2],
 "group__SNDDRV__DATA.html#structsnd__p__table":[4,9,0,1],
 "group__SOUND__OLD.html":[4,10],
 "group__SOUND__OLD__API.html":[4,10,0],
@@ -237,17 +249,5 @@ var NAVTREEINDEX1 =
 "group__VDP__UNSAFE.html#ga118cb18eb1375ddef629055a90a00976":[4,14,9,3],
 "group__VDP__UNSAFE.html#ga2363013478b321749486d2e63b9947ba":[4,14,9,6],
 "group__VDP__UNSAFE.html#ga4fe250bed0712ec04468a051b8fde22a":[4,14,9,7],
-"group__VDP__UNSAFE.html#ga8f2ad710c0ddac5e73e3a7b5b3ba3999":[4,14,9,4],
-"group__VDP__UNSAFE.html#gaaca56c9333743eee25ba68e572a17d10":[4,14,9,2],
-"group__VDP__UNSAFE.html#gabb381d91a109c478b02dd0612b9f3a18":[4,14,9,5],
-"group__VDP__UNSAFE.html#gaf53955bc84b9c190f04abdd9206f6453":[4,14,9,0],
-"group__VDP__UNSAFE.html#gaf6052365cbc622c55c3e8892b991b746":[4,14,9,8],
-"group__VDP__UNSAFE.html#gafdffcc91a0792402633458501bdb287a":[4,14,9,1],
-"group__VMEM.html":[4,15],
-"group__VMEM__ACCESS.html":[4,15,0],
-"group__VMEM__ACCESS.html#ga061417fb4eecf22ada909056084768c5":[4,15,0,5],
-"group__VMEM__ACCESS.html#ga17658e78f1b4ab50df4781d2333ce236":[4,15,0,6],
-"group__VMEM__ACCESS.html#ga2fc46495107310faa212423a4cdeea3d":[4,15,0,2],
-"group__VMEM__ACCESS.html#ga633768cfdfc1f7a91ef66ae56da1e5d8":[4,15,0,4],
-"group__VMEM__ACCESS.html#ga7de002162c4beef34d9f1f40aea4708c":[4,15,0,1]
+"group__VDP__UNSAFE.html#ga8f2ad710c0ddac5e73e3a7b5b3ba3999":[4,14,9,4]
 };

@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['wait_0',['wait',['../group__SNDDRV__DATA.html#a2bb77cd428379f3a661e49ca652bdb8c',1,'snd_Instrument::wait()'],['../group__SNDDRV__DATA.html#a53493125170848e346a8e6ad795b2c5d',1,'snd_p_table::wait()']]],
-  ['wo_5fdeformation_1',['wo_deformation',['../group__SCC__DEVICE.html#a35f8dc7deda7c0966f63afb5cfb780d7',1,'SCC_Device']]],
-  ['wo_5fwaveform_2',['wo_waveform',['../group__SCC__DEVICE.html#a9a5f48a6d6c43bc153f511430049612b',1,'SCC_Channel']]],
-  ['write_3',['write',['../structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755',1,'OPLL_Device']]],
-  ['wrprim_4',['WRPRIM',['../workarea_8h.html#afefb286a48de34bf901d08c48e0b658a',1,'workarea.h']]],
-  ['wrslt_5',['WRSLT',['../bios__entry_8h.html#ad566fbdf11b69c7a63f68d594ed6b001',1,'bios_entry.h']]],
-  ['wslreg_6',['WSLREG',['../bios__entry_8h.html#a4980d71edfce7f4fe9d4b451bfec1e56',1,'bios_entry.h']]]
+  ['vdp_5fport0_0',['vdp_port0',['../io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8',1,'io.h']]],
+  ['vdp_5fport1_1',['vdp_port1',['../io_8h.html#a81bcc4ab7ab142417f46279edf862d3a',1,'io.h']]],
+  ['vdp_5fport2_2',['vdp_port2',['../io_8h.html#a5411656a5ffcdece10e5dc8e44451553',1,'io.h']]],
+  ['vdp_5fport3_3',['vdp_port3',['../io_8h.html#a9ee87b9d8167d1b4f01a4380a4cd7f68',1,'io.h']]],
+  ['version_4',['version',['../group__OPLL__DEVICE.html#a3c0adc06ef84958caffee5a05594454b',1,'OPLL::version()'],['../group__SCC__DEVICE.html#a4a0eca2bc7f8d2b308a83b6b9afe37d7',1,'SCC::version()']]],
+  ['vsync_5fbusy_5',['vsync_busy',['../group__INTERRUPT__AWAIT.html#gac594eec6b7a3ac71bbe093c8d3e09688',1,'interrupt.h']]]
 ];

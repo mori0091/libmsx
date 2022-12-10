@@ -1,0 +1,4 @@
+<map id="Find a resource in banked memory." name="Find a resource in banked memory.">
+<area shape="rect" id="node1" href="$group__RESOURCES.html" title="#include &lt;resources.h&gt;" alt="" coords="5,5,200,45"/>
+<area shape="rect" id="node2" title="APIs for looking up a resource in banked memory by name." alt="" coords="248,5,371,45"/>
+</map>

@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['tty_5fdevice_0',['TTY_Device',['../structTTY__Device.html',1,'']]]
+  ['scc_0',['SCC',['../group__SCC__DEVICE.html#structSCC',1,'']]],
+  ['scc_5fchannel_1',['SCC_Channel',['../group__SCC__DEVICE.html#structSCC__Channel',1,'']]],
+  ['scc_5fdevice_2',['SCC_Device',['../group__SCC__DEVICE.html#structSCC__Device',1,'']]],
+  ['scc_5fwaveform_3',['SCC_Waveform',['../group__SCC__DEVICE.html#structSCC__Waveform',1,'']]],
+  ['snd_5feventtrack_4',['snd_EventTrack',['../structsnd__EventTrack.html',1,'']]],
+  ['snd_5finstrument_5',['snd_Instrument',['../group__SNDDRV__DATA.html#structsnd__Instrument',1,'']]],
+  ['snd_5fmusic_6',['snd_Music',['../group__SNDDRV__DATA.html#structsnd__Music',1,'']]],
+  ['snd_5fp_5ftable_7',['snd_p_table',['../group__SNDDRV__DATA.html#structsnd__p__table',1,'']]],
+  ['snd_5fpattern_8',['snd_Pattern',['../group__SNDDRV__DATA.html#structsnd__Pattern',1,'']]],
+  ['snd_5fpattern_2echannels_9',['snd_Pattern.channels',['../group__SNDDRV__DATA.html#structsnd__Pattern_8channels',1,'']]],
+  ['snd_5fpattern_2especialchannels_10',['snd_Pattern.specialChannels',['../group__SNDDRV__DATA.html#structsnd__Pattern_8specialChannels',1,'']]],
+  ['snd_5fsoundassets_11',['snd_SoundAssets',['../group__SNDDRV__DATA.html#structsnd__SoundAssets',1,'']]],
+  ['snd_5fspeedtrack_12',['snd_SpeedTrack',['../structsnd__SpeedTrack.html',1,'']]],
+  ['snd_5ftrack_13',['snd_Track',['../structsnd__Track.html',1,'']]],
+  ['sound_5fclip_14',['sound_clip',['../group__SOUND__OLD__API.html#structsound__clip',1,'']]],
+  ['sound_5feg_5fahdsr_15',['sound_eg_AHDSR',['../group__SOUND__OLD__EG__API.html#structsound__eg__AHDSR',1,'']]],
+  ['sound_5feg_5fattribute_16',['sound_eg_attribute',['../group__SOUND__OLD__EG__API.html#structsound__eg__attribute',1,'']]],
+  ['sound_5feg_5fattribute_2e_5f_5funnamed3_5f_5f_17',['sound_eg_attribute.__unnamed3__',['../group__SOUND__OLD__EG__API.html#unionsound__eg__attribute_8____unnamed3____',1,'']]],
+  ['sound_5feg_5flpcm_18',['sound_eg_LPCM',['../group__SOUND__OLD__EG__API.html#structsound__eg__LPCM',1,'']]],
+  ['sound_5ffragment_19',['sound_fragment',['../group__SOUND__OLD__API.html#structsound__fragment',1,'']]],
+  ['sprite_20',['sprite',['../group__SPRITES__ATTR.html#structsprite',1,'']]],
+  ['sprite_5fcolor_21',['sprite_color',['../group__SPRITES__COLOR.html#structsprite__color',1,'']]]
 ];

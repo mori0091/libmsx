@@ -13,6 +13,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "msx.h", "msx_8h.html", "msx_8h" ],
     [ "opll.h", "opll_8h.html", "opll_8h" ],
     [ "psg.h", "psg_8h.html", "psg_8h" ],
+    [ "resources.h", "resources_8h.html", "resources_8h" ],
     [ "scc.h", "scc_8h.html", "scc_8h" ],
     [ "screen.h", "screen_8h.html", "screen_8h" ],
     [ "slot.h", "slot_8h.html", "slot_8h" ],

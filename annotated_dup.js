@@ -5,6 +5,7 @@ var annotated_dup =
     [ "metasprite", "group__SPRITES__METASPRITE.html#structmetasprite", "group__SPRITES__METASPRITE_structmetasprite" ],
     [ "OPLL", "group__OPLL__DEVICE.html#structOPLL", "group__OPLL__DEVICE_structOPLL" ],
     [ "OPLL_Device", "structOPLL__Device.html", "structOPLL__Device" ],
+    [ "ResourceIndex", "group__RESOURCES__FIND.html#structResourceIndex", "group__RESOURCES__FIND_structResourceIndex" ],
     [ "SCC", "group__SCC__DEVICE.html#structSCC", "group__SCC__DEVICE_structSCC" ],
     [ "SCC_Channel", "group__SCC__DEVICE.html#structSCC__Channel", "group__SCC__DEVICE_structSCC__Channel" ],
     [ "SCC_Device", "group__SCC__DEVICE.html#structSCC__Device", "group__SCC__DEVICE_structSCC__Device" ],

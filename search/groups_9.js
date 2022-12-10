@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['palette_20registers_0',['Palette registers',['../group__VDP__PALETTE__REGISTER.html',1,'']]],
-  ['psg_20_2d_20ay_2d3_2d8910_20_2f_20programmable_20sound_20generator_1',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],
-  ['psg_20buffer_2',['PSG Buffer',['../group__PSG__BUFFER.html',1,'']]],
-  ['psg_20registers_3',['PSG registers',['../group__PSG__REGISTER.html',1,'']]]
+  ['old_20psg_20sound_20driver_20apis_0',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
+  ['opll_20_2d_20ym2413_20_2f_20msx_2dmusic_1',['OPLL - YM2413 / MSX-MUSIC',['../group__OPLL.html',1,'']]],
+  ['opll_20device_20interface_2',['OPLL device interface',['../group__OPLL__DEVICE.html',1,'']]]
 ];

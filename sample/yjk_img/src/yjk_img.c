@@ -38,7 +38,7 @@ void main(void) {
   print("github.com/mori0091/libmsx");
 
   // waveform for raster scroll
-  const int16_t x[] = {
+  const int16_t wave[] = {
     0, 3, 6, 7, 8, 7, 6, 3,
     0,-3,-6,-7,-8,-7,-6,-3,
   };
@@ -56,7 +56,7 @@ void main(void) {
       JIFFY++;
       uint16_t y = 95 * 60 / msx_get_vsync_frequency();
       while (y--) {
-        vdp_set_hscroll(x[i]);
+        vdp_set_hscroll(wave[i]);
         i++;
         i &= 15;
       }
@@ -74,7 +74,7 @@ void main(void) {
     t = JIFFY;
     while (JIFFY - t < 120) {
       await_vsync();
-      vdp_set_hscroll(x[i]);
+      vdp_set_hscroll(wave[i]);
       i++;
       i &= 15;
     }

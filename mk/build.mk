@@ -195,8 +195,7 @@ IHX2BIN_FLAGS = -s ${IMAGE_SIZE} -b ${ADDR_HEAD} \
 		-b 0x3c8000			 \
 		-b 0x3d8000			 \
 		-b 0x3e8000			 \
-		-b 0x3f8000			 \
-		--pow2
+		-b 0x3f8000
 endif
 
 CRT0 =
@@ -212,10 +211,12 @@ CRT0 += $(patsubst %,${LIBMSX_HOME}/lib/crt0_mod_libs/%.rel,${CONFIG_CRT0_MOD_LI
 SRCDIR ?= src
 OBJDIR ?= obj
 BINDIR ?= bin
+RSCDIR ?= resources
 
 # list of auto-generated source files
 BUILT_SOURCES ?=
 
+# -- .aks files --
 AKS2C = ${LIBMSX_HOME}/tools/aks2c.sh
 
 SRCS_AKS ?= $(shell find ${SRCDIR} -type f -name '*.aks')
@@ -224,6 +225,18 @@ SRCS_AKS_H = $(patsubst %.aks, %.h, ${SRCS_AKS})
 
 BUILT_SOURCES += ${SRCS_AKS_C} ${SRCS_AKS_H}
 
+# -- resources --
+RIDXC = ${LIBMSX_HOME}/tools/ridxc.sh
+RSCS_INDEX_C = ${SRCDIR}/libmsx_resources.c
+
+ifneq (${RSCDIR},)
+RSCS = $(shell find ${RSCDIR} -type f -print 2>/dev/null)
+endif
+ifneq (${RSCS},)
+BUILT_SOURCES += ${RSCS_INDEX_C}
+endif
+
+# ----
 SRCS_C ?= $(filter %.c, ${BUILT_SOURCES})
 SRCS_C += $(shell find ${SRCDIR} -type f -name '*.c')
 OBJS_C = $(patsubst ${SRCDIR}/%.c, ${OBJDIR}/%.rel, ${SRCS_C})
@@ -283,14 +296,19 @@ ${CRT0} ${LIBMSX}: libmsx
 %.bin: %.ihx
 	@${info [Build]	$@}
 	@${IHX2BIN} ${IHX2BIN_FLAGS} -o $@ $<
+	@truncate -s %16K $@
 
 ${BINDIR}/${NAME}.rom: ${BINDIR}/${NAME}.bin ${RSCS}
 	@${info [Build]	$@ <- $^}
-	@cat $^ > $@ && truncate -s %16K $@
+	@cat $^ > $@ && ${LIBMSX_HOME}/tools/pad2pow2.sh $@
 
 ${BINDIR}/${NAME}.dat: ${BINDIR}/${NAME}.ihx
 	@${info [Build]	$@}
 	@${IHX2BIN} -o $@ $<
+
+${RSCS_INDEX_C}: ${SRCS} ${RSCS}
+	@${info [Build] Resources index}
+	@${RIDXC} -o $@ ${RSCDIR} ${SRCS}
 
 # %.rom: %.ihx
 # 	@${info [Build]	$@}

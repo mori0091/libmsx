@@ -40,6 +40,11 @@
  * - \ref BANKED_MEMORY_DIRECT_ACCESS
  * - \ref BANKED_MEMORY_INDIRECT_ACCESS
  *
+ * `resource.h` provides functions to use banked memory as data storage of named
+ * resources.
+ * - \ref RESOURCES_FIND
+ * - \ref RESOURCES_INDIRECT_ACCESS
+ *
  * \note
  * These functions are available only when the `CONFIG_ROM_TYPE` is `ascii8` or
  * `ascii16`.

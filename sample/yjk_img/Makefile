@@ -1,28 +1,29 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-# Copyright (c) 2021-2022 Daishi Mori (mori0091)
+# Copyright (c) 2021 Daishi Mori (mori0091)
 #
-# This software is released under the MIT License.\n
+# This software is released under the MIT License.
 # See https://github.com/mori0091/libmsx/blob/main/LICENSE
 #
-# GitHub libmsx project\n
+# GitHub libmsx project
 # https://github.com/mori0091/libmsx
 
-# ---------------------------------------------------------------
-# This "Makefile" is a template to make application for MSX.
-# Place a copy of this file under the top folder of your project,
-# and customize the copied Makefile for your project.
-# ---------------------------------------------------------------
+# ----------------------------------------------------------------------------
+# This "Makefile" was made based on a template distributed by libmsx project.
+#
+# The original template is in `mk/` folder of libmsx GitHub repository.
+# libmsx on GitHub: https://github.com/mori0091/libmsx
+# ----------------------------------------------------------------------------
 
 # [REQUIRED]
 # Path to top of the libmsx installed folder.
-LIBMSX_HOME = path_to_top_of_libmsx
+LIBMSX_HOME = ../..
 
 # [REQUIRED]
 # Specify NAME of your rom image to be built.
 #   The rom image `${NAME}.rom` will be made into ${BINDIR} folder.
 #   e.g. If NAME was foo, the image will be `bin/foo.rom`.
-NAME = name_of_your_rom
+NAME = yjk_img
 
 # [OPTIONAL]
 # You may specify additional C compiler/linker options.
@@ -30,7 +31,7 @@ NAME = name_of_your_rom
 #   - LDFLAGS shall be linker options such as "-L dir"
 #   - LDLIBS shall be libraries to be linked such as "-lfoo" or "foo.lib"
 #   - LIBS shall be your custom libraries to be linked such as "mylib.lib"
-CFLAGS  = -DNDEBUG
+CFLAGS  = -DNDEBUG --std-c11
 LDFLAGS =
 LDLIBS  =
 LIBS    =
@@ -78,7 +79,7 @@ LIBS    =
 # - ascii16 : to make MegaROM image (ROM type: ASCII16)
 # - ascii8  : to make MegaROM image (ROM type: ASCII8)
 # \see https://github.com/mori0091/libmsx/blob/main/docs/design-notes_crt0.md
-CONFIG_ROM_TYPE = 16k
+CONFIG_ROM_TYPE = ascii16
 
 # [REQUIRED] (No need to modify)
 # Include common part of Makefile

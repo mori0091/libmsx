@@ -22,7 +22,7 @@ list () {
     find "${resources_dir}" -type f -printf '%s\t%P\n' |
         while read s n;
         do
-            printf '  {0x%08XL, %8dL, \"%s\"},\n' "${offset}" "${s}" "${n}";
+            printf '  {0x%08XUL, %8dUL, "%s"},\n' "${offset}" "${s}" "${n}";
             offset=$((offset + s));
         done
 }

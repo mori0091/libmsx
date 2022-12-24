@@ -189,9 +189,7 @@ CONFIG_CRT0_MOD_LIBS</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">value   </th><th class="markdownTableHeadNone">explanation    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>get_slot_page1</code>   </td><td class="markdownTableBodyNone">get the current slot of page #1.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>set_slot_page2</code>   </td><td class="markdownTableBodyNone">switch the slot of page #2.   </td></tr>
+<td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone">get the current slot of page #n.   </td></tr>
 </table>
 <p >The value is automatically selected according to <code>CONFIG_ROM_TYPE</code> and <code>CONFIG_CRT0_MOD_INIT</code>.</p>
 <h2><a class="anchor" id="autotoc_md29"></a>
@@ -220,12 +218,9 @@ Pre-defined crt0 configurations</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_ROM_MAPPER</code>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><code>rom_ascii8</code>   </td><td class="markdownTableBodyNone"><code>rom_ascii16</code>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_LIBS</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code> (4)   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>   </td><td class="markdownTableBodyNone"><code>get_slot_page1</code>    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"><code>set_slot_page2</code>   </td><td class="markdownTableBodyNone"><code>set_slot_page2</code>   </td><td class="markdownTableBodyNone"><code>set_slot_page2</code>   </td></tr>
+<td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_LIBS</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td></tr>
 </table>
 <p >(3): Choose one of the <code>init</code> module; <code>init_0</code>, <code>init_x</code>, or <code>init_r</code>. <code>init_0</code> is selected in default.</p>
-<p >(4): Selected (implied) only if <code>init_x</code> or <code>init_r</code> is selected as the init module.</p>
 <h2><a class="anchor" id="autotoc_md31"></a>
 ${LIBMSX_HOME}/mk/16k.4000.mk</h2>
 <div class="fragment"><div class="line">CONFIG_ROM_TYPE = 16k</div>

@@ -48,7 +48,7 @@ else ifeq (${CONFIG_ROM_TYPE}, ascii16)
 IMAGE_SIZE = 16384
 CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header
 CONFIG_CRT0_MOD_START      = start_megarom
-CONFIG_CRT0_MOD_ROM_MAPPER = rom_ascii8
+CONFIG_CRT0_MOD_ROM_MAPPER = rom_ascii16
 else
 IMAGE_SIZE = 16384
 CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header

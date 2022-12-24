@@ -2,10 +2,10 @@
 
 ;;; Copyright (c) 2021-2022 Daishi Mori (mori0091)
 ;;;
-;;; This software is released under the MIT License.
+;;; This software is released under the MIT License.\n
 ;;; See https://github.com/mori0091/libmsx/blob/main/LICENSE
 ;;;
-;;; GitHub libmsx project
+;;; GitHub libmsx project\n
 ;;; https://github.com/mori0091/libmsx
 
 ;;; \file crt0/init/init_x.s
@@ -18,7 +18,7 @@
         .module init_x
 
         .globl  start
-        .globl  get_slot_page1
+        .globl  get_slot
 
         H_STKE = 0xfeda
 
@@ -28,7 +28,9 @@ init::
         ld      de, #H_STKE
         ld      bc, #5
         ldir
-        call    get_slot_page1
+        ;; get slot of page 1
+        ld      h, #0x40
+        call    get_slot
         ld      (H_STKE+1), a
         ret
 boot:   ;; template for H.STKE hook

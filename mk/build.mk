@@ -56,12 +56,6 @@ CONFIG_CRT0_MOD_START      = start_megarom
 CONFIG_CRT0_MOD_ROM_MAPPER ?= rom_ascii16
 endif
 
-ifneq (${CONFIG_CRT0_MOD_START}, start_16k)
-CONFIG_CRT0_MOD_LIBS       = get_slot_page1 \
-                             set_slot_page2
-else ifneq (${CONFIG_CRT0_MOD_INIT}, init_0)
-CONFIG_CRT0_MOD_LIBS       = get_slot_page1
-endif
 CONFIG_CRT0_MOD_LIBS      += get_slot
 
 ifneq (${CONFIG_CRT0_MOD_ROM_HEADER}, app_megarom_header)

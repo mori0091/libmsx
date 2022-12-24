@@ -100,10 +100,9 @@ The value is automatically selected according to `CONFIG_ROM_TYPE`.
 
 ## CONFIG\_CRT0\_MOD\_LIBS
 
-| value            | explanation                      |
-|------------------|----------------------------------|
-| `get_slot_page1` | get the current slot of page #1. |
-| `set_slot_page2` | switch the slot of page #2.      |
+| value      | explanation                      |
+|------------|----------------------------------|
+| `get_slot` | get the current slot of page #n. |
 
 The value is automatically selected according to `CONFIG_ROM_TYPE` and
 `CONFIG_CRT0_MOD_INIT`.
@@ -130,20 +129,16 @@ into the `Makefile`.
 The below table shows that which component is integrated into `crt0`, for each
 pre-defined configuration:
 
-|                              | 16k.4000.mk          | 32k.4000.mk      | ascii8.mk            | ascii16.mk           |
-|------------------------------|----------------------|------------------|----------------------|----------------------|
-| `CONFIG_CRT0_MOD_ROM_HEADER` | `app_rom_header`     | `app_rom_header` | `app_megarom_header` | `app_megarom_header` |
-| `CONFIG_CRT0_MOD_INIT`       | (3)                  | (3)              | (3)                  | (3)                  |
-| `CONFIG_CRT0_MOD_START`      | `start_16k`          | `start_32k`      | `start_megarom`      | `start_megarom`      |
-| `CONFIG_CRT0_MOD_ROM_MAPPER` |                      |                  | `rom_ascii8`         | `rom_ascii16`        |
-| `CONFIG_CRT0_MOD_LIBS`       | `get_slot_page1` (4) | `get_slot_page1` | `get_slot_page1`     | `get_slot_page1`     |
-|                              |                      | `set_slot_page2` | `set_slot_page2`     | `set_slot_page2`     |
+|                              | 16k.4000.mk      | 32k.4000.mk      | ascii8.mk            | ascii16.mk           |
+|------------------------------|------------------|------------------|----------------------|----------------------|
+| `CONFIG_CRT0_MOD_ROM_HEADER` | `app_rom_header` | `app_rom_header` | `app_megarom_header` | `app_megarom_header` |
+| `CONFIG_CRT0_MOD_INIT`       | (3)              | (3)              | (3)                  | (3)                  |
+| `CONFIG_CRT0_MOD_START`      | `start_16k`      | `start_32k`      | `start_megarom`      | `start_megarom`      |
+| `CONFIG_CRT0_MOD_ROM_MAPPER` |                  |                  | `rom_ascii8`         | `rom_ascii16`        |
+| `CONFIG_CRT0_MOD_LIBS`       | `get_slot`       | `get_slot`       | `get_slot`           | `get_slot`           |
 
 (3): Choose one of the `init` module; `init_0`, `init_x`, or `init_r`. `init_0`
 is selected in default.
-
-(4): Selected (implied) only if `init_x` or `init_r` is selected as the init
-module.
 
 ## \${LIBMSX\_HOME}/mk/16k.4000.mk
 

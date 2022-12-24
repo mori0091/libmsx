@@ -62,6 +62,7 @@ CONFIG_CRT0_MOD_LIBS       = get_slot_page1 \
 else ifneq (${CONFIG_CRT0_MOD_INIT}, init_0)
 CONFIG_CRT0_MOD_LIBS       = get_slot_page1
 endif
+CONFIG_CRT0_MOD_LIBS      += get_slot
 
 ifneq (${CONFIG_CRT0_MOD_ROM_HEADER}, app_megarom_header)
 IHX2BIN_FLAGS = -s ${IMAGE_SIZE} -b ${ADDR_HEAD}

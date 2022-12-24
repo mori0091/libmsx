@@ -2,10 +2,10 @@
 
 ;;; Copyright (c) 2021-2022 Daishi Mori (mori0091)
 ;;;
-;;; This software is released under the MIT License.
+;;; This software is released under the MIT License.\n
 ;;; See https://github.com/mori0091/libmsx/blob/main/LICENSE
 ;;;
-;;; GitHub libmsx project
+;;; GitHub libmsx project\n
 ;;; https://github.com/mori0091/libmsx
 
 ;;; \file crt0/start/start_16k.s
@@ -20,8 +20,10 @@
 start::
         HIMEM  = 0xfc4a         ; (2 bytes) Pointer to upper limit address of free area
         ld      sp,(HIMEM)
-        call    gsinit          ; initialize RAM
-        call    _libmsx___init_intr ; install interrupt routine
+        ;; initialize RAM
+        call    gsinit
+        ;; install interrupt routine
+        call    _libmsx___init_intr
         call    _main
 _exit::
         rst     0x00

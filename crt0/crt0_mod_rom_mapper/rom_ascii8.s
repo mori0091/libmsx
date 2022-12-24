@@ -31,21 +31,35 @@ rom_init::
         ret
 
 ;------------------------------------------------
+        .area   _INITIALIZED
 set_bank::
-        ld      (cur_bank), a
+set_bank_p2::
+        .ds     SIZE_OF_set_bank_p2
+
+get_bank::
+get_bank_p2::
+        .ds     SIZE_OF_get_bank_p2
+
+cur_bank_p2:
+        .ds     SIZE_OF_cur_bank_p2
+
+;------------------------------------------------
+        .area   _INITIALIZER
+__xinit_set_bank_p2:
+        ld      (cur_bank_p2), a
         ;; two 8KiB pages per one bank
         add     a, a
         ld      (ROM_MAPPER_REGISTER_2), a ; segment #2n+0 (lower 8KiB of bank #n)
         inc     a
         ld      (ROM_MAPPER_REGISTER_3), a ; segment #2n+1 (upper 8KiB of bank #n)
         ret
+        SIZE_OF_set_bank_p2 = . - __xinit_set_bank_p2
 
-;------------------------------------------------
-get_bank::
-        ld      a, (cur_bank)
+__xinit_get_bank_p2:
+        ld      a, (cur_bank_p2)
         ret
+        SIZE_OF_get_bank_p2 = . - __xinit_get_bank_p2
 
-;------------------------------------------------
-        .area   _DATA
-cur_bank:
+__xinit_cur_bank_p2:
         .db     1
+        SIZE_OF_cur_bank_p2 = . - __xinit_cur_bank_p2

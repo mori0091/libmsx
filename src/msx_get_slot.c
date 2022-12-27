@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file msx_get_slot.c
- *
+/*
  * Copyright (c) 2022 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
@@ -10,10 +8,11 @@
  * GitHub libmsx project\n
  * https://github.com/mori0091/libmsx
  */
+/**
+ * \file msx_get_slot.c
+ */
 
 #include "../include/bios.h"
-#include "../include/workarea.h"
-#include <stdint.h>
 
 #if (__SDCCCALL == 1)
 

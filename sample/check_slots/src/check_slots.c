@@ -176,7 +176,17 @@ static void list_slot_callback(uint8_t slot, void * arg) {
   print(" "); print_slot(slot); print(" ");
 
   if (slot_is_MAIN_ROM(slot)) {
-    print("01__ MAIN ROM");
+    if (!slot_is_RAM(slot)) {
+      print("01__ MAIN ROM");
+    }
+    else {
+      if (slot_is_read_only(slot, (void*)0x8000)) {
+        print("01_3 MAIN ROM / RAM(8-16K)");
+      }
+      else {
+        print("0123 MAIN ROM / RAM(32K)");
+      }
+    }
   }
   else if (slot_is_SUB_ROM(slot)) {
     print("0___ SUB ROM");

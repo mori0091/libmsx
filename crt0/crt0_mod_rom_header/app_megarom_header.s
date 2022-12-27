@@ -13,7 +13,7 @@
 ;;; ROM header for MSX MegaROM image of application, starting at 0x4000.
 ;;; suggested options: --code-loc 0x4010 --data-loc 0xc000
 
-        .module app_rom_header
+        .module app_megarom_header
         .globl  init
 
         .area   _HEADER (ABS)

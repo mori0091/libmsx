@@ -240,7 +240,7 @@ static uint8_t bg_data[COLS * ROWS];
  *
  * \param col  X-axis offset for horizontal 8-dot scroll.
  */
-static void copy_BG_to_FB(uint8_t col) {
+inline void copy_BG_to_FB(uint8_t col) {
   const uint8_t * p = bg_data;
   uint8_t * q = fb_data;
   for (uint8_t i = ROWS; i--; ) {
@@ -257,7 +257,7 @@ static void copy_BG_to_FB(uint8_t col) {
  * \param y  row
  * \param s  a string
  */
-static void paint_string(uint8_t x, uint8_t y, const char * s) {
+inline void paint_string(uint8_t x, uint8_t y, const char * s) {
   memcpy(fb_data + COLS * y + x, s, strlen(s));
 }
 
@@ -282,13 +282,8 @@ static void update_pattern_generator_table(uint8_t shift) {
   vmem_write(PATTERNS+0x1000, p, sizeof(font_buffer[0]));
 }
 
-// #define SCROLL_AREA_TOP       (0)
-#define SCROLL_AREA_TOP       (2) // omit top 2 rows to reduce processing time.
-
-static void update_name_table(void) {
-  vmem_write(IMAGE + COLS * SCROLL_AREA_TOP,
-             fb_data + COLS * SCROLL_AREA_TOP,
-             COLS * (ROWS - SCROLL_AREA_TOP));
+inline void update_name_table(void) {
+  vmem_write(IMAGE, fb_data, COLS * ROWS);
 }
 
 inline void disable_vsync_interupt(void) {
@@ -301,37 +296,56 @@ inline void enable_vsync_interupt(void) {
   VDP_SET_CONTROL_REGISTER(1, RG1SAV);
 }
 
-static volatile uint8_t prev_scroll_x = 255;
 static volatile uint8_t scroll_x;
-static volatile bool busy;
+
+static bool dirty = true;
+static bool should_repaint = true;
+static uint8_t shift_byte;
+static uint8_t shift_bit;
 
 /**
- * Update the screen.
+ * Update the screen (for VSYNC frequency = 50Hz).
  * \note This is assumed to be called on VSYNC timing.
  */
-void update(void) {
-  if (prev_scroll_x == scroll_x) return;
-  if (busy) return;
-  busy = true;
+void update_50Hz(void) {
+  if (!dirty) return;
 
   disable_vsync_interupt();
 
-  const uint8_t prev_shift_byte = prev_scroll_x >> 3;
-  const uint8_t shift_byte = scroll_x >> 3;
-  const uint8_t shift_bit = scroll_x & 7;
-  prev_scroll_x = scroll_x;
-  if (shift_byte != prev_shift_byte) {
+  if (should_repaint) {
+    copy_BG_to_FB(shift_byte);
+    paint();
+    update_name_table();
+  }
+  update_pattern_generator_table(shift_bit);
+
+  enable_vsync_interupt();
+
+  dirty = false;
+}
+
+/**
+ * Update the screen (for VSYNC frequency = 60Hz).
+ * \note This is assumed to be called on VSYNC timing.
+ */
+void update_60Hz(void) {
+  if (!dirty) return;
+
+  disable_vsync_interupt();
+
+  if (should_repaint) {
     copy_BG_to_FB(shift_byte);
     paint();
     update_pattern_generator_table(shift_bit);
     update_name_table();
-  } else {
+  }
+  else {
     update_pattern_generator_table(shift_bit);
   }
 
   enable_vsync_interupt();
 
-  busy = false;
+  dirty = false;
 }
 
 /**
@@ -340,9 +354,14 @@ void update(void) {
  * \note Scroll is done on the next calling to update().
  */
 void set_hscroll(uint8_t x) {
-  while (busy)
+  while (dirty)
     ;
+  if (scroll_x == x) return;
+  shift_bit = x & 7;
+  shift_byte = x >> 3;
+  should_repaint = (scroll_x >> 3) != shift_byte;
   scroll_x = x;
+  dirty = true;
 }
 
 void main(void) {
@@ -358,7 +377,17 @@ void main(void) {
   uint8_t x = 0;
   int8_t speed = 1;
 
-  set_vsync_handler(update);
+  // Full screen update costs about 50ms at most, in case of Z80 CPU.
+  // This means that scanline passes 2 (if VSYNC=50Hz) or 3 (if VSYNC=60Hz)
+  // times during rewriting the screen. Thus, to reduce flickering, need to use
+  // dedicated update() function according to the VSYNC frequency.
+  // Hmm...
+  if (msx_get_vsync_frequency() == 50) {
+    set_vsync_handler(update_50Hz);
+  }
+  else {
+    set_vsync_handler(update_60Hz);
+  }
   uint16_t t = JIFFY;
   for (;;) {
     set_hscroll(x);

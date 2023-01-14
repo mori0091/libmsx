@@ -1,4 +1,4 @@
-# sample: `MSX` (software) scroll demo.
+# sample: `MSX` (software) scroll demo
 
 `MSX` (TMS9918A VDP) has no hardware scrolling functionality.
 

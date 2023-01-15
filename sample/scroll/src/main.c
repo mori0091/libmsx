@@ -208,9 +208,8 @@ static uint8_t font_buffer[8][sizeof(fonts)];
 
 static void setup_scrollable_font(void) {
   // patterns
-  memcpy(font_buffer[0], fonts, sizeof(fonts));
-  for (uint8_t i = 1; i < 8; ++i) {
-    pat_shift_left(7, &fonts[0][0], font_buffer[i], i);
+  for (uint8_t i = 0; i < 8; ++i) {
+    pat_shift_left(sizeof(fonts)/sizeof(fonts[0]), &fonts[0][0], &font_buffer[i][0], i);
   }
   // colors
   vmem_write(COLORS+0x0000, (void *)font_colors, sizeof(font_colors));
@@ -286,16 +285,6 @@ inline void update_name_table(void) {
   vmem_write(IMAGE, fb_data, COLS * ROWS);
 }
 
-inline void disable_vsync_interupt(void) {
-  RG1SAV &= ~(1<<5);
-  VDP_SET_CONTROL_REGISTER(1, RG1SAV);
-}
-
-inline void enable_vsync_interupt(void) {
-  RG1SAV |= (1<<5);
-  VDP_SET_CONTROL_REGISTER(1, RG1SAV);
-}
-
 static volatile uint8_t scroll_x;
 
 static bool dirty = true;
@@ -310,16 +299,12 @@ static uint8_t shift_bit;
 void update_50Hz(void) {
   if (!dirty) return;
 
-  disable_vsync_interupt();
-
   if (should_repaint) {
     copy_BG_to_FB(shift_byte);
     paint();
     update_name_table();
   }
   update_pattern_generator_table(shift_bit);
-
-  enable_vsync_interupt();
 
   dirty = false;
 }
@@ -331,8 +316,6 @@ void update_50Hz(void) {
 void update_60Hz(void) {
   if (!dirty) return;
 
-  disable_vsync_interupt();
-
   if (should_repaint) {
     copy_BG_to_FB(shift_byte);
     paint();
@@ -342,8 +325,6 @@ void update_60Hz(void) {
   else {
     update_pattern_generator_table(shift_bit);
   }
-
-  enable_vsync_interupt();
 
   dirty = false;
 }
@@ -377,7 +358,7 @@ void main(void) {
   uint8_t x = 0;
   int8_t speed = 1;
 
-  // Full screen update costs about 50ms at most, in case of Z80 CPU.
+  // Full screen update costs about 40 to 50ms at most, in case of Z80 CPU.
   // This means that scanline passes 2 (if VSYNC=50Hz) or 3 (if VSYNC=60Hz)
   // times during rewriting the screen. Thus, to reduce flickering, need to use
   // dedicated update() function according to the VSYNC frequency.

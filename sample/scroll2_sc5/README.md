@@ -1,5 +1,6 @@
 # sample: `MSX2` (software) horizontal scroll demo ; GRAPHIC 4 (SCREEN 5)
 
+<https://user-images.githubusercontent.com/659805/213215110-3a01a382-d9e1-49c3-96b2-1eeb5c128697.mp4>
 
 `MSX2` (V9938 VDP) has vertical scrolling functionality.
 But it hasn't horizontal scrolling functionality.

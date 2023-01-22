@@ -34,14 +34,14 @@
 #define LINES          (212)    // Height of the screen
 
 #define HSYNC_LINE0    (20)     // Top line of the drawing area for distant landscape
-#define HORIZON_LINE   (108)    // Top line of the road / Line of the horizon.
+#define HORIZON_LINE   (119)    // Top line of the road / Line of the horizon.
 
-#define RASTER_LINES   (212 - HORIZON_LINE)
-#define RASTER_ROWS    ((RASTER_LINES + 2) / 3)
+#define RASTER_LINES   (212 - HORIZON_LINE) // must be multiple of three.
+#define RASTER_ROWS    (RASTER_LINES / 3)
 
 #define CENTER         (128)    // scroll amount of the +/- zero position
 
-#define MAX_R          (82)     // maximum curvature (8x)
+#define MAX_R          (85)     // maximum curvature (8x)
 #define MAX_POS_X      (MAX_R * 10) // upper limit of the vehicle's lateral position (8x)
 
 static bool start_raster;
@@ -52,7 +52,10 @@ static uint16_t bg_scroll_x;
 static uint16_t bg_scroll_x_d;
 
 static int8_t R;                // target curvature (8x)
-static int8_t r;                // current curvature (8x)
+static int8_t r;                // the lateral road curvature at the horizon (8x)
+static int8_t r0;               // the lateral road curvature at vehicle position (8x)
+static int8_t curvatures[RASTER_ROWS]; // ring buffer of lateral road curvatures
+static uint8_t curvatures_idx;
 
 static int8_t vx;               // vehicle's lateral speed
 static int16_t x_pos;           // vehicle's lateral position (integer part)
@@ -65,16 +68,15 @@ inline void on_vsync(void) {
 }
 
 inline void on_hsync(void) {
-  p_scroll_x = &scroll_x[idx][0];
   if (!start_raster) {
-    // vdp_set_hscroll(*p_scroll_x);
     vdp_set_hscroll(bg_scroll_x);
     VDP_SET_CONTROL_REGISTER(19, (RG19SA = HORIZON_LINE - 6));
     start_raster = true;
     return;
   }
+  p_scroll_x = &scroll_x[idx][0];
   VDP_SET_STATUS_REGISTER_POINTER(2);
-  for (uint8_t n = 0; n < RASTER_ROWS; n++ ) {
+  for (uint8_t n = RASTER_ROWS; n--; ) {
     while (!(VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
       ;
     vdp_set_hscroll(*p_scroll_x++);
@@ -158,10 +160,14 @@ static void init_variables(void) {
   R = r = 0;
   x_pos = x_pos_d = vx = 0;
 
+  idx = 0;
   for (uint8_t n = RASTER_ROWS; n--; ) {
     scroll_x[0][n] = CENTER;
     scroll_x[1][n] = CENTER;
   }
+
+  memset(curvatures, 0, sizeof(curvatures));
+  curvatures_idx = 0;
 }
 
 static void road_animation(void) {
@@ -180,34 +186,68 @@ static void road_animation(void) {
 }
 
 static void update_road_geometry(void) {
-  // generate curve
+  // generate curve every 128 ticks
   if (!(JIFFY & 127)) {
-    if (R) {
+    uint16_t a = rand();
+    if (!(a & 3)) {
+      // return to straight course in 25% probability.
       R = 0;
-      // hide curve indicator
       hide_curve_indicator();
     }
     else {
-      uint16_t a = rand() & 255;
+      a = (a >> 2) & 255;
       if (a < 2 * MAX_R + 1) {
+        // change target curvature `R` to random value in range of -MAX_R to +MAX_R
         R = a - MAX_R;
-        if (MAX_R / 4 < R) {
+        // show curve sign before reach to the curve if it is sharp curve.
+        if (MAX_R / 8 < R) {
           show_curve_indicator_right();
-        } else if (R < -MAX_R / 4) {
+        }
+        else if (R < -MAX_R / 8) {
           show_curve_indicator_left();
+        }
+        else if (-MAX_R / 16 < R && R < MAX_R / 16) {
+          hide_curve_indicator();
         }
       }
       else {
-        R = 0;
+        // keep target curvature `R`
       }
     }
   }
+  // Gradually bring the curvature closer to the target value.
   if (r < R) {
     r++;
   }
   if (R < r) {
     r--;
   }
+  // update the ring buffer (history) of curvature
+  curvatures[curvatures_idx++] = r;
+  if (sizeof(curvatures) <= curvatures_idx) {
+    curvatures_idx = 0;
+  }
+  r0 = curvatures[curvatures_idx];
+}
+
+inline void update_raster_scroll_table(void) {
+  const uint8_t k = idx ^ 1;
+  uint16_t x = (RASTER_ROWS - 1) * x_pos;
+  uint16_t dx = 0;
+  const int8_t * p_curvatures = &curvatures[curvatures_idx];
+  uint8_t j = curvatures_idx;
+  uint8_t * p = ((uint8_t *)&scroll_x[k][RASTER_ROWS]) - 1;
+  for (uint8_t i = RASTER_ROWS; i--; ) {
+    scroll_x[k][i] = (CENTER + (x >> 7)) & 511;
+    dx -= *p_curvatures++;
+    x += dx - x_pos;
+    j++;
+    if (sizeof(curvatures) <= j) {
+      j = 0;
+      p_curvatures = &curvatures[0];
+    }
+  }
+  idx ^= 1;
 }
 
 void main(void) {
@@ -237,7 +277,7 @@ void main(void) {
     update_road_geometry();     // update curvature of the road.
 
     // update scroll amount for distant landscape
-    bg_scroll_x_d -= r;
+    bg_scroll_x_d -= r0;
     bg_scroll_x -= bg_scroll_x_d / 16;
     bg_scroll_x_d %= 16;
 
@@ -265,7 +305,7 @@ void main(void) {
     }
     // slide vehicle's lateral position according to steering and road curvature.
     x_pos_d += vx;
-    x_pos_d -= 2 * r;
+    x_pos_d -= 2 * r0;
     x_pos += x_pos_d / 8;
     x_pos_d %= 8;
 
@@ -285,16 +325,6 @@ void main(void) {
     }
 
     // update scroll amount for each raster
-    const uint8_t k = idx ^ 1;
-    uint16_t x = 0;
-    uint16_t px = (RASTER_ROWS - 1) * x_pos;
-    uint16_t dx = 0;
-    for (uint8_t i = RASTER_ROWS; i--; ) {
-      scroll_x[k][i] = (CENTER + ((x + px) >> 7)) & 511;
-      x += dx;
-      dx -= r;
-      px -= x_pos;
-    }
-    idx ^= 1;
+    update_raster_scroll_table();
   }
 }

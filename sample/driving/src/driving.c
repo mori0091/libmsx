@@ -61,25 +61,71 @@ static int8_t vx;               // vehicle's lateral speed
 static int16_t x_pos;           // vehicle's lateral position (integer part)
 static int16_t x_pos_d;         // vehicle's lateral position (decimal part)
 
+// inline void on_vsync(void) {
+//   vdp_set_hscroll(0);
+//   VDP_SET_CONTROL_REGISTER(19, (RG19SA = HSYNC_LINE0 - 6));
+//   start_raster = false;
+// }
+
+// inline void on_hsync(void) {
+//   if (!start_raster) {
+//     vdp_set_hscroll(bg_scroll_x);
+//     VDP_SET_CONTROL_REGISTER(19, (RG19SA = HORIZON_LINE - 6));
+//     start_raster = true;
+//     return;
+//   }
+//   p_scroll_x = &scroll_x[idx][0];
+//   VDP_SET_STATUS_REGISTER_POINTER(2);
+//   for (uint8_t n = RASTER_ROWS; n--; ) {
+//     while (!(VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
+//       ;
+//     vdp_set_hscroll(*p_scroll_x++);
+//     while ((VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
+//       ;
+//   }
+// }
+
+inline uint8_t hscroll_register_r26_value_from(uint16_t x) {
+  return ((x + 7) >> 3) & 0x3f;
+}
+
+inline uint8_t hscroll_register_r27_value_from(uint16_t x) {
+  return (-x & 7);
+}
+
 inline void on_vsync(void) {
-  vdp_set_hscroll(0);
+  VDP_SET_CONTROL_REGISTER(26, 0);
+  VDP_SET_CONTROL_REGISTER(27, 0);
   VDP_SET_CONTROL_REGISTER(19, (RG19SA = HSYNC_LINE0 - 6));
   start_raster = false;
 }
 
 inline void on_hsync(void) {
   if (!start_raster) {
-    vdp_set_hscroll(bg_scroll_x);
-    VDP_SET_CONTROL_REGISTER(19, (RG19SA = HORIZON_LINE - 6));
+    // scroll the distant landscape area
+    VDP_SET_CONTROL_REGISTER(26, hscroll_register_r26_value_from(bg_scroll_x));
+    VDP_SET_CONTROL_REGISTER(27, hscroll_register_r27_value_from(bg_scroll_x));
+    // setup HSYNC interrupt line to HORIZON_LINE (top of the ground area)
+    VDP_SET_CONTROL_REGISTER(19, (RG19SA = HORIZON_LINE - 4));
     start_raster = true;
     return;
   }
-  p_scroll_x = &scroll_x[idx][0];
+  // scroll the ground area every 3 lines (raster scroll)
+  const uint8_t * p = (const uint8_t *)&scroll_x[idx][0];
   VDP_SET_STATUS_REGISTER_POINTER(2);
   for (uint8_t n = RASTER_ROWS; n--; ) {
     while (!(VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
       ;
-    vdp_set_hscroll(*p_scroll_x++);
+    VDP_SET_CONTROL_REGISTER(26, *p++);
+    VDP_SET_CONTROL_REGISTER(27, *p++);
+    while ((VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
+      ;
+    while (!(VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
+      ;
+    while ((VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
+      ;
+    while (!(VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
+      ;
     while ((VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
       ;
   }
@@ -161,9 +207,16 @@ static void init_variables(void) {
   x_pos = x_pos_d = vx = 0;
 
   idx = 0;
-  for (uint8_t n = RASTER_ROWS; n--; ) {
-    scroll_x[0][n] = CENTER;
-    scroll_x[1][n] = CENTER;
+  // for (uint8_t n = RASTER_ROWS; n--; ) {
+  //   scroll_x[0][n] = CENTER;
+  //   scroll_x[1][n] = CENTER;
+  // }
+  const uint8_t r26 = hscroll_register_r26_value_from(CENTER); // R#26
+  const uint8_t r27 = hscroll_register_r27_value_from(CENTER); // R#27
+  uint8_t * p = (uint8_t *)scroll_x;
+  for (uint8_t n = 2 * RASTER_ROWS; n--; ) {
+    *p++ = r26;
+    *p++ = r27;
   }
 
   memset(curvatures, 0, sizeof(curvatures));
@@ -238,7 +291,10 @@ inline void update_raster_scroll_table(void) {
   uint8_t j = curvatures_idx;
   uint8_t * p = ((uint8_t *)&scroll_x[k][RASTER_ROWS]) - 1;
   for (uint8_t i = RASTER_ROWS; i--; ) {
-    scroll_x[k][i] = (CENTER + (x >> 7)) & 511;
+    // scroll_x[k][i] = (CENTER + (x >> 7)) & 511;
+    const uint16_t sx = (CENTER + (x >> 7)) & 511;
+    *p-- = hscroll_register_r27_value_from(sx); // R#27
+    *p-- = hscroll_register_r26_value_from(sx); // R#26
     dx -= *p_curvatures++;
     x += dx - x_pos;
     j++;

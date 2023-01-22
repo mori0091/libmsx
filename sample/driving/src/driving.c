@@ -105,6 +105,10 @@ void interrupt_handler(void) {
 }
 
 static void draw_graphics(void) {
+  // Clear page 0 and 1
+  vdp_cmd_execute_HMMV(0,   0, 256, 212, 0);
+  vdp_cmd_execute_HMMV(0, 256, 256, 212, 0);
+
   // Draw landscape (over the horizon)
   {
     uint8_t c = 1;

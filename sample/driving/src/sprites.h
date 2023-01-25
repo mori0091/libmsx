@@ -17,8 +17,14 @@
 #define SPRITES_H_
 
 void setup_sprites(void);
+
 void hide_curve_indicator(void);
 void show_curve_indicator_right(void);
 void show_curve_indicator_left(void);
+
+void hide_vehicle(void);
+void show_vehicle(void);
+void show_vehicle_L(void);
+void show_vehicle_R(void);
 
 #endif // SPRITES_H_

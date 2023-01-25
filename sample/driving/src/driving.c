@@ -309,6 +309,7 @@ void main(void) {
 
   init_variables();
 
+  show_vehicle();
   // main loop of the game
   for (;;) {
     await_vsync();
@@ -323,16 +324,28 @@ void main(void) {
     // steering
     uint8_t joy = joypad_get_state(0);
     if (joy & VK_RIGHT) {
+      if (56 <= vx && vx < 64) {
+        show_vehicle_R();
+      }
       vx += 8;
     }
     else if (joy & VK_LEFT) {
+      if (-64 < vx && vx <= -56) {
+        show_vehicle_L();
+      }
       vx -= 8;
     }
     else {
       if (0 < vx) {
+        if (28 <= vx && vx < 32) {
+          show_vehicle();
+        }
         vx -= 4;
       }
       else if (vx < 0) {
+        if (-32 < vx && vx <= -28) {
+          show_vehicle();
+        }
         vx += 4;
       }
     }

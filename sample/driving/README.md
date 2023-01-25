@@ -1,6 +1,6 @@
 # sample: `MSX2+` Driving game demo
 
-<https://user-images.githubusercontent.com/659805/213849016-ccae020d-b738-4288-9fba-3f71de7596b3.mp4>
+<https://user-images.githubusercontent.com/659805/214452325-df4d752c-e85e-4623-8155-46555af2f5c2.mp4>
 
 Proof of concept of the following technique.
 - HSYNC interrupt

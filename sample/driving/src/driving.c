@@ -34,63 +34,45 @@
 #define LINES          (212)    // Height of the screen
 
 #define HSYNC_LINE0    (20)     // Top line of the drawing area for distant landscape
-#define HORIZON_LINE   (119)    // Top line of the road / Line of the horizon.
+#define HORIZON_LINE   (LINES - RASTER_LINES) // Top line of the road / Line of the horizon.
 
-#define RASTER_LINES   (212 - HORIZON_LINE) // must be multiple of three.
+#define RASTER_LINES   (93)     // must be multiple of three.
 #define RASTER_ROWS    (RASTER_LINES / 3)
 
-#define CENTER         (128)    // scroll amount of the +/- zero position
+#define CENTER             (128) // scroll amount of the +/- zero position
+#define HALF_WIDTH_OF_ROAD (192)
 
-#define MAX_R          (85)     // maximum curvature (8x)
-#define MAX_POS_X      (MAX_R * 10) // upper limit of the vehicle's lateral position (8x)
+// maximum curvature
+#define MAX_R              ((192L << 7) * 2 / RASTER_ROWS / RASTER_ROWS)
+// upper limit of the vehicle's lateral position
+#define MAX_POS_X          (((HALF_WIDTH_OF_ROAD + 12) << 7) / RASTER_ROWS)
 
-static bool start_raster;
-static uint8_t idx;
-static uint16_t scroll_x[2][RASTER_ROWS];
-static uint16_t * p_scroll_x;
-static uint16_t bg_scroll_x;
-static uint16_t bg_scroll_x_d;
+static bool start_raster; // flag used in HSYNC interrupt routine for switching its proccess
+static uint8_t idx;       // current index of the `scroll_table` (0 or 1)
+static struct scroll_table {
+  uint8_t r26;         // horizontal scroll amount (towards left by 8 dot unit)
+  uint8_t r27;         // horizontal scroll amount (towards right by 1 dot unit)
+} scroll_table[2][RASTER_ROWS]; // double buffered scroll table
 
-static int8_t R;                // target curvature (8x)
-static int8_t r;                // the lateral road curvature at the horizon (8x)
-static int8_t r0;               // the lateral road curvature at vehicle position (8x)
+static uint16_t bg_scroll_x;    // scroll amount of landscape (integer part)
+static uint16_t bg_scroll_x_d;  // scroll amount of landscape (decimal part)
+
+static int8_t R;                // target lateral road curvature
+static int8_t r;                // the lateral road curvature at the horizon
+static int8_t r0;               // the lateral road curvature at vehicle position
 static int8_t curvatures[RASTER_ROWS]; // ring buffer of lateral road curvatures
-static uint8_t curvatures_idx;
+static uint8_t curvatures_idx;         // next element's index of the ring buffer
 
 static int8_t vx;               // vehicle's lateral speed
 static int16_t x_pos;           // vehicle's lateral position (integer part)
 static int16_t x_pos_d;         // vehicle's lateral position (decimal part)
 
-// inline void on_vsync(void) {
-//   vdp_set_hscroll(0);
-//   VDP_SET_CONTROL_REGISTER(19, (RG19SA = HSYNC_LINE0 - 6));
-//   start_raster = false;
-// }
-
-// inline void on_hsync(void) {
-//   if (!start_raster) {
-//     vdp_set_hscroll(bg_scroll_x);
-//     VDP_SET_CONTROL_REGISTER(19, (RG19SA = HORIZON_LINE - 6));
-//     start_raster = true;
-//     return;
-//   }
-//   p_scroll_x = &scroll_x[idx][0];
-//   VDP_SET_STATUS_REGISTER_POINTER(2);
-//   for (uint8_t n = RASTER_ROWS; n--; ) {
-//     while (!(VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
-//       ;
-//     vdp_set_hscroll(*p_scroll_x++);
-//     while ((VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
-//       ;
-//   }
-// }
-
 inline uint8_t hscroll_register_r26_value_from(uint16_t x) {
-  return ((x + 7) >> 3) & 0x3f;
+  return ((uint8_t)((x + 7) >> 3)) & 0x3f;
 }
 
 inline uint8_t hscroll_register_r27_value_from(uint16_t x) {
-  return (-x & 7);
+  return (-((uint8_t)x)) & 7;
 }
 
 inline void on_vsync(void) {
@@ -103,15 +85,15 @@ inline void on_vsync(void) {
 inline void on_hsync(void) {
   if (!start_raster) {
     // scroll the distant landscape area
-    VDP_SET_CONTROL_REGISTER(26, hscroll_register_r26_value_from(bg_scroll_x));
     VDP_SET_CONTROL_REGISTER(27, hscroll_register_r27_value_from(bg_scroll_x));
+    VDP_SET_CONTROL_REGISTER(26, hscroll_register_r26_value_from(bg_scroll_x));
     // setup HSYNC interrupt line to HORIZON_LINE (top of the ground area)
     VDP_SET_CONTROL_REGISTER(19, (RG19SA = HORIZON_LINE - 4));
     start_raster = true;
     return;
   }
   // scroll the ground area every 3 lines (raster scroll)
-  const uint8_t * p = (const uint8_t *)&scroll_x[idx][0];
+  const uint8_t * p = (const uint8_t *)scroll_table[idx];
   VDP_SET_STATUS_REGISTER_POINTER(2);
   for (uint8_t n = RASTER_ROWS; n--; ) {
     while (!(VDP_GET_STATUS_REGISTER_VALUE() & (1 << 5)))
@@ -159,12 +141,15 @@ static void draw_graphics(void) {
 
   // Draw landscape (over the horizon)
   {
+    vdp_cmd_execute_HMMV(0,   0, 256, HORIZON_LINE, 0x77);
+    vdp_cmd_execute_HMMV(0, 256, 256, HORIZON_LINE, 0x77);
     uint8_t c = 1;
     for (uint16_t j = 0; j < 256; j += 8) {
+      const uint8_t h = rand() % (HORIZON_LINE - HSYNC_LINE0 - 8) + 8;
       // left half (page 0)
-      vdp_cmd_execute_HMMV(j,   0, 8, HORIZON_LINE, (c << 4) | (c & 15));
+      vdp_cmd_execute_HMMV(j, HORIZON_LINE - h,       8, h, (c << 4) | (c & 15));
       // right half (page 1)
-      vdp_cmd_execute_HMMV(j, 256, 8, HORIZON_LINE, (c << 4) | (c & 15));
+      vdp_cmd_execute_HMMV(j, HORIZON_LINE - h + 256, 8, h, (c << 4) | (c & 15));
       c++;
       if (c > 11) {
         c = 1;
@@ -173,20 +158,20 @@ static void draw_graphics(void) {
   }
 
   // Draw border lines of road
-  for (uint8_t k = 0; k < 8; ++k) {
+  for (int8_t k = -4; k < 4; ++k) {
     // left half (page 0)
-    vdp_cmd_execute_LINE(255, HORIZON_LINE,      64-4+k, 211    , 14, VDP_CMD_IMP);
-    vdp_cmd_execute_LINE(255, HORIZON_LINE,     192-4+k, 211    , 14, VDP_CMD_IMP);
+    vdp_cmd_execute_LINE(255, HORIZON_LINE,     (HALF_WIDTH_OF_ROAD/3)+k, (LINES-1)    , 14, VDP_CMD_IMP);
+    vdp_cmd_execute_LINE(255, HORIZON_LINE,     (HALF_WIDTH_OF_ROAD  )+k, (LINES-1)    , 14, VDP_CMD_IMP);
     // right half (page 1)
-    vdp_cmd_execute_LINE(  0, HORIZON_LINE+256, 192-4+k, 211+256, 14, VDP_CMD_IMP);
-    vdp_cmd_execute_LINE(  0, HORIZON_LINE+256,  64-4+k, 211+256, 14, VDP_CMD_IMP);
+    vdp_cmd_execute_LINE(  0, HORIZON_LINE+256, (HALF_WIDTH_OF_ROAD  )+k, (LINES-1)+256, 14, VDP_CMD_IMP);
+    vdp_cmd_execute_LINE(  0, HORIZON_LINE+256, (HALF_WIDTH_OF_ROAD/3)+k, (LINES-1)+256, 14, VDP_CMD_IMP);
   }
 
   // Draw the ground
   {
     uint8_t c = 0xcc;
     uint8_t h = 4;
-    for (uint8_t i = HORIZON_LINE; i < 212; ) {
+    for (uint8_t i = HORIZON_LINE; i < LINES; ) {
       uint8_t hh = h >> 2;
       // left half (page 0)
       vdp_cmd_execute_LMMV(0, i,     256, hh, c, VDP_CMD_OR);
@@ -207,13 +192,9 @@ static void init_variables(void) {
   x_pos = x_pos_d = vx = 0;
 
   idx = 0;
-  // for (uint8_t n = RASTER_ROWS; n--; ) {
-  //   scroll_x[0][n] = CENTER;
-  //   scroll_x[1][n] = CENTER;
-  // }
   const uint8_t r26 = hscroll_register_r26_value_from(CENTER); // R#26
   const uint8_t r27 = hscroll_register_r27_value_from(CENTER); // R#27
-  uint8_t * p = (uint8_t *)scroll_x;
+  uint8_t * p = (uint8_t *)scroll_table;
   for (uint8_t n = 2 * RASTER_ROWS; n--; ) {
     *p++ = r26;
     *p++ = r27;
@@ -289,12 +270,14 @@ inline void update_raster_scroll_table(void) {
   uint16_t dx = 0;
   const int8_t * p_curvatures = &curvatures[curvatures_idx];
   uint8_t j = curvatures_idx;
-  uint8_t * p = ((uint8_t *)&scroll_x[k][RASTER_ROWS]) - 1;
+  uint8_t * p = ((uint8_t *)&scroll_table[k][RASTER_ROWS]) - 1;
   for (uint8_t i = RASTER_ROWS; i--; ) {
-    // scroll_x[k][i] = (CENTER + (x >> 7)) & 511;
-    const uint16_t sx = (CENTER + (x >> 7)) & 511;
-    *p-- = hscroll_register_r27_value_from(sx); // R#27
-    *p-- = hscroll_register_r26_value_from(sx); // R#26
+    // const uint16_t sx = CENTER + (x >> 7);
+    // *p-- = hscroll_register_r27_value_from(sx); // R#27
+    // *p-- = hscroll_register_r26_value_from(sx); // R#26
+    const uint16_t sx = CENTER + (x >> 7) + 7;
+    *p-- = ~((uint8_t)sx) & 7;  // R#27
+    *p-- = (sx >> 3) & 0x3f;    // R#26
     dx -= *p_curvatures++;
     x += dx - x_pos;
     j++;

@@ -220,8 +220,8 @@ static void road_animation(void) {
 }
 
 static void update_road_geometry(void) {
-  // generate curve every 128 ticks
-  if (!(JIFFY & 127)) {
+  // generate curve every 64 ticks
+  if (!(JIFFY & 63)) {
     uint16_t a = rand();
     if (!(a & 3)) {
       // return to straight course in 25% probability.
@@ -349,11 +349,11 @@ void main(void) {
         vx += 4;
       }
     }
-    if (64 < vx) {
-      vx = 64;
+    if (96 < vx) {
+      vx = 96;
     }
-    else if (vx < -64) {
-      vx = -64;
+    else if (vx < -96) {
+      vx = -96;
     }
     // slide vehicle's lateral position according to steering and road curvature.
     x_pos_d += vx;

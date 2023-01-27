@@ -465,12 +465,12 @@ void hide_curve_indicator(void) {
 
 void show_curve_indicator_right(void) {
   // vmem_set_metasprite_a(SPRITES, 0, 160, 64, &curve_indicators[1]);
-  show_metasprite(0, &curve_indicators[1], 160, 64);
+  show_metasprite(0, &curve_indicators[1], 176, 48);
 }
 
 void show_curve_indicator_left(void) {
   // vmem_set_metasprite_a(SPRITES, 0, 64, 64, &curve_indicators[0]);
-  show_metasprite(0, &curve_indicators[0], 64, 64);
+  show_metasprite(0, &curve_indicators[0], 48, 48);
 }
 
 void hide_vehicle(void) {
@@ -478,13 +478,13 @@ void hide_vehicle(void) {
 }
 
 void show_vehicle(void) {
-  show_metasprite(2, &vehicle, 96, 140);
+  show_metasprite(2, &vehicle, 96, 148);
 }
 
 void show_vehicle_L(void) {
-  show_metasprite(2, &vehicle_L, 96, 140);
+  show_metasprite(2, &vehicle_L, 96, 148);
 }
 
 void show_vehicle_R(void) {
-  show_metasprite(2, &vehicle_R, 96, 140);
+  show_metasprite(2, &vehicle_R, 96, 148);
 }

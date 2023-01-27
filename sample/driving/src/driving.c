@@ -242,7 +242,15 @@ static void draw_graphics(void) {
   }
 
   locate(2, 0); print("ARROW KEY: Steering control");
-  locate(4, 1); print("MSX2+ Raster scroll demo");
+  if (3 <= msx_get_version()) {
+    locate(2, 1); print("SPACE KEY: Toggle ");
+    fg_color(7);  print("Z80");
+    fg_color(11); print("/");
+    fg_color(9);  print("R800");
+  }
+  else {
+    locate(4, 1); print("MSX2+ Raster scroll demo");
+  }
 }
 
 static void init_variables(void) {
@@ -447,6 +455,7 @@ void main(void) {
   init_variables();
   show_vehicle();
   // main loop of the game
+  uint8_t prev_joy = 0;
   tick = 0;
   for (;;) {
     tick++;
@@ -463,6 +472,25 @@ void main(void) {
 
     // steering
     uint8_t joy = joypad_get_state(0);
+    if ((joy & VK_FIRE_0) && !(prev_joy & VK_FIRE_0)) {
+      if (3 <= msx_get_version()) {
+        if (msx_get_cpu_mode() & 3) {
+          msx_set_cpu_mode(0x80); // Z80
+          color[12] = RGB(2,2,5);
+          color[13] = RGB(1,1,4);
+          color[14] = RGB(0,0,0);
+          color[15] = RGB(7,7,7);
+        }
+        else {
+          msx_set_cpu_mode(0x82); // R800
+          color[12] = RGB(5,2,2);
+          color[13] = RGB(4,1,1);
+          color[14] = RGB(0,0,0);
+          color[15] = RGB(7,7,7);
+        }
+      }
+    }
+    prev_joy = joy;
     if (joy & VK_RIGHT) {
       if (58 <= vx && vx < 64) {
         show_vehicle_R();

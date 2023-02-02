@@ -107,6 +107,10 @@ void snd_pause(void) {
   EI();
 }
 
+bool snd_is_paused(void) {
+  return paused;
+}
+
 void snd_set_repeat(bool repeat) {
   DI();
   snd__set_repeat(repeat);

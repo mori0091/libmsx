@@ -168,6 +168,11 @@ void snd_start(void);
 void snd_pause(void);
 
 /**
+ * `MSX` Return whether paused or not.
+ */
+bool snd_is_paused(void);
+
+/**
  * `MSX` Stop music.
  */
 void snd_stop(void);

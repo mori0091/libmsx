@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"group__SNDDRV__DATA.html#ga123b2e3cb3692a41a494e0fdccd226ea":[4,9,0,17],
+"group__SNDDRV__DATA.html#ga2b92001cc23d17da3d423b326cdbc2be":[4,9,0,19],
+"group__SNDDRV__DATA.html#ga305d35e9184301195b2003b80a0f2cef":[4,9,0,13],
+"group__SNDDRV__DATA.html#ga31ceb098ffcb9d9ccfa773240c4044c6":[4,9,0,20],
+"group__SNDDRV__DATA.html#ga34d4f33a404cf11d0d1a514459514b6c":[4,9,0,14],
 "group__SNDDRV__DATA.html#ga5321e55e38c2c81ab0ea52c4060bb36c":[4,9,0,15],
 "group__SNDDRV__DATA.html#ga5d780b938ed0336b0e5807a47bfd8e33":[4,9,0,18],
 "group__SNDDRV__DATA.html#ga603e7de873558643233af1d8da254d48":[4,9,0,12],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaa6a6414b4ac931ef585a34dda4dcf419":[4,14,5,4],
 "group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaa8c6e5071b94616225f70959001afe2b":[4,14,5,2],
 "group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaf161441fd5475dbf63be7b384a2cf27a":[4,14,5,1],
-"group__VDP__UNSAFE.html":[4,14,9],
-"group__VDP__UNSAFE.html#ga038d61b6cc774b777dbc2212613fa1ed":[4,14,9,9],
-"group__VDP__UNSAFE.html#ga118cb18eb1375ddef629055a90a00976":[4,14,9,3],
-"group__VDP__UNSAFE.html#ga2363013478b321749486d2e63b9947ba":[4,14,9,6],
-"group__VDP__UNSAFE.html#ga4fe250bed0712ec04468a051b8fde22a":[4,14,9,7],
-"group__VDP__UNSAFE.html#ga8f2ad710c0ddac5e73e3a7b5b3ba3999":[4,14,9,4]
+"group__VDP__UNSAFE.html":[4,14,9]
 };

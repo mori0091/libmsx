@@ -138,6 +138,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ga04cfd2561ae473a9b16bd5fdd8168388"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#ga04cfd2561ae473a9b16bd5fdd8168388">snd_set_sfx</a> (uint8_t index, const <a class="el" href="group__SNDDRV__DATA.html#structsnd__SoundAssets">snd_SoundAssets</a> *sa)</td></tr>
 <tr class="memdesc:ga04cfd2561ae473a9b16bd5fdd8168388"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Sets the specified music as SFX (sound effects) in the sound driver.  <a href="group__SNDDRV__API.html#ga04cfd2561ae473a9b16bd5fdd8168388">More...</a><br /></td></tr>
 <tr class="separator:ga04cfd2561ae473a9b16bd5fdd8168388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89bb72a234cebf8c2f13ec0a2dd6100f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#ga89bb72a234cebf8c2f13ec0a2dd6100f">snd_set_sfx_with_priority</a> (uint8_t index, const <a class="el" href="group__SNDDRV__DATA.html#structsnd__SoundAssets">snd_SoundAssets</a> *sa, uint8_t priority)</td></tr>
+<tr class="memdesc:ga89bb72a234cebf8c2f13ec0a2dd6100f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Sets the specified music as SFX (sound effects) in the sound driver.  <a href="group__SNDDRV__API.html#ga89bb72a234cebf8c2f13ec0a2dd6100f">More...</a><br /></td></tr>
+<tr class="separator:ga89bb72a234cebf8c2f13ec0a2dd6100f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga580df772d36a11700f11bacefbd6ef7f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#ga580df772d36a11700f11bacefbd6ef7f">snd_is_playing</a> (void)</td></tr>
+<tr class="memdesc:ga580df772d36a11700f11bacefbd6ef7f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return whether BGM and/or SFX is playing or not.  <a href="group__SNDDRV__API.html#ga580df772d36a11700f11bacefbd6ef7f">More...</a><br /></td></tr>
+<tr class="separator:ga580df772d36a11700f11bacefbd6ef7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa7be59c3bffe65e2b48f3ac1d1cc4e83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#gaa7be59c3bffe65e2b48f3ac1d1cc4e83">snd_is_playing_bgm</a> (void)</td></tr>
+<tr class="memdesc:gaa7be59c3bffe65e2b48f3ac1d1cc4e83"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return whether BGM is playing or not.  <a href="group__SNDDRV__API.html#gaa7be59c3bffe65e2b48f3ac1d1cc4e83">More...</a><br /></td></tr>
+<tr class="separator:gaa7be59c3bffe65e2b48f3ac1d1cc4e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada15fab6379441b6d7fd3693a40e38b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#gada15fab6379441b6d7fd3693a40e38b9">snd_is_playing_sfx</a> (void)</td></tr>
+<tr class="memdesc:gada15fab6379441b6d7fd3693a40e38b9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return whether SFX is playing or not.  <a href="group__SNDDRV__API.html#gada15fab6379441b6d7fd3693a40e38b9">More...</a><br /></td></tr>
+<tr class="separator:gada15fab6379441b6d7fd3693a40e38b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga24fde7ac311197e186232be3f2f5ae7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#ga24fde7ac311197e186232be3f2f5ae7b">snd_init</a> (void)</td></tr>
 <tr class="memdesc:ga24fde7ac311197e186232be3f2f5ae7b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Initialize the PSG and the sound driver.  <a href="group__SNDDRV__API.html#ga24fde7ac311197e186232be3f2f5ae7b">More...</a><br /></td></tr>
 <tr class="separator:ga24fde7ac311197e186232be3f2f5ae7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +159,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9d9e434c71c03c381646afb4792e662f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#ga9d9e434c71c03c381646afb4792e662f">snd_pause</a> (void)</td></tr>
 <tr class="memdesc:ga9d9e434c71c03c381646afb4792e662f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Pause music.  <a href="group__SNDDRV__API.html#ga9d9e434c71c03c381646afb4792e662f">More...</a><br /></td></tr>
 <tr class="separator:ga9d9e434c71c03c381646afb4792e662f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae664de85cd15e6bf536d2292253bfa89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#gae664de85cd15e6bf536d2292253bfa89">snd_is_paused</a> (void)</td></tr>
+<tr class="memdesc:gae664de85cd15e6bf536d2292253bfa89"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return whether paused or not.  <a href="group__SNDDRV__API.html#gae664de85cd15e6bf536d2292253bfa89">More...</a><br /></td></tr>
+<tr class="separator:gae664de85cd15e6bf536d2292253bfa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7b7dae51f611ad630252baad7c0e342d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SNDDRV__API.html#ga7b7dae51f611ad630252baad7c0e342d">snd_stop</a> (void)</td></tr>
 <tr class="memdesc:ga7b7dae51f611ad630252baad7c0e342d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Stop music.  <a href="group__SNDDRV__API.html#ga7b7dae51f611ad630252baad7c0e342d">More...</a><br /></td></tr>
 <tr class="separator:ga7b7dae51f611ad630252baad7c0e342d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -395,10 +410,119 @@ Default frequency that the music composer assumed may not be the same. Therefore
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>Number of a music to be played as SFX. </td></tr>
-    <tr><td class="paramname">sa</td><td>Pointer to the sound assets that contains the music. </td></tr>
+    <tr><td class="paramname">sa</td><td>Pointer to the sound assets that contains the music.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Same as <code>snd_set_sfx_with_priority(index, sa, 0)</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ga89bb72a234cebf8c2f13ec0a2dd6100f" name="ga89bb72a234cebf8c2f13ec0a2dd6100f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga89bb72a234cebf8c2f13ec0a2dd6100f">&#9670;&#160;</a></span>snd_set_sfx_with_priority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void snd_set_sfx_with_priority </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__SNDDRV__DATA.html#structsnd__SoundAssets">snd_SoundAssets</a> *&#160;</td>
+          <td class="paramname"><em>sa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>priority</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Sets the specified music as SFX (sound effects) in the sound driver. </p>
+<p >If a SFX is not being played, or if the given priority is higher than or equal to that of the currently playing SFX, the specified SFX will be played. Otherwise, nothing will be done.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Number of a music to be played as SFX. </td></tr>
+    <tr><td class="paramname">sa</td><td>Pointer to the sound assets that contains the music. </td></tr>
+    <tr><td class="paramname">priority</td><td>Priority of the SFX. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga580df772d36a11700f11bacefbd6ef7f" name="ga580df772d36a11700f11bacefbd6ef7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga580df772d36a11700f11bacefbd6ef7f">&#9670;&#160;</a></span>snd_is_playing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool snd_is_playing </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Return whether BGM and/or SFX is playing or not. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if BGM and/or SFX is playing. </dd></dl>
+
+</div>
+</div>
+<a id="gaa7be59c3bffe65e2b48f3ac1d1cc4e83" name="gaa7be59c3bffe65e2b48f3ac1d1cc4e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa7be59c3bffe65e2b48f3ac1d1cc4e83">&#9670;&#160;</a></span>snd_is_playing_bgm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool snd_is_playing_bgm </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Return whether BGM is playing or not. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if BGM is playing. </dd></dl>
+
+</div>
+</div>
+<a id="gada15fab6379441b6d7fd3693a40e38b9" name="gada15fab6379441b6d7fd3693a40e38b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gada15fab6379441b6d7fd3693a40e38b9">&#9670;&#160;</a></span>snd_is_playing_sfx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool snd_is_playing_sfx </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Return whether SFX is playing or not. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if SFX is playing. </dd></dl>
 
 </div>
 </div>
@@ -461,6 +585,26 @@ Default frequency that the music composer assumed may not be the same. Therefore
 </div><div class="memdoc">
 
 <p><code>MSX</code> Pause music. </p>
+
+</div>
+</div>
+<a id="gae664de85cd15e6bf536d2292253bfa89" name="gae664de85cd15e6bf536d2292253bfa89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae664de85cd15e6bf536d2292253bfa89">&#9670;&#160;</a></span>snd_is_paused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool snd_is_paused </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Return whether paused or not. </p>
 
 </div>
 </div>

@@ -25,7 +25,6 @@
 
 #define PSG(reg)                     (ay_3_8910_buffer[(reg)])
 
-static uint8_t volume[3];       // main volume
 static bool paused;
 static bool repeat;
 static uint8_t vsync_freq;

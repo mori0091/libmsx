@@ -146,6 +146,27 @@ void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa);
 void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa);
 
 /**
+ * `MSX` Return whether BGM and/or SFX is playing or not.
+ *
+ * \return `true` if BGM and/or SFX is playing.
+ */
+bool snd_is_playing(void);
+
+/**
+ * `MSX` Return whether BGM is playing or not.
+ *
+ * \return `true` if BGM is playing.
+ */
+bool snd_is_playing_bgm(void);
+
+/**
+ * `MSX` Return whether SFX is playing or not.
+ *
+ * \return `true` if SFX is playing.
+ */
+bool snd_is_playing_sfx(void);
+
+/**
  * `MSX` Initialize the PSG and the sound driver.
  *
  * This function must be called at least once. In particular, it must be called

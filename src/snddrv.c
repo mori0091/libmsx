@@ -101,6 +101,18 @@ void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa) {
   EI();
 }
 
+bool snd_is_playing(void) {
+  return snd_is_playing_bgm() || snd_is_playing_sfx();
+}
+
+bool snd_is_playing_bgm(void) {
+  return !snd_bgm.m.isEnd;
+}
+
+bool snd_is_playing_sfx(void) {
+  return !snd_sfx.m.isEnd;
+}
+
 void snd_pause(void) {
   DI();
   snd__pause();

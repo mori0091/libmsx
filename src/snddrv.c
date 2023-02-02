@@ -32,6 +32,7 @@ uint8_t snd_speed_multiplier;
 
 struct snd_ctx snd_bgm;
 struct snd_ctx snd_sfx;
+static uint8_t sfx_priority;
 
 static void snd__init_ctx(struct snd_ctx * ctx) {
   snd_m__init(&ctx->m);
@@ -95,7 +96,15 @@ void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa) {
 }
 
 void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa) {
+  snd_set_sfx_with_priority(index, sa, 0);
+}
+
+void snd_set_sfx_with_priority(uint8_t index, const snd_SoundAssets * sa, uint8_t priority) {
+  if (snd_is_playing_sfx() && priority < sfx_priority) {
+    return;
+  }
   DI();
+  sfx_priority = priority;
   snd_sfx.m.sa = sa;
   snd__set_program(&snd_sfx, &sa->musics.data[index]);
   EI();

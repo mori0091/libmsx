@@ -142,8 +142,24 @@ void snd_set_bgm(uint8_t index, const snd_SoundAssets * sa);
  *
  * \param index Number of a music to be played as SFX.
  * \param sa    Pointer to the sound assets that contains the music.
+ *
+ * \note
+ * Same as `snd_set_sfx_with_priority(index, sa, 0)`.
  */
 void snd_set_sfx(uint8_t index, const snd_SoundAssets * sa);
+
+/**
+ * `MSX` Sets the specified music as SFX (sound effects) in the sound driver.
+ *
+ * If a SFX is not being played, or if the given priority is higher than or
+ * equal to that of the currently playing SFX, the specified SFX will be played.
+ * Otherwise, nothing will be done.
+ *
+ * \param index Number of a music to be played as SFX.
+ * \param sa    Pointer to the sound assets that contains the music.
+ * \param priority Priority of the SFX.
+ */
+void snd_set_sfx_with_priority(uint8_t index, const snd_SoundAssets * sa, uint8_t priority);
 
 /**
  * `MSX` Return whether BGM and/or SFX is playing or not.

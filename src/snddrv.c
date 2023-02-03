@@ -182,9 +182,9 @@ void snd_play(void) {
 
 static void snd__decode(struct snd_ctx * ctx) {
   if (ctx->m.isEnd) return;
-  uint16_t counter = ctx->counter + ctx->play_freq;
-  while (vsync_freq <= counter) {
-    counter -= vsync_freq;
+  ctx->counter += ctx->play_freq;
+  while (vsync_freq <= ctx->counter) {
+    ctx->counter -= vsync_freq;
     // ----
     snd_m__decode(&ctx->m);
     struct snd_channel * pch = &ctx->m.channels[0];

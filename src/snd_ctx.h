@@ -23,7 +23,7 @@ struct snd_ctx {
   struct snd_m_ctx m;
   uint8_t song_freq;            // frequency of the song
   uint8_t play_freq;            // frequency of the player
-  uint16_t counter;             // timing counter for adjusting frequency
+  uint8_t counter;              // timing counter for adjusting frequency
 };
 
 extern struct snd_ctx snd_bgm;

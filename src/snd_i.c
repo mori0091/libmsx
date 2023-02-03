@@ -76,7 +76,7 @@ inline int16_t snd_i__stream_take_i16(struct snd_i_ctx * ctx) {
   return (int16_t)snd_i__stream_take_u16(ctx);
 }
 
-static void snd_i__init_state(struct snd_i_ctx * ctx) {
+inline void snd_i__init_state(struct snd_i_ctx * ctx) {
   ctx->volume = 0;
   ctx->tone_on = true;
   ctx->noise_fdr = 0;

@@ -1,15 +1,15 @@
 var bios__entry_8h =
 [
     [ "BIOS_ENTRY_H", "bios__entry_8h.html#a43cf7de11d57db1dc1ef1ae8d1d3acba", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#a2ee0e8c10b07391c21f3bc80d6809c34", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#a81a5e94148884ab7be8a696a5edb99ac", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#a8e0195747f2308712feabc8a72519bbb", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#a892df085e2ec4b1161b7372a07a28b78", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#afbb8e8b0fa61428b7c089bb9ef7654d2", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#aa318e2f554d71cc6521a660fbd80a5c2", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#a09784ebf1c6b55669a9145e012b34816", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#acb5e20b987a26af29712cc7824a4ae28", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#a08b5be8208062f0730f3f04778a8a7c9", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#acf829479f29a00e084936d29822ab14e", null ],
-    [ "MSX_BIOS", "bios__entry_8h.html#a04fae96972858cf13978d8344f8fb944", null ]
+    [ "RDSLT", "bios__entry_8h.html#a1f0f404912087ad29b0c5c636bdedb39", null ],
+    [ "WRSLT", "bios__entry_8h.html#ad566fbdf11b69c7a63f68d594ed6b001", null ],
+    [ "CALSLT", "bios__entry_8h.html#af66ad7f544a2125e234c4ee8ad43d587", null ],
+    [ "ENASLT", "bios__entry_8h.html#aa5bcf953fc662dce83ebf1a81d4010e3", null ],
+    [ "CALLF", "bios__entry_8h.html#aefa8f3409a46ea7b655e06cca74e1a09", null ],
+    [ "RSLREG", "bios__entry_8h.html#a5c563194a879f039db48e020bd87fb36", null ],
+    [ "WSLREG", "bios__entry_8h.html#a4980d71edfce7f4fe9d4b451bfec1e56", null ],
+    [ "GTSTCK", "bios__entry_8h.html#a7dfb0604fdb04a3a658b5e1db04cdefa", null ],
+    [ "GTTRIG", "bios__entry_8h.html#a64496cb8cdbabc91bcf6d1b4eb4d7795", null ],
+    [ "CHGCPU", "bios__entry_8h.html#aeba5f9f725b4d999e89ef352fba7bace", null ],
+    [ "GETCPU", "bios__entry_8h.html#a91fd124d4b8b97fcc19dfe2b08d64d75", null ]
 ];

@@ -70,9 +70,6 @@ static void snd__init(void) {
   snd__init_ctx(&snd_bgm);
 }
 
-#define DI() __asm__("di")
-#define EI() __asm__("ei")
-
 extern void snd__set_speed(uint8_t multiplier);
 
 static void snd__set_bgm(const snd_Music * data) {

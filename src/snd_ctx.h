@@ -19,6 +19,14 @@
 #include "./snd_sound.h"
 #include "./snd_m.h"
 
+#if defined(__SDCC)
+#  define DI() __asm__("di")
+#  define EI() __asm__("ei")
+#else
+#  define DI()
+#  define EI()
+#endif
+
 struct snd_ctx {
   struct snd_m_ctx m;
   uint8_t song_freq;            // frequency of the song

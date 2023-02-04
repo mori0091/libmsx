@@ -21,17 +21,17 @@
 #include "config.h"
 
 // ---- VDP I/O ports
-static volatile __sfr __at (0x98) vdp_port0;
-static volatile __sfr __at (0x99) vdp_port1;
-static volatile __sfr __at (0x9a) vdp_port2;
-static volatile __sfr __at (0x9b) vdp_port3;
+MSX_IO_PORT(0x98) vdp_port0;
+MSX_IO_PORT(0x99) vdp_port1;
+MSX_IO_PORT(0x9a) vdp_port2;
+MSX_IO_PORT(0x9b) vdp_port3;
 
 // ---- PSG I/O ports
-static volatile __sfr __at (0x0a0) psg_port0; /* address latch */
-static volatile __sfr __at (0x0a1) psg_port1; /* data write */
-static volatile __sfr __at (0x0a2) psg_port2; /* data read */
+MSX_IO_PORT(0x0a0) psg_port0; /* address latch */
+MSX_IO_PORT(0x0a1) psg_port1; /* data write */
+MSX_IO_PORT(0x0a2) psg_port2; /* data read */
 
 // ---- Slot I/O ports
-static volatile __sfr __at (0x0a8) primary_slot_select_port;
+MSX_IO_PORT(0x0a8) primary_slot_select_port;
 
 #endif

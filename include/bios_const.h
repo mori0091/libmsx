@@ -36,21 +36,21 @@ struct font {
  * `MSX` Pointer to MSX fonts in MAIN ROM (0004H / MAIN).
  * \sa CGPNT
  */
-static __at (0x0004) const struct font * const CGTBL;
+MSX_BIOS(0x0004) const struct font * const CGTBL;
 
 /**
  * `MSX` International identifier code #1 of MSX BIOS (002BH / MAIN).
  *
  * \sa MSX Datapack Volume 1, pp.322
  */
-static __at (0x002b) const uint8_t INTERNATIONAL_ID_1;
+MSX_BIOS(0x002b) const uint8_t INTERNATIONAL_ID_1;
 
 /**
  * `MSX` International identifier code #2 of MSX BIOS (002CH / MAIN).
  *
  * \sa MSX Datapack Volume 1, pp.322
  */
-static __at (0x002c) const uint8_t INTERNATIONAL_ID_2;
+MSX_BIOS(0x002c) const uint8_t INTERNATIONAL_ID_2;
 
 /**
  * `MSX` System version code of MSX BIOS (002DH / MAIN).
@@ -67,6 +67,6 @@ static __at (0x002c) const uint8_t INTERNATIONAL_ID_2;
  * \sa MSX Datapack Volume 1, pp.322
  * \sa MSX Datapack Volume 3, pp.43
  */
-static __at (0x002d) const uint8_t MSX_SYSTEM_VERSION_CODE;
+MSX_BIOS(0x002d) const uint8_t MSX_SYSTEM_VERSION_CODE;
 
 #endif

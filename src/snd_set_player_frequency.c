@@ -16,9 +16,6 @@
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
 
-#define DI() __asm__("di")
-#define EI() __asm__("ei")
-
 void snd__set_bgm_freq(uint8_t freq) {
   if (!freq) {
     freq = 1;

@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file psg_get.c
- *
+/*
  * Copyright (c) 2021-2023 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.
@@ -10,7 +8,13 @@
  * GitHub libmsx project
  * https://github.com/mori0091/libmsx
  */
+/**
+ * \file psg_get.c
+ */
 
 #include "../include/psg.h"
 
-extern inline uint8_t psg_get(uint8_t reg);
+uint8_t psg_get(uint8_t reg) {
+  psg_port0 = reg;
+  return psg_port2;
+}

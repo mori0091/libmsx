@@ -19,11 +19,19 @@
 #include "./snd_sound.h"
 #include "./snd_m.h"
 
+#if defined(__SDCC)
+#  define DI() __asm__("di")
+#  define EI() __asm__("ei")
+#else
+#  define DI()
+#  define EI()
+#endif
+
 struct snd_ctx {
   struct snd_m_ctx m;
   uint8_t song_freq;            // frequency of the song
   uint8_t play_freq;            // frequency of the player
-  uint16_t counter;             // timing counter for adjusting frequency
+  uint8_t counter;              // timing counter for adjusting frequency
 };
 
 extern struct snd_ctx snd_bgm;

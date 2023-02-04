@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file psg_init.c
- *
+/*
  * Copyright (c) 2021-2023 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.
@@ -10,8 +8,19 @@
  * GitHub libmsx project
  * https://github.com/mori0091/libmsx
  */
+/**
+ * \file psg_init.c
+ */
 
 #include "../include/psg.h"
+
+#if defined(__SDCC)
+#  define DI() __asm__("di")
+#  define EI() __asm__("ei")
+#else
+#  define DI()
+#  define EI()
+#endif
 
 const uint8_t psg_reg_initial_vector[14] = {
   0x55, 0x00,                   // R#0-1 channel A frequency division ratio
@@ -27,9 +36,9 @@ const uint8_t psg_reg_initial_vector[14] = {
 };
 
 void psg_init(void) {
-  __asm__("di");
+  DI();
   for (uint8_t i = 0; i < sizeof(psg_reg_initial_vector); ++i) {
     psg_set(i, psg_reg_initial_vector[i]);
   }
-  __asm__("ei");
+  EI();
 }

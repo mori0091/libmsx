@@ -16,9 +16,6 @@
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
 
-#define DI() __asm__("di")
-#define EI() __asm__("ei")
-
 uint8_t snd_get_player_frequency(void) {
   uint8_t freq;
   DI();

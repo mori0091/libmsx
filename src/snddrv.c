@@ -70,9 +70,6 @@ static void snd__init(void) {
   snd__init_ctx(&snd_bgm);
 }
 
-#define DI() __asm__("di")
-#define EI() __asm__("ei")
-
 extern void snd__set_speed(uint8_t multiplier);
 
 static void snd__set_bgm(const snd_Music * data) {
@@ -159,47 +156,54 @@ void snd_init(void) {
 static void snd__decode(struct snd_ctx * ctx);
 static void snd__synthesis(void);
 
+void snd_decode(void) {
+  snd__decode(&snd_bgm);
+  snd__decode(&snd_sfx);
+  snd__synthesis();
+}
+
 void snd_play(void) {
   if (paused) {
     return;
   }
   ay_3_8910_play();
 
-  snd__decode(&snd_bgm);
-  snd__decode(&snd_sfx);
-  snd__synthesis();
+  snd_decode();
 
-  if (repeat && snd_bgm.m.isEnd) {
-    uint8_t freq = snd_bgm.play_freq;
+  if (snd_bgm.m.isEnd && repeat) {
     if (snd_bgm.m.music) {
+      uint8_t freq = snd_bgm.play_freq;
       snd__set_bgm(snd_bgm.m.music);
+      snd_bgm.play_freq = freq;
     }
-    snd_bgm.play_freq = freq;
   }
 }
 
 // ------------------------------------------------
+
+static void snd__iap_decode(struct snd_channel * pch) {
+  snd_i__decode(&pch->i);
+  snd_a__decode(&pch->a);
+  snd_p__decode(&pch->p);
+}
 
 static void snd__decode(struct snd_ctx * ctx) {
   if (ctx->m.isEnd) return;
-  uint16_t counter = ctx->counter + ctx->play_freq;
-  while (vsync_freq <= counter) {
-    counter -= vsync_freq;
+  ctx->counter += ctx->play_freq;
+  while (vsync_freq <= ctx->counter) {
+    ctx->counter -= vsync_freq;
     // ----
     snd_m__decode(&ctx->m);
     struct snd_channel * pch = &ctx->m.channels[0];
-    for (uint8_t ch = 3; ch--; pch++) {
-      snd_i__decode(&pch->i);
-      snd_a__decode(&pch->a);
-      snd_p__decode(&pch->p);
-    }
+    snd__iap_decode(pch++);
+    snd__iap_decode(pch++);
+    snd__iap_decode(pch);
   }
-  ctx->counter = counter;
 }
 
 // ------------------------------------------------
 
-// inline bool is_playing(struct snd_ctx * ctx, uint8_t ch) {
+// static inline bool is_playing(struct snd_ctx * ctx, uint8_t ch) {
 //   struct snd_channel * pch = &ctx->m.channels[ch];
 //   return !ctx->m.isEnd && 0 <= pch->pitch && !!pch->volume;
 // }
@@ -207,10 +211,11 @@ static void snd__decode(struct snd_ctx * ctx) {
 static void snd__synthesis(void) {
   PSG(7) = 0xb8;
   if (snd_sfx.m.isEnd) {
-    struct snd_channel * pch = &snd_bgm.m.channels[2];
-    for (uint8_t ch = 3; ch--; pch--) {
-      snd_channel_synthesis(ch, pch);
-    }
+    struct snd_channel * pch = &snd_bgm.m.channels[0];
+    uint8_t ch = 0;
+    snd_channel_synthesis(ch++, pch++);
+    snd_channel_synthesis(ch++, pch++);
+    snd_channel_synthesis(ch, pch);
   }
   else {
     for (uint8_t ch = 3; ch--;) {

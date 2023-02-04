@@ -16,11 +16,13 @@
 #include "./snd_p.h"
 
 void snd_p_note_on(struct snd_p_ctx * ctx) {
+  if (!ctx->p_table) return;
   ctx->timer = 0;
   ctx->next = ctx->p_table->ad_part;
 }
 
 void snd_p_note_off(struct snd_p_ctx * ctx) {
+  if (!ctx->p_table) return;
   ctx->timer = 0;
   ctx->next = ctx->p_table->r_part;
 }

@@ -72,7 +72,7 @@ static uint16_t snd_i__stream_take_u16(struct snd_i_ctx * ctx) {
   return (x << 8) + y;
 }
 
-inline int16_t snd_i__stream_take_i16(struct snd_i_ctx * ctx) {
+static int16_t snd_i__stream_take_i16(struct snd_i_ctx * ctx) {
   return (int16_t)snd_i__stream_take_u16(ctx);
 }
 

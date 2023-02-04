@@ -16,9 +16,6 @@
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
 
-#define DI() __asm__("di")
-#define EI() __asm__("ei")
-
 extern uint8_t snd_speed_multiplier;
 
 extern void snd__set_bgm_freq(uint8_t freq);

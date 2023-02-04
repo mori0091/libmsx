@@ -49,10 +49,7 @@ void psg_init(void);
  *
  * \param reg    PSG register number.
  */
-inline uint8_t psg_get(uint8_t reg) {
-  psg_port0 = reg;
-  return psg_port2;
-}
+uint8_t psg_get(uint8_t reg);
 
 /**
  * `MSX` Write the PSG register value.
@@ -60,10 +57,7 @@ inline uint8_t psg_get(uint8_t reg) {
  * \param reg    PSG register number.
  * \param val    the value.
  */
-inline void psg_set(uint8_t reg, uint8_t val) {
-  psg_port0 = reg;
-  psg_port1 = val;
-}
+void psg_set(uint8_t reg, uint8_t val);
 
 /** @} */
 

@@ -156,15 +156,19 @@ void snd_init(void) {
 static void snd__decode(struct snd_ctx * ctx);
 static void snd__synthesis(void);
 
+void snd_decode(void) {
+  snd__decode(&snd_bgm);
+  snd__decode(&snd_sfx);
+  snd__synthesis();
+}
+
 void snd_play(void) {
   if (paused) {
     return;
   }
   ay_3_8910_play();
 
-  snd__decode(&snd_bgm);
-  snd__decode(&snd_sfx);
-  snd__synthesis();
+  snd_decode();
 
   if (snd_bgm.m.isEnd && repeat) {
     if (snd_bgm.m.music) {

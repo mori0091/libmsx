@@ -13,6 +13,7 @@
  */
 
 #include "bmem.h"
+#include "workarea.h"
 
 #include <stdint.h>
 #include <string.h>
@@ -33,7 +34,7 @@ void bmem_read(bmemptr_t src, void* dst, uint16_t len) {
   // area specified by `dst` and `len`. Unfortunately, however, the library
   // cannot determine the appropriate bounds. The application programmer must
   // deal with this.
-  if ((uintptr_t)q < 0xc000 || len < ~((uintptr_t)q)) {
+  if ((uintptr_t)q < 0xc000 || HIMEM <= (uintptr_t)q || (int16_t)(HIMEM - (uintptr_t)q) < len) {
     return;
   }
 

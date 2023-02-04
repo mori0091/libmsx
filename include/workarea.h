@@ -240,6 +240,11 @@ static volatile __at (0xfb20) uint8_t HOKVLD; ///< `MSX` Extended BIOS flag.
  */
 static volatile __at (0xfb21) uint8_t DRVTBL[8];
 
+/**
+ * `MSX` The highest address of free area (bottom of stack).
+ */
+static volatile __at (0xfc4a) uint16_t HIMEM;
+
 // ---- Data for `PLAY` statement ----
 // fb35 .. fbaf
 

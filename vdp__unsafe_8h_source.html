@@ -116,8 +116,8 @@ $(document).ready(function(){initNavTree('vdp__unsafe_8h_source.html',''); initR
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="bios_8h.html">bios.h</a>&quot;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#gaf53955bc84b9c190f04abdd9206f6453">   46</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VDP__UNSAFE.html#gaf53955bc84b9c190f04abdd9206f6453">VDP_SET_CONTROL_REGISTER</a>(uint8_t reg, uint8_t val) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_variable" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a> = val;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_variable" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a> = reg | 0x80;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  vdp_port1 = val;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  vdp_port1 = reg | 0x80;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#gafdffcc91a0792402633458501bdb287a">   65</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VDP__UNSAFE.html#gafdffcc91a0792402633458501bdb287a">VDP_SET_CONTROL_REGISTER_POINTER</a>(uint8_t reg) {</div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('vdp__unsafe_8h_source.html',''); initR
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#ga118cb18eb1375ddef629055a90a00976">   99</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VDP__UNSAFE.html#ga118cb18eb1375ddef629055a90a00976">VDP_SET_CONTROL_REGISTER_VALUE</a>(uint8_t val) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_variable" href="io_8h.html#a9ee87b9d8167d1b4f01a4380a4cd7f68">vdp_port3</a> = val;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  vdp_port3 = val;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#ga8f2ad710c0ddac5e73e3a7b5b3ba3999">  118</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VDP__UNSAFE.html#ga8f2ad710c0ddac5e73e3a7b5b3ba3999">VDP_SET_STATUS_REGISTER_POINTER</a>(uint8_t reg) {</div>
@@ -137,31 +137,31 @@ $(document).ready(function(){initNavTree('vdp__unsafe_8h_source.html',''); initR
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#gabb381d91a109c478b02dd0612b9f3a18">  132</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="group__VDP__UNSAFE.html#gabb381d91a109c478b02dd0612b9f3a18">VDP_GET_STATUS_REGISTER_VALUE</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">return</span> vdp_port1;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#ga2363013478b321749486d2e63b9947ba">  147</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VDP__UNSAFE.html#ga2363013478b321749486d2e63b9947ba">VDP_SET_VMEM_WRITE_POINTER</a>(<a class="code hl_typedef" href="group__VMEM__ACCESS.html#gaaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> loc) {</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordflow">if</span> (0 &lt; <a class="code hl_function" href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">msx_get_version</a>()) {</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_function" href="group__VDP__UNSAFE.html#gaf53955bc84b9c190f04abdd9206f6453">VDP_SET_CONTROL_REGISTER</a>(14, (uint8_t)(((loc) &gt;&gt; 14) &amp; 7));</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <a class="code hl_variable" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a> = (uint8_t)((loc) &amp; 255);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <a class="code hl_variable" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a> = (uint8_t)(((loc) &gt;&gt; 8) &amp; 0x3F | 0x40);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  vdp_port1 = (uint8_t)((loc) &amp; 255);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  vdp_port1 = (uint8_t)(((loc) &gt;&gt; 8) &amp; 0x3F | 0x40);</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#ga4fe250bed0712ec04468a051b8fde22a">  166</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VDP__UNSAFE.html#ga4fe250bed0712ec04468a051b8fde22a">VDP_SET_VMEM_READ_POINTER</a>(<a class="code hl_typedef" href="group__VMEM__ACCESS.html#gaaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> loc) {</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keywordflow">if</span> (0 &lt; <a class="code hl_function" href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">msx_get_version</a>()) {</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <a class="code hl_function" href="group__VDP__UNSAFE.html#gaf53955bc84b9c190f04abdd9206f6453">VDP_SET_CONTROL_REGISTER</a>(14, (uint8_t)(((loc) &gt;&gt; 14) &amp; 7));</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <a class="code hl_variable" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a> = (uint8_t)((loc) &amp; 255);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <a class="code hl_variable" href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a> = (uint8_t)(((loc) &gt;&gt; 8) &amp; 0x3F);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  vdp_port1 = (uint8_t)((loc) &amp; 255);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  vdp_port1 = (uint8_t)(((loc) &gt;&gt; 8) &amp; 0x3F);</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#gaf6052365cbc622c55c3e8892b991b746">  187</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VDP__UNSAFE.html#gaf6052365cbc622c55c3e8892b991b746">VDP_SET_VMEM_VALUE</a>(uint8_t val) {</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <a class="code hl_variable" href="io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8">vdp_port0</a> = val;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  vdp_port0 = val;</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="group__VDP__UNSAFE.html#ga038d61b6cc774b777dbc2212613fa1ed">  203</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="group__VDP__UNSAFE.html#ga038d61b6cc774b777dbc2212613fa1ed">VDP_GET_VMEM_VALUE</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8">vdp_port0</a>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordflow">return</span> vdp_port0;</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#endif </span><span class="comment">// VDP_UNSAFE_H_</span></div>
@@ -179,9 +179,6 @@ $(document).ready(function(){initNavTree('vdp__unsafe_8h_source.html',''); initR
 <div class="ttc" id="agroup__VDP__UNSAFE_html_gafdffcc91a0792402633458501bdb287a"><div class="ttname"><a href="group__VDP__UNSAFE.html#gafdffcc91a0792402633458501bdb287a">VDP_SET_CONTROL_REGISTER_POINTER</a></div><div class="ttdeci">void VDP_SET_CONTROL_REGISTER_POINTER(uint8_t reg)</div><div class="ttdoc">MSX2 Set VDP control register number for subsequent writing to the VDP control register.</div><div class="ttdef"><b>Definition:</b> <a href="vdp__unsafe_8h_source.html#l00065">vdp_unsafe.h:65</a></div></div>
 <div class="ttc" id="agroup__VMEM__ACCESS_html_gaaa8bd02096bc1fc31f3da323f1d0a1f8"><div class="ttname"><a href="group__VMEM__ACCESS.html#gaaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a></div><div class="ttdeci">uint32_t vmemptr_t</div><div class="ttdoc">Type for VRAM address.</div><div class="ttdef"><b>Definition:</b> <a href="vmem_8h_source.html#l00041">vmem.h:41</a></div></div>
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="io_8h.html">io.h</a></div><div class="ttdoc">Definition of I/O ports.</div></div>
-<div class="ttc" id="aio_8h_html_a81bcc4ab7ab142417f46279edf862d3a"><div class="ttname"><a href="io_8h.html#a81bcc4ab7ab142417f46279edf862d3a">vdp_port1</a></div><div class="ttdeci">static volatile __sfr vdp_port1</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00025">io.h:25</a></div></div>
-<div class="ttc" id="aio_8h_html_a9ee87b9d8167d1b4f01a4380a4cd7f68"><div class="ttname"><a href="io_8h.html#a9ee87b9d8167d1b4f01a4380a4cd7f68">vdp_port3</a></div><div class="ttdeci">static volatile __sfr vdp_port3</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00027">io.h:27</a></div></div>
-<div class="ttc" id="aio_8h_html_aec6e0eeaa3e18de1815684d8c514a2e8"><div class="ttname"><a href="io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8">vdp_port0</a></div><div class="ttdeci">static volatile __sfr vdp_port0</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00024">io.h:24</a></div></div>
 <div class="ttc" id="avmem_8h_html"><div class="ttname"><a href="vmem_8h.html">vmem.h</a></div><div class="ttdoc">Data types and functions for VRAM access.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

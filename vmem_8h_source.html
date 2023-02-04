@@ -121,11 +121,11 @@ $(document).ready(function(){initNavTree('vmem_8h_source.html',''); initResizabl
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="group__VMEM__ACCESS.html#ga2fc46495107310faa212423a4cdeea3d">   67</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__VMEM__ACCESS.html#ga2fc46495107310faa212423a4cdeea3d">vmem_set_write_address</a>(<a class="code hl_typedef" href="group__VMEM__ACCESS.html#gaaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> loc);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="group__VMEM__ACCESS.html#ga99cbd2a385cef65e129ab37d4dd9bb2e">   82</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="group__VMEM__ACCESS.html#ga99cbd2a385cef65e129ab37d4dd9bb2e">vmem_get</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8">vdp_port0</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordflow">return</span> vdp_port0;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="group__VMEM__ACCESS.html#ga633768cfdfc1f7a91ef66ae56da1e5d8">   99</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__VMEM__ACCESS.html#ga633768cfdfc1f7a91ef66ae56da1e5d8">vmem_set</a>(uint8_t val) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_variable" href="io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8">vdp_port0</a> = val;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  vdp_port0 = val;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="group__VMEM__ACCESS.html#ga061417fb4eecf22ada909056084768c5">  120</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__VMEM__ACCESS.html#ga061417fb4eecf22ada909056084768c5">vmem_read</a>(<a class="code hl_typedef" href="group__VMEM__ACCESS.html#gaaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a> src, <span class="keywordtype">void</span>* dst, uint16_t len);</div>
@@ -144,7 +144,6 @@ $(document).ready(function(){initNavTree('vmem_8h_source.html',''); initResizabl
 <div class="ttc" id="agroup__VMEM__ACCESS_html_gaaa8bd02096bc1fc31f3da323f1d0a1f8"><div class="ttname"><a href="group__VMEM__ACCESS.html#gaaa8bd02096bc1fc31f3da323f1d0a1f8">vmemptr_t</a></div><div class="ttdeci">uint32_t vmemptr_t</div><div class="ttdoc">Type for VRAM address.</div><div class="ttdef"><b>Definition:</b> <a href="vmem_8h_source.html#l00041">vmem.h:41</a></div></div>
 <div class="ttc" id="agroup__VMEM__ACCESS_html_gab433fbefdc4e89e70e13080e74d35bc7"><div class="ttname"><a href="group__VMEM__ACCESS.html#gab433fbefdc4e89e70e13080e74d35bc7">vmem_memset</a></div><div class="ttdeci">void vmem_memset(vmemptr_t dst, uint8_t val, uint16_t len)</div><div class="ttdoc">MSX Fill a series of bytes in VRAM with the specified value.</div></div>
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="io_8h.html">io.h</a></div><div class="ttdoc">Definition of I/O ports.</div></div>
-<div class="ttc" id="aio_8h_html_aec6e0eeaa3e18de1815684d8c514a2e8"><div class="ttname"><a href="io_8h.html#aec6e0eeaa3e18de1815684d8c514a2e8">vdp_port0</a></div><div class="ttdeci">static volatile __sfr vdp_port0</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00024">io.h:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

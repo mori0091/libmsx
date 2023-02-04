@@ -1,7 +1,7 @@
 <map id="include/ay_3_8910.h" name="include/ay_3_8910.h">
-<area shape="rect" id="node1" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="7,5,145,31"/>
-<area shape="rect" id="node2" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="49,79,103,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,152,69,177"/>
-<area shape="rect" id="node4" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="93,152,136,177"/>
-<area shape="rect" id="node5" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="81,225,148,251"/>
+<area shape="rect" id="node1" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="5,5,144,31"/>
+<area shape="rect" id="node2" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="48,79,101,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="45,299,109,324"/>
+<area shape="rect" id="node4" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="85,152,128,177"/>
+<area shape="rect" id="node5" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="80,225,147,251"/>
 </map>

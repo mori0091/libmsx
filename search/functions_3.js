@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['msx_5fchgcpu_0',['msx_CHGCPU',['../group__BIOS__CPU.html#gade3c2351bf7f00eb60bd423e0b6fa4d1',1,'bios.h']]],
-  ['msx_5fenaslt_1',['msx_ENASLT',['../group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e',1,'bios.h']]],
-  ['msx_5fget_5fcpu_5fmode_2',['msx_get_cpu_mode',['../group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3',1,'bios.h']]],
-  ['msx_5fget_5fslot_3',['msx_get_slot',['../group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14',1,'bios.h']]],
-  ['msx_5fget_5fversion_4',['msx_get_version',['../group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07',1,'bios.h']]],
-  ['msx_5fget_5fvsync_5ffrequency_5',['msx_get_vsync_frequency',['../group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f',1,'bios.h']]],
-  ['msx_5fgetcpu_6',['msx_GETCPU',['../group__BIOS__CPU.html#gad7a3a4e8570a8bd076740f64b34d3e53',1,'bios.h']]],
-  ['msx_5fgtstck_7',['msx_GTSTCK',['../group__BIOS__JOYPAD.html#ga221aeb5b2cb8816e03b9413e7c945ed8',1,'bios.h']]],
-  ['msx_5fgttrig_8',['msx_GTTRIG',['../group__BIOS__JOYPAD.html#ga68a83910179dac98a2d038c99ea55abf',1,'bios.h']]],
-  ['msx_5frdslt_9',['msx_RDSLT',['../group__BIOS__SLOT.html#gaeb4cd6909bffe2fdc4ab12f034ea5f40',1,'bios.h']]],
-  ['msx_5frslreg_10',['msx_RSLREG',['../group__BIOS__SLOT.html#gaedc2e35feb1d1e15d8c84588b0369f46',1,'bios.h']]],
-  ['msx_5fset_5fcpu_5fmode_11',['msx_set_cpu_mode',['../group__BIOS__CPU.html#ga4bb01de7baaae78f6cc43e81ba88d9af',1,'bios.h']]],
-  ['msx_5fwrslt_12',['msx_WRSLT',['../group__BIOS__SLOT.html#ga5508e48b4a3b786bb8c347c428e56d8e',1,'bios.h']]],
-  ['msx_5fwslreg_13',['msx_WSLREG',['../group__BIOS__SLOT.html#gadd657fb7bd235f898e14bd825dd03ac8',1,'bios.h']]]
+  ['msx_5fbios_0',['MSX_BIOS',['../bios__entry_8h.html#aa318e2f554d71cc6521a660fbd80a5c2',1,'MSX_BIOS(0x0138) const uint8_t RSLREG:&#160;bios_entry.h'],['../bios__const_8h.html#ac446d18406d2d30cc2c7b9785cb1ddc8',1,'MSX_BIOS(0x0004) const struct font *const CGTBL:&#160;bios_const.h'],['../bios__entry_8h.html#a04fae96972858cf13978d8344f8fb944',1,'MSX_BIOS(0x0183) const uint8_t GETCPU:&#160;bios_entry.h'],['../bios__entry_8h.html#acf829479f29a00e084936d29822ab14e',1,'MSX_BIOS(0x0180) const uint8_t CHGCPU:&#160;bios_entry.h'],['../bios__entry_8h.html#a08b5be8208062f0730f3f04778a8a7c9',1,'MSX_BIOS(0x00D8) const uint8_t GTTRIG:&#160;bios_entry.h'],['../bios__entry_8h.html#acb5e20b987a26af29712cc7824a4ae28',1,'MSX_BIOS(0x00D5) const uint8_t GTSTCK:&#160;bios_entry.h'],['../bios__entry_8h.html#a09784ebf1c6b55669a9145e012b34816',1,'MSX_BIOS(0x013b) const uint8_t WSLREG:&#160;bios_entry.h'],['../bios__entry_8h.html#afbb8e8b0fa61428b7c089bb9ef7654d2',1,'MSX_BIOS(0x0030) const uint8_t CALLF:&#160;bios_entry.h'],['../bios__entry_8h.html#a892df085e2ec4b1161b7372a07a28b78',1,'MSX_BIOS(0x0024) const uint8_t ENASLT:&#160;bios_entry.h'],['../bios__entry_8h.html#a8e0195747f2308712feabc8a72519bbb',1,'MSX_BIOS(0x001c) const uint8_t CALSLT:&#160;bios_entry.h'],['../bios__entry_8h.html#a81a5e94148884ab7be8a696a5edb99ac',1,'MSX_BIOS(0x0014) const uint8_t WRSLT:&#160;bios_entry.h'],['../bios__entry_8h.html#a2ee0e8c10b07391c21f3bc80d6809c34',1,'MSX_BIOS(0x000c) const uint8_t RDSLT:&#160;bios_entry.h'],['../bios__const_8h.html#a88565e91f6ab01248b8ab92db7943f5b',1,'MSX_BIOS(0x002d) const uint8_t MSX_SYSTEM_VERSION_CODE:&#160;bios_const.h'],['../bios__const_8h.html#a33b562cd64974d936029cec066311246',1,'MSX_BIOS(0x002c) const uint8_t INTERNATIONAL_ID_2:&#160;bios_const.h'],['../bios__const_8h.html#a30bcbfee671a697e7fa8aaba10dc0332',1,'MSX_BIOS(0x002b) const uint8_t INTERNATIONAL_ID_1:&#160;bios_const.h']]],
+  ['msx_5fchgcpu_1',['msx_CHGCPU',['../group__BIOS__CPU.html#gade3c2351bf7f00eb60bd423e0b6fa4d1',1,'bios.h']]],
+  ['msx_5fenaslt_2',['msx_ENASLT',['../group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e',1,'bios.h']]],
+  ['msx_5fget_5fcpu_5fmode_3',['msx_get_cpu_mode',['../group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3',1,'bios.h']]],
+  ['msx_5fget_5fslot_4',['msx_get_slot',['../group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14',1,'bios.h']]],
+  ['msx_5fget_5fversion_5',['msx_get_version',['../group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07',1,'bios.h']]],
+  ['msx_5fget_5fvsync_5ffrequency_6',['msx_get_vsync_frequency',['../group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f',1,'bios.h']]],
+  ['msx_5fgetcpu_7',['msx_GETCPU',['../group__BIOS__CPU.html#gad7a3a4e8570a8bd076740f64b34d3e53',1,'bios.h']]],
+  ['msx_5fgtstck_8',['msx_GTSTCK',['../group__BIOS__JOYPAD.html#ga221aeb5b2cb8816e03b9413e7c945ed8',1,'bios.h']]],
+  ['msx_5fgttrig_9',['msx_GTTRIG',['../group__BIOS__JOYPAD.html#ga68a83910179dac98a2d038c99ea55abf',1,'bios.h']]],
+  ['msx_5fio_5fport_10',['MSX_IO_PORT',['../io_8h.html#a173e6c92f0ce2c39a3ae0f4bd70871f3',1,'MSX_IO_PORT(0x0a0) psg_port0:&#160;io.h'],['../io_8h.html#a57ffa383c64b9905cc837629c2ad07cc',1,'MSX_IO_PORT(0x0a8) primary_slot_select_port:&#160;io.h'],['../io_8h.html#afb6d105767a171eec82b9d13892dd9e6',1,'MSX_IO_PORT(0x0a2) psg_port2:&#160;io.h'],['../io_8h.html#a5deac81afe2d1986cce62f42f13828ad',1,'MSX_IO_PORT(0x0a1) psg_port1:&#160;io.h'],['../io_8h.html#a1b0f5f81e8b6b9f95cc91dd56d934088',1,'MSX_IO_PORT(0x9b) vdp_port3:&#160;io.h'],['../io_8h.html#ac97acd762781611951184b0b321f460d',1,'MSX_IO_PORT(0x9a) vdp_port2:&#160;io.h'],['../io_8h.html#aec97aa102be75944c903ca104aa9afa5',1,'MSX_IO_PORT(0x99) vdp_port1:&#160;io.h'],['../io_8h.html#a1d048b91a247d00b77958574919e9a54',1,'MSX_IO_PORT(0x98) vdp_port0:&#160;io.h']]],
+  ['msx_5frdslt_11',['msx_RDSLT',['../group__BIOS__SLOT.html#gaeb4cd6909bffe2fdc4ab12f034ea5f40',1,'bios.h']]],
+  ['msx_5frslreg_12',['msx_RSLREG',['../group__BIOS__SLOT.html#gaedc2e35feb1d1e15d8c84588b0369f46',1,'bios.h']]],
+  ['msx_5fset_5fcpu_5fmode_13',['msx_set_cpu_mode',['../group__BIOS__CPU.html#ga4bb01de7baaae78f6cc43e81ba88d9af',1,'bios.h']]],
+  ['msx_5fwrslt_14',['msx_WRSLT',['../group__BIOS__SLOT.html#ga5508e48b4a3b786bb8c347c428e56d8e',1,'bios.h']]],
+  ['msx_5fwslreg_15',['msx_WSLREG',['../group__BIOS__SLOT.html#gadd657fb7bd235f898e14bd825dd03ac8',1,'bios.h']]]
 ];

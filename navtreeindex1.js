@@ -1,5 +1,17 @@
 var NAVTREEINDEX1 =
 {
+"group__SNDDRV__DATA.html#a5cded21659082464ff25c2b208772e89":[4,9,0,3,9],
+"group__SNDDRV__DATA.html#a63bbf3c349f095a6dfa7321a8550393c":[4,9,0,0,1],
+"group__SNDDRV__DATA.html#a73713cc5ca4d186b6c4946a4d3a64e83":[4,9,0,3,4],
+"group__SNDDRV__DATA.html#a8235e7d4e853b68b722090b9f037394c":[4,9,0,3,11],
+"group__SNDDRV__DATA.html#a840618a1671578118fbfda650ec98e4c":[4,9,0,2,5],
+"group__SNDDRV__DATA.html#a860bf30ea8bbab5f23432dadfc098a25":[4,9,0,8,1],
+"group__SNDDRV__DATA.html#a93d194f957739bf0b7eb2cdab42873d7":[4,9,0,2,4],
+"group__SNDDRV__DATA.html#ab1bb9d69795dd8a5ff0dd1d530961269":[4,9,0,1,1],
+"group__SNDDRV__DATA.html#ab1ed6f568364769db751510d85fff1d4":[4,9,0,0,2],
+"group__SNDDRV__DATA.html#ab3ebb5d3d3c59d8e17b6ecb07c898c1c":[4,9,0,2,7],
+"group__SNDDRV__DATA.html#ae5a0c0a1bd5ca96115ce6a87458b87fd":[4,9,0,7,0],
+"group__SNDDRV__DATA.html#afeac8f9845a21b0c8dcb3fe9722c8b3f":[4,9,0,3,10],
 "group__SNDDRV__DATA.html#ga123b2e3cb3692a41a494e0fdccd226ea":[4,9,0,17],
 "group__SNDDRV__DATA.html#ga2b92001cc23d17da3d423b326cdbc2be":[4,9,0,19],
 "group__SNDDRV__DATA.html#ga305d35e9184301195b2003b80a0f2cef":[4,9,0,13],
@@ -237,17 +249,5 @@ var NAVTREEINDEX1 =
 "group__VDP__MODE__REGISTER.html#gga91cf075ff9817fd8e552c6f055ce8b95ab8183ad4525eb276c8bdacdb46a5b70f":[4,14,4,2,1],
 "group__VDP__MODE__REGISTER.html#gga91cf075ff9817fd8e552c6f055ce8b95ae42e60b539c779111e2d3f98cc0f0eef":[4,14,4,2,0],
 "group__VDP__PALETTE__REGISTER.html":[4,14,3],
-"group__VDP__PALETTE__REGISTER.html#ga33595fdc0e04957d3dd734d82e10d55d":[4,14,3,1],
-"group__VDP__PALETTE__REGISTER.html#ga4a118ad3ee36468a3fa616977a64864e":[4,14,3,0],
-"group__VDP__PALETTE__REGISTER.html#ga4ec678d06e4c8c4f38a16692d3f8fb44":[4,14,3,2],
-"group__VDP__PALETTE__REGISTER.html#gaae09e94d48bab51c44188a246c41e96a":[4,14,3,3],
-"group__VDP__STATUS__REGISTER.html":[4,14,0],
-"group__VDP__STATUS__REGISTER.html#ga37d2b81a2b2629fd1e853d2f72191a15":[4,14,0,0],
-"group__VDP__TABLE__BASE__ADDRESS__REGISTER.html":[4,14,5],
-"group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#ga3fb6099b9811621c8ba3dd09c76f2dec":[4,14,5,0],
-"group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#ga785c8cbb6c9e3f15400eb49691f32d5e":[4,14,5,3],
-"group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaa6a6414b4ac931ef585a34dda4dcf419":[4,14,5,4],
-"group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaa8c6e5071b94616225f70959001afe2b":[4,14,5,2],
-"group__VDP__TABLE__BASE__ADDRESS__REGISTER.html#gaf161441fd5475dbf63be7b384a2cf27a":[4,14,5,1],
-"group__VDP__UNSAFE.html":[4,14,9]
+"group__VDP__PALETTE__REGISTER.html#ga33595fdc0e04957d3dd734d82e10d55d":[4,14,3,1]
 };

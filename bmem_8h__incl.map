@@ -1,7 +1,7 @@
 <map id="include/bmem.h" name="include/bmem.h">
-<area shape="rect" id="node1" title="Data types and functions for accessing banked memory." alt="" coords="17,5,130,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,152,69,177"/>
-<area shape="rect" id="node3" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="75,79,143,104"/>
-<area shape="rect" id="node4" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="93,152,136,177"/>
-<area shape="rect" id="node5" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="81,225,148,251"/>
+<area shape="rect" id="node1" title="Data types and functions for accessing banked memory." alt="" coords="5,5,119,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="45,299,109,324"/>
+<area shape="rect" id="node3" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="64,79,132,104"/>
+<area shape="rect" id="node4" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="119,152,162,177"/>
+<area shape="rect" id="node5" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="114,225,181,251"/>
 </map>

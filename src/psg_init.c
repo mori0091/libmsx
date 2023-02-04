@@ -1,7 +1,5 @@
 // -*- coding: utf-8-unix -*-
-/**
- * \file psg_init.c
- *
+/*
  * Copyright (c) 2021-2023 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.
@@ -9,6 +7,9 @@
  *
  * GitHub libmsx project
  * https://github.com/mori0091/libmsx
+ */
+/**
+ * \file psg_init.c
  */
 
 #include "../include/psg.h"

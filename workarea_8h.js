@@ -76,6 +76,7 @@ var workarea_8h =
     [ "EXBRSA", "workarea_8h.html#a7f75e5c017cfa82ce06680f829439296", null ],
     [ "HOKVLD", "workarea_8h.html#a050cb8b40a02c7513c1013b8c03c4d6a", null ],
     [ "DRVTBL", "workarea_8h.html#abd77dd54308020af3bf857186a157424", null ],
+    [ "HIMEM", "workarea_8h.html#a69f1265418f16cd7a742cf20418d7ae8", null ],
     [ "JIFFY", "workarea_8h.html#a528a3bddc4fbfecc1743fa603ff0c8d7", null ],
     [ "EXPTBL", "workarea_8h.html#afc8f51562ab661ad80617b5076d36852", null ],
     [ "SLTTBL", "workarea_8h.html#acc116fbdbb141b5894e049e7c4213ffe", null ],

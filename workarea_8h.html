@@ -349,6 +349,9 @@ Variables</h2></td></tr>
 <tr class="memitem:abd77dd54308020af3bf857186a157424"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="workarea_8h.html#abd77dd54308020af3bf857186a157424">DRVTBL</a> [8]</td></tr>
 <tr class="memdesc:abd77dd54308020af3bf857186a157424"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Slot and number of drives for each Floppy Disk Controller (FDC).  <a href="workarea_8h.html#abd77dd54308020af3bf857186a157424">More...</a><br /></td></tr>
 <tr class="separator:abd77dd54308020af3bf857186a157424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69f1265418f16cd7a742cf20418d7ae8"><td class="memItemLeft" align="right" valign="top">static volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="workarea_8h.html#a69f1265418f16cd7a742cf20418d7ae8">HIMEM</a></td></tr>
+<tr class="memdesc:a69f1265418f16cd7a742cf20418d7ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> The highest address of free area (bottom of stack).  <a href="workarea_8h.html#a69f1265418f16cd7a742cf20418d7ae8">More...</a><br /></td></tr>
+<tr class="separator:a69f1265418f16cd7a742cf20418d7ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a528a3bddc4fbfecc1743fa603ff0c8d7"><td class="memItemLeft" align="right" valign="top">static volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="workarea_8h.html#a528a3bddc4fbfecc1743fa603ff0c8d7">JIFFY</a></td></tr>
 <tr class="memdesc:a528a3bddc4fbfecc1743fa603ff0c8d7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Free-running counter that counts up every VSYNC interrupts.  <a href="workarea_8h.html#a528a3bddc4fbfecc1743fa603ff0c8d7">More...</a><br /></td></tr>
 <tr class="separator:a528a3bddc4fbfecc1743fa603ff0c8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2379,6 +2382,32 @@ Address of the current fonts. </td></tr>
 
 </div>
 </div>
+<a id="a69f1265418f16cd7a742cf20418d7ae8" name="a69f1265418f16cd7a742cf20418d7ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f1265418f16cd7a742cf20418d7ae8">&#9670;&#160;</a></span>HIMEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t HIMEM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> The highest address of free area (bottom of stack). </p>
+
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00246">246</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+
+</div>
+</div>
 <a id="a528a3bddc4fbfecc1743fa603ff0c8d7" name="a528a3bddc4fbfecc1743fa603ff0c8d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a528a3bddc4fbfecc1743fa603ff0c8d7">&#9670;&#160;</a></span>JIFFY</h2>
 
@@ -2401,7 +2430,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX</code> Free-running counter that counts up every VSYNC interrupts. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00253">253</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00258">258</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2435,7 +2464,7 @@ Address of the current fonts. </td></tr>
 <li>bit #1..#0 : primary slot number (0..3) </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00272">272</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00277">277</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2468,7 +2497,7 @@ Address of the current fonts. </td></tr>
 <li>bit #1..#0 : secondary slot number of page #0 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00285">285</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00290">290</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2516,7 +2545,7 @@ Address of the current fonts. </td></tr>
 <li>bit #4..#0 : unused </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00311">311</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00316">316</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2557,7 +2586,7 @@ Address of the current fonts. </td></tr>
 <td class="markdownTableBodyNone">SLTWRK[126] and SLTWRK[127]   </td><td class="markdownTableBodyNone">for page #3 of slot #3-3   </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00327">327</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00332">332</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2583,7 +2612,7 @@ Address of the current fonts. </td></tr>
 
 <p>Hook for interrupts. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00332">332</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00337">337</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2609,7 +2638,7 @@ Address of the current fonts. </td></tr>
 
 <p>Hook for timer interrupts (VSYNC). </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00333">333</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00338">338</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2635,7 +2664,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX</code> Used by extended BIOS. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00345">345</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00350">350</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2661,7 +2690,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX</code> Used by DOS. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00346">346</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00351">351</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2687,7 +2716,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX</code> Used by DOS </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00347">347</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00352">352</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2713,7 +2742,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#8 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00351">351</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00356">356</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2739,7 +2768,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#9 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00352">352</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00357">357</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2765,7 +2794,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#10 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00353">353</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00358">358</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2791,7 +2820,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#11 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00354">354</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00359">359</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2817,7 +2846,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#12 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00355">355</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00360">360</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2843,7 +2872,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#13 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00356">356</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00361">361</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2869,7 +2898,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#14 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00357">357</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00362">362</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2895,7 +2924,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#15 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00358">358</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00363">363</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2921,7 +2950,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#16 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00359">359</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00364">364</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2947,7 +2976,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#17 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00360">360</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00365">365</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2973,7 +3002,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#18 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00361">361</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00366">366</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -2999,7 +3028,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#19 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00362">362</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00367">367</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -3025,7 +3054,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#20 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00363">363</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00368">368</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -3051,7 +3080,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#21 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00364">364</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00369">369</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -3077,7 +3106,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#22 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00365">365</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00370">370</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -3103,7 +3132,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2</code> Saved value for VDP R#23 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00366">366</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00371">371</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -3129,7 +3158,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2+</code> Saved value for VDP R#25 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00369">369</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00374">374</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -3155,7 +3184,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2+</code> Saved value for VDP R#26 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00370">370</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00375">375</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>
@@ -3181,7 +3210,7 @@ Address of the current fonts. </td></tr>
 
 <p><code>MSX2+</code> Saved value for VDP R#27 register. </p>
 
-<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00371">371</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workarea_8h_source.html#l00376">376</a> of file <a class="el" href="workarea_8h_source.html">workarea.h</a>.</p>
 
 </div>
 </div>

@@ -14,6 +14,7 @@
  */
 
 #include "./snd_m.h"
+
 #include <stdint.h>
 
 void snd_m__init(struct snd_m_ctx * ctx) {
@@ -63,10 +64,11 @@ static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Music * pg, con
   }
 }
 
+static void snd_m__update(struct snd_m_ctx * ctx);
 void snd_m__decode_channel(struct snd_channel * pch);
 void snd_m__decode_expression_command(struct snd_channel * pch);
 
-inline void snd_m__update(struct snd_m_ctx * ctx) {
+static inline void snd_m__update(struct snd_m_ctx * ctx) {
   struct snd_channel * pch = ctx->channels;
   snd_channel_update(pch++);
   snd_channel_update(pch++);

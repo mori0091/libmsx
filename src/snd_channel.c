@@ -16,11 +16,11 @@
 #include "./snd_channel.h"
 #include "./snd_osc_period.h"
 
-inline void snd_channel_reset_arpeggio(struct snd_channel * pch);
-inline void snd_channel_reset_period_bend(struct snd_channel * pch);
-inline void snd_channel_reset_pitch_bend(struct snd_channel * pch);
-inline void snd_channel_reset_pitch_glide(struct snd_channel * pch);
-inline void snd_channel_reset_fade(struct snd_channel * pch);
+static void snd_channel_reset_arpeggio(struct snd_channel * pch);
+static void snd_channel_reset_period_bend(struct snd_channel * pch);
+static void snd_channel_reset_pitch_bend(struct snd_channel * pch);
+static void snd_channel_reset_pitch_glide(struct snd_channel * pch);
+static void snd_channel_reset_fade(struct snd_channel * pch);
 
 void snd_channel_note_on(uint8_t note, const snd_Instrument * inst, struct snd_channel * pch) {
   pch->period_offset = 0;
@@ -89,23 +89,23 @@ void snd_channel_reset_expression(struct snd_channel * pch) {
   snd_channel_reset_fade(pch);
 }
 
-inline void snd_channel_reset_arpeggio(struct snd_channel * pch) {
+static void snd_channel_reset_arpeggio(struct snd_channel * pch) {
   pch->arp = 0;
   pch->arp_vec_data = 0;
 }
-inline void snd_channel_reset_period_bend(struct snd_channel * pch) {
+static void snd_channel_reset_period_bend(struct snd_channel * pch) {
   pch->period_delta = 0;
   pch->period_offset = 0;
   // pch->pitch_min = PITCH_MIN;
   // pch->pitch_max = PITCH_MAX;
 }
-inline void snd_channel_reset_pitch_bend(struct snd_channel * pch) {
+static void snd_channel_reset_pitch_bend(struct snd_channel * pch) {
   pch->pitch_delta = 0;
 }
-inline void snd_channel_reset_pitch_glide(struct snd_channel * pch) {
+static void snd_channel_reset_pitch_glide(struct snd_channel * pch) {
   pch->pitch_glide = 0;
 }
-inline void snd_channel_reset_fade(struct snd_channel * pch) {
+static void snd_channel_reset_fade(struct snd_channel * pch) {
   pch->fade_speed = 0;
 }
 

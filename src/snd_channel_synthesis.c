@@ -21,10 +21,10 @@
 
 #define PSG(reg)                     (ay_3_8910_buffer[(reg)])
 
-inline void snd_channel_set_noise(uint8_t ch, struct snd_channel * pch);
-inline void snd_channel_set_tone_flag(uint8_t ch, struct snd_channel * pch);
-inline void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch);
-inline void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch);
+static void snd_channel_set_noise(uint8_t ch, struct snd_channel * pch);
+static void snd_channel_set_tone_flag(uint8_t ch, struct snd_channel * pch);
+static void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch);
+static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch);
 
 void snd_channel_synthesis(uint8_t ch, struct snd_channel * pch) {
   if (pch->pitch < 0 || 4 < pch->i.modulation) {
@@ -42,18 +42,18 @@ void snd_channel_synthesis(uint8_t ch, struct snd_channel * pch) {
   }
 }
 
-inline void snd_channel_set_noise(uint8_t ch, struct snd_channel * pch) {
+static void snd_channel_set_noise(uint8_t ch, struct snd_channel * pch) {
   if (pch->i.noise_fdr) {
     PSG(6) = pch->i.noise_fdr;
     PSG(7) &= ~(8 << ch);
   }
 }
-inline void snd_channel_set_tone_flag(uint8_t ch, struct snd_channel * pch) {
+static void snd_channel_set_tone_flag(uint8_t ch, struct snd_channel * pch) {
   if (!pch->i.tone_on || pch->i.modulation == 1) {
     PSG(7) |= (1 << ch);
   }
 }
-inline void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch) {
+static void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch) {
   if (!pch->i.modulation) {
     int8_t volume = pch->volume + pch->i.volume - 15; // (<= 15)
     if (volume < 0) {
@@ -72,8 +72,8 @@ inline void snd_channel_set_volume(uint8_t ch, struct snd_channel * pch) {
 static int16_t snd_channel_calc_pitch(struct snd_channel * pch);
 static uint16_t snd_channel_calc_sw_period(int16_t pitch, struct snd_channel * pch);
 static uint16_t snd_channel_calc_hw_period(int16_t pitch, struct snd_channel * pch);
-inline void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period);
-inline void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period);
+static void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period);
+static void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period);
 
 static void snd_channel_set_modulation_sw_only(uint8_t ch, struct snd_channel * pch) {
   const int16_t pitch = snd_channel_calc_pitch(pch);
@@ -136,7 +136,7 @@ static const snd_modulation_func modulations[] = {
   [4] = snd_channel_set_modulation_hw_and_sw,
 };
 
-inline void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
+static void snd_channel_set_modulation(uint8_t ch, struct snd_channel * pch) {
   modulations[pch->i.modulation](ch, pch);
 }
 
@@ -170,13 +170,13 @@ static uint16_t snd_channel_calc_hw_period(int16_t pitch, struct snd_channel * p
       + pch->period_offset;     // !?
   }
 }
-inline void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period) {
+static void snd_channel_set_sw_period(uint8_t ch, uint16_t sw_period) {
   ch <<= 1;
   PSG(ch) = (sw_period     ) & 0xff;
   ch++;
   PSG(ch) = (sw_period >> 8) & 0x0f;
 }
-inline void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period) {
+static void snd_channel_set_hw_period(struct snd_channel * pch, uint16_t hw_period) {
   PSG(11) = (hw_period     ) & 0xff;
   PSG(12) = (hw_period >> 8) & 0xff;
   if (pch->i.retrig) {

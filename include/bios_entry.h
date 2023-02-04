@@ -39,7 +39,7 @@
  *
  * \sa msx_RDSLT()
  */
-static __at(0x000c) const uint8_t RDSLT;
+MSX_BIOS(0x000c) const uint8_t RDSLT;
 
 /**
  * `MSX` BIOS : WRSLT (0014H / MAIN).
@@ -55,7 +55,7 @@ static __at(0x000c) const uint8_t RDSLT;
  *
  * \sa msx_WRSLT()
  */
-static __at(0x0014) const uint8_t WRSLT;
+MSX_BIOS(0x0014) const uint8_t WRSLT;
 
 /**
  * `MSX` BIOS : CALSLT (001CH / MAIN).
@@ -67,7 +67,7 @@ static __at(0x0014) const uint8_t WRSLT;
  *
  * \post CPU registers are changed according to the results of the routines called.
  */
-static __at(0x001c) const uint8_t CALSLT;
+MSX_BIOS(0x001c) const uint8_t CALSLT;
 
 /**
  * `MSX` BIOS : ENASLT (0024H / MAIN).
@@ -80,7 +80,7 @@ static __at(0x001c) const uint8_t CALSLT;
  * \post All registers are changed.
  * \post Interrupt is disabled.
  */
-static __at(0x0024) const uint8_t ENASLT;
+MSX_BIOS(0x0024) const uint8_t ENASLT;
 
 /**
  * `MSX` BIOS : CALLF (0030H / MAIN).
@@ -96,7 +96,7 @@ static __at(0x0024) const uint8_t ENASLT;
  *
  * \post CPU registers are changed according to the results of the routines called.
  */
-static __at(0x0030) const uint8_t CALLF;
+MSX_BIOS(0x0030) const uint8_t CALLF;
 
 /**
  * `MSX` BIOS : RSLREG (0138H / MAIN).
@@ -105,7 +105,7 @@ static __at(0x0030) const uint8_t CALLF;
  *
  * \retval A value
  */
-static __at(0x0138) const uint8_t RSLREG;
+MSX_BIOS(0x0138) const uint8_t RSLREG;
 
 /**
  * `MSX` BIOS : WSLREG (013BH / MAIN).
@@ -114,7 +114,7 @@ static __at(0x0138) const uint8_t RSLREG;
  *
  * \param A value
  */
-static __at(0x013b) const uint8_t WSLREG;
+MSX_BIOS(0x013b) const uint8_t WSLREG;
 
 /**
  * `MSX` BIOS : GTSTCK (00D5H / MAIN).
@@ -145,7 +145,7 @@ static __at(0x013b) const uint8_t WSLREG;
  * \sa MSX Datapack Volume 2, pp.70 (w/ error)
  * \sa MSX Datapack Volume 2, pp.612
  */
-static __at(0x00D5) const uint8_t GTSTCK;
+MSX_BIOS(0x00D5) const uint8_t GTSTCK;
 
 /**
  * `MSX` BIOS : GTTRIG (00D8H / MAIN).
@@ -169,7 +169,7 @@ static __at(0x00D5) const uint8_t GTSTCK;
  * \sa MSX Datapack Volume 2, pp.71
  * \sa MSX Datapack Volume 2, pp.613 (w/ error)
  */
-static __at(0x00D8) const uint8_t GTTRIG;
+MSX_BIOS(0x00D8) const uint8_t GTTRIG;
 
 /**
  * `MSXturboR` BIOS : CHGCPU (0180H/MAIN).
@@ -212,7 +212,7 @@ static __at(0x00D8) const uint8_t GTTRIG;
  * \sa MSX Datapack Volume 3, pp.13
  * \sa MSX Datapack Volume 3, pp.25
  */
-static __at(0x0180) const uint8_t CHGCPU;
+MSX_BIOS(0x0180) const uint8_t CHGCPU;
 
 /**
  * `MSXturboR` BIOS : GETCPU (0183H/MAIN).
@@ -231,6 +231,6 @@ static __at(0x0180) const uint8_t CHGCPU;
  * \sa MSX Datapack Volume 3, pp.13
  * \sa MSX Datapack Volume 3, pp.27
  */
-static __at(0x0183) const uint8_t GETCPU;
+MSX_BIOS(0x0183) const uint8_t GETCPU;
 
 #endif

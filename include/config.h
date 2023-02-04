@@ -18,6 +18,8 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
+#include <stdint.h>
+
 #if !defined(__SDCC)
 // omits SDCC specific keywords
 #  define __at(x)
@@ -26,6 +28,11 @@
 #  define __naked
 #  define __banked
 #  define __sdcccall(x)
+#  define MSX_IO_PORT(x) extern uint8_t
+#  define MSX_BIOS(x)    extern
+#else
+#  define MSX_IO_PORT(x) static volatile __sfr __at (x)
+#  define MSX_BIOS(x)    static __at (x)
 #endif
 
 #endif // CONFIG_H_

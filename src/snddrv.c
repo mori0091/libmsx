@@ -26,7 +26,6 @@
 #define PSG(reg)                     (ay_3_8910_buffer[(reg)])
 
 static bool paused;
-static bool repeat;
 static uint8_t vsync_freq;
 uint8_t snd_speed_multiplier;
 
@@ -57,7 +56,7 @@ static void snd__pause(void) {
 }
 
 static void snd__set_repeat(bool status) {
-  repeat = status;
+  snd_bgm.m.repeat = status;
 }
 
 static void snd__init(void) {
@@ -167,16 +166,7 @@ void snd_play(void) {
     return;
   }
   ay_3_8910_play();
-
   snd_decode();
-
-  if (snd_bgm.m.isEnd && repeat) {
-    if (snd_bgm.m.music) {
-      uint8_t freq = snd_bgm.play_freq;
-      snd__set_bgm(snd_bgm.m.music);
-      snd_bgm.play_freq = freq;
-    }
-  }
 }
 
 // ------------------------------------------------

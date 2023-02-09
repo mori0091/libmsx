@@ -31,6 +31,7 @@ struct snd_m_ctx {
   uint8_t wait;
   uint8_t timer;
   bool isEnd;
+  bool repeat;
   // ----
   struct {                      // Sequencer for snd_Music
     const snd_SoundAssets * sa; // pointer to the current sound assets

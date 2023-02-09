@@ -95,14 +95,20 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
       p++;
       if (pg->patterns.length <= ctx->pindex) {
         // End of the list of patterns
-        if (!pg->isLoop) {
-          // finish the program (unless 'auto-repeat' is set)
+        if (!ctx->repeat) {
+          // finish the program
           ctx->isEnd = true;
           return;
         }
-        // Loop back to the specified pattern
-        // assert(pg->loopToIndex < pg->patterns.length);
-        ctx->pindex = pg->loopToIndex;
+        if (!pg->isLoop) {
+          // Loop back to the first pattern
+          ctx->pindex = 0;
+        }
+        else {
+          // Loop back to the specified pattern
+          // assert(pg->loopToIndex < pg->patterns.length);
+          ctx->pindex = pg->loopToIndex;
+        }
         p = &pg->patterns.data[ctx->pindex];
       }
       snd_m__set_Pattern(ctx, pg, p);

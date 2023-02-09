@@ -62,6 +62,7 @@ static void snd_m__set_Pattern(struct snd_m_ctx * ctx, const snd_Music * pg, con
     ctx->spd.skip_count = 0;
     ctx->timer = 0;
   }
+  ctx->line = 0;
 }
 
 static void snd_m__update(struct snd_m_ctx * ctx);
@@ -90,7 +91,6 @@ void snd_m__decode(struct snd_m_ctx * ctx) {
     const snd_Pattern * p = &pg->patterns.data[ctx->pindex];
     if (p->height <= ctx->line) {
       // Proceed to the next pattern
-      ctx->line = 0;
       ctx->pindex++;
       p++;
       if (pg->patterns.length <= ctx->pindex) {

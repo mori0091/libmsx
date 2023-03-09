@@ -14,11 +14,7 @@
 
 #include "bmem.h"
 
-static void vmem_write_chunk(const uint8_t * p, uint16_t n) {
-  while (n--) {
-    vmem_set(*p++);
-  }
-}
+void vmem_write_chunk(const uint8_t * p, uint16_t n);
 
 void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len) {
   uint8_t bank = bmem_bank_of(src);

@@ -14,6 +14,12 @@
 
 #include "bmem.h"
 
+static void vmem_write_chunk(const uint8_t * p, uint16_t n) {
+  while (n--) {
+    vmem_set(*p++);
+  }
+}
+
 void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len) {
   uint8_t bank = bmem_bank_of(src);
   const uint16_t offset = (uint16_t)(src & 0x3fff);
@@ -28,9 +34,7 @@ void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len) {
     }
     len -= n;
     bmem_set_bank(bank);
-    while (n--) {
-      vmem_set(*p++);
-    }
+    vmem_write_chunk(p, n);
     bank++;
     p = (const uint8_t *)0x8000;
     n = (uint16_t)0x4000;

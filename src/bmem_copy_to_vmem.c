@@ -18,7 +18,7 @@ void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len) {
   uint8_t bank = bmem_bank_of(src);
   const uint16_t offset = (uint16_t)(src & 0x3fff);
   const uint8_t * p = (const uint8_t *)0x8000 + offset;
-  uint32_t n = (uint32_t)0x4000 - offset;
+  uint16_t n = (uint16_t)0x4000 - offset;
 
   const uint8_t old_bank = bmem_get_bank();
   vmem_set_write_address(dst);
@@ -33,7 +33,7 @@ void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len) {
     }
     bank++;
     p = (const uint8_t *)0x8000;
-    n = (uint32_t)0x4000;
+    n = (uint16_t)0x4000;
   }
   bmem_set_bank(old_bank);
 }

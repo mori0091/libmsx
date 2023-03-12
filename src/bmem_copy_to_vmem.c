@@ -13,6 +13,9 @@
  */
 
 #include "bmem.h"
+#include <stdint.h>
+
+#if 0
 
 void vmem_write_chunk(const uint8_t * p, uint16_t n);
 
@@ -37,3 +40,17 @@ void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len) {
   }
   bmem_set_bank(old_bank);
 }
+
+#else
+
+#include "xmem.h"
+
+void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len) {
+  vmem_open(dst);
+  bmem_open(src);
+  bmem_to_vmem(len);
+  bmem_close();
+  vmem_close();
+}
+
+#endif

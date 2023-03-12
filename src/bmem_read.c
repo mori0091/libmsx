@@ -12,6 +12,8 @@
  * \file bmem_read.c
  */
 
+#if 0
+
 #include "bmem.h"
 #include "workarea.h"
 
@@ -58,3 +60,18 @@ void bmem_read(bmemptr_t src, void* dst, uint16_t len) {
   }
   bmem_set_bank(old_bank);
 }
+
+#else
+
+#include "bmem.h"
+#include "xmem.h"
+
+void bmem_read(bmemptr_t loc, void * dst, uint16_t len) {
+  mem_open((uint8_t *)dst);
+  bmem_open(loc);
+  bmem_to_mem(len);
+  bmem_close();
+  mem_close();
+}
+
+#endif

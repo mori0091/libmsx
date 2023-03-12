@@ -24,6 +24,7 @@
 #define VMEM_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 #include "io.h"
 
@@ -154,6 +155,70 @@ void vmem_write(vmemptr_t dst, void* src, uint16_t len);
  * \param len  number of bytes to be written.
  */
 void vmem_memset(vmemptr_t dst, uint8_t val, uint16_t len);
+
+/**
+ * `MSX` Copy a series of bytes in VRAM (VRAM to VRAM).
+ *
+ * VRAM to VRAM copying function.
+ *
+ * This function uses a preconfigured built-in working buffer.
+ *
+ * \param src  source base address of VRAM.
+ * \param dst  destination base address of VRAM.
+ * \param len  number of bytes to be copied.
+ *
+ * \sa
+ * vmem_copy_b() for using user-defined working buffer instead of built-in
+ * buffer.
+ */
+void vmem_copy(vmemptr_t src, vmemptr_t dst, uint32_t len);
+
+/**
+ * `MSX2` Copy a series of bytes in VRAM (VRAM to VRAM).
+ *
+ * Optimal version of vmem_copy().
+ *
+ * This function does not use built-in or user-defined buffers. Instead, it uses
+ * page #2 of the main RAM (usually unused RAM in ROM cartridge applications) as
+ * a work buffer. This provides better performance in terms of speed and memory
+ * consumption.
+ *
+ * \param src  source base address of VRAM.
+ * \param dst  destination base address of VRAM.
+ * \param len  number of bytes to be copied.
+ *
+ * \note
+ * Page #2 (`0x8000`..`0xbfff`) of the main RAM is used as a 16KiB buffer.
+ * Therefore, at least 32 KiB of main RAM is required (Page #2 + Page #3 = 16
+ * KiB + 16 KiB). Some MSX computers do not meet this requirement, but MSX2 and
+ * later do. MSX1 is also acceptable if it has at least 32 KiB of RAM.
+ *
+ * \attention
+ * While executing this function, main RAM is exposed on page #2.
+ * Therefore, direct access to page #2 ROM is prohibited until the function call
+ * is completed. For example, if an interrupt routine accesses page #2 without
+ * using an inter-slot call, its behavior is undefined.
+ */
+void vmem_copy_opt2(vmemptr_t src, vmemptr_t dst, uint32_t len);
+
+/**
+ * `MSX` Copy a series of bytes in VRAM (VRAM to VRAM).
+ *
+ * Primitive function for copying from VRAM to VRAM. The work buffer must be
+ * specified by the caller.
+ *
+ * - Processing time depends on the size of the work buffer.
+ * - Larger buffer size is better (faster).
+ * - If the size is very small, this function will be very slow.
+ * - The recommended size is from `256` to `1024` bytes (or more if available).
+ *
+ * \param src     source base address of VRAM.
+ * \param dst     destination base address of VRAM.
+ * \param len     number of bytes to be copied.
+ * \param buf     base address of working buffer.
+ * \param buf_len capacity of the working buffer, in bytes.
+ */
+void vmem_copy_b(vmemptr_t src, vmemptr_t dst, uint32_t len, uint8_t * buf, size_t buf_len);
 
 /** @} */
 

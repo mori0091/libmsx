@@ -32,7 +32,6 @@ void vmem_write_chunk_1(const uint8_t * p, uint16_t n) {
   __asm__("        ld  a, b");
   __asm__("        or  a");
   __asm__("        ret z");
-  // __asm__("        otir");
   __asm__("00003$: outi");
   __asm__("        jr  nz, 00003$");
 }

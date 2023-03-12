@@ -8,7 +8,7 @@
 # GitHub libmsx project
 # https://github.com/mori0091/libmsx
 
-.PHONY: all build clean sample tools
+.PHONY: all build clean sample tools test
 
 all: build tools
 
@@ -54,9 +54,13 @@ clean:
 	@rm -rf ${OBJDIR} ${BINDIR} ${LIBDIR}
 	@${MAKE} -s -C sample clean
 	@make BINDIR="$(abspath ${BINDIR})" -s -C tools clean
+	@make -s -C test clean
 
 sample:
 	@${MAKE} -s -C sample
+
+test:
+	@make -s -C test
 
 tools:
 	@make BINDIR="$(abspath ${BINDIR})" -s -C tools

@@ -39,4 +39,22 @@
  */
 size_t ZX0_decompress(const uint8_t * src, uint8_t * dst);
 
+/**
+ * Decompress the ZX0 data stream in Banked Memory.
+ *
+ * \param src  Pointer to ZX0 data stream in Banked Memory.
+ * \param dst  Destination base address.
+ * \return     Length (in bytes) of the decompressed data.
+ */
+size_t ZX0_decompress_bmem(bmemptr_t src, uint8_t * dst);
+
+/**
+ * Decompress the ZX0 data stream in Banked Memory to VRAM.
+ *
+ * \param src  Pointer to ZX0 data stream in Banked Memory.
+ * \param dst  Destination base address.
+ * \return     Length (in bytes) of the decompressed data.
+ */
+uint32_t ZX0_decompress_bmem_to_vmem(bmemptr_t src, vmemptr_t dst);
+
 #endif // ZX0_DECOMPRESS_H_

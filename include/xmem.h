@@ -59,8 +59,18 @@ void bmem_to_mem_u32(uint32_t len);
  * \param len  size of chunk in bytes.
  *
  * \pre `bmem_is_opened() && vmem_is_opened()`
+ * \note This is a wrapper function of bmem_to_vmem_u32().
  */
-void bmem_to_vmem(uint32_t len);
+void bmem_to_vmem(size_t len);
+
+/**
+ * Copy chunk from banked-memory to VRAM.
+ *
+ * \param len  size of chunk in bytes.
+ *
+ * \pre `bmem_is_opened() && vmem_is_opened()`
+ */
+void bmem_to_vmem_u32(uint32_t len);
 
 /**
  * Copy chunk from ROM/RAM to VRAM.

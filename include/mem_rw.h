@@ -55,8 +55,8 @@ void mem_open(uint8_t * loc);
 void mem_close(void);
 
 /**
- * Duplicate a byte sequence starting from the specified offset to current
- * position and later.
+ * Duplicate a sequence of bytes beginning at the specified offset in the output
+ * stream at the current position or later.
  *
  * A data in range of `[p - offset, p - offset + len)` of RAM/ROM will be copied
  * to `[p, p + len)`, where `p` is current position. If both area overlaps,

@@ -128,7 +128,7 @@ void bmem_to_mem_u32(uint32_t len) {
   bmem_to_mem((size_t)len);
 }
 
-void bmem_to_vmem(uint32_t len) {
+void bmem_to_vmem_u32(uint32_t len) {
   assert(bmem_is_opened() && vmem_is_opened());
   // vmem_set_write_address(vmem_ptr());
   bmem_ensure();
@@ -143,6 +143,10 @@ void bmem_to_vmem(uint32_t len) {
     vmem_write_chunk(bmem_ptr(), len);
     bmem_skip(len);
   }
+}
+
+void bmem_to_vmem(size_t len) {
+  bmem_to_vmem_u32((uint32_t)len);
 }
 
 void mem_to_vmem(size_t len) {

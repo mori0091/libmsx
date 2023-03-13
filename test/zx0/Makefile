@@ -16,6 +16,7 @@ TARGET = ${BINDIR}/${NAME}
 
 CFLAGS ?=
 CFLAGS += -MMD
+CFLAGS += -DNDEBUG
 CFLAGS += -I ${LIBMSX_HOME}/include
 
 # list of auto-generated source files
@@ -36,7 +37,9 @@ OBJS = $(patsubst ${SRCDIR}/%.c, ${OBJDIR}/%.o, ${SRCS})
 
 SRCS_ZX0_C = $(shell find ${LIBMSX_HOME}/src \
 		-type f \
-		-name 'zx0_*.c' \
+		-name 'mem_rw.c' -o \
+		-name 'ZX0__decode.c' -o \
+		-name 'ZX0_decompress.c' \
 		)
 OBJS += $(patsubst ${LIBMSX_HOME}/src/%.c, ${OBJDIR}/%.o, ${SRCS_ZX0_C})
 

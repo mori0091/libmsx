@@ -17,7 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t zx0_decompress(const uint8_t * src, uint8_t * dst);
+#include <ZX0_decompress.h>
 
 #define MAX_SIZE  (1024 * 1024)
 static uint8_t plaintext[MAX_SIZE];
@@ -62,7 +62,7 @@ int main(int argc, char ** argv) {
   }
   size_t plaintext_size = read_file(argv[1], plaintext);
   size_t encoded_size = read_file(argv[2], encoded);
-  size_t decoded_size = zx0_decompress(encoded, decoded);
+  size_t decoded_size = ZX0_decompress(encoded, decoded);
 
   bool failed = false;
   printf("Decoded %zu bytes encoded message into %zu bytes plaintext.\n",

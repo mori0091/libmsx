@@ -16,6 +16,8 @@
 
 #if (__SDCCCALL == 1)
 
+#include "./vdp_internal.h"
+
 void vmem_read_chunk_1(uint8_t * p, uint16_t n) {
   (void)p;                      // -> HL
   (void)n;                      // -> DE
@@ -54,26 +56,11 @@ void vmem_read_chunk_2(uint8_t * p, uint16_t n) {
   __asm__("        inir");
 }
 
-#include "./vdp_internal.h"
+void (* vmem__fnptr_read_chunk)(uint8_t * p, uint16_t n) = vmem_read_chunk_1;
 
 // See also https://www.msx.org/wiki/VRAM_access_speed
 void vmem_read_chunk(uint8_t * p, uint16_t n) {
-  // Force Z80 mode to avoid excessive waiting time inserted by S1990.
-  // (i.e. Z80 mode is faster than R800 mode in this case!)
-  const uint8_t cpu = msx_get_cpu_mode();
-  msx_set_cpu_mode(0x00);
-
-  if (sprite_mode < 2) {
-    // for MSX1 compatible screen mode and MSX2 TEXT 2 mode.
-    // (Requires 28? or 29 cycle for VDP port access.)
-    vmem_read_chunk_1(p, n);
-  }
-  else {
-    // for GRAPHIC 3, 4, 5, 6, 7 mode
-    vmem_read_chunk_2(p, n);
-  }
-
-  msx_set_cpu_mode(cpu);
+  vmem__fnptr_read_chunk(p, n);
 }
 
 #else

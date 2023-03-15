@@ -21,4 +21,16 @@
 extern volatile enum vdp_screen_mode screen_mode;
 extern volatile uint8_t sprite_mode;
 
+#if (__SDCCCALL == 1)
+
+extern void (* vmem__fnptr_write_chunk)(const uint8_t * p, uint16_t n);
+extern void (* vmem__fnptr_read_chunk)(uint8_t * p, uint16_t n);
+
+void vmem_read_chunk_1(uint8_t * p, uint16_t n);
+void vmem_read_chunk_2(uint8_t * p, uint16_t n);
+void vmem_write_chunk_1(const uint8_t * p, uint16_t n);
+void vmem_write_chunk_2(const uint8_t * p, uint16_t n);
+
+#endif
+
 #endif

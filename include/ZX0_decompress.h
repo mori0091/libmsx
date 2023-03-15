@@ -31,7 +31,7 @@
 #include <stddef.h>
 
 /**
- * Decompress the ZX0 data stream.
+ * Decompress a ZX0 data stream.
  *
  * \param src  Pointer to ZX0 data stream.
  * \param dst  Destination base address.
@@ -40,7 +40,7 @@
 size_t ZX0_decompress(const uint8_t * src, uint8_t * dst);
 
 /**
- * Decompress the ZX0 data stream in Banked Memory.
+ * Decompress a ZX0 data stream in Banked Memory.
  *
  * \param src  Pointer to ZX0 data stream in Banked Memory.
  * \param dst  Destination base address.
@@ -49,7 +49,7 @@ size_t ZX0_decompress(const uint8_t * src, uint8_t * dst);
 size_t ZX0_decompress_bmem(bmemptr_t src, uint8_t * dst);
 
 /**
- * Decompress the ZX0 data stream in Banked Memory to VRAM.
+ * Decompress a ZX0 data stream in Banked Memory to VRAM.
  *
  * \param src  Pointer to ZX0 data stream in Banked Memory.
  * \param dst  Destination base address.

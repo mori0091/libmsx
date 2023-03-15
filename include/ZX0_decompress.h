@@ -57,4 +57,25 @@ size_t ZX0_decompress_bmem(bmemptr_t src, uint8_t * dst);
  */
 uint32_t ZX0_decompress_bmem_to_vmem(bmemptr_t src, vmemptr_t dst);
 
+/**
+ * Decompress a ZX0 resource in banked memory to VRAM.
+ *
+ * Searches for an embedded resource in banked memory by name and decmompress it
+ * into the specified address in VRAM. If the resource is not found, do nothing.
+ *
+ * This function is same as the following code:
+ * ~~~ c
+ * const ResourceIndex * res = resource_find(path);
+ * if (res) {
+ *   ZX0_decompress_bmem_to_vmem(res->offset, dst);
+ * }
+ * ~~~
+ *
+ * \param path path/file name of the resource.
+ * \param dst destination address of VRAM.
+ *
+ * \sa ZX0_decompress_bmem_to_vmem()
+ */
+uint32_t ZX0_decompress_resource_to_vmem(const char * path, vmemptr_t dst);
+
 #endif // ZX0_DECOMPRESS_H_

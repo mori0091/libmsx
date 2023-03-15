@@ -58,17 +58,15 @@ void vmem_open(vmemptr_t loc);
 void vmem_close(void);
 
 /**
- * `MSX` Duplicate a byte sequence starting from the specified offset to current
- * position and later.
+ * `MSX` Duplicate a byte sequence of VRAM starting from the specified offset to
+ * current position and later.
  *
  * A data in range of `[p - offset, p - offset + len)` of VRAM will be copied to
  * `[p, p + len)`, where `p` is current position. If both area overlaps,
  * repetition is occur.
  *
- * For example, if the byte in `p-1` is `X`, then `mem_dup(1, 3)` copies `X` to
+ * For example, if the byte in `p-1` is `X`, then `vmem_dup(1, 3)` copies `X` to
  * `p`, `p+1`, `p+2` and `p` is increased by `3`.
- *
- * This function uses a preconfigured built-in working buffer.
  *
  * \param offset distance from the current position.
  * \param len    length in bytes.
@@ -141,6 +139,15 @@ void vmem_dup_b(uint16_t offset, size_t len, uint8_t * buf, size_t buf_len);
  * \note internal use only.
  */
 vmemptr_t vmem_ptr(void);
+
+/**
+ * Advance the current position of VRAM accessor.
+ *
+ * \param len   number of bytes.
+ *
+ * \pre vmem_is_opened()
+ */
+void vmem_skip(size_t len);
 
 /**
  * Write a chunk to VRAM.

@@ -43,6 +43,12 @@ vmemptr_t vmem_ptr(void) {
 
 void vmem_write_chunk(const uint8_t * src, uint16_t len);
 
+void vmem_skip(size_t len) {
+  assert(vmem_is_opened());
+  vmem += len;
+  vmem_set_write_address(vmem);
+}
+
 void vmem_copy_b(vmemptr_t src, vmemptr_t dst, uint32_t len, uint8_t * buf, size_t buf_len) {
   assert(buf && buf_len && buf_len <= 0xffff - (uintptr_t)buf);
   while (len) {

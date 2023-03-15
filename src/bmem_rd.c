@@ -135,12 +135,14 @@ void bmem_to_vmem_u32(uint32_t len) {
   size_t n = bmem_avail();
   while (n <= len) {
     vmem_write_chunk(bmem_ptr(), n);
+    vmem_skip(n);
     len -= n;
     n = PAGE_SIZE;
     bmem_next_segment();
   }
   if (len) {
     vmem_write_chunk(bmem_ptr(), len);
+    vmem_skip(len);
     bmem_skip(len);
   }
 }

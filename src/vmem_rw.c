@@ -17,8 +17,11 @@
 #include "bios.h"
 
 #include <assert.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "./vdp_internal.h"
 
 static vmemptr_t vmem = (vmemptr_t)(-1);
 
@@ -47,34 +50,6 @@ void vmem_skip(size_t len) {
   assert(vmem_is_opened());
   vmem += len;
   vmem_set_write_address(vmem);
-}
-
-void vmem_copy_b(vmemptr_t src, vmemptr_t dst, uint32_t len, uint8_t * buf, size_t buf_len) {
-  assert(buf && buf_len && buf_len <= 0xffff - (uintptr_t)buf);
-  while (len) {
-    if (len < buf_len) {
-      buf_len = len;
-    }
-    vmem_read(src, buf, buf_len);
-    vmem_write(dst, buf, buf_len);
-    src += buf_len;
-    dst += buf_len;
-    len -= buf_len;
-  }
-}
-
-static uint8_t tmp_buf[1024];
-
-void vmem_copy(vmemptr_t src, vmemptr_t dst, uint32_t len) {
-  vmem_copy_b(src, dst, len, tmp_buf, sizeof(tmp_buf));
-}
-
-void vmem_copy_opt2(vmemptr_t src, vmemptr_t dst, uint32_t len) {
-  uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
-  msx_ENASLT(msx_get_slot(PAGE_ADDR(3)), PAGE_ADDR(2));
-  vmem_copy_b(src, dst, len, PAGE_ADDR(2), PAGE_SIZE);
-  msx_ENASLT(slot_p2, PAGE_ADDR(2));
-  __asm__("ei");
 }
 
 #include "vdp.h"

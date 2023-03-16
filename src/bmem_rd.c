@@ -83,14 +83,14 @@ void bmem_read_chunk(uint8_t * dst, size_t len) {
   bmem_ensure();
   size_t n = bmem_avail();
   while (n <= len) {
-    memcpy(dst, bmem_ptr(), n);
+    memcpy(dst, bmem.loc, n);
     dst += n;
     len -= n;
     n = PAGE_SIZE;
     bmem_next_segment();
   }
   if (len) {
-    memcpy(dst, bmem_ptr(), len);
+    memcpy(dst, bmem.loc, len);
     bmem_skip(len);
   }
 }
@@ -99,79 +99,4 @@ uint8_t bmem_read_byte(void) {
   assert(bmem_is_opened());
   bmem_ensure();
   return *bmem.loc++;
-}
-
-// -----------------------------------------------------------------------
-
-#include "mem_rw.h"
-#include "vmem_rw.h"
-
-void bmem_to_mem(size_t len) {
-  assert(bmem_is_opened() && mem_is_opened());
-  bmem_ensure();
-  size_t n = bmem_avail();
-  while (n <= len) {
-    mem_write_chunk(bmem_ptr(), n);
-    len -= n;
-    n = PAGE_SIZE;
-    bmem_next_segment();
-  }
-  if (len) {
-    mem_write_chunk(bmem_ptr(), len);
-    bmem_skip(len);
-  }
-}
-
-// wrapper of `bmem_to_mem(size_t)`
-void bmem_to_mem_u32(uint32_t len) {
-  assert(len <= UINT16_MAX);
-  bmem_to_mem((size_t)len);
-}
-
-void bmem_to_vmem_u32(uint32_t len) {
-  assert(bmem_is_opened() && vmem_is_opened());
-  // vmem_set_write_address(vmem_ptr());
-  bmem_ensure();
-  size_t n = bmem_avail();
-  while (n <= len) {
-    vmem_write_chunk(bmem_ptr(), n);
-    vmem_skip(n);
-    len -= n;
-    n = PAGE_SIZE;
-    bmem_next_segment();
-  }
-  if (len) {
-    vmem_write_chunk(bmem_ptr(), len);
-    vmem_skip(len);
-    bmem_skip(len);
-  }
-}
-
-void bmem_to_vmem(size_t len) {
-  bmem_to_vmem_u32((uint32_t)len);
-}
-
-void mem_to_vmem(size_t len) {
-  assert(mem_is_opened() && vmem_is_opened());
-  // vmem_set_write_address(vmem_ptr());
-  vmem_write_chunk(mem_ptr(), len);
-}
-
-// wrapper of `mem_to_vmem(size_t)`
-void mem_to_vmem_u32(uint32_t len) {
-  assert(len <= UINT16_MAX);
-  mem_to_vmem((size_t)len);
-}
-
-void vmem_to_mem(size_t len) {
-  assert(mem_is_opened() && vmem_is_opened());
-  vmem_set_read_address(vmem_ptr());
-  vmem_read_chunk(mem_ptr(), len);
-  vmem_set_write_address(vmem_ptr());
-}
-
-// wrapper of `vmem_to_mem(size_t)`
-void vmem_to_mem_u32(uint32_t len) {
-  assert(len <= UINT16_MAX);
-  vmem_to_mem((size_t)len);
 }

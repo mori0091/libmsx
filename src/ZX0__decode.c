@@ -66,23 +66,20 @@ static uint16_t read_interlaced_elias_gamma(void) {
   return value;
 }
 
-static uint16_t read_interlaced_elias_gamma_with_backtrack(uint8_t last_byte) {
-  if (last_byte & 1) {
-    return 2;
+static uint8_t read_interlaced_elias_gamma_inverted(void) {
+  uint8_t value = 1;
+  while (!read_bit()) {
+    value = (value << 1) | !read_bit();
   }
+  return value;
+}
+
+static uint16_t read_interlaced_elias_gamma_with_backtrack_0(void) {
   uint16_t value = 1;
   do {
     value = (value << 1) | read_bit();
   } while (!read_bit());
   return value + 1;
-}
-
-static uint16_t read_interlaced_elias_gamma_inverted(void) {
-  uint16_t value = 1;
-  while (!read_bit()) {
-    value = (value << 1) | !read_bit();
-  }
-  return value;
 }
 
 void ZX0__decode(void) {
@@ -101,13 +98,14 @@ void ZX0__decode(void) {
 
     do {
       // COPY FROM NEW OFFSET
-      uint16_t offset_hi = read_interlaced_elias_gamma_inverted();
-      if (offset_hi == 256) {
+      const uint8_t offset_hi = read_interlaced_elias_gamma_inverted();
+      if (!offset_hi) {
         return;
       }
-      uint8_t offset_lo = read_byte();
-      offset = offset_hi * 128 - (offset_lo >> 1);
-      duplicate_bytes(offset, read_interlaced_elias_gamma_with_backtrack(offset_lo));
+      const uint8_t offset_lo = read_byte();
+      offset = (uint16_t)offset_hi * 128 - (offset_lo >> 1);
+      const uint16_t len = (offset_lo & 1) ? 2 : read_interlaced_elias_gamma_with_backtrack_0();
+      duplicate_bytes(offset, len);
     } while (read_bit());
   }
 }

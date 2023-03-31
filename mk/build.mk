@@ -212,7 +212,7 @@ RSCDIR ?= resources
 BUILT_SOURCES ?=
 
 # -- .aks files --
-AKS2C = ${LIBMSX_HOME}/tools/aks2c.sh
+AKS2C = ${LIBMSX_HOME}/bin/aks2c.sh
 
 SRCS_AKS ?= $(shell find ${SRCDIR} -type f -name '*.aks')
 SRCS_AKS_C = $(patsubst %.aks, %.c, ${SRCS_AKS})
@@ -221,7 +221,7 @@ SRCS_AKS_H = $(patsubst %.aks, %.h, ${SRCS_AKS})
 BUILT_SOURCES += ${SRCS_AKS_C} ${SRCS_AKS_H}
 
 # -- resources --
-RIDXC = ${LIBMSX_HOME}/tools/ridxc.sh
+RIDXC = ${LIBMSX_HOME}/bin/ridxc.sh
 RSCS_INDEX_C = ${SRCDIR}/libmsx_resources.c
 
 ifneq (${RSCDIR},)
@@ -253,6 +253,7 @@ LD = sdld
 AR = sdar
 OBJCOPY = sdobjcopy
 IHX2BIN = ${LIBMSX_HOME}/bin/ihx2bin
+PAD2POW2 = ${LIBMSX_HOME}/bin/pad2pow2.sh
 
 CFLAGS ?=
 CFLAGS += -mz80 -MMD
@@ -295,7 +296,7 @@ ${CRT0} ${LIBMSX}: libmsx
 
 ${BINDIR}/${NAME}.rom: ${BINDIR}/${NAME}.bin ${RSCS}
 	@${info [Build]	$@ <- $^}
-	@cat $^ > $@ && ${LIBMSX_HOME}/tools/pad2pow2.sh $@
+	@cat $^ > $@ && ${PAD2POW2} $@
 
 ${BINDIR}/${NAME}.dat: ${BINDIR}/${NAME}.ihx
 	@${info [Build]	$@}

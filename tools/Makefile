@@ -10,10 +10,33 @@
 
 .PHONY: all build clean
 
+BINDIR ?= ../bin
+
+TARGETS = \
+	${BINDIR}/ihx2bin \
+	${BINDIR}/aks2c.sh \
+	${BINDIR}/aks2c.xsl \
+	${BINDIR}/pad2pow2.sh \
+	${BINDIR}/ridxc.sh \
+	${BINDIR}/zx0
+
 all: build
 
-build:
-	@${MAKE} -s -C ihx2bin
+build: ${TARGETS}
 
 clean:
+	@rm -f ${TARGETS}
 	@${MAKE} -s -C ihx2bin clean
+	@${MAKE} -s -C zx0 clean
+
+${BINDIR}/ihx2bin:
+	@${MAKE} -s -C ihx2bin
+
+${BINDIR}/zx0:
+	@${MAKE} -s -C zx0
+
+${BINDIR}/%.sh: %.sh
+	@cp $< $@
+
+${BINDIR}/%.xsl: %.xsl
+	@cp $< $@

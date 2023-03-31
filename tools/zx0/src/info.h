@@ -15,6 +15,8 @@
 #ifndef INFO_H_
 #define INFO_H_
 
+#include <stdio.h>
+#include <stdlib.h>
 
 #ifdef NDEBUG
 #define DEBUG_INFO(...)
@@ -22,7 +24,12 @@
 #define DEBUG_INFO(...)  INFO(__VA_ARGS__)
 #endif
 
-void INFO(const char * fmt, ...);
-void ERROR(const char * fmt, ...);
+#define INFO(...)        fprintf(stderr, __VA_ARGS__)
+#define ERROR(...)                              \
+    do {                                        \
+        fprintf(stderr, __VA_ARGS__);           \
+        fprintf(stderr, "\n");                  \
+        exit(1);                                \
+    } while (0)
 
 #endif // INFO_H_

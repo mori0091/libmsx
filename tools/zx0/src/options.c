@@ -58,8 +58,8 @@ void help(void) {
 
 static size_t parse_size(const char * arg) {
   size_t n = 0;
-  char * suf = array(strlen(arg)+1, 1);
-  if (1 < sscanf(arg, "%zu%s", &n, suf)) {
+  char suf[3+1+1] = {0};
+  if (1 < sscanf(arg, "%zu%4s", &n, suf)) {
     if (!strcmp(suf, "kB")) {
       n *= 1000;
     }
@@ -70,7 +70,6 @@ static size_t parse_size(const char * arg) {
       n = 0;
     }
   }
-  free(suf);
   if (!n) {
     ERROR("Invalid argument N: '%s'", arg);
   }

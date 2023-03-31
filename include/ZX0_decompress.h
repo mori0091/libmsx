@@ -31,7 +31,7 @@
 #include <stddef.h>
 
 /**
- * Decompress a ZX0 data stream.
+ * `MSX` Decompress a ZX0 data stream.
  *
  * \param src  Pointer to ZX0 data stream.
  * \param dst  Destination base address.
@@ -40,7 +40,7 @@
 size_t ZX0_decompress(const uint8_t * src, uint8_t * dst);
 
 /**
- * Decompress a ZX0 data stream in Banked Memory.
+ * `MSX` Decompress a ZX0 data stream in Banked Memory.
  *
  * \param src  Pointer to ZX0 data stream in Banked Memory.
  * \param dst  Destination base address.
@@ -49,7 +49,7 @@ size_t ZX0_decompress(const uint8_t * src, uint8_t * dst);
 size_t ZX0_decompress_bmem(bmemptr_t src, uint8_t * dst);
 
 /**
- * Decompress a ZX0 data stream in Banked Memory to VRAM.
+ * `MSX` Decompress a ZX0 data stream in Banked Memory to VRAM.
  *
  * \param src  Pointer to ZX0 data stream in Banked Memory.
  * \param dst  Destination base address.
@@ -58,7 +58,29 @@ size_t ZX0_decompress_bmem(bmemptr_t src, uint8_t * dst);
 uint32_t ZX0_decompress_bmem_to_vmem(bmemptr_t src, vmemptr_t dst);
 
 /**
- * Decompress a ZX0 resource in banked memory to VRAM.
+ * `MSX2` Decompress a ZX0 data stream in Banked Memory to VRAM via main RAM page #0 buffer.
+ *
+ * High throughput (but low responsiveness) version of ZX0_decompress_bmem_to_vmem().
+ *
+ * This function uses main RAM page #0 as 16KiB buffer for faster decompression.
+ *
+ * \param src  Pointer to ZX0 data stream in Banked Memory.
+ * \param dst  Destination base address.
+ * \return     Length (in bytes) of the decompressed data.
+ *
+ * \note
+ * This is available for MSX1 w/ 64KiB main RAM if main RAM resides in same
+ * slot.
+ *
+ * \note
+ * But some MSX1 has only 8, 16, or 32 KiB main RAM. Or even if it has 64KiB
+ * main RAM, some part of main RAM may resides in different slot. This function
+ * does not support such MSX1. So it is described as for `MSX2` or later.
+ */
+uint32_t ZX0_decompress_bmem_to_vmem_buffer(bmemptr_t src, vmemptr_t dst);
+
+/**
+ * `MSX` Decompress a ZX0 resource in banked memory to VRAM.
  *
  * Searches for an embedded resource in banked memory by name and decmompress it
  * into the specified address in VRAM. If the resource is not found, do nothing.
@@ -67,15 +89,50 @@ uint32_t ZX0_decompress_bmem_to_vmem(bmemptr_t src, vmemptr_t dst);
  * ~~~ c
  * const ResourceIndex * res = resource_find(path);
  * if (res) {
- *   ZX0_decompress_bmem_to_vmem(res->offset, dst);
+ *   return ZX0_decompress_bmem_to_vmem(res->offset, dst);
  * }
+ * return 0;
  * ~~~
  *
  * \param path path/file name of the resource.
  * \param dst destination address of VRAM.
+ * \return size of decompressed image.
  *
  * \sa ZX0_decompress_bmem_to_vmem()
  */
 uint32_t ZX0_decompress_resource_to_vmem(const char * path, vmemptr_t dst);
+
+/**
+ * `MSX2` Decompress a ZX0 resource in banked memory to VRAM via main RAM page #0 buffer.
+ *
+ * High throughput (but low responsiveness) version of ZX0_decompress_resource_to_vmem().
+ *
+ * This function uses main RAM page #0 as 16KiB buffer for faster decompression.
+ *
+ * This function is same as the following code:
+ * ~~~ c
+ * const ResourceIndex * res = resource_find(path);
+ * if (res) {
+ *   return ZX0_decompress_bmem_to_vmem_buffer(res->offset, dst);
+ * }
+ * return 0;
+ * ~~~
+ *
+ * \param path path/file name of the resource.
+ * \param dst destination address of VRAM.
+ * \return size of decompressed image.
+ *
+ * \note
+ * This is available for MSX1 w/ 64KiB main RAM if main RAM resides in same
+ * slot.
+ *
+ * \note
+ * But some MSX1 has only 8, 16, or 32 KiB main RAM. Or even if it has 64KiB
+ * main RAM, some part of main RAM may resides in different slot. This function
+ * does not support such MSX1. So it is described as for `MSX2` or later.
+ *
+ * \sa ZX0_decompress_bmem_to_vmem_buffer()
+ */
+uint32_t ZX0_decompress_resource_to_vmem_buffer(const char * path, vmemptr_t dst);
 
 #endif // ZX0_DECOMPRESS_H_

@@ -110,6 +110,9 @@ List(Chunk) cons(Chunk x, List(Chunk) xs) {
  * \post xs would point to the last node in the reversed list.
  */
 List(Chunk) reverse(List(Chunk) xs) {
+  if (!xs) {
+    return NULL;
+  }
   List(Chunk) rev = 0;
   xs->ref_cnt++;
   while (xs) {

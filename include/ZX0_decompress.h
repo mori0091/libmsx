@@ -11,14 +11,18 @@
 /**
  * \file ZX0_decompress.h
  *
- * Decompresser of ZX0 compressed file format version 2.
+ * Decompressor of the ZX0 data compression format version 2.
  *
  * The ZX0 data compression format and algorithm was designed by Einar Saukas.
  *
- * This C language implementation of ZX0 decompresser is reimplemented by Daishi
+ * This C language implementation of ZX0 decompressor is reimplemented by Daishi
  * Mori (mori0091) for use with libmsx.
  *
  * \sa https://github.com/einar-saukas/ZX0
+ */
+/**
+ * \defgroup ZX0 ZX0 data compression
+ * `#include <ZX0_decompress.h>`
  */
 
 #ifndef ZX0_DECOMPRESS_H_
@@ -29,6 +33,14 @@
 
 #include <stdint.h>
 #include <stddef.h>
+
+/**
+ * \defgroup ZX0_DECOMPRESS ZX0 decompressor.
+ * \ingroup ZX0
+ * Decompressor of the ZX0 data compression format version 2.
+ *
+ * @{
+ */
 
 /**
  * `MSX` Decompress a ZX0 data stream.
@@ -134,5 +146,7 @@ uint32_t ZX0_decompress_resource_to_vmem(const char * path, vmemptr_t dst);
  * \sa ZX0_decompress_bmem_to_vmem_buffer()
  */
 uint32_t ZX0_decompress_resource_to_vmem_buffer(const char * path, vmemptr_t dst);
+
+/** @} */
 
 #endif // ZX0_DECOMPRESS_H_

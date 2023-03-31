@@ -50,9 +50,14 @@ int main(int argc, char ** argv) {
 
   for (int i = 1; i < argc; ++i) {
     const char * input = argv[i];
-    char * output = array(strlen(input) + strlen(opt_suffix) + 1, 1);
-    strcpy(output, input);
-    strcat(output, opt_suffix);
+    char * output;
+    {
+      const size_t n1 = strlen(input);
+      const size_t n2 = strlen(opt_suffix);
+      output = array(n1 + n2 + 1, 1);
+      output[0] = 0;
+      strncat(strncat(output, input, n1), opt_suffix, n2);
+    }
 
     if (!opt_force && is_file_exists(output)) {
       ERROR("File already exists: '%s'", output);

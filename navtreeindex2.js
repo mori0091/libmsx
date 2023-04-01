@@ -1,11 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2":[4,14,6,6],
-"group__VDP__DISPLAY__REGISTER.html#gac0bd7ff710cf49c932e253ec30c5f873":[4,14,6,1],
-"group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee":[4,14,6,0],
-"group__VDP__DISPLAY__REGISTER.html#gafad0198c990fd23d914c6ae6fda4d175":[4,14,6,5],
-"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea0c656c504f19130b1bdb8bd0987cd0e9":[4,14,6,0,1],
-"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea71d362963a7f9753eb7fd4473de5cd0b":[4,14,6,0,0],
 "group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea8b70f2f0c57e9bdb401048a9c43abb8f":[4,14,6,0,2],
 "group__VDP__MODE__REGISTER.html":[4,14,4],
 "group__VDP__MODE__REGISTER.html#ga4be13cf63124c4555620dec7f2dde5d5":[4,14,4,1],
@@ -86,6 +80,14 @@ var NAVTREEINDEX2 =
 "group__XMEM__INTER__MEMORY__TRANSFER.html#gaae16608395d11e6e7310bdcb5bfccde5":[4,16,3,4],
 "group__XMEM__INTER__MEMORY__TRANSFER.html#gabd34ed303f210fd104797d23b9ff42fd":[4,16,3,5],
 "group__XMEM__INTER__MEMORY__TRANSFER.html#gac05521f3fcb144e610c557ad08ec1ada":[4,16,3,0],
+"group__ZX0.html":[4,17],
+"group__ZX0__DECOMPRESS.html":[4,17,0],
+"group__ZX0__DECOMPRESS.html#ga0e7aaac8086a9b9141af10ecabf5f522":[4,17,0,5],
+"group__ZX0__DECOMPRESS.html#ga56972e6ede569139d6dfc035242e59eb":[4,17,0,0],
+"group__ZX0__DECOMPRESS.html#gaa2550b40a8002effb233fb92fa9158d6":[4,17,0,1],
+"group__ZX0__DECOMPRESS.html#gaa5e8c03f71e60a5968881659b4c1e9a6":[4,17,0,2],
+"group__ZX0__DECOMPRESS.html#gada330460774f5755d6098ac50fc1bdff":[4,17,0,3],
+"group__ZX0__DECOMPRESS.html#gafbd57a5ac50e4cf8b8ce53457cb71568":[4,17,0,4],
 "index.html":[],
 "index.html":[0],
 "index.html#autotoc_md1":[0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "workarea_8h.html#a5bffdb5b8857fcda0b30b051501ba592":[6,0,1,33,45],
 "workarea_8h.html#a6273cb9410411dcbd5f391b2418d7e53":[6,0,1,33,86],
 "workarea_8h.html#a69c8d79fd921472dbb76958754cc1148":[6,0,1,33,15],
-"workarea_8h.html#a69f1265418f16cd7a742cf20418d7ae8":[6,0,1,33,73],
-"workarea_8h.html#a69f527156c9cbd2fd0774c43d87c59a1":[6,0,1,33,96],
-"workarea_8h.html#a6b594680f9e9b45ea767a03622c895a0":[6,0,1,33,99]
+"workarea_8h.html#a69f1265418f16cd7a742cf20418d7ae8":[6,0,1,33,73]
 };

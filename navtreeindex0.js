@@ -1,12 +1,6 @@
 var NAVTREEINDEX0 =
 {
 "ZX0__decompress_8h.html":[6,0,1,35],
-"ZX0__decompress_8h.html#a0e7aaac8086a9b9141af10ecabf5f522":[6,0,1,35,5],
-"ZX0__decompress_8h.html#a56972e6ede569139d6dfc035242e59eb":[6,0,1,35,0],
-"ZX0__decompress_8h.html#aa2550b40a8002effb233fb92fa9158d6":[6,0,1,35,1],
-"ZX0__decompress_8h.html#aa5e8c03f71e60a5968881659b4c1e9a6":[6,0,1,35,2],
-"ZX0__decompress_8h.html#ada330460774f5755d6098ac50fc1bdff":[6,0,1,35,3],
-"ZX0__decompress_8h.html#afbd57a5ac50e4cf8b8ce53457cb71568":[6,0,1,35,4],
 "ZX0__decompress_8h_source.html":[6,0,1,35],
 "annotated.html":[5,0],
 "ay__3__8910_8h.html":[4,5,2],
@@ -249,5 +243,11 @@ var NAVTREEINDEX0 =
 "group__SLOT__INSPECT.html#gaea2253319a5b8b5bbaa3a6320cea2075":[4,8,0,2],
 "group__SLOT__INSPECT.html#gafe2639287b06e6021b98852d6a8376c7":[4,8,0,7],
 "group__SNDDRV.html":[4,9],
-"group__SNDDRV__API.html":[4,9,1]
+"group__SNDDRV__API.html":[4,9,1],
+"group__SNDDRV__API.html#ga04cfd2561ae473a9b16bd5fdd8168388":[4,9,1,7],
+"group__SNDDRV__API.html#ga0c1bbeef31103b115cb8fe721082ae9e":[4,9,1,13],
+"group__SNDDRV__API.html#ga24fde7ac311197e186232be3f2f5ae7b":[4,9,1,12],
+"group__SNDDRV__API.html#ga428b323a2091903bd69209591f7bb3c2":[4,9,1,2],
+"group__SNDDRV__API.html#ga580df772d36a11700f11bacefbd6ef7f":[4,9,1,9],
+"group__SNDDRV__API.html#ga7b7dae51f611ad630252baad7c0e342d":[4,9,1,16]
 };

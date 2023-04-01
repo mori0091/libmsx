@@ -173,7 +173,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="ZX0__decompress_8h.html" target="_top" xlink:title="Decompresser of ZX0 compressed file format version 2.">
+<g id="a_node9"><a xlink:href="ZX0__decompress_8h.html" target="_top" xlink:title="Decompressor of the ZX0 data compression format version 2.">
 <polygon fill="white" stroke="#666666" points="621.99,-129 487.99,-129 487.99,-110 621.99,-110 621.99,-129"/>
 <text text-anchor="middle" x="554.99" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">include/ZX0_decompress.h</text>
 </a>

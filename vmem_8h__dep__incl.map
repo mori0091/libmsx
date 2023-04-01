@@ -1,6 +1,6 @@
 <map id="include/vmem.h" name="include/vmem.h">
 <area shape="rect" id="node1" title="Data types and functions for VRAM access." alt="" coords="582,5,695,31"/>
-<area shape="rect" id="node2" href="$ZX0__decompress_8h.html" title="Decompresser of ZX0 compressed file format version 2." alt="" coords="5,152,184,177"/>
+<area shape="rect" id="node2" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="5,152,184,177"/>
 <area shape="rect" id="node3" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="219,79,333,104"/>
 <area shape="rect" id="node7" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="659,225,797,251"/>
 <area shape="rect" id="node8" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="784,299,885,324"/>

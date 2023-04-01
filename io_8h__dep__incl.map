@@ -7,7 +7,7 @@
 <area shape="rect" id="node8" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="486,79,599,104"/>
 <area shape="rect" id="node4" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="21,152,160,177"/>
 <area shape="rect" id="node6" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="225,299,364,324"/>
-<area shape="rect" id="node9" href="$ZX0__decompress_8h.html" title="Decompresser of ZX0 compressed file format version 2." alt="" coords="656,225,835,251"/>
+<area shape="rect" id="node9" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="656,225,835,251"/>
 <area shape="rect" id="node10" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="807,152,921,177"/>
 <area shape="rect" id="node14" href="$sprite_8h.html" title="Sprites." alt="" coords="421,225,531,251"/>
 <area shape="rect" id="node15" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="439,299,583,324"/>

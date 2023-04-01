@@ -1,4 +1,4 @@
-var ZX0__decompress_8h =
+var group__ZX0__DECOMPRESS =
 [
     [ "ZX0_decompress", "group__ZX0__DECOMPRESS.html#ga56972e6ede569139d6dfc035242e59eb", null ],
     [ "ZX0_decompress_bmem", "group__ZX0__DECOMPRESS.html#gaa2550b40a8002effb233fb92fa9158d6", null ],

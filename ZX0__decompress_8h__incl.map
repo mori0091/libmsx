@@ -1,5 +1,5 @@
 <map id="include/ZX0_decompress.h" name="include/ZX0_decompress.h">
-<area shape="rect" id="node1" title="Decompresser of ZX0 compressed file format version 2." alt="" coords="91,5,270,31"/>
+<area shape="rect" id="node1" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="91,5,270,31"/>
 <area shape="rect" id="node2" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="49,79,117,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="66,372,130,397"/>
 <area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="100,152,168,177"/>

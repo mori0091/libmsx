@@ -9,17 +9,17 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file bmem_read.c
+ * \file mem_to_vmem.c
  */
-
-#include "bmem.h"
 
 #include "xmem.h"
 
-void bmem_read(bmemptr_t loc, void * dst, uint16_t len) {
-  mem_open((uint8_t *)dst);
-  bmem_open(loc);
-  bmem_to_mem(len);
-  bmem_close();
-  mem_close();
+#include "bios.h"
+
+#include <assert.h>
+
+void mem_to_vmem(size_t len) {
+  assert(mem_is_opened() && vmem_is_opened());
+  // vmem_set_write_address(vmem_ptr());
+  vmem_write_chunk(mem_ptr(), len);
 }

@@ -39,6 +39,19 @@
  */
 
 /**
+ * `MSX` Size of a page (16KiB) in bytes.
+ */
+#define PAGE_SIZE           (uint16_t)(0x4000)
+
+/**
+ * `MSX` Constructs base address of the specified page.
+ *
+ * \param p  page number (`0`..`3`)
+ * \return   base address of the page #`p`.
+ */
+#define PAGE_ADDR(p)        ((void *)(PAGE_SIZE * (p)))
+
+/**
  * `MSX` Returns MSX system version code.
  *
  * \return 0 (MSX1), 1 (MSX2), 2 (MSX2+), 3 (MSXturboR), or else.

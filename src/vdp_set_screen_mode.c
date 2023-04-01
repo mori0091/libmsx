@@ -46,5 +46,19 @@ void vdp_set_screen_mode(enum vdp_screen_mode mode) {
   RG1SAV = (RG1SAV & ~0x18) | p->r1;
   VDP_SET_CONTROL_REGISTER(0, RG0SAV);
   VDP_SET_CONTROL_REGISTER(1, RG1SAV);
+# if (__SDCCCALL == 1)
+  // See also https://www.msx.org/wiki/VRAM_access_speed
+  if (sprite_mode < 2) {
+    // for MSX1 compatible screen mode and MSX2 TEXT 2 mode.
+    // (Requires 28? or 29 cycle for VDP port access.)
+    vmem__fnptr_write_chunk = vmem_write_chunk_1;
+    vmem__fnptr_read_chunk = vmem_read_chunk_1;
+  }
+  else {
+    // for GRAPHIC 3, 4, 5, 6, 7 mode
+    vmem__fnptr_write_chunk = vmem_write_chunk_2;
+    vmem__fnptr_read_chunk = vmem_read_chunk_2;
+  }
+# endif
   __asm__("ei");
 }

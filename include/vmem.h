@@ -24,6 +24,7 @@
 #define VMEM_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 #include "io.h"
 

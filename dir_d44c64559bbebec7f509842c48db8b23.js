@@ -34,5 +34,6 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "vmem.h", "vmem_8h.html", "vmem_8h" ],
     [ "vmem_rw.h", "vmem__rw_8h.html", "vmem__rw_8h" ],
     [ "workarea.h", "workarea_8h.html", "workarea_8h" ],
-    [ "xmem.h", "xmem_8h.html", "xmem_8h" ]
+    [ "xmem.h", "xmem_8h.html", "xmem_8h" ],
+    [ "ZX0_decompress.h", "ZX0__decompress_8h.html", "ZX0__decompress_8h" ]
 ];

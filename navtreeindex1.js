@@ -1,5 +1,15 @@
 var NAVTREEINDEX1 =
 {
+"group__SNDDRV__API.html#ga04cfd2561ae473a9b16bd5fdd8168388":[4,9,1,7],
+"group__SNDDRV__API.html#ga0c1bbeef31103b115cb8fe721082ae9e":[4,9,1,13],
+"group__SNDDRV__API.html#ga24fde7ac311197e186232be3f2f5ae7b":[4,9,1,12],
+"group__SNDDRV__API.html#ga428b323a2091903bd69209591f7bb3c2":[4,9,1,2],
+"group__SNDDRV__API.html#ga580df772d36a11700f11bacefbd6ef7f":[4,9,1,9],
+"group__SNDDRV__API.html#ga7b7dae51f611ad630252baad7c0e342d":[4,9,1,16],
+"group__SNDDRV__API.html#ga87c11bc841b809b3770261547c710a5e":[4,9,1,4],
+"group__SNDDRV__API.html#ga89bb72a234cebf8c2f13ec0a2dd6100f":[4,9,1,8],
+"group__SNDDRV__API.html#ga9d9e434c71c03c381646afb4792e662f":[4,9,1,14],
+"group__SNDDRV__API.html#gaa5de8e41f8ba2fd124dbf38aa6bd609d":[4,9,1,17],
 "group__SNDDRV__API.html#gaa7be59c3bffe65e2b48f3ac1d1cc4e83":[4,9,1,10],
 "group__SNDDRV__API.html#gaa7d178deaf1d7d9621cb4321d5226a51":[4,9,1,6],
 "group__SNDDRV__API.html#gaadcbe84be1632f90b2caa283bd3c9f76":[4,9,1,3],
@@ -239,15 +249,5 @@ var NAVTREEINDEX1 =
 "group__VDP__DISPLAY__REGISTER.html":[4,14,6],
 "group__VDP__DISPLAY__REGISTER.html#ga7e46df6cf6d6959b4232cb7cd7d5feb2":[4,14,6,3],
 "group__VDP__DISPLAY__REGISTER.html#ga9bec57b16ef92a033f6046a62475e178":[4,14,6,4],
-"group__VDP__DISPLAY__REGISTER.html#gaa25dd1e7d0ec09b4c60bf9eadfa5a891":[4,14,6,2],
-"group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2":[4,14,6,6],
-"group__VDP__DISPLAY__REGISTER.html#gac0bd7ff710cf49c932e253ec30c5f873":[4,14,6,1],
-"group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee":[4,14,6,0],
-"group__VDP__DISPLAY__REGISTER.html#gafad0198c990fd23d914c6ae6fda4d175":[4,14,6,5],
-"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea0c656c504f19130b1bdb8bd0987cd0e9":[4,14,6,0,1],
-"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea71d362963a7f9753eb7fd4473de5cd0b":[4,14,6,0,0],
-"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea8b70f2f0c57e9bdb401048a9c43abb8f":[4,14,6,0,2],
-"group__VDP__MODE__REGISTER.html":[4,14,4],
-"group__VDP__MODE__REGISTER.html#ga4be13cf63124c4555620dec7f2dde5d5":[4,14,4,1],
-"group__VDP__MODE__REGISTER.html#ga5ea1e35899466608af264536ba71f43a":[4,14,4,5]
+"group__VDP__DISPLAY__REGISTER.html#gaa25dd1e7d0ec09b4c60bf9eadfa5a891":[4,14,6,2]
 };

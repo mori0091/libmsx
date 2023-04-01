@@ -1,5 +1,15 @@
 var NAVTREEINDEX2 =
 {
+"group__VDP__DISPLAY__REGISTER.html#gabdd7b719bcc3ec4ecc7d56e811b5c5c2":[4,14,6,6],
+"group__VDP__DISPLAY__REGISTER.html#gac0bd7ff710cf49c932e253ec30c5f873":[4,14,6,1],
+"group__VDP__DISPLAY__REGISTER.html#gad7c7b08e837dc7963769b2f01ab13dee":[4,14,6,0],
+"group__VDP__DISPLAY__REGISTER.html#gafad0198c990fd23d914c6ae6fda4d175":[4,14,6,5],
+"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea0c656c504f19130b1bdb8bd0987cd0e9":[4,14,6,0,1],
+"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea71d362963a7f9753eb7fd4473de5cd0b":[4,14,6,0,0],
+"group__VDP__DISPLAY__REGISTER.html#ggad7c7b08e837dc7963769b2f01ab13deea8b70f2f0c57e9bdb401048a9c43abb8f":[4,14,6,0,2],
+"group__VDP__MODE__REGISTER.html":[4,14,4],
+"group__VDP__MODE__REGISTER.html#ga4be13cf63124c4555620dec7f2dde5d5":[4,14,4,1],
+"group__VDP__MODE__REGISTER.html#ga5ea1e35899466608af264536ba71f43a":[4,14,4,5],
 "group__VDP__MODE__REGISTER.html#ga63053aebe62d033ef0068db1cf3a8b58":[4,14,4,3],
 "group__VDP__MODE__REGISTER.html#ga6b69e895f7f0faa700cffcd2ef60e6d5":[4,14,4,0],
 "group__VDP__MODE__REGISTER.html#ga7b5b2cdb1157662aa3c6682515547348":[4,14,4,8],
@@ -239,15 +249,5 @@ var NAVTREEINDEX2 =
 "workarea_8h.html#a69c8d79fd921472dbb76958754cc1148":[6,0,1,33,15],
 "workarea_8h.html#a69f1265418f16cd7a742cf20418d7ae8":[6,0,1,33,73],
 "workarea_8h.html#a69f527156c9cbd2fd0774c43d87c59a1":[6,0,1,33,96],
-"workarea_8h.html#a6b594680f9e9b45ea767a03622c895a0":[6,0,1,33,99],
-"workarea_8h.html#a6c3e6f45a56f5f0d9c7b79fab6fefeb9":[6,0,1,33,26],
-"workarea_8h.html#a6e5a627ee87aa2a7e53a422ac1c26271":[6,0,1,33,18],
-"workarea_8h.html#a7148e99e9f0ce5d64d6aff154cedc2df":[6,0,1,33,56],
-"workarea_8h.html#a761c70f9d2e3d9bacea64674d52cd7d0":[6,0,1,33,47],
-"workarea_8h.html#a7a688941bf96ea62570fba654e4b7154":[6,0,1,33,13],
-"workarea_8h.html#a7cc5399c258b56e0abba72f9f1e0999f":[6,0,1,33,41],
-"workarea_8h.html#a7f75e5c017cfa82ce06680f829439296":[6,0,1,33,70],
-"workarea_8h.html#a8728a088ea2728106b1c3441f2ede115":[6,0,1,33,57],
-"workarea_8h.html#a8c9a5737a2198d41dbcb0779aa8cc97e":[6,0,1,33,35],
-"workarea_8h.html#a8e7b435d1887305da3603b5466ef9cdf":[6,0,1,33,48]
+"workarea_8h.html#a6b594680f9e9b45ea767a03622c895a0":[6,0,1,33,99]
 };

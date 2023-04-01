@@ -1,5 +1,7 @@
 # sample: `MSX`/`MSX2`/`MSX2+`/`MSXturboR` Decompression of ZX0 compressed image
 
+<https://user-images.githubusercontent.com/659805/229280403-f12d832e-80ab-4d67-8706-606597aa2c20.mp4>
+
 Loads / decompresses the following image files in banked memory (MegaROM) to
 VRAM.
 

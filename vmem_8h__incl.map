@@ -1,6 +1,7 @@
 <map id="include/vmem.h" name="include/vmem.h">
-<area shape="rect" id="node1" title="Data types and functions for VRAM access." alt="" coords="5,5,119,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="33,225,97,251"/>
-<area shape="rect" id="node3" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="73,79,115,104"/>
-<area shape="rect" id="node4" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="67,152,134,177"/>
+<area shape="rect" id="node1" title="Data types and functions for VRAM access." alt="" coords="18,5,131,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,225,69,251"/>
+<area shape="rect" id="node3" title=" " alt="" coords="41,79,109,104"/>
+<area shape="rect" id="node4" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="133,79,176,104"/>
+<area shape="rect" id="node5" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="80,152,147,177"/>
 </map>

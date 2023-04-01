@@ -1,4 +1,6 @@
 <map id="include/bmem.h" name="include/bmem.h">
-<area shape="rect" id="node1" title="Data types and functions for accessing banked memory." alt="" coords="16,5,129,31"/>
-<area shape="rect" id="node2" href="$resources_8h.html" title="Data types and functions for accessing embedded resources." alt="" coords="5,79,140,104"/>
+<area shape="rect" id="node1" title="Data types and functions for accessing banked memory." alt="" coords="93,5,206,31"/>
+<area shape="rect" id="node2" href="$bmem__rd_8h.html" title="Stream like access functions for Banked Memory." alt="" coords="5,79,136,104"/>
+<area shape="rect" id="node4" href="$resources_8h.html" title="Data types and functions for accessing embedded resources." alt="" coords="161,79,295,104"/>
+<area shape="rect" id="node3" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="15,152,127,177"/>
 </map>

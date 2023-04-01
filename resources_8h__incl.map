@@ -2,7 +2,8 @@
 <area shape="rect" id="node1" title="Data types and functions for accessing embedded resources." alt="" coords="5,5,140,31"/>
 <area shape="rect" id="node2" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="39,79,107,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="55,372,119,397"/>
-<area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="75,152,143,177"/>
-<area shape="rect" id="node5" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="130,225,173,251"/>
-<area shape="rect" id="node6" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="125,299,191,324"/>
+<area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="100,152,168,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="125,225,193,251"/>
+<area shape="rect" id="node6" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="218,225,261,251"/>
+<area shape="rect" id="node7" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="165,299,231,324"/>
 </map>

@@ -5,10 +5,12 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "bios_const.h", "bios__const_8h.html", "bios__const_8h" ],
     [ "bios_entry.h", "bios__entry_8h.html", "bios__entry_8h" ],
     [ "bmem.h", "bmem_8h.html", "bmem_8h" ],
+    [ "bmem_rd.h", "bmem__rd_8h.html", "bmem__rd_8h" ],
     [ "config.h", "config_8h.html", "config_8h" ],
     [ "input.h", "input_8h.html", "input_8h" ],
     [ "interrupt.h", "interrupt_8h.html", "interrupt_8h" ],
     [ "io.h", "io_8h.html", "io_8h" ],
+    [ "mem_rw.h", "mem__rw_8h.html", "mem__rw_8h" ],
     [ "metasprite.h", "metasprite_8h.html", "metasprite_8h" ],
     [ "msx.h", "msx_8h.html", "msx_8h" ],
     [ "opll.h", "opll_8h.html", "opll_8h" ],
@@ -30,5 +32,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "vdp.h", "vdp_8h.html", "vdp_8h" ],
     [ "vdp_unsafe.h", "vdp__unsafe_8h.html", "vdp__unsafe_8h" ],
     [ "vmem.h", "vmem_8h.html", "vmem_8h" ],
-    [ "workarea.h", "workarea_8h.html", "workarea_8h" ]
+    [ "vmem_rw.h", "vmem__rw_8h.html", "vmem__rw_8h" ],
+    [ "workarea.h", "workarea_8h.html", "workarea_8h" ],
+    [ "xmem.h", "xmem_8h.html", "xmem_8h" ]
 ];

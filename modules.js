@@ -15,5 +15,6 @@ var modules =
     [ "Text output", "group__CUI.html", "group__CUI" ],
     [ "Teletype/console device.", "group__TTY.html", "group__TTY" ],
     [ "VDP - Video Display Processor", "group__VDP.html", "group__VDP" ],
-    [ "VRAM - Video RAM", "group__VMEM.html", "group__VMEM" ]
+    [ "VRAM - Video RAM", "group__VMEM.html", "group__VMEM" ],
+    [ "XMEM - Inter-memory transfer.", "group__XMEM.html", "group__XMEM" ]
 ];

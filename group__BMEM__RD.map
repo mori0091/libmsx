@@ -1,0 +1,4 @@
+<map id="A part of building blocks for inter&#45;memory transfer, dedicated to Banked Memory access." name="A part of building blocks for inter&#45;memory transfer, dedicated to Banked Memory access.">
+<area shape="rect" id="node1" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="200,5,367,75"/>
+<area shape="rect" id="node2" href="$group__XMEM.html" title="#include &lt;xmem.h&gt;" alt="" coords="5,20,152,60"/>
+</map>

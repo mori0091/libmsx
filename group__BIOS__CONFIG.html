@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('group__BIOS__CONFIG.html',''); initRes
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">System configuration<div class="ingroups"><a class="el" href="group__BIOS.html">BIOS - Basic Input/Output System</a></div></div></div>
 </div><!--header-->
@@ -108,6 +109,15 @@ $(document).ready(function(){initNavTree('group__BIOS__CONFIG.html',''); initRes
 </div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga7d467c1d283fdfa1f2081ba1e0d01b6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>&#160;&#160;&#160;(uint16_t)(0x4000)</td></tr>
+<tr class="memdesc:ga7d467c1d283fdfa1f2081ba1e0d01b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Size of a page (16KiB) in bytes.  <a href="group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e">More...</a><br /></td></tr>
+<tr class="separator:ga7d467c1d283fdfa1f2081ba1e0d01b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9169260e2eb0c0dbce0e7f3dd42fdc99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__BIOS__CONFIG.html#ga9169260e2eb0c0dbce0e7f3dd42fdc99">PAGE_ADDR</a>(p)&#160;&#160;&#160;((void *)(<a class="el" href="group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a> * (p)))</td></tr>
+<tr class="memdesc:ga9169260e2eb0c0dbce0e7f3dd42fdc99"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Constructs base address of the specified page.  <a href="group__BIOS__CONFIG.html#ga9169260e2eb0c0dbce0e7f3dd42fdc99">More...</a><br /></td></tr>
+<tr class="separator:ga9169260e2eb0c0dbce0e7f3dd42fdc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga19b4876435ca81258934f0d78d6cae07"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">msx_get_version</a> (void)</td></tr>
@@ -119,6 +129,54 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Get the system version, VSYNC frequency, etc. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga7d467c1d283fdfa1f2081ba1e0d01b6e" name="ga7d467c1d283fdfa1f2081ba1e0d01b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7d467c1d283fdfa1f2081ba1e0d01b6e">&#9670;&#160;</a></span>PAGE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAGE_SIZE&#160;&#160;&#160;(uint16_t)(0x4000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Size of a page (16KiB) in bytes. </p>
+
+<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00044">44</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9169260e2eb0c0dbce0e7f3dd42fdc99" name="ga9169260e2eb0c0dbce0e7f3dd42fdc99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9169260e2eb0c0dbce0e7f3dd42fdc99">&#9670;&#160;</a></span>PAGE_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAGE_ADDR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p</td><td>)</td>
+          <td>&#160;&#160;&#160;((void *)(<a class="el" href="group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a> * (p)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Constructs base address of the specified page. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>page number (<code>0</code>..<code>3</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>base address of the page #<code>p</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00052">52</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga19b4876435ca81258934f0d78d6cae07" name="ga19b4876435ca81258934f0d78d6cae07"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga19b4876435ca81258934f0d78d6cae07">&#9670;&#160;</a></span>msx_get_version()</h2>
@@ -147,7 +205,7 @@ Functions</h2></td></tr>
 <p><code>MSX</code> Returns MSX system version code. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 (MSX1), 1 (MSX2), 2 (MSX2+), 3 (MSXturboR), or else. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00046">46</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00059">59</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
 
 </div>
 </div>
@@ -178,7 +236,7 @@ Functions</h2></td></tr>
 <p><code>MSX</code> Returns VSYNC frequency in Hz. </p>
 <dl class="section return"><dt>Returns</dt><dd>50 (PAL/SECAM), or 60 (NTSC) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00055">55</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bios_8h_source.html#l00068">68</a> of file <a class="el" href="bios_8h_source.html">bios.h</a>.</p>
 
 </div>
 </div>

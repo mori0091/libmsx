@@ -1,0 +1,4 @@
+<map id="include/mem_rw.h" name="include/mem_rw.h">
+<area shape="rect" id="node1" title="Stream like access functions for ROM / RAM." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="node2" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="13,79,125,104"/>
+</map>

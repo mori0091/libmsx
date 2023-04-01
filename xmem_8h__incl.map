@@ -1,0 +1,13 @@
+<map id="include/xmem.h" name="include/xmem.h">
+<area shape="rect" id="node1" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="208,5,320,31"/>
+<area shape="rect" id="node2" href="$bmem__rd_8h.html" title="Stream like access functions for Banked Memory." alt="" coords="109,79,195,104"/>
+<area shape="rect" id="node10" href="$mem__rw_8h.html" title="Stream like access functions for ROM / RAM." alt="" coords="333,79,416,104"/>
+<area shape="rect" id="node11" href="$vmem__rw_8h.html" title="Stream like access functions for VRAM." alt="" coords="219,79,309,104"/>
+<area shape="rect" id="node3" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="69,152,137,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="75,445,139,471"/>
+<area shape="rect" id="node6" title=" " alt="" coords="211,299,279,324"/>
+<area shape="rect" id="node9" title=" " alt="" coords="212,152,287,177"/>
+<area shape="rect" id="node5" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="94,225,162,251"/>
+<area shape="rect" id="node7" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="144,299,187,324"/>
+<area shape="rect" id="node8" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="144,372,211,397"/>
+</map>

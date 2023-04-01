@@ -1,0 +1,9 @@
+<map id="include/vmem_rw.h" name="include/vmem_rw.h">
+<area shape="rect" id="node1" title="Stream like access functions for VRAM." alt="" coords="55,5,190,31"/>
+<area shape="rect" id="node2" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="41,79,109,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="133,79,208,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,299,69,324"/>
+<area shape="rect" id="node4" title=" " alt="" coords="41,152,109,177"/>
+<area shape="rect" id="node5" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="133,152,176,177"/>
+<area shape="rect" id="node6" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="80,225,147,251"/>
+</map>

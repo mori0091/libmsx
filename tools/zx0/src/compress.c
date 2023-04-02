@@ -126,7 +126,7 @@ static void compress_do(const uint8_t * beg, const uint8_t * end) {
     const uint16_t len = rs->head.index - index;
     if (is_Literal(rs->head)) {
       assert(rs->head.bits_cost == 1 + bit_length_of_elias_gamma(len) + 8 * len);
-      DEBUG_INFO("\n(%zu)", len);
+      DEBUG_INFO("\n(%d)", len);
       if (beg < src) {
         write_bit(false);
       }
@@ -136,14 +136,14 @@ static void compress_do(const uint8_t * beg, const uint8_t * end) {
     }
     else if (is_MatchFromLastOffset(rs->head, last_offset)) {
       assert(rs->head.bits_cost == 1 + bit_length_of_elias_gamma(len));
-      DEBUG_INFO("[%zu]", len);
+      DEBUG_INFO("[%d]", len);
       write_bit(false);
       write_interlaced_elias_gamma(len);
       src += len;
     }
     else if (is_MatchFromNewOffset(rs->head, last_offset)) {
       assert(rs->head.bits_cost == 8 + bit_length_of_elias_gamma((rs->head.offset - 1) / 128 + 1) + bit_length_of_elias_gamma(len-1));
-      DEBUG_INFO("[%d,%zu]", (int)rs->head.offset, len);
+      DEBUG_INFO("[%d,%d]", (int)rs->head.offset, len);
       write_bit(true);
       const uint8_t offset_hi = (rs->head.offset - 1) / 128 + 1;
       const uint8_t offset_lo = (127 - (rs->head.offset - 1) % 128) << 1;

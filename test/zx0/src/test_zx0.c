@@ -12,6 +12,7 @@
  * \file test_zx0.c
  */
 
+#include <errno.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>

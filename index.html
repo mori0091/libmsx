@@ -144,13 +144,13 @@ Supported functionality</h1>
 </li>
 <li>Sound output<ul>
 <li>PSG (AY-3-8910)</li>
-<li><b>NEW</b> <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> (YM2413 / MSX-MUSIC)<ul>
+<li><a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> (YM2413 / MSX-MUSIC)<ul>
 <li><a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> sound chip inspection, discovery,</li>
 <li>Enabling/Disabling register access, and</li>
 <li>Write registers.</li>
 </ul>
 </li>
-<li><b>NEW</b> Konami <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> / SCC+ Sound Cartridge<ul>
+<li>Konami <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> / SCC+ Sound Cartridge<ul>
 <li><a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> / SCC+ sound cartridge inspection, discovery,</li>
 <li>Enabling/Disabling register access, and</li>
 <li>Read/Write registers.</li>
@@ -177,7 +177,7 @@ Supported functionality</h1>
 </li>
 </ul>
 </li>
-<li><b>NEW</b> Utility functions for inspecting MSX slot mechanisms.<ul>
+<li>Utility functions for inspecting MSX slot mechanisms.<ul>
 <li>Various inspection functions; inspect slot contents.<ul>
 <li>MAIN ROM, SUB-ROM, BDOS/FDC,</li>
 <li>MSX-MUSIC, SCC/SCC+,</li>
@@ -188,7 +188,25 @@ Supported functionality</h1>
 <li>Iteration function; invoke user-defined callbacks for each slot.</li>
 </ul>
 </li>
+<li>Compression / Decompression<ul>
+<li><b>NEW</b> Decompressor of ZX0 data compression format v.2.<ul>
+<li>The ZX0 decompressor for <b>libmsx</b> has been reimplemented by Daishi Mori (mori0091).</li>
+<li>That supports decompression of ZX0 data in ROM/RAM/MegaROM to RAM/VRAM.</li>
 </ul>
+</li>
+<li><b>NEW</b> The ZX0 file compressor tool. (for PC)<ul>
+<li>The ZX0 file compressor tool reimplemented by Daishi Mori (mori0091) is bundled.</li>
+<li>ZX0 data compression format v.2 compatible.</li>
+<li>Supports MSX-optimized ZX0 compression mode to compress MSX BSAVE format files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote class="doxtable">
+<p >&zwj;The origins of the ZX0 data compression format and algorithm were designed and implemented by Einar Saukas. <br  />
+ See also <a href="https://github.com/einar-saukas/ZX0">https://github.com/einar-saukas/ZX0</a>. </p>
+</blockquote>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Unsupported functionality</h1>
 <p >The below functionality is NOT supported yet.</p>
@@ -304,7 +322,7 @@ Windows (MSYS2)</h2>
 <div class="fragment"><div class="line">export PATH=${PATH}:/c/Program\ Files/SDCC/bin</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
 Build instructions of the library and sample projects</h1>
-<p >The below makes the library <code>libmsx.lib</code> into <code>lib</code> directory.</p>
+<p >The below makes the library <code>libmsx.lib</code> into <code>lib</code> folder, and bundled tools into <code>bin</code> folder.</p>
 <div class="fragment"><div class="line">make</div>
 </div><!-- fragment --><p >To build sample projects in <code>sample/</code>, do as follows:</p>
 <div class="fragment"><div class="line">make sample</div>
@@ -328,7 +346,7 @@ Preparation</h2>
 <div class="fragment"><div class="line">mkdir my_proj/src</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
 Build your application</h2>
-<p >To build your application, do as follows. <br  />
+<p >To build your application, do as follows on the top of your repository <code>my_proj</code>. <br  />
  Then the ROM image will be made into <code>my_proj/bin</code> folder.</p>
 <div class="fragment"><div class="line">make</div>
 </div><!-- fragment --><p >And for cleaning up:</p>

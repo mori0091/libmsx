@@ -64,11 +64,11 @@ The below functionality is supported.
 
 - Sound output
   - PSG (AY-3-8910)
-  - **NEW** OPLL (YM2413 / MSX-MUSIC)
+  - OPLL (YM2413 / MSX-MUSIC)
     - OPLL sound chip inspection, discovery,
     - Enabling/Disabling register access, and
     - Write registers.
-  - **NEW** Konami SCC / SCC+ Sound Cartridge
+  - Konami SCC / SCC+ Sound Cartridge
     - SCC / SCC+ sound cartridge inspection, discovery,
     - Enabling/Disabling register access, and
     - Read/Write registers.
@@ -76,8 +76,8 @@ The below functionality is supported.
 - Sound driver
   - SNDDRV a PSG sound driver
     - SNDDRV covers almost feature of replayer of the [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
-    - SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song
-file (.aks file) into your application.
+    - SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2
+      song file (.aks file) into your application.
     - See also the [design note of SNDDRV](docs/design-notes_snddrv.md)
   - Another OLD PSG sound driver (sound.h, sound_eg.h) is still available,
     but is no longer maintained.
@@ -88,14 +88,28 @@ file (.aks file) into your application.
     - ASCII8 ROM mapper
     - ASCII16 ROM mapper
 
-- **NEW** Utility functions for inspecting MSX slot mechanisms.
+- Utility functions for inspecting MSX slot mechanisms.
   - Various inspection functions; inspect slot contents.
     - MAIN ROM, SUB-ROM, BDOS/FDC,
     - MSX-MUSIC, SCC/SCC+,
     - Internal RAM,
     - ROM cartridges.
   - Iteration function; invoke user-defined callbacks for each slot.
- 
+
+- Compression / Decompression
+  - **NEW** Decompressor of ZX0 data compression format v.2.
+    - The ZX0 decompressor for **libmsx** has been reimplemented by Daishi Mori (mori0091).
+    - That supports decompression of ZX0 data in ROM/RAM/MegaROM to RAM/VRAM.
+  - **NEW** The ZX0 file compressor tool. (for PC)
+    - The ZX0 file compressor tool reimplemented by Daishi Mori (mori0091) is bundled.
+    - ZX0 data compression format v.2 compatible.
+    - Supports MSX-optimized ZX0 compression mode to compress MSX BSAVE format files.
+
+> The origins of the ZX0 data compression format and algorithm were designed and
+> implemented by Einar Saukas.  
+> See also <https://github.com/einar-saukas/ZX0>.
+
+
 ## Unsupported functionality
 
 The below functionality is NOT supported yet.
@@ -107,6 +121,7 @@ The below functionality is NOT supported yet.
 - ~~BGM driver~~ `supported`
 - ~~Sound effect driver~~ `supported`
 - … and so on
+
 
 # Pre-requisites
 
@@ -226,7 +241,8 @@ export PATH=${PATH}:/c/Program\ Files/SDCC/bin
 
 # Build instructions of the library and sample projects
 
-The below makes the library `libmsx.lib` into `lib` directory.
+The below makes the library `libmsx.lib` into `lib` folder, and bundled tools
+into `bin` folder.
 
 ``` shell
 make
@@ -243,6 +259,7 @@ And for cleaning up:
 ``` shell
 make clean
 ```
+
 
 # Build instructions of user applications
 
@@ -281,7 +298,7 @@ mkdir my_proj/src
 
 ## Build your application
 
-To build your application, do as follows.  
+To build your application, do as follows on the top of your repository `my_proj`.  
 Then the ROM image will be made into `my_proj/bin` folder.
 
 ``` shell

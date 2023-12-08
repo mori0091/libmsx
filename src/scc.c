@@ -18,22 +18,18 @@
 #include "bios.h"
 #include "slot.h"
 
-static void unexpose_SCCPlus(uint8_t slot) {
-  //msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x20);
-  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x00);
-}
 static void unexpose_SCC(uint8_t slot) {
-  unexpose_SCCPlus(slot);
+  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x00);
   msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x00);
   msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_2, 0x00);
 }
 static void expose_SCC(uint8_t slot) {
-  unexpose_SCCPlus(slot);
+  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x00);
   msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x00);
   msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_2, 0x3f);
 }
 static void expose_SCCPlus(uint8_t slot) {
-  unexpose_SCCPlus(slot);
+  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x00);
   msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x20);
   msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x80);
 }

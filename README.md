@@ -161,7 +161,7 @@ Ofcourse, Ubuntu on **WSL** is okey. 😄
   Small Device C Compiler  
   <http://sdcc.sourceforge.net/>
 
-> SDCC 4.2.0 or later is recommended.
+> SDCC 4.3.0 or later is recommended.
 
 - Other toolchain required for libmsx  
   GNU `find`, `make`, `gcc`, `gzip`, `zcat`, `xsltproc`, and so on.

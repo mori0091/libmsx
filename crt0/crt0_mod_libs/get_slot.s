@@ -16,14 +16,12 @@
 ;;
 ;; \param HL  an address
 ;; \retval A  slot
-;; \post Interrupts are enabled.
 ;; \post AF, BC, L are changed.
         .area   _CODE
 get_slot::
         RSLREG = 0x0138         ; Read SLot selector REGister
         EXPTBL = 0xfcc1         ; (4 bytes) Extended flag table of 4 primary slots
         SLTTBL = 0xfcc5         ; (4 bytes) Save area for secondary slot selector registers
-        di
         ; A = Primary slot of page #1
         call    RSLREG
         call    slot_number_of
@@ -47,7 +45,6 @@ get_slot::
         rlca
         or      l
         ; return the slot address
-        ei
         ret
 
 ;; \brief Extract primary of secondary slot number of page N.

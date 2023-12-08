@@ -97,10 +97,10 @@ The below functionality is supported.
   - Iteration function; invoke user-defined callbacks for each slot.
 
 - Compression / Decompression
-  - **NEW** Decompressor of ZX0 data compression format v.2.
+  - Decompressor of ZX0 data compression format v.2.
     - The ZX0 decompressor for **libmsx** has been reimplemented by Daishi Mori (mori0091).
     - That supports decompression of ZX0 data in ROM/RAM/MegaROM to RAM/VRAM.
-  - **NEW** The ZX0 file compressor tool. (for PC)
+  - The ZX0 file compressor tool. (for PC)
     - The ZX0 file compressor tool reimplemented by Daishi Mori (mori0091) is bundled.
     - ZX0 data compression format v.2 compatible.
     - Supports MSX-optimized ZX0 compression mode to compress MSX BSAVE format files.
@@ -140,7 +140,8 @@ The below functionality is NOT supported yet.
 |---------------|--------------|-----------------|
 | Ubuntu 22.04  | 4.0.0        | ✔ (outdated)    |
 |               | 4.1.0        | (not tested)    |
-|               | 4.2.0        | ✔ (recommended) |
+|               | 4.2.0        | ✔ (outdated)    |
+|               | 4.3.0        | ✔ (recommended) |
 
 **Windows**
 
@@ -148,7 +149,8 @@ The below functionality is NOT supported yet.
 |---------------|--------------|-----------------|
 | MSYS2 UCRT64  | 4.0.0        | (not tested)    |
 |               | 4.1.0        | (not tested)    |
-|               | 4.2.0        | ✔ (recommended) |
+|               | 4.2.0        | ✔ (outdated)    |
+|               | 4.3.0        | ✔ (recommended) |
 
 Ofcourse, Ubuntu on **WSL** is okey. 😄  
 (**WSL**: Windows Subsystem for Linux)
@@ -178,22 +180,22 @@ To use `libmsx`,
 Download a SDCC pre-built binary for Linux from <http://sdcc.sourceforge.net/>
 and install it.
 
-SDCC 4.2.0 or later is recommended.
+SDCC 4.3.0 or later is recommended.
 
 Don't forget adding SDCC to `PATH` environment variable.  
 Add the below to `~/.bashrc` or `~/.bash_profile`.  
 
-> At here it is assuming that the SDCC 4.2.0 is installed under `~/sdcc-4.2.0`.
+> At here it is assuming that the SDCC 4.3.0 is installed under `~/sdcc-4.3.0`.
 
 ```shell
-export PATH=${PATH}:~/sdcc-4.2.0/bin
+export PATH=${PATH}:~/sdcc-4.3.0/bin
 ```
 
 > Why don't we install sdcc by `sudo apt install sdcc` ?
 > 
 > Because the latest version of SDCC may not be installed by `apt`.
 > In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we
-> recommend that you download SDCC 4.2.0 pre-built binary and use it on Ubuntu
+> recommend that you download SDCC 4.3.0 pre-built binary and use it on Ubuntu
 > 22.04 or later.
 
 ### 2. Install other toolchain
@@ -232,7 +234,7 @@ pacman -S coreutils findutils make gcc gzip libxslt git
 Don't forget adding SDCC to `PATH` environment variable.  
 Add the below to `~/.bashrc` or `~/.bash_profile`, on MSYS2 UCRT64 environment.  
 
-> At here it is assuming that the SDCC 4.2.0 is installed under `C:\Program Files\SDCC`.
+> At here it is assuming that the SDCC 4.3.0 is installed under `C:\Program Files\SDCC`.
 
 ```shell
 export PATH=${PATH}:/c/Program\ Files/SDCC/bin

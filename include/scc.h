@@ -33,6 +33,7 @@
 /**
  * \defgroup SCC_DEVICE SCC/SCC+ device interface
  * \ingroup SCC
+ * `#include <scc.h>`
  * Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip.
  * @{
  */

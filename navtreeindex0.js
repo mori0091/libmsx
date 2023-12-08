@@ -189,7 +189,7 @@ var NAVTREEINDEX0 =
 "group__RESOURCES__INDIRECT__ACCESS.html#gadfd8bea2f263b24cff97fd68992a1eff":[4,1,2,1,1],
 "group__SCC.html":[4,6],
 "group__SCC__DEVICE.html":[4,6,0],
-"group__SCC__DEVICE.html#a1e35422951aaf250205c345a99b9ef96":[4,6,0,3,2],
+"group__SCC__DEVICE.html#a1e35422951aaf250205c345a99b9ef96":[4,6,0,3,3],
 "group__SCC__DEVICE.html#a2a4a7b1b57d33f2f9f4b6ad3c487a5d0":[4,6,0,1,3],
 "group__SCC__DEVICE.html#a35f8dc7deda7c0966f63afb5cfb780d7":[4,6,0,2,1],
 "group__SCC__DEVICE.html#a451ffb6f9dbecfb1fd4078d3ad5f0bcf":[4,6,0,3,0],
@@ -200,9 +200,12 @@ var NAVTREEINDEX0 =
 "group__SCC__DEVICE.html#a9a5f48a6d6c43bc153f511430049612b":[4,6,0,1,1],
 "group__SCC__DEVICE.html#aef9068a3ddbfb1340ceec1e16eee8679":[4,6,0,2,2],
 "group__SCC__DEVICE.html#af193ce6ca5ea312fa46a4abd4e2c9d9c":[4,6,0,1,2],
-"group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa":[4,6,0,6],
+"group__SCC__DEVICE.html#affaf59a000ac39ed197e4cea9c626855":[4,6,0,3,2],
+"group__SCC__DEVICE.html#ga1c250a49696ff4829906d1d81a05ce55":[4,6,0,7],
+"group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa":[4,6,0,8],
+"group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c":[4,6,0,6],
 "group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879":[4,6,0,5],
-"group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a":[4,6,0,7],
+"group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a":[4,6,0,9],
 "group__SCC__DEVICE.html#ga86f6d267d04757eabb08f2154c553033":[4,6,0,4],
 "group__SCC__DEVICE.html#structSCC":[4,6,0,3],
 "group__SCC__DEVICE.html#structSCC__Channel":[4,6,0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "group__SNDDRV__API.html":[4,9,1],
 "group__SNDDRV__API.html#ga04cfd2561ae473a9b16bd5fdd8168388":[4,9,1,7],
 "group__SNDDRV__API.html#ga0c1bbeef31103b115cb8fe721082ae9e":[4,9,1,13],
-"group__SNDDRV__API.html#ga24fde7ac311197e186232be3f2f5ae7b":[4,9,1,12],
-"group__SNDDRV__API.html#ga428b323a2091903bd69209591f7bb3c2":[4,9,1,2],
-"group__SNDDRV__API.html#ga580df772d36a11700f11bacefbd6ef7f":[4,9,1,9],
-"group__SNDDRV__API.html#ga7b7dae51f611ad630252baad7c0e342d":[4,9,1,16]
+"group__SNDDRV__API.html#ga24fde7ac311197e186232be3f2f5ae7b":[4,9,1,12]
 };

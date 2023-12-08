@@ -132,6 +132,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6c5d879c60a47d2814fd02e960b35879"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">SCC_find</a> (struct <a class="el" href="group__SCC__DEVICE.html#structSCC">SCC</a> *scc)</td></tr>
 <tr class="memdesc:ga6c5d879c60a47d2814fd02e960b35879"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Find SCC/SCC+ sound chip.  <a href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">More...</a><br /></td></tr>
 <tr class="separator:ga6c5d879c60a47d2814fd02e960b35879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48d02e5663012074827ccc28bec84c5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c">SCC_set_mode</a> (struct <a class="el" href="group__SCC__DEVICE.html#structSCC">SCC</a> *scc, uint8_t mode)</td></tr>
+<tr class="memdesc:ga48d02e5663012074827ccc28bec84c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle to <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> compatible mode or SCC+ mode.  <a href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c">More...</a><br /></td></tr>
+<tr class="separator:ga48d02e5663012074827ccc28bec84c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c250a49696ff4829906d1d81a05ce55"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__DEVICE.html#ga1c250a49696ff4829906d1d81a05ce55">SCC_get_mode</a> (struct <a class="el" href="group__SCC__DEVICE.html#structSCC">SCC</a> *scc)</td></tr>
+<tr class="memdesc:ga1c250a49696ff4829906d1d81a05ce55"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Check which mode the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle is set to.  <a href="group__SCC__DEVICE.html#ga1c250a49696ff4829906d1d81a05ce55">More...</a><br /></td></tr>
+<tr class="separator:ga1c250a49696ff4829906d1d81a05ce55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2e3efa9577352f15fc30a2e25d8d33fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">SCC_enable</a> (const struct <a class="el" href="group__SCC__DEVICE.html#structSCC">SCC</a> *scc)</td></tr>
 <tr class="memdesc:ga2e3efa9577352f15fc30a2e25d8d33fa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Enable SCC/SCC+ sound chip.  <a href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">More...</a><br /></td></tr>
 <tr class="separator:ga2e3efa9577352f15fc30a2e25d8d33fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,11 +289,15 @@ Device interface for each 5 channels. </td></tr>
 <div class="textblock"><p ><a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> Handle. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879" title="MSX Find SCC/SCC+ sound chip.">SCC_find()</a> </dd>
 <dd>
+<a class="el" href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c" title="MSX Set the SCC handle to SCC compatible mode or SCC+ mode.">SCC_set_mode()</a> </dd>
+<dd>
+<a class="el" href="group__SCC__DEVICE.html#ga1c250a49696ff4829906d1d81a05ce55" title="MSX Check which mode the SCC handle is set to.">SCC_get_mode()</a> </dd>
+<dd>
 <a class="el" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa" title="MSX Enable SCC/SCC+ sound chip.">SCC_enable()</a> </dd>
 <dd>
 <a class="el" href="group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a" title="MSX Disable SCC/SCC+ sound chip.">SCC_disable()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00097">97</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00099">99</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
 </div><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Collaboration diagram for SCC:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -309,7 +319,13 @@ Slot address of the SCC/SCC+. </td></tr>
 <td class="fieldname">
 version</td>
 <td class="fielddoc">
-<code>1</code> if <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a>, <code>2</code> or greater value if <code>SCC+</code>. </td></tr>
+<code>1</code> if <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a>, <code>2</code> or greater value if SCC+. </td></tr>
+<tr><td class="fieldtype">
+<a id="affaf59a000ac39ed197e4cea9c626855" name="affaf59a000ac39ed197e4cea9c626855"></a>uint8_t</td>
+<td class="fieldname">
+mode</td>
+<td class="fielddoc">
+<code>1</code> if <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> compatible mode, <code>2</code> if SCC+ mode. </td></tr>
 <tr><td class="fieldtype">
 <a id="a1e35422951aaf250205c345a99b9ef96" name="a1e35422951aaf250205c345a99b9ef96"></a>const struct <a class="el" href="group__SCC__DEVICE.html#structSCC__Device">SCC_Device</a> *</td>
 <td class="fieldname">
@@ -378,9 +394,86 @@ If a SCC/SCC+ found;<ul>
 <li>the slot address of SCC/SCC+ is set to <code>scc-&gt;slot</code>,</li>
 <li><code>1</code> is set to <code>scc-&gt;version</code> if <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a>, or</li>
 <li><code>2</code> or greater value is set to <code>scc-&gt;version</code> if SCC+.</li>
-<li>the device interface is set to <code>scc-&gt;device</code>. </li>
+<li>the device interface is set to <code>scc-&gt;device</code>.</li>
+<li>the handle is set to <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> compatible mode even if SCC+.</li>
 </ul>
 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c" title="MSX Set the SCC handle to SCC compatible mode or SCC+ mode.">SCC_set_mode()</a> </dd>
+<dd>
+<a class="el" href="group__SCC__DEVICE.html#ga1c250a49696ff4829906d1d81a05ce55" title="MSX Check which mode the SCC handle is set to.">SCC_get_mode()</a> </dd>
+<dd>
+<a class="el" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa" title="MSX Enable SCC/SCC+ sound chip.">SCC_enable()</a> </dd>
+<dd>
+<a class="el" href="group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a" title="MSX Disable SCC/SCC+ sound chip.">SCC_disable()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga48d02e5663012074827ccc28bec84c5c" name="ga48d02e5663012074827ccc28bec84c5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48d02e5663012074827ccc28bec84c5c">&#9670;&#160;</a></span>SCC_set_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SCC_set_mode </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="group__SCC__DEVICE.html#structSCC">SCC</a> *&#160;</td>
+          <td class="paramname"><em>scc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Set the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle to <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> compatible mode or SCC+ mode. </p>
+<p >The <code>scc</code> shall point to a <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle initialized by <a class="el" href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879" title="MSX Find SCC/SCC+ sound chip.">SCC_find()</a>.</p>
+<p >If <code>scc-&gt;version</code> is less than <code>2</code> (i.e., not SCC+), do nothing.</p>
+<p >The mode set by this function shall be applied to the sound chip the next time <a class="el" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa" title="MSX Enable SCC/SCC+ sound chip.">SCC_enable()</a> is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scc</td><td>pointer to the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle. </td></tr>
+    <tr><td class="paramname">mode</td><td><code>1</code> for <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> mode, <code>2</code> for SCC+ mode, others are ignored. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga1c250a49696ff4829906d1d81a05ce55" name="ga1c250a49696ff4829906d1d81a05ce55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c250a49696ff4829906d1d81a05ce55">&#9670;&#160;</a></span>SCC_get_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t SCC_get_mode </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="group__SCC__DEVICE.html#structSCC">SCC</a> *&#160;</td>
+          <td class="paramname"><em>scc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Check which mode the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle is set to. </p>
+<p >The <code>scc</code> shall point to a <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle initialized by <a class="el" href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879" title="MSX Find SCC/SCC+ sound chip.">SCC_find()</a>.</p>
+<p >The mode returned by this function (i.e., the mode set to the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle) may not the current mode of the sound chip. The mode set to the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle shall be applied to the sound chip when <a class="el" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa" title="MSX Enable SCC/SCC+ sound chip.">SCC_enable()</a> is called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scc</td><td>pointer to the <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> handle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>1</code> if <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Handle.">SCC</a> mode, <code>2</code> if SCC+ mode, <code>0</code> otherwise. </dd></dl>
 
 </div>
 </div>

@@ -17,10 +17,13 @@ var group__SCC__DEVICE =
     [ "SCC", "group__SCC__DEVICE.html#structSCC", [
       [ "slot", "group__SCC__DEVICE.html#a451ffb6f9dbecfb1fd4078d3ad5f0bcf", null ],
       [ "version", "group__SCC__DEVICE.html#a4a0eca2bc7f8d2b308a83b6b9afe37d7", null ],
+      [ "mode", "group__SCC__DEVICE.html#affaf59a000ac39ed197e4cea9c626855", null ],
       [ "device", "group__SCC__DEVICE.html#a1e35422951aaf250205c345a99b9ef96", null ]
     ] ],
     [ "SCC_inspect", "group__SCC__DEVICE.html#ga86f6d267d04757eabb08f2154c553033", null ],
     [ "SCC_find", "group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879", null ],
+    [ "SCC_set_mode", "group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c", null ],
+    [ "SCC_get_mode", "group__SCC__DEVICE.html#ga1c250a49696ff4829906d1d81a05ce55", null ],
     [ "SCC_enable", "group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa", null ],
     [ "SCC_disable", "group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a", null ]
 ];

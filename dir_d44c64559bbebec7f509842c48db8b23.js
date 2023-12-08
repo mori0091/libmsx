@@ -17,6 +17,8 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "psg.h", "psg_8h.html", "psg_8h" ],
     [ "resources.h", "resources_8h.html", "resources_8h" ],
     [ "scc.h", "scc_8h.html", "scc_8h" ],
+    [ "scc_buf.h", "scc__buf_8h.html", "scc__buf_8h" ],
+    [ "scc_wav.h", "scc__wav_8h.html", "scc__wav_8h" ],
     [ "screen.h", "screen_8h.html", "screen_8h" ],
     [ "slot.h", "slot_8h.html", "slot_8h" ],
     [ "snd_i_table.h", "snd__i__table_8h.html", "snd__i__table_8h" ],

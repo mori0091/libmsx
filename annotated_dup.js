@@ -7,6 +7,7 @@ var annotated_dup =
     [ "OPLL_Device", "structOPLL__Device.html", "structOPLL__Device" ],
     [ "ResourceIndex", "group__RESOURCES__FIND.html#structResourceIndex", "group__RESOURCES__FIND_structResourceIndex" ],
     [ "SCC", "group__SCC__DEVICE.html#structSCC", "group__SCC__DEVICE_structSCC" ],
+    [ "SCC_buffer", "group__SCC__BUFFER.html#structSCC__buffer", "group__SCC__BUFFER_structSCC__buffer" ],
     [ "SCC_Channel", "group__SCC__DEVICE.html#structSCC__Channel", "group__SCC__DEVICE_structSCC__Channel" ],
     [ "SCC_Device", "group__SCC__DEVICE.html#structSCC__Device", "group__SCC__DEVICE_structSCC__Device" ],
     [ "SCC_Waveform", "group__SCC__DEVICE.html#structSCC__Waveform", "group__SCC__DEVICE_structSCC__Waveform" ],

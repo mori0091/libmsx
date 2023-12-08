@@ -1,4 +1,4 @@
 <map id="SCC/SCC+ device interface" name="SCC/SCC+ device interface">
 <area shape="rect" id="node1" href="$group__SCC.html" title="#include &lt;scc.h&gt;" alt="" coords="5,5,179,45"/>
-<area shape="rect" id="node2" title="Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip." alt="" coords="227,13,409,38"/>
+<area shape="rect" id="node2" title="#include &lt;scc.h&gt; Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip." alt="" coords="227,13,409,38"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="include/scc.h" name="include/scc.h">
+<area shape="rect" id="node1" title="Device interface for Konami SCC/SCC+ sound cartridge." alt="" coords="17,5,116,31"/>
+<area shape="rect" id="node2" href="$scc__buf_8h.html" title="Buffered access to SCC/SCC+ registers." alt="" coords="5,79,128,104"/>
+</map>

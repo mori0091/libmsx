@@ -1,4 +1,6 @@
 <map id="Konami SCC/SCC+ sound cartridge" name="Konami SCC/SCC+ sound cartridge">
-<area shape="rect" id="node1" title="#include &lt;scc.h&gt;" alt="" coords="5,5,179,45"/>
-<area shape="rect" id="node2" href="$group__SCC__DEVICE.html" title="Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip." alt="" coords="227,13,409,38"/>
+<area shape="rect" id="node1" title="#include &lt;scc.h&gt;" alt="" coords="5,47,179,87"/>
+<area shape="rect" id="node2" href="$group__SCC__BUFFER.html" title="#include &lt;scc_buf.h&gt; Buffered access to SCC/SCC+ registers." alt="" coords="255,5,381,31"/>
+<area shape="rect" id="node3" href="$group__SCC__DEVICE.html" title="#include &lt;scc.h&gt; Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip." alt="" coords="227,55,409,80"/>
+<area shape="rect" id="node4" href="$group__SCC__PREDEFINED__WAVEFORMS.html" title="#include &lt;scc_wav.h&gt; Predefined waveforms for SCC/SCC+." alt="" coords="243,105,393,145"/>
 </map>

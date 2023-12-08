@@ -54,8 +54,8 @@ var searchData=
   ['vdp_5fcmd_5fset_5fsy_51',['vdp_cmd_set_SY',['../group__VDP__COMMANDS__LOW.html#ga06d40a54ded58c30c885cf0de48bdb57',1,'vdp.h']]],
   ['vdp_5fcmd_5fset_5funrestricted_52',['vdp_cmd_set_unrestricted',['../group__VDP__COMMANDS__HIGH.html#gaff9c85cefd095ae4e78e73cb6f848663',1,'vdp.h']]],
   ['vdp_5fcmd_5fsrch_53',['VDP_CMD_SRCH',['../group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda2935786214504f4592dedef4a6782f84',1,'vdp.h']]],
-  ['vdp_5fcmd_5fstop_54',['VDP_CMD_STOP',['../group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda35c720b673854b1e96dd4d0812d502e2',1,'vdp.h']]],
-  ['vdp_5fcmd_5fstop_55',['vdp_cmd_stop',['../group__VDP__COMMANDS__HIGH.html#gae56829a162d95edbba719b760df09a2e',1,'vdp.h']]],
+  ['vdp_5fcmd_5fstop_54',['vdp_cmd_stop',['../group__VDP__COMMANDS__HIGH.html#gae56829a162d95edbba719b760df09a2e',1,'vdp.h']]],
+  ['vdp_5fcmd_5fstop_55',['VDP_CMD_STOP',['../group__VDP__COMMANDS__LOW.html#gga8644c26f4880aa2d4ec82b0de3bc8deda35c720b673854b1e96dd4d0812d502e2',1,'vdp.h']]],
   ['vdp_5fcmd_5ftand_56',['VDP_CMD_TAND',['../group__VDP__COMMANDS__HIGH.html#ggad5a2110934821d4a04c4f412cea3160facb9e1e5a3e442101bc4565d89a7d792e',1,'vdp.h']]],
   ['vdp_5fcmd_5fteor_57',['VDP_CMD_TEOR',['../group__VDP__COMMANDS__HIGH.html#ggad5a2110934821d4a04c4f412cea3160fa9ad60df4916b70f04bde0a4f075958a4',1,'vdp.h']]],
   ['vdp_5fcmd_5ftimp_58',['VDP_CMD_TIMP',['../group__VDP__COMMANDS__HIGH.html#ggad5a2110934821d4a04c4f412cea3160fafa2a59742fa47d0d00eae39b72aeb70b',1,'vdp.h']]],
@@ -140,7 +140,7 @@ var searchData=
   ['vec_5fsnd_5fpitchbend_137',['vec_snd_PitchBend',['../structsnd__SoundAssets_1_1vec__snd__PitchBend.html',1,'snd_SoundAssets']]],
   ['vec_5fsnd_5fspeedtrack_138',['vec_snd_SpeedTrack',['../structsnd__Music_1_1vec__snd__SpeedTrack.html',1,'snd_Music']]],
   ['vec_5fsnd_5ftrack_139',['vec_snd_Track',['../structsnd__Music_1_1vec__snd__Track.html',1,'snd_Music']]],
-  ['version_140',['version',['../group__SCC__DEVICE.html#a4a0eca2bc7f8d2b308a83b6b9afe37d7',1,'SCC::version()'],['../group__OPLL__DEVICE.html#a3c0adc06ef84958caffee5a05594454b',1,'OPLL::version()']]],
+  ['version_140',['version',['../group__OPLL__DEVICE.html#a3c0adc06ef84958caffee5a05594454b',1,'OPLL::version()'],['../group__SCC__DEVICE.html#a4a0eca2bc7f8d2b308a83b6b9afe37d7',1,'SCC::version()']]],
   ['vk_5fdown_141',['VK_DOWN',['../group__INPUT__JOYPAD.html#gac0d40bc0c552d2a841591717eb21f24e',1,'input.h']]],
   ['vk_5ffire_5f0_142',['VK_FIRE_0',['../group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe',1,'input.h']]],
   ['vk_5ffire_5f1_143',['VK_FIRE_1',['../group__INPUT__JOYPAD.html#gab889bf94695db344840ab8b5d8e40880',1,'input.h']]],
@@ -176,7 +176,8 @@ var searchData=
   ['vmem_5fwrite_173',['vmem_write',['../group__VMEM__ACCESS.html#ga17658e78f1b4ab50df4781d2333ce236',1,'vmem.h']]],
   ['vmem_5fwrite_5fchunk_174',['vmem_write_chunk',['../group__VMEM__RW.html#gaaf6490cb391598b5c85630e2097178c7',1,'vmem_rw.h']]],
   ['vmemptr_5ft_175',['vmemptr_t',['../group__VMEM__ACCESS.html#gaaa8bd02096bc1fc31f3da323f1d0a1f8',1,'vmem.h']]],
-  ['vram_20_2d_20video_20ram_176',['VRAM - Video RAM',['../group__VMEM.html',1,'']]],
-  ['vram_20access_20interface_177',['VRAM access interface',['../group__VMEM__ACCESS.html',1,'']]],
-  ['vsync_5fbusy_178',['vsync_busy',['../group__INTERRUPT__AWAIT.html#gac594eec6b7a3ac71bbe093c8d3e09688',1,'interrupt.h']]]
+  ['volume_176',['volume',['../group__SCC__BUFFER.html#af0326d9f160cab2b106a38953a3dd658',1,'SCC_buffer']]],
+  ['vram_20_2d_20video_20ram_177',['VRAM - Video RAM',['../group__VMEM.html',1,'']]],
+  ['vram_20access_20interface_178',['VRAM access interface',['../group__VMEM__ACCESS.html',1,'']]],
+  ['vsync_5fbusy_179',['vsync_busy',['../group__INTERRUPT__AWAIT.html#gac594eec6b7a3ac71bbe093c8d3e09688',1,'interrupt.h']]]
 ];

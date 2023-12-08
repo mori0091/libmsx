@@ -79,12 +79,8 @@ static void SCC_find_callback(uint8_t slot, void * arg) {
   if (!scc->slot || scc->version < x) {
     scc->slot = slot;
     scc->version = x;           // 1: SCC, 2: SCC+
-    if (1 < x) {
-      scc->device = &SCCPlus_device;
-    }
-    else {
-      scc->device = &SCC_device;
-    }
+    scc->mode = 1;
+    scc->device = &SCC_device;
   }
 }
 
@@ -96,9 +92,26 @@ uint8_t SCC_find(struct SCC * scc) {
   return scc->slot;
 }
 
+void SCC_set_mode(struct SCC * scc, uint8_t mode) {
+  if (!scc || scc->version < 2) return;
+  if (mode == 1) {
+    scc->mode = 1;
+    scc->device = &SCC_device;
+  }
+  else if (mode == 2) {
+    scc->mode = 2;
+    scc->device = &SCCPlus_device;
+  }
+}
+
+uint8_t SCC_get_mode(struct SCC * scc) {
+  if (!scc) return 0;
+  return scc->mode;
+}
+
 void SCC_enable(const struct SCC * scc) {
   if (scc && scc->slot) {
-    if (1 < scc->version) {
+    if (scc->mode == 2) {
       // Expose SCC+ on the `scc->slot`
       expose_SCCPlus(scc->slot);
     }

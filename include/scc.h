@@ -91,12 +91,15 @@ struct SCC_Device {
  * SCC Handle.
  *
  * \sa SCC_find()
+ * \sa SCC_set_mode()
+ * \sa SCC_get_mode()
  * \sa SCC_enable()
  * \sa SCC_disable()
  */
 struct SCC {
   uint8_t slot;                 ///< Slot address of the SCC/SCC+.
-  uint8_t version;              ///< `1` if SCC, `2` or greater value if `SCC+`.
+  uint8_t version;              ///< `1` if SCC, `2` or greater value if SCC+.
+  uint8_t mode;                 ///< `1` if SCC compatible mode, `2` if SCC+ mode.
   const struct SCC_Device * device; ///< Pointer to device interface.
 };
 
@@ -122,8 +125,43 @@ uint8_t SCC_inspect(uint8_t slot);
  *        - `1` is set to `scc->version` if SCC, or
  *        - `2` or greater value is set to `scc->version` if SCC+.
  *        - the device interface is set to `scc->device`.
+ *        - the handle is set to SCC compatible mode even if SCC+.
+ *
+ * \sa SCC_set_mode()
+ * \sa SCC_get_mode()
+ * \sa SCC_enable()
+ * \sa SCC_disable()
  */
 uint8_t SCC_find(struct SCC * scc);
+
+/**
+ * `MSX` Set the SCC handle to SCC compatible mode or SCC+ mode.
+ *
+ * The `scc` shall point to a SCC handle initialized by SCC_find().
+ *
+ * If `scc->version` is less than `2` (i.e., not SCC+), do nothing.
+ *
+ * The mode set by this function shall be applied to the sound chip the next
+ * time SCC_enable() is called.
+ *
+ * \param scc  pointer to the SCC handle.
+ * \param mode `1` for SCC mode, `2` for SCC+ mode, others are ignored.
+ */
+void SCC_set_mode(struct SCC * scc, uint8_t mode);
+
+/**
+ * `MSX` Check which mode the SCC handle is set to.
+ *
+ * The `scc` shall point to a SCC handle initialized by SCC_find().
+ *
+ * The mode returned by this function (i.e., the mode set to the SCC handle) may
+ * not the current mode of the sound chip. The mode set to the SCC handle shall
+ * be applied to the sound chip when SCC_enable() is called.
+ *
+ * \param scc  pointer to the SCC handle.
+ * \return `1` if SCC mode, `2` if SCC+ mode, `0` otherwise.
+ */
+uint8_t SCC_get_mode(struct SCC * scc);
 
 /**
  * `MSX` Enable SCC/SCC+ sound chip.

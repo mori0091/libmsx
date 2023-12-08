@@ -189,12 +189,12 @@ Supported functionality</h1>
 </ul>
 </li>
 <li>Compression / Decompression<ul>
-<li><b>NEW</b> Decompressor of ZX0 data compression format v.2.<ul>
+<li>Decompressor of ZX0 data compression format v.2.<ul>
 <li>The ZX0 decompressor for <b>libmsx</b> has been reimplemented by Daishi Mori (mori0091).</li>
 <li>That supports decompression of ZX0 data in ROM/RAM/MegaROM to RAM/VRAM.</li>
 </ul>
 </li>
-<li><b>NEW</b> The ZX0 file compressor tool. (for PC)<ul>
+<li>The ZX0 file compressor tool. (for PC)<ul>
 <li>The ZX0 file compressor tool reimplemented by Daishi Mori (mori0091) is bundled.</li>
 <li>ZX0 data compression format v.2 compatible.</li>
 <li>Supports MSX-optimized ZX0 compression mode to compress MSX BSAVE format files.</li>
@@ -242,7 +242,9 @@ Host Platform</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.1.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.2.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.2.0   </td><td class="markdownTableBodyNone">✔ (outdated)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.3.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
 </table>
 <p ><b>Windows</b></p>
 <table class="markdownTable">
@@ -253,7 +255,9 @@ Host Platform</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.1.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.2.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.2.0   </td><td class="markdownTableBodyNone">✔ (outdated)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.3.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
 </table>
 <p >Ofcourse, Ubuntu on <b>WSL</b> is okey. 😄 <br  />
  (<b>WSL</b>: Windows Subsystem for Linux)</p>
@@ -282,17 +286,17 @@ Ubuntu 22.04</h2>
 <h3><a class="anchor" id="autotoc_md11"></a>
 1. Install SDCC</h3>
 <p >Download a SDCC pre-built binary for Linux from <a href="http://sdcc.sourceforge.net/">http://sdcc.sourceforge.net/</a> and install it.</p>
-<p >SDCC 4.2.0 or later is recommended.</p>
+<p >SDCC 4.3.0 or later is recommended.</p>
 <p >Don't forget adding SDCC to <code>PATH</code> environment variable. <br  />
  Add the below to <code>~/.bashrc</code> or <code>~/.bash_profile</code>. <br  />
 </p>
 <blockquote class="doxtable">
-<p >&zwj;At here it is assuming that the SDCC 4.2.0 is installed under <code>~/sdcc-4.2.0</code>. </p>
+<p >&zwj;At here it is assuming that the SDCC 4.3.0 is installed under <code>~/sdcc-4.3.0</code>. </p>
 </blockquote>
-<div class="fragment"><div class="line">export PATH=${PATH}:~/sdcc-4.2.0/bin</div>
+<div class="fragment"><div class="line">export PATH=${PATH}:~/sdcc-4.3.0/bin</div>
 </div><!-- fragment --><blockquote class="doxtable">
 <p >&zwj;Why don't we install sdcc by <code>sudo apt install sdcc</code> ?</p>
-<p >Because the latest version of SDCC may not be installed by <code>apt</code>. In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we recommend that you download SDCC 4.2.0 pre-built binary and use it on Ubuntu 22.04 or later. </p>
+<p >Because the latest version of SDCC may not be installed by <code>apt</code>. In case of Ubuntu 22.04, SDCC 4.0.0 is installed. Thus we recommend that you download SDCC 4.3.0 pre-built binary and use it on Ubuntu 22.04 or later. </p>
 </blockquote>
 <h3><a class="anchor" id="autotoc_md12"></a>
 2. Install other toolchain</h3>
@@ -317,7 +321,7 @@ Windows (MSYS2)</h2>
  Add the below to <code>~/.bashrc</code> or <code>~/.bash_profile</code>, on MSYS2 UCRT64 environment. <br  />
 </p>
 <blockquote class="doxtable">
-<p >&zwj;At here it is assuming that the SDCC 4.2.0 is installed under <code>C:\Program Files\SDCC</code>. </p>
+<p >&zwj;At here it is assuming that the SDCC 4.3.0 is installed under <code>C:\Program Files\SDCC</code>. </p>
 </blockquote>
 <div class="fragment"><div class="line">export PATH=${PATH}:/c/Program\ Files/SDCC/bin</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>

@@ -12,6 +12,10 @@
  * \file ay_3_8910.h
  * \brief Buffer for PSG (AY-3-8910) registers.
  * \ingroup PSG
+ *
+ * *Example*\n
+ * The following code shows a sound driver/replayer template for the PSG.
+ * \include psg_buf_example/src/psg_buf_example.c
  */
 
 #pragma once

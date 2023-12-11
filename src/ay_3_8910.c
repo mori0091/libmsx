@@ -27,6 +27,12 @@ void ay_3_8910_init(void) {
   psg_port0 = r;      \
   psg_port1 = x
 
+void ay_3_8910_stop(void) {
+  psg_set( 8, 0);
+  psg_set( 9, 0);
+  psg_set(10, 0);
+}
+
 void ay_3_8910_play(void) {
   uint8_t * p = &ay_3_8910_buffer[0];
   psg_set( 0, *p++);

@@ -39,6 +39,16 @@ extern uint8_t ay_3_8910_buffer[14];
 void ay_3_8910_init(void);
 
 /**
+ * `MSX` Stop (Pause) playing sound on PSG.
+ *
+ * This function sets all volume registers to `0`.
+ *
+ * \note
+ * This function simply sets all channels' volume level to 0.
+ */
+void ay_3_8910_stop(void);
+
+/**
  * `MSX` Write the buffer contents to PSG registers.
  *
  * \note

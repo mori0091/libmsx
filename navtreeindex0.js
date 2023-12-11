@@ -167,8 +167,9 @@ var NAVTREEINDEX0 =
 "group__OPLL__DEVICE.html#structOPLL":[4,4,0,1],
 "group__PSG.html":[4,5],
 "group__PSG__BUFFER.html":[4,5,0],
-"group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f":[4,5,0,2],
-"group__PSG__BUFFER.html#ga549cb1b577a2dc0269c4744aa8dba0d3":[4,5,0,1],
+"group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f":[4,5,0,3],
+"group__PSG__BUFFER.html#ga549cb1b577a2dc0269c4744aa8dba0d3":[4,5,0,2],
+"group__PSG__BUFFER.html#ga7921e0ab095018a29a8b0570d61f2185":[4,5,0,1],
 "group__PSG__BUFFER.html#gac0fa68a646b8593944f5f8243b371a0c":[4,5,0,0],
 "group__PSG__REGISTER.html":[4,5,1],
 "group__PSG__REGISTER.html#ga084b8c48834b59dc9af0978ad53357c3":[4,5,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga85985c93cfb1c8470ffc5e9e4bb81a25":[4,6,2,33],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga86b0c7c021347768874366012aa5b2ee":[4,6,2,8],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga885ec12e778e35728128bf31e9ca35b6":[4,6,2,15],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga8943afa264bc89bda0d1220706af55c9":[4,6,2,23],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga8bcfa2d76d70cdc9b411ed57c2791b5d":[4,6,2,6]
+"group__SCC__PREDEFINED__WAVEFORMS.html#ga8943afa264bc89bda0d1220706af55c9":[4,6,2,23]
 };

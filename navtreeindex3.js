@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"sprite__color_8h.html":[4,11,5],
 "structOPLL__Device.html":[4,4,0,0],
 "structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755":[4,4,0,0,0],
 "structTTY__Device.html":[4,13,0,0],

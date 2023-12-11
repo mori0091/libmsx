@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"group__VDP__COMMANDS__HIGH.html#gad438cebba8ac8e1c6ccd28820c57742a":[4,14,7,11],
 "group__VDP__COMMANDS__HIGH.html#gad5a2110934821d4a04c4f412cea3160f":[4,14,7,0],
 "group__VDP__COMMANDS__HIGH.html#gae56829a162d95edbba719b760df09a2e":[4,14,7,5],
 "group__VDP__COMMANDS__HIGH.html#gaf9dda09b05a98b20905b6a6ace2a7d30":[4,14,7,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "snddrv_8h.html":[4,9,5],
 "sound_8h.html":[4,10,2],
 "sound__eg_8h.html":[4,10,3],
-"sprite_8h.html":[4,11,4],
-"sprite__color_8h.html":[4,11,5]
+"sprite_8h.html":[4,11,4]
 };

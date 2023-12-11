@@ -83,6 +83,11 @@ void pause(void) {
   __asm__("ei");
 }
 
+// Return whether the replayer is paused or not.
+bool is_paused(void) {
+  return paused;
+}
+
 // Stop the replayer.
 void stop(void) {
   pause();
@@ -99,7 +104,19 @@ void main(void) {
   // Start our replayer.
   start();
 
+  uint8_t pressed;
   for (;;) {
     await_vsync();
+    uint8_t joy = joypad_get_state(0);
+    uint8_t clicked = pressed & ~joy;
+    pressed = joy;
+    if (clicked & VK_FIRE_0) {
+      if (is_paused()) {
+        start();
+      }
+      else {
+        pause();
+      }
+    }
   }
 }

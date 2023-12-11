@@ -12,17 +12,13 @@
  * \file opll_buf_example.c
  *
  * \brief
- * OPLL/OPLL+ Buffer example.
+ * OPLL Buffer example.
  *
- * This example shows a sound driver/replayer template for the Konami OPLL/OPLL+
- * sound chip.
+ * This example shows a sound driver/replayer template for the OPLL sound chip.
  */
 
-#include "bios.h"
-#include "input.h"
 #include <msx.h>
 #include <opll_buf.h>
-#include <stdint.h>
 
 #define LO_BYTE(x) (uint8_t)((x) & 0xff)
 #define HI_BYTE(x) (uint8_t)(((x) >> 8) & 0xff)
@@ -115,7 +111,7 @@ bool is_paused(void) {
 // Stop the replayer.
 void stop(void) {
   pause();
-  // Re-initialize `opll_buffer` and internal waveform buffer.
+  // Re-initialize internal buffer.
   // (if needed)
   OPLL_init();
 }

@@ -85,6 +85,9 @@ void SCC_set_waveform(uint8_t ch, const int8_t waveform[32]);
  * \sa SCC_find()
  * \sa SCC_set_mode()
  * \sa SCC_get_mode()
+ *
+ * \note
+ * This function simply sets all channels' volume level to 0.
  */
 void SCC_stop(struct SCC * scc);
 

@@ -124,7 +124,7 @@ void main(void) {
   // Start our replayer.
   start();
 
-  uint8_t pressed;
+  uint8_t pressed = false;
   for (;;) {
     await_vsync();
     uint8_t joy = joypad_get_state(0);

@@ -223,6 +223,11 @@ The following code shows a sound driver/replayer template for the Konami SCC/SCC
 <div class="line">  __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="comment">// Return whether the replayer is paused or not.</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_paused(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">return</span> paused;</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Stop the replayer.</span></div>
 <div class="line"><span class="keywordtype">void</span> stop(<span class="keywordtype">void</span>) {</div>
 <div class="line">  pause();</div>
@@ -239,10 +244,24 @@ The following code shows a sound driver/replayer template for the Konami SCC/SCC
 <div class="line">  <span class="comment">// Start our replayer.</span></div>
 <div class="line">  start();</div>
 <div class="line"> </div>
+<div class="line">  uint8_t pressed;</div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {</div>
 <div class="line">    <a class="code hl_function" href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
+<div class="line">    uint8_t joy = <a class="code hl_function" href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a>(0);</div>
+<div class="line">    uint8_t clicked = pressed &amp; ~joy;</div>
+<div class="line">    pressed = joy;</div>
+<div class="line">    <span class="keywordflow">if</span> (clicked &amp; <a class="code hl_define" href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a>) {</div>
+<div class="line">      <span class="keywordflow">if</span> (is_paused()) {</div>
+<div class="line">        start();</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">else</span> {</div>
+<div class="line">        pause();</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga087c749840978e4916c876d906668397"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a></div><div class="ttdeci">uint8_t joypad_get_state(uint8_t controller)</div><div class="ttdoc">MSX Get the status of the joystick buttons and levers.</div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga8cd30be158daff14ab2f276621786dbe"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a></div><div class="ttdeci">#define VK_FIRE_0</div><div class="ttdoc">Bitmask for trigger button #1 or SPACE key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00068">input.h:68</a></div></div>
 <div class="ttc" id="agroup__INTERRUPT__AWAIT_html_gabdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">MSX Waits for next VSYNC interrupt.</div></div>
 <div class="ttc" id="agroup__INTERRUPT__HANDLER_html_ga92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">MSX Register user defined VSYNC interrupt handler.</div></div>
 <div class="ttc" id="agroup__SCC__BUFFER_html_ad9422c592799868c73d6ac3dcec87b0e"><div class="ttname"><a href="group__SCC__BUFFER.html#ad9422c592799868c73d6ac3dcec87b0e">SCC_buffer::channel_mask</a></div><div class="ttdeci">uint8_t channel_mask</div><div class="ttdoc">Enable / Disable bit for each of the five channels.</div><div class="ttdef"><b>Definition:</b> <a href="scc__buf_8h_source.html#l00045">scc_buf.h:45</a></div></div>

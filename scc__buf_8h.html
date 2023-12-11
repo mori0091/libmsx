@@ -169,7 +169,13 @@ The following code shows a sound driver/replayer template for the Konami SCC/SCC
 <div class="line"><span class="keywordtype">void</span> init(<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">SCC_find</a>(&amp;scc)) {</div>
 <div class="line">    <span class="comment">// Set to SCC+ mode if available. (optional)</span></div>
+<div class="line">    <span class="comment">// The mode will be applied to the sound chip when SCC_enable() is called.</span></div>
 <div class="line">    <a class="code hl_function" href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c">SCC_set_mode</a>(&amp;scc, 2);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Enable SCC/SCC+.</span></div>
+<div class="line">    <span class="comment">// This must be called at least once.</span></div>
+<div class="line">    <span class="comment">// It must also be called when the mode is changed by SCC_set_mode().</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">SCC_enable</a>(&amp;scc);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Initialize `scc_buffer` and internal waveform buffer.</span></div>
 <div class="line">    <a class="code hl_function" href="group__SCC__BUFFER.html#ga03886c3403bd874dae2fdcd58ecb3ea3">SCC_init</a>();</div>
@@ -272,6 +278,7 @@ The following code shows a sound driver/replayer template for the Konami SCC/SCC
 <div class="ttc" id="agroup__SCC__BUFFER_html_gad71203ba5bc176efa8fb4138687db76a"><div class="ttname"><a href="group__SCC__BUFFER.html#gad71203ba5bc176efa8fb4138687db76a">SCC_play</a></div><div class="ttdeci">void SCC_play(struct SCC *scc)</div><div class="ttdoc">MSX Play sound on SCC/SCC+.</div></div>
 <div class="ttc" id="agroup__SCC__BUFFER_html_gae46eef36c8ddac64a84a04bd1db0d173"><div class="ttname"><a href="group__SCC__BUFFER.html#gae46eef36c8ddac64a84a04bd1db0d173">SCC_stop</a></div><div class="ttdeci">void SCC_stop(struct SCC *scc)</div><div class="ttdoc">MSX Stop (Pause) playing sound on SCC/SCC+.</div></div>
 <div class="ttc" id="agroup__SCC__BUFFER_html_gaf9e4b2bbb44595ac47d0fe6db8d36eaa"><div class="ttname"><a href="group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">scc_buffer</a></div><div class="ttdeci">struct SCC_buffer scc_buffer</div><div class="ttdoc">MSX Buffer for SCC/SCC+ registers (except for waveform registers).</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_ga2e3efa9577352f15fc30a2e25d8d33fa"><div class="ttname"><a href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">SCC_enable</a></div><div class="ttdeci">void SCC_enable(const struct SCC *scc)</div><div class="ttdoc">MSX Enable SCC/SCC+ sound chip.</div></div>
 <div class="ttc" id="agroup__SCC__DEVICE_html_ga48d02e5663012074827ccc28bec84c5c"><div class="ttname"><a href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c">SCC_set_mode</a></div><div class="ttdeci">void SCC_set_mode(struct SCC *scc, uint8_t mode)</div><div class="ttdoc">MSX Set the SCC handle to SCC compatible mode or SCC+ mode.</div></div>
 <div class="ttc" id="agroup__SCC__DEVICE_html_ga6c5d879c60a47d2814fd02e960b35879"><div class="ttname"><a href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">SCC_find</a></div><div class="ttdeci">uint8_t SCC_find(struct SCC *scc)</div><div class="ttdoc">MSX Find SCC/SCC+ sound chip.</div></div>
 <div class="ttc" id="agroup__SCC__DEVICE_html_structSCC"><div class="ttname"><a href="group__SCC__DEVICE.html#structSCC">SCC</a></div><div class="ttdoc">SCC Handle.</div><div class="ttdef"><b>Definition:</b> <a href="scc_8h_source.html#l00100">scc.h:100</a></div></div>

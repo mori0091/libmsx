@@ -169,9 +169,12 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
 <div class="line"><span class="keywordtype">void</span> init(<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83">OPLL_find</a>(&amp;opll)) {</div>
 <div class="line">    <span class="comment">// Enable OPLL.</span></div>
+<div class="line">    <span class="comment">// This must be called at least once.</span></div>
 <div class="line">    <a class="code hl_function" href="group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456">OPLL_enable</a>(&amp;opll);</div>
+<div class="line"> </div>
 <div class="line">    <span class="comment">// Initialize internal buffer.</span></div>
 <div class="line">    <a class="code hl_function" href="group__OPLL__BUFFER.html#ga153acf32eee95fb7f582f18616c79a46">OPLL_init</a>();</div>
+<div class="line"> </div>
 <div class="line">    <span class="comment">// 9 channels mode</span></div>
 <div class="line">    <a class="code hl_function" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a>(0x0e, 0x00);</div>
 <div class="line">  }</div>

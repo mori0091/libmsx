@@ -1,7 +1,7 @@
 var NAVTREEINDEX0 =
 {
-"ZX0__decompress_8h.html":[6,0,1,37],
-"ZX0__decompress_8h_source.html":[6,0,1,37],
+"ZX0__decompress_8h.html":[6,0,1,38],
+"ZX0__decompress_8h_source.html":[6,0,1,38],
 "annotated.html":[5,0],
 "ay__3__8910_8h.html":[4,5,2],
 "bios_8h.html":[4,0,4],
@@ -21,8 +21,8 @@ var NAVTREEINDEX0 =
 "functions.html":[5,2,0],
 "functions_func.html":[5,2,1],
 "functions_vars.html":[5,2,2],
-"globals.html":[6,1,0],
 "globals.html":[6,1,0,0],
+"globals.html":[6,1,0],
 "globals_b.html":[6,1,0,1],
 "globals_c.html":[6,1,0,2],
 "globals_d.html":[6,1,0,3],
@@ -31,8 +31,8 @@ var NAVTREEINDEX0 =
 "globals_enum.html":[6,1,4],
 "globals_eval.html":[6,1,5],
 "globals_f.html":[6,1,0,5],
-"globals_func.html":[6,1,1,0],
 "globals_func.html":[6,1,1],
+"globals_func.html":[6,1,1,0],
 "globals_func_b.html":[6,1,1,1],
 "globals_func_j.html":[6,1,1,2],
 "globals_func_m.html":[6,1,1,3],
@@ -156,6 +156,11 @@ var NAVTREEINDEX0 =
 "group__MEM__RW.html#gae97465d74e1cbdfd96ea58c7a7df5730":[4,16,1,9],
 "group__MEM__RW.html#gafa379c55aaf20c381be6d99af5ebec5f":[4,16,1,7],
 "group__OPLL.html":[4,4],
+"group__OPLL__BUFFER.html":[4,4,1],
+"group__OPLL__BUFFER.html#ga153acf32eee95fb7f582f18616c79a46":[4,4,1,0],
+"group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159":[4,4,1,2],
+"group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df":[4,4,1,1],
+"group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c":[4,4,1,3],
 "group__OPLL__DEVICE.html":[4,4,0],
 "group__OPLL__DEVICE.html#a2c1af86d17c104c65519e93f3c21f925":[4,4,0,1,2],
 "group__OPLL__DEVICE.html#a3c0adc06ef84958caffee5a05594454b":[4,4,0,1,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX0 =
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga538bd09a04d5f0a6eedd0a2b64db4db3":[4,6,2,7],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga5698f2d1319ce1000764a264d64d08cd":[4,6,2,17],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga57fcabc4c6b6fa55e0ff1a6b6794151b":[4,6,2,37],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga61c9a209934ec07ab6c2f253031acd53":[4,6,2,39],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga80d2c9d452e67cfdfdce68650cea0dc9":[4,6,2,24],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga85985c93cfb1c8470ffc5e9e4bb81a25":[4,6,2,33],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga86b0c7c021347768874366012aa5b2ee":[4,6,2,8],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga885ec12e778e35728128bf31e9ca35b6":[4,6,2,15],
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga8943afa264bc89bda0d1220706af55c9":[4,6,2,23]
+"group__SCC__PREDEFINED__WAVEFORMS.html#ga61c9a209934ec07ab6c2f253031acd53":[4,6,2,39]
 };

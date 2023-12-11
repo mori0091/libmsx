@@ -1,0 +1,4 @@
+<map id="include/opll.h" name="include/opll.h">
+<area shape="rect" id="node1" title="Device interface for MSX&#45;MUSIC (OPLL)." alt="" coords="18,5,115,31"/>
+<area shape="rect" id="node2" href="$opll__buf_8h.html" title="Buffered access to OPLL registers." alt="" coords="5,79,128,104"/>
+</map>

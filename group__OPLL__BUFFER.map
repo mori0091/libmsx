@@ -1,0 +1,4 @@
+<map id="OPLL Buffer" name="OPLL Buffer">
+<area shape="rect" id="node1" href="$group__OPLL.html" title="#include &lt;opll.h&gt;" alt="" coords="5,5,160,45"/>
+<area shape="rect" id="node2" title="#include &lt;opll_buf.h&gt; Buffered access to OPLL registers." alt="" coords="208,13,303,38"/>
+</map>

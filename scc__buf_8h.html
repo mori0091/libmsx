@@ -244,7 +244,7 @@ The following code shows a sound driver/replayer template for the Konami SCC/SCC
 <div class="line">  <span class="comment">// Start our replayer.</span></div>
 <div class="line">  start();</div>
 <div class="line"> </div>
-<div class="line">  uint8_t pressed;</div>
+<div class="line">  uint8_t pressed = <span class="keyword">false</span>;</div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {</div>
 <div class="line">    <a class="code hl_function" href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
 <div class="line">    uint8_t joy = <a class="code hl_function" href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a>(0);</div>

@@ -138,7 +138,116 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Buffer for PSG (AY-3-8910) registers. </p>
-
+<p ><em>Example</em><br  />
+The following code shows a sound driver/replayer template for the PSG. </p><div class="fragment"><div class="line"><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Copyright (c) 2021-2023 Daishi Mori (mori0091)</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * This software is released under the MIT License.\n</span></div>
+<div class="line"><span class="comment"> * See https://github.com/mori0091/libmsx/blob/main/LICENSE</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * GitHub libmsx project\n</span></div>
+<div class="line"><span class="comment"> * https://github.com/mori0091/libmsx</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="msx_8h.html">msx.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ay__3__8910_8h.html">ay_3_8910.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define LO_BYTE(x) (uint8_t)((x) &amp; 0xff)</span></div>
+<div class="line"><span class="preprocessor">#define HI_BYTE(x) (uint8_t)(((x) &gt;&gt; 8) &amp; 0xff)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">bool</span> paused;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Initialize the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> init(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <a class="code hl_function" href="group__PSG__BUFFER.html#gac0fa68a646b8593944f5f8243b371a0c">ay_3_8910_init</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Main routine of the replayer.</span></div>
+<div class="line"><span class="comment">// \note This shall be called every VSYNC timing from interrupt handler.</span></div>
+<div class="line"><span class="keywordtype">void</span> play(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (paused) <span class="keywordflow">return</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Apply buffered values to the PSG registers.</span></div>
+<div class="line">  <a class="code hl_function" href="group__PSG__BUFFER.html#ga549cb1b577a2dc0269c4744aa8dba0d3">ay_3_8910_play</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Decode one frame of music data and set them to buffers.</span></div>
+<div class="line">  <span class="comment">// (Rewrite this block for developping yourown sound driver / replayer)</span></div>
+<div class="line">  {</div>
+<div class="line">    <span class="comment">// Update buffered values for each channels (if needed).</span></div>
+<div class="line">    <span class="keywordflow">for</span> (uint8_t ch = 0; ch &lt; 3; ch++) {</div>
+<div class="line">      <span class="comment">// Update frequency division ratio (i.e., period)</span></div>
+<div class="line">      <a class="code hl_variable" href="group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a>[2*ch+0] = LO_BYTE(0x11d); <span class="comment">// O4 G (lo-byte)</span></div>
+<div class="line">      <a class="code hl_variable" href="group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a>[2*ch+1] = HI_BYTE(0x11d); <span class="comment">// O4 G (hi-byte)</span></div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// Update volume.</span></div>
+<div class="line">      <a class="code hl_variable" href="group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a>[ch+8] = 8;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Update buffered mixer value (if needed).</span></div>
+<div class="line">    <a class="code hl_variable" href="group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a>[7] = 0xb8; <span class="comment">// enable TONE of all 3 channels</span></div>
+<div class="line">    <span class="comment">// ...and so on</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Start / Resume the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> start(<span class="keywordtype">void</span>) {</div>
+<div class="line">  paused = <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Pause the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> pause(<span class="keywordtype">void</span>) {</div>
+<div class="line">  paused = <span class="keyword">true</span>;</div>
+<div class="line">  <a class="code hl_function" href="group__PSG__BUFFER.html#ga7921e0ab095018a29a8b0570d61f2185">ay_3_8910_stop</a>();</div>
+<div class="line">  __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Return whether the replayer is paused or not.</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_paused(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">return</span> paused;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Stop the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> stop(<span class="keywordtype">void</span>) {</div>
+<div class="line">  pause();</div>
+<div class="line">  <span class="comment">// Re-initialize internal buffer.</span></div>
+<div class="line">  <span class="comment">// (if needed)</span></div>
+<div class="line">  <a class="code hl_function" href="group__PSG__BUFFER.html#gac0fa68a646b8593944f5f8243b371a0c">ay_3_8910_init</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> main(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="comment">// Initialize our replayer.</span></div>
+<div class="line">  init();</div>
+<div class="line">  <span class="comment">// Set our replayer `play()` to VSYNC handler</span></div>
+<div class="line">  <a class="code hl_function" href="group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a>(play);</div>
+<div class="line">  <span class="comment">// Start our replayer.</span></div>
+<div class="line">  start();</div>
+<div class="line"> </div>
+<div class="line">  uint8_t pressed = <span class="keyword">false</span>;</div>
+<div class="line">  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">    <a class="code hl_function" href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
+<div class="line">    uint8_t joy = <a class="code hl_function" href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a>(0);</div>
+<div class="line">    uint8_t clicked = pressed &amp; ~joy;</div>
+<div class="line">    pressed = joy;</div>
+<div class="line">    <span class="keywordflow">if</span> (clicked &amp; <a class="code hl_define" href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a>) {</div>
+<div class="line">      <span class="keywordflow">if</span> (is_paused()) {</div>
+<div class="line">        start();</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">else</span> {</div>
+<div class="line">        pause();</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="aay__3__8910_8h_html"><div class="ttname"><a href="ay__3__8910_8h.html">ay_3_8910.h</a></div><div class="ttdoc">Buffer for PSG (AY-3-8910) registers.</div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga087c749840978e4916c876d906668397"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a></div><div class="ttdeci">uint8_t joypad_get_state(uint8_t controller)</div><div class="ttdoc">MSX Get the status of the joystick buttons and levers.</div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga8cd30be158daff14ab2f276621786dbe"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a></div><div class="ttdeci">#define VK_FIRE_0</div><div class="ttdoc">Bitmask for trigger button #1 or SPACE key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00068">input.h:68</a></div></div>
+<div class="ttc" id="agroup__INTERRUPT__AWAIT_html_gabdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">MSX Waits for next VSYNC interrupt.</div></div>
+<div class="ttc" id="agroup__INTERRUPT__HANDLER_html_ga92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">MSX Register user defined VSYNC interrupt handler.</div></div>
+<div class="ttc" id="agroup__PSG__BUFFER_html_ga2ee75153f949aaf13e5aa0dea52fb72f"><div class="ttname"><a href="group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f">ay_3_8910_buffer</a></div><div class="ttdeci">uint8_t ay_3_8910_buffer[14]</div><div class="ttdoc">Buffer for PSG (AY-3-8910) registers.</div></div>
+<div class="ttc" id="agroup__PSG__BUFFER_html_ga549cb1b577a2dc0269c4744aa8dba0d3"><div class="ttname"><a href="group__PSG__BUFFER.html#ga549cb1b577a2dc0269c4744aa8dba0d3">ay_3_8910_play</a></div><div class="ttdeci">void ay_3_8910_play(void)</div><div class="ttdoc">MSX Write the buffer contents to PSG registers.</div></div>
+<div class="ttc" id="agroup__PSG__BUFFER_html_ga7921e0ab095018a29a8b0570d61f2185"><div class="ttname"><a href="group__PSG__BUFFER.html#ga7921e0ab095018a29a8b0570d61f2185">ay_3_8910_stop</a></div><div class="ttdeci">void ay_3_8910_stop(void)</div><div class="ttdoc">MSX Stop (Pause) playing sound on PSG.</div></div>
+<div class="ttc" id="agroup__PSG__BUFFER_html_gac0fa68a646b8593944f5f8243b371a0c"><div class="ttname"><a href="group__PSG__BUFFER.html#gac0fa68a646b8593944f5f8243b371a0c">ay_3_8910_init</a></div><div class="ttdeci">void ay_3_8910_init(void)</div><div class="ttdoc">MSX Initialize ay_3_8910_buffer[].</div></div>
+<div class="ttc" id="amsx_8h_html"><div class="ttname"><a href="msx_8h.html">msx.h</a></div><div class="ttdoc">Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.</div></div>
+</div><!-- fragment --> 
 <p class="definition">Definition in file <a class="el" href="ay__3__8910_8h_source.html">ay_3_8910.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a9f9c6b9c24e1e59a3703c006bcd85551" name="a9f9c6b9c24e1e59a3703c006bcd85551"></a>
@@ -153,7 +262,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ay__3__8910_8h_source.html#l00020">20</a> of file <a class="el" href="ay__3__8910_8h_source.html">ay_3_8910.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ay__3__8910_8h_source.html#l00024">24</a> of file <a class="el" href="ay__3__8910_8h_source.html">ay_3_8910.h</a>.</p>
 
 </div>
 </div>

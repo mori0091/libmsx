@@ -41,9 +41,12 @@ static bool paused;
 void init(void) {
   if (OPLL_find(&opll)) {
     // Enable OPLL.
+    // This must be called at least once.
     OPLL_enable(&opll);
+
     // Initialize internal buffer.
     OPLL_init();
+
     // 9 channels mode
     OPLL_put(0x0e, 0x00);
   }

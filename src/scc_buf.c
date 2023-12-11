@@ -30,22 +30,6 @@ static struct {
   int8_t waveform[5][32];
 } scc_voice;
 
-static void unexpose_SCC(void) {
-  SCC_BANK_SELECT_3 = 0x00;
-  SCCPlus_mode_select = 0x00;
-  SCC_BANK_SELECT_2 = 0x00;
-}
-static void expose_SCC(void) {
-  SCC_BANK_SELECT_3 = 0x00;
-  SCCPlus_mode_select = 0x00;
-  SCC_BANK_SELECT_2 = 0x3f;
-}
-static void expose_SCCPlus(void) {
-  SCC_BANK_SELECT_3 = 0x00;
-  SCCPlus_mode_select = 0x20;
-  SCC_BANK_SELECT_3 = 0x80;
-}
-
 void SCC_init(void) {
   memset(&scc_buffer, 0, sizeof(scc_buffer));
   scc_buffer.channel_mask = 0x1f;
@@ -59,16 +43,12 @@ void SCC_stop(struct SCC * scc) {
   const uint8_t slot_p2 = msx_get_slot((void *)PAGE_ADDR(2));
   msx_ENASLT(scc->slot, (void *)PAGE_ADDR(2));
   if (scc->mode == 1) {
-    expose_SCC();
     memset((void *)SCC_volume, 0, 5);
   }
   else /* if (scc->mode == 2) */ {
-    expose_SCCPlus();
     memset((void *)SCCPlus_volume, 0, 5);
   }
-  unexpose_SCC();
   msx_ENASLT(slot_p2, (void *)PAGE_ADDR(2));
-  // __asm__("ei");
 }
 
 void SCC_play(struct SCC * scc) {
@@ -76,7 +56,6 @@ void SCC_play(struct SCC * scc) {
   const uint8_t slot_p2 = msx_get_slot((void *)PAGE_ADDR(2));
   msx_ENASLT(scc->slot, (void *)PAGE_ADDR(2));
   if (scc->mode == 1) {
-    expose_SCC();
     // write waveforms
     if (scc_voice.updated) {
       scc_voice.updated = 0;
@@ -86,7 +65,6 @@ void SCC_play(struct SCC * scc) {
     memcpy((void *)SCC_fdr, &scc_buffer, sizeof(scc_buffer));
   }
   else /* if (scc->mode == 2) */ {
-    expose_SCCPlus();
     // write waveforms
     if (scc_voice.updated) {
       scc_voice.updated = 0;
@@ -95,9 +73,7 @@ void SCC_play(struct SCC * scc) {
     // write fdr x 5 channels, volume x 5 channels, and channel_mask.
     memcpy((void *)SCCPlus_fdr, &scc_buffer, sizeof(scc_buffer));
   }
-  unexpose_SCC();
   msx_ENASLT(slot_p2, (void *)PAGE_ADDR(2));
-  // __asm__("ei");
 }
 
 void SCC_set_waveform(uint8_t ch, const int8_t waveform[32]) {

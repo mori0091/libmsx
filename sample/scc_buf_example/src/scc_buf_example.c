@@ -29,7 +29,13 @@ static bool paused;
 void init(void) {
   if (SCC_find(&scc)) {
     // Set to SCC+ mode if available. (optional)
+    // The mode will be applied to the sound chip when SCC_enable() is called.
     SCC_set_mode(&scc, 2);
+
+    // Enable SCC/SCC+.
+    // This must be called at least once.
+    // It must also be called when the mode is changed by SCC_set_mode().
+    SCC_enable(&scc);
 
     // Initialize `scc_buffer` and internal waveform buffer.
     SCC_init();

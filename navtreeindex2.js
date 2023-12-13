@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"group__VDP__COMMANDS__HIGH.html#ga97ef889aef0c34dd2a9338483a5905ba":[4,14,7,1],
+"group__VDP__COMMANDS__HIGH.html#gaa461d4bee77f7d945adde5648a7b7be2":[4,14,7,2],
 "group__VDP__COMMANDS__HIGH.html#gaa54275abbd2308fcc53342062d9086f1":[4,14,7,7],
 "group__VDP__COMMANDS__HIGH.html#gaab941c38402bc0ba1dca22e0d548bce2":[4,14,7,8],
 "group__VDP__COMMANDS__HIGH.html#gabcbb5786ba65a7f5dc910e8fd6a9eba5":[4,14,7,14],
@@ -168,8 +170,8 @@ var NAVTREEINDEX2 =
 "group__ZX0__DECOMPRESS.html#gaa5e8c03f71e60a5968881659b4c1e9a6":[4,17,0,2],
 "group__ZX0__DECOMPRESS.html#gada330460774f5755d6098ac50fc1bdff":[4,17,0,3],
 "group__ZX0__DECOMPRESS.html#gafbd57a5ac50e4cf8b8ce53457cb71568":[4,17,0,4],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#autotoc_md1":[0,0],
 "index.html#autotoc_md10":[0,5,0],
 "index.html#autotoc_md11":[0,5,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "scc_8h.html":[4,6,3],
 "scc__buf_8h.html":[4,6,4],
 "scc__wav_8h.html":[4,6,5],
-"screen_8h.html":[4,7,3],
-"slot_8h.html":[4,8,1],
-"snd__i__table_8h.html":[4,9,2]
+"screen_8h.html":[4,7,3]
 };

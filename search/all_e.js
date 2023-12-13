@@ -18,5 +18,7 @@ var searchData=
   ['opll_5finspect_15',['OPLL_inspect',['../group__OPLL__DEVICE.html#gab81376f1755460922e210c7049159422',1,'opll.h']]],
   ['opll_5fplay_16',['OPLL_play',['../group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c',1,'opll_buf.h']]],
   ['opll_5fput_17',['OPLL_put',['../group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df',1,'opll_buf.h']]],
-  ['opll_5fstop_18',['OPLL_stop',['../group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159',1,'opll_buf.h']]]
+  ['opll_5frhythm_18',['OPLL_rhythm',['../group__OPLL__BUFFER.html#ga7aa24d7c8576b549b7b6c5269fe8553b',1,'opll_buf.h']]],
+  ['opll_5frhythm_5fmode_19',['OPLL_rhythm_mode',['../group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d',1,'opll_buf.h']]],
+  ['opll_5fstop_20',['OPLL_stop',['../group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159',1,'opll_buf.h']]]
 ];

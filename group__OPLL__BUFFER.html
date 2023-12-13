@@ -116,6 +116,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga70d335a1db7e415e1a4084524d24c7df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a> (uint8_t reg, uint8_t val)</td></tr>
 <tr class="memdesc:ga70d335a1db7e415e1a4084524d24c7df"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Put a pair of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register number and its value to the internal buffer.  <a href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">More...</a><br /></td></tr>
 <tr class="separator:ga70d335a1db7e415e1a4084524d24c7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed81ce3781d88b77c2149f4edd48df8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d">OPLL_rhythm_mode</a> (bool on)</td></tr>
+<tr class="memdesc:gaed81ce3781d88b77c2149f4edd48df8d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Turn RHYTHM mode on/off.  <a href="group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d">More...</a><br /></td></tr>
+<tr class="separator:gaed81ce3781d88b77c2149f4edd48df8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7aa24d7c8576b549b7b6c5269fe8553b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#ga7aa24d7c8576b549b7b6c5269fe8553b">OPLL_rhythm</a> (uint8_t val)</td></tr>
+<tr class="memdesc:ga7aa24d7c8576b549b7b6c5269fe8553b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Key-on/off RHYTHM set.  <a href="group__OPLL__BUFFER.html#ga7aa24d7c8576b549b7b6c5269fe8553b">More...</a><br /></td></tr>
+<tr class="separator:ga7aa24d7c8576b549b7b6c5269fe8553b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga47d0b24380c7edf0a4b6b6a402b0c159"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159">OPLL_stop</a> (struct <a class="el" href="group__OPLL__DEVICE.html#structOPLL">OPLL</a> *opll)</td></tr>
 <tr class="memdesc:ga47d0b24380c7edf0a4b6b6a402b0c159"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Stop (Pause) playing sound on <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a>  <a href="group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159">More...</a><br /></td></tr>
 <tr class="separator:ga47d0b24380c7edf0a4b6b6a402b0c159"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,6 +196,71 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="gaed81ce3781d88b77c2149f4edd48df8d" name="gaed81ce3781d88b77c2149f4edd48df8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed81ce3781d88b77c2149f4edd48df8d">&#9670;&#160;</a></span>OPLL_rhythm_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OPLL_rhythm_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>on</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Turn RHYTHM mode on/off. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">on</td><td>Specify the mode:<ul>
+<li><code>true</code> : 6 channels + RHYTHM mode.</li>
+<li><code>false</code> : 9 channels mode. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7aa24d7c8576b549b7b6c5269fe8553b" name="ga7aa24d7c8576b549b7b6c5269fe8553b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7aa24d7c8576b549b7b6c5269fe8553b">&#9670;&#160;</a></span>OPLL_rhythm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OPLL_rhythm </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Key-on/off RHYTHM set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>Key-on/off switch for each RHYTHM set:<ul>
+<li>bit #0 : HH (high-hat)</li>
+<li>bit #1 : TOP-CY (cymbal)</li>
+<li>bit #2 : TOM (tom-tom)</li>
+<li>bit #3 : SD (snare drum)</li>
+<li>bit #4 : BD (bass drum)</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd>The mode shall be 6 channels + RHYTHM mode.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d" title="MSX Turn RHYTHM mode on/off.">OPLL_rhythm_mode()</a> </dd></dl>
 
 </div>
 </div>

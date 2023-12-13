@@ -12,7 +12,7 @@
  * \file opll_buf.c
  */
 
-#include "opll_buf.h"
+#include <opll_buf.h>
 
 #include <assert.h>
 #include <stdint.h>

@@ -26,6 +26,8 @@
 
 #include <opll.h>
 
+#include <stdbool.h>
+
 /**
  * \defgroup OPLL_BUFFER OPLL Buffer
  * \ingroup OPLL
@@ -56,6 +58,31 @@ void OPLL_init(void);
  * \param val    a value to be written to the register.
  */
 void OPLL_put(uint8_t reg, uint8_t val);
+
+/**
+ * `MSX` Turn RHYTHM mode on/off.
+ *
+ * \param on   Specify the mode:
+ *             - `true`  : 6 channels + RHYTHM mode.
+ *             - `false` : 9 channels mode.
+ */
+void OPLL_rhythm_mode(bool on);
+
+/**
+ * `MSX` Key-on/off RHYTHM set.
+ *
+ * \param val  Key-on/off switch for each RHYTHM set:
+ *             - bit #0 : HH (high-hat)
+ *             - bit #1 : TOP-CY (cymbal)
+ *             - bit #2 : TOM (tom-tom)
+ *             - bit #3 : SD (snare drum)
+ *             - bit #4 : BD (bass drum)
+ *
+ * \pre The mode shall be 6 channels + RHYTHM mode.
+ *
+ * \sa OPLL_rhythm_mode()
+ */
+void OPLL_rhythm(uint8_t val);
 
 /**
  * `MSX` Stop (Pause) playing sound on OPLL

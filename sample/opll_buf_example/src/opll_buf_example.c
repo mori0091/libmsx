@@ -47,8 +47,8 @@ void init(void) {
     // Initialize internal buffer.
     OPLL_init();
 
-    // 9 channels mode
-    OPLL_put(0x0e, 0x00);
+    // 6 channels + RHYTHM mode
+    OPLL_rhythm_mode(true);
   }
 }
 
@@ -133,7 +133,22 @@ void main(void) {
     uint8_t joy = joypad_get_state(0);
     uint8_t clicked = pressed & ~joy;
     pressed = joy;
+    if (pressed & (VK_UP | VK_DOWN | VK_LEFT | VK_RIGHT)) {
+      // Any of the arrow keys were pressed.
+      __asm__("di");
+      // All rhythm sets are set to KEY-ON status.
+      OPLL_rhythm(0x1f);
+      __asm__("ei");
+    }
+    if (clicked & (VK_UP | VK_DOWN | VK_LEFT | VK_RIGHT)) {
+      // Any of the arrow keys were released.
+      __asm__("di");
+      // All rhythm sets are set to KEY-OFF status.
+      OPLL_rhythm(0);
+      __asm__("ei");
+    }
     if (clicked & VK_FIRE_0) {
+      // SPACE key was released.
       if (is_paused()) {
         start();
       }

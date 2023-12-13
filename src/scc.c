@@ -114,13 +114,13 @@ uint8_t SCC_get_mode(struct SCC * scc) {
 
 void SCC_enable(const struct SCC * scc) {
   if (scc && scc->slot) {
-    if (scc->mode == 2) {
-      // Expose SCC+ on the `scc->slot`
-      expose_SCCPlus(scc->slot);
-    }
-    else {
+    if (scc->mode == 1) {
       // Expose SCC on the `scc->slot`
       expose_SCC(scc->slot);
+    }
+    else if (scc->mode == 2) {
+      // Expose SCC+ on the `scc->slot`
+      expose_SCCPlus(scc->slot);
     }
   }
 }

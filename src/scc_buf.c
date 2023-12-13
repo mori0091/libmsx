@@ -45,7 +45,7 @@ void SCC_stop(struct SCC * scc) {
   if (scc->mode == 1) {
     memset((void *)SCC_volume, 0, 5);
   }
-  else /* if (scc->mode == 2) */ {
+  else if (scc->mode == 2) {
     memset((void *)SCCPlus_volume, 0, 5);
   }
   msx_ENASLT(slot_p2, (void *)PAGE_ADDR(2));
@@ -64,7 +64,7 @@ void SCC_play(struct SCC * scc) {
     // write fdr x 5 channels, volume x 5 channels, and channel_mask.
     memcpy((void *)SCC_fdr, &scc_buffer, sizeof(scc_buffer));
   }
-  else /* if (scc->mode == 2) */ {
+  else if (scc->mode == 2) {
     // write waveforms
     if (scc_voice.updated) {
       scc_voice.updated = 0;

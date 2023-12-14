@@ -18,6 +18,14 @@
 #include <stdint.h>
 #include <string.h>
 
+#define ASSERT_REGISTER_IS_VALID(reg)        \
+  assert((reg) <= 0x07 ||                    \
+         (reg) == 0x0e ||                    \
+         (reg) == 0x0f ||                    \
+         (0x10 <= (reg) && (reg) <= 0x18) || \
+         (0x20 <= (reg) && (reg) <= 0x28) || \
+         (0x30 <= (reg) && (reg) <= 0x38))
+
 static uint8_t registers[64];
 static struct {
   uint8_t len;
@@ -30,36 +38,38 @@ void OPLL_init(void) {
 }
 
 void OPLL_put(uint8_t reg, uint8_t val) {
-  assert(reg <= 0x07 ||
-         reg == 0x0e ||
-         reg == 0x0f ||
-         (0x10 <= reg && reg <= 0x18) ||
-         (0x20 <= reg && reg <= 0x28) ||
-         (0x30 <= reg && reg <= 0x38));
-  registers[reg] = val;
-  if (sizeof(fifo.buf) <= fifo.len) {
-    // buffer full
-    return;
+  OPLL_set(reg, val);
+  if (fifo.len < sizeof(fifo.buf)) {
+    fifo.buf[fifo.len++] = reg;
   }
-  fifo.buf[fifo.len++] = reg;
+}
+
+void OPLL_set(uint8_t reg, uint8_t val) {
+  ASSERT_REGISTER_IS_VALID(reg);
+  registers[reg] = val;
+}
+
+uint8_t OPLL_get(uint8_t reg) {
+  ASSERT_REGISTER_IS_VALID(reg);
+  return registers[reg];
 }
 
 void OPLL_stop(struct OPLL * opll) {
   if (!opll || !opll->slot) return;
   __asm__("di");
+  void (*write)(uint8_t, uint8_t) = opll->device->write;
   for (uint8_t reg = 0x20; reg <= 0x28; reg++) {
     // SUS-OFF, KEY-OFF for all channels
-    opll->device->write(reg, registers[reg] & 0x0f);
+    write(reg, registers[reg] & 0x0f);
   }
 }
 
 void OPLL_play(struct OPLL * opll) {
-  if (!opll || !opll->slot) return;
-  const uint8_t * p = fifo.buf;
+  if (!opll || !opll->slot || !fifo.len) return;
   __asm__("di");
-  for (uint8_t n = fifo.len; n--; ) {
-    uint8_t reg = *p++;
-    opll->device->write(reg, registers[reg]);
+  void (*write)(uint8_t, uint8_t) = opll->device->write;
+  while (fifo.len) {
+    uint8_t reg = fifo.buf[--fifo.len];
+    write(reg, registers[reg]);
   }
-  fifo.len = 0;
 }

@@ -69,6 +69,38 @@ void OPLL_init(void);
 void OPLL_put(uint8_t reg, uint8_t val);
 
 /**
+ * `MSX` Set a value to the cache of OPLL register.
+ *
+ * \param reg    OPLL register number
+ *               - 0x00..0x07 : INSTURUMENT DATA registers
+ *               - 0x0e       : RHYTHM control register
+ *               - 0x0f       : TEST register
+ *               - 0x10..0x18 : F-Number (LSB 8 bits) registers
+ *               - 0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers
+ *               - 0x30..0x38 : INSTRUMENT/VOLUME registers
+ * \param val    a value to be written to the cache of register.
+ *
+ * \note
+ * This is useful for modifying cached values scheduled by `OPLL_put()` before
+ * `OPLL_play()` is called.
+ */
+void OPLL_set(uint8_t reg, uint8_t val);
+
+/**
+ * `MSX` Get the current cached value of OPLL register.
+ *
+ * \param reg    OPLL register number
+ *               - 0x00..0x07 : INSTURUMENT DATA registers
+ *               - 0x0e       : RHYTHM control register
+ *               - 0x0f       : TEST register
+ *               - 0x10..0x18 : F-Number (LSB 8 bits) registers
+ *               - 0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers
+ *               - 0x30..0x38 : INSTRUMENT/VOLUME registers
+ * \return  The current cached value of the register.
+ */
+uint8_t OPLL_get(uint8_t reg);
+
+/**
  * `MSX` Turn RHYTHM mode on/off.
  *
  * \param on   Specify the mode:

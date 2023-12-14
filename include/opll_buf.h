@@ -17,7 +17,7 @@
  * The following code shows a sound driver/replayer template for the MSX-MUSIC
  * (OPLL).
  * \include opll_buf_example/src/opll_buf_example.c
-*/
+ */
 
 #pragma once
 
@@ -35,6 +35,12 @@
  * Buffered access to OPLL registers.
  *
  * Provides simple APIs for sound driver developpers.
+ *
+ * *Example*\n
+ * The following code shows a sound driver/replayer template for the MSX-MUSIC
+ * (OPLL).
+ * \include opll_buf_example/src/opll_buf_example.c
+ *
  * @{
  */
 
@@ -47,6 +53,9 @@ void OPLL_init(void);
 
 /**
  * `MSX` Put a pair of OPLL register number and its value to the internal buffer.
+ *
+ * This function sets `val` in the cache of OPLL register #`reg` and schedules
+ * it to be written to OPLL by `OPLL_play()`.
  *
  * \param reg    OPLL register number
  *               - 0x00..0x07 : INSTURUMENT DATA registers

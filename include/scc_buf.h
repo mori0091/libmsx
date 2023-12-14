@@ -33,6 +33,12 @@
  * Buffered access to SCC/SCC+ registers.
  *
  * Provides simple APIs for sound driver developpers.
+ *
+ * *Example*\n
+ * The following code shows a sound driver/replayer template for the Konami
+ * SCC/SCC+ sound chip.
+ * \include scc_buf_example/src/scc_buf_example.c
+ *
  * @{
  */
 

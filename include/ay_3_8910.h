@@ -29,6 +29,11 @@
  * \defgroup PSG_BUFFER PSG Buffer
  * \ingroup PSG
  * Buffered access to PSG registers.
+ *
+ * *Example*\n
+ * The following code shows a sound driver/replayer template for the PSG.
+ * \include psg_buf_example/src/psg_buf_example.c
+ *
  * @{
  */
 

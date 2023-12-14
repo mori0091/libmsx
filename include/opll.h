@@ -34,6 +34,12 @@
  * \defgroup OPLL_DEVICE OPLL device interface
  * \ingroup OPLL
  * Inspect, discover, enable/disable to access registers, of the OPLL sound chip.
+ *
+ * *Example*\n
+ * The following code detects the MSX-MUSIC (OPLL) and plays a test tone if
+ * detected.
+ * \include opll_example/src/opll_example.c
+ *
  * @{
  */
 

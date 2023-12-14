@@ -35,6 +35,12 @@
  * \ingroup SCC
  * `#include <scc.h>`
  * Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip.
+ *
+ * *Example*\n
+ * The following code detects the Konami SCC/SCC+ sound chip and plays a
+ * triangular wave test tone if detected.
+ * \include scc_example/src/scc_example.c
+ *
  * @{
  */
 

@@ -116,6 +116,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga70d335a1db7e415e1a4084524d24c7df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a> (uint8_t reg, uint8_t val)</td></tr>
 <tr class="memdesc:ga70d335a1db7e415e1a4084524d24c7df"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Put a pair of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register number and its value to the internal buffer.  <a href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">More...</a><br /></td></tr>
 <tr class="separator:ga70d335a1db7e415e1a4084524d24c7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15d88dc178554466335327a28df21979"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#ga15d88dc178554466335327a28df21979">OPLL_set</a> (uint8_t reg, uint8_t val)</td></tr>
+<tr class="memdesc:ga15d88dc178554466335327a28df21979"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set a value to the cache of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register.  <a href="group__OPLL__BUFFER.html#ga15d88dc178554466335327a28df21979">More...</a><br /></td></tr>
+<tr class="separator:ga15d88dc178554466335327a28df21979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad552d08e201d3856e101501e0bb36ed3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#gad552d08e201d3856e101501e0bb36ed3">OPLL_get</a> (uint8_t reg)</td></tr>
+<tr class="memdesc:gad552d08e201d3856e101501e0bb36ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Get the current cached value of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register.  <a href="group__OPLL__BUFFER.html#gad552d08e201d3856e101501e0bb36ed3">More...</a><br /></td></tr>
+<tr class="separator:gad552d08e201d3856e101501e0bb36ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaed81ce3781d88b77c2149f4edd48df8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d">OPLL_rhythm_mode</a> (bool on)</td></tr>
 <tr class="memdesc:gaed81ce3781d88b77c2149f4edd48df8d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Turn RHYTHM mode on/off.  <a href="group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d">More...</a><br /></td></tr>
 <tr class="separator:gaed81ce3781d88b77c2149f4edd48df8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,8 +137,180 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p ><code>#include &lt;<a class="el" href="opll__buf_8h.html" title="Buffered access to OPLL registers.">opll_buf.h</a>&gt;</code> Buffered access to <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> registers. </p>
-<p >Provides simple APIs for sound driver developpers. </p>
-<h2 class="groupheader">Function Documentation</h2>
+<p >Provides simple APIs for sound driver developpers.</p>
+<p ><em>Example</em><br  />
+The following code shows a sound driver/replayer template for the MSX-MUSIC (<a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a>). </p><div class="fragment"><div class="line"><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Copyright (c) 2021-2023 Daishi Mori (mori0091)</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * This software is released under the MIT License.\n</span></div>
+<div class="line"><span class="comment"> * See https://github.com/mori0091/libmsx/blob/main/LICENSE</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * GitHub libmsx project\n</span></div>
+<div class="line"><span class="comment"> * https://github.com/mori0091/libmsx</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="msx_8h.html">msx.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="opll__buf_8h.html">opll_buf.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define LO_BYTE(x) (uint8_t)((x) &amp; 0xff)</span></div>
+<div class="line"><span class="preprocessor">#define HI_BYTE(x) (uint8_t)(((x) &gt;&gt; 8) &amp; 0xff)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define SUS_OFF  (0)</span></div>
+<div class="line"><span class="preprocessor">#define KEY_OFF  (0)</span></div>
+<div class="line"><span class="preprocessor">#define SUS_ON   (uint16_t)(1 &lt;&lt; 13)</span></div>
+<div class="line"><span class="preprocessor">#define KEY_ON   (uint16_t)(1 &lt;&lt; 12)</span></div>
+<div class="line"><span class="preprocessor">#define BLOCK(x) (uint16_t)((x) &lt;&lt; 9)</span></div>
+<div class="line"><span class="preprocessor">#define F_NUM(x) (uint16_t)(x)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define INST(x)  (uint8_t)((x) &lt;&lt; 4)</span></div>
+<div class="line"><span class="preprocessor">#define VOL(x)   (uint8_t)((x) &amp; 0x0f)</span></div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">struct </span><a class="code hl_struct" href="group__OPLL__DEVICE.html#structOPLL">OPLL</a> opll;</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">bool</span> paused;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Initialize the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> init(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83">OPLL_find</a>(&amp;opll)) {</div>
+<div class="line">    <span class="comment">// Enable OPLL.</span></div>
+<div class="line">    <span class="comment">// This must be called at least once.</span></div>
+<div class="line">    <a class="code hl_function" href="group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456">OPLL_enable</a>(&amp;opll);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Initialize internal buffer.</span></div>
+<div class="line">    <a class="code hl_function" href="group__OPLL__BUFFER.html#ga153acf32eee95fb7f582f18616c79a46">OPLL_init</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 6 channels + RHYTHM mode</span></div>
+<div class="line">    <a class="code hl_function" href="group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d">OPLL_rhythm_mode</a>(<span class="keyword">true</span>);</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Main routine of the replayer.</span></div>
+<div class="line"><span class="comment">// \note This shall be called every VSYNC timing from interrupt handler.</span></div>
+<div class="line"><span class="keywordtype">void</span> play(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!opll.slot) <span class="keywordflow">return</span>;</div>
+<div class="line">  <span class="keywordflow">if</span> (paused) <span class="keywordflow">return</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Apply buffered values to the OPLL registers.</span></div>
+<div class="line">  <a class="code hl_function" href="group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c">OPLL_play</a>(&amp;opll);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Decode one frame of music data and set them to buffers.</span></div>
+<div class="line">  <span class="comment">// (Rewrite this block for developping yourown sound driver / replayer)</span></div>
+<div class="line">  {</div>
+<div class="line">    <span class="keyword">static</span> uint8_t t = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// One beat period at 120 bpm.</span></div>
+<div class="line">    <span class="keyword">const</span> uint8_t len = <a class="code hl_function" href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">msx_get_vsync_frequency</a>() * 60 / 120;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (!t) {</div>
+<div class="line">      <span class="comment">// ch1 : O4 G, INST=3, VOL=0</span></div>
+<div class="line">      <span class="comment">// \note</span></div>
+<div class="line">      <span class="comment">// VOL(0) means maximum volume, VOL(15) means minimum volume.</span></div>
+<div class="line">      <span class="comment">// VOL(a) means &quot;-3a dB of the maximum volume&quot; (i.e. Vmax * 10^(-0.3a))</span></div>
+<div class="line">      uint16_t x = (SUS_OFF | KEY_ON | BLOCK(4) | F_NUM(257));</div>
+<div class="line">      <a class="code hl_function" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a>(0x30, (INST(3) | VOL(0)));</div>
+<div class="line">      <a class="code hl_function" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a>(0x20, HI_BYTE(x));</div>
+<div class="line">      <a class="code hl_function" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a>(0x10, LO_BYTE(x));</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (t == len * 4/5) {</div>
+<div class="line">      <span class="comment">// ch1: KEY-OFF</span></div>
+<div class="line">      uint16_t x = (SUS_OFF | KEY_OFF | BLOCK(4) | F_NUM(257));</div>
+<div class="line">      <span class="comment">// OPLL_put(0x30, (INST(3) | VOL(0)));</span></div>
+<div class="line">      <a class="code hl_function" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a>(0x20, HI_BYTE(x));</div>
+<div class="line">      <span class="comment">// OPLL_put(0x10, LO_BYTE(x));</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    t++;</div>
+<div class="line">    <span class="keywordflow">if</span> (t == len) {</div>
+<div class="line">      t = 0;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Start / Resume the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> start(<span class="keywordtype">void</span>) {</div>
+<div class="line">  paused = <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Pause the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> pause(<span class="keywordtype">void</span>) {</div>
+<div class="line">  paused = <span class="keyword">true</span>;</div>
+<div class="line">  <a class="code hl_function" href="group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159">OPLL_stop</a>(&amp;opll);</div>
+<div class="line">  __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Return whether the replayer is paused or not.</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_paused(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">return</span> paused;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Stop the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> stop(<span class="keywordtype">void</span>) {</div>
+<div class="line">  pause();</div>
+<div class="line">  <span class="comment">// Re-initialize internal buffer.</span></div>
+<div class="line">  <span class="comment">// (if needed)</span></div>
+<div class="line">  <a class="code hl_function" href="group__OPLL__BUFFER.html#ga153acf32eee95fb7f582f18616c79a46">OPLL_init</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> main(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="comment">// Initialize our replayer.</span></div>
+<div class="line">  init();</div>
+<div class="line">  <span class="comment">// Set our replayer `play()` to VSYNC handler</span></div>
+<div class="line">  <a class="code hl_function" href="group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a>(play);</div>
+<div class="line">  <span class="comment">// Start our replayer.</span></div>
+<div class="line">  start();</div>
+<div class="line"> </div>
+<div class="line">  uint8_t pressed = <span class="keyword">false</span>;</div>
+<div class="line">  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">    <a class="code hl_function" href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
+<div class="line">    uint8_t joy = <a class="code hl_function" href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a>(0);</div>
+<div class="line">    uint8_t clicked = pressed &amp; ~joy;</div>
+<div class="line">    pressed = joy;</div>
+<div class="line">    <span class="keywordflow">if</span> (pressed &amp; (<a class="code hl_define" href="group__INPUT__JOYPAD.html#ga57a88ceb387a03c046c9c51a8c154e05">VK_UP</a> | <a class="code hl_define" href="group__INPUT__JOYPAD.html#gac0d40bc0c552d2a841591717eb21f24e">VK_DOWN</a> | <a class="code hl_define" href="group__INPUT__JOYPAD.html#gabc5b23d7329364d2b0045bdbde9ef826">VK_LEFT</a> | <a class="code hl_define" href="group__INPUT__JOYPAD.html#gabde1a28b80e3625c66ee269c3dec02f0">VK_RIGHT</a>)) {</div>
+<div class="line">      <span class="comment">// Any of the arrow keys were pressed.</span></div>
+<div class="line">      __asm__(<span class="stringliteral">&quot;di&quot;</span>);</div>
+<div class="line">      <span class="comment">// All rhythm sets are set to KEY-ON status.</span></div>
+<div class="line">      <a class="code hl_function" href="group__OPLL__BUFFER.html#ga7aa24d7c8576b549b7b6c5269fe8553b">OPLL_rhythm</a>(0x1f);</div>
+<div class="line">      __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (clicked &amp; (<a class="code hl_define" href="group__INPUT__JOYPAD.html#ga57a88ceb387a03c046c9c51a8c154e05">VK_UP</a> | <a class="code hl_define" href="group__INPUT__JOYPAD.html#gac0d40bc0c552d2a841591717eb21f24e">VK_DOWN</a> | <a class="code hl_define" href="group__INPUT__JOYPAD.html#gabc5b23d7329364d2b0045bdbde9ef826">VK_LEFT</a> | <a class="code hl_define" href="group__INPUT__JOYPAD.html#gabde1a28b80e3625c66ee269c3dec02f0">VK_RIGHT</a>)) {</div>
+<div class="line">      <span class="comment">// Any of the arrow keys were released.</span></div>
+<div class="line">      __asm__(<span class="stringliteral">&quot;di&quot;</span>);</div>
+<div class="line">      <span class="comment">// All rhythm sets are set to KEY-OFF status.</span></div>
+<div class="line">      <a class="code hl_function" href="group__OPLL__BUFFER.html#ga7aa24d7c8576b549b7b6c5269fe8553b">OPLL_rhythm</a>(0);</div>
+<div class="line">      __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (clicked &amp; <a class="code hl_define" href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a>) {</div>
+<div class="line">      <span class="comment">// SPACE key was released.</span></div>
+<div class="line">      <span class="keywordflow">if</span> (is_paused()) {</div>
+<div class="line">        start();</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">else</span> {</div>
+<div class="line">        pause();</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__BIOS__CONFIG_html_ga92e83309660f10fadbd038807b69b56f"><div class="ttname"><a href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">msx_get_vsync_frequency</a></div><div class="ttdeci">uint8_t msx_get_vsync_frequency(void)</div><div class="ttdoc">MSX Returns VSYNC frequency in Hz.</div><div class="ttdef"><b>Definition:</b> <a href="bios_8h_source.html#l00068">bios.h:68</a></div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga087c749840978e4916c876d906668397"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a></div><div class="ttdeci">uint8_t joypad_get_state(uint8_t controller)</div><div class="ttdoc">MSX Get the status of the joystick buttons and levers.</div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga57a88ceb387a03c046c9c51a8c154e05"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga57a88ceb387a03c046c9c51a8c154e05">VK_UP</a></div><div class="ttdeci">#define VK_UP</div><div class="ttdoc">Bitmask for UP direction of joystick or UP arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00040">input.h:40</a></div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga8cd30be158daff14ab2f276621786dbe"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a></div><div class="ttdeci">#define VK_FIRE_0</div><div class="ttdoc">Bitmask for trigger button #1 or SPACE key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00068">input.h:68</a></div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_gabc5b23d7329364d2b0045bdbde9ef826"><div class="ttname"><a href="group__INPUT__JOYPAD.html#gabc5b23d7329364d2b0045bdbde9ef826">VK_LEFT</a></div><div class="ttdeci">#define VK_LEFT</div><div class="ttdoc">Bitmask for LEFT direction of joystick or LEFT arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00054">input.h:54</a></div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_gabde1a28b80e3625c66ee269c3dec02f0"><div class="ttname"><a href="group__INPUT__JOYPAD.html#gabde1a28b80e3625c66ee269c3dec02f0">VK_RIGHT</a></div><div class="ttdeci">#define VK_RIGHT</div><div class="ttdoc">Bitmask for RIGHT direction of joystick or RIGHT arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00061">input.h:61</a></div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_gac0d40bc0c552d2a841591717eb21f24e"><div class="ttname"><a href="group__INPUT__JOYPAD.html#gac0d40bc0c552d2a841591717eb21f24e">VK_DOWN</a></div><div class="ttdeci">#define VK_DOWN</div><div class="ttdoc">Bitmask for DOWN direction of joystick or DOWN arrow key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00047">input.h:47</a></div></div>
+<div class="ttc" id="agroup__INTERRUPT__AWAIT_html_gabdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">MSX Waits for next VSYNC interrupt.</div></div>
+<div class="ttc" id="agroup__INTERRUPT__HANDLER_html_ga92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">MSX Register user defined VSYNC interrupt handler.</div></div>
+<div class="ttc" id="agroup__OPLL__BUFFER_html_ga153acf32eee95fb7f582f18616c79a46"><div class="ttname"><a href="group__OPLL__BUFFER.html#ga153acf32eee95fb7f582f18616c79a46">OPLL_init</a></div><div class="ttdeci">void OPLL_init(void)</div><div class="ttdoc">MSX Initialize internal buffer for OPLL.</div></div>
+<div class="ttc" id="agroup__OPLL__BUFFER_html_ga47d0b24380c7edf0a4b6b6a402b0c159"><div class="ttname"><a href="group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159">OPLL_stop</a></div><div class="ttdeci">void OPLL_stop(struct OPLL *opll)</div><div class="ttdoc">MSX Stop (Pause) playing sound on OPLL</div></div>
+<div class="ttc" id="agroup__OPLL__BUFFER_html_ga70d335a1db7e415e1a4084524d24c7df"><div class="ttname"><a href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df">OPLL_put</a></div><div class="ttdeci">void OPLL_put(uint8_t reg, uint8_t val)</div><div class="ttdoc">MSX Put a pair of OPLL register number and its value to the internal buffer.</div></div>
+<div class="ttc" id="agroup__OPLL__BUFFER_html_ga7aa24d7c8576b549b7b6c5269fe8553b"><div class="ttname"><a href="group__OPLL__BUFFER.html#ga7aa24d7c8576b549b7b6c5269fe8553b">OPLL_rhythm</a></div><div class="ttdeci">void OPLL_rhythm(uint8_t val)</div><div class="ttdoc">MSX Key-on/off RHYTHM set.</div></div>
+<div class="ttc" id="agroup__OPLL__BUFFER_html_ga83455bed53bf4b7fc40394b42565065c"><div class="ttname"><a href="group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c">OPLL_play</a></div><div class="ttdeci">void OPLL_play(struct OPLL *opll)</div><div class="ttdoc">MSX Play sound on OPLL</div></div>
+<div class="ttc" id="agroup__OPLL__BUFFER_html_gaed81ce3781d88b77c2149f4edd48df8d"><div class="ttname"><a href="group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d">OPLL_rhythm_mode</a></div><div class="ttdeci">void OPLL_rhythm_mode(bool on)</div><div class="ttdoc">MSX Turn RHYTHM mode on/off.</div></div>
+<div class="ttc" id="agroup__OPLL__DEVICE_html_ga36bab4190b5c6dc620d537b1446b0e83"><div class="ttname"><a href="group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83">OPLL_find</a></div><div class="ttdeci">uint8_t OPLL_find(struct OPLL *opll)</div><div class="ttdoc">MSX Find OPLL sound chip.</div></div>
+<div class="ttc" id="agroup__OPLL__DEVICE_html_gaebb6b2a3f4e580d058a7a1a4043ab456"><div class="ttname"><a href="group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456">OPLL_enable</a></div><div class="ttdeci">void OPLL_enable(const struct OPLL *opll)</div><div class="ttdoc">MSX Enable OPLL sound chip.</div></div>
+<div class="ttc" id="agroup__OPLL__DEVICE_html_structOPLL"><div class="ttname"><a href="group__OPLL__DEVICE.html#structOPLL">OPLL</a></div><div class="ttdoc">OPLL Handle.</div><div class="ttdef"><b>Definition:</b> <a href="opll_8h_source.html#l00074">opll.h:74</a></div></div>
+<div class="ttc" id="amsx_8h_html"><div class="ttname"><a href="msx_8h.html">msx.h</a></div><div class="ttdoc">Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.</div></div>
+<div class="ttc" id="aopll__buf_8h_html"><div class="ttname"><a href="opll__buf_8h.html">opll_buf.h</a></div><div class="ttdoc">Buffered access to OPLL registers.</div></div>
+</div><!-- fragment --> <h2 class="groupheader">Function Documentation</h2>
 <a id="ga153acf32eee95fb7f582f18616c79a46" name="ga153acf32eee95fb7f582f18616c79a46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga153acf32eee95fb7f582f18616c79a46">&#9670;&#160;</a></span>OPLL_init()</h2>
 
@@ -181,6 +359,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p><code>MSX</code> Put a pair of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register number and its value to the internal buffer. </p>
+<p >This function sets <code>val</code> in the cache of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register #<code>reg</code> and schedules it to be written to <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> by <code><a class="el" href="group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c" title="MSX Play sound on OPLL">OPLL_play()</a></code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reg</td><td><a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register number<ul>
@@ -196,6 +375,87 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga15d88dc178554466335327a28df21979" name="ga15d88dc178554466335327a28df21979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15d88dc178554466335327a28df21979">&#9670;&#160;</a></span>OPLL_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OPLL_set </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Set a value to the cache of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td><a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register number<ul>
+<li>0x00..0x07 : INSTURUMENT DATA registers</li>
+<li>0x0e : RHYTHM control register</li>
+<li>0x0f : TEST register</li>
+<li>0x10..0x18 : F-Number (LSB 8 bits) registers</li>
+<li>0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers</li>
+<li>0x30..0x38 : INSTRUMENT/VOLUME registers </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">val</td><td>a value to be written to the cache of register.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This is useful for modifying cached values scheduled by <code><a class="el" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df" title="MSX Put a pair of OPLL register number and its value to the internal buffer.">OPLL_put()</a></code> before <code><a class="el" href="group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c" title="MSX Play sound on OPLL">OPLL_play()</a></code> is called. </dd></dl>
+
+</div>
+</div>
+<a id="gad552d08e201d3856e101501e0bb36ed3" name="gad552d08e201d3856e101501e0bb36ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad552d08e201d3856e101501e0bb36ed3">&#9670;&#160;</a></span>OPLL_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t OPLL_get </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Get the current cached value of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td><a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register number<ul>
+<li>0x00..0x07 : INSTURUMENT DATA registers</li>
+<li>0x0e : RHYTHM control register</li>
+<li>0x0f : TEST register</li>
+<li>0x10..0x18 : F-Number (LSB 8 bits) registers</li>
+<li>0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers</li>
+<li>0x30..0x38 : INSTRUMENT/VOLUME registers </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current cached value of the register. </dd></dl>
 
 </div>
 </div>

@@ -147,7 +147,67 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p ><code>#include &lt;<a class="el" href="scc_8h.html" title="Device interface for Konami SCC/SCC+ sound cartridge.">scc.h</a>&gt;</code> Inspect, discover, enable/disable to access registers, of the SCC/SCC+ sound chip. </p>
-<hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<p ><em>Example</em><br  />
+The following code detects the Konami SCC/SCC+ sound chip and plays a triangular wave test tone if detected. </p><div class="fragment"><div class="line"><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Copyright (c) 2021-2023 Daishi Mori (mori0091)</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * This software is released under the MIT License.\n</span></div>
+<div class="line"><span class="comment"> * See https://github.com/mori0091/libmsx/blob/main/LICENSE</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * GitHub libmsx project\n</span></div>
+<div class="line"><span class="comment"> * https://github.com/mori0091/libmsx</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="msx_8h.html">msx.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="scc_8h.html">scc.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> int8_t triangle[32] = {</div>
+<div class="line">  0, 16, 32, 48, 64, 80, 96, 112,</div>
+<div class="line">  127, 112, 96, 80, 64, 48, 32, 16,</div>
+<div class="line">  0, -16, -32, -48, -64, -80, -96, -112,</div>
+<div class="line">  -128, -112, -96, -80, -64, -48, -32, -16,</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">struct </span><a class="code hl_struct" href="group__SCC__DEVICE.html#structSCC">SCC</a> scc;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> test_SCC(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!scc.slot) <span class="keywordflow">return</span>;</div>
+<div class="line">  <a class="code hl_function" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">SCC_enable</a>(&amp;scc);</div>
+<div class="line">  {</div>
+<div class="line">    uint8_t slot_p2 = <a class="code hl_function" href="group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14">msx_get_slot</a>((<span class="keywordtype">void</span> *)0x8000);</div>
+<div class="line">    <a class="code hl_function" href="group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e">msx_ENASLT</a>(scc.slot, (<span class="keywordtype">void</span> *)0x8000);</div>
+<div class="line">    {</div>
+<div class="line">      memcpy((<span class="keywordtype">void</span> *)scc.device-&gt;channels[0].wo_waveform, triangle, 32);</div>
+<div class="line">      *scc.device-&gt;rw_channel_mask = 0x01; <span class="comment">// unmute ch1</span></div>
+<div class="line">      *scc.device-&gt;channels[0].rw_volume = 15;</div>
+<div class="line">      *scc.device-&gt;channels[0].rw_fdr = 0x11d; <span class="comment">// O4 G</span></div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e">msx_ENASLT</a>(slot_p2, (<span class="keywordtype">void</span> *)0x8000);</div>
+<div class="line">    __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
+<div class="line">  }</div>
+<div class="line">  <a class="code hl_function" href="group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a">SCC_disable</a>(&amp;scc);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> main(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">SCC_find</a>(&amp;scc)) {</div>
+<div class="line">    test_SCC();</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">    <a class="code hl_function" href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__BIOS__SLOT_html_ga32ae6eade2e5890bf5403adff996965e"><div class="ttname"><a href="group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e">msx_ENASLT</a></div><div class="ttdeci">void msx_ENASLT(uint8_t slot, void *addr)</div><div class="ttdoc">MSX BIOS : ENASLT (0024H / MAIN).</div></div>
+<div class="ttc" id="agroup__BIOS__SLOT_html_gaddf1dd3c3bcc20397dd9ca1d47dd2c14"><div class="ttname"><a href="group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14">msx_get_slot</a></div><div class="ttdeci">uint8_t msx_get_slot(void *addr)</div><div class="ttdoc">MSX Get the current slot of a 16KiB page that including the given address.</div></div>
+<div class="ttc" id="agroup__INTERRUPT__AWAIT_html_gabdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">MSX Waits for next VSYNC interrupt.</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_ga2e3efa9577352f15fc30a2e25d8d33fa"><div class="ttname"><a href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">SCC_enable</a></div><div class="ttdeci">void SCC_enable(const struct SCC *scc)</div><div class="ttdoc">MSX Enable SCC/SCC+ sound chip.</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_ga6c5d879c60a47d2814fd02e960b35879"><div class="ttname"><a href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">SCC_find</a></div><div class="ttdeci">uint8_t SCC_find(struct SCC *scc)</div><div class="ttdoc">MSX Find SCC/SCC+ sound chip.</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_ga7fc4bf15446eb101df985654375e674a"><div class="ttname"><a href="group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a">SCC_disable</a></div><div class="ttdeci">void SCC_disable(const struct SCC *scc)</div><div class="ttdoc">MSX Disable SCC/SCC+ sound chip.</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_structSCC"><div class="ttname"><a href="group__SCC__DEVICE.html#structSCC">SCC</a></div><div class="ttdoc">SCC Handle.</div><div class="ttdef"><b>Definition:</b> <a href="scc_8h_source.html#l00106">scc.h:106</a></div></div>
+<div class="ttc" id="amsx_8h_html"><div class="ttname"><a href="msx_8h.html">msx.h</a></div><div class="ttdoc">Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.</div></div>
+<div class="ttc" id="ascc_8h_html"><div class="ttname"><a href="scc_8h.html">scc.h</a></div><div class="ttdoc">Device interface for Konami SCC/SCC+ sound cartridge.</div></div>
+</div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structSCC__Waveform" id="structSCC__Waveform"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structSCC__Waveform">&#9670;&#160;</a></span>SCC_Waveform</h2>
 
@@ -161,7 +221,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p >The structure of the SCC/SCC+ 32-byte waveform data register. </p>
 
-<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00044">44</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00050">50</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -187,7 +247,7 @@ data[32]</td>
 </div><div class="memdoc">
 <div class="textblock"><p >Device interface for a sound channel of SCC/SCC+ sound chip. </p>
 
-<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00051">51</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00057">57</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
 </div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for SCC_Channel:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -241,7 +301,7 @@ Pointer to read/write data from/to the volume register. </td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p >Device interface for SCC/SCC+ sound chip. </p>
 
-<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00075">75</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00081">81</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
 </div><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Collaboration diagram for SCC_Device:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -297,7 +357,7 @@ Device interface for each 5 channels. </td></tr>
 <dd>
 <a class="el" href="group__SCC__DEVICE.html#ga7fc4bf15446eb101df985654375e674a" title="MSX Disable SCC/SCC+ sound chip.">SCC_disable()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00100">100</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scc_8h_source.html#l00106">106</a> of file <a class="el" href="scc_8h_source.html">scc.h</a>.</p>
 </div><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Collaboration diagram for SCC:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">

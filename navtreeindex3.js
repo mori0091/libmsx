@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"scc__wav_8h.html":[4,6,5],
+"screen_8h.html":[4,7,3],
 "slot_8h.html":[4,8,1],
 "snd__i__table_8h.html":[4,9,2],
 "snd__p__table_8h.html":[4,9,3],

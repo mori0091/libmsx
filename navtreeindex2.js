@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"group__VDP__COMMANDS__HIGH.html#ga7da061334bf2aec8fbcc733c2dce4a35":[4,14,7,6],
+"group__VDP__COMMANDS__HIGH.html#ga89c235012c20195031946ce6ff6c85bb":[4,14,7,10],
 "group__VDP__COMMANDS__HIGH.html#ga97ef889aef0c34dd2a9338483a5905ba":[4,14,7,1],
 "group__VDP__COMMANDS__HIGH.html#gaa461d4bee77f7d945adde5648a7b7be2":[4,14,7,2],
 "group__VDP__COMMANDS__HIGH.html#gaa54275abbd2308fcc53342062d9086f1":[4,14,7,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "psg_8h.html":[4,5,3],
 "resources_8h.html":[4,1,2,2],
 "scc_8h.html":[4,6,3],
-"scc__buf_8h.html":[4,6,4],
-"scc__wav_8h.html":[4,6,5],
-"screen_8h.html":[4,7,3]
+"scc__buf_8h.html":[4,6,4]
 };

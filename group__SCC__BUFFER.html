@@ -138,8 +138,150 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p ><code>#include &lt;<a class="el" href="scc__buf_8h.html" title="Buffered access to SCC/SCC+ registers.">scc_buf.h</a>&gt;</code> Buffered access to SCC/SCC+ registers. </p>
-<p >Provides simple APIs for sound driver developpers. </p>
-<hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<p >Provides simple APIs for sound driver developpers.</p>
+<p ><em>Example</em><br  />
+The following code shows a sound driver/replayer template for the Konami SCC/SCC+ sound chip. </p><div class="fragment"><div class="line"><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Copyright (c) 2021-2023 Daishi Mori (mori0091)</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * This software is released under the MIT License.\n</span></div>
+<div class="line"><span class="comment"> * See https://github.com/mori0091/libmsx/blob/main/LICENSE</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * GitHub libmsx project\n</span></div>
+<div class="line"><span class="comment"> * https://github.com/mori0091/libmsx</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="msx_8h.html">msx.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="scc__buf_8h.html">scc_buf.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="scc__wav_8h.html">scc_wav.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">struct </span><a class="code hl_struct" href="group__SCC__DEVICE.html#structSCC">SCC</a> scc;</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">bool</span> paused;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Initialize the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> init(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">SCC_find</a>(&amp;scc)) {</div>
+<div class="line">    <span class="comment">// Set to SCC+ mode if available. (optional)</span></div>
+<div class="line">    <span class="comment">// The mode will be applied to the sound chip when SCC_enable() is called.</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c">SCC_set_mode</a>(&amp;scc, 2);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Enable SCC/SCC+.</span></div>
+<div class="line">    <span class="comment">// This must be called at least once.</span></div>
+<div class="line">    <span class="comment">// It must also be called when the mode is changed by SCC_set_mode().</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">SCC_enable</a>(&amp;scc);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Initialize `scc_buffer` and internal waveform buffer.</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__BUFFER.html#ga03886c3403bd874dae2fdcd58ecb3ea3">SCC_init</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Initialize waveform buffers (if needed).</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d">SCC_set_waveform</a>(0, <a class="code hl_define" href="group__SCC__PREDEFINED__WAVEFORMS.html#ga4292ebdb4f58b4f6ea93d4e34f20c1c8">SCC_WAVEFORM_PULSE_1_8</a>); <span class="comment">// 1/8 pulse</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d">SCC_set_waveform</a>(1, <a class="code hl_define" href="group__SCC__PREDEFINED__WAVEFORMS.html#ga80d2c9d452e67cfdfdce68650cea0dc9">SCC_WAVEFORM_PULSE_1_4</a>); <span class="comment">// 1/4 pulse</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d">SCC_set_waveform</a>(2, <a class="code hl_define" href="group__SCC__PREDEFINED__WAVEFORMS.html#gadba9dcc74277e08bc6a0645738acc74b">SCC_WAVEFORM_SQUARE</a>);    <span class="comment">// 1/2 pulse / square</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d">SCC_set_waveform</a>(3, <a class="code hl_variable" href="group__SCC__PREDEFINED__WAVEFORMS.html#gaeebcfc2b02763931b79d757e14e80a44">SCC_WAVEFORM_TRIANGLE</a>);  <span class="comment">// triangle</span></div>
+<div class="line">    <a class="code hl_function" href="group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d">SCC_set_waveform</a>(4, <a class="code hl_variable" href="group__SCC__PREDEFINED__WAVEFORMS.html#gaeebcfc2b02763931b79d757e14e80a44">SCC_WAVEFORM_TRIANGLE</a>);  <span class="comment">// (available for SCC+ mode only)</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Main routine of the replayer.</span></div>
+<div class="line"><span class="comment">// \note This shall be called every VSYNC timing from interrupt handler.</span></div>
+<div class="line"><span class="keywordtype">void</span> play(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!scc.slot) <span class="keywordflow">return</span>;</div>
+<div class="line">  <span class="keywordflow">if</span> (paused) <span class="keywordflow">return</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Apply buffered values to the SCC/SCC+ registers.</span></div>
+<div class="line">  <a class="code hl_function" href="group__SCC__BUFFER.html#gad71203ba5bc176efa8fb4138687db76a">SCC_play</a>(&amp;scc);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Decode one frame of music data and set them to buffers.</span></div>
+<div class="line">  <span class="comment">// (Rewrite this block for developping yourown sound driver / replayer)</span></div>
+<div class="line">  {</div>
+<div class="line">    <span class="comment">// Update buffered values for each channels (if needed).</span></div>
+<div class="line">    <span class="keywordflow">for</span> (uint8_t ch = 0; ch &lt; 5; ch++) {</div>
+<div class="line">      <span class="comment">// Update waveform buffer</span></div>
+<div class="line">      <span class="comment">// SCC_set_waveform(ch, SCC_WAVEFORM_TRIANGLE);</span></div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// Update frequency division ratio (i.e., period)</span></div>
+<div class="line">      <a class="code hl_variable" href="group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">scc_buffer</a>.<a class="code hl_variable" href="group__SCC__BUFFER.html#af78c8afaa60652267667738c423f4845">fdr</a>[ch] = 0x11d; <span class="comment">// O4 G</span></div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// Update volume.</span></div>
+<div class="line">      <a class="code hl_variable" href="group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">scc_buffer</a>.<a class="code hl_variable" href="group__SCC__BUFFER.html#af0326d9f160cab2b106a38953a3dd658">volume</a>[ch] = 2;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Update buffered channel mask value (if needed).</span></div>
+<div class="line">    <a class="code hl_variable" href="group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">scc_buffer</a>.<a class="code hl_variable" href="group__SCC__BUFFER.html#ad9422c592799868c73d6ac3dcec87b0e">channel_mask</a> = 0x1F; <span class="comment">// enable all 5 channels</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Start / Resume the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> start(<span class="keywordtype">void</span>) {</div>
+<div class="line">  paused = <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Pause the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> pause(<span class="keywordtype">void</span>) {</div>
+<div class="line">  paused = <span class="keyword">true</span>;</div>
+<div class="line">  <a class="code hl_function" href="group__SCC__BUFFER.html#gae46eef36c8ddac64a84a04bd1db0d173">SCC_stop</a>(&amp;scc);</div>
+<div class="line">  __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Return whether the replayer is paused or not.</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_paused(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="keywordflow">return</span> paused;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Stop the replayer.</span></div>
+<div class="line"><span class="keywordtype">void</span> stop(<span class="keywordtype">void</span>) {</div>
+<div class="line">  pause();</div>
+<div class="line">  <span class="comment">// Re-initialize `scc_buffer` and internal waveform buffer.</span></div>
+<div class="line">  <span class="comment">// (if needed)</span></div>
+<div class="line">  <a class="code hl_function" href="group__SCC__BUFFER.html#ga03886c3403bd874dae2fdcd58ecb3ea3">SCC_init</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> main(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="comment">// Initialize our replayer.</span></div>
+<div class="line">  init();</div>
+<div class="line">  <span class="comment">// Set our replayer `play()` to VSYNC handler</span></div>
+<div class="line">  <a class="code hl_function" href="group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a>(play);</div>
+<div class="line">  <span class="comment">// Start our replayer.</span></div>
+<div class="line">  start();</div>
+<div class="line"> </div>
+<div class="line">  uint8_t pressed = <span class="keyword">false</span>;</div>
+<div class="line">  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">    <a class="code hl_function" href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a>();</div>
+<div class="line">    uint8_t joy = <a class="code hl_function" href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a>(0);</div>
+<div class="line">    uint8_t clicked = pressed &amp; ~joy;</div>
+<div class="line">    pressed = joy;</div>
+<div class="line">    <span class="keywordflow">if</span> (clicked &amp; <a class="code hl_define" href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a>) {</div>
+<div class="line">      <span class="keywordflow">if</span> (is_paused()) {</div>
+<div class="line">        start();</div>
+<div class="line">      }</div>
+<div class="line">      <span class="keywordflow">else</span> {</div>
+<div class="line">        pause();</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga087c749840978e4916c876d906668397"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga087c749840978e4916c876d906668397">joypad_get_state</a></div><div class="ttdeci">uint8_t joypad_get_state(uint8_t controller)</div><div class="ttdoc">MSX Get the status of the joystick buttons and levers.</div></div>
+<div class="ttc" id="agroup__INPUT__JOYPAD_html_ga8cd30be158daff14ab2f276621786dbe"><div class="ttname"><a href="group__INPUT__JOYPAD.html#ga8cd30be158daff14ab2f276621786dbe">VK_FIRE_0</a></div><div class="ttdeci">#define VK_FIRE_0</div><div class="ttdoc">Bitmask for trigger button #1 or SPACE key.</div><div class="ttdef"><b>Definition:</b> <a href="input_8h_source.html#l00068">input.h:68</a></div></div>
+<div class="ttc" id="agroup__INTERRUPT__AWAIT_html_gabdcd317fb8447d2ade86fe3477ccbd27"><div class="ttname"><a href="group__INTERRUPT__AWAIT.html#gabdcd317fb8447d2ade86fe3477ccbd27">await_vsync</a></div><div class="ttdeci">void await_vsync(void)</div><div class="ttdoc">MSX Waits for next VSYNC interrupt.</div></div>
+<div class="ttc" id="agroup__INTERRUPT__HANDLER_html_ga92722299d30fbe4f1c49c07f30167a6c"><div class="ttname"><a href="group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c">set_vsync_handler</a></div><div class="ttdeci">void set_vsync_handler(void(*handler)(void))</div><div class="ttdoc">MSX Register user defined VSYNC interrupt handler.</div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_ad9422c592799868c73d6ac3dcec87b0e"><div class="ttname"><a href="group__SCC__BUFFER.html#ad9422c592799868c73d6ac3dcec87b0e">SCC_buffer::channel_mask</a></div><div class="ttdeci">uint8_t channel_mask</div><div class="ttdoc">Enable / Disable bit for each of the five channels.</div><div class="ttdef"><b>Definition:</b> <a href="scc__buf_8h_source.html#l00051">scc_buf.h:51</a></div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_af0326d9f160cab2b106a38953a3dd658"><div class="ttname"><a href="group__SCC__BUFFER.html#af0326d9f160cab2b106a38953a3dd658">SCC_buffer::volume</a></div><div class="ttdeci">uint8_t volume[5]</div><div class="ttdoc">Volume (0-15) for each of the five channels.</div><div class="ttdef"><b>Definition:</b> <a href="scc__buf_8h_source.html#l00049">scc_buf.h:49</a></div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_af78c8afaa60652267667738c423f4845"><div class="ttname"><a href="group__SCC__BUFFER.html#af78c8afaa60652267667738c423f4845">SCC_buffer::fdr</a></div><div class="ttdeci">uint16_t fdr[5]</div><div class="ttdoc">Frequency division ratio for each of the five channels.</div><div class="ttdef"><b>Definition:</b> <a href="scc__buf_8h_source.html#l00047">scc_buf.h:47</a></div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_ga03886c3403bd874dae2fdcd58ecb3ea3"><div class="ttname"><a href="group__SCC__BUFFER.html#ga03886c3403bd874dae2fdcd58ecb3ea3">SCC_init</a></div><div class="ttdeci">void SCC_init(void)</div><div class="ttdoc">MSX Initialize scc_buffer and internal waveform buffer.</div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_gaa90f2a4bfbdf15bccf328efcfb379e5d"><div class="ttname"><a href="group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d">SCC_set_waveform</a></div><div class="ttdeci">void SCC_set_waveform(uint8_t ch, const int8_t waveform[32])</div><div class="ttdoc">MSX Set waveform to the internal waveform buffer, for the specified channel.</div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_gad71203ba5bc176efa8fb4138687db76a"><div class="ttname"><a href="group__SCC__BUFFER.html#gad71203ba5bc176efa8fb4138687db76a">SCC_play</a></div><div class="ttdeci">void SCC_play(struct SCC *scc)</div><div class="ttdoc">MSX Play sound on SCC/SCC+.</div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_gae46eef36c8ddac64a84a04bd1db0d173"><div class="ttname"><a href="group__SCC__BUFFER.html#gae46eef36c8ddac64a84a04bd1db0d173">SCC_stop</a></div><div class="ttdeci">void SCC_stop(struct SCC *scc)</div><div class="ttdoc">MSX Stop (Pause) playing sound on SCC/SCC+.</div></div>
+<div class="ttc" id="agroup__SCC__BUFFER_html_gaf9e4b2bbb44595ac47d0fe6db8d36eaa"><div class="ttname"><a href="group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">scc_buffer</a></div><div class="ttdeci">struct SCC_buffer scc_buffer</div><div class="ttdoc">MSX Buffer for SCC/SCC+ registers (except for waveform registers).</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_ga2e3efa9577352f15fc30a2e25d8d33fa"><div class="ttname"><a href="group__SCC__DEVICE.html#ga2e3efa9577352f15fc30a2e25d8d33fa">SCC_enable</a></div><div class="ttdeci">void SCC_enable(const struct SCC *scc)</div><div class="ttdoc">MSX Enable SCC/SCC+ sound chip.</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_ga48d02e5663012074827ccc28bec84c5c"><div class="ttname"><a href="group__SCC__DEVICE.html#ga48d02e5663012074827ccc28bec84c5c">SCC_set_mode</a></div><div class="ttdeci">void SCC_set_mode(struct SCC *scc, uint8_t mode)</div><div class="ttdoc">MSX Set the SCC handle to SCC compatible mode or SCC+ mode.</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_ga6c5d879c60a47d2814fd02e960b35879"><div class="ttname"><a href="group__SCC__DEVICE.html#ga6c5d879c60a47d2814fd02e960b35879">SCC_find</a></div><div class="ttdeci">uint8_t SCC_find(struct SCC *scc)</div><div class="ttdoc">MSX Find SCC/SCC+ sound chip.</div></div>
+<div class="ttc" id="agroup__SCC__DEVICE_html_structSCC"><div class="ttname"><a href="group__SCC__DEVICE.html#structSCC">SCC</a></div><div class="ttdoc">SCC Handle.</div><div class="ttdef"><b>Definition:</b> <a href="scc_8h_source.html#l00106">scc.h:106</a></div></div>
+<div class="ttc" id="agroup__SCC__PREDEFINED__WAVEFORMS_html_ga4292ebdb4f58b4f6ea93d4e34f20c1c8"><div class="ttname"><a href="group__SCC__PREDEFINED__WAVEFORMS.html#ga4292ebdb4f58b4f6ea93d4e34f20c1c8">SCC_WAVEFORM_PULSE_1_8</a></div><div class="ttdeci">#define SCC_WAVEFORM_PULSE_1_8</div><div class="ttdef"><b>Definition:</b> <a href="scc__wav_8h_source.html#l00086">scc_wav.h:86</a></div></div>
+<div class="ttc" id="agroup__SCC__PREDEFINED__WAVEFORMS_html_ga80d2c9d452e67cfdfdce68650cea0dc9"><div class="ttname"><a href="group__SCC__PREDEFINED__WAVEFORMS.html#ga80d2c9d452e67cfdfdce68650cea0dc9">SCC_WAVEFORM_PULSE_1_4</a></div><div class="ttdeci">#define SCC_WAVEFORM_PULSE_1_4</div><div class="ttdef"><b>Definition:</b> <a href="scc__wav_8h_source.html#l00090">scc_wav.h:90</a></div></div>
+<div class="ttc" id="agroup__SCC__PREDEFINED__WAVEFORMS_html_gadba9dcc74277e08bc6a0645738acc74b"><div class="ttname"><a href="group__SCC__PREDEFINED__WAVEFORMS.html#gadba9dcc74277e08bc6a0645738acc74b">SCC_WAVEFORM_SQUARE</a></div><div class="ttdeci">#define SCC_WAVEFORM_SQUARE</div><div class="ttdef"><b>Definition:</b> <a href="scc__wav_8h_source.html#l00094">scc_wav.h:94</a></div></div>
+<div class="ttc" id="agroup__SCC__PREDEFINED__WAVEFORMS_html_gaeebcfc2b02763931b79d757e14e80a44"><div class="ttname"><a href="group__SCC__PREDEFINED__WAVEFORMS.html#gaeebcfc2b02763931b79d757e14e80a44">SCC_WAVEFORM_TRIANGLE</a></div><div class="ttdeci">const int8_t SCC_WAVEFORM_TRIANGLE[32]</div><div class="ttdoc">Trianguler wave.</div></div>
+<div class="ttc" id="amsx_8h_html"><div class="ttname"><a href="msx_8h.html">msx.h</a></div><div class="ttdoc">Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.</div></div>
+<div class="ttc" id="ascc__buf_8h_html"><div class="ttname"><a href="scc__buf_8h.html">scc_buf.h</a></div><div class="ttdoc">Buffered access to SCC/SCC+ registers.</div></div>
+<div class="ttc" id="ascc__wav_8h_html"><div class="ttname"><a href="scc__wav_8h.html">scc_wav.h</a></div><div class="ttdoc">Predefined waveforms for SCC/SCC+.</div></div>
+</div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structSCC__buffer" id="structSCC__buffer"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structSCC__buffer">&#9670;&#160;</a></span>SCC_buffer</h2>
 
@@ -152,7 +294,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="scc__buf_8h_source.html#l00039">39</a> of file <a class="el" href="scc__buf_8h_source.html">scc_buf.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scc__buf_8h_source.html#l00045">45</a> of file <a class="el" href="scc__buf_8h_source.html">scc_buf.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">

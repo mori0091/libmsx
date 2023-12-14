@@ -135,7 +135,83 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Inspect, discover, enable/disable to access registers, of the <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> sound chip. </p>
-<hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<p ><em>Example</em><br  />
+The following code detects the MSX-MUSIC (<a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a>) and plays a test tone if detected. </p><div class="fragment"><div class="line"><span class="comment">// -*- coding: utf-8-unix -*-</span></div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Copyright (c) 2021-2023 Daishi Mori (mori0091)</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * This software is released under the MIT License.\n</span></div>
+<div class="line"><span class="comment"> * See https://github.com/mori0091/libmsx/blob/main/LICENSE</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * GitHub libmsx project\n</span></div>
+<div class="line"><span class="comment"> * https://github.com/mori0091/libmsx</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="msx_8h.html">msx.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="opll_8h.html">opll.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">struct </span><a class="code hl_struct" href="group__OPLL__DEVICE.html#structOPLL">OPLL</a> opll;</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define LO_BYTE(x) (uint8_t)((x) &amp; 0xff)</span></div>
+<div class="line"><span class="preprocessor">#define HI_BYTE(x) (uint8_t)(((x) &gt;&gt; 8) &amp; 0xff)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define SUS_OFF  (0)</span></div>
+<div class="line"><span class="preprocessor">#define KEY_OFF  (0)</span></div>
+<div class="line"><span class="preprocessor">#define SUS_ON   (uint16_t)(1 &lt;&lt; 13)</span></div>
+<div class="line"><span class="preprocessor">#define KEY_ON   (uint16_t)(1 &lt;&lt; 12)</span></div>
+<div class="line"><span class="preprocessor">#define BLOCK(x) (uint16_t)((x) &lt;&lt; 9)</span></div>
+<div class="line"><span class="preprocessor">#define F_NUM(x) (uint16_t)(x)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define INST(x)  (uint8_t)((x) &lt;&lt; 4)</span></div>
+<div class="line"><span class="preprocessor">#define VOL(x)   (uint8_t)((x) &amp; 0x0f)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> test_OPLL(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <span class="comment">// If OPLL was not found, nothing is done.</span></div>
+<div class="line">  <span class="keywordflow">if</span> (!opll.slot) <span class="keywordflow">return</span>;</div>
+<div class="line">  {</div>
+<div class="line">    <span class="comment">// 9 channels mode</span></div>
+<div class="line">    opll.<a class="code hl_variable" href="group__OPLL__DEVICE.html#a2c1af86d17c104c65519e93f3c21f925">device</a>-&gt;<a class="code hl_variable" href="structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755">write</a>(0x0e, 0x00);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ch1 : Forces to KEY-OFF before next KEY-ON.</span></div>
+<div class="line">    opll.device-&gt;write(0x10, 0);</div>
+<div class="line">    opll.device-&gt;write(0x20, 0);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ch1 : INST=3, VOL=0</span></div>
+<div class="line">    <span class="comment">// \note</span></div>
+<div class="line">    <span class="comment">// VOL(0) means maximum volume, VOL(15) means minimum volume.</span></div>
+<div class="line">    <span class="comment">// VOL(a) means &quot;-3a dB of the maximum volume&quot; (i.e. Vmax * 10^(-0.3a))</span></div>
+<div class="line">    opll.device-&gt;write(0x30, (INST(3) | VOL(0)));</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ch1 : O4 G</span></div>
+<div class="line">    uint16_t x = (SUS_OFF | KEY_ON | BLOCK(4) | F_NUM(257));</div>
+<div class="line">    opll.device-&gt;write(0x10, LO_BYTE(x));</div>
+<div class="line">    opll.device-&gt;write(0x20, HI_BYTE(x));</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// \note</span></div>
+<div class="line">    <span class="comment">// Interrupts are disabled by calling `opll.device-&gt;write()`, so interrupts</span></div>
+<div class="line">    <span class="comment">// must be enabled at the end.</span></div>
+<div class="line">    __asm__(<span class="stringliteral">&quot;ei&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="group__INTERRUPT__SLEEP.html#gaa2dd34268598eb46f5f32f2d43f88603">sleep_millis</a>(2000);</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> main(<span class="keywordtype">void</span>) {</div>
+<div class="line">  <a class="code hl_function" href="group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83">OPLL_find</a>(&amp;opll);             <span class="comment">// Find OPLL</span></div>
+<div class="line">  <a class="code hl_function" href="group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456">OPLL_enable</a>(&amp;opll);           <span class="comment">// Enable OPLL, if found.</span></div>
+<div class="line">  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">    test_OPLL();</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__INTERRUPT__SLEEP_html_gaa2dd34268598eb46f5f32f2d43f88603"><div class="ttname"><a href="group__INTERRUPT__SLEEP.html#gaa2dd34268598eb46f5f32f2d43f88603">sleep_millis</a></div><div class="ttdeci">void sleep_millis(uint16_t ms)</div><div class="ttdoc">MSX Wait for the specified time to elapse in milliseconds.</div></div>
+<div class="ttc" id="agroup__OPLL__DEVICE_html_a2c1af86d17c104c65519e93f3c21f925"><div class="ttname"><a href="group__OPLL__DEVICE.html#a2c1af86d17c104c65519e93f3c21f925">OPLL::device</a></div><div class="ttdeci">const struct OPLL_Device * device</div><div class="ttdoc">Pointer to device interface.</div><div class="ttdef"><b>Definition:</b> <a href="opll_8h_source.html#l00089">opll.h:89</a></div></div>
+<div class="ttc" id="agroup__OPLL__DEVICE_html_ga36bab4190b5c6dc620d537b1446b0e83"><div class="ttname"><a href="group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83">OPLL_find</a></div><div class="ttdeci">uint8_t OPLL_find(struct OPLL *opll)</div><div class="ttdoc">MSX Find OPLL sound chip.</div></div>
+<div class="ttc" id="agroup__OPLL__DEVICE_html_gaebb6b2a3f4e580d058a7a1a4043ab456"><div class="ttname"><a href="group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456">OPLL_enable</a></div><div class="ttdeci">void OPLL_enable(const struct OPLL *opll)</div><div class="ttdoc">MSX Enable OPLL sound chip.</div></div>
+<div class="ttc" id="agroup__OPLL__DEVICE_html_structOPLL"><div class="ttname"><a href="group__OPLL__DEVICE.html#structOPLL">OPLL</a></div><div class="ttdoc">OPLL Handle.</div><div class="ttdef"><b>Definition:</b> <a href="opll_8h_source.html#l00074">opll.h:74</a></div></div>
+<div class="ttc" id="amsx_8h_html"><div class="ttname"><a href="msx_8h.html">msx.h</a></div><div class="ttdoc">Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use.</div></div>
+<div class="ttc" id="aopll_8h_html"><div class="ttname"><a href="opll_8h.html">opll.h</a></div><div class="ttdoc">Device interface for MSX-MUSIC (OPLL).</div></div>
+<div class="ttc" id="astructOPLL__Device_html_a74ab207424c3be0ad49f18cefe132755"><div class="ttname"><a href="structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755">OPLL_Device::write</a></div><div class="ttdeci">void(*const write)(uint8_t reg, uint8_t value)</div><div class="ttdoc">MSX Function pointer to write data to a OPLL register.</div><div class="ttdef"><b>Definition:</b> <a href="opll_8h_source.html#l00064">opll.h:64</a></div></div>
+</div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structOPLL" id="structOPLL"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structOPLL">&#9670;&#160;</a></span>OPLL</h2>
 
@@ -154,7 +230,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__OPLL__DEVICE.html#ga2a280d363923d8c0a22b7deab3a2f8d6" title="MSX Disable OPLL sound chip.">OPLL_disable()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="opll_8h_source.html#l00068">68</a> of file <a class="el" href="opll_8h_source.html">opll.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="opll_8h_source.html#l00074">74</a> of file <a class="el" href="opll_8h_source.html">opll.h</a>.</p>
 </div><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for OPLL:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">

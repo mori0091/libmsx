@@ -19,21 +19,36 @@
 #include "slot.h"
 
 static void unexpose_SCC(uint8_t slot) {
-  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x00);
-  msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x00);
-  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_2, 0x00);
+  const uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
+  msx_ENASLT(slot, PAGE_ADDR(2));
+  {
+    SCC_BANK_SELECT_3 = 0x00;
+    SCCPlus_mode_select = 0x00;
+    SCC_BANK_SELECT_2 = 0x00;
+  }
+  msx_ENASLT(slot_p2, PAGE_ADDR(2));
   __asm__("ei");
 }
 static void expose_SCC(uint8_t slot) {
-  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x00);
-  msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x00);
-  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_2, 0x3f);
+  const uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
+  msx_ENASLT(slot, PAGE_ADDR(2));
+  {
+    SCC_BANK_SELECT_3 = 0x00;
+    SCCPlus_mode_select = 0x00;
+    SCC_BANK_SELECT_2 = 0x3f;
+  }
+  msx_ENASLT(slot_p2, PAGE_ADDR(2));
   __asm__("ei");
 }
 static void expose_SCCPlus(uint8_t slot) {
-  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x00);
-  msx_WRSLT(slot, (void *)&SCCPlus_mode_select, 0x20);
-  msx_WRSLT(slot, (void *)&SCC_BANK_SELECT_3, 0x80);
+  const uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
+  msx_ENASLT(slot, PAGE_ADDR(2));
+  {
+    SCC_BANK_SELECT_3 = 0x00;
+    SCCPlus_mode_select = 0x20;
+    SCC_BANK_SELECT_3 = 0x80;
+  }
+  msx_ENASLT(slot_p2, PAGE_ADDR(2));
   __asm__("ei");
 }
 

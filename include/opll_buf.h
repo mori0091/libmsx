@@ -45,6 +45,13 @@
  */
 
 /**
+ * `MSX` Cache of OPLL registers.
+ * \sa OPLL_set()
+ * \sa OPLL_get()
+ */
+extern uint8_t opll_buffer[64];
+
+/**
  * `MSX` Initialize internal buffer for OPLL.
  *
  * This must be called at least once before OPLL_stop() or OPLL_play().
@@ -84,7 +91,9 @@ void OPLL_put(uint8_t reg, uint8_t val);
  * This is useful for modifying cached values scheduled by `OPLL_put()` before
  * `OPLL_play()` is called.
  */
-void OPLL_set(uint8_t reg, uint8_t val);
+inline void OPLL_set(uint8_t reg, uint8_t val) {
+  opll_buffer[reg] = val;
+}
 
 /**
  * `MSX` Get the current cached value of OPLL register.
@@ -98,7 +107,9 @@ void OPLL_set(uint8_t reg, uint8_t val);
  *               - 0x30..0x38 : INSTRUMENT/VOLUME registers
  * \return  The current cached value of the register.
  */
-uint8_t OPLL_get(uint8_t reg);
+inline uint8_t OPLL_get(uint8_t reg) {
+  return opll_buffer[reg];
+}
 
 /**
  * `MSX` Turn RHYTHM mode on/off.

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"group__SCC__PREDEFINED__WAVEFORMS.html#ga4e3dfdd6332a5fe28167f643cc548234":[4,6,2,18],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga538bd09a04d5f0a6eedd0a2b64db4db3":[4,6,2,7],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga5698f2d1319ce1000764a264d64d08cd":[4,6,2,17],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga57fcabc4c6b6fa55e0ff1a6b6794151b":[4,6,2,37],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "group__VDP__COMMANDS__HIGH.html#ga0e26d347442f3917aa56d865808fdb99":[4,14,7,17],
 "group__VDP__COMMANDS__HIGH.html#ga1d4a6f163b7715442ff2553bf6ed2f5e":[4,14,7,9],
 "group__VDP__COMMANDS__HIGH.html#ga20e4033c6fcdcdf454b8bf0b0c6f31ee":[4,14,7,18],
-"group__VDP__COMMANDS__HIGH.html#ga497b05654be133a79d2eb5a14a15e5f4":[4,14,7,15],
-"group__VDP__COMMANDS__HIGH.html#ga7a2d76ac215d23b0dc6f6da5ed6598a1":[4,14,7,19]
+"group__VDP__COMMANDS__HIGH.html#ga497b05654be133a79d2eb5a14a15e5f4":[4,14,7,15]
 };

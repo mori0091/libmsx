@@ -117,9 +117,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ZX0__decompress_8h.html",
-"group__SCC__PREDEFINED__WAVEFORMS.html#ga538bd09a04d5f0a6eedd0a2b64db4db3",
-"group__VDP__COMMANDS__HIGH.html#ga7da061334bf2aec8fbcc733c2dce4a35",
-"scc__wav_8h.html"
+"group__SCC__PREDEFINED__WAVEFORMS.html#ga4e3dfdd6332a5fe28167f643cc548234",
+"group__VDP__COMMANDS__HIGH.html#ga7a2d76ac215d23b0dc6f6da5ed6598a1",
+"scc__buf_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

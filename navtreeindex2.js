@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"group__VDP__COMMANDS__HIGH.html#ga7a2d76ac215d23b0dc6f6da5ed6598a1":[4,14,7,19],
 "group__VDP__COMMANDS__HIGH.html#ga7da061334bf2aec8fbcc733c2dce4a35":[4,14,7,6],
 "group__VDP__COMMANDS__HIGH.html#ga89c235012c20195031946ce6ff6c85bb":[4,14,7,10],
 "group__VDP__COMMANDS__HIGH.html#ga97ef889aef0c34dd2a9338483a5905ba":[4,14,7,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "pages.html":[],
 "psg_8h.html":[4,5,3],
 "resources_8h.html":[4,1,2,2],
-"scc_8h.html":[4,6,3],
-"scc__buf_8h.html":[4,6,4]
+"scc_8h.html":[4,6,3]
 };

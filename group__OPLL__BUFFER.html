@@ -92,7 +92,8 @@ $(document).ready(function(){initNavTree('group__OPLL__BUFFER.html',''); initRes
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">OPLL Buffer<div class="ingroups"><a class="el" href="group__OPLL.html">OPLL - YM2413 / MSX-MUSIC</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -134,6 +135,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga83455bed53bf4b7fc40394b42565065c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c">OPLL_play</a> (struct <a class="el" href="group__OPLL__DEVICE.html#structOPLL">OPLL</a> *opll)</td></tr>
 <tr class="memdesc:ga83455bed53bf4b7fc40394b42565065c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Play sound on <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a>  <a href="group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c">More...</a><br /></td></tr>
 <tr class="separator:ga83455bed53bf4b7fc40394b42565065c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gae70502be5b54cb5b4da26392d1a49b87"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__OPLL__BUFFER.html#gae70502be5b54cb5b4da26392d1a49b87">opll_buffer</a> [64]</td></tr>
+<tr class="memdesc:gae70502be5b54cb5b4da26392d1a49b87"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Cache of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> registers.  <a href="group__OPLL__BUFFER.html#gae70502be5b54cb5b4da26392d1a49b87">More...</a><br /></td></tr>
+<tr class="separator:gae70502be5b54cb5b4da26392d1a49b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p ><code>#include &lt;<a class="el" href="opll__buf_8h.html" title="Buffered access to OPLL registers.">opll_buf.h</a>&gt;</code> Buffered access to <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> registers. </p>
@@ -383,6 +390,9 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void OPLL_set </td>
@@ -402,6 +412,11 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p><code>MSX</code> Set a value to the cache of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register. </p>
@@ -422,6 +437,8 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This is useful for modifying cached values scheduled by <code><a class="el" href="group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df" title="MSX Put a pair of OPLL register number and its value to the internal buffer.">OPLL_put()</a></code> before <code><a class="el" href="group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c" title="MSX Play sound on OPLL">OPLL_play()</a></code> is called. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="opll__buf_8h_source.html#l00094">94</a> of file <a class="el" href="opll__buf_8h_source.html">opll_buf.h</a>.</p>
+
 </div>
 </div>
 <a id="gad552d08e201d3856e101501e0bb36ed3" name="gad552d08e201d3856e101501e0bb36ed3"></a>
@@ -429,6 +446,9 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t OPLL_get </td>
@@ -438,6 +458,11 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p><code>MSX</code> Get the current cached value of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> register. </p>
@@ -456,6 +481,8 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The current cached value of the register. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="opll__buf_8h_source.html#l00110">110</a> of file <a class="el" href="opll__buf_8h_source.html">opll_buf.h</a>.</p>
 
 </div>
 </div>
@@ -579,6 +606,34 @@ The following code shows a sound driver/replayer template for the MSX-MUSIC (<a 
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Interrupt is disabled.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83" title="MSX Find OPLL sound chip.">OPLL_find()</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gae70502be5b54cb5b4da26392d1a49b87" name="gae70502be5b54cb5b4da26392d1a49b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae70502be5b54cb5b4da26392d1a49b87">&#9670;&#160;</a></span>opll_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t opll_buffer[64]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Cache of <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> registers. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__OPLL__BUFFER.html#ga15d88dc178554466335327a28df21979" title="MSX Set a value to the cache of OPLL register.">OPLL_set()</a> </dd>
+<dd>
+<a class="el" href="group__OPLL__BUFFER.html#gad552d08e201d3856e101501e0bb36ed3" title="MSX Get the current cached value of OPLL register.">OPLL_get()</a> </dd></dl>
 
 </div>
 </div>

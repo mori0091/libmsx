@@ -80,14 +80,14 @@ static void attenuate_opll_6(void) {
     }
   }
   for ( ; reg < 0x39; reg++) {
-    const uint8_t val0 = opll_buffer[reg];
-    int8_t vl = ((val0 >> 0) & 0x0f) - main_attenuation;
+    const uint8_t val0_ = opll_buffer[reg];
+    int8_t vl = ((val0_ >> 0) & 0x0f) - main_attenuation;
     if (16 <= vl) vl = 15;
-    int8_t vh = ((val0 >> 4) & 0x0f) - main_attenuation;
+    int8_t vh = ((val0_ >> 4) & 0x0f) - main_attenuation;
     if (16 <= vh) vh = 15;
-    const uint8_t val = (vh << 4) | vl;
-    if (val != val0) {
-      OPLL_put(reg, val);
+    const uint8_t val_ = (vh << 4) | vl;
+    if (val_ != val0_) {
+      OPLL_put(reg, val_);
     }
   }
 }

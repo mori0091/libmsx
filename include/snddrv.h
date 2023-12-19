@@ -44,6 +44,9 @@
 #ifndef SNDDRV_H_
 #define SNDDRV_H_
 
+#include <audio.h>
+#include <audio_dec.h>
+
 #include "./snd_sound.h"
 #include <stdint.h>
 
@@ -60,13 +63,16 @@
  */
 #define SND_SPEED_1X      (16)
 
+extern const AudioDecoder SND_BGM_DECODER;
+extern const AudioDecoder SND_SFX_DECODER;
+
 /**
  * `MSX` Returns default frequency of the background music.
  *
  * \return frequency in Hz.
- * \sa snd_get_player_frequency()
- * \sa snd_set_player_frequency()
  * \sa snd_set_speed()
+ * \sa audio_get_bgm_frequency()
+ * \sa audio_set_bgm_frequency()
  */
 uint8_t snd_get_bgm_frequency(void);
 
@@ -74,9 +80,9 @@ uint8_t snd_get_bgm_frequency(void);
  * `MSX` Returns current player frequency of the background music.
  *
  * \return frequency in Hz.
- * \sa snd_get_bgm_frequency()
- * \sa snd_set_player_frequency()
- * \sa snd_set_speed()
+ *
+ * \deprecated Use audio_get_bgm_frequency() instead.
+ * \sa AUDIO
  */
 uint8_t snd_get_player_frequency(void);
 
@@ -85,7 +91,6 @@ uint8_t snd_get_player_frequency(void);
  *
  * \param freq    frequency in Hz.
  * \sa snd_get_bgm_frequency()
- * \sa snd_get_player_frequency()
  * \sa snd_set_speed()
  *
  * \note
@@ -93,9 +98,8 @@ uint8_t snd_get_player_frequency(void);
  * regarding to the default frequency of the music and the speed set by
  * snd_set_speed().
  *
- * \note
- * Default frequency that the music composer assumed may not be the same.
- * Therefore snd_set_speed() is recommended instead.
+ * \deprecated Use audio_set_bgm_frequency() instead.
+ * \sa AUDIO
  */
 void snd_set_player_frequency(uint8_t freq);
 
@@ -117,8 +121,8 @@ void snd_set_player_frequency(uint8_t freq);
  * \param multiplier    the playback speed multiplier
  * \sa SND_SPEED_1X
  * \sa snd_get_bgm_frequency()
- * \sa snd_get_player_frequency()
- * \sa snd_set_player_frequency()
+ * \sa audio_get_bgm_frequency()
+ * \sa audio_set_bgm_frequency()
  */
 void snd_set_speed(uint8_t multiplier);
 
@@ -126,6 +130,9 @@ void snd_set_speed(uint8_t multiplier);
  * `MSX` Turn on/off the auto-repeat of the BGM.
  *
  * \param repeat   `true`: turn on, `false`: turn off
+ *
+ * \deprecated Use audio_set_repeat() instead.
+ * \sa AUDIO
  */
 void snd_set_repeat(bool repeat);
 
@@ -165,6 +172,9 @@ void snd_set_sfx_with_priority(uint8_t index, const snd_SoundAssets * sa, uint8_
  * `MSX` Return whether BGM and/or SFX is playing or not.
  *
  * \return `true` if BGM and/or SFX is playing.
+ *
+ * \deprecated Use audio_is_playing() instead.
+ * \sa AUDIO
  */
 bool snd_is_playing(void);
 
@@ -172,6 +182,9 @@ bool snd_is_playing(void);
  * `MSX` Return whether BGM is playing or not.
  *
  * \return `true` if BGM is playing.
+ *
+ * \deprecated Use audio_is_playing_bgm() instead.
+ * \sa AUDIO
  */
 bool snd_is_playing_bgm(void);
 
@@ -179,63 +192,57 @@ bool snd_is_playing_bgm(void);
  * `MSX` Return whether SFX is playing or not.
  *
  * \return `true` if SFX is playing.
+ *
+ * \deprecated Use audio_is_playing_sfx() instead.
+ * \sa AUDIO
  */
 bool snd_is_playing_sfx(void);
 
 /**
  * `MSX` Initialize the PSG and the sound driver.
  *
- * This function must be called at least once. In particular, it must be called
- * before the first call to snd_play().
- *
- * \note
- * If snd_play() is called without snd_init() being called, its behavior is
- * undefined and, in the worst case, may cause damage to the (real) MSX machine.
+ * \deprecated Use audio_init() instead.
+ * \sa AUDIO
  */
 void snd_init(void);
 
 /**
  * `MSX` Start / Resume music.
+ *
+ * \deprecated Use audio_start() instead.
+ * \sa AUDIO
  */
 void snd_start(void);
 
 /**
  * `MSX` Pause music.
+ *
+ * \deprecated Use audio_pause() instead.
+ * \sa AUDIO
  */
 void snd_pause(void);
 
 /**
  * `MSX` Return whether paused or not.
+ *
+ * \deprecated Use audio_is_paused() instead.
+ * \sa AUDIO
  */
 bool snd_is_paused(void);
 
 /**
  * `MSX` Stop music.
+ *
+ * \deprecated Use audio_stop() instead.
+ * \sa AUDIO
  */
 void snd_stop(void);
 
 /**
  * `MSX` Main routine of the sound driver.
  *
- * To play the background music and/or sound effects, you need to call this
- * function at every VSYNC timing. The easiest way is to set this function as
- * the VSYNC interrupt handler by calling set_vsync_handler().
- *
- * ~~~c
- * // At first, initialize the sound driver.
- * snd_init();
- *
- * // Then, register the sound driver as the VSYNC interrupt handler.
- * set_vsync_handler(snd_play);
- *
- * // And then, calls other APIs to start, stop, etc.
- * snd_set_bgm(0, &my_bgm);
- * snd_start();
- * ~~~
- *
- * \note
- * If snd_play() is called without snd_init() being called, its behavior is
- * undefined and, in the worst case, may cause damage to the (real) MSX machine.
+ * \deprecated Use audio_play() instead.
+ * \sa AUDIO
  */
 void snd_play(void);
 

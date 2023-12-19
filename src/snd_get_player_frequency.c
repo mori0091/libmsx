@@ -15,11 +15,8 @@
 
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
+#include "audio.h"
 
 uint8_t snd_get_player_frequency(void) {
-  uint8_t freq;
-  DI();
-  freq = snd_bgm.play_freq;
-  EI();
-  return freq;
+  return audio_get_bgm_frequency();
 }

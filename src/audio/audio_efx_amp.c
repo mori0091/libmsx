@@ -20,6 +20,16 @@
 
 static int8_t main_attenuation;
 
+void audio_efx_amp_set_volume(uint8_t volume) {
+  if (volume < 16) {
+    main_attenuation = volume - 15;
+  }
+}
+
+uint8_t audio_efx_amp_get_volume(void) {
+  return main_attenuation + 15;
+}
+
 static uint8_t volume(uint8_t volume) {
   if (16 <= volume) return volume;
   const int8_t x = volume + main_attenuation;
@@ -29,14 +39,70 @@ static uint8_t volume(uint8_t volume) {
   return x;
 }
 
-void audio_efx_amp_set_volume(uint8_t volume) {
-  if (volume < 16) {
-    main_attenuation = volume - 15;
+static void minimize_opll_6(void) {
+  // 6 ch + RHYTHM
+  for (uint8_t reg = 0x30; reg < 0x37; reg++) {
+    const uint8_t val0 = opll_buffer[reg];
+    const uint8_t val = val0 | 0x0f;
+    if (val != val0) {
+      OPLL_put(reg, val);
+    }
+  }
+  if (opll_buffer[0x37] != 0xff) {
+    OPLL_put(0x37, 0xff);
+  }
+  if (opll_buffer[0x38] != 0xff) {
+    OPLL_put(0x38, 0xff);
   }
 }
 
-uint8_t audio_efx_amp_get_volume(void) {
-  return main_attenuation + 15;
+static void minimize_opll_9(void) {
+  // 9 ch
+  for (uint8_t reg = 0x30; reg < 0x39; reg++) {
+    const uint8_t val0 = opll_buffer[reg];
+    const uint8_t val = val0 | 0x0f;
+    if (val != val0) {
+      OPLL_put(reg, val);
+    }
+  }
+}
+
+static void attenuate_opll_6(void) {
+  // 6 ch + RHYTHM
+  uint8_t reg = 0x30;
+  for ( ; reg < 0x37; reg++) {
+    const uint8_t val0 = opll_buffer[reg];
+    int8_t v = (val0 & 0x0f) - main_attenuation;
+    if (16 <= v) v = 15;
+    const uint8_t val = (val0 & 0xf0) | v;
+    if (val != val0) {
+      OPLL_put(reg, val);
+    }
+  }
+  for ( ; reg < 0x39; reg++) {
+    const uint8_t val0 = opll_buffer[reg];
+    int8_t vl = ((val0 >> 0) & 0x0f) - main_attenuation;
+    if (16 <= vl) vl = 15;
+    int8_t vh = ((val0 >> 4) & 0x0f) - main_attenuation;
+    if (16 <= vh) vh = 15;
+    const uint8_t val = (vh << 4) | vl;
+    if (val != val0) {
+      OPLL_put(reg, val);
+    }
+  }
+}
+
+static void attenuate_opll_9(void) {
+  // 9 ch
+  for (uint8_t reg = 0x30; reg < 0x39; reg++) {
+    const uint8_t val0 = opll_buffer[reg];
+    int8_t v = (val0 & 0x0f) - main_attenuation;
+    if (16 <= v) v = 15;
+    const uint8_t val = (val0 & 0xf0) | v;
+    if (val != val0) {
+      OPLL_put(reg, val);
+    }
+  }
 }
 
 extern void audio_efx_amp__fader(void);
@@ -54,8 +120,11 @@ void audio_efx_amp(void) {
     scc_buffer.volume[2] = 0;
     scc_buffer.volume[3] = 0;
     scc_buffer.volume[4] = 0;
-    for (uint8_t reg = 0x30; reg < 0x3a; reg++) {
-      opll_buffer[reg] |= 0x0f;
+    if (opll_buffer[0x0e] & 0x20) {
+      minimize_opll_6();
+    }
+    else {
+      minimize_opll_9();
     }
   }
   else {
@@ -68,11 +137,11 @@ void audio_efx_amp(void) {
     scc_buffer.volume[2] = volume(scc_buffer.volume[2]);
     scc_buffer.volume[3] = volume(scc_buffer.volume[3]);
     scc_buffer.volume[4] = volume(scc_buffer.volume[4]);
-    for (uint8_t reg = 0x30; reg < 0x3a; reg++) {
-      uint8_t val = opll_buffer[reg];
-      int8_t v = (val & 0x0f) - main_attenuation;
-      if (16 <= v) v = 15;
-      opll_buffer[reg] = (val & 0xf0) | v;
+    if (opll_buffer[0x0e] & 0x20) {
+      attenuate_opll_6();
+    }
+    else {
+      attenuate_opll_9();
     }
   }
 }

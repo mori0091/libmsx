@@ -15,19 +15,8 @@
 
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
-
-void snd__set_bgm_freq(uint8_t freq) {
-  if (!freq) {
-    freq = 1;
-  }
-  if (240 <= freq) {
-    freq = 240;
-  }
-  snd_bgm.play_freq = freq;
-}
+#include "audio.h"
 
 void snd_set_player_frequency(uint8_t freq) {
-  DI();
-  snd__set_bgm_freq(freq);
-  EI();
+  audio_set_bgm_frequency(freq);
 }

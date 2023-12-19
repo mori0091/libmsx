@@ -16,13 +16,17 @@
 #include "../include/snddrv.h"
 #include "./snd_ctx.h"
 
+#include <audio.h>
+
+#include <stdint.h>
+
 extern uint8_t snd_speed_multiplier;
 
 extern void snd__set_bgm_freq(uint8_t freq);
 
 void snd__set_speed(uint8_t multiplier) {
   snd_speed_multiplier = multiplier;
-  snd__set_bgm_freq((int)snd_bgm.song_freq * multiplier / SND_SPEED_1X);
+  audio_set_bgm_frequency((uint8_t)((int)snd_bgm.song_freq * multiplier / SND_SPEED_1X));
 }
 
 void snd_set_speed(uint8_t multiplier) {

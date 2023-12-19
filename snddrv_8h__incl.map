@@ -1,9 +1,11 @@
 <map id="include/snddrv.h" name="include/snddrv.h">
-<area shape="rect" id="node1" title="SNDDRV a PSG sound driver." alt="" coords="293,5,409,31"/>
-<area shape="rect" id="node2" href="$snd__sound_8h.html" title="Sound / Music data structure for snddrv." alt="" coords="193,79,295,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="328,225,392,251"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,152,80,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="155,152,223,177"/>
-<area shape="rect" id="node6" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." alt="" coords="248,152,347,177"/>
-<area shape="rect" id="node7" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="371,152,474,177"/>
+<area shape="rect" id="node1" title="SNDDRV a PSG sound driver." alt="" coords="355,5,471,31"/>
+<area shape="rect" id="node2" href="$audio_8h.html" title="The libmsx audio replayer." alt="" coords="433,79,495,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="263,225,327,251"/>
+<area shape="rect" id="node5" href="$audio__dec_8h.html" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="317,79,408,104"/>
+<area shape="rect" id="node6" href="$snd__sound_8h.html" title="Sound / Music data structure for snddrv." alt="" coords="154,79,257,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="371,152,445,177"/>
+<area shape="rect" id="node7" title=" " alt="" coords="27,152,95,177"/>
+<area shape="rect" id="node8" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." alt="" coords="120,152,219,177"/>
+<area shape="rect" id="node9" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="243,152,346,177"/>
 </map>

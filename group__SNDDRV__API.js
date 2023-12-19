@@ -17,5 +17,7 @@ var group__SNDDRV__API =
     [ "snd_pause", "group__SNDDRV__API.html#ga9d9e434c71c03c381646afb4792e662f", null ],
     [ "snd_is_paused", "group__SNDDRV__API.html#gae664de85cd15e6bf536d2292253bfa89", null ],
     [ "snd_stop", "group__SNDDRV__API.html#ga7b7dae51f611ad630252baad7c0e342d", null ],
-    [ "snd_play", "group__SNDDRV__API.html#gaa5de8e41f8ba2fd124dbf38aa6bd609d", null ]
+    [ "snd_play", "group__SNDDRV__API.html#gaa5de8e41f8ba2fd124dbf38aa6bd609d", null ],
+    [ "SND_BGM_DECODER", "group__SNDDRV__API.html#ga9f60ec078af9a662177f4b0d2cfa5550", null ],
+    [ "SND_SFX_DECODER", "group__SNDDRV__API.html#ga3d4c07bc7db462f217f13536b743c4aa", null ]
 ];

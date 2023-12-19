@@ -44,9 +44,11 @@ var searchData=
   ['sltatr_41',['SLTATR',['../workarea_8h.html#ace31752cc587174a0decb486ca5ef111',1,'workarea.h']]],
   ['slttbl_42',['SLTTBL',['../workarea_8h.html#acc116fbdbb141b5894e049e7c4213ffe',1,'workarea.h']]],
   ['sltwrk_43',['SLTWRK',['../workarea_8h.html#a28bf501aad0fdda7262f0b7b7bd4be36',1,'workarea.h']]],
-  ['specialchannels_44',['specialChannels',['../group__SNDDRV__DATA.html#a343741609bcf3fab62dc5a19a0b6c879',1,'snd_Pattern']]],
-  ['speedtracks_45',['speedTracks',['../group__SNDDRV__DATA.html#a5af59f233a773f9c4dde3f8955bbf706',1,'snd_Music']]],
-  ['statfl_46',['STATFL',['../workarea_8h.html#a2e079145bd0592ebbc90b0c2de5c6b53',1,'workarea.h']]],
-  ['streams_47',['streams',['../group__SOUND__OLD__API.html#afc3795cddeeb09bce0deef79daaa7e39',1,'sound_fragment']]],
-  ['sustain_5flevel_48',['sustain_level',['../group__SOUND__OLD__EG__API.html#adc973360e68d9c031ab40af9f5d36708',1,'sound_eg_AHDSR']]]
+  ['snd_5fbgm_5fdecoder_44',['SND_BGM_DECODER',['../group__SNDDRV__API.html#ga9f60ec078af9a662177f4b0d2cfa5550',1,'snddrv.h']]],
+  ['snd_5fsfx_5fdecoder_45',['SND_SFX_DECODER',['../group__SNDDRV__API.html#ga3d4c07bc7db462f217f13536b743c4aa',1,'snddrv.h']]],
+  ['specialchannels_46',['specialChannels',['../group__SNDDRV__DATA.html#a343741609bcf3fab62dc5a19a0b6c879',1,'snd_Pattern']]],
+  ['speedtracks_47',['speedTracks',['../group__SNDDRV__DATA.html#a5af59f233a773f9c4dde3f8955bbf706',1,'snd_Music']]],
+  ['statfl_48',['STATFL',['../workarea_8h.html#a2e079145bd0592ebbc90b0c2de5c6b53',1,'workarea.h']]],
+  ['streams_49',['streams',['../group__SOUND__OLD__API.html#afc3795cddeeb09bce0deef79daaa7e39',1,'sound_fragment']]],
+  ['sustain_5flevel_50',['sustain_level',['../group__SOUND__OLD__EG__API.html#adc973360e68d9c031ab40af9f5d36708',1,'sound_eg_AHDSR']]]
 ];

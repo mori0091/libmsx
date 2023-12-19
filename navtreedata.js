@@ -89,6 +89,7 @@ var NAVTREE =
       ] ],
       [ "Definition of Instrument (timbre) table", "md_docs_design_notes_snddrv_internal.html#autotoc_md50", null ]
     ] ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -117,9 +118,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ZX0__decompress_8h.html",
-"group__SCC__DEVICE.html#a75d3c9e5c159abe58c44ec698bea7a6f",
-"group__SPRITES__METASPRITE.html#a22bb277fc71e43cb89c17cce26cb5503",
-"md_docs_design_notes_crt0.html#autotoc_md29"
+"group__SCC__DEVICE.html#a6018cde76f96ab8206b200933ad7bf2c",
+"group__SPRITES__COLOR.html#ga6cf16f5ecc488771a53456b03257768d",
+"md_docs_design_notes_crt0.html#autotoc_md26"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

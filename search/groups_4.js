@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['find_20a_20resource_20in_20banked_20memory_2e_0',['Find a resource in banked memory.',['../group__RESOURCES__FIND.html',1,'']]]
+  ['effectors_20for_20the_20libmsx_20audio_20replayer_2e_0',['Effectors for the libmsx audio replayer.',['../group__AUDIO__EFX.html',1,'']]]
 ];

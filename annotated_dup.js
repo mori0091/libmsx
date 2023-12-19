@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "AudioDecoder", "structAudioDecoder.html", "structAudioDecoder" ],
     [ "cgpnt", "workarea_8h.html#structcgpnt", "workarea_8h_structcgpnt" ],
     [ "font", "bios__const_8h.html#structfont", "bios__const_8h_structfont" ],
     [ "metasprite", "group__SPRITES__METASPRITE.html#structmetasprite", "group__SPRITES__METASPRITE_structmetasprite" ],

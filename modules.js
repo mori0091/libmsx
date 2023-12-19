@@ -1,5 +1,6 @@
 var modules =
 [
+    [ "The libmsx audio replayer.", "group__AUDIO.html", "group__AUDIO" ],
     [ "BIOS - Basic Input/Output System", "group__BIOS.html", "group__BIOS" ],
     [ "Banked Memory interface for MegaROM.", "group__BANKED__MEMORY.html", "group__BANKED__MEMORY" ],
     [ "Input device", "group__INPUT.html", "group__INPUT" ],

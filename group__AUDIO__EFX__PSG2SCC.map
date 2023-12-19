@@ -1,0 +1,4 @@
+<map id="The &quot;PSG to SCC/SCC+&quot; effector." name="The &quot;PSG to SCC/SCC+&quot; effector.">
+<area shape="rect" id="node1" href="$group__AUDIO__EFX.html" title="Effectors for the libmsx audio replayer." alt="" coords="5,5,157,45"/>
+<area shape="rect" id="node2" title="#include &lt;audio_efx_psg2scc.h&gt;" alt="" coords="205,5,360,45"/>
+</map>

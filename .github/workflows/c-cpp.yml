@@ -15,7 +15,12 @@ jobs:
     - name: apt-get update
       run: sudo apt-get update
     - name: apt-get install
-      run: sudo apt-get install build-essential sdcc
+      run: sudo apt-get install build-essential
+    - name: install sdcc
+      run: |
+        curl -L -O -C - https://sourceforge.net/projects/sdcc/files/sdcc-linux-amd64/4.3.0/sdcc-4.3.0-amd64-unknown-linux2.5.tar.bz2
+        tar -C "$HOME" -xjf sdcc-4.3.0-amd64-unknown-linux2.5.tar.bz2
+        echo "$HOME/sdcc-4.3.0/bin" >> $GITHUB_PATH
     - uses: actions/checkout@v4
     - name: make
       run: make

@@ -44,16 +44,10 @@ static void minimize_opll_6(void) {
   for (uint8_t reg = 0x30; reg < 0x37; reg++) {
     const uint8_t val0 = opll_buffer[reg];
     const uint8_t val = val0 | 0x0f;
-    if (val != val0) {
-      OPLL_put(reg, val);
-    }
+    OPLL_put(reg, val);
   }
-  if (opll_buffer[0x37] != 0xff) {
-    OPLL_put(0x37, 0xff);
-  }
-  if (opll_buffer[0x38] != 0xff) {
-    OPLL_put(0x38, 0xff);
-  }
+  OPLL_put(0x37, 0xff);
+  OPLL_put(0x38, 0xff);
 }
 
 static void minimize_opll_9(void) {
@@ -61,9 +55,7 @@ static void minimize_opll_9(void) {
   for (uint8_t reg = 0x30; reg < 0x39; reg++) {
     const uint8_t val0 = opll_buffer[reg];
     const uint8_t val = val0 | 0x0f;
-    if (val != val0) {
-      OPLL_put(reg, val);
-    }
+    OPLL_put(reg, val);
   }
 }
 
@@ -75,9 +67,7 @@ static void attenuate_opll_6(void) {
     int8_t v = (val0 & 0x0f) - main_attenuation;
     if (16 <= v) v = 15;
     const uint8_t val = (val0 & 0xf0) | v;
-    if (val != val0) {
-      OPLL_put(reg, val);
-    }
+    OPLL_put(reg, val);
   }
   for ( ; reg < 0x39; reg++) {
     const uint8_t val0_ = opll_buffer[reg];
@@ -86,9 +76,7 @@ static void attenuate_opll_6(void) {
     int8_t vh = ((val0_ >> 4) & 0x0f) - main_attenuation;
     if (16 <= vh) vh = 15;
     const uint8_t val_ = (vh << 4) | vl;
-    if (val_ != val0_) {
-      OPLL_put(reg, val_);
-    }
+    OPLL_put(reg, val_);
   }
 }
 
@@ -99,9 +87,7 @@ static void attenuate_opll_9(void) {
     int8_t v = (val0 & 0x0f) - main_attenuation;
     if (16 <= v) v = 15;
     const uint8_t val = (val0 & 0xf0) | v;
-    if (val != val0) {
-      OPLL_put(reg, val);
-    }
+    OPLL_put(reg, val);
   }
 }
 

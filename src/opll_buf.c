@@ -30,6 +30,7 @@ void OPLL_init(void) {
 }
 
 void OPLL_put(uint8_t reg, uint8_t val) {
+  if (OPLL_get(reg) == val) return;
   OPLL_set(reg, val);
   if (fifo.len < sizeof(fifo.buf)) {
     fifo.buf[fifo.len++] = reg;
@@ -42,7 +43,7 @@ void OPLL_stop(struct OPLL * opll) {
   void (*write)(uint8_t, uint8_t) = opll->device->write;
   for (uint8_t reg = 0x20; reg <= 0x28; reg++) {
     // SUS-OFF, KEY-OFF for all channels
-    write(reg, opll_buffer[reg] & 0x0f);
+    write(reg, OPLL_get(reg) & 0x0f);
   }
 }
 
@@ -52,6 +53,6 @@ void OPLL_play(struct OPLL * opll) {
   void (*write)(uint8_t, uint8_t) = opll->device->write;
   while (fifo.len) {
     uint8_t reg = fifo.buf[--fifo.len];
-    write(reg, opll_buffer[reg]);
+    write(reg, OPLL_get(reg));
   }
 }

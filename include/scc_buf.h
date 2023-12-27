@@ -51,6 +51,20 @@ struct SCC_buffer {
   uint8_t  channel_mask;
 };
 
+struct SCC_wave_buffer {
+  /** Update-bit for each of five channels. */
+  uint8_t updated;
+  /** Waveform for each of five channels. */
+  int8_t waveform[5][32];
+};
+
+/**
+ * `MSX` Buffer for SCC/SCC+ waveform registers.
+ *
+ * \note Use SCC_set_waveform() for setting waveform buffers.
+ */
+extern struct SCC_wave_buffer scc_wave_buffer;
+
 /**
  * `MSX` Buffer for SCC/SCC+ registers (except for waveform registers).
  *

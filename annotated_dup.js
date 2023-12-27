@@ -11,6 +11,7 @@ var annotated_dup =
     [ "SCC_buffer", "group__SCC__BUFFER.html#structSCC__buffer", "group__SCC__BUFFER_structSCC__buffer" ],
     [ "SCC_Channel", "group__SCC__DEVICE.html#structSCC__Channel", "group__SCC__DEVICE_structSCC__Channel" ],
     [ "SCC_Device", "group__SCC__DEVICE.html#structSCC__Device", "group__SCC__DEVICE_structSCC__Device" ],
+    [ "SCC_wave_buffer", "group__SCC__BUFFER.html#structSCC__wave__buffer", "group__SCC__BUFFER_structSCC__wave__buffer" ],
     [ "SCC_Waveform", "group__SCC__DEVICE.html#structSCC__Waveform", "group__SCC__DEVICE_structSCC__Waveform" ],
     [ "snd_EventTrack", "structsnd__EventTrack.html", "structsnd__EventTrack" ],
     [ "snd_Instrument", "group__SNDDRV__DATA.html#structsnd__Instrument", "group__SNDDRV__DATA_structsnd__Instrument" ],

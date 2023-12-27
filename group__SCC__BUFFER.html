@@ -114,6 +114,8 @@ $(document).ready(function(){initNavTree('group__SCC__BUFFER.html',''); initResi
 Data Structures</h2></td></tr>
 <tr class="memitem:structSCC__buffer"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__BUFFER.html#structSCC__buffer">SCC_buffer</a></td></tr>
 <tr class="separator:structSCC__buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSCC__wave__buffer"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__BUFFER.html#structSCC__wave__buffer">SCC_wave_buffer</a></td></tr>
+<tr class="separator:structSCC__wave__buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -132,6 +134,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:ga05ba7f098db8e8b3c62f723006b00a46"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__SCC__BUFFER.html#structSCC__wave__buffer">SCC_wave_buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__BUFFER.html#ga05ba7f098db8e8b3c62f723006b00a46">scc_wave_buffer</a></td></tr>
+<tr class="memdesc:ga05ba7f098db8e8b3c62f723006b00a46"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Buffer for SCC/SCC+ waveform registers.  <a href="group__SCC__BUFFER.html#ga05ba7f098db8e8b3c62f723006b00a46">More...</a><br /></td></tr>
+<tr class="separator:ga05ba7f098db8e8b3c62f723006b00a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf9e4b2bbb44595ac47d0fe6db8d36eaa"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__SCC__BUFFER.html#structSCC__buffer">SCC_buffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">scc_buffer</a></td></tr>
 <tr class="memdesc:gaf9e4b2bbb44595ac47d0fe6db8d36eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Buffer for SCC/SCC+ registers (except for waveform registers).  <a href="group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">More...</a><br /></td></tr>
 <tr class="separator:gaf9e4b2bbb44595ac47d0fe6db8d36eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -319,6 +324,37 @@ Enable / Disable bit for each of the five channels. </td></tr>
 
 </div>
 </div>
+<a name="structSCC__wave__buffer" id="structSCC__wave__buffer"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structSCC__wave__buffer">&#9670;&#160;</a></span>SCC_wave_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct SCC_wave_buffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="scc__buf_8h_source.html#l00054">54</a> of file <a class="el" href="scc__buf_8h_source.html">scc_buf.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a id="a76e6f42fadd1382769f8db38d01d2035" name="a76e6f42fadd1382769f8db38d01d2035"></a>uint8_t</td>
+<td class="fieldname">
+updated</td>
+<td class="fielddoc">
+Update-bit for each of five channels. </td></tr>
+<tr><td class="fieldtype">
+<a id="a0623a5e31ec2881f2f37911bed08e896" name="a0623a5e31ec2881f2f37911bed08e896"></a>int8_t</td>
+<td class="fieldname">
+waveform[5][32]</td>
+<td class="fielddoc">
+Waveform for each of five channels. </td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga03886c3403bd874dae2fdcd58ecb3ea3" name="ga03886c3403bd874dae2fdcd58ecb3ea3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga03886c3403bd874dae2fdcd58ecb3ea3">&#9670;&#160;</a></span>SCC_init()</h2>
@@ -449,6 +485,31 @@ In case of <a class="el" href="group__SCC__DEVICE.html#structSCC" title="SCC Han
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ga05ba7f098db8e8b3c62f723006b00a46" name="ga05ba7f098db8e8b3c62f723006b00a46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05ba7f098db8e8b3c62f723006b00a46">&#9670;&#160;</a></span>scc_wave_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="group__SCC__BUFFER.html#structSCC__wave__buffer">SCC_wave_buffer</a> scc_wave_buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Buffer for SCC/SCC+ waveform registers. </p>
+<dl class="section note"><dt>Note</dt><dd>Use <a class="el" href="group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d" title="MSX Set waveform to the internal waveform buffer, for the specified channel.">SCC_set_waveform()</a> for setting waveform buffers. </dd></dl>
+
+</div>
+</div>
 <a id="gaf9e4b2bbb44595ac47d0fe6db8d36eaa" name="gaf9e4b2bbb44595ac47d0fe6db8d36eaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf9e4b2bbb44595ac47d0fe6db8d36eaa">&#9670;&#160;</a></span>scc_buffer</h2>
 

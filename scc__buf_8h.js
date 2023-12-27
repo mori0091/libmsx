@@ -5,5 +5,6 @@ var scc__buf_8h =
     [ "SCC_set_waveform", "group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d", null ],
     [ "SCC_stop", "group__SCC__BUFFER.html#gae46eef36c8ddac64a84a04bd1db0d173", null ],
     [ "SCC_play", "group__SCC__BUFFER.html#gad71203ba5bc176efa8fb4138687db76a", null ],
+    [ "scc_wave_buffer", "group__SCC__BUFFER.html#ga05ba7f098db8e8b3c62f723006b00a46", null ],
     [ "scc_buffer", "group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa", null ]
 ];

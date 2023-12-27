@@ -43,27 +43,71 @@ void SCC_stop(struct SCC * scc) {
   msx_ENASLT(slot_p2, (void *)PAGE_ADDR(2));
 }
 
+#define SCC_UPDATE_WAVEFORM(ch)                   \
+  do {                                            \
+    if (scc_wave_buffer.updated & (1 << (ch))) {  \
+      memcpy((void *)&SCC_waveform[ch],           \
+             &scc_wave_buffer.waveform[ch], 32);  \
+    }                                             \
+  } while (0)
+
+#define SCC_UPDATE_FDR(ch)                        \
+  SCC_fdr[ch] = scc_buffer.fdr[ch]
+
+#define SCC_UPDATE_VOLUME(ch)                     \
+  SCC_volume[ch] = scc_buffer.volume[ch]
+
+#define SCC_UPDATE_MASK(ch)                       \
+  SCC_channel_mask                                \
+    = (SCC_channel_mask & ~(1 << (ch)))           \
+    | (scc_buffer.channel_mask & (1 << (ch)))
+
+static void SCC_update_registers(void) {
+  SCC_UPDATE_WAVEFORM(0); SCC_UPDATE_FDR(0); SCC_UPDATE_VOLUME(0); SCC_UPDATE_MASK(0);
+  SCC_UPDATE_WAVEFORM(1); SCC_UPDATE_FDR(1); SCC_UPDATE_VOLUME(1); SCC_UPDATE_MASK(1);
+  SCC_UPDATE_WAVEFORM(2); SCC_UPDATE_FDR(2); SCC_UPDATE_VOLUME(2); SCC_UPDATE_MASK(2);
+  SCC_UPDATE_WAVEFORM(3); SCC_UPDATE_FDR(3); SCC_UPDATE_VOLUME(3); SCC_UPDATE_MASK(3);
+  /* no dedicated reg. */ SCC_UPDATE_FDR(4); SCC_UPDATE_VOLUME(4); SCC_UPDATE_MASK(4);
+  scc_wave_buffer.updated = 0;
+}
+
+#define SCCI_UPDATE_WAVEFORM(ch)                  \
+  do {                                            \
+    if (scc_wave_buffer.updated & (1 << (ch))) {  \
+      memcpy((void *)&SCCPlus_waveform[ch],       \
+             &scc_wave_buffer.waveform[ch], 32);  \
+    }                                             \
+  } while (0)
+
+#define SCCI_UPDATE_FDR(ch)                       \
+  SCCPlus_fdr[ch] = scc_buffer.fdr[ch]
+
+#define SCCI_UPDATE_VOLUME(ch)                    \
+  SCCPlus_volume[ch] = scc_buffer.volume[ch]
+
+#define SCCI_UPDATE_MASK(ch)                      \
+  SCCPlus_channel_mask                            \
+    = (SCCPlus_channel_mask & ~(1 << (ch)))       \
+    | (scc_buffer.channel_mask & (1 << (ch)))
+
+static void SCCI_update_registers(void) {
+  SCCI_UPDATE_WAVEFORM(0); SCCI_UPDATE_FDR(0); SCCI_UPDATE_VOLUME(0); SCCI_UPDATE_MASK(0);
+  SCCI_UPDATE_WAVEFORM(1); SCCI_UPDATE_FDR(1); SCCI_UPDATE_VOLUME(1); SCCI_UPDATE_MASK(1);
+  SCCI_UPDATE_WAVEFORM(2); SCCI_UPDATE_FDR(2); SCCI_UPDATE_VOLUME(2); SCCI_UPDATE_MASK(2);
+  SCCI_UPDATE_WAVEFORM(3); SCCI_UPDATE_FDR(3); SCCI_UPDATE_VOLUME(3); SCCI_UPDATE_MASK(3);
+  SCCI_UPDATE_WAVEFORM(4); SCCI_UPDATE_FDR(4); SCCI_UPDATE_VOLUME(4); SCCI_UPDATE_MASK(4);
+  scc_wave_buffer.updated = 0;
+}
+
 void SCC_play(struct SCC * scc) {
   if (!scc->slot) return;
   const uint8_t slot_p2 = msx_get_slot((void *)PAGE_ADDR(2));
   msx_ENASLT(scc->slot, (void *)PAGE_ADDR(2));
   if (scc->mode == 1) {
-    // write waveforms
-    if (scc_wave_buffer.updated) {
-      scc_wave_buffer.updated = 0;
-      memcpy((void *)SCC_waveform, &scc_wave_buffer.waveform[0], 32 * 4);
-    }
-    // write fdr x 5 channels, volume x 5 channels, and channel_mask.
-    memcpy((void *)SCC_fdr, &scc_buffer, sizeof(scc_buffer));
+    SCC_update_registers();
   }
   else if (scc->mode == 2) {
-    // write waveforms
-    if (scc_wave_buffer.updated) {
-      scc_wave_buffer.updated = 0;
-      memcpy((void *)SCCPlus_waveform, &scc_wave_buffer.waveform[0], 32 * 5);
-    }
-    // write fdr x 5 channels, volume x 5 channels, and channel_mask.
-    memcpy((void *)SCCPlus_fdr, &scc_buffer, sizeof(scc_buffer));
+    SCCI_update_registers();
   }
   msx_ENASLT(slot_p2, (void *)PAGE_ADDR(2));
 }

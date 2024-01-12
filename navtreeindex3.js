@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"md_docs_design_notes_crt0.html#autotoc_md22":[1,0],
-"md_docs_design_notes_crt0.html#autotoc_md23":[1,0,0],
 "md_docs_design_notes_crt0.html#autotoc_md24":[1,0,1],
 "md_docs_design_notes_crt0.html#autotoc_md25":[1,0,2],
 "md_docs_design_notes_crt0.html#autotoc_md26":[1,0,3],

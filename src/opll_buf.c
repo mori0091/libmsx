@@ -19,9 +19,14 @@
 
 uint8_t opll_buffer[64];
 
+#define FIFO_CAPACITY (64)
+struct FIFO {
+  uint8_t reg;
+  uint8_t val;
+};
 static struct {
   uint8_t len;
-  uint8_t buf[64];
+  struct FIFO buf[FIFO_CAPACITY];
 } fifo;
 
 void OPLL_init(void) {
@@ -30,10 +35,12 @@ void OPLL_init(void) {
 }
 
 void OPLL_put(uint8_t reg, uint8_t val) {
-  if (OPLL_get(reg) == val) return;
-  OPLL_set(reg, val);
-  if (fifo.len < sizeof(fifo.buf)) {
-    fifo.buf[fifo.len++] = reg;
+  if (opll_buffer[reg] == val) return;
+  opll_buffer[reg] = val;
+  if (fifo.len < FIFO_CAPACITY) {
+    fifo.buf[fifo.len].reg = reg;
+    fifo.buf[fifo.len].val = val;
+    fifo.len++;
   }
 }
 
@@ -43,7 +50,7 @@ void OPLL_stop(struct OPLL * opll) {
   void (*write)(uint8_t, uint8_t) = opll->device->write;
   for (uint8_t reg = 0x20; reg <= 0x28; reg++) {
     // SUS-OFF, KEY-OFF for all channels
-    write(reg, OPLL_get(reg) & 0x0f);
+    write(reg, opll_buffer[reg] & 0x0f);
   }
 }
 
@@ -51,8 +58,7 @@ void OPLL_play(struct OPLL * opll) {
   if (!opll || !opll->slot || !fifo.len) return;
   __asm__("di");
   void (*write)(uint8_t, uint8_t) = opll->device->write;
-  while (fifo.len) {
-    uint8_t reg = fifo.buf[--fifo.len];
-    write(reg, OPLL_get(reg));
+  for (const struct FIFO * p = fifo.buf; fifo.len; p++, fifo.len--) {
+    write(p->reg, p->val);
   }
 }

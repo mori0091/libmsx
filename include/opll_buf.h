@@ -46,8 +46,8 @@
 
 /**
  * `MSX` Cache of OPLL registers.
- * \sa OPLL_set()
- * \sa OPLL_get()
+ *
+ * \sa OPLL_put()
  */
 extern uint8_t opll_buffer[64];
 
@@ -61,8 +61,9 @@ void OPLL_init(void);
 /**
  * `MSX` Put a pair of OPLL register number and its value to the internal buffer.
  *
- * This function sets `val` in the cache of OPLL register #`reg` and schedules
- * it to be written to OPLL by `OPLL_play()`.
+ * Put the pair of OPLL register #`reg` and its value `val` into the internal
+ * FIFO buffer. Then, by calling `OPLL_play()`, all values in the FIFO buffer
+ * are written to OPLL.
  *
  * \param reg    OPLL register number
  *               - 0x00..0x07 : INSTURUMENT DATA registers
@@ -74,42 +75,6 @@ void OPLL_init(void);
  * \param val    a value to be written to the register.
  */
 void OPLL_put(uint8_t reg, uint8_t val);
-
-/**
- * `MSX` Set a value to the cache of OPLL register.
- *
- * \param reg    OPLL register number
- *               - 0x00..0x07 : INSTURUMENT DATA registers
- *               - 0x0e       : RHYTHM control register
- *               - 0x0f       : TEST register
- *               - 0x10..0x18 : F-Number (LSB 8 bits) registers
- *               - 0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers
- *               - 0x30..0x38 : INSTRUMENT/VOLUME registers
- * \param val    a value to be written to the cache of register.
- *
- * \note
- * This is useful for modifying cached values scheduled by `OPLL_put()` before
- * `OPLL_play()` is called.
- */
-inline void OPLL_set(uint8_t reg, uint8_t val) {
-  opll_buffer[reg] = val;
-}
-
-/**
- * `MSX` Get the current cached value of OPLL register.
- *
- * \param reg    OPLL register number
- *               - 0x00..0x07 : INSTURUMENT DATA registers
- *               - 0x0e       : RHYTHM control register
- *               - 0x0f       : TEST register
- *               - 0x10..0x18 : F-Number (LSB 8 bits) registers
- *               - 0x20..0x28 : SUS/KEY/BLOCK/F-Number (MSB) registers
- *               - 0x30..0x38 : INSTRUMENT/VOLUME registers
- * \return  The current cached value of the register.
- */
-inline uint8_t OPLL_get(uint8_t reg) {
-  return opll_buffer[reg];
-}
 
 /**
  * `MSX` Turn RHYTHM mode on/off.

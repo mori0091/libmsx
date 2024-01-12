@@ -14,6 +14,10 @@
 
 #include "audio__internal.h"
 
+#include <ay_3_8910.h>
+#include <scc_buf.h>
+#include <opll_buf.h>
+
 void audio_cb_bgm_changed(uint8_t song_rate, const AudioDecoder * decoder) {
   __asm__("di");
   audio_.bgm.is_playing = false;
@@ -37,4 +41,8 @@ void audio_cb_bgm_changed(uint8_t song_rate, const AudioDecoder * decoder) {
   audio_.bgm.counter = 0;
   audio_.bgm.is_playing = true;
   audio_.bgm.decoder.set_repeat(audio_.repeat);
+
+  ay_3_8910_init();
+  SCC_init();
+  OPLL_init();
 }

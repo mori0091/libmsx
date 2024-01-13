@@ -5,6 +5,7 @@ var modules =
     [ "Banked Memory interface for MegaROM.", "group__BANKED__MEMORY.html", "group__BANKED__MEMORY" ],
     [ "Input device", "group__INPUT.html", "group__INPUT" ],
     [ "Interrupts", "group__INTERRUPT.html", "group__INTERRUPT" ],
+    [ "Stream interface for ROM / RAM / MegaROM.", "group__STREAM.html", "group__STREAM" ],
     [ "OPLL - YM2413 / MSX-MUSIC", "group__OPLL.html", "group__OPLL" ],
     [ "PSG - AY-3-8910 / Programmable Sound Generator", "group__PSG.html", "group__PSG" ],
     [ "Konami SCC/SCC+ sound cartridge", "group__SCC.html", "group__SCC" ],

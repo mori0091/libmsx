@@ -17,5 +17,6 @@ var searchData=
   ['columns_14',['columns',['../structTTY__Device.html#ab73862e783047a69318bb4542174661f',1,'TTY_Device']]],
   ['crtcnt_15',['CRTCNT',['../workarea_8h.html#aa15624c073db8ebb6597e278d20e9e7d',1,'workarea.h']]],
   ['csrx_16',['CSRX',['../workarea_8h.html#a0d61d5ee2d4bd4023e264b1adf1305d2',1,'workarea.h']]],
-  ['csry_17',['CSRY',['../workarea_8h.html#aedbd534ef607b72971cf2077b9eee0da',1,'workarea.h']]]
+  ['csry_17',['CSRY',['../workarea_8h.html#aedbd534ef607b72971cf2077b9eee0da',1,'workarea.h']]],
+  ['curr_18',['curr',['../memfile__types_8h.html#aef9f0c69ca21ce6300360ca34f49b3a3',1,'MemFile']]]
 ];

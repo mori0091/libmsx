@@ -1,0 +1,5 @@
+<map id="MemFile" name="MemFile">
+<area shape="rect" id="node1" title="Internal structure of MemFile type." alt="" coords="68,123,140,148"/>
+<area shape="rect" id="node2" href="$memfile__types_8h.html#structMemPos" title="Internal structure of mempos_t type." alt="" coords="5,5,80,31"/>
+<area shape="rect" id="node3" href="$structMemFileMethods.html" title=" " alt="" coords="104,5,227,31"/>
+</map>

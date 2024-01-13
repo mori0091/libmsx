@@ -13,5 +13,6 @@ var searchData=
   ['psg_5fport1_10',['psg_port1',['../io_8h.html#ae513155a83d71ab12033bbf82b70f721',1,'io.h']]],
   ['psg_5fport2_11',['psg_port2',['../io_8h.html#a901f03d5ca82e8e40201c6b57fc7f34c',1,'io.h']]],
   ['psg_5freg_5finitial_5fvector_12',['psg_reg_initial_vector',['../group__PSG__REGISTER.html#ga5fe004c472dfaef154f795a07d39ce94',1,'psg.h']]],
-  ['putpnt_13',['PUTPNT',['../workarea_8h.html#a18d0b38baf281d5921991ed442f06ce5',1,'workarea.h']]]
+  ['ptr_13',['ptr',['../memfile__types_8h.html#a025208b98854dd7a69b0b37471b83fdc',1,'MemPos']]],
+  ['putpnt_14',['PUTPNT',['../workarea_8h.html#a18d0b38baf281d5921991ed442f06ce5',1,'workarea.h']]]
 ];

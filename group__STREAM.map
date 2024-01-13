@@ -1,0 +1,7 @@
+<map id="Stream interface for ROM / RAM / MegaROM." name="Stream interface for ROM / RAM / MegaROM.">
+<area shape="rect" id="node1" title="#include &lt;memfile.h&gt;" alt="" coords="5,92,175,132"/>
+<area shape="rect" id="node2" href="$group__STREAM__ERR.html" title="Check error status of the stream." alt="" coords="235,5,361,45"/>
+<area shape="rect" id="node3" href="$group__STREAM__OPEN.html" title="Open whole or part of memory image as stream." alt="" coords="249,70,347,95"/>
+<area shape="rect" id="node4" href="$group__STREAM__READ.html" title="Read from the current position of the stream." alt="" coords="223,120,373,160"/>
+<area shape="rect" id="node5" href="$group__STREAM__SEEK.html" title="Get / Set the current position of the stream." alt="" coords="223,184,373,224"/>
+</map>

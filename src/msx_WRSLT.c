@@ -2,7 +2,7 @@
 /**
  * \file msx_WRSLT.c
  *
- * Copyright (c) 2021-2023 Daishi Mori (mori0091)
+ * Copyright (c) 2021-2024 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE

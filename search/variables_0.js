@@ -6,5 +6,6 @@ var searchData=
   ['atrbas_3',['ATRBAS',['../workarea_8h.html#a482140ed9755984293c5c697df6158cf',1,'workarea.h']]],
   ['atrbyt_4',['ATRBYT',['../workarea_8h.html#a8728a088ea2728106b1c3441f2ede115',1,'workarea.h']]],
   ['attack_5frate_5',['attack_rate',['../group__SOUND__OLD__EG__API.html#a4a1388e1f7cf928ec13f1b3a7ae53b8b',1,'sound_eg_AHDSR']]],
-  ['ay_5f3_5f8910_5fbuffer_6',['ay_3_8910_buffer',['../group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f',1,'ay_3_8910.h']]]
+  ['audio_5fbuf_5fcache_6',['audio_buf_cache',['../group__AUDIO__BUFFER.html#gae238d6d3811b893fc6f7cf6eedfec6b7',1,'audio_buf.h']]],
+  ['ay_5f3_5f8910_5fbuffer_7',['ay_3_8910_buffer',['../group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f',1,'ay_3_8910.h']]]
 ];

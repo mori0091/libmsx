@@ -1,0 +1,12 @@
+<map id="include/audio_buf.h" name="include/audio_buf.h">
+<area shape="rect" id="node1" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="196,5,329,31"/>
+<area shape="rect" id="node2" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="121,79,199,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="191,460,255,485"/>
+<area shape="rect" id="node3" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="207,152,275,177"/>
+<area shape="rect" id="node9" title=" " alt="" coords="48,152,123,177"/>
+<area shape="rect" id="node10" href="$memfile__types_8h.html" title=" " alt="" coords="63,225,183,265"/>
+<area shape="rect" id="node5" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="207,233,275,258"/>
+<area shape="rect" id="node6" title=" " alt="" coords="94,313,162,339"/>
+<area shape="rect" id="node7" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="237,313,280,339"/>
+<area shape="rect" id="node8" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="225,387,292,412"/>
+</map>

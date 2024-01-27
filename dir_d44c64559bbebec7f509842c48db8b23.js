@@ -2,6 +2,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
 [
     [ "internal", "dir_963e57a8294c229b5ff887c0b5b78922.html", "dir_963e57a8294c229b5ff887c0b5b78922" ],
     [ "audio.h", "audio_8h.html", "audio_8h" ],
+    [ "audio_buf.h", "audio__buf_8h.html", "audio__buf_8h" ],
     [ "audio_cb.h", "audio__cb_8h.html", "audio__cb_8h" ],
     [ "audio_dec.h", "audio__dec_8h.html", "audio__dec_8h" ],
     [ "audio_efx_amp.h", "audio__efx__amp_8h.html", "audio__efx__amp_8h" ],

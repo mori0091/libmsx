@@ -139,7 +139,9 @@ Typedefs</h2></td></tr>
 <li>Turn auto-repeat feature on/off,</li>
 <li>and so on.</li>
 </ul>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;">Callback functions of the libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;">Callback functions of the libmsx audio replayer.</a> </dd>
+<dd>
+<a class="el" href="group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;">Unified sound-chip buffer of the libmsx audio replayer.</a> </dd></dl>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga06e819a04598b29df3a85d67ea791be6" name="ga06e819a04598b29df3a85d67ea791be6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga06e819a04598b29df3a85d67ea791be6">&#9670;&#160;</a></span>AudioDecoder</h2>
@@ -159,11 +161,16 @@ Typedefs</h2></td></tr>
 <li>one is a background music decoder,</li>
 <li>and the other is a sound effect decoder.</li>
 </ul>
-<p >A decoder for background music (BGM) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code>.</p>
-<p >The <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code> shall be called when the BGM is changed or set to the decoder by the decoder specific API.</p>
-<p >A decoder for sound effects (SFX) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code>.</p>
-<p >The <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code> shall be called when the SFX is changed or set to the decoder by the decoder specific API.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;">Callback functions of the libmsx audio replayer.</a> </dd></dl>
+<p ><b>Decode music data then Store in the buffer</b></p>
+<p >The decoder decodes the music data each time it is called and stores it in libmsx audio replayer's internal FIFO buffer by calling <code><a class="el" href="group__AUDIO__BUFFER.html#gad6673892739d6e752e7badbf982b66b1" title="MSX Put requests to the internal FIFO of the libmsx audio replayer.">audio_buf_put()</a></code>.</p>
+<p >To do this, each of the above audio decoders must implement the audio decoder interface of type <code><a class="el" href="structAudioDecoder.html" title="The audio decoder interface.">AudioDecoder</a></code>.</p>
+<p ><b>Attach the decoder to the libmsx audio replayer</b></p>
+<p >The decoder must be attached to the replayer when a music data is changed or set to the decoder by the decoder specific API.</p>
+<p >A decoder for background music (BGM) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code>. So the <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code> should be called when the BGM is changed or set to the decoder by the decoder specific API.</p>
+<p >A decoder for sound effects (SFX) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code>. So the <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code> should be called when the SFX is changed or set to the decoder by the decoder specific API.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;">Unified sound-chip buffer of the libmsx audio replayer.</a> </dd>
+<dd>
+<a class="el" href="group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;">Callback functions of the libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>

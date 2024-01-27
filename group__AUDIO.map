@@ -1,7 +1,8 @@
 <map id="The libmsx audio replayer." name="The libmsx audio replayer.">
-<area shape="rect" id="node1" title="#include &lt;audio.h&gt;" alt="" coords="5,124,175,149"/>
-<area shape="rect" id="node2" href="$group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;" alt="" coords="251,5,381,60"/>
-<area shape="rect" id="node3" href="$group__AUDIO__DECODER.html" title="#include &lt;audio_dec.h&gt;" alt="" coords="223,85,409,125"/>
-<area shape="rect" id="node4" href="$group__AUDIO__EFX.html" title="Effectors for the libmsx audio replayer." alt="" coords="240,149,392,189"/>
-<area shape="rect" id="node5" href="$group__AUDIO__REPLAYER.html" title="The API of the libmsx audio replayer." alt="" coords="244,213,388,253"/>
+<area shape="rect" id="node1" title="#include &lt;audio.h&gt;" alt="" coords="5,171,175,196"/>
+<area shape="rect" id="node2" href="$group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;" alt="" coords="250,5,382,60"/>
+<area shape="rect" id="node3" href="$group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;" alt="" coords="251,84,381,139"/>
+<area shape="rect" id="node4" href="$group__AUDIO__DECODER.html" title="#include &lt;audio_dec.h&gt;" alt="" coords="223,163,409,203"/>
+<area shape="rect" id="node5" href="$group__AUDIO__EFX.html" title="Effectors for the libmsx audio replayer." alt="" coords="240,227,392,267"/>
+<area shape="rect" id="node6" href="$group__AUDIO__REPLAYER.html" title="The API of the libmsx audio replayer." alt="" coords="244,291,388,331"/>
 </map>

@@ -1,5 +1,15 @@
 var NAVTREEINDEX1 =
 {
+"group__SCC__BUFFER.html#ga05ba7f098db8e8b3c62f723006b00a46":[5,8,1,6],
+"group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d":[5,8,1,3],
+"group__SCC__BUFFER.html#gad71203ba5bc176efa8fb4138687db76a":[5,8,1,5],
+"group__SCC__BUFFER.html#gae46eef36c8ddac64a84a04bd1db0d173":[5,8,1,4],
+"group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa":[5,8,1,7],
+"group__SCC__BUFFER.html#structSCC__buffer":[5,8,1,0],
+"group__SCC__BUFFER.html#structSCC__wave__buffer":[5,8,1,1],
+"group__SCC__DEVICE.html":[5,8,0],
+"group__SCC__DEVICE.html#a1e35422951aaf250205c345a99b9ef96":[5,8,0,3,3],
+"group__SCC__DEVICE.html#a2a4a7b1b57d33f2f9f4b6ad3c487a5d0":[5,8,0,1,3],
 "group__SCC__DEVICE.html#a35f8dc7deda7c0966f63afb5cfb780d7":[5,8,0,2,1],
 "group__SCC__DEVICE.html#a451ffb6f9dbecfb1fd4078d3ad5f0bcf":[5,8,0,3,0],
 "group__SCC__DEVICE.html#a4a0eca2bc7f8d2b308a83b6b9afe37d7":[5,8,0,3,1],
@@ -239,15 +249,5 @@ var NAVTREEINDEX1 =
 "group__SPRITES__ATTR.html#ga0e5f09efae319ad69d5828e962ece788":[5,13,1,6],
 "group__SPRITES__ATTR.html#ga1bcc3bbb6147ac89600bc593acd181f1":[5,13,1,2],
 "group__SPRITES__ATTR.html#ga4d424f5d339662168ed48c3c0667f1d2":[5,13,1,8],
-"group__SPRITES__ATTR.html#ga605f045b10596303a46a2ba2ba343e1c":[5,13,1,1],
-"group__SPRITES__ATTR.html#gaa237556cb30d3104dccc66f9e9553f0b":[5,13,1,3],
-"group__SPRITES__ATTR.html#gaa958108a02a6d272f6aaba4d3e67239c":[5,13,1,9],
-"group__SPRITES__ATTR.html#gabfb561ba9c7d0a8d93cd4d776c0b5b93":[5,13,1,5],
-"group__SPRITES__ATTR.html#gadd07ddc8e6825d671c481f77dd1e9a26":[5,13,1,4],
-"group__SPRITES__ATTR.html#gadfaf95fcc3973b026552c7c11235547e":[5,13,1,7],
-"group__SPRITES__ATTR.html#gga1bcc3bbb6147ac89600bc593acd181f1a13d74d76f80d3f40c81a97133848f783":[5,13,1,2,1],
-"group__SPRITES__ATTR.html#gga1bcc3bbb6147ac89600bc593acd181f1a28586e6bf99f8041d0f137635ca64938":[5,13,1,2,2],
-"group__SPRITES__ATTR.html#gga1bcc3bbb6147ac89600bc593acd181f1ab153936187f894853626bd150ddd2131":[5,13,1,2,0],
-"group__SPRITES__ATTR.html#structsprite":[5,13,1,0],
-"group__SPRITES__COLOR.html":[5,13,2]
+"group__SPRITES__ATTR.html#ga605f045b10596303a46a2ba2ba343e1c":[5,13,1,1]
 };

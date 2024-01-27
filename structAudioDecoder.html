@@ -121,13 +121,18 @@ Data Fields</h2></td></tr>
 <li>one is a background music decoder,</li>
 <li>and the other is a sound effect decoder.</li>
 </ul>
-<p >A decoder for background music (BGM) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code>.</p>
-<p >The <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code> shall be called when the BGM is changed or set to the decoder by the decoder specific API.</p>
-<p >A decoder for sound effects (SFX) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code>.</p>
-<p >The <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code> shall be called when the SFX is changed or set to the decoder by the decoder specific API.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;">Callback functions of the libmsx audio replayer.</a> </dd></dl>
+<p ><b>Decode music data then Store in the buffer</b></p>
+<p >The decoder decodes the music data each time it is called and stores it in libmsx audio replayer's internal FIFO buffer by calling <code><a class="el" href="group__AUDIO__BUFFER.html#gad6673892739d6e752e7badbf982b66b1" title="MSX Put requests to the internal FIFO of the libmsx audio replayer.">audio_buf_put()</a></code>.</p>
+<p >To do this, each of the above audio decoders must implement the audio decoder interface of type <code><a class="el" href="structAudioDecoder.html" title="The audio decoder interface.">AudioDecoder</a></code>.</p>
+<p ><b>Attach the decoder to the libmsx audio replayer</b></p>
+<p >The decoder must be attached to the replayer when a music data is changed or set to the decoder by the decoder specific API.</p>
+<p >A decoder for background music (BGM) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code>. So the <code><a class="el" href="group__AUDIO__CALLBACK.html#gaa274e7331719599c4e0b776127a86ea3" title="MSX Callback function called by the music loader or decoder when setting or changing the BGM.">audio_cb_bgm_changed()</a></code> should be called when the BGM is changed or set to the decoder by the decoder specific API.</p>
+<p >A decoder for sound effects (SFX) shall be attached to the replayer by <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code>. So the <code><a class="el" href="group__AUDIO__CALLBACK.html#ga76b1cf1fd9fa2ebb46260e38e127fceb" title="MSX Callback function called by the music loader or decoder when setting or changing the SFX.">audio_cb_sfx_changed()</a></code> should be called when the SFX is changed or set to the decoder by the decoder specific API.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;">Unified sound-chip buffer of the libmsx audio replayer.</a> </dd>
+<dd>
+<a class="el" href="group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;">Callback functions of the libmsx audio replayer.</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00078">78</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00089">89</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a1b362e4d69d7d5bbdd8925f62a1e172c" name="a1b362e4d69d7d5bbdd8925f62a1e172c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b362e4d69d7d5bbdd8925f62a1e172c">&#9670;&#160;</a></span>decode_update</h2>
@@ -143,13 +148,17 @@ Data Fields</h2></td></tr>
 
 <p>Function pointer to the decoder I/F <code><a class="el" href="structAudioDecoder.html#a1b362e4d69d7d5bbdd8925f62a1e172c" title="Function pointer to the decoder I/F decode_update().">decode_update()</a></code>. </p>
 <p >This function is called by <code><a class="el" href="group__AUDIO__REPLAYER.html#gacb7bf1b1c5b07828d8a582084224011f" title="MSX Main routine of the libmsx audio replayer.">audio_play()</a></code> several times (depending on the frequency of the replayer and VSYNC) if the decoder has been attached to the replayer.</p>
-<p >The function shall decode the next sampled value of the music data.</p>
+<p >This function shall decodes the next sampled value of the music data.</p>
+<p >Then, by calling the function <code><a class="el" href="group__AUDIO__BUFFER.html#gad6673892739d6e752e7badbf982b66b1" title="MSX Put requests to the internal FIFO of the libmsx audio replayer.">audio_buf_put()</a></code>, the decoded value can be stored in the internal FIFO buffer of the libmsx audio replayer. (Or, it is done from the function <code>decoder_final()</code>.)</p>
 <p >If a music data has been set to the decoder and it is not reached to the end of music, this shall return <code>true</code>.</p>
 <p >If no music data is set to the decoder or the music is already finished, this shall return <code>false</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the music has not ended.</dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>The buffer for each sound chip may or may not be updated. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The FIFO buffer of the libmsx audio replayer may or may not be updated.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;">Unified sound-chip buffer of the libmsx audio replayer.</a> </dd>
+<dd>
+<a class="el" href="group__AUDIO__BUFFER.html#gad6673892739d6e752e7badbf982b66b1" title="MSX Put requests to the internal FIFO of the libmsx audio replayer.">audio_buf_put()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00098">98</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00117">117</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
 
 </div>
 </div>
@@ -167,14 +176,13 @@ Data Fields</h2></td></tr>
 
 <p>Function pointer to the decoder I/F <code><a class="el" href="structAudioDecoder.html#a5357fed68a60e0b73ef9969a66866110" title="Function pointer to the decoder I/F decode_final().">decode_final()</a></code>. </p>
 <p >This function is called by <code><a class="el" href="group__AUDIO__REPLAYER.html#gacb7bf1b1c5b07828d8a582084224011f" title="MSX Main routine of the libmsx audio replayer.">audio_play()</a></code> after several iterations of <code><a class="el" href="structAudioDecoder.html#a1b362e4d69d7d5bbdd8925f62a1e172c" title="Function pointer to the decoder I/F decode_update().">decode_update()</a></code> if the decoder has been attached to the replayer.</p>
-<dl class="section post"><dt>Postcondition</dt><dd>The buffer for each sound chip shall be updated / finalized.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__PSG__BUFFER.html" title="Buffered access to PSG registers.">PSG Buffer</a> </dd>
+<p >If <code><a class="el" href="structAudioDecoder.html#a1b362e4d69d7d5bbdd8925f62a1e172c" title="Function pointer to the decoder I/F decode_update().">decode_update()</a></code> simply decodes but does not store in the libmsx audio replayer's internal FIFO buffer, the value decoded by <code><a class="el" href="structAudioDecoder.html#a1b362e4d69d7d5bbdd8925f62a1e172c" title="Function pointer to the decoder I/F decode_update().">decode_update()</a></code> should be stored by this function in the FIFO buffer.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>The FIFO buffer of the libmsx audio replayer shall be updated / finalized.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;">Unified sound-chip buffer of the libmsx audio replayer.</a> </dd>
 <dd>
-<a class="el" href="group__SCC__BUFFER.html" title="#include &lt;scc_buf.h&gt; Buffered access to SCC/SCC+ registers.">SCC/SCC+ Buffer</a> </dd>
-<dd>
-<a class="el" href="group__OPLL__BUFFER.html" title="#include &lt;opll_buf.h&gt; Buffered access to OPLL registers.">OPLL Buffer</a> </dd></dl>
+<a class="el" href="group__AUDIO__BUFFER.html#gad6673892739d6e752e7badbf982b66b1" title="MSX Put requests to the internal FIFO of the libmsx audio replayer.">audio_buf_put()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00112">112</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00135">135</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
 
 </div>
 </div>
@@ -200,7 +208,7 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00125">125</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="audio__dec_8h_source.html#l00148">148</a> of file <a class="el" href="audio__dec_8h_source.html">audio_dec.h</a>.</p>
 
 </div>
 </div>

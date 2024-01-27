@@ -62,9 +62,9 @@ void audio_buf_clear(void);
  *
  * **Commands**
  *
- * The request is a pair of command # `cmd` and operand `val`, representing "a
+ * The request is a pair of command # `cmd` and operand `val`, representing a
  * request to write the value `val` to the register of the sound chip
- * corresponding to `cmd`".
+ * corresponding to `cmd`.
  *
  * | `cmd`      | explanation                                                    |
  * |------------|----------------------------------------------------------------|
@@ -93,7 +93,7 @@ void audio_buf_clear(void);
  * | 0xb9       | PSG ch.2 Volume register. (R#9)                                |
  * | 0xba       | PSG ch.3 Volume register. (R#10)                               |
  * | 0xbb..0xbc | PSG H/W envelope FDR\_LO, FDR\_HI register. (R#11..R#12)       |
- * | 0xbd       | PSG H/W envelope number register. (R#12)                       |
+ * | 0xbd       | PSG H/W envelope number register. (R#13)                       |
  * | 0xbe..0xbf | (reserved)                                                     |
  * | 0xc0..0xc7 | OPLL \$00..\$07 register.                                      |
  * | 0xc8..0xcd | (reserved)                                                     |

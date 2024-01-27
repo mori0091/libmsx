@@ -49,6 +49,7 @@
  * - and so on.
  *
  * \sa AUDIO_CALLBACK
+ * \sa AUDIO_BUFFER
  * @{
  */
 
@@ -61,18 +62,28 @@
  * - one is a background music decoder,
  * - and the other is a sound effect decoder.
  *
- * A decoder for background music (BGM) shall be attached to the replayer by
- * `audio_cb_bgm_changed()`.
+ * **Decode music data then Store in the buffer**
  *
- * The `audio_cb_bgm_changed()` shall be called when the BGM is changed or set
- * to the decoder by the decoder specific API.
+ * The decoder decodes the music data each time it is called and stores it in
+ * libmsx audio replayer's internal FIFO buffer by calling `audio_buf_put()`.
+ *
+ * To do this, each of the above audio decoders must implement the audio decoder
+ * interface of type `AudioDecoder`.
+ *
+ * **Attach the decoder to the libmsx audio replayer**
+ *
+ * The decoder must be attached to the replayer when a music data is changed or
+ * set to the decoder by the decoder specific API.
+ *
+ * A decoder for background music (BGM) shall be attached to the replayer by
+ * `audio_cb_bgm_changed()`. So the `audio_cb_bgm_changed()` should be called
+ * when the BGM is changed or set to the decoder by the decoder specific API.
  *
  * A decoder for sound effects (SFX) shall be attached to the replayer by
- * `audio_cb_sfx_changed()`.
+ * `audio_cb_sfx_changed()`. So the `audio_cb_sfx_changed()` should be called
+ * when the SFX is changed or set to the decoder by the decoder specific API.
  *
- * The `audio_cb_sfx_changed()` shall be called when the SFX is changed or set
- * to the decoder by the decoder specific API.
- *
+ * \sa AUDIO_BUFFER
  * \sa AUDIO_CALLBACK
  */
 typedef struct AudioDecoder {
@@ -83,7 +94,11 @@ typedef struct AudioDecoder {
    * frequency of the replayer and VSYNC) if the decoder has been attached to
    * the replayer.
    *
-   * The function shall decode the next sampled value of the music data.
+   * This function shall decodes the next sampled value of the music data.
+   *
+   * Then, by calling the function `audio_buf_put()`, the decoded value can be
+   * stored in the internal FIFO buffer of the libmsx audio replayer. (Or, it is
+   * done from the function `decoder_final()`.)
    *
    * If a music data has been set to the decoder and it is not reached to the
    * end of music, this shall return `true`.
@@ -93,7 +108,11 @@ typedef struct AudioDecoder {
    *
    * \return `true` if the music has not ended.
    *
-   * \post The buffer for each sound chip may or may not be updated.
+   * \post
+   * The FIFO buffer of the libmsx audio replayer may or may not be updated.
+   *
+   * \sa AUDIO_BUFFER
+   * \sa audio_buf_put()
    */
   bool (*decode_update)(void);
 
@@ -103,11 +122,15 @@ typedef struct AudioDecoder {
    * This function is called by `audio_play()` after several iterations of
    * `decode_update()` if the decoder has been attached to the replayer.
    *
-   * \post The buffer for each sound chip shall be updated / finalized.
+   * If `decode_update()` simply decodes but does not store in the libmsx audio
+   * replayer's internal FIFO buffer, the value decoded by `decode_update()`
+   * should be stored by this function in the FIFO buffer.
    *
-   * \sa PSG_BUFFER
-   * \sa SCC_BUFFER
-   * \sa OPLL_BUFFER
+   * \post
+   * The FIFO buffer of the libmsx audio replayer shall be updated / finalized.
+   *
+   * \sa AUDIO_BUFFER
+   * \sa audio_buf_put()
    */
   void (*decode_final)(void);
 

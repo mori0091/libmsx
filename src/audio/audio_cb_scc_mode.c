@@ -13,7 +13,8 @@
  */
 
 #include "audio__internal.h"
-#include "scc.h"
+
+#include <scc.h>
 
 void audio_cb_scc_mode(uint8_t mode) {
   SCC_set_mode(&audio_.scc, mode);

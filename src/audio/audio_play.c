@@ -14,9 +14,7 @@
 
 #include "audio__internal.h"
 
-#include <ay_3_8910.h>
-#include <scc_buf.h>
-#include <opll_buf.h>
+#include <audio_buf.h>
 
 void audio_decode(void) {
   if (audio_.bgm.is_playing) {
@@ -39,6 +37,7 @@ void audio_decode(void) {
       if (!audio_.sfx.decoder.decode_update()) {
         audio_.sfx.is_playing = false;
         audio_.sfx.counter = 0;
+        audio_buf_restore();
         break;
       }
     }
@@ -48,15 +47,9 @@ void audio_decode(void) {
 
 void audio_play(void) {
   if (audio_.paused) return;
-  ay_3_8910_play();
-  SCC_play(&audio_.scc);
-  OPLL_play(&audio_.opll);
-  if (audio_is_playing()) {
-    audio_decode();
-    if (!audio_is_playing()) {
-      ay_3_8910_stop();
-      SCC_stop(&audio_.scc);
-      OPLL_stop(&audio_.opll);
-    }
+  audio_buf_play();
+  audio_decode();
+  if (!audio_is_playing()) {
+    audio_buf_init();
   }
 }

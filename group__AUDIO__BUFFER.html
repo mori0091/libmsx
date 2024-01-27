@@ -221,9 +221,7 @@ Variables</h2></td></tr>
 
 <p><code>MSX</code> Put requests to the internal FIFO of the libmsx audio replayer. </p>
 <p ><b>Commands</b></p>
-<p >The request is a pair of command # <code>cmd</code> and operand <code>val</code>, representing "a
-request to write the value &lt;tt&gt;val&lt;/tt&gt; to the register of the sound chip
-corresponding to &lt;tt&gt;cmd&lt;/tt&gt;".</p>
+<p >The request is a pair of command # <code>cmd</code> and operand <code>val</code>, representing a request to write the value <code>val</code> to the register of the sound chip corresponding to <code>cmd</code>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"><code>cmd</code>   </th><th class="markdownTableHeadNone">explanation    </th></tr>
@@ -278,7 +276,7 @@ corresponding to &lt;tt&gt;cmd&lt;/tt&gt;".</p>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">0xbb..0xbc   </td><td class="markdownTableBodyNone">PSG H/W envelope FDR_LO, FDR_HI register. (R#11..R#12)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">0xbd   </td><td class="markdownTableBodyNone">PSG H/W envelope number register. (R#12)    </td></tr>
+<td class="markdownTableBodyNone">0xbd   </td><td class="markdownTableBodyNone">PSG H/W envelope number register. (R#13)    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">0xbe..0xbf   </td><td class="markdownTableBodyNone">(reserved)    </td></tr>
 <tr class="markdownTableRowEven">

@@ -14,21 +14,17 @@
 
 #include "audio__internal.h"
 
-#include <ay_3_8910.h>
+#include <audio_buf.h>
 #include <bios.h>
-#include <scc_buf.h>
-#include <opll_buf.h>
 
 void audio_init(void) {
   audio_.vsync_freq = msx_get_vsync_frequency();
-  ay_3_8910_init();
   if (SCC_find(&audio_.scc)) {
     // SCC_set_mode(&audio_.scc, 2);
     SCC_enable(&audio_.scc);
-    SCC_init();
   }
   if (OPLL_find(&audio_.opll)) {
     OPLL_enable(&audio_.opll);
-    OPLL_init();
   }
+  audio_buf_init();
 }

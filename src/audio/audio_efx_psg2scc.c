@@ -14,15 +14,31 @@
 
 #include <audio_efx_psg2scc.h>
 
-#include <ay_3_8910.h>
-#include <scc_buf.h>
+#include <audio_buf.h>
+#include <scc_wav.h>
+
+#include <string.h>
 
 void audio_efx_psg2scc(void) {
-  scc_buffer.channel_mask = 0x1f;
-  scc_buffer.fdr[0] = (uint16_t)ay_3_8910_buffer[0] + ay_3_8910_buffer[1] * 256;
-  scc_buffer.fdr[1] = (uint16_t)ay_3_8910_buffer[2] + ay_3_8910_buffer[3] * 256;
-  scc_buffer.fdr[2] = (uint16_t)ay_3_8910_buffer[4] + ay_3_8910_buffer[5] * 256;
-  scc_buffer.volume[0] = (ay_3_8910_buffer[8]  < 16 ? ay_3_8910_buffer[8]  : 15);
-  scc_buffer.volume[1] = (ay_3_8910_buffer[9]  < 16 ? ay_3_8910_buffer[9]  : 15);
-  scc_buffer.volume[2] = (ay_3_8910_buffer[10] < 16 ? ay_3_8910_buffer[10] : 15);
+  if (!audio_buf_cache[0xfa]) {
+    memcpy(&audio_buf_cache[0x00], SCC_WAVEFORM_PULSE_1_32, 32);
+    memcpy(&audio_buf_cache[0x20], SCC_WAVEFORM_PULSE_1_32, 32);
+    memcpy(&audio_buf_cache[0x40], SCC_WAVEFORM_PULSE_1_32, 32);
+    audio_buf_put(0, 0xfa, 0);
+    audio_buf_put(0, 0xfa, 1);
+    audio_buf_put(0, 0xfa, 2);
+  }
+
+  audio_buf_put(0, 0xaf, 0x07);
+
+  audio_buf_put(0, 0xa0, audio_buf_cache[0xb0]); // ch.1 FDR LO
+  audio_buf_put(0, 0xa1, audio_buf_cache[0xb1]); // ch.1 FDR HI
+  audio_buf_put(0, 0xa2, audio_buf_cache[0xb2]); // ch.2 FDR LO
+  audio_buf_put(0, 0xa3, audio_buf_cache[0xb3]); // ch.2 FDR HI
+  audio_buf_put(0, 0xa4, audio_buf_cache[0xb4]); // ch.3 FDR LO
+  audio_buf_put(0, 0xa5, audio_buf_cache[0xb5]); // ch.3 FDR HI
+
+  audio_buf_put(0, 0xaa, audio_buf_cache[0xb8] < 16 ? audio_buf_cache[0xb8] : 15); // ch.1 Volume
+  audio_buf_put(0, 0xab, audio_buf_cache[0xb9] < 16 ? audio_buf_cache[0xb9] : 15); // ch.2 Volume
+  audio_buf_put(0, 0xac, audio_buf_cache[0xba] < 16 ? audio_buf_cache[0xba] : 15); // ch.3 Volume
 }

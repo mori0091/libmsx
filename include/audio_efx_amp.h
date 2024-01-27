@@ -51,11 +51,13 @@
  *     audio_efx_amp_set_volume(10);
  *     // ...
  *
- *     // Decrease the main-volume level every 2 ticks.
+ *     // Decrease the main-volume level every 3 ticks.
+ *     // (`0` means every ticks)
  *     audio_efx_amp_fadeout(2);
  *     // ...
  *
- *     // Increase the main-volume level every 2 ticks.
+ *     // Increase the main-volume level every 3 ticks.
+ *     // (`0` means every ticks)
  *     audio_efx_amp_fadein(2);
  *     // ...
  *   }
@@ -90,7 +92,9 @@ uint8_t audio_efx_amp_get_volume(void);
  * `MSX` Decrease the main volume level by one for each specified period of
  * time. (Fade out)
  *
- * \param ticks  Period (VSYNC counts)
+ * Fade out every `ticks+1` VSYNC counts.
+ *
+ * \param ticks  Period (VSYNC counts ; wait counts)
  */
 void audio_efx_amp_fadeout(uint8_t ticks);
 
@@ -98,7 +102,9 @@ void audio_efx_amp_fadeout(uint8_t ticks);
  * `MSX` Increase the main volume level by one for each specified period of
  * time. (Fade in)
  *
- * \param ticks  Period (VSYNC counts)
+ * Fade in every `ticks+1` VSYNC counts.
+ *
+ * \param ticks  Period (VSYNC counts ; wait counts)
  */
 void audio_efx_amp_fadein(uint8_t ticks);
 

@@ -98,7 +98,7 @@ typedef struct AudioDecoder {
    *
    * Then, by calling the function `audio_buf_put()`, the decoded value can be
    * stored in the internal FIFO buffer of the libmsx audio replayer. (Or, it is
-   * done from the function `decoder_final()`.)
+   * done from the function `decode_final()`.)
    *
    * If a music data has been set to the decoder and it is not reached to the
    * end of music, this shall return `true`.

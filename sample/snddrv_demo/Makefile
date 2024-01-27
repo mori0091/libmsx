@@ -72,3 +72,25 @@ CONFIG_ROM_TYPE = 32k
 # [REQUIRED] (No need to modify)
 # Include common part of Makefile
 include ${LIBMSX_HOME}/mk/build.mk
+
+OPENMSX = openmsx.exe
+
+OPENMSX_MACHINE = C-BIOS_MSX1_JP
+# OPENMSX_MACHINE = C-BIOS_MSX2+_JP
+# OPENMSX_MACHINE = Panasonic_FS-A1GT
+
+OPENMSX_FLAGS = \
+	 -machine ${OPENMSX_MACHINE}
+
+PROFILE_FLAGS = \
+	profile::section_irq_bp irq; \
+	profile::section_scope_bp frame 0xFD9F; \
+	profile::section_vdp_bp vdp; \
+	$$(sed -n -E -e 's/DEF ((_audio_|_snd_|_mf)[0-9a-zA-Z_]+) (0x.+)/profile::section_scope_bp \1 \3;/p' ${BINDIR}/${NAME}.noi) \
+	profile_osd p;
+
+prof: ${BINDIR}/${NAME}.rom
+	${OPENMSX} ${OPENMSX_FLAGS} -cart $< -command "${PROFILE_FLAGS}"
+
+run: ${BINDIR}/${NAME}.rom
+	${OPENMSX} ${OPENMSX_FLAGS} -cart $<

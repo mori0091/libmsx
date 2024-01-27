@@ -24,6 +24,7 @@
 #include "./snd_ctx.h"
 
 #include <audio.h>
+#include <audio_buf.h>
 #include <audio_cb.h>
 #include <audio_dec.h>
 
@@ -168,11 +169,30 @@ static bool snd_sfx_decode_update(void) {
   return snd__decode_once(&snd_sfx.m);
 }
 
+static void snd__put_commands(void) {
+  uint8_t * p = ay_3_8910_buffer;
+  uint8_t cmd = 0xb0;
+  while (cmd < 0xbd) {
+    if (audio_buf_cache[cmd] != *p) {
+      audio_buf_put(0, cmd, *p);
+    }
+    cmd++;
+    p++;
+  }
+  if (!(*p & 0x80)) {
+    audio_buf_put(0, cmd, *p);
+    *p = 0x80;
+  }
+}
+
 static void snd_bgm_decode_final(void) {
   ay_3_8910_buffer[7] = 0xb8;
   snd_channel_synthesis(0, &snd_bgm.m.channels[0]);
   snd_channel_synthesis(1, &snd_bgm.m.channels[1]);
   snd_channel_synthesis(2, &snd_bgm.m.channels[2]);
+  if (!snd_sfx.m.music || snd_sfx.m.isEnd) {
+    snd__put_commands();
+  }
 }
 
 static void snd_sfx_decode_final(void) {
@@ -184,4 +204,5 @@ static void snd_sfx_decode_final(void) {
       snd_channel_synthesis(ch, pch);
     }
   }
+  snd__put_commands();
 }

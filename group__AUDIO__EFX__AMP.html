@@ -153,11 +153,13 @@ Functions</h2></td></tr>
 <div class="line">    <a class="code hl_function" href="group__AUDIO__EFX__AMP.html#gab6b3c9c68d4603986ce1293e38aa7fc9">audio_efx_amp_set_volume</a>(10);</div>
 <div class="line">    <span class="comment">// ...</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// Decrease the main-volume level every 2 ticks.</span></div>
+<div class="line">    <span class="comment">// Decrease the main-volume level every 3 ticks.</span></div>
+<div class="line">    <span class="comment">// (`0` means every ticks)</span></div>
 <div class="line">    <a class="code hl_function" href="group__AUDIO__EFX__AMP.html#ga7fcd1fd087cb2d826e3884a22938226b">audio_efx_amp_fadeout</a>(2);</div>
 <div class="line">    <span class="comment">// ...</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// Increase the main-volume level every 2 ticks.</span></div>
+<div class="line">    <span class="comment">// Increase the main-volume level every 3 ticks.</span></div>
+<div class="line">    <span class="comment">// (`0` means every ticks)</span></div>
 <div class="line">    <a class="code hl_function" href="group__AUDIO__EFX__AMP.html#ga225d7b7340d3e025fb731356728e9f01">audio_efx_amp_fadein</a>(2);</div>
 <div class="line">    <span class="comment">// ...</span></div>
 <div class="line">  }</div>
@@ -261,9 +263,10 @@ Functions</h2></td></tr>
 
 <p><code>MSX</code> Decrease the main volume level by one for each specified period of time. </p>
 <p >(Fade out)</p>
+<p >Fade out every <code>ticks+1</code> VSYNC counts.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ticks</td><td>Period (VSYNC counts) </td></tr>
+    <tr><td class="paramname">ticks</td><td>Period (VSYNC counts ; wait counts) </td></tr>
   </table>
   </dd>
 </dl>
@@ -288,9 +291,10 @@ Functions</h2></td></tr>
 
 <p><code>MSX</code> Increase the main volume level by one for each specified period of time. </p>
 <p >(Fade in)</p>
+<p >Fade in every <code>ticks+1</code> VSYNC counts.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ticks</td><td>Period (VSYNC counts) </td></tr>
+    <tr><td class="paramname">ticks</td><td>Period (VSYNC counts ; wait counts) </td></tr>
   </table>
   </dd>
 </dl>

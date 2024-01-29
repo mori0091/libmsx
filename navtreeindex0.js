@@ -89,6 +89,7 @@ var NAVTREEINDEX0 =
 "group__AUDIO__EFX.html":[5,0,1],
 "group__AUDIO__EFX__AMP.html":[5,0,1,0],
 "group__AUDIO__EFX__AMP.html#ga225d7b7340d3e025fb731356728e9f01":[5,0,1,0,4],
+"group__AUDIO__EFX__AMP.html#ga25fd35efa602c457e00b7e223971cc19":[5,0,1,0,5],
 "group__AUDIO__EFX__AMP.html#ga7fcd1fd087cb2d826e3884a22938226b":[5,0,1,0,3],
 "group__AUDIO__EFX__AMP.html#gab6b3c9c68d4603986ce1293e38aa7fc9":[5,0,1,0,1],
 "group__AUDIO__EFX__AMP.html#gacaa2c4b5dd7f4cc363cf6617f681e7e0":[5,0,1,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__SCC__BUFFER.html#a76e6f42fadd1382769f8db38d01d2035":[5,8,1,1,0],
 "group__SCC__BUFFER.html#ad9422c592799868c73d6ac3dcec87b0e":[5,8,1,0,2],
 "group__SCC__BUFFER.html#af0326d9f160cab2b106a38953a3dd658":[5,8,1,0,1],
-"group__SCC__BUFFER.html#af78c8afaa60652267667738c423f4845":[5,8,1,0,0],
-"group__SCC__BUFFER.html#ga03886c3403bd874dae2fdcd58ecb3ea3":[5,8,1,2]
+"group__SCC__BUFFER.html#af78c8afaa60652267667738c423f4845":[5,8,1,0,0]
 };

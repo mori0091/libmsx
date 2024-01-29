@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"group__SCC__BUFFER.html#ga03886c3403bd874dae2fdcd58ecb3ea3":[5,8,1,2],
 "group__SCC__BUFFER.html#ga05ba7f098db8e8b3c62f723006b00a46":[5,8,1,6],
 "group__SCC__BUFFER.html#gaa90f2a4bfbdf15bccf328efcfb379e5d":[5,8,1,3],
 "group__SCC__BUFFER.html#gad71203ba5bc176efa8fb4138687db76a":[5,8,1,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "group__SPRITES__ATTR.html#ae721ff1bb077d5d54ee08a4ea0ae607c":[5,13,1,0,1],
 "group__SPRITES__ATTR.html#ga0e5f09efae319ad69d5828e962ece788":[5,13,1,6],
 "group__SPRITES__ATTR.html#ga1bcc3bbb6147ac89600bc593acd181f1":[5,13,1,2],
-"group__SPRITES__ATTR.html#ga4d424f5d339662168ed48c3c0667f1d2":[5,13,1,8],
-"group__SPRITES__ATTR.html#ga605f045b10596303a46a2ba2ba343e1c":[5,13,1,1]
+"group__SPRITES__ATTR.html#ga4d424f5d339662168ed48c3c0667f1d2":[5,13,1,8]
 };

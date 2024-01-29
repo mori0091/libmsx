@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"group__SPRITES__ATTR.html#ga605f045b10596303a46a2ba2ba343e1c":[5,13,1,1],
 "group__SPRITES__ATTR.html#gaa237556cb30d3104dccc66f9e9553f0b":[5,13,1,3],
 "group__SPRITES__ATTR.html#gaa958108a02a6d272f6aaba4d3e67239c":[5,13,1,9],
 "group__SPRITES__ATTR.html#gabfb561ba9c7d0a8d93cd4d776c0b5b93":[5,13,1,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "index.html":[0],
 "index.html":[],
 "index.html#autotoc_md1":[0,0],
-"index.html#autotoc_md10":[0,5,0],
-"index.html#autotoc_md11":[0,5,0,0]
+"index.html#autotoc_md10":[0,5,0]
 };

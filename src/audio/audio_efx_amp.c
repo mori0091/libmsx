@@ -146,3 +146,11 @@ void audio_efx_amp_fadein(uint8_t ticks) {
   fade = +1;
   __asm__("ei");
 }
+
+int8_t audio_efx_amp_get_fade(void) {
+  int8_t ret;
+  __asm__("di");
+  ret = fade;
+  __asm__("ei");
+  return fade;
+}

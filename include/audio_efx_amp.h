@@ -108,6 +108,16 @@ void audio_efx_amp_fadeout(uint8_t ticks);
  */
 void audio_efx_amp_fadein(uint8_t ticks);
 
+/**
+ * `MSX` Return the status of fade-in/out.
+ *
+ * \return The status of fade-in/out:
+ *         - `0` if the main volume is constant,
+ *         - negative during fade-out, and
+ *         - positive during fade-in.
+ */
+int8_t audio_efx_amp_get_fade(void);
+
 /** @} */
 
 #endif // AUDIO_EFX_AMP_H_

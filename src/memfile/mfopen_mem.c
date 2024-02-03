@@ -50,7 +50,7 @@ static const struct MemFileMethods methods = {
 void mfopen_mem(MemFile * mf, uint8_t * p, size_t size) {
   memset(mf, 0, sizeof(MemFile));
   if (!p) return;
-  uint8_t * const end = p + size;
+  const uint8_t * const end = p + size;
   if (p <= end && end < (uint8_t *)0xffff) {
     mf->base.ptr = p;
     mf->curr.ptr = p;

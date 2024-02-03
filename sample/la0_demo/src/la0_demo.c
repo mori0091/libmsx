@@ -20,7 +20,6 @@
 #include <audio.h>
 #include <audio_buf.h>
 #include <audio_efx_amp.h>
-#include <audio_efx_psg2scc.h>
 
 #include <la0.h>
 
@@ -76,19 +75,19 @@ void decrease_player_freq(void) {
   }
 }
 
-void toggle_pause(void) {
-  locate(13, 10);
-  if (audio_is_paused()) {
-    // resume
-    audio_start();
-    print("     ");
-  }
-  else {
-    // pause
-    audio_pause();
-    print("PAUSE");
-  }
-}
+// void toggle_pause(void) {
+//   locate(13, 10);
+//   if (audio_is_paused()) {
+//     // resume
+//     audio_start();
+//     print("     ");
+//   }
+//   else {
+//     // pause
+//     audio_pause();
+//     print("PAUSE");
+//   }
+// }
 
 void next_song(void) {
   if (song_number < number_of_songs - 1) {
@@ -138,7 +137,6 @@ void update_joypad_state(void) {
 
 static void play(void) {
   audio_play();                 // The libmsx audio replayer
-  // audio_efx_psg2scc();          // Effector (PSG -> PSG, SCC/SCC+)
   audio_efx_amp();              // Effector (amp)
 }
 
@@ -154,12 +152,7 @@ void main(void) {
   locate(0, 21);
   print("  LEFT/RIGHT  Select BGM\n");
   print("   UP/DOWN    Player Freq.\n");
-  if (number_of_sfx) {
-    print("    SPACE     Sound effects\n");
-  }
-  else {
-    print("    SPACE     Pause/Resume\n");
-  }
+  print("    SPACE     Sound effects\n");
 
   audio_init();
   set_vsync_handler(play);
@@ -200,9 +193,9 @@ void main(void) {
       if (number_of_sfx) {
         la0_set_sfx(rand() % number_of_sfx, &sfx);
       }
-      else {
-        toggle_pause();         // pause / resume
-      }
+      // else {
+      //   toggle_pause();         // pause / resume
+      // }
     }
     if (clicked & VK_RIGHT) {
       next_song();

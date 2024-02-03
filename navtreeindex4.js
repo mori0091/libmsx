@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"workarea_8h.html#adcf57c23398c01d242ba9f52ba3ddb42":[7,0,1,45,79],
+"workarea_8h.html#add30676e4e66ea74a5832266afce7990":[7,0,1,45,53],
+"workarea_8h.html#add51f2457844fd0fe2f3b68294740c32":[7,0,1,45,11],
+"workarea_8h.html#ae009ed1e5b41e5c15a7926073da5b7da":[7,0,1,45,51],
 "workarea_8h.html#ae05fcdd37a1ee36aef7a406b7831e6ab":[7,0,1,45,34],
 "workarea_8h.html#ae11cccd86098c3f6009e16d542c223a9":[7,0,1,45,37],
 "workarea_8h.html#ae85872a73daf84bc7538b12205d5c971":[7,0,1,45,101],

@@ -14,7 +14,8 @@ var searchData=
   ['psg_20ay_203_208910_20programmable_20sound_20generator_11',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],
   ['psg_20buffer_12',['PSG Buffer',['../group__PSG__BUFFER.html',1,'']]],
   ['psg_20registers_13',['PSG registers',['../group__PSG__REGISTER.html',1,'']]],
-  ['psg_20sound_20driver_14',['psg sound driver',['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver']]],
-  ['psg_20sound_20driver_20apis_15',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
-  ['psg_20to_20scc_20scc_20effector_16',['The &quot;PSG to SCC/SCC+&quot; effector.',['../group__AUDIO__EFX__PSG2SCC.html',1,'']]]
+  ['psg_20scc_20scc_20opll_20sound_20driver_14',['LA0 - PSG, SCC/SCC+, OPLL sound driver.',['../group__LA0__DECODER.html',1,'']]],
+  ['psg_20sound_20driver_15',['psg sound driver',['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver']]],
+  ['psg_20sound_20driver_20apis_16',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
+  ['psg_20to_20scc_20scc_20effector_17',['The &quot;PSG to SCC/SCC+&quot; effector.',['../group__AUDIO__EFX__PSG2SCC.html',1,'']]]
 ];

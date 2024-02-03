@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('la0_8h.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">la0.h File Reference</div></div>
+  <div class="headertitle"><div class="title">la0.h File Reference<div class="ingroups"><a class="el" href="group__AUDIO__DECODERS.html">Decoders for the libmsx audio replayer.</a> &raquo; <a class="el" href="group__LA0__DECODER.html">LA0 - PSG, SCC/SCC+, OPLL sound driver.</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -118,442 +118,51 @@ $(document).ready(function(){initNavTree('la0_8h.html',''); initResizable(); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0a8578a00bd4a49d572a0fc70f4f3259" id="r_a0a8578a00bd4a49d572a0fc70f4f3259"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a0a8578a00bd4a49d572a0fc70f4f3259">la0_open_mem</a> (<a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, const uint8_t *loc, size_t size)</td></tr>
-<tr class="memdesc:a0a8578a00bd4a49d572a0fc70f4f3259"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open LA0 file stored in ROM / RAM.  <br /></td></tr>
-<tr class="separator:a0a8578a00bd4a49d572a0fc70f4f3259"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244f8b446bef9929fb1a5d677d30e1d0" id="r_a244f8b446bef9929fb1a5d677d30e1d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a244f8b446bef9929fb1a5d677d30e1d0">la0_open_bmem</a> (<a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, <a class="el" href="group__BANKED__MEMORY__DIRECT__ACCESS.html#ga2b2d2e51ae616ffb07e5acf46a963e3d">bmemptr_t</a> loc, uint32_t size)</td></tr>
-<tr class="memdesc:a244f8b446bef9929fb1a5d677d30e1d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open LA0 file stored in banked memory (MegaROM).  <br /></td></tr>
-<tr class="separator:a244f8b446bef9929fb1a5d677d30e1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a682b5d27051896bf6214744fe579442f" id="r_a682b5d27051896bf6214744fe579442f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a682b5d27051896bf6214744fe579442f">la0_open_resource</a> (<a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, const char *path)</td></tr>
-<tr class="memdesc:a682b5d27051896bf6214744fe579442f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open LA0 file stored as named resources in banked memory (MegaROM).  <br /></td></tr>
-<tr class="separator:a682b5d27051896bf6214744fe579442f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc7a7c936c557fec3c3eeb911778641c" id="r_afc7a7c936c557fec3c3eeb911778641c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#afc7a7c936c557fec3c3eeb911778641c">la0_set_bgm</a> (uint8_t idx, <a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf)</td></tr>
-<tr class="memdesc:afc7a7c936c557fec3c3eeb911778641c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as background music (BGM).  <br /></td></tr>
-<tr class="separator:afc7a7c936c557fec3c3eeb911778641c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b986fcae85ce1531b050262ae36cb1f" id="r_a8b986fcae85ce1531b050262ae36cb1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a8b986fcae85ce1531b050262ae36cb1f">la0_set_sfx</a> (uint8_t idx, <a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf)</td></tr>
-<tr class="memdesc:a8b986fcae85ce1531b050262ae36cb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as sound effects (SFX).  <br /></td></tr>
-<tr class="separator:a8b986fcae85ce1531b050262ae36cb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd9b73bcd28193858babdc9000c0ae07" id="r_acd9b73bcd28193858babdc9000c0ae07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#acd9b73bcd28193858babdc9000c0ae07">la0_set_sfx_with_priority</a> (uint8_t idx, <a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, uint8_t priority)</td></tr>
-<tr class="memdesc:acd9b73bcd28193858babdc9000c0ae07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as sound effects (SFX).  <br /></td></tr>
-<tr class="separator:acd9b73bcd28193858babdc9000c0ae07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67ecb75aae0e674f54b8e3f8b12fbb2b" id="r_a67ecb75aae0e674f54b8e3f8b12fbb2b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a67ecb75aae0e674f54b8e3f8b12fbb2b">la0_get_bgm_frequency</a> (void)</td></tr>
-<tr class="memdesc:a67ecb75aae0e674f54b8e3f8b12fbb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return default frequency of the current background music.  <br /></td></tr>
-<tr class="separator:a67ecb75aae0e674f54b8e3f8b12fbb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a469a3c62ba9501bcd658a9b28a88461b" id="r_a469a3c62ba9501bcd658a9b28a88461b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a469a3c62ba9501bcd658a9b28a88461b">la0_get_bgm_total_samples</a> (void)</td></tr>
-<tr class="memdesc:a469a3c62ba9501bcd658a9b28a88461b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return the total number of BGM samples.  <br /></td></tr>
-<tr class="separator:a469a3c62ba9501bcd658a9b28a88461b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d6833afd47ffd2d8b0d175d02be40c5" id="r_a9d6833afd47ffd2d8b0d175d02be40c5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a9d6833afd47ffd2d8b0d175d02be40c5">la0_get_bgm_loop_samples</a> (void)</td></tr>
-<tr class="memdesc:a9d6833afd47ffd2d8b0d175d02be40c5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return the number of samples in the loop portion of BGM.  <br /></td></tr>
-<tr class="separator:a9d6833afd47ffd2d8b0d175d02be40c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcbf24608d92ee1cb847e950333a7ed0" id="r_adcbf24608d92ee1cb847e950333a7ed0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#adcbf24608d92ee1cb847e950333a7ed0">la0_get_bgm_loop_counter</a> (void)</td></tr>
-<tr class="memdesc:adcbf24608d92ee1cb847e950333a7ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return the loop counter value.  <br /></td></tr>
-<tr class="separator:adcbf24608d92ee1cb847e950333a7ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a8578a00bd4a49d572a0fc70f4f3259" id="r_ga0a8578a00bd4a49d572a0fc70f4f3259"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__OPEN.html#ga0a8578a00bd4a49d572a0fc70f4f3259">la0_open_mem</a> (<a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, const uint8_t *loc, size_t size)</td></tr>
+<tr class="memdesc:ga0a8578a00bd4a49d572a0fc70f4f3259"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open LA0 file stored in ROM / RAM.  <br /></td></tr>
+<tr class="separator:ga0a8578a00bd4a49d572a0fc70f4f3259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga244f8b446bef9929fb1a5d677d30e1d0" id="r_ga244f8b446bef9929fb1a5d677d30e1d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__OPEN.html#ga244f8b446bef9929fb1a5d677d30e1d0">la0_open_bmem</a> (<a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, <a class="el" href="group__BANKED__MEMORY__DIRECT__ACCESS.html#ga2b2d2e51ae616ffb07e5acf46a963e3d">bmemptr_t</a> loc, uint32_t size)</td></tr>
+<tr class="memdesc:ga244f8b446bef9929fb1a5d677d30e1d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open LA0 file stored in banked memory (MegaROM).  <br /></td></tr>
+<tr class="separator:ga244f8b446bef9929fb1a5d677d30e1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga682b5d27051896bf6214744fe579442f" id="r_ga682b5d27051896bf6214744fe579442f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__OPEN.html#ga682b5d27051896bf6214744fe579442f">la0_open_resource</a> (<a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, const char *path)</td></tr>
+<tr class="memdesc:ga682b5d27051896bf6214744fe579442f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open LA0 file stored as named resources in banked memory (MegaROM).  <br /></td></tr>
+<tr class="separator:ga682b5d27051896bf6214744fe579442f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc7a7c936c557fec3c3eeb911778641c" id="r_gafc7a7c936c557fec3c3eeb911778641c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__SET__SONG.html#gafc7a7c936c557fec3c3eeb911778641c">la0_set_bgm</a> (uint8_t idx, <a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf)</td></tr>
+<tr class="memdesc:gafc7a7c936c557fec3c3eeb911778641c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as background music (BGM).  <br /></td></tr>
+<tr class="separator:gafc7a7c936c557fec3c3eeb911778641c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b986fcae85ce1531b050262ae36cb1f" id="r_ga8b986fcae85ce1531b050262ae36cb1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__SET__SONG.html#ga8b986fcae85ce1531b050262ae36cb1f">la0_set_sfx</a> (uint8_t idx, <a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf)</td></tr>
+<tr class="memdesc:ga8b986fcae85ce1531b050262ae36cb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as sound effects (SFX).  <br /></td></tr>
+<tr class="separator:ga8b986fcae85ce1531b050262ae36cb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd9b73bcd28193858babdc9000c0ae07" id="r_gacd9b73bcd28193858babdc9000c0ae07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__SET__SONG.html#gacd9b73bcd28193858babdc9000c0ae07">la0_set_sfx_with_priority</a> (uint8_t idx, <a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *mf, uint8_t priority)</td></tr>
+<tr class="memdesc:gacd9b73bcd28193858babdc9000c0ae07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as sound effects (SFX).  <br /></td></tr>
+<tr class="separator:gacd9b73bcd28193858babdc9000c0ae07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67ecb75aae0e674f54b8e3f8b12fbb2b" id="r_ga67ecb75aae0e674f54b8e3f8b12fbb2b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__MISC.html#ga67ecb75aae0e674f54b8e3f8b12fbb2b">la0_get_bgm_frequency</a> (void)</td></tr>
+<tr class="memdesc:ga67ecb75aae0e674f54b8e3f8b12fbb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return default frequency of the current background music.  <br /></td></tr>
+<tr class="separator:ga67ecb75aae0e674f54b8e3f8b12fbb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga469a3c62ba9501bcd658a9b28a88461b" id="r_ga469a3c62ba9501bcd658a9b28a88461b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__MISC.html#ga469a3c62ba9501bcd658a9b28a88461b">la0_get_bgm_total_samples</a> (void)</td></tr>
+<tr class="memdesc:ga469a3c62ba9501bcd658a9b28a88461b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return the total number of BGM samples.  <br /></td></tr>
+<tr class="separator:ga469a3c62ba9501bcd658a9b28a88461b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d6833afd47ffd2d8b0d175d02be40c5" id="r_ga9d6833afd47ffd2d8b0d175d02be40c5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__MISC.html#ga9d6833afd47ffd2d8b0d175d02be40c5">la0_get_bgm_loop_samples</a> (void)</td></tr>
+<tr class="memdesc:ga9d6833afd47ffd2d8b0d175d02be40c5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return the number of samples in the loop portion of BGM.  <br /></td></tr>
+<tr class="separator:ga9d6833afd47ffd2d8b0d175d02be40c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadcbf24608d92ee1cb847e950333a7ed0" id="r_gadcbf24608d92ee1cb847e950333a7ed0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__MISC.html#gadcbf24608d92ee1cb847e950333a7ed0">la0_get_bgm_loop_counter</a> (void)</td></tr>
+<tr class="memdesc:gadcbf24608d92ee1cb847e950333a7ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return the loop counter value.  <br /></td></tr>
+<tr class="separator:gadcbf24608d92ee1cb847e950333a7ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6c0f913acd96369d7b2eb440c078972f" id="r_a6c0f913acd96369d7b2eb440c078972f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structAudioDecoder.html">AudioDecoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a6c0f913acd96369d7b2eb440c078972f">LA0_BGM_DECODER</a></td></tr>
-<tr class="memdesc:a6c0f913acd96369d7b2eb440c078972f"><td class="mdescLeft">&#160;</td><td class="mdescRight">LA0 BGM decoder.  <br /></td></tr>
-<tr class="separator:a6c0f913acd96369d7b2eb440c078972f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a631bcc384168d7a38b2877dd1af06579" id="r_a631bcc384168d7a38b2877dd1af06579"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structAudioDecoder.html">AudioDecoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="la0_8h.html#a631bcc384168d7a38b2877dd1af06579">LA0_SFX_DECODER</a></td></tr>
-<tr class="memdesc:a631bcc384168d7a38b2877dd1af06579"><td class="mdescLeft">&#160;</td><td class="mdescRight">LA0 SFX decoder.  <br /></td></tr>
-<tr class="separator:a631bcc384168d7a38b2877dd1af06579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c0f913acd96369d7b2eb440c078972f" id="r_ga6c0f913acd96369d7b2eb440c078972f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structAudioDecoder.html">AudioDecoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__DECODER.html#ga6c0f913acd96369d7b2eb440c078972f">LA0_BGM_DECODER</a></td></tr>
+<tr class="memdesc:ga6c0f913acd96369d7b2eb440c078972f"><td class="mdescLeft">&#160;</td><td class="mdescRight">LA0 BGM decoder.  <br /></td></tr>
+<tr class="separator:ga6c0f913acd96369d7b2eb440c078972f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga631bcc384168d7a38b2877dd1af06579" id="r_ga631bcc384168d7a38b2877dd1af06579"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structAudioDecoder.html">AudioDecoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__LA0__DECODER.html#ga631bcc384168d7a38b2877dd1af06579">LA0_SFX_DECODER</a></td></tr>
+<tr class="memdesc:ga631bcc384168d7a38b2877dd1af06579"><td class="mdescLeft">&#160;</td><td class="mdescRight">LA0 SFX decoder.  <br /></td></tr>
+<tr class="separator:ga631bcc384168d7a38b2877dd1af06579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The libmsx audio format 0 (LA0) decoder. </p>
 
 <p class="definition">Definition in file <a class="el" href="la0_8h_source.html">la0.h</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a0a8578a00bd4a49d572a0fc70f4f3259" name="a0a8578a00bd4a49d572a0fc70f4f3259"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a8578a00bd4a49d572a0fc70f4f3259">&#9670;&#160;</a></span>la0_open_mem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int la0_open_mem </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t *&#160;</td>
-          <td class="paramname"><em>loc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Open LA0 file stored in ROM / RAM. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mf</td><td>Pointer to a memory-file pointer to be initialized. </td></tr>
-    <tr><td class="paramname">loc</td><td>Location of the LA0 file image. </td></tr>
-    <tr><td class="paramname">size</td><td>File size in bytes. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of songs contained in the LA0 file. </dd></dl>
-
-</div>
-</div>
-<a id="a244f8b446bef9929fb1a5d677d30e1d0" name="a244f8b446bef9929fb1a5d677d30e1d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a244f8b446bef9929fb1a5d677d30e1d0">&#9670;&#160;</a></span>la0_open_bmem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int la0_open_bmem </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__BANKED__MEMORY__DIRECT__ACCESS.html#ga2b2d2e51ae616ffb07e5acf46a963e3d">bmemptr_t</a>&#160;</td>
-          <td class="paramname"><em>loc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Open LA0 file stored in banked memory (MegaROM). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mf</td><td>Pointer to a memory-file pointer to be initialized. </td></tr>
-    <tr><td class="paramname">loc</td><td>Location of the LA0 file image in banked memory. </td></tr>
-    <tr><td class="paramname">size</td><td>File size in bytes. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of songs contained in the LA0 file. </dd></dl>
-
-</div>
-</div>
-<a id="a682b5d27051896bf6214744fe579442f" name="a682b5d27051896bf6214744fe579442f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a682b5d27051896bf6214744fe579442f">&#9670;&#160;</a></span>la0_open_resource()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int la0_open_resource </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>path</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Open LA0 file stored as named resources in banked memory (MegaROM). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mf</td><td>Pointer to a memory-file pointer to be initialized. </td></tr>
-    <tr><td class="paramname">path</td><td>Path/File name of the resource. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of songs contained in the LA0 file. </dd></dl>
-
-</div>
-</div>
-<a id="afc7a7c936c557fec3c3eeb911778641c" name="afc7a7c936c557fec3c3eeb911778641c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc7a7c936c557fec3c3eeb911778641c">&#9670;&#160;</a></span>la0_set_bgm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void la0_set_bgm </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *&#160;</td>
-          <td class="paramname"><em>mf</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as background music (BGM). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">idx</td><td>Song number. </td></tr>
-    <tr><td class="paramname">mf</td><td>Pointer to opened memory-file pointer. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8b986fcae85ce1531b050262ae36cb1f" name="a8b986fcae85ce1531b050262ae36cb1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b986fcae85ce1531b050262ae36cb1f">&#9670;&#160;</a></span>la0_set_sfx()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void la0_set_sfx </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *&#160;</td>
-          <td class="paramname"><em>mf</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as sound effects (SFX). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">idx</td><td>Song number. </td></tr>
-    <tr><td class="paramname">mf</td><td>Pointer to opened memory-file pointer. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acd9b73bcd28193858babdc9000c0ae07" name="acd9b73bcd28193858babdc9000c0ae07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd9b73bcd28193858babdc9000c0ae07">&#9670;&#160;</a></span>la0_set_sfx_with_priority()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void la0_set_sfx_with_priority </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="memfile__types_8h.html#structMemFile">MemFile</a> *&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>priority</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Set a song in the LA0 file to the LA0 audio decoder, as sound effects (SFX). </p>
-<p>If a SFX is not being played, or if the given priority is higher than or equal to that of the currently playing SFX, the specified SFX will be played. Otherwise, nothing will be done.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">idx</td><td>Song number. </td></tr>
-    <tr><td class="paramname">mf</td><td>Pointer to opened memory-file pointer. </td></tr>
-    <tr><td class="paramname">priority</td><td>Priority of the SFX. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd>la0_open() </dd></dl>
-
-</div>
-</div>
-<a id="a67ecb75aae0e674f54b8e3f8b12fbb2b" name="a67ecb75aae0e674f54b8e3f8b12fbb2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67ecb75aae0e674f54b8e3f8b12fbb2b">&#9670;&#160;</a></span>la0_get_bgm_frequency()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t la0_get_bgm_frequency </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Return default frequency of the current background music. </p>
-<dl class="section return"><dt>Returns</dt><dd>frequency in Hz. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO__REPLAYER.html#ga3875410cecb97c263fc05658620754d6" title="MSX Return replayer frequency of the background music.">audio_get_bgm_frequency()</a> </dd>
-<dd>
-<a class="el" href="group__AUDIO__REPLAYER.html#ga6d64e9130ae940b5b63341b6e371417a" title="MSX Force replayer frequency of the background music.">audio_set_bgm_frequency()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a469a3c62ba9501bcd658a9b28a88461b" name="a469a3c62ba9501bcd658a9b28a88461b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a469a3c62ba9501bcd658a9b28a88461b">&#9670;&#160;</a></span>la0_get_bgm_total_samples()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t la0_get_bgm_total_samples </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Return the total number of BGM samples. </p>
-<p>Returns the total number of samples of the current BGM (including the loop part).</p>
-<p>The total time (in seconds) of the first part plus the loop part at normal playback speed is <code><a class="el" href="la0_8h.html#a469a3c62ba9501bcd658a9b28a88461b" title="MSX Return the total number of BGM samples.">la0_get_bgm_total_samples()</a> / <a class="el" href="la0_8h.html#a67ecb75aae0e674f54b8e3f8b12fbb2b" title="MSX Return default frequency of the current background music.">la0_get_bgm_frequency()</a></code>.</p>
-<dl class="section return"><dt>Returns</dt><dd>The total number of BGM samples. </dd></dl>
-
-</div>
-</div>
-<a id="a9d6833afd47ffd2d8b0d175d02be40c5" name="a9d6833afd47ffd2d8b0d175d02be40c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d6833afd47ffd2d8b0d175d02be40c5">&#9670;&#160;</a></span>la0_get_bgm_loop_samples()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t la0_get_bgm_loop_samples </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Return the number of samples in the loop portion of BGM. </p>
-<p>Returns the number of samples in the loop part of the current BGM, or <code>0</code> if there is no loop part.</p>
-<p>The time (in seconds) of the loop part at normal playback speed is <code><a class="el" href="la0_8h.html#a9d6833afd47ffd2d8b0d175d02be40c5" title="MSX Return the number of samples in the loop portion of BGM.">la0_get_bgm_loop_samples()</a> / <a class="el" href="la0_8h.html#a67ecb75aae0e674f54b8e3f8b12fbb2b" title="MSX Return default frequency of the current background music.">la0_get_bgm_frequency()</a></code>.</p>
-<dl class="section return"><dt>Returns</dt><dd>The number of samples in the loop portion of BGM. </dd></dl>
-
-</div>
-</div>
-<a id="adcbf24608d92ee1cb847e950333a7ed0" name="adcbf24608d92ee1cb847e950333a7ed0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcbf24608d92ee1cb847e950333a7ed0">&#9670;&#160;</a></span>la0_get_bgm_loop_counter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t la0_get_bgm_loop_counter </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>MSX</code> Return the loop counter value. </p>
-<p>The loop counter starts at 0 and counts up when the song loops back.</p>
-<p>In case of overflow (exceeding 255), the counter returns to 0.</p>
-<dl class="section return"><dt>Returns</dt><dd>The loop counter value. </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a6c0f913acd96369d7b2eb440c078972f" name="a6c0f913acd96369d7b2eb440c078972f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c0f913acd96369d7b2eb440c078972f">&#9670;&#160;</a></span>LA0_BGM_DECODER</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structAudioDecoder.html">AudioDecoder</a> LA0_BGM_DECODER</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>LA0 BGM decoder. </p>
-
-</div>
-</div>
-<a id="a631bcc384168d7a38b2877dd1af06579" name="a631bcc384168d7a38b2877dd1af06579"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a631bcc384168d7a38b2877dd1af06579">&#9670;&#160;</a></span>LA0_SFX_DECODER</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structAudioDecoder.html">AudioDecoder</a> LA0_SFX_DECODER</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>LA0 SFX decoder. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

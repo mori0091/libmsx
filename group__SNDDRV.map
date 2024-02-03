@@ -1,5 +1,6 @@
 <map id="SNDDRV &#45; PSG sound driver" name="SNDDRV &#45; PSG sound driver">
-<area shape="rect" id="Node000001" title="#include &lt;snddrv.h&gt;" alt="" coords="5,23,158,64"/>
-<area shape="rect" id="Node000003" href="$group__SNDDRV__API.html" title="SNDDRV APIs." alt="" coords="222,5,330,31"/>
-<area shape="rect" id="Node000002" href="$group__SNDDRV__DATA.html" title="Sound data structure for SNDDRV." alt="" coords="206,55,346,80"/>
+<area shape="rect" id="Node000002" href="$group__AUDIO__DECODERS.html" title=" " alt="" coords="5,23,161,64"/>
+<area shape="rect" id="Node000001" title="#include &lt;snddrv.h&gt;" alt="" coords="209,23,361,64"/>
+<area shape="rect" id="Node000004" href="$group__SNDDRV__API.html" title="SNDDRV APIs." alt="" coords="425,5,533,31"/>
+<area shape="rect" id="Node000003" href="$group__SNDDRV__DATA.html" title="Sound data structure for SNDDRV." alt="" coords="409,55,549,80"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="Decoders for the libmsx audio replayer." name="Decoders for the libmsx audio replayer.">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,161,79"/>
+<area shape="rect" id="Node000002" href="$group__LA0__DECODER.html" title="#include &lt;la0.h&gt;" alt="" coords="211,5,359,46"/>
+<area shape="rect" id="Node000003" href="$group__SNDDRV.html" title="#include &lt;snddrv.h&gt;" alt="" coords="209,71,361,111"/>
+</map>

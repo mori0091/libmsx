@@ -9,10 +9,13 @@ var searchData=
   ['of_20the_20stream_6',['of the stream',['../group__STREAM__ERR.html',1,'Check error status of the stream.'],['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
   ['old_20psg_20sound_20driver_7',['Sound - Old PSG sound driver',['../group__SOUND__OLD.html',1,'']]],
   ['old_20psg_20sound_20driver_20apis_8',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
-  ['open_20stream_9',['Open stream.',['../group__STREAM__OPEN.html',1,'']]],
-  ['opll_20buffer_10',['OPLL Buffer',['../group__OPLL__BUFFER.html',1,'']]],
-  ['opll_20device_20interface_11',['OPLL device interface',['../group__OPLL__DEVICE.html',1,'']]],
-  ['opll_20ym2413_20msx_20music_12',['OPLL - YM2413 / MSX-MUSIC',['../group__OPLL.html',1,'']]],
-  ['output_13',['output',['../group__CUI.html',1,'Text output'],['../group__CUI__PRINT.html',1,'Text output']]],
-  ['output_20system_14',['BIOS - Basic Input/Output System',['../group__BIOS.html',1,'']]]
+  ['open_20la0_20file_20image_9',['Open LA0 file image.',['../group__LA0__OPEN.html',1,'']]],
+  ['open_20stream_10',['Open stream.',['../group__STREAM__OPEN.html',1,'']]],
+  ['opll_20buffer_11',['OPLL Buffer',['../group__OPLL__BUFFER.html',1,'']]],
+  ['opll_20device_20interface_12',['OPLL device interface',['../group__OPLL__DEVICE.html',1,'']]],
+  ['opll_20sound_20driver_13',['LA0 - PSG, SCC/SCC+, OPLL sound driver.',['../group__LA0__DECODER.html',1,'']]],
+  ['opll_20ym2413_20msx_20music_14',['OPLL - YM2413 / MSX-MUSIC',['../group__OPLL.html',1,'']]],
+  ['other_20la0_20specific_20apis_15',['Other LA0 specific APIs.',['../group__LA0__MISC.html',1,'']]],
+  ['output_16',['output',['../group__CUI.html',1,'Text output'],['../group__CUI__PRINT.html',1,'Text output']]],
+  ['output_20system_17',['BIOS - Basic Input/Output System',['../group__BIOS.html',1,'']]]
 ];

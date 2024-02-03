@@ -1,6 +1,7 @@
 var topics =
 [
     [ "The libmsx audio replayer.", "group__AUDIO.html", "group__AUDIO" ],
+    [ "Decoders for the libmsx audio replayer.", "group__AUDIO__DECODERS.html", "group__AUDIO__DECODERS" ],
     [ "BIOS - Basic Input/Output System", "group__BIOS.html", "group__BIOS" ],
     [ "Banked Memory interface for MegaROM.", "group__BANKED__MEMORY.html", "group__BANKED__MEMORY" ],
     [ "Input device", "group__INPUT.html", "group__INPUT" ],
@@ -11,7 +12,6 @@ var topics =
     [ "Konami SCC/SCC+ sound cartridge", "group__SCC.html", "group__SCC" ],
     [ "SCREEN mode initialization", "group__SCREEN.html", "group__SCREEN" ],
     [ "Slot - Individual Address Spaces of devices.", "group__SLOT.html", "group__SLOT" ],
-    [ "SNDDRV - PSG sound driver", "group__SNDDRV.html", "group__SNDDRV" ],
     [ "Sound - Old PSG sound driver", "group__SOUND__OLD.html", "group__SOUND__OLD" ],
     [ "Sprites / Meta-Sprites", "group__SPRITES.html", "group__SPRITES" ],
     [ "Text output", "group__CUI.html", "group__CUI" ],

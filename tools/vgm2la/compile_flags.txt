@@ -1,0 +1,3 @@
+-I./include
+-std=c++17
+-lz

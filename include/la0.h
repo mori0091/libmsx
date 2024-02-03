@@ -11,6 +11,7 @@
 /**
  * \file la0.h
  * \brief The libmsx audio format 0 (LA0) decoder.
+ * \ingroup LA0_DECODER
  */
 
 #ifndef LA0_H_
@@ -25,6 +26,49 @@
 #include <stddef.h>
 
 /**
+ * \defgroup LA0_DECODER LA0 - PSG, SCC/SCC+, OPLL sound driver.
+ * \ingroup AUDIO_DECODERS
+ * `#include <la0.h>`
+ *
+ * LA0 decoder is a decoder for the libmsx audio replayer.
+ *
+ * `la0.h` provides LA0 decoder specific APIs.
+ * It is supposed to use with `audio.h` the libmsx audio replayer APIs.
+ *
+ * LA0 decoder supports all functionality of the libmsx audio replayer.
+ *
+ * - Supported sound chip :
+ *   - PSG (AY-3-8910) x 1,
+ *   - Konami SCC/SCC+ x 1,
+ *   - MSX-MUSIC (OPLL/YM2413) x 1.
+ *
+ * - Functionality :
+ *   - NTSC (60Hz), PAL/SECAM (50Hz), auto detect and auto adjust.
+ *   - Available to specify default playing frequency that the sound data author
+ *     expecting.
+ *   - Run-time replay frequency control.
+ *   - Stop, Start, Pause, Resume.
+ *   - Auto-repeat function for background music.
+ *   - Playing sound effects (SFX) during playing background music (BGM).
+ *   - Same file format for BGM and SFX.
+ *   - VGM files to LA0 file conversion tool is bundled. [vgm2la](https://github.com/mori0091/libmsx/tree/main/tools/vgm2la)
+ *
+ * *Example*\n
+ * The following sample application
+ * [la0_demo](https://github.com/mori0091/libmsx/tree/main/sample/la0_demo)
+ * shows usecase of LA0 and the libmsx audio replayer.
+ *
+ * \include la0_demo/src/la0_demo.c
+ *
+ * \sa AUDIO_REPLAYER
+ * \sa AUDIO_EFX
+ * \sa [la0_demo](https://github.com/mori0091/libmsx/tree/main/sample/la0_demo) sample application.
+ * \sa [vgm2la](https://github.com/mori0091/libmsx/tree/main/tools/vgm2la) VGM files to LA0 file conversion tool.
+ *
+ * @{
+ */
+
+/**
  * LA0 BGM decoder.
  */
 extern const AudioDecoder LA0_BGM_DECODER;
@@ -33,6 +77,12 @@ extern const AudioDecoder LA0_BGM_DECODER;
  * LA0 SFX decoder.
  */
 extern const AudioDecoder LA0_SFX_DECODER;
+
+/**
+ * \defgroup LA0_OPEN Open LA0 file image.
+ * \ingroup LA0_DECODER
+ * @{
+ */
 
 /**
  * `MSX` Open LA0 file stored in ROM / RAM.
@@ -63,6 +113,14 @@ int la0_open_bmem(MemFile * mf, bmemptr_t loc, uint32_t size);
  */
 int la0_open_resource(MemFile * mf, const char * path);
 
+/** @} */
+
+/**
+ * \defgroup LA0_SET_SONG Set a song in LA0 file to the decoder.
+ * \ingroup LA0_DECODER
+ * @{
+ */
+
 /**
  * `MSX` Set a song in the LA0 file to the LA0 audio decoder, as background
  * music (BGM).
@@ -92,9 +150,16 @@ void la0_set_sfx(uint8_t idx, MemFile * mf);
  * \param idx  Song number.
  * \param mf       Pointer to opened memory-file pointer.
  * \param priority Priority of the SFX.
- * \sa la0_open()
  */
 void la0_set_sfx_with_priority(uint8_t idx, MemFile * mf, uint8_t priority);
+
+/** @} */
+
+/**
+ * \defgroup LA0_MISC Other LA0 specific APIs.
+ * \ingroup LA0_DECODER
+ * @{
+ */
 
 /**
  * `MSX` Return default frequency of the current background music.
@@ -141,5 +206,9 @@ uint16_t la0_get_bgm_loop_samples(void);
  * \return The loop counter value.
  */
 uint8_t la0_get_bgm_loop_counter(void);
+
+/** @} */
+
+/** @} */
 
 #endif // LA0_H_

@@ -17,6 +17,9 @@
  * \defgroup AUDIO The libmsx audio replayer.
  * `#include <audio.h>`
  */
+/**
+ * \defgroup AUDIO_DECODERS Decoders for the libmsx audio replayer.
+ */
 
 #ifndef AUDIO_H_
 #define AUDIO_H_

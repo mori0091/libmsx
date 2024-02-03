@@ -1,6 +1,6 @@
 <map id="Banked Memory interface for MegaROM." name="Banked Memory interface for MegaROM.">
-<area shape="rect" id="node1" title="#include &lt;bmem.h&gt;" alt="" coords="5,69,173,109"/>
-<area shape="rect" id="node2" href="$group__BANKED__MEMORY__DIRECT__ACCESS.html" title="APIs for direct access to 16KiB segments of banked memory." alt="" coords="224,5,413,45"/>
-<area shape="rect" id="node3" href="$group__BANKED__MEMORY__INDIRECT__ACCESS.html" title="APIs for indirect access to banked memory." alt="" coords="245,69,393,109"/>
-<area shape="rect" id="node4" href="$group__RESOURCES.html" title="#include &lt;resources.h&gt;" alt="" coords="221,133,416,173"/>
+<area shape="rect" id="Node000001" title="#include &lt;bmem.h&gt;" alt="" coords="5,71,173,111"/>
+<area shape="rect" id="Node000002" href="$group__BANKED__MEMORY__DIRECT__ACCESS.html" title="APIs for direct access to 16KiB segments of banked memory." alt="" coords="224,5,412,46"/>
+<area shape="rect" id="Node000003" href="$group__BANKED__MEMORY__INDIRECT__ACCESS.html" title="APIs for indirect access to banked memory." alt="" coords="244,71,392,111"/>
+<area shape="rect" id="Node000004" href="$group__RESOURCES.html" title="#include &lt;resources.h&gt;" alt="" coords="221,136,415,177"/>
 </map>

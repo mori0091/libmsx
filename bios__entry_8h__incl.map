@@ -1,5 +1,8 @@
 <map id="include/bios_entry.h" name="include/bios_entry.h">
-<area shape="rect" id="node1" title="Assembler entry points for MSX BIOS functions." alt="" coords="5,5,141,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="41,152,105,177"/>
-<area shape="rect" id="node3" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="76,79,143,104"/>
+<area shape="rect" id="Node000001" title="Assembler entry points for MSX BIOS functions." alt="" coords="5,5,141,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="41,153,105,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,32,66,79,67,109,70,137,65,138,61,109,61,79,68,31"/>
+<area shape="rect" id="Node000003" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="76,79,142,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="81,30,99,64,94,66,77,32"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="105,106,88,140,83,138,101,104"/>
 </map>

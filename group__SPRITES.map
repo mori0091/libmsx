@@ -1,6 +1,6 @@
 <map id="Sprites / Meta&#45;Sprites" name="Sprites / Meta&#45;Sprites">
-<area shape="rect" id="node1" title="#include &lt;sprite.h&gt;, #include &lt;sprite_color.h&gt;, #include &lt;metasprite.h&gt;" alt="" coords="5,55,152,80"/>
-<area shape="rect" id="node2" href="$group__SPRITES__ATTR.html" title="Sprite attribute table interface." alt="" coords="203,5,340,31"/>
-<area shape="rect" id="node3" href="$group__SPRITES__COLOR.html" title="Sprite color table interface." alt="" coords="212,55,331,80"/>
-<area shape="rect" id="node4" href="$group__SPRITES__METASPRITE.html" title="Meta&#45;sprite interface." alt="" coords="200,104,343,129"/>
+<area shape="rect" id="Node000001" title="#include &lt;sprite.h&gt;, #include &lt;sprite_color.h&gt;, #include &lt;metasprite.h&gt;" alt="" coords="5,55,152,80"/>
+<area shape="rect" id="Node000003" href="$group__SPRITES__ATTR.html" title="Sprite attribute table interface." alt="" coords="203,5,339,31"/>
+<area shape="rect" id="Node000004" href="$group__SPRITES__COLOR.html" title="Sprite color table interface." alt="" coords="212,55,330,80"/>
+<area shape="rect" id="Node000002" href="$group__SPRITES__METASPRITE.html" title="Meta&#45;sprite interface." alt="" coords="200,104,342,130"/>
 </map>

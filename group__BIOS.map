@@ -1,7 +1,7 @@
 <map id="BIOS &#45; Basic Input/Output System" name="BIOS &#45; Basic Input/Output System">
-<area shape="rect" id="node1" title="#include &lt;bios.h&gt;" alt="" coords="5,73,135,113"/>
-<area shape="rect" id="node2" href="$group__BIOS__CONFIG.html" title="Get the system version, VSYNC frequency, etc." alt="" coords="187,5,329,31"/>
-<area shape="rect" id="node3" href="$group__BIOS__CPU.html" title="Change / Get CPU mode." alt="" coords="183,55,333,80"/>
-<area shape="rect" id="node4" href="$group__BIOS__JOYPAD.html" title="Joystick / Joypad interface." alt="" coords="197,104,319,129"/>
-<area shape="rect" id="node5" href="$group__BIOS__SLOT.html" title="Inter&#45;slot Read / Write / Call interface." alt="" coords="185,154,331,194"/>
+<area shape="rect" id="Node000001" title="#include &lt;bios.h&gt;" alt="" coords="5,73,134,113"/>
+<area shape="rect" id="Node000002" href="$group__BIOS__CONFIG.html" title="Get the system version, VSYNC frequency, etc." alt="" coords="186,5,327,31"/>
+<area shape="rect" id="Node000005" href="$group__BIOS__CPU.html" title="Change / Get CPU mode." alt="" coords="182,55,331,80"/>
+<area shape="rect" id="Node000004" href="$group__BIOS__JOYPAD.html" title="Joystick / Joypad interface." alt="" coords="196,104,317,130"/>
+<area shape="rect" id="Node000003" href="$group__BIOS__SLOT.html" title="Inter&#45;slot Read / Write / Call interface." alt="" coords="184,154,329,195"/>
 </map>

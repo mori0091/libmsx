@@ -1,6 +1,9 @@
 <map id="include/opll_buf.h" name="include/opll_buf.h">
-<area shape="rect" id="node1" title="Buffered access to OPLL registers." alt="" coords="20,5,143,31"/>
-<area shape="rect" id="node2" href="$opll_8h.html" title="Device interface for MSX&#45;MUSIC (OPLL)." alt="" coords="11,79,63,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="88,79,163,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,152,69,177"/>
+<area shape="rect" id="Node000001" title="Buffered access to OPLL registers." alt="" coords="19,5,140,31"/>
+<area shape="rect" id="Node000002" href="$opll_8h.html" title="Device interface for MSX&#45;MUSIC (OPLL)." alt="" coords="11,79,63,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,33,54,67,50,64,70,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="87,79,160,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="89,30,110,64,106,67,85,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,69,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="40,105,40,137,34,137,34,105"/>
 </map>

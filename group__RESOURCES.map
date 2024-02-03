@@ -1,6 +1,6 @@
 <map id="Banked Memory as a storage of Named Resources." name="Banked Memory as a storage of Named Resources.">
-<area shape="rect" id="node1" href="$group__BANKED__MEMORY.html" title="#include &lt;bmem.h&gt;" alt="" coords="5,41,173,81"/>
-<area shape="rect" id="node2" title="#include &lt;resources.h&gt;" alt="" coords="221,41,416,81"/>
-<area shape="rect" id="node3" href="$group__RESOURCES__FIND.html" title="APIs for looking up a resource in banked memory by name." alt="" coords="484,5,607,45"/>
-<area shape="rect" id="node4" href="$group__RESOURCES__INDIRECT__ACCESS.html" title="APIs for indirect access to banked memory by name." alt="" coords="464,70,627,125"/>
+<area shape="rect" id="Node000002" href="$group__BANKED__MEMORY.html" title="#include &lt;bmem.h&gt;" alt="" coords="5,41,173,82"/>
+<area shape="rect" id="Node000001" title="#include &lt;resources.h&gt;" alt="" coords="221,41,415,82"/>
+<area shape="rect" id="Node000003" href="$group__RESOURCES__FIND.html" title="APIs for looking up a resource in banked memory by name." alt="" coords="483,5,605,46"/>
+<area shape="rect" id="Node000004" href="$group__RESOURCES__INDIRECT__ACCESS.html" title="APIs for indirect access to banked memory by name." alt="" coords="463,70,624,126"/>
 </map>

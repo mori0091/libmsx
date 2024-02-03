@@ -1,4 +1,5 @@
 <map id="include/tty.h" name="include/tty.h">
-<area shape="rect" id="node1" title="Teletype/console device interface." alt="" coords="5,5,96,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="19,79,83,104"/>
+<area shape="rect" id="Node000001" title="Teletype/console device interface." alt="" coords="5,5,96,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="19,79,82,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,31,53,63,48,63,48,31"/>
 </map>

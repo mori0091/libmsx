@@ -1,4 +1,5 @@
 <map id="include/snd_p_table.h" name="include/snd_p_table.h">
-<area shape="rect" id="node1" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="5,5,152,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="47,79,111,104"/>
+<area shape="rect" id="Node000001" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="5,5,152,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="47,79,110,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,31,81,63,76,63,76,31"/>
 </map>

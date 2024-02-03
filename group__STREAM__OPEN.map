@@ -1,4 +1,4 @@
 <map id="Open stream." name="Open stream.">
-<area shape="rect" id="node1" href="$group__STREAM.html" title="#include &lt;memfile.h&gt;" alt="" coords="5,5,175,45"/>
-<area shape="rect" id="node2" title="Open whole or part of memory image as stream." alt="" coords="223,13,321,38"/>
+<area shape="rect" id="Node000002" href="$group__STREAM.html" title="#include &lt;memfile.h&gt;" alt="" coords="5,5,174,46"/>
+<area shape="rect" id="Node000001" title="Open whole or part of memory image as stream." alt="" coords="222,13,320,39"/>
 </map>

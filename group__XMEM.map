@@ -1,7 +1,7 @@
 <map id="XMEM &#45; Inter&#45;memory transfer." name="XMEM &#45; Inter&#45;memory transfer.">
-<area shape="rect" id="node1" href="$group__BMEM__RD.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="200,5,367,75"/>
-<area shape="rect" id="node2" href="$group__MEM__RW.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="204,99,363,168"/>
-<area shape="rect" id="node3" href="$group__VMEM__RW.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="204,192,363,261"/>
-<area shape="rect" id="node4" title="#include &lt;xmem.h&gt;" alt="" coords="5,160,152,200"/>
-<area shape="rect" id="node5" href="$group__XMEM__INTER__MEMORY__TRANSFER.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="208,285,359,325"/>
+<area shape="rect" id="Node000002" href="$group__BMEM__RD.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="200,5,365,76"/>
+<area shape="rect" id="Node000003" href="$group__MEM__RW.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="203,100,362,171"/>
+<area shape="rect" id="Node000004" href="$group__VMEM__RW.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="203,195,362,265"/>
+<area shape="rect" id="Node000001" title="#include &lt;xmem.h&gt;" alt="" coords="5,163,152,204"/>
+<area shape="rect" id="Node000005" href="$group__XMEM__INTER__MEMORY__TRANSFER.html" title="Building blocks for copying and transferring data between different types of memory devices." alt="" coords="208,290,357,330"/>
 </map>

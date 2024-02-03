@@ -1,6 +1,6 @@
 <map id="Effectors for the libmsx audio replayer." name="Effectors for the libmsx audio replayer.">
-<area shape="rect" id="node1" href="$group__AUDIO.html" title="#include &lt;audio.h&gt;" alt="" coords="5,35,175,60"/>
-<area shape="rect" id="node2" title="Effectors for the libmsx audio replayer." alt="" coords="223,27,375,67"/>
-<area shape="rect" id="node3" href="$group__AUDIO__EFX__AMP.html" title="#include &lt;audio_efx_amp.h&gt;" alt="" coords="437,5,563,31"/>
-<area shape="rect" id="node4" href="$group__AUDIO__EFX__PSG2SCC.html" title="#include &lt;audio_efx_psg2scc.h&gt;" alt="" coords="423,55,577,95"/>
+<area shape="rect" id="Node000002" href="$group__AUDIO.html" title="#include &lt;audio.h&gt;" alt="" coords="5,35,174,60"/>
+<area shape="rect" id="Node000001" title="Effectors for the libmsx audio replayer." alt="" coords="222,27,373,68"/>
+<area shape="rect" id="Node000003" href="$group__AUDIO__EFX__AMP.html" title="#include &lt;audio_efx_amp.h&gt;" alt="" coords="436,5,560,31"/>
+<area shape="rect" id="Node000004" href="$group__AUDIO__EFX__PSG2SCC.html" title="#include &lt;audio_efx_psg2scc.h&gt;" alt="" coords="421,55,574,96"/>
 </map>

@@ -1,6 +1,10 @@
 <map id="include/vdp_unsafe.h" name="include/vdp_unsafe.h">
-<area shape="rect" id="node1" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="56,5,200,31"/>
-<area shape="rect" id="node2" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="79,79,177,104"/>
-<area shape="rect" id="node3" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="5,152,144,177"/>
-<area shape="rect" id="node4" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="77,225,179,251"/>
+<area shape="rect" id="Node000001" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="56,5,199,31"/>
+<area shape="rect" id="Node000002" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="79,79,176,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,46,130,79,125,79,125,46"/>
+<area shape="rect" id="Node000003" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="5,153,143,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,119,85,154,81,151,107,115"/>
+<area shape="rect" id="Node000004" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="77,226,178,252"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="145,117,158,152,159,173,154,194,138,227,133,225,149,192,154,173,153,153,140,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,189,120,224,116,227,90,192"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="include/internal/memfile_types.h" name="include/internal/memfile_types.h">
-<area shape="rect" id="node1" title=" " alt="" coords="62,5,221,45"/>
-<area shape="rect" id="node2" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="80,93,203,119"/>
-<area shape="rect" id="node3" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="5,167,139,192"/>
-<area shape="rect" id="node4" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="163,167,258,192"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="61,5,218,46"/>
+<area shape="rect" id="Node000002" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="79,94,200,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,62,142,93,137,93,137,62"/>
+<area shape="rect" id="Node000003" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="5,168,138,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,133,85,169,81,165,116,129"/>
+<area shape="rect" id="Node000004" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="162,168,256,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="163,129,199,165,195,169,159,132"/>
 </map>

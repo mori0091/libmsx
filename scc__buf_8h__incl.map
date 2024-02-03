@@ -1,5 +1,7 @@
 <map id="include/scc_buf.h" name="include/scc_buf.h">
-<area shape="rect" id="node1" title="Buffered access to SCC/SCC+ registers." alt="" coords="5,5,128,31"/>
-<area shape="rect" id="node2" href="$scc_8h.html" title="Device interface for Konami SCC/SCC+ sound cartridge." alt="" coords="40,79,93,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="35,152,99,177"/>
+<area shape="rect" id="Node000001" title="Buffered access to SCC/SCC+ registers." alt="" coords="5,5,128,31"/>
+<area shape="rect" id="Node000002" href="$scc_8h.html" title="Device interface for Konami SCC/SCC+ sound cartridge." alt="" coords="40,79,93,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,31,69,63,64,63,64,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="35,153,98,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="69,105,69,137,64,137,64,105"/>
 </map>

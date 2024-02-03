@@ -1,4 +1,4 @@
 <map id="Teletype/console device interface." name="Teletype/console device interface.">
-<area shape="rect" id="node1" href="$group__TTY.html" title="#include &lt;tty.h&gt;" alt="" coords="5,13,169,38"/>
-<area shape="rect" id="node2" title="Teletype/console device interface for hardware / screen mode abstraction." alt="" coords="217,5,379,45"/>
+<area shape="rect" id="Node000002" href="$group__TTY.html" title="#include &lt;tty.h&gt;" alt="" coords="5,13,169,39"/>
+<area shape="rect" id="Node000001" title="Teletype/console device interface for hardware / screen mode abstraction." alt="" coords="217,5,377,46"/>
 </map>

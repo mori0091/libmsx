@@ -1,5 +1,5 @@
 <map id="OPLL &#45; YM2413 / MSX&#45;MUSIC" name="OPLL &#45; YM2413 / MSX&#45;MUSIC">
-<area shape="rect" id="node1" title="#include &lt;opll.h&gt;" alt="" coords="5,23,160,63"/>
-<area shape="rect" id="node2" href="$group__OPLL__BUFFER.html" title="#include &lt;opll_buf.h&gt; Buffered access to OPLL registers." alt="" coords="236,5,331,31"/>
-<area shape="rect" id="node3" href="$group__OPLL__DEVICE.html" title="Inspect, discover, enable/disable to access registers, of the OPLL sound chip." alt="" coords="208,55,359,80"/>
+<area shape="rect" id="Node000001" title="#include &lt;opll.h&gt;" alt="" coords="5,23,159,64"/>
+<area shape="rect" id="Node000003" href="$group__OPLL__BUFFER.html" title="#include &lt;opll_buf.h&gt; Buffered access to OPLL registers." alt="" coords="235,5,329,31"/>
+<area shape="rect" id="Node000002" href="$group__OPLL__DEVICE.html" title="Inspect, discover, enable/disable to access registers, of the OPLL sound chip." alt="" coords="207,55,357,80"/>
 </map>

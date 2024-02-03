@@ -15,7 +15,7 @@ var searchData=
   ['r44_12',['r44',['../group__VDP__COMMANDS__LOW.html#a0ec5533d6ba0dd58cbd20a7c4b98881d',1,'vdp_cmd']]],
   ['r45_13',['r45',['../group__VDP__COMMANDS__LOW.html#a21066c5249d7ed332096c3ff57a21598',1,'vdp_cmd']]],
   ['r46_14',['r46',['../group__VDP__COMMANDS__LOW.html#af0ee51e6846dd236e4ecbfb7632d23e8',1,'vdp_cmd']]],
-  ['r_5fpart_15',['r_part',['../group__SNDDRV__DATA.html#a4f141453aa7f098818530ecb55664254',1,'snd_Instrument::r_part()'],['../group__SNDDRV__DATA.html#a535b41fa9c2a1204de93c90b267f6bd3',1,'snd_p_table::r_part()']]],
+  ['r_5fpart_15',['r_part',['../group__SNDDRV__DATA.html#a4f141453aa7f098818530ecb55664254',1,'snd_Instrument::r_part'],['../group__SNDDRV__DATA.html#a535b41fa9c2a1204de93c90b267f6bd3',1,'snd_p_table::r_part']]],
   ['ramad0_16',['RAMAD0',['../workarea_8h.html#a29207b937b0dd93c0a5def5a6f1d0aaf',1,'workarea.h']]],
   ['ramad1_17',['RAMAD1',['../workarea_8h.html#ac7afe2e62b114a319e95061cc4c6b911',1,'workarea.h']]],
   ['ramad2_18',['RAMAD2',['../workarea_8h.html#ad30b27ae783ca417488e821658745fa6',1,'workarea.h']]],

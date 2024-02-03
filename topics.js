@@ -1,4 +1,4 @@
-var modules =
+var topics =
 [
     [ "The libmsx audio replayer.", "group__AUDIO.html", "group__AUDIO" ],
     [ "BIOS - Basic Input/Output System", "group__BIOS.html", "group__BIOS" ],

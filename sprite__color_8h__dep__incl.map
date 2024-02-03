@@ -1,4 +1,5 @@
 <map id="include/sprite_color.h" name="include/sprite_color.h">
-<area shape="rect" id="node1" title="Sprite color table interface." alt="" coords="5,5,149,31"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="27,79,128,104"/>
+<area shape="rect" id="Node000001" title="Sprite color table interface." alt="" coords="5,5,149,31"/>
+<area shape="rect" id="Node000002" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="27,79,127,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,46,80,79,74,79,74,46"/>
 </map>

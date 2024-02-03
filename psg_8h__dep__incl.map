@@ -1,5 +1,7 @@
 <map id="include/psg.h" name="include/psg.h">
-<area shape="rect" id="node1" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="97,5,196,31"/>
-<area shape="rect" id="node2" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="5,79,144,104"/>
-<area shape="rect" id="node3" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="168,79,269,104"/>
+<area shape="rect" id="Node000001" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="98,5,195,31"/>
+<area shape="rect" id="Node000002" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="5,79,144,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,44,89,80,85,77,122,40"/>
+<area shape="rect" id="Node000003" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="168,79,269,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,40,208,77,204,80,167,44"/>
 </map>

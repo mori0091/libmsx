@@ -1,11 +1,25 @@
 <map id="include/snddrv.h" name="include/snddrv.h">
-<area shape="rect" id="node1" title="SNDDRV a PSG sound driver." alt="" coords="355,5,471,31"/>
-<area shape="rect" id="node2" href="$audio_8h.html" title="The libmsx audio replayer." alt="" coords="433,79,495,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="263,225,327,251"/>
-<area shape="rect" id="node5" href="$audio__dec_8h.html" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="317,79,408,104"/>
-<area shape="rect" id="node6" href="$snd__sound_8h.html" title="Sound / Music data structure for snddrv." alt="" coords="154,79,257,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="371,152,445,177"/>
-<area shape="rect" id="node7" title=" " alt="" coords="27,152,95,177"/>
-<area shape="rect" id="node8" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." alt="" coords="120,152,219,177"/>
-<area shape="rect" id="node9" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="243,152,346,177"/>
+<area shape="rect" id="Node000001" title="SNDDRV a PSG sound driver." alt="" coords="352,5,467,31"/>
+<area shape="rect" id="Node000002" href="$audio_8h.html" title="The libmsx audio replayer." alt="" coords="429,79,491,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="420,30,445,65,441,68,416,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="259,226,322,252"/>
+<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="445,29,478,48,493,62,505,78,509,91,510,106,502,137,489,164,478,180,446,204,409,220,372,231,338,237,337,232,371,226,407,215,443,199,474,176,485,161,497,135,504,105,504,92,500,80,489,65,475,52,442,34"/>
+<area shape="rect" id="Node000005" href="$audio__dec_8h.html" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="315,79,405,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="403,33,379,68,375,65,399,30"/>
+<area shape="rect" id="Node000006" href="$snd__sound_8h.html" title="Sound / Music data structure for snddrv." alt="" coords="153,79,255,105"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="375,34,254,76,252,71,374,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="366,153,439,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,107,424,142,420,139,448,103"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="465,105,466,141,462,161,453,180,428,203,399,219,368,230,338,236,337,231,366,225,397,214,425,199,449,177,457,160,461,140,460,105"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="369,104,390,138,385,141,365,106"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="239,103,356,144,354,150,237,108"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="153,101,97,109,44,125,24,135,12,147,9,160,17,177,31,188,53,199,114,215,182,226,244,232,243,237,182,231,113,220,51,204,28,193,13,180,3,161,7,144,21,131,42,120,96,104,153,95"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="26,153,94,178"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="181,108,99,148,97,143,178,103"/>
+<area shape="rect" id="Node000008" href="$snd__i__table_8h.html" title="Instrument data type for SNDDRV." alt="" coords="118,153,215,178"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="200,106,182,140,178,138,195,104"/>
+<area shape="rect" id="Node000009" href="$snd__p__table_8h.html" title="Pitch&#45;bend table data type for SNDDRV." alt="" coords="240,153,341,178"/>
+<area shape="poly" id="edge12_Node000006_Node000009" title=" " alt="" coords="220,103,266,141,263,145,217,107"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="189,177,258,216,255,221,186,181"/>
+<area shape="poly" id="edge13_Node000009_Node000004" title=" " alt="" coords="293,179,293,211,288,211,288,179"/>
 </map>

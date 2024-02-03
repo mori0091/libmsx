@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['table_0',['table',['../group__SPRITES__ATTR.html',1,'Sprite attribute table'],['../group__SPRITES__COLOR.html',1,'Sprite color table']]],
+  ['table_20base_20address_20registers_1',['Table base address registers',['../group__VDP__TABLE__BASE__ADDRESS__REGISTER.html',1,'']]],
+  ['teletype_20console_20device_2',['Teletype/console device.',['../group__TTY.html',1,'']]],
+  ['teletype_20console_20device_20interface_3',['Teletype/console device interface.',['../group__TTY__DEVICE.html',1,'']]],
+  ['text_20color_20backdrop_20color_4',['Text color, Backdrop color',['../group__CUI__COLOR.html',1,'']]],
+  ['text_20mode_5',['TEXT mode',['../group__SCREEN__TEXT.html',1,'']]],
+  ['text_20output_6',['text output',['../group__CUI__PRINT.html',1,'Text output'],['../group__CUI.html',1,'Text output']]],
+  ['the_20amp_20effector_7',['The AMP effector.',['../group__AUDIO__EFX__AMP.html',1,'']]],
+  ['the_20api_20of_20the_20libmsx_20audio_20replayer_8',['The API of the libmsx audio replayer.',['../group__AUDIO__REPLAYER.html',1,'']]],
+  ['the_20audio_20decoder_20interface_20for_20the_20libmsx_20audio_20replayer_9',['The audio decoder interface for the libmsx audio replayer.',['../group__AUDIO__DECODER.html',1,'']]],
+  ['the_20current_20position_20of_20the_20stream_10',['the current position of the stream',['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
+  ['the_20libmsx_20audio_20replayer_11',['the libmsx audio replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
+  ['the_20psg_20to_20scc_20scc_20effector_12',['The &quot;PSG to SCC/SCC+&quot; effector.',['../group__AUDIO__EFX__PSG2SCC.html',1,'']]],
+  ['the_20stream_13',['Check error status of the stream.',['../group__STREAM__ERR.html',1,'']]],
+  ['tiled_20graphics_20mode_14',['Tiled graphics mode',['../group__SCREEN__PCG.html',1,'']]],
+  ['to_20banked_20memory_20access_15',['A part of building blocks for inter-memory transfer, dedicated to Banked Memory access.',['../group__BMEM__RD.html',1,'']]],
+  ['to_20banked_20memory_20by_20switching_20page_202_16',['Direct access to banked memory by switching page 2.',['../group__BANKED__MEMORY__DIRECT__ACCESS.html',1,'']]],
+  ['to_20rom_20ram_20access_17',['A part of building blocks for inter-memory transfer, dedicated to ROM / RAM access.',['../group__MEM__RW.html',1,'']]],
+  ['to_20scc_20scc_20effector_18',['The &quot;PSG to SCC/SCC+&quot; effector.',['../group__AUDIO__EFX__PSG2SCC.html',1,'']]],
+  ['to_20vram_20access_19',['A part of building blocks for inter-memory transfer, dedicated to VRAM access.',['../group__VMEM__RW.html',1,'']]],
+  ['transfer_20',['transfer',['../group__XMEM__INTER__MEMORY__TRANSFER.html',1,'Building blocks for inter-memory transfer.'],['../group__XMEM.html',1,'XMEM - Inter-memory transfer.']]],
+  ['transfer_20dedicated_20to_20banked_20memory_20access_21',['A part of building blocks for inter-memory transfer, dedicated to Banked Memory access.',['../group__BMEM__RD.html',1,'']]],
+  ['transfer_20dedicated_20to_20rom_20ram_20access_22',['A part of building blocks for inter-memory transfer, dedicated to ROM / RAM access.',['../group__MEM__RW.html',1,'']]],
+  ['transfer_20dedicated_20to_20vram_20access_23',['A part of building blocks for inter-memory transfer, dedicated to VRAM access.',['../group__VMEM__RW.html',1,'']]]
+];

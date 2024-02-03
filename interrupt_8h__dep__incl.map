@@ -1,4 +1,5 @@
 <map id="include/interrupt.h" name="include/interrupt.h">
-<area shape="rect" id="node1" title="Interrupts relevant functions and Pluggable interrupts handler interface." alt="" coords="5,5,129,31"/>
-<area shape="rect" id="node2" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="17,79,118,104"/>
+<area shape="rect" id="Node000001" title="Interrupts relevant functions and Pluggable interrupts handler interface." alt="" coords="5,5,129,31"/>
+<area shape="rect" id="Node000002" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="17,79,117,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,46,70,79,64,79,64,46"/>
 </map>

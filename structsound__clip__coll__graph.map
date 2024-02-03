@@ -1,4 +1,5 @@
 <map id="sound_clip" name="sound_clip">
-<area shape="rect" id="node1" title="The sound clip structure." alt="" coords="21,93,105,119"/>
-<area shape="rect" id="node2" href="$group__SOUND__OLD__API.html#structsound__fragment" title="The sound fragment structure." alt="" coords="5,5,120,31"/>
+<area shape="rect" id="Node000001" title="The sound clip structure." alt="" coords="21,94,104,120"/>
+<area shape="rect" id="Node000002" href="$group__SOUND__OLD__API.html#structsound__fragment" title="The sound fragment structure." alt="" coords="5,5,120,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,47,65,94,60,94,60,47"/>
 </map>

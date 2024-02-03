@@ -1,5 +1,8 @@
 <map id="include/text.h" name="include/text.h">
-<area shape="rect" id="node1" title="Utility functions for text ouput." alt="" coords="10,5,109,31"/>
-<area shape="rect" id="node2" href="$tty_8h.html" title="Teletype/console device interface." alt="" coords="5,79,52,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="27,152,91,177"/>
+<area shape="rect" id="Node000001" title="Utility functions for text ouput." alt="" coords="9,5,106,31"/>
+<area shape="rect" id="Node000002" href="$tty_8h.html" title="Teletype/console device interface." alt="" coords="5,79,51,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,32,41,65,36,63,50,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="26,153,89,178"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="62,31,65,105,63,137,58,137,60,105,56,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="35,104,49,137,44,139,30,106"/>
 </map>

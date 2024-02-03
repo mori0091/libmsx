@@ -1,6 +1,9 @@
 <map id="include/mem_rw.h" name="include/mem_rw.h">
-<area shape="rect" id="node1" title="Stream like access functions for ROM / RAM." alt="" coords="75,5,202,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,80,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="105,79,173,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="197,79,261,104"/>
+<area shape="rect" id="Node000001" title="Stream like access functions for ROM / RAM." alt="" coords="74,5,200,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,79,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,34,72,72,68,67,119,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="103,79,170,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,31,139,63,134,63,134,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="194,79,258,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="153,29,201,67,197,71,150,34"/>
 </map>

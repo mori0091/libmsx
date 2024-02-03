@@ -1,6 +1,9 @@
 <map id="include/audio_cb.h" name="include/audio_cb.h">
-<area shape="rect" id="node1" title="Callback functions of the libmsx audio replayer." alt="" coords="37,5,166,31"/>
-<area shape="rect" id="node2" href="$audio__dec_8h.html" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="5,79,96,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="120,79,184,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="13,152,88,177"/>
+<area shape="rect" id="Node000001" title="Callback functions of the libmsx audio replayer." alt="" coords="37,5,165,31"/>
+<area shape="rect" id="Node000002" href="$audio__dec_8h.html" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="5,79,96,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,33,70,68,66,65,91,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="120,79,184,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="112,30,137,65,132,68,107,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="14,153,87,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="53,105,53,137,48,137,48,105"/>
 </map>

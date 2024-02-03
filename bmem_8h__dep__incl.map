@@ -1,10 +1,17 @@
 <map id="include/bmem.h" name="include/bmem.h">
-<area shape="rect" id="node1" title="Data types and functions for accessing banked memory." alt="" coords="291,5,405,31"/>
-<area shape="rect" id="node2" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="5,79,184,104"/>
-<area shape="rect" id="node3" href="$bmem__rd_8h.html" title="Stream like access functions for Banked Memory." alt="" coords="208,79,339,104"/>
-<area shape="rect" id="node5" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="363,79,485,104"/>
-<area shape="rect" id="node8" href="$resources_8h.html" title="Data types and functions for accessing embedded resources." alt="" coords="510,79,645,104"/>
-<area shape="rect" id="node4" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="217,152,329,177"/>
-<area shape="rect" id="node6" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="355,152,488,177"/>
-<area shape="rect" id="node7" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="513,152,607,177"/>
+<area shape="rect" id="Node000001" title="Data types and functions for accessing banked memory." alt="" coords="292,5,404,31"/>
+<area shape="rect" id="Node000002" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="5,79,184,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="291,38,138,81,137,76,290,33"/>
+<area shape="rect" id="Node000003" href="$bmem__rd_8h.html" title="Stream like access functions for Banked Memory." alt="" coords="208,79,338,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="326,44,287,81,284,77,322,40"/>
+<area shape="rect" id="Node000005" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="362,79,483,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="373,40,412,77,408,81,370,44"/>
+<area shape="rect" id="Node000008" href="$resources_8h.html" title="Data types and functions for accessing embedded resources." alt="" coords="508,79,641,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="402,34,537,76,535,81,400,39"/>
+<area shape="rect" id="Node000004" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="218,153,329,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="276,120,276,152,271,152,271,120"/>
+<area shape="rect" id="Node000006" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="354,153,486,178"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="424,120,423,152,418,152,419,120"/>
+<area shape="rect" id="Node000007" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="511,153,604,178"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="460,110,535,150,533,154,458,115"/>
 </map>

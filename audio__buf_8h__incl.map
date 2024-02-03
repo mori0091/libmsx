@@ -1,12 +1,27 @@
 <map id="include/audio_buf.h" name="include/audio_buf.h">
-<area shape="rect" id="node1" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="196,5,329,31"/>
-<area shape="rect" id="node2" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="121,79,199,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="191,460,255,485"/>
-<area shape="rect" id="node3" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="207,152,275,177"/>
-<area shape="rect" id="node9" title=" " alt="" coords="48,152,123,177"/>
-<area shape="rect" id="node10" href="$memfile__types_8h.html" title=" " alt="" coords="63,225,183,265"/>
-<area shape="rect" id="node5" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="207,233,275,258"/>
-<area shape="rect" id="node6" title=" " alt="" coords="94,313,162,339"/>
-<area shape="rect" id="node7" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="237,313,280,339"/>
-<area shape="rect" id="node8" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="225,387,292,412"/>
+<area shape="rect" id="Node000001" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="195,5,328,31"/>
+<area shape="rect" id="Node000002" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="122,79,198,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,34,191,72,188,67,243,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="188,462,252,488"/>
+<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="283,29,312,51,344,82,369,120,377,141,380,164,380,329,377,352,369,373,340,409,303,437,266,458,264,453,301,433,337,405,364,370,372,351,375,329,375,164,372,143,365,122,340,85,308,55,279,34"/>
+<area shape="rect" id="Node000003" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="206,153,274,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,103,217,140,214,144,172,107"/>
+<area shape="poly" id="edge11_Node000002_Node000004" title=" " alt="" coords="122,105,78,124,57,138,38,154,21,176,12,196,9,217,8,245,8,329,12,357,25,380,44,401,67,419,121,445,174,462,172,467,119,450,64,423,40,405,20,383,7,358,3,329,3,245,3,217,7,194,17,173,34,151,53,133,76,119,120,100"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="49,153,122,178"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="149,107,110,144,107,140,145,103"/>
+<area shape="rect" id="Node000010" href="$memfile__types_8h.html" title=" " alt="" coords="63,226,182,267"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="160,106,134,212,128,211,154,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="254,177,272,198,288,225,308,277,321,321,320,365,302,416,285,439,262,456,259,452,281,435,298,413,315,364,316,322,303,279,283,227,268,201,250,180"/>
+<area shape="rect" id="Node000005" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="206,234,274,260"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="243,179,243,218,237,218,237,179"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="238,261,221,326,214,370,213,414,218,447,212,448,208,414,209,369,215,325,233,259"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="93,315,160,341"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="224,262,158,308,155,304,221,258"/>
+<area shape="rect" id="Node000007" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="235,315,277,341"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="245,259,253,299,248,300,240,260"/>
+<area shape="rect" id="Node000008" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="223,389,289,414"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="259,341,259,373,253,373,253,341"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="252,416,235,450,230,447,248,413"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="106,269,85,303,81,321,84,340,104,375,131,406,161,432,189,452,185,456,158,436,128,409,100,378,79,342,75,321,80,300,102,266"/>
+<area shape="poly" id="edge14_Node000010_Node000006" title=" " alt="" coords="126,267,128,299,123,300,121,268"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="include/snd_sound.h" name="include/snd_sound.h">
-<area shape="rect" id="node1" title="Sound / Music data structure for snddrv." alt="" coords="5,5,145,31"/>
-<area shape="rect" id="node2" href="$snddrv_8h.html" title="SNDDRV a PSG sound driver." alt="" coords="17,79,133,104"/>
+<area shape="rect" id="Node000001" title="Sound / Music data structure for snddrv." alt="" coords="5,5,145,31"/>
+<area shape="rect" id="Node000002" href="$snddrv_8h.html" title="SNDDRV a PSG sound driver." alt="" coords="17,79,133,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,46,78,79,72,79,72,46"/>
 </map>

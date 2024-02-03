@@ -1,4 +1,4 @@
 <map id="Joystick / Joypad" name="Joystick / Joypad">
-<area shape="rect" id="node1" href="$group__BIOS.html" title="#include &lt;bios.h&gt;" alt="" coords="5,5,135,45"/>
-<area shape="rect" id="node2" title="Joystick / Joypad interface." alt="" coords="183,13,304,38"/>
+<area shape="rect" id="Node000002" href="$group__BIOS.html" title="#include &lt;bios.h&gt;" alt="" coords="5,5,134,46"/>
+<area shape="rect" id="Node000001" title="Joystick / Joypad interface." alt="" coords="182,13,302,39"/>
 </map>

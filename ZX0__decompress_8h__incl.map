@@ -1,9 +1,20 @@
 <map id="include/ZX0_decompress.h" name="include/ZX0_decompress.h">
-<area shape="rect" id="node1" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="91,5,270,31"/>
-<area shape="rect" id="node2" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="49,79,117,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="66,372,130,397"/>
-<area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="100,152,168,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="172,225,240,251"/>
-<area shape="rect" id="node6" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="47,225,90,251"/>
-<area shape="rect" id="node7" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="30,299,96,324"/>
+<area shape="rect" id="Node000001" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="90,5,268,31"/>
+<area shape="rect" id="Node000002" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="49,79,117,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,34,112,72,109,68,161,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="66,374,129,399"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="196,30,220,52,247,83,269,121,275,142,278,164,278,241,274,265,264,288,249,308,231,325,188,353,145,372,143,368,185,348,228,321,245,304,260,285,269,264,272,240,272,164,270,143,264,123,243,86,217,56,193,34"/>
+<area shape="rect" id="Node000004" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="100,153,167,178"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="178,32,144,138,139,137,173,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="171,226,238,252"/>
+<area shape="poly" id="edge11_Node000001_Node000005" title=" " alt="" coords="183,31,204,211,199,211,178,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,106,51,144,24,200,14,231,9,263,10,294,20,324,37,346,59,363,56,368,33,350,15,327,5,295,3,263,9,230,19,198,46,142,72,103"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="94,103,119,138,114,141,89,106"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="134,179,111,326,105,359,100,358,106,325,129,178"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="147,177,184,213,180,217,143,180"/>
+<area shape="rect" id="Node000006" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="48,226,89,252"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="125,180,92,217,88,213,121,177"/>
+<area shape="rect" id="Node000007" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="30,300,96,326"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="70,252,68,285,62,284,65,252"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="71,325,87,358,83,361,66,327"/>
 </map>

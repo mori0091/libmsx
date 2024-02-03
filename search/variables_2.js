@@ -6,7 +6,7 @@ var searchData=
   ['cgpnt_3',['CGPNT',['../workarea_8h.html#a05f13239ba5edf4e7f39ab544a8a1e45',1,'workarea.h']]],
   ['cgtbl_4',['CGTBL',['../bios__const_8h.html#a2b30771e162fc823c58c95b6c0940685',1,'bios_const.h']]],
   ['channel_5fmask_5',['channel_mask',['../group__SCC__BUFFER.html#ad9422c592799868c73d6ac3dcec87b0e',1,'SCC_buffer']]],
-  ['channels_6',['channels',['../group__SCC__DEVICE.html#aef9068a3ddbfb1340ceec1e16eee8679',1,'SCC_Device::channels()'],['../group__SNDDRV__DATA.html#a03b3a82ff1cbfadd066609c241b37c0b',1,'snd_Pattern::channels()']]],
+  ['channels_6',['channels',['../group__SCC__DEVICE.html#aef9068a3ddbfb1340ceec1e16eee8679',1,'SCC_Device::channels'],['../group__SNDDRV__DATA.html#a03b3a82ff1cbfadd066609c241b37c0b',1,'snd_Pattern::channels']]],
   ['chgcpu_7',['CHGCPU',['../bios__entry_8h.html#aeba5f9f725b4d999e89ef352fba7bace',1,'bios_entry.h']]],
   ['clear_5fscreen_8',['clear_screen',['../structTTY__Device.html#a31172d172e92ea32f685ec68a9fabb01',1,'TTY_Device']]],
   ['cliksw_9',['CLIKSW',['../workarea_8h.html#aaa9abc23fbc4a9fd8cb1ad0e4be20fb1',1,'workarea.h']]],

@@ -1,6 +1,10 @@
 <map id="include/psg.h" name="include/psg.h">
-<area shape="rect" id="node1" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="5,5,104,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="25,225,89,251"/>
-<area shape="rect" id="node3" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="65,79,108,104"/>
-<area shape="rect" id="node4" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="60,152,127,177"/>
+<area shape="rect" id="Node000001" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="5,5,103,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="28,226,91,252"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,32,53,94,54,178,58,211,52,211,49,178,48,94,50,31"/>
+<area shape="rect" id="Node000003" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="68,79,109,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="62,30,78,64,74,66,57,32"/>
+<area shape="rect" id="Node000004" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="63,153,128,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="92,105,95,137,90,137,87,105"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="92,180,75,214,70,211,87,177"/>
 </map>

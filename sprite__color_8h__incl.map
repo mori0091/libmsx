@@ -1,9 +1,19 @@
 <map id="include/sprite_color.h" name="include/sprite_color.h">
-<area shape="rect" id="node1" title="Sprite color table interface." alt="" coords="5,5,149,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="52,372,116,397"/>
-<area shape="rect" id="node3" href="$sprite_8h.html" title="Sprites." alt="" coords="45,79,109,104"/>
-<area shape="rect" id="node4" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="113,152,181,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="147,225,215,251"/>
-<area shape="rect" id="node6" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="240,225,283,251"/>
-<area shape="rect" id="node7" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="187,299,253,324"/>
+<area shape="rect" id="Node000001" title="Sprite color table interface." alt="" coords="5,5,149,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="52,374,115,399"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,33,51,54,35,80,16,121,12,140,10,164,10,240,16,275,29,308,47,337,64,360,60,363,42,340,24,310,10,276,5,241,5,164,7,139,11,119,31,78,47,51,64,30"/>
+<area shape="rect" id="Node000003" href="$sprite_8h.html" title="Sprites." alt="" coords="45,79,109,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="80,31,80,63,74,63,74,31"/>
+<area shape="rect" id="Node000004" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="113,153,180,178"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="90,30,107,51,123,78,135,108,143,137,138,138,130,110,119,80,103,54,86,33"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="80,105,86,358,80,358,75,105"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="90,103,126,140,122,143,87,107"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="146,179,94,360,89,358,140,178"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="146,226,213,252"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="154,177,170,211,165,213,149,180"/>
+<area shape="rect" id="Node000006" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="238,226,279,252"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="167,177,228,215,225,220,164,181"/>
+<area shape="rect" id="Node000007" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="186,300,251,326"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="254,254,235,288,230,285,249,251"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="197,329,121,368,119,364,194,324"/>
 </map>

@@ -1,5 +1,24 @@
 var searchData=
 [
-  ['direct_20access_20to_20banked_20memory_20by_20switching_20page_202_2e_0',['Direct access to banked memory by switching page 2.',['../group__BANKED__MEMORY__DIRECT__ACCESS.html',1,'']]],
-  ['display_20registers_1',['Display registers',['../group__VDP__DISPLAY__REGISTER.html',1,'']]]
+  ['a_20part_20of_20building_20blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20banked_20memory_20access_0',['A part of building blocks for inter-memory transfer, dedicated to Banked Memory access.',['../group__BMEM__RD.html',1,'']]],
+  ['a_20part_20of_20building_20blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20rom_20ram_20access_1',['A part of building blocks for inter-memory transfer, dedicated to ROM / RAM access.',['../group__MEM__RW.html',1,'']]],
+  ['a_20part_20of_20building_20blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20vram_20access_2',['A part of building blocks for inter-memory transfer, dedicated to VRAM access.',['../group__VMEM__RW.html',1,'']]],
+  ['a_20resource_20in_20banked_20memory_3',['Find a resource in banked memory.',['../group__RESOURCES__FIND.html',1,'']]],
+  ['a_20storage_20of_20named_20resources_4',['Banked Memory as a storage of Named Resources.',['../group__RESOURCES.html',1,'']]],
+  ['access_5',['access',['../group__BMEM__RD.html',1,'A part of building blocks for inter-memory transfer, dedicated to Banked Memory access.'],['../group__MEM__RW.html',1,'A part of building blocks for inter-memory transfer, dedicated to ROM / RAM access.'],['../group__VMEM__RW.html',1,'A part of building blocks for inter-memory transfer, dedicated to VRAM access.']]],
+  ['access_20interface_6',['VRAM access interface',['../group__VMEM__ACCESS.html',1,'']]],
+  ['access_20to_20banked_20memory_20by_20switching_20page_202_7',['Direct access to banked memory by switching page 2.',['../group__BANKED__MEMORY__DIRECT__ACCESS.html',1,'']]],
+  ['address_20registers_8',['Table base address registers',['../group__VDP__TABLE__BASE__ADDRESS__REGISTER.html',1,'']]],
+  ['address_20spaces_20of_20devices_9',['Slot - Individual Address Spaces of devices.',['../group__SLOT.html',1,'']]],
+  ['amp_20effector_10',['The AMP effector.',['../group__AUDIO__EFX__AMP.html',1,'']]],
+  ['and_20copying_20from_20banked_20memory_11',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
+  ['and_20copying_20from_20resource_20in_20banked_20memory_12',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
+  ['api_20of_20the_20libmsx_20audio_20replayer_13',['The API of the libmsx audio replayer.',['../group__AUDIO__REPLAYER.html',1,'']]],
+  ['apis_14',['apis',['../group__SOUND__OLD__API.html',1,'Old PSG sound driver APIs'],['../group__SNDDRV__API.html',1,'SNDDRV APIs'],['../group__SOUND__OLD__EG__API.html',1,'Software envelope generator APIs'],['../group__VDP__COMMANDS__HIGH.html',1,'VDP commands (High level APIs)'],['../group__VDP__COMMANDS__LOW.html',1,'VDP commands (Low level APIs)']]],
+  ['as_20a_20storage_20of_20named_20resources_15',['Banked Memory as a storage of Named Resources.',['../group__RESOURCES.html',1,'']]],
+  ['attribute_20table_16',['Sprite attribute table',['../group__SPRITES__ATTR.html',1,'']]],
+  ['audio_20decoder_20interface_20for_20the_20libmsx_20audio_20replayer_17',['The audio decoder interface for the libmsx audio replayer.',['../group__AUDIO__DECODER.html',1,'']]],
+  ['audio_20replayer_18',['audio replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
+  ['await_20interrupts_19',['Await interrupts',['../group__INTERRUPT__AWAIT.html',1,'']]],
+  ['ay_203_208910_20programmable_20sound_20generator_20',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]]
 ];

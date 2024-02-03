@@ -159,6 +159,15 @@ Supported functionality</h1>
 </ul>
 </li>
 <li>Sound driver<ul>
+<li>LA0 - a PSG, SCC/SCC+, and <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> sound driver<ul>
+<li>NTSC (60Hz), PAL/SECAM (50Hz), auto detect and auto adjust.</li>
+<li>Available to specify default playing frequency that the sound data author expecting.</li>
+<li>Run-time replay speed/frequency control.</li>
+<li>Stop, Start, Pause, Resume, Auto-Repeat.</li>
+<li>Playing sound effects (SFX) during playing background music (BGM).</li>
+<li>VGM files to LA0 file conversion tool is bundled <a href="tools/vgm2la">vgm2la</a>.</li>
+</ul>
+</li>
 <li>SNDDRV a PSG sound driver<ul>
 <li>SNDDRV covers almost feature of replayer of the <a href="http://www.julien-nevo.com/arkostracker/">Arkos Tracker 2</a>.</li>
 <li>SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2 song file (.aks file) into your application.</li>

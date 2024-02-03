@@ -14,6 +14,8 @@
 
 #include "audio__internal.h"
 
+#include <audio_buf.h>
+
 void audio_cb_sfx_changed(uint8_t song_rate, const AudioDecoder * decoder) {
   __asm__("di");
   audio_.sfx.is_playing = false;
@@ -37,4 +39,10 @@ void audio_cb_sfx_changed(uint8_t song_rate, const AudioDecoder * decoder) {
   audio_.sfx.counter = 0;
   audio_.sfx.is_playing = true;
   // audio_.sfx.decoder.set_repeat(audio_.repeat);
+  if (audio_.bgm.is_playing) {
+    audio_buf_restore();
+  }
+  else {
+    audio_buf_init();
+  }
 }

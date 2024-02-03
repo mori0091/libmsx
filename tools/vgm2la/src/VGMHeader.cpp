@@ -19,7 +19,7 @@ void VGMHeader::print() {
   if (AY8910_clock) {
     std::cout << "PSG (AY-3-8910) clock : " << AY8910_clock << std::endl;
   }
-  if (K051649_K052539_clock & (1 << 31)) {
+  if (K051649_K052539_clock & (1UL << 31)) {
     std::cout << "SCC+ (K052539) clock : " << (K051649_K052539_clock & 0x7fffffff) << std::endl;
   }
   else if (K051649_K052539_clock) {

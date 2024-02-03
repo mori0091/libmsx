@@ -61,6 +61,7 @@ void GD3::parse(std::istream & is) {
     return;
   }
   auto length = u32(is);
+  (void)length;
   track_name_en  = read_GD3_tag_en(is);
   track_name     = read_GD3_tag(is); // unknown multi-byte character encoding
   game_name_en   = read_GD3_tag_en(is);

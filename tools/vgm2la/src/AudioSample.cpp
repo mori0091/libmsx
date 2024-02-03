@@ -176,7 +176,7 @@ void AudioSample::dump(const VGMHeader & vgm_header, std::ostream & os) {
     + samples_content_size
     ;
 
-  if (content_size) {
+  if (0 < scc_wav_content_size + samples_content_size) {
     // file header
     write_tag(os, TAG_LA0_FILE);
     write(os, content_size);

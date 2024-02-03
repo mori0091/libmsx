@@ -1,0 +1,14 @@
+<map id="include/la0.h" name="include/la0.h">
+<area shape="rect" id="node1" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="183,5,277,31"/>
+<area shape="rect" id="node2" href="$audio_8h.html" title="The libmsx audio replayer." alt="" coords="5,79,68,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="133,152,207,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="342,460,406,485"/>
+<area shape="rect" id="node5" href="$audio__dec_8h.html" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="143,79,234,104"/>
+<area shape="rect" id="node6" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="309,79,386,104"/>
+<area shape="rect" id="node9" title=" " alt="" coords="412,313,480,339"/>
+<area shape="rect" id="node7" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="555,152,623,177"/>
+<area shape="rect" id="node12" href="$memfile__types_8h.html" title=" " alt="" coords="359,225,479,265"/>
+<area shape="rect" id="node8" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="555,233,623,258"/>
+<area shape="rect" id="node10" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="567,313,610,339"/>
+<area shape="rect" id="node11" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="555,387,622,412"/>
+</map>

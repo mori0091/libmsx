@@ -62,18 +62,18 @@
 <path fill="none" stroke="#63b8ff" d="M274.95,-101.81C284.73,-92.72 296.44,-81.82 304.47,-74.36"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="272.72,-99.11 267.78,-108.48 277.48,-104.23 272.72,-99.11"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="resources_8h.html" target="_top" xlink:title="Data types and functions for accessing embedded resources.">
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="resources_8h.html" target="_top" xlink:title="Data types and functions for accessing embedded resources.">
 <polygon fill="white" stroke="#666666" points="479.5,-74 378.5,-74 378.5,-55 479.5,-55 479.5,-74"/>
 <text text-anchor="middle" x="429" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">include/resources.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
-<title>Node1&#45;&gt;Node7</title>
+<!-- Node1&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node1&#45;&gt;Node8</title>
 <path fill="none" stroke="#63b8ff" d="M296.79,-106.24C328.32,-96.52 371.64,-83.18 399.97,-74.45"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="296.15,-102.77 287.62,-109.06 298.21,-109.46 296.15,-102.77"/>
 </g>
@@ -96,16 +96,31 @@
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="audio__buf_8h.html" target="_top" xlink:title="Unified sound&#45;chip buffer of the libmsx audio replayer.">
-<polygon fill="white" stroke="#666666" points="364,-19 264,-19 264,0 364,0 364,-19"/>
-<text text-anchor="middle" x="314" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">include/audio_buf.h</text>
+<polygon fill="white" stroke="#666666" points="362,-19 262,-19 262,0 362,0 362,-19"/>
+<text text-anchor="middle" x="312" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">include/audio_buf.h</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M314,-43.35C314,-35.1 314,-25.97 314,-19.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="310.5,-43.23 314,-53.23 317.5,-43.23 310.5,-43.23"/>
+<path fill="none" stroke="#63b8ff" d="M313.24,-43.35C312.93,-35.1 312.58,-25.97 312.34,-19.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="309.74,-43.37 313.61,-53.24 316.73,-43.11 309.74,-43.37"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="la0_8h.html" target="_top" xlink:title="The libmsx audio format 0 (LA0) decoder.">
+<polygon fill="white" stroke="#666666" points="451.5,-19 380.5,-19 380.5,0 451.5,0 451.5,-19"/>
+<text text-anchor="middle" x="416" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">include/la0.h</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node5&#45;&gt;Node7</title>
+<path fill="none" stroke="#63b8ff" d="M341.39,-49.27C359.72,-39.74 383.26,-27.51 398.95,-19.36"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="339.91,-46.09 332.65,-53.81 343.13,-52.31 339.91,-46.09"/>
 </g>
 </g>
 </svg>

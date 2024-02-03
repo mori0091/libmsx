@@ -17,6 +17,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "input.h", "input_8h.html", "input_8h" ],
     [ "interrupt.h", "interrupt_8h.html", "interrupt_8h" ],
     [ "io.h", "io_8h.html", "io_8h" ],
+    [ "la0.h", "la0_8h.html", "la0_8h" ],
     [ "mem_rw.h", "mem__rw_8h.html", "mem__rw_8h" ],
     [ "memfile.h", "memfile_8h.html", "memfile_8h" ],
     [ "metasprite.h", "metasprite_8h.html", "metasprite_8h" ],

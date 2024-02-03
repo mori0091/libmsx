@@ -18,7 +18,8 @@ TARGETS = \
 	${BINDIR}/aks2c.xsl \
 	${BINDIR}/pad2pow2.sh \
 	${BINDIR}/ridxc.sh \
-	${BINDIR}/zx0
+	${BINDIR}/zx0 \
+	${BINDIR}/vgm2la
 
 all: build
 
@@ -28,12 +29,16 @@ clean:
 	@rm -f ${TARGETS}
 	@${MAKE} -s -C ihx2bin clean
 	@${MAKE} -s -C zx0 clean
+	@${MAKE} -s -C vgm2la clean
 
 ${BINDIR}/ihx2bin:
 	@${MAKE} -s -C ihx2bin
 
 ${BINDIR}/zx0:
 	@${MAKE} -s -C zx0
+
+${BINDIR}/vgm2la:
+	@${MAKE} -s -C vgm2la
 
 ${BINDIR}/%.sh: %.sh
 	@cp $< $@

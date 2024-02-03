@@ -16,5 +16,7 @@
 #include <stdint.h>
 
 bool mfeof(MemFile * mf) {
-  return (*(uint32_t *)&mf->end) <= (*(uint32_t *)&mf->curr);
+  if (mf->curr.segment < mf->end.segment) return false;
+  if (mf->curr.segment > mf->end.segment) return true;
+  return mf->curr.ptr >= mf->end.ptr;
 }

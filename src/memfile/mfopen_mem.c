@@ -18,10 +18,18 @@
 #include <string.h>
 
 static uint8_t read1(MemFile * mf) {
-  return *mf->curr.ptr++;
+  uint8_t ret = *(mf->curr.ptr);
+  if (mf->curr.ptr < mf->end.ptr) {
+    mf->curr.ptr++;
+  }
+  return ret;
 }
 
 static size_t read(MemFile * mf, void * ptr, size_t size) {
+  const size_t rem = mf->end.ptr - mf->curr.ptr;
+  if (rem < size) {
+    size = rem;
+  }
   memcpy(ptr, mf->curr.ptr, size);
   mf->curr.ptr += size;
   return size;
@@ -29,6 +37,8 @@ static size_t read(MemFile * mf, void * ptr, size_t size) {
 
 static void seek(mempos_t * dst, const mempos_t * src, long offset) {
   dst->ptr = src->ptr + offset;
+  dst->segment = 0;
+  dst->slot = 0;
 }
 
 static const struct MemFileMethods methods = {
@@ -39,7 +49,9 @@ static const struct MemFileMethods methods = {
 
 void mfopen_mem(MemFile * mf, uint8_t * p, size_t size) {
   memset(mf, 0, sizeof(MemFile));
-  if (p) {
+  if (!p) return;
+  uint8_t * const end = p + size;
+  if (p <= end && end < (uint8_t *)0xffff) {
     mf->base.ptr = p;
     mf->curr.ptr = p;
     mf->end.ptr  = p + size;

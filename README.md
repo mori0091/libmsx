@@ -74,6 +74,13 @@ The below functionality is supported.
     - Read/Write registers.
 
 - Sound driver
+  - LA0 - a PSG, SCC/SCC+, and OPLL sound driver
+    - NTSC (60Hz), PAL/SECAM (50Hz), auto detect and auto adjust.
+    - Available to specify default playing frequency that the sound data author expecting.
+    - Run-time replay speed/frequency control.
+    - Stop, Start, Pause, Resume, Auto-Repeat.
+    - Playing sound effects (SFX) during playing background music (BGM).
+    - VGM files to LA0 file conversion tool is bundled [vgm2la](tools/vgm2la).
   - SNDDRV a PSG sound driver
     - SNDDRV covers almost feature of replayer of the [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
     - SNDDRV and libmsx's build system make it easy to integrate Arkos Tracker 2

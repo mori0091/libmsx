@@ -12,7 +12,6 @@
  * \file la0_demo.c
  */
 
-#include "bios.h"
 #include <msx.h>
 
 #include <screen.h>
@@ -26,6 +25,8 @@
 #include <la0.h>
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // current song number
 uint8_t song_number = 255;
@@ -158,6 +159,7 @@ void main(void) {
 
   number_of_songs = la0_open_resource(&bgm, "bgm.la0");
   number_of_sfx = la0_open_resource(&sfx, "sfx.la0");
+  srand((unsigned int)time(NULL));
 
   await_vsync();
   show_vsync_freq();

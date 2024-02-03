@@ -147,19 +147,24 @@ void main(void) {
   color(15, 4, 7);
   cls();
 
+  number_of_songs = la0_open_resource(&bgm, "bgm.la0");
+  number_of_sfx = la0_open_resource(&sfx, "sfx.la0");
+  srand((unsigned int)time(NULL));
+
   locate(0, 21);
   print("  LEFT/RIGHT  Select BGM\n");
   print("   UP/DOWN    Player Freq.\n");
-  print("    SPACE     Pause/Resume\n");
+  if (number_of_sfx) {
+    print("    SPACE     Sound effects\n");
+  }
+  else {
+    print("    SPACE     Pause/Resume\n");
+  }
 
   audio_init();
   set_vsync_handler(play);
 
   audio_set_repeat(true);
-
-  number_of_songs = la0_open_resource(&bgm, "bgm.la0");
-  number_of_sfx = la0_open_resource(&sfx, "sfx.la0");
-  srand((unsigned int)time(NULL));
 
   await_vsync();
   show_vsync_freq();
@@ -192,8 +197,12 @@ void main(void) {
 
     update_joypad_state();
     if (clicked & VK_FIRE_0) {
-      // toggle_pause();        // pause / resume
-      la0_set_sfx(rand() % number_of_sfx, &sfx);
+      if (number_of_sfx) {
+        la0_set_sfx(rand() % number_of_sfx, &sfx);
+      }
+      else {
+        toggle_pause();         // pause / resume
+      }
     }
     if (clicked & VK_RIGHT) {
       next_song();

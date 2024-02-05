@@ -3,6 +3,7 @@
 [![MIT License](https://img.shields.io/github/license/mori0091/libmsx.svg)](https://github.com/mori0091/libmsx/blob/main/LICENSE)
 [![C/C++ CI](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml)
 [![Codacy Security Scan](https://github.com/mori0091/libmsx/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/codacy-analysis.yml)
+[![CodeQL](https://github.com/mori0091/libmsx/actions/workflows/codeql.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/codeql.yml)
 
 The `libmsx` library exposes MSX, MSX2, MSX2+, and MSXturboR hardware
 functionality to the C programmer.

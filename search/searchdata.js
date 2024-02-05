@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "sv",
   8: "abcimopstvw",
   9: "238abcdefghijklmnoprstuvwxyz",
-  10: ":acdfilmnors"
+  10: "0:acdfilmnorst"
 };
 
 var indexSectionNames =

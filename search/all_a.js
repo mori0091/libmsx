@@ -16,7 +16,7 @@ var searchData=
   ['check_20error_20status_20of_20the_20stream_13',['Check error status of the stream.',['../group__STREAM__ERR.html',1,'']]],
   ['chgcpu_14',['CHGCPU',['../bios__entry_8h.html#aeba5f9f725b4d999e89ef352fba7bace',1,'bios_entry.h']]],
   ['chip_20buffer_20of_20the_20libmsx_20audio_20replayer_15',['Unified sound-chip buffer of the libmsx audio replayer.',['../group__AUDIO__BUFFER.html',1,'']]],
-  ['chunk_20of_20track_20stream_16',['Chunk of Track stream',['../md_docs_2design-notes__snddrv__internal.html#autotoc_md48',1,'']]],
+  ['chunk_20of_20track_20stream_16',['Chunk of Track stream',['../md_docs_2design-notes__snddrv__internal.html#autotoc_md57',1,'']]],
   ['clear_5fscreen_17',['clear_screen',['../structTTY__Device.html#a31172d172e92ea32f685ec68a9fabb01',1,'TTY_Device']]],
   ['cliksw_18',['CLIKSW',['../workarea_8h.html#aaa9abc23fbc4a9fd8cb1ad0e4be20fb1',1,'workarea.h']]],
   ['clmlst_19',['CLMLST',['../workarea_8h.html#a9c204cb5783e31d6e7625e99585c617c',1,'workarea.h']]],

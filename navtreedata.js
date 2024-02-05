@@ -43,25 +43,37 @@ var NAVTREE =
         [ "${LIBMSX_HOME}/mk/ascii16.mk", "md_docs_2design-notes__crt0.html#autotoc_md34", null ]
       ] ]
     ] ],
+    [ "DESIGN NOTE : LA0 - The libmsx audio format 0.", "md_docs_2design-notes__la0.html", [
+      [ "Data format notation", "md_docs_2design-notes__la0.html#autotoc_md36", null ],
+      [ "LA0 file/data format", "md_docs_2design-notes__la0.html#autotoc_md37", [
+        [ "STREAM_INFO", "md_docs_2design-notes__la0.html#autotoc_md38", null ],
+        [ "SCC_WAVE_TABLE ; SCC/SCC+ waveform table", "md_docs_2design-notes__la0.html#autotoc_md39", null ],
+        [ "STREAM_DATA", "md_docs_2design-notes__la0.html#autotoc_md40", [
+          [ "SEQUENCE", "md_docs_2design-notes__la0.html#autotoc_md41", null ],
+          [ "DICTIONARY", "md_docs_2design-notes__la0.html#autotoc_md42", null ]
+        ] ]
+      ] ],
+      [ "References", "md_docs_2design-notes__la0.html#autotoc_md43", null ]
+    ] ],
     [ "DESIGN NOTE : SNDDRV - a sound driver", "md_docs_2design-notes__snddrv.html", [
-      [ "About", "md_docs_2design-notes__snddrv.html#autotoc_md36", null ],
-      [ "Features", "md_docs_2design-notes__snddrv.html#autotoc_md37", null ],
-      [ "How to integrate Arkos Tracker 2 .aks files into your application", "md_docs_2design-notes__snddrv.html#autotoc_md38", null ]
+      [ "About", "md_docs_2design-notes__snddrv.html#autotoc_md45", null ],
+      [ "Features", "md_docs_2design-notes__snddrv.html#autotoc_md46", null ],
+      [ "How to integrate Arkos Tracker 2 .aks files into your application", "md_docs_2design-notes__snddrv.html#autotoc_md47", null ]
     ] ],
     [ "DESIGN NOTE : Internal of SNDDRV", "md_docs_2design-notes__snddrv__internal.html", [
-      [ "SNDDRV's sound processing pipiline", "md_docs_2design-notes__snddrv__internal.html#autotoc_md40", null ],
-      [ "Sound data structure", "md_docs_2design-notes__snddrv__internal.html#autotoc_md41", null ],
-      [ "Sound data format notation", "md_docs_2design-notes__snddrv__internal.html#autotoc_md42", null ],
-      [ "Definition of Sound data", "md_docs_2design-notes__snddrv__internal.html#autotoc_md43", [
-        [ "Definition of SpeedTrack stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md44", null ],
-        [ "Definition of EventTrack stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md45", null ],
-        [ "Definition of Track stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md46", [
-          [ "Track stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md47", null ],
-          [ "Chunk of Track stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md48", null ]
+      [ "SNDDRV's sound processing pipiline", "md_docs_2design-notes__snddrv__internal.html#autotoc_md49", null ],
+      [ "Sound data structure", "md_docs_2design-notes__snddrv__internal.html#autotoc_md50", null ],
+      [ "Sound data format notation", "md_docs_2design-notes__snddrv__internal.html#autotoc_md51", null ],
+      [ "Definition of Sound data", "md_docs_2design-notes__snddrv__internal.html#autotoc_md52", [
+        [ "Definition of SpeedTrack stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md53", null ],
+        [ "Definition of EventTrack stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md54", null ],
+        [ "Definition of Track stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md55", [
+          [ "Track stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md56", null ],
+          [ "Chunk of Track stream", "md_docs_2design-notes__snddrv__internal.html#autotoc_md57", null ]
         ] ],
-        [ "Definition of Pattern table", "md_docs_2design-notes__snddrv__internal.html#autotoc_md49", null ]
+        [ "Definition of Pattern table", "md_docs_2design-notes__snddrv__internal.html#autotoc_md58", null ]
       ] ],
-      [ "Definition of Instrument (timbre) table", "md_docs_2design-notes__snddrv__internal.html#autotoc_md50", null ]
+      [ "Definition of Instrument (timbre) table", "md_docs_2design-notes__snddrv__internal.html#autotoc_md59", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Topics", "topics.html", "topics" ],
@@ -95,7 +107,7 @@ var NAVTREEINDEX =
 "group__RESOURCES.html#ga1ab15299ea0469d74db65d4208eae9c8",
 "group__SOUND__OLD__EG__API.html#afa6629c9b9efe819c7c36ccda1f47396",
 "group__XMEM__INTER__MEMORY__TRANSFER.html#ga4a0cb4706937567549ae06eed1dfd925",
-"workarea_8h.html#adcf57c23398c01d242ba9f52ba3ddb42"
+"workarea_8h.html#acc2ec1debe205b32a718f71124b7d12e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

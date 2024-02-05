@@ -8,7 +8,7 @@ var searchData=
   ['envelope_20generator_20apis_5',['Software envelope generator APIs',['../group__SOUND__OLD__EG__API.html',1,'']]],
   ['error_20status_20of_20the_20stream_6',['Check error status of the stream.',['../group__STREAM__ERR.html',1,'']]],
   ['eventtrack_7',['eventTrack',['../group__SNDDRV__DATA.html#a860bf30ea8bbab5f23432dadfc098a25',1,'snd_Pattern.specialChannels']]],
-  ['eventtrack_20stream_8',['Definition of EventTrack stream',['../md_docs_2design-notes__snddrv__internal.html#autotoc_md45',1,'']]],
+  ['eventtrack_20stream_8',['Definition of EventTrack stream',['../md_docs_2design-notes__snddrv__internal.html#autotoc_md54',1,'']]],
   ['eventtracks_9',['eventTracks',['../group__SNDDRV__DATA.html#a09ba99c768dde78cd241bb7e4aa78337',1,'snd_Music']]],
   ['exbrsa_10',['EXBRSA',['../workarea_8h.html#a7f75e5c017cfa82ce06680f829439296',1,'workarea.h']]],
   ['exptbl_11',['EXPTBL',['../workarea_8h.html#afc8f51562ab661ad80617b5076d36852',1,'workarea.h']]]

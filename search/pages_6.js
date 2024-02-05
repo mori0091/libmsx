@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['libmsx_20c_20library_20for_20msx_0',['libmsx ; C library for MSX',['../index.html',1,'']]],
-  ['library_20for_20msx_1',['libmsx ; C library for MSX',['../index.html',1,'']]],
-  ['list_2',['Deprecated List',['../deprecated.html',1,'']]]
+  ['internal_20of_20snddrv_0',['DESIGN NOTE : Internal of SNDDRV',['../md_docs_2design-notes__snddrv__internal.html',1,'']]]
 ];

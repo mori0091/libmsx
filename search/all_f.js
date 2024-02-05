@@ -9,5 +9,5 @@ var searchData=
   ['hokvld_6',['HOKVLD',['../workarea_8h.html#a050cb8b40a02c7513c1013b8c03c4d6a',1,'workarea.h']]],
   ['hold_5ftime_7',['hold_time',['../group__SOUND__OLD__EG__API.html#a21370f5de118aca5b633e0501a668892',1,'sound_eg_AHDSR']]],
   ['host_20platform_8',['Host Platform',['../index.html#autotoc_md7',1,'']]],
-  ['how_20to_20integrate_20arkos_20tracker_202_20aks_20files_20into_20your_20application_9',['How to integrate Arkos Tracker 2 .aks files into your application',['../md_docs_2design-notes__snddrv.html#autotoc_md38',1,'']]]
+  ['how_20to_20integrate_20arkos_20tracker_202_20aks_20files_20into_20your_20application_9',['How to integrate Arkos Tracker 2 .aks files into your application',['../md_docs_2design-notes__snddrv.html#autotoc_md47',1,'']]]
 ];

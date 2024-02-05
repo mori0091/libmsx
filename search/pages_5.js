@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['internal_20of_20snddrv_0',['DESIGN NOTE : Internal of SNDDRV',['../md_docs_2design-notes__snddrv__internal.html',1,'']]]
+  ['for_20msx_0',['libmsx ; C library for MSX',['../index.html',1,'']]],
+  ['format_200_1',['DESIGN NOTE : LA0 - The libmsx audio format 0.',['../md_docs_2design-notes__la0.html',1,'']]]
 ];

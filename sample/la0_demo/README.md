@@ -20,3 +20,10 @@ openmsx -machine C-BIOS_MSX2+_JP -extb scc+ -cart bin/la0_demo.rom -romtype asci
 
 > We would like to bundle some song data with `libmsx`.  
 > _**If you have redistributable VGM files (`.vgm` or `.vgz`), please provide them.**_
+
+
+See also
+- libmsx API reference
+  - [The libmsx audio replayer.](https://mori0091.github.io/libmsx/group__AUDIO.html)
+  - [LA0 - PSG, SCC/SCC+, OPLL sound driver.](https://mori0091.github.io/libmsx/group__LA0__DECODER.html)
+- [DESIGN NOTE : LA0 - The libmsx audio format 0.](https://github.com/mori0091/libmsx/blob/main/docs/design-notes_la0.md)

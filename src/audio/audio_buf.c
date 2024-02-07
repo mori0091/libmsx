@@ -229,7 +229,7 @@ static void write(uint8_t cmd, uint8_t val) {
   if (cmd <= CMD_SCC_MAX) {
     write_scc(cmd, val);
   }
-  else if (CMD_PSG_MIN <= cmd && cmd <= CMD_PSG_MAX) {
+  else if (/* CMD_PSG_MIN <= cmd && */ cmd <= CMD_PSG_MAX) {
     write_psg(cmd & 0x0f, val);
   }
   else if (CMD_OPLL_MIN <= cmd && cmd <= CMD_OPLL_MAX) {

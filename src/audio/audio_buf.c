@@ -141,7 +141,23 @@ static void stop_opll(void) {
   }
 }
 
+static void clear_scc_waveform(void) {
+  memset(audio_buf_cache, 0, 5 * 32);
+  if (audio_.scc.slot) {
+    const uint8_t slot_p2 = msx_get_slot((void *)PAGE_ADDR(2));
+    msx_ENASLT(audio_.scc.slot, (void *)PAGE_ADDR(2));
+    if (audio_.scc.mode == 1) {
+      memset((void *)SCC_waveform, 0, 4 * 32);
+    }
+    else if (audio_.scc.mode == 2) {
+      memset((void *)SCCPlus_waveform, 0, 5 * 32);
+    }
+    msx_ENASLT(slot_p2, (void *)PAGE_ADDR(2));
+  }
+}
+
 void audio_buf_init(void) {
+  clear_scc_waveform();
   audio_buf_clear();
   audio_buf_stop();
 }

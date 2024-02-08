@@ -16,6 +16,7 @@
 #include "GD3.hpp"
 #include <cmath>
 #include <cstddef>
+#include <cstdint>
 #include <ostream>
 #include <vector>
 
@@ -54,6 +55,7 @@ void VGMFile::parse(std::istream & is, int opt_rate) {
   const unsigned long vsync = samples.rate; // Resampling frequency in Hz.
 
   auto counter = 0;
+  is.seekg(header.VGM_data_offset);
   while (!is.fail() && !isEnd) {
     auto cmd = u8(is);
     switch (cmd) {
@@ -122,8 +124,19 @@ void VGMFile::parse(std::istream & is, int opt_rate) {
       case 0x66:
         isEnd = true;
         break;
-      // case 0x67:                // data block (not supported)
-      //   break;
+      case 0x67:                // data block (not supported)
+      {
+        const uint8_t cmd2 = u8(is);
+        if (0x66 != cmd2) {
+          std::cerr << "Illegal VGM command sequence - 0x67 0x" << std::hex << (int)cmd2 << std::endl;
+          exit(1);
+        }
+        const uint8_t tt = u8(is);
+        const uint32_t ss = u32(is);
+        is.ignore(ss);
+        std::cerr << "Warning: skipped VGM command - 0x67" << std::endl;
+        break;
+      }
       // case 0x68:                // PCM RAM write (not supported)
       //   break;
       case 0x70: case 0x71: case 0x72: case 0x73:
@@ -140,16 +153,90 @@ void VGMFile::parse(std::istream & is, int opt_rate) {
       //   // YM2612 port 0 address 2A write from the data bank, then wait n samples; n can range from 0 to 15.
       //   break;
       // }
-      // case 0x90:
-      // case 0x91:
-      // case 0x92:
-      // case 0x93:
-      // case 0x94:
-      // case 0x95:
-      // {
-      //   // DAC Stream Control Write
-      //   break;
-      // }
+      case 0x90:
+      {
+        // DAC Stream Control Write ; Setup Stream Control
+        const uint8_t ss = u8(is); // Stream ID
+        const uint8_t tt = u8(is); // Chip type
+        const uint8_t pp = u8(is); // Write command/register `cc` at port `pp` (??)
+        const uint8_t cc = u8(is);
+        std::cerr << "Warning: skipped VGM command - 0x90"
+                  << std::hex
+                  << " 0x" << (int)ss
+                  << " 0x" << (int)tt
+                  << " 0x" << (int)pp
+                  << " 0x" << (int)cc
+                  << std::endl;
+        break;
+      }
+      case 0x91:
+      {
+        // DAC Stream Control Write ; Set Stream Data
+        const uint8_t ss = u8(is); // Stream ID
+        const uint8_t dd = u8(is); // Data bank ID
+        const uint8_t ll = u8(is); // Step size
+        const uint8_t bb = u8(is); // Step base
+        std::cerr << "Warning: skipped VGM command - 0x91"
+                  << std::hex
+                  << " 0x" << (int)ss
+                  << " 0x" << (int)dd
+                  << " 0x" << (int)ll
+                  << " 0x" << (int)bb
+                  << std::endl;
+        break;
+      }
+      case 0x92:
+      {
+        // DAC Stream Control Write ; Set Stream Frequency
+        const uint8_t ss = u8(is); // Stream ID
+        const uint32_t ff = u32(is); // frequency
+        std::cerr << "Warning: skipped VGM command - 0x92"
+                  << std::hex
+                  << " 0x" << (int)ss
+                  << " 0x" << (int)ff
+                  << std::endl;
+        break;
+      }
+      case 0x93:
+      {
+        // DAC Stream Control Write ; Start Stream
+        const uint8_t ss = u8(is); // Stream ID
+        const uint32_t aa = u32(is); // Data start offset
+        const uint8_t mm = u8(is);   // Length mode
+        const uint32_t ll = u32(is); // Data length
+        std::cerr << "Warning: skipped VGM command - 0x93"
+                  << std::hex
+                  << " 0x" << (int)ss
+                  << " 0x" << (int)aa
+                  << " 0x" << (int)mm
+                  << " 0x" << (int)ll
+                  << std::endl;
+        break;
+      }
+      case 0x94:
+      {
+        // DAC Stream Control Write ; Stop Stream
+        const uint8_t ss = u8(is); // Stream ID
+        std::cerr << "Warning: skipped VGM command - 0x94"
+                  << std::hex
+                  << " 0x" << (int)ss
+                  << std::endl;
+        break;
+      }
+      case 0x95:
+      {
+        // DAC Stream Control Write ; Start Stream (fast call)
+        const uint8_t ss = u8(is); // Stream ID
+        const uint16_t bb = u16(is); // Block ID
+        const uint8_t ff = u8(is);   // Flags
+        std::cerr << "Warning: skipped VGM command - 0x95"
+                  << std::hex
+                  << " 0x" << (int)ss
+                  << " 0x" << (int)bb
+                  << " 0x" << (int)ff
+                  << std::endl;
+        break;
+      }
       case 0xA0:
       {
         // AY-3-8910

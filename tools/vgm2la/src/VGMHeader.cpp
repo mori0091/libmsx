@@ -13,6 +13,8 @@
  */
 
 #include "VGMHeader.hpp"
+#include <cstdint>
+#include <ios>
 
 void VGMHeader::print() {
   std::cout << "VGM version : 0x" << std::hex << version << std::dec << std::endl;
@@ -185,5 +187,12 @@ void VGMHeader::parse(std::istream & is) {
     X1_010_clock        = u32(p + 0xD8);
     C352_clock          = u32(p + 0xDC);
     GA20_clock          = u32(p + 0xE0);
+  }
+
+  //
+  if (0x161 < version) {
+    std::cout << "VGM version : 0x" << std::hex << version << std::dec << " is not supported." << std::endl
+              << "It must be less than or equal to 0x161." << std::endl;
+    exit(1);
   }
 }

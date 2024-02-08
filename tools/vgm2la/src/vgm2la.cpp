@@ -93,8 +93,8 @@ int main(int argc, char ** argv) {
   std::ofstream os = file_open_w(outfile);
   for (auto infile : infiles)
   {
-    VGMFile vgm = VGMParser::parse(infile, opt_rate);
     std::cout << infile << std::endl;
+    VGMFile vgm = VGMParser::parse(infile, opt_rate);
     vgm.print();
     std::cout << std::endl;
     vgm.dump(os);

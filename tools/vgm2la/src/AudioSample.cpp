@@ -16,7 +16,8 @@
 #include "BitWriter.hpp"
 #include "io.hpp"
 
-#include <math.h>
+#include <algorithm>
+#include <cmath>
 
 static const uint8_t TAG_LA0_FILE[4] = {'L', 'A', '0', ' '};
 
@@ -45,27 +46,6 @@ static void write_elias_gamma(BitWriter & out, size_t x) {
   }
 }
 
-/**
- * Encode an integer value to an interlaced elias-gamma code and write to
- * output.
- *
- * \param out a BitWriter.
- * \param x   a positive integer.
- */
-static void write_interlaced_elias_gamma(BitWriter & out, size_t x) {
-  assert(x);
-  size_t mask = 2;
-  while (mask <= x) {
-    mask <<= 1;
-  }
-  mask >>= 1;
-  while (mask >>= 1) {
-    out.write_bit(false);
-    out.write_bit(!!(x & mask));
-  }
-  out.write_bit(true);
-}
-
 static void encode_size(BitWriter & bw, size_t x) {
   // write_interlaced_elias_gamma(bw, x+1);
   write_elias_gamma(bw, x+1);
@@ -77,6 +57,15 @@ static void encode_offset(BitWriter & bw, int x) {
   write_elias_gamma(bw, y);
 }
 
+static size_t bit_length_of_offset(int x) {
+  size_t y = (x < 0) ? (2 * -x) : (2 * x + 1);
+  size_t nbits = 1;
+  while (y > ((1 << nbits) - 1)) {
+    nbits++;
+  }
+  return 2 * nbits - 1;
+}
+
 static void append(std::vector<uint8_t> & v, uint32_t x) {
   v.push_back((x >> 0) & 255);
   v.push_back((x >> 8) & 255);
@@ -86,35 +75,52 @@ static void append(std::vector<uint8_t> & v, uint32_t x) {
 static void append(std::vector<uint8_t> & v, const std::vector<uint8_t> & v2) {
   v.insert(v.end(), v2.begin(), v2.end());
 }
-static void append(std::vector<uint8_t> & v, const std::vector<std::vector<uint8_t>> & v2) {
-  for (auto i : v2) {
-    append(v, i);
-  }
-}
 
-template <typename T>
-std::pair<int, size_t> find_vec(T & x, std::vector<T> & db) {
-  size_t offset = 0;
-  for (int i = 0; i < db.size(); ++i) {
-    if (x == db[i]) return std::make_pair(i, offset);
-    offset += db[i].size();
+static size_t find_or_append(std::vector<uint8_t> & dict, const std::vector<uint8_t> & sample, size_t curr_pos) {
+  auto it = dict.begin();
+  int32_t offset = INT32_MAX;
+  size_t pos = dict.size();
+  for (;;) {
+    it = std::search(it, dict.end(), sample.begin(), sample.end());
+    size_t p = std::distance(dict.begin(), it);
+    if (it == dict.end()) {
+      break;
+    }
+    else if (p % 2) {
+      // Any sample in the DICTIONARY must be 16-bit aligned,
+      // since it is a sequence of (CMD, val) pair.
+      it++;
+    }
+    else {
+      int32_t o = p - curr_pos;
+      if (bit_length_of_offset(o/2) < 8 * sample.size()) {
+        if (std::abs(o) <= std::abs(offset)) {
+          offset = o;
+          pos = p;
+        }
+      }
+      it += 2;
+    }
   }
-  int idx = db.size();
-  db.push_back(x);
-  return std::make_pair(idx, offset);
+  if (pos == dict.size()) {
+    append(dict, sample);
+  }
+  return pos;
 }
 
 static std::vector<uint8_t> compress(const std::vector<SoundChip::Sample> & samples) {
   if (samples.empty()) return std::vector<uint8_t>();
-  std::vector<std::vector<uint8_t>> db;
+  std::vector<uint8_t> dict;
   BitWriter bw;
   size_t curr_pos = 0;
   for (auto x : samples) {
+    assert(x.size() % 2 == 0);
     if (x.empty()) {
       encode_size(bw, 0);       // Number of commands in the next sample.
       continue;
     }
-    auto [idx, next_pos] = find_vec(x, db);
+    auto next_pos = find_or_append(dict, x, curr_pos);
+    assert(next_pos % 2 == 0);
     size_t len = x.size()/2;
     int offset = (next_pos - curr_pos)/2;
     encode_size(bw, len);       // Number of commands in the next sample.
@@ -124,7 +130,7 @@ static std::vector<uint8_t> compress(const std::vector<SoundChip::Sample> & samp
   std::vector<uint8_t> ret;
   append(ret, bw.out.size());   // Size of SEQUENCE in bytes.
   append(ret, bw.out);          // SEQUENCE.
-  append(ret, db);              // DICTIONARY.
+  append(ret, dict);            // DICTIONARY.
   return ret;
 }
 

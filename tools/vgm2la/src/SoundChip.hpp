@@ -16,12 +16,11 @@
 #define SOUNDCHIP_HPP_
 
 #include <array>
+#include <cassert>
 #include <cstdint>
 #include <ios>
 #include <ostream>
 #include <vector>
-
-#include <assert.h>
 
 struct SoundChip {
 

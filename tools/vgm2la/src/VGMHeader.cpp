@@ -58,7 +58,7 @@ void VGMHeader::parse(std::istream & is) {
   char buf[256] = {0};
   is.read(buf, 0x40);
   if (strncmp("Vgm ", buf, 4)) {
-    std::cerr << "Illegal input." << std::endl;
+    std::cerr << "Error: Illegal input." << std::endl;
     exit(1);
   }
   const char * p = buf;
@@ -110,10 +110,20 @@ void VGMHeader::parse(std::istream & is) {
     Sega_PCM_interface_register = u32(p + 0x3C);
   }
 
+  if (VGM_data_offset < 0x40) {
+    std::cerr << "Error: Invalid VGM header" << std::endl;
+    exit(1);
+  }
   if (VGM_data_offset == 0x40) {
     return;
   }
-  is.read(buf + 0x40, VGM_data_offset - 0x40);
+  // Read subsequent part of VGM header
+  if (VGM_data_offset < 0x100) {
+    is.read(buf + 0x40, VGM_data_offset - 0x40);
+  }
+  else {
+    is.read(buf + 0x40, 0x100 - 0x40);
+  }
 
   if (0x151 <= version) {
     RF5C68_clock  = u32(p + 0x40);
@@ -172,6 +182,7 @@ void VGMHeader::parse(std::istream & is) {
   // VGM 1.70 or later
   if (0x170 <= version) {
     extra_header_offset = u32(p + 0xBC);
+    // std::cerr << "Warning: VGM 1.70 \"Extra Header\" is not supported and will be ignored." << std::endl;
   }
   // VGM 1.71 or later
   if (0x171 <= version) {
@@ -187,12 +198,5 @@ void VGMHeader::parse(std::istream & is) {
     X1_010_clock        = u32(p + 0xD8);
     C352_clock          = u32(p + 0xDC);
     GA20_clock          = u32(p + 0xE0);
-  }
-
-  //
-  if (0x161 < version) {
-    std::cout << "VGM version : 0x" << std::hex << version << std::dec << " is not supported." << std::endl
-              << "It must be less than or equal to 0x161." << std::endl;
-    exit(1);
   }
 }

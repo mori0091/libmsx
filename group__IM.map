@@ -1,0 +1,11 @@
+<map id="8x8px, 16x16px bitmap image processing." name="8x8px, 16x16px bitmap image processing.">
+<area shape="rect" id="Node000001" title="#include &lt;im.h&gt;" alt="" coords="5,235,156,275"/>
+<area shape="rect" id="Node000003" href="$group__IM__BOOLEAN__BM8x8.html" title="Boolean operators for 8x8px 1bpp bitmap images." alt="" coords="204,5,382,46"/>
+<area shape="rect" id="Node000007" href="$group__IM__BOOLEAN__SP16x16.html" title="Boolean operators for 16x16 1bpp sprite patterns." alt="" coords="204,71,382,111"/>
+<area shape="rect" id="Node000004" href="$group__IM__SHIFT__BM8x8.html" title="Shift / Rotate (Scroll) operators for 8x8px 1bpp bitmap images." alt="" coords="204,136,382,177"/>
+<area shape="rect" id="Node000008" href="$group__IM__SHIFT__SP16x16.html" title="Shift / Rotate (Scroll) operators for 16x16 1bpp sprite patterns." alt="" coords="204,201,382,242"/>
+<area shape="rect" id="Node000005" href="$group__IM__TILEMAP__BM8x8.html" title="Tile&#45;mapping for 8x8px 1bpp bitmap images." alt="" coords="218,267,368,307"/>
+<area shape="rect" id="Node000002" href="$group__IM__TRANSFORM__BM8x8.html" title="Matrix transformation operators for 8x8px 1bpp bitmap images." alt="" coords="222,331,364,387"/>
+<area shape="rect" id="Node000006" href="$group__IM__TRANSFORM__SP16x16.html" title="Matrix transformation operators for 16x16 1bpp sprite patterns." alt="" coords="222,411,364,467"/>
+<area shape="rect" id="Node000009" href="$group__IM__TRIM__SP16x16.html" title="Trimming (Cropping) for 16x16 1bpp sprite patterns." alt="" coords="222,491,364,547"/>
+</map>

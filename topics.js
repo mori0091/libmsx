@@ -4,6 +4,7 @@ var topics =
     [ "Decoders for the libmsx audio replayer.", "group__AUDIO__DECODERS.html", "group__AUDIO__DECODERS" ],
     [ "BIOS - Basic Input/Output System", "group__BIOS.html", "group__BIOS" ],
     [ "Banked Memory interface for MegaROM.", "group__BANKED__MEMORY.html", "group__BANKED__MEMORY" ],
+    [ "8x8px, 16x16px bitmap image processing.", "group__IM.html", "group__IM" ],
     [ "Input device", "group__INPUT.html", "group__INPUT" ],
     [ "Interrupts", "group__INTERRUPT.html", "group__INTERRUPT" ],
     [ "Stream interface for ROM / RAM / MegaROM.", "group__STREAM.html", "group__STREAM" ],

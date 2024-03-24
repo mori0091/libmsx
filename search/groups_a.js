@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['handler_0',['Interrupts handler',['../group__INTERRUPT__HANDLER.html',1,'']]],
-  ['high_20level_20apis_1',['VDP commands (High level APIs)',['../group__VDP__COMMANDS__HIGH.html',1,'']]]
+  ['generator_0',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],
+  ['generator_20apis_1',['Software envelope generator APIs',['../group__SOUND__OLD__EG__API.html',1,'']]],
+  ['get_20set_20the_20current_20position_20of_20the_20stream_2',['Get / Set the current position of the stream.',['../group__STREAM__SEEK.html',1,'']]],
+  ['graphics_20mode_3',['graphics mode',['../group__SCREEN__BITMAP.html',1,'Bitmap graphics mode'],['../group__SCREEN__PCG.html',1,'Tiled graphics mode']]]
 ];

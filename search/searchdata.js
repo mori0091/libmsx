@@ -3,13 +3,13 @@ var indexSectionsWithContent =
   0: "$012348:abcdefghijklmnopqrstuvwxyz",
   1: "acfmorstv",
   2: "abcdilmoprstvwxz",
-  3: "abjlmoprstvz",
+  3: "abijlmoprstvz",
   4: "abcdefghijlmnopqrstuvwxy",
   5: "abmprstv",
-  6: "sv",
-  7: "sv",
+  6: "isv",
+  7: "isv",
   8: "abcimopstvw",
-  9: "238abcdefghijklmnoprstuvwxyz",
+  9: "1238abcdefghijklmnoprstuvwxyz",
   10: "0:acdfilmnorst"
 };
 

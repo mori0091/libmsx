@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['2_0',['Direct access to banked memory by switching page 2.',['../group__BANKED__MEMORY__DIRECT__ACCESS.html',1,'']]]
+  ['16x16_201bpp_20sprite_20patterns_0',['16x16 1bpp sprite patterns',['../group__IM__BOOLEAN__SP16x16.html',1,'Boolean operators for 16x16 1bpp sprite patterns.'],['../group__IM__TRANSFORM__SP16x16.html',1,'Matrix transformation operators for 16x16 1bpp sprite patterns.'],['../group__IM__SHIFT__SP16x16.html',1,'Shift operators for 16x16 1bpp sprite patterns.'],['../group__IM__TRIM__SP16x16.html',1,'Trimming (Cropping) for 16x16 1bpp sprite patterns.']]],
+  ['16x16px_20bitmap_20image_20processing_1',['8x8px, 16x16px bitmap image processing.',['../group__IM.html',1,'']]],
+  ['1bpp_20bitmap_20images_2',['1bpp bitmap images',['../group__IM__BOOLEAN__BM8x8.html',1,'Boolean operators for 8x8px 1bpp bitmap images.'],['../group__IM__TRANSFORM__BM8x8.html',1,'Matrix transformation operators for 8x8px 1bpp bitmap images.'],['../group__IM__SHIFT__BM8x8.html',1,'Shift operators for 8x8px 1bpp bitmap images.'],['../group__IM__TILEMAP__BM8x8.html',1,'Tile-mapping for 8x8px 1bpp bitmap images.']]],
+  ['1bpp_20sprite_20patterns_3',['1bpp sprite patterns',['../group__IM__BOOLEAN__SP16x16.html',1,'Boolean operators for 16x16 1bpp sprite patterns.'],['../group__IM__TRANSFORM__SP16x16.html',1,'Matrix transformation operators for 16x16 1bpp sprite patterns.'],['../group__IM__SHIFT__SP16x16.html',1,'Shift operators for 16x16 1bpp sprite patterns.'],['../group__IM__TRIM__SP16x16.html',1,'Trimming (Cropping) for 16x16 1bpp sprite patterns.']]]
 ];

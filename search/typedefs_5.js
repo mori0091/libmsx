@@ -8,5 +8,7 @@ var searchData=
   ['snd_5fpitchbend_5',['snd_PitchBend',['../group__SNDDRV__DATA.html#ga305d35e9184301195b2003b80a0f2cef',1,'snd_p_table.h']]],
   ['snd_5fsoundassets_6',['snd_SoundAssets',['../group__SNDDRV__DATA.html#ga5321e55e38c2c81ab0ea52c4060bb36c',1,'snd_sound.h']]],
   ['snd_5fspeedtrack_7',['snd_SpeedTrack',['../group__SNDDRV__DATA.html#ga5d780b938ed0336b0e5807a47bfd8e33',1,'snd_sound.h']]],
-  ['snd_5ftrack_8',['snd_Track',['../group__SNDDRV__DATA.html#ga123b2e3cb3692a41a494e0fdccd226ea',1,'snd_sound.h']]]
+  ['snd_5ftrack_8',['snd_Track',['../group__SNDDRV__DATA.html#ga123b2e3cb3692a41a494e0fdccd226ea',1,'snd_sound.h']]],
+  ['sp16x16_9',['SP16x16',['../group__IM.html#gac9b90ed011ccc356405a92ac1057adfb',1,'im.h']]],
+  ['sp8x8_10',['SP8x8',['../group__IM.html#ga2e5f9c5bf709cc59cc2180251f558be9',1,'im.h']]]
 ];

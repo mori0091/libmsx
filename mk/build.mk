@@ -258,6 +258,7 @@ PAD2POW2 = ${LIBMSX_HOME}/bin/pad2pow2.sh
 CFLAGS ?=
 CFLAGS += -mz80 -MMD
 CFLAGS += -I ${LIBMSX_HOME}/include
+CFLAGS += --codeseg APPLCODE
 
 LIBMSX = ${LIBMSX_HOME}/lib/libmsx.lib
 

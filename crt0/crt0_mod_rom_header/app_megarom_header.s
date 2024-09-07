@@ -33,6 +33,7 @@
         ;; ---- ordering segments for linker
         .area   _HOME
         .area   _CODE
+        .area   _APPLCODE
         .area   _INITIALIZER
         .area   _GSINIT
         .area   _GSFINAL

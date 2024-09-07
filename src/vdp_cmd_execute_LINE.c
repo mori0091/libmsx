@@ -25,8 +25,8 @@ void vdp_cmd_execute_LINE(uint16_t x1, uint16_t y1,
   vdp_cmd_set_DX(&cmd, x1);
   vdp_cmd_set_DY(&cmd, y1);
 
-  const uint16_t w = diff(x1, x2) + 1;
-  const uint16_t h = diff(y1, y2) + 1;
+  const uint16_t w = diff(x1, x2);
+  const uint16_t h = diff(y1, y2);
   const uint8_t arg = ((y2 < y1) << 3) | ((x2 < x1) << 2);
   if (w <= h) {
     vdp_cmd_set_NX(&cmd, h);

@@ -3,11 +3,8 @@
 
 list_used_banks () {
     if [ $# -gt 0 ] ; then
-        cat "$@" |
-            grep -E '#pragma +codeseg +BANK[0-9]+' |
-            sort -n |
-            uniq |
-            sed -E -e 's/#pragma +codeseg +BANK([0-9]+)/\1/'
+        sed -n -E -e 's/^#[[:space:]]*pragma[[:space:]]+codeseg[[:space:]]+BANK([0-9]+)/\1/p' "$@" |
+            sort -n -u
     fi
 }
 
@@ -85,6 +82,7 @@ compile ()
     if [ "${contents}" ] ; then
         cat <<EOF
 // -*- coding: utf-8-unix -*-";
+#pragma codeseg CODE
 #include <resources.h>
 #include <stddef.h>
 

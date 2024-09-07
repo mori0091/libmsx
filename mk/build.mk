@@ -222,13 +222,10 @@ BUILT_SOURCES += ${SRCS_AKS_C} ${SRCS_AKS_H}
 
 # -- resources --
 RIDXC = ${LIBMSX_HOME}/bin/ridxc.sh
-RSCS_INDEX_C = ${SRCDIR}/libmsx_resources.c
+RSCS_INDEX_C = ${OBJDIR}/libmsx_resources.c
 
 ifneq (${RSCDIR},)
 RSCS = $(shell find ${RSCDIR} -type f -print 2>/dev/null)
-endif
-ifneq (${RSCS},)
-BUILT_SOURCES += ${RSCS_INDEX_C}
 endif
 
 # ----
@@ -240,6 +237,9 @@ SRCS_ASM = $(shell find ${SRCDIR} -type f -name '*.s')
 OBJS_ASM = $(patsubst ${SRCDIR}/%.s, ${OBJDIR}/%.rel, ${SRCS_ASM})
 
 OBJS = ${OBJS_ASM} ${OBJS_C}
+ifneq (${RSCS},)
+OBJS += $(patsubst %.c, %.rel, ${RSCS_INDEX_C})
+endif
 
 DEPS = $(patsubst %.rel, %.d, $(OBJS))
 
@@ -275,7 +275,7 @@ LDLIBS ?=
 build: ${TARGETS}
 
 clean:
-	@rm -f ${TARGETS} ${OBJS} ${DEPS} ${BUILT_SOURCES}
+	@rm -f ${TARGETS} ${OBJS} ${DEPS} ${BUILT_SOURCES} ${RSCS_INDEX_C}
 	@rm -rf ${OBJDIR} ${BINDIR}
 
 ifdef LIBMSX_HOME
@@ -303,9 +303,9 @@ ${BINDIR}/${NAME}.dat: ${BINDIR}/${NAME}.ihx
 	@${info [Build]	$@}
 	@${IHX2BIN} -o $@ $<
 
-${RSCS_INDEX_C}: ${SRCS} ${RSCS}
+${RSCS_INDEX_C}: ${SRCS_C} ${RSCS}
 	@${info [Build] Resources index}
-	@${RIDXC} -o $@ ${RSCDIR} ${SRCS}
+	@${RIDXC} -o $@ ${RSCDIR} ${SRCS_C}
 
 # %.rom: %.ihx
 # 	@${info [Build]	$@}
@@ -322,6 +322,11 @@ ${BINDIR}/${NAME}.ihx: ${CRT0} ${OBJS} ${LIBS}
 	@${info [LD]	$@}
 	@mkdir -p $(dir $@)
 	@${CC} ${CFLAGS} -o $@ ${LDFLAGS} $^ ${LDLIBS}
+
+%.rel: %.c
+	@${info [C]	$<}
+	@mkdir -p $(dir $@)
+	@${CC} ${CFLAGS} -o $@ -c $<
 
 ${OBJDIR}/%.rel: ${SRCDIR}/%.c
 	@${info [C]	$<}

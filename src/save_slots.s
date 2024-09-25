@@ -38,6 +38,7 @@ save_slots::
         ld      h, #0xc0
         call    get_slot
         ld      (_libmsx_initial_slots + #3), a
+        ret
 
 ;------------------------------------------------
         .area   _DATA

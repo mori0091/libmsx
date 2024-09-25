@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"structMemFileMethods.html#a282d9e3b0657e08728e7d1a6cbe603cd":[7,0,4,0],
+"structMemFileMethods.html#a48aaca391661a2d162651a056783bdc9":[7,0,4,2],
+"structMemFileMethods.html#ae4785d624a9b7cfd938cdb3790bbb3d5":[7,0,4,1],
+"structOPLL__Device.html":[6,8,0,0],
+"structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755":[6,8,0,0,0],
 "structTTY__Device.html":[6,16,0,0],
 "structTTY__Device.html#a2fcafc80d0981ade964e37c4a6875991":[6,16,0,0,4],
 "structTTY__Device.html#a31172d172e92ea32f685ec68a9fabb01":[6,16,0,0,2],

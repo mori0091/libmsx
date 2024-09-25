@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"group__VDP__COMMANDS__LOW.html#aad7bb7489f5d17c6cf69a613b4a97671":[6,17,8,0,6],
+"group__VDP__COMMANDS__LOW.html#ab0182c2a6759d986d044e46ea5616afe":[6,17,8,0,10],
+"group__VDP__COMMANDS__LOW.html#adab628c22d73bf9f305245d4b7a35f97":[6,17,8,0,5],
+"group__VDP__COMMANDS__LOW.html#adffb3dff81792127c3237a7a007d51ca":[6,17,8,0,0],
+"group__VDP__COMMANDS__LOW.html#ae37e7f549e115e4cdf4eef0f49309286":[6,17,8,0,4],
 "group__VDP__COMMANDS__LOW.html#ae5f7e7185ca8d8d37ff830b142bae2e7":[6,17,8,0,2],
 "group__VDP__COMMANDS__LOW.html#af0ee51e6846dd236e4ecbfb7632d23e8":[6,17,8,0,14],
 "group__VDP__COMMANDS__LOW.html#afb372d6b23511208995733bb9826fe20":[6,17,8,0,9],
@@ -153,7 +158,7 @@ var NAVTREEINDEX3 =
 "index.html#autotoc_md8":[0,4,2],
 "index.html#autotoc_md9":[0,5],
 "input_8h.html":[6,5,1],
-"interrupt_8h.html":[6,6,3],
+"interrupt_8h.html":[6,6,4],
 "io_8h.html":[8,0,1,17],
 "io_8h.html#a3f3ee8eddfe62ac3846c34227fc62c56":[8,0,1,17,5],
 "io_8h.html#a5411656a5ffcdece10e5dc8e44451553":[8,0,1,17,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "structAudioDecoder.html#a1b362e4d69d7d5bbdd8925f62a1e172c":[6,0,4,0,0],
 "structAudioDecoder.html#a2f560d587ff39716cfd1f87811630eb9":[6,0,4,0,2],
 "structAudioDecoder.html#a5357fed68a60e0b73ef9969a66866110":[6,0,4,0,1],
-"structMemFileMethods.html":[7,0,4],
-"structMemFileMethods.html#a282d9e3b0657e08728e7d1a6cbe603cd":[7,0,4,0],
-"structMemFileMethods.html#a48aaca391661a2d162651a056783bdc9":[7,0,4,2],
-"structMemFileMethods.html#ae4785d624a9b7cfd938cdb3790bbb3d5":[7,0,4,1],
-"structOPLL__Device.html":[6,8,0,0],
-"structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755":[6,8,0,0,0]
+"structMemFileMethods.html":[7,0,4]
 };

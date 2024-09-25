@@ -20,6 +20,6 @@ var searchData=
   ['interface_20for_20megarom_17',['Banked Memory interface for MegaROM.',['../group__BANKED__MEMORY.html',1,'']]],
   ['interface_20for_20rom_20ram_20megarom_18',['Stream interface for ROM / RAM / MegaROM.',['../group__STREAM.html',1,'']]],
   ['interface_20for_20the_20libmsx_20audio_20replayer_19',['The audio decoder interface for the libmsx audio replayer.',['../group__AUDIO__DECODER.html',1,'']]],
-  ['interrupts_20',['interrupts',['../group__INTERRUPT__AWAIT.html',1,'Await interrupts'],['../group__INTERRUPT.html',1,'Interrupts']]],
+  ['interrupts_20',['interrupts',['../group__INTERRUPT__AWAIT.html',1,'Await interrupts'],['../group__INTERRUPT.html',1,'Interrupts'],['../group__INTERRUPT__STATE.html',1,'State of interrupts']]],
   ['interrupts_20handler_21',['Interrupts handler',['../group__INTERRUPT__HANDLER.html',1,'']]]
 ];

@@ -93,7 +93,8 @@ $(document).ready(function(){initNavTree('bios_8h.html',''); initResizable(); })
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">bios.h File Reference<div class="ingroups"><a class="el" href="group__BIOS.html">BIOS - Basic Input/Output System</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -130,6 +131,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga9169260e2eb0c0dbce0e7f3dd42fdc99" id="r_ga9169260e2eb0c0dbce0e7f3dd42fdc99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__BIOS__CONFIG.html#ga9169260e2eb0c0dbce0e7f3dd42fdc99">PAGE_ADDR</a>(p)&#160;&#160;&#160;((void *)(<a class="el" href="group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a> * (p)))</td></tr>
 <tr class="memdesc:ga9169260e2eb0c0dbce0e7f3dd42fdc99"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Constructs base address of the specified page.  <br /></td></tr>
 <tr class="separator:ga9169260e2eb0c0dbce0e7f3dd42fdc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab68e2c7a4fbde959d6c392c232708633" id="r_gab68e2c7a4fbde959d6c392c232708633"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__BIOS__CONFIG.html#gab68e2c7a4fbde959d6c392c232708633">CARTRIDGE_SLOT</a>&#160;&#160;&#160;(<a class="el" href="group__BIOS__CONFIG.html#gad14db158868f65ade8dd82dab1025279">libmsx_initial_slots</a>[1])</td></tr>
+<tr class="memdesc:gab68e2c7a4fbde959d6c392c232708633"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> The cartrige slot address.  <br /></td></tr>
+<tr class="separator:gab68e2c7a4fbde959d6c392c232708633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -175,6 +179,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9b18d372e5dc2d30439e273e5d4343f3" id="r_ga9b18d372e5dc2d30439e273e5d4343f3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3">msx_get_cpu_mode</a> (void)</td></tr>
 <tr class="memdesc:ga9b18d372e5dc2d30439e273e5d4343f3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Get the CPU mode.  <br /></td></tr>
 <tr class="separator:ga9b18d372e5dc2d30439e273e5d4343f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gad14db158868f65ade8dd82dab1025279" id="r_gad14db158868f65ade8dd82dab1025279"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__BIOS__CONFIG.html#gad14db158868f65ade8dd82dab1025279">libmsx_initial_slots</a> [4]</td></tr>
+<tr class="memdesc:gad14db158868f65ade8dd82dab1025279"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Initial slot addresses for each page.  <br /></td></tr>
+<tr class="separator:gad14db158868f65ade8dd82dab1025279"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C language I/F for MSX BIOS routines. </p>

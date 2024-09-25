@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libmsx: Interrupts</title>
+<title>libmsx: State of interrupts</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__INTERRUPT.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__INTERRUPT__STATE.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -92,45 +92,51 @@ $(document).ready(function(){initNavTree('group__INTERRUPT.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a> &#124;
-<a href="#files">Files</a>  </div>
-  <div class="headertitle"><div class="title">Interrupts</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">State of interrupts<div class="ingroups"><a class="el" href="group__INTERRUPT.html">Interrupts</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="interrupt_8h.html" title="Interrupts relevant functions and Pluggable interrupts handler interface.">interrupt.h</a>&gt;</code>  
+<p>Get state of interrupts.  
 <a href="#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Interrupts:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for State of interrupts:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="group__INTERRUPT.svg" width="259" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="group__INTERRUPT__STATE.svg" width="259" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:group__INTERRUPT__AWAIT" id="r_group__INTERRUPT__AWAIT"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__INTERRUPT__AWAIT.html">Await interrupts</a></td></tr>
-<tr class="memdesc:group__INTERRUPT__AWAIT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Await interrupts. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__INTERRUPT__HANDLER" id="r_group__INTERRUPT__HANDLER"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__INTERRUPT__HANDLER.html">Interrupts handler</a></td></tr>
-<tr class="memdesc:group__INTERRUPT__HANDLER"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pluggable interrupts handler interface. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__INTERRUPT__SLEEP" id="r_group__INTERRUPT__SLEEP"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__INTERRUPT__SLEEP.html">Sleep</a></td></tr>
-<tr class="memdesc:group__INTERRUPT__SLEEP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep functions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__INTERRUPT__STATE" id="r_group__INTERRUPT__STATE"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__INTERRUPT__STATE.html">State of interrupts</a></td></tr>
-<tr class="memdesc:group__INTERRUPT__STATE"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get state of interrupts. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:interrupt_8h" id="r_interrupt_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interrupt_8h.html">interrupt.h</a></td></tr>
-<tr class="memdesc:interrupt_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupts relevant functions and Pluggable interrupts handler interface. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga9d2679b16c066ac43f850258517a1d27" id="r_ga9d2679b16c066ac43f850258517a1d27"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__INTERRUPT__STATE.html#ga9d2679b16c066ac43f850258517a1d27">get_interrupt_state</a> (void)</td></tr>
+<tr class="memdesc:ga9d2679b16c066ac43f850258517a1d27"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Return the current state of interrupts.  <br /></td></tr>
+<tr class="separator:ga9d2679b16c066ac43f850258517a1d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p><code>#include &lt;<a class="el" href="interrupt_8h.html" title="Interrupts relevant functions and Pluggable interrupts handler interface.">interrupt.h</a>&gt;</code> </p>
+<p>Get state of interrupts. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga9d2679b16c066ac43f850258517a1d27" name="ga9d2679b16c066ac43f850258517a1d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d2679b16c066ac43f850258517a1d27">&#9670;&#160;</a></span>get_interrupt_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool get_interrupt_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>MSX</code> Return the current state of interrupts. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if interrupts is enabled (i.e., <code>EI</code> state), or <code>false</code> if disabled (i.e., "DI" state). </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -33,13 +33,14 @@ var searchData=
   ['sprite_20interface_30',['Meta-sprite interface.',['../group__SPRITES__METASPRITE.html',1,'']]],
   ['sprite_20patterns_31',['sprite patterns',['../group__IM__BOOLEAN__SP16x16.html',1,'Boolean operators for 16x16 1bpp sprite patterns.'],['../group__IM__TRANSFORM__SP16x16.html',1,'Matrix transformation operators for 16x16 1bpp sprite patterns.'],['../group__IM__SHIFT__SP16x16.html',1,'Shift operators for 16x16 1bpp sprite patterns.'],['../group__IM__TRIM__SP16x16.html',1,'Trimming (Cropping) for 16x16 1bpp sprite patterns.']]],
   ['sprites_20meta_20sprites_32',['Sprites / Meta-Sprites',['../group__SPRITES.html',1,'']]],
-  ['status_20of_20the_20stream_33',['Check error status of the stream.',['../group__STREAM__ERR.html',1,'']]],
-  ['status_20registers_34',['Status registers',['../group__VDP__STATUS__REGISTER.html',1,'']]],
-  ['storage_20of_20named_20resources_35',['Banked Memory as a storage of Named Resources.',['../group__RESOURCES.html',1,'']]],
-  ['stream_36',['stream',['../group__STREAM__ERR.html',1,'Check error status of the stream.'],['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__OPEN.html',1,'Open stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
-  ['stream_20interface_20for_20rom_20ram_20megarom_37',['Stream interface for ROM / RAM / MegaROM.',['../group__STREAM.html',1,'']]],
-  ['structure_38',['Sound data structure',['../group__SNDDRV__DATA.html',1,'']]],
-  ['switching_20page_202_39',['Direct access to banked memory by switching page 2.',['../group__BANKED__MEMORY__DIRECT__ACCESS.html',1,'']]],
-  ['system_40',['BIOS - Basic Input/Output System',['../group__BIOS.html',1,'']]],
-  ['system_20configuration_41',['System configuration',['../group__BIOS__CONFIG.html',1,'']]]
+  ['state_20of_20interrupts_33',['State of interrupts',['../group__INTERRUPT__STATE.html',1,'']]],
+  ['status_20of_20the_20stream_34',['Check error status of the stream.',['../group__STREAM__ERR.html',1,'']]],
+  ['status_20registers_35',['Status registers',['../group__VDP__STATUS__REGISTER.html',1,'']]],
+  ['storage_20of_20named_20resources_36',['Banked Memory as a storage of Named Resources.',['../group__RESOURCES.html',1,'']]],
+  ['stream_37',['stream',['../group__STREAM__ERR.html',1,'Check error status of the stream.'],['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__OPEN.html',1,'Open stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
+  ['stream_20interface_20for_20rom_20ram_20megarom_38',['Stream interface for ROM / RAM / MegaROM.',['../group__STREAM.html',1,'']]],
+  ['structure_39',['Sound data structure',['../group__SNDDRV__DATA.html',1,'']]],
+  ['switching_20page_202_40',['Direct access to banked memory by switching page 2.',['../group__BANKED__MEMORY__DIRECT__ACCESS.html',1,'']]],
+  ['system_41',['BIOS - Basic Input/Output System',['../group__BIOS.html',1,'']]],
+  ['system_20configuration_42',['System configuration',['../group__BIOS__CONFIG.html',1,'']]]
 ];

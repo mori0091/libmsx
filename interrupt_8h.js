@@ -7,5 +7,6 @@ var interrupt_8h =
     [ "set_vsync_handler", "group__INTERRUPT__HANDLER.html#ga92722299d30fbe4f1c49c07f30167a6c", null ],
     [ "sleep_ticks", "group__INTERRUPT__SLEEP.html#gabfc4bf8d4bce39389cf1e6ad5decf38a", null ],
     [ "sleep_millis", "group__INTERRUPT__SLEEP.html#gaa2dd34268598eb46f5f32f2d43f88603", null ],
+    [ "get_interrupt_state", "group__INTERRUPT__STATE.html#ga9d2679b16c066ac43f850258517a1d27", null ],
     [ "vsync_busy", "group__INTERRUPT__AWAIT.html#gac594eec6b7a3ac71bbe093c8d3e09688", null ]
 ];

@@ -162,4 +162,21 @@ void sleep_millis(uint16_t ms);
 
 /** @} */
 
+/**
+ * \defgroup INTERRUPT_STATE State of interrupts
+ * \ingroup INTERRUPT
+ * Get state of interrupts.
+ * @{
+ */
+
+/**
+ * `MSX` Return the current state of interrupts.
+ *
+ * \return `true` if interrupts is enabled (i.e., `EI` state), or
+ *         `false` if disabled (i.e., "DI" state).
+ */
+bool get_interrupt_state(void);
+
+/** @} */
+
 #endif

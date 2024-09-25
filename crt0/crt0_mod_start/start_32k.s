@@ -13,7 +13,8 @@
 
         .module start_32k
 
-        .globl get_slot
+        .globl  get_slot
+        .globl  save_slots
         .globl  _libmsx___init_intr
         .globl  _main
 
@@ -33,6 +34,8 @@ start::
         call    gsinit
         ;; install interrupt routine
         call    _libmsx___init_intr
+        ;; save initial slots
+        call    save_slots
         call    _main
 _exit::
         rst     0x00

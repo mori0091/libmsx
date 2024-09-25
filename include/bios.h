@@ -52,6 +52,16 @@
 #define PAGE_ADDR(p)        ((void *)(PAGE_SIZE * (p)))
 
 /**
+ * `MSX` Initial slot addresses for each page.
+ */
+extern const uint8_t libmsx_initial_slots[4];
+
+/**
+ * `MSX` The cartrige slot address.
+ */
+#define CARTRIDGE_SLOT  (libmsx_initial_slots[1])
+
+/**
  * `MSX` Returns MSX system version code.
  *
  * \return 0 (MSX1), 1 (MSX2), 2 (MSX2+), 3 (MSXturboR), or else.

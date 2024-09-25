@@ -34,7 +34,8 @@ static void clear_screen(void) {
 }
 
 static void render_char(uint8_t c) {
-  vmem_write(IMAGE + POS, (void *)&c, 1);
+  vmem_set_write_address(IMAGE + POS);
+  vmem_set(c);
 }
 
 static void set_text_color(uint8_t fg, uint8_t bg) {

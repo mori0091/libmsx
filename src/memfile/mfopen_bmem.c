@@ -12,10 +12,10 @@
  * \file mfopen_bmem.c
  */
 
-#include "bmem.h"
 #include <memfile.h>
 
 #include <bios.h>
+#include <interrupt.h>
 
 #include <stdint.h>
 #include <string.h>
@@ -25,10 +25,18 @@
 static void mempos_from_bmemptr(mempos_t * pos, bmemptr_t p) {
   pos->ptr = (uint8_t *)PAGE_ADDR(2) + bmem_offset_of(p);
   pos->segment = bmem_bank_of(p);
-  pos->slot = msx_get_slot(PAGE_ADDR(1));
+  pos->slot = CARTRIDGE_SLOT;
 }
 
 static uint8_t read1(MemFile * mf) {
+  const bool interrupt_enabled = get_interrupt_state();
+  const uint8_t slot_p1 = msx_get_slot(PAGE_ADDR(1));
+  const uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
+  {
+    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(1));
+    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(2));
+  }
+
   const uint8_t bank = bmem_get_bank();
   bmem_set_bank(mf->curr.segment);
   uint8_t ret = *mf->curr.ptr++;
@@ -37,10 +45,25 @@ static uint8_t read1(MemFile * mf) {
     mf->curr.segment++;
   }
   bmem_set_bank(bank);
+
+  {
+    msx_ENASLT(slot_p1, PAGE_ADDR(1));
+    msx_ENASLT(slot_p2, PAGE_ADDR(2));
+    if (interrupt_enabled) { __asm__("ei"); }
+  }
+
   return ret;
 }
 
 static size_t read(MemFile * mf, void * ptr, size_t size) {
+  const bool interrupt_enabled = get_interrupt_state();
+  const uint8_t slot_p1 = msx_get_slot(PAGE_ADDR(1));
+  const uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
+  {
+    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(1));
+    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(2));
+  }
+
   const uint8_t bank = bmem_get_bank();
   uint8_t * dst = ptr;
   size_t len = size;
@@ -64,6 +87,13 @@ static size_t read(MemFile * mf, void * ptr, size_t size) {
     mf->curr.ptr += len;
   }
   bmem_set_bank(bank);
+
+  {
+    msx_ENASLT(slot_p1, PAGE_ADDR(1));
+    msx_ENASLT(slot_p2, PAGE_ADDR(2));
+    if (interrupt_enabled) { __asm__("ei"); }
+  }
+
   return size;
 }
 
@@ -74,7 +104,7 @@ static void seek(mempos_t * dst, const mempos_t * src, long offset) {
     + offset;
   dst->ptr = (uint8_t *)PAGE_ADDR(2) + bmem_offset_of(p);
   dst->segment = bmem_bank_of(p);
-  dst->slot = src->slot;
+  dst->slot = CARTRIDGE_SLOT;
 }
 
 static const struct MemFileMethods methods = {

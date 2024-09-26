@@ -118,6 +118,8 @@ static void stop_scc(void) {
   audio_buf_cache[0xac] = 0;
   audio_buf_cache[0xad] = 0;
   audio_buf_cache[0xae] = 0;
+  audio_buf_cache[0xaf] = 0;    // Channel mask
+  audio_buf_cache[0xfa] = 0;    // Channel number of the last waveform change
   if (audio_.scc.slot) {
     const uint8_t slot_p2 = msx_get_slot((void *)PAGE_ADDR(2));
     msx_ENASLT(audio_.scc.slot, (void *)PAGE_ADDR(2));

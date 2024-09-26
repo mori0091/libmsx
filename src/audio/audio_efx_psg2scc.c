@@ -29,7 +29,7 @@ void audio_efx_psg2scc(void) {
     audio_buf_put(0, 0xfa, 2);
   }
 
-  audio_buf_put(0, 0xaf, 0x07);
+  audio_buf_put(0, 0xaf, ~(audio_buf_cache[0xb7]) & 0x07);
 
   audio_buf_put(0, 0xa0, audio_buf_cache[0xb0]); // ch.1 FDR LO
   audio_buf_put(0, 0xa1, audio_buf_cache[0xb1]); // ch.1 FDR HI

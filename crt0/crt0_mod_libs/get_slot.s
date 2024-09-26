@@ -47,7 +47,7 @@ get_slot::
         ; return the slot address
         ret
 
-;; \brief Extract primary of secondary slot number of page N.
+;; \brief Extract primary or secondary slot number of page N.
 ;;
 ;; \param A  value of primary or extended slot selector register
 ;; \param HL an address (to determine the page #)

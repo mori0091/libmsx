@@ -19,7 +19,7 @@
 #include "VGMHeader.hpp"
 
 struct AudioSample {
-  int rate;
+  double rate;
   uint8_t soundchip_enable;
   uint8_t channel_enable;
 

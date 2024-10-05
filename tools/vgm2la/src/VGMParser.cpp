@@ -14,7 +14,7 @@
 
 #include "VGMParser.hpp"
 
-VGMFile VGMParser::parse(const std::string & filename, int opt_rate) {
+VGMFile VGMParser::parse(const std::string & filename, double opt_rate) {
   auto v = load_gzfile(filename);
   auto sb = streambuf_from_vector(v);
   std::istream is{&sb};

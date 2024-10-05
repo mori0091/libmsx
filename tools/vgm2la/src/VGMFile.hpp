@@ -26,7 +26,7 @@ struct VGMFile {
   VGMFile() : header(), samples(), gd3_tags() {}
 
   void print();
-  void parse(std::istream & is, int opt_rate = 60);
+  void parse(std::istream & is, double opt_rate = 0.0);
   void dump(std::ostream & os);
 
   VGMHeader header;

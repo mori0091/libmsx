@@ -18,7 +18,7 @@
 #include <iostream>
 #include <sstream>
 
-int opt_rate = 60;
+double opt_rate = 0.0;
 std::vector<std::string> infiles;
 std::string outfile("out.la0");
 
@@ -35,8 +35,9 @@ void help() {
             << "  -h, --help     Display this help and exits." << std::endl
             << "  -o LA0_FILE    Place the output into LA0_FILE." << std::endl
             << "                 (if not specified, '-o out.la0' is assumed.)" << std::endl
-            << "  -r, --rate HZ  Specify the default rate in Hz." << std::endl
-            << "                 (if not specified, '-r 60' is assumed.)" << std::endl
+            << "  -r, --rate HZ  Force the default rate (Hz)." << std::endl
+            << "                 Typically, 50, 60, or 59.94 is recommended." << std::endl
+            << "                 (if not specified, the 'Rate' of VGM header or '-r 60' is assumed.)" << std::endl
             << std::endl
             << "Supported sound chip:" << std::endl
             << "  AY-3-8910 (PSG)" << std::endl
@@ -96,6 +97,12 @@ int main(int argc, char ** argv) {
     std::cout << infile << std::endl;
     VGMFile vgm = VGMParser::parse(infile, opt_rate);
     vgm.print();
+    if (0 < opt_rate) {
+      std::cout << "Force \"Rate = " << opt_rate << "Hz\"." << std::endl;
+    }
+    else if (!vgm.header.rate) {
+      std::cout << "Assumed \"Rate = " << vgm.samples.rate << "Hz\"." << std::endl;
+    }
     std::cout << std::endl;
     vgm.dump(os);
   }

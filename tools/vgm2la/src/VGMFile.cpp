@@ -28,7 +28,7 @@ void VGMFile::print() {
   }
 }
 
-void VGMFile::parse(std::istream & is, int opt_rate) {
+void VGMFile::parse(std::istream & is, double opt_rate) {
   bool isEnd = false;
   SoundChip soundchip;
 
@@ -41,18 +41,20 @@ void VGMFile::parse(std::istream & is, int opt_rate) {
     return;
   }
 
-  if (0 < header.rate) {
-    samples.rate = header.rate;
-  }
-  else if (0 < opt_rate) {
+  if (0 < opt_rate) {
     samples.rate = opt_rate;
   }
+  else if (0 < header.rate) {
+    samples.rate = (double)header.rate;
+  }
   else {
-    samples.rate = 60;
+    samples.rate = 60.0;
   }
 
-  const unsigned long vgm_freq = 44100;     // Sampling frequency of VGM in Hz.
-  const unsigned long vsync = samples.rate; // Resampling frequency in Hz.
+  // Sampling frequency of VGM (100x Hz).
+  const unsigned long vgm_freq = 44100 * 100;
+  // Resampling frequency (100x Hz).
+  const unsigned long vsync = (unsigned long)(samples.rate * 100);
 
   auto counter = 0;
   is.seekg(header.VGM_data_offset);

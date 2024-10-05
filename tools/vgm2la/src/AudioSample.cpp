@@ -153,11 +153,11 @@ void AudioSample::dump(const VGMHeader & vgm_header, std::ostream & os) {
     loop_samples = std::ceil((double)vgm_header.loop_samples * rate / 44100);
   }
 
-  // printf("Number of samples in total @ %5.2fHz\n", (double)rate);
+  // printf("Number of samples in total @ %5.2fHz\n", rate);
   // printf("  expect: %.2f\n", (double)vgm_header.total_samples * rate / 44100);
   // printf("  actual: %zu\n", (size_t)total_samples);
   // if (loop_samples) {
-  //   printf("Number of samples of loop @ %5.2fHz\n", (double)rate);
+  //   printf("Number of samples of loop @ %5.2fHz\n", rate);
   //   printf("  expect: %.2f\n", (double)vgm_header.loop_samples * rate / 44100);
   //   printf("  actual: %zu\n", (size_t)loop_samples);
   // }
@@ -186,7 +186,7 @@ void AudioSample::dump(const VGMHeader & vgm_header, std::ostream & os) {
     // file header
     write_tag(os, TAG_LA0_FILE);
     write(os, content_size);
-    write(os, (uint8_t)rate);
+    write(os, (uint8_t)std::ceil(rate));
     write(os, (uint8_t)soundchip_enable);
     write(os, total_samples);
     write(os, loop_samples);

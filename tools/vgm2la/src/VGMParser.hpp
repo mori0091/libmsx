@@ -18,7 +18,7 @@
 #include "VGMFile.hpp"
 
 namespace VGMParser {
-  VGMFile parse(const std::string & filename, int opt_rate = 60);
+  VGMFile parse(const std::string & filename, double opt_rate = 0.0);
 }
 
 #endif // VGMPARSER_HPP_

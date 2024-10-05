@@ -181,8 +181,6 @@ The following sample application <a href="https://github.com/mori0091/libmsx/tre
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="la0_8h.html">la0.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// current song number</span></div>
 <div class="line">uint8_t song_number = 255;</div>
@@ -304,7 +302,7 @@ The following sample application <a href="https://github.com/mori0091/libmsx/tre
 <div class="line"> </div>
 <div class="line">  number_of_songs = <a class="code hl_function" href="group__LA0__OPEN.html#ga682b5d27051896bf6214744fe579442f">la0_open_resource</a>(&amp;bgm, <span class="stringliteral">&quot;bgm.la0&quot;</span>);</div>
 <div class="line">  number_of_sfx = <a class="code hl_function" href="group__LA0__OPEN.html#ga682b5d27051896bf6214744fe579442f">la0_open_resource</a>(&amp;sfx, <span class="stringliteral">&quot;sfx.la0&quot;</span>);</div>
-<div class="line">  srand((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)time(NULL));</div>
+<div class="line">  srand(<a class="code hl_variable" href="workarea_8h.html#a528a3bddc4fbfecc1743fa603ff0c8d7">JIFFY</a>);</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_define" href="group__CUI__CONTROL.html#ga425d46e75566dfa7bd78ee07a984692d">locate</a>(0, 21);</div>
 <div class="line">  <a class="code hl_function" href="group__CUI__PRINT.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a>(<span class="stringliteral">&quot;  LEFT/RIGHT  Select BGM\n&quot;</span>);</div>

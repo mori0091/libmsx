@@ -27,6 +27,8 @@ struct SoundChip {
   using SCC_Waveform = std::array<int8_t, 32>;
   using Sample = std::vector<uint8_t>;
 
+  std::array<bool, 256> updated;
+  std::array<uint8_t, 256> latest_value;
   uint8_t soundchip_enable;
   uint8_t channel_enable;       // Using channels of SCC/SCC+ and PSG
 
@@ -34,7 +36,7 @@ struct SoundChip {
   SCC_Waveform waveform[5];
   Sample sample_vector;
 
-  SoundChip() : soundchip_enable(0), channel_enable(0), waveform_updated(0), waveform(), sample_vector() {}
+  SoundChip() : updated(), latest_value(), soundchip_enable(0), channel_enable(0), waveform_updated(0), waveform(), sample_vector() {}
 
   /**
    * Set a value to OPLL register.
@@ -74,6 +76,14 @@ struct SoundChip {
    */
   Sample sample(std::vector<SCC_Waveform> & wavedb);
 
+  void put(uint8_t cmd, uint8_t val) {
+    if (cmd == 0xbd || cmd == 0xfa || !updated[cmd] || latest_value[cmd] != val) {
+      sample_vector.push_back(cmd);
+      sample_vector.push_back(val);
+      updated[cmd] = true;
+      latest_value[cmd] = val;
+    }
+  }
 };
 
 #endif // SOUNDCHIP_HPP_

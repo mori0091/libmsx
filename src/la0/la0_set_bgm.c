@@ -18,7 +18,6 @@
 
 void la0_set_bgm(uint8_t idx, MemFile * mf) {
   if (la0__open(idx, mf, &la0_.bgm)) {
-    audio_cb_bgm_changed(la0_.bgm.rate, &LA0_BGM_DECODER);
     if (la0_.bgm.soundchip_enable & 2) {
       // SCC+ mode
       audio_cb_scc_mode(2);
@@ -27,6 +26,7 @@ void la0_set_bgm(uint8_t idx, MemFile * mf) {
       // SCC compatible mode
       audio_cb_scc_mode(1);
     }
+    audio_cb_bgm_changed(la0_.bgm.rate, &LA0_BGM_DECODER);
   }
   __asm__("ei");
 }

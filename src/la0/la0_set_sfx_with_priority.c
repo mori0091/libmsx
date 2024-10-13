@@ -19,8 +19,6 @@
 void la0_set_sfx_with_priority(uint8_t idx, MemFile * mf, uint8_t priority) {
   if (!audio_is_playing_sfx() || la0_.sfx.priority <= priority) {
     if (la0__open(idx, mf, &la0_.sfx)) {
-      la0_.sfx.priority = priority;
-      audio_cb_sfx_changed(la0_.sfx.rate, &LA0_SFX_DECODER);
       // if (la0_.sfx.soundchip_enable & 2) {
       //   // SCC+ mode
       //   audio_cb_scc_mode(2);
@@ -29,6 +27,8 @@ void la0_set_sfx_with_priority(uint8_t idx, MemFile * mf, uint8_t priority) {
       //   // SCC compatible mode
       //   audio_cb_scc_mode(1);
       // }
+      la0_.sfx.priority = priority;
+      audio_cb_sfx_changed(la0_.sfx.rate, &LA0_SFX_DECODER);
     }
     __asm__("ei");
   }

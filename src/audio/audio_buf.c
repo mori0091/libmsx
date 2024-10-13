@@ -135,7 +135,6 @@ static void stop_scc(void) {
 
 static void stop_opll(void) {
   if (audio_.opll.slot) {
-    write_opll = audio_.opll.device->write;
     for (uint8_t reg = 0x20; reg <= 0x28; ++reg) {
       // SUS-OFF, KEY-OFF for all channels
       write_opll(reg, audio_buf_cache[CMD_OPLL(reg)] & 0x0f);
@@ -159,6 +158,26 @@ static void clear_scc_waveform(void) {
 }
 
 void audio_buf_init(void) {
+  if (audio_.opll.slot) {
+    write_opll = audio_.opll.device->write;
+  }
+  else {
+    write_opll = null_write;
+  }
+  if (audio_.scc.slot) {
+    if (audio_.scc.mode == 2) {
+      write_scc_waveform = write_scc_2_waveform;
+      write_scc = write_scc_2;
+    }
+    else if (audio_.scc.mode == 1){
+      write_scc_waveform = write_scc_1_waveform;
+      write_scc = write_scc_1;
+    }
+  }
+  else {
+    write_scc_waveform = null_write_waveform;
+    write_scc = null_write;
+  }
   clear_scc_waveform();
   audio_buf_clear();
   audio_buf_stop();
@@ -182,9 +201,10 @@ void audio_buf_put(uint8_t priority, uint8_t cmd, uint8_t val) {
   }
   if (priority < latest_priority[cmd]) return;
   latest_priority[cmd] = priority;
-  fifo.buf[fifo.len].priority = priority;
-  fifo.buf[fifo.len].cmd = cmd;
-  fifo.buf[fifo.len].val = val;
+  uint8_t * q = (uint8_t *)&fifo.buf[fifo.len];
+  *q++ = priority;
+  *q++ = cmd;
+  *q   = val;
   fifo.len++;
 }
 
@@ -273,22 +293,12 @@ void audio_buf__play(void) {
 
 void audio_buf_play(void) {
   if (audio_.scc.slot) {
-    if (audio_.scc.mode == 2) {
-      write_scc_waveform = write_scc_2_waveform;
-      write_scc = write_scc_2;
-    }
-    else if (audio_.scc.mode == 1){
-      write_scc_waveform = write_scc_1_waveform;
-      write_scc = write_scc_1;
-    }
     const uint8_t slot_p2 = msx_get_slot((void *)PAGE_ADDR(2));
     msx_ENASLT(audio_.scc.slot, (void *)PAGE_ADDR(2));
     audio_buf__play();
     msx_ENASLT(slot_p2, (void *)PAGE_ADDR(2));
   }
   else {
-    write_scc_waveform = null_write_waveform;
-    write_scc = null_write;
     audio_buf__play();
   }
 }

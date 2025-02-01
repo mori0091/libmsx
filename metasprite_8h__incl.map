@@ -29,20 +29,20 @@
 <area shape="poly" id="edge12_Node000008_Node000006" title=" " alt="" coords="634,255,580,293,577,288,631,250"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="594,300,662,326"/>
 <area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="648,253,639,286,633,284,643,251"/>
-<area shape="poly" id="edge14_Node000010_Node000002" title=" " alt="" coords="495,179,494,219,487,277,470,341,456,372,438,401,411,426,380,444,378,440,408,422,434,398,451,370,465,339,481,276,488,219,490,179"/>
+<area shape="poly" id="edge14_Node000010_Node000002" title=" " alt="" coords="495,179,494,219,487,277,471,341,457,372,439,401,412,427,380,445,378,440,409,423,435,398,452,370,466,339,482,276,489,219,490,179"/>
 <area shape="poly" id="edge15_Node000010_Node000006" title=" " alt="" coords="499,178,541,284,537,286,494,180"/>
 <area shape="poly" id="edge16_Node000010_Node000008" title=" " alt="" coords="520,176,610,217,608,222,518,181"/>
 <area shape="poly" id="edge17_Node000010_Node000011" title=" " alt="" coords="443,181,233,230,232,225,442,176"/>
 <area shape="poly" id="edge18_Node000011_Node000002" title=" " alt="" coords="173,254,156,269,140,286,131,305,134,325,165,365,205,398,248,423,288,441,286,446,246,428,202,402,161,369,130,327,126,305,136,283,152,265,170,250"/>
-<area shape="rect" id="Node000012" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="258,300,353,326"/>
+<area shape="rect" id="Node000012" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="258,300,352,326"/>
 <area shape="poly" id="edge19_Node000011_Node000012" title=" " alt="" coords="210,250,274,289,272,294,208,255"/>
-<area shape="rect" id="Node000013" href="$bios__entry_8h.html" title="Assembler entry points for MSX BIOS functions." alt="" coords="144,300,235,326"/>
+<area shape="rect" id="Node000013" href="$bios__entry_8h.html" title="Assembler entry points for MSX BIOS functions." alt="" coords="144,300,234,326"/>
 <area shape="poly" id="edge22_Node000011_Node000013" title=" " alt="" coords="192,252,192,284,187,284,187,252"/>
 <area shape="poly" id="edge20_Node000012_Node000002" title=" " alt="" coords="310,325,331,431,326,432,305,327"/>
 <area shape="poly" id="edge21_Node000012_Node000007" title=" " alt="" coords="318,324,351,360,347,364,314,328"/>
 <area shape="poly" id="edge23_Node000013_Node000002" title=" " alt="" coords="203,324,313,434,309,438,199,328"/>
 <area shape="poly" id="edge24_Node000013_Node000007" title=" " alt="" coords="221,324,325,365,324,370,219,329"/>
-<area shape="poly" id="edge27_Node000014_Node000002" title=" " alt="" coords="402,251,413,279,423,317,426,359,423,380,416,401,398,424,375,441,372,437,394,420,411,398,418,379,421,359,418,318,408,281,397,253"/>
+<area shape="poly" id="edge27_Node000014_Node000002" title=" " alt="" coords="402,251,413,279,424,317,427,359,424,380,417,401,399,424,376,441,373,437,395,420,412,398,419,379,422,359,419,318,408,281,397,253"/>
 <area shape="poly" id="edge28_Node000014_Node000007" title=" " alt="" coords="394,253,376,359,371,358,389,252"/>
 <area shape="poly" id="edge29_Node000014_Node000012" title=" " alt="" coords="380,255,334,292,330,288,377,250"/>
 <area shape="poly" id="edge32_Node000015_Node000002" title=" " alt="" coords="750,179,741,224,720,287,704,320,684,352,659,379,629,402,565,430,498,447,434,457,381,461,380,456,433,452,497,442,564,425,627,397,656,376,680,348,699,317,715,285,736,222,745,178"/>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s_5fpart_0',['s_part',['../group__SNDDRV__DATA.html#a15915380e319701fb580ec49b74fd586',1,'snd_p_table::s_part'],['../group__SNDDRV__DATA.html#ab1ed6f568364769db751510d85fff1d4',1,'snd_Instrument::s_part']]],
+  ['s_5fpart_0',['s_part',['../group__SNDDRV__DATA.html#ab1ed6f568364769db751510d85fff1d4',1,'snd_Instrument::s_part'],['../group__SNDDRV__DATA.html#a15915380e319701fb580ec49b74fd586',1,'snd_p_table::s_part']]],
   ['scc_5fbuffer_1',['scc_buffer',['../group__SCC__BUFFER.html#gaf9e4b2bbb44595ac47d0fe6db8d36eaa',1,'scc_buf.h']]],
   ['scc_5fwave_5fbuffer_2',['scc_wave_buffer',['../group__SCC__BUFFER.html#ga05ba7f098db8e8b3c62f723006b00a46',1,'scc_buf.h']]],
   ['scc_5fwaveform_5fpulse_5f10_5f32_3',['SCC_WAVEFORM_PULSE_10_32',['../group__SCC__PREDEFINED__WAVEFORMS.html#ga308c4983d30d40c59b6876f01e183f51',1,'scc_wav.h']]],
@@ -37,11 +37,11 @@ var searchData=
   ['scc_5fwaveform_5fsin_34',['SCC_WAVEFORM_SIN',['../group__SCC__PREDEFINED__WAVEFORMS.html#gaad149b4daa1883848d3630552cb22c4e',1,'scc_wav.h']]],
   ['scc_5fwaveform_5ftriangle_35',['SCC_WAVEFORM_TRIANGLE',['../group__SCC__PREDEFINED__WAVEFORMS.html#gaeebcfc2b02763931b79d757e14e80a44',1,'scc_wav.h']]],
   ['scncnt_36',['SCNCNT',['../workarea_8h.html#acc2ec1debe205b32a718f71124b7d12e',1,'workarea.h']]],
-  ['seek_37',['seek',['../structMemFileMethods.html#a48aaca391661a2d162651a056783bdc9',1,'MemFileMethods']]],
+  ['seek_37',['seek',['../memfile__types_8h.html#a48aaca391661a2d162651a056783bdc9',1,'MemFileMethods']]],
   ['segment_38',['segment',['../memfile__types_8h.html#a7c00299fda3df5e42792107dc991480d',1,'MemPos']]],
-  ['set_5fborder_5fcolor_39',['set_border_color',['../structTTY__Device.html#af39e0377c43d073671f05d87930d425b',1,'TTY_Device']]],
-  ['set_5frepeat_40',['set_repeat',['../structAudioDecoder.html#a2f560d587ff39716cfd1f87811630eb9',1,'AudioDecoder']]],
-  ['set_5ftext_5fcolor_41',['set_text_color',['../structTTY__Device.html#a2fcafc80d0981ade964e37c4a6875991',1,'TTY_Device']]],
+  ['set_5fborder_5fcolor_39',['set_border_color',['../group__TTY__DEVICE.html#af39e0377c43d073671f05d87930d425b',1,'TTY_Device']]],
+  ['set_5frepeat_40',['set_repeat',['../group__AUDIO__DECODER.html#a2f560d587ff39716cfd1f87811630eb9',1,'AudioDecoder']]],
+  ['set_5ftext_5fcolor_41',['set_text_color',['../group__TTY__DEVICE.html#a2fcafc80d0981ade964e37c4a6875991',1,'TTY_Device']]],
   ['size_42',['size',['../group__RESOURCES__FIND.html#a469be0d3e925bed5dcfe1615f3a47af7',1,'ResourceIndex']]],
   ['slot_43',['slot',['../memfile__types_8h.html#a647a724baa5efb8a25333f07ed7894f7',1,'MemPos::slot'],['../group__OPLL__DEVICE.html#ae7f81dbf9dced3cc5cf19827ee23f3de',1,'OPLL::slot'],['../group__SCC__DEVICE.html#a451ffb6f9dbecfb1fd4078d3ad5f0bcf',1,'SCC::slot'],['../workarea_8h.html#a2b6d72e64e1efc7e41db74171b3b726f',1,'cgpnt::slot']]],
   ['sltatr_44',['SLTATR',['../workarea_8h.html#ace31752cc587174a0decb486ca5ef111',1,'workarea.h']]],

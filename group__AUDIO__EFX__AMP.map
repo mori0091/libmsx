@@ -1,4 +1,4 @@
 <map id="The AMP effector." name="The AMP effector.">
 <area shape="rect" id="Node000002" href="$group__AUDIO__EFX.html" title="Effectors for the libmsx audio replayer." alt="" coords="5,5,157,46"/>
-<area shape="rect" id="Node000001" title="#include &lt;audio_efx_amp.h&gt;" alt="" coords="205,13,329,39"/>
+<area shape="rect" id="Node000001" title="#include &lt;audio_efx_amp.h&gt;" alt="" coords="205,13,329,38"/>
 </map>

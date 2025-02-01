@@ -1,5 +1,5 @@
 <map id="include/io.h" name="include/io.h">
-<area shape="rect" id="Node000001" title="Definition of I/O ports." alt="" coords="226,5,313,31"/>
+<area shape="rect" id="Node000001" title="Definition of I/O ports." alt="" coords="226,5,312,31"/>
 <area shape="rect" id="Node000002" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="406,374,506,399"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,28,147,42,113,53,80,67,52,85,29,107,13,133,8,164,8,240,11,255,20,268,53,293,102,315,162,334,293,361,406,377,405,382,293,366,160,339,100,320,50,298,16,272,6,257,3,241,3,164,8,131,24,103,48,80,78,62,111,48,145,37,210,23"/>
 <area shape="rect" id="Node000003" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="114,79,211,105"/>
@@ -8,7 +8,7 @@
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="271,46,275,109,283,144,297,177,320,204,348,224,345,228,317,208,292,180,278,146,269,110,265,47"/>
 <area shape="rect" id="Node000007" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="307,153,450,178"/>
 <area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="289,42,372,151,367,154,285,45"/>
-<area shape="rect" id="Node000008" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="559,79,671,105"/>
+<area shape="rect" id="Node000008" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="558,79,671,105"/>
 <area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="328,29,559,76,558,81,327,34"/>
 <area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="124,114,104,128,88,143,80,160,84,177,114,219,152,255,194,285,239,311,330,349,406,372,405,377,328,354,237,316,191,290,148,259,110,222,79,179,75,159,84,140,101,124,121,110"/>
 <area shape="rect" id="Node000004" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="94,153,232,178"/>
@@ -22,7 +22,7 @@
 <area shape="poly" id="edge29_Node000008_Node000005" title=" " alt="" coords="583,115,391,228,389,223,580,110"/>
 <area shape="poly" id="edge21_Node000008_Node000006" title=" " alt="" coords="588,116,535,164,507,194,484,228,468,266,460,300,455,299,463,265,479,225,503,191,531,160,585,112"/>
 <area shape="poly" id="edge30_Node000008_Node000007" title=" " alt="" coords="561,112,420,155,418,150,559,107"/>
-<area shape="rect" id="Node000009" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="728,226,907,252"/>
+<area shape="rect" id="Node000009" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="728,226,906,252"/>
 <area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="650,111,711,150,805,224,801,228,708,155,647,115"/>
 <area shape="rect" id="Node000010" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="896,153,1008,178"/>
 <area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="687,106,896,150,895,155,685,111"/>
@@ -41,7 +41,7 @@
 <area shape="poly" id="edge20_Node000010_Node000016" title=" " alt="" coords="1024,177,1283,223,1282,228,1023,182"/>
 <area shape="rect" id="Node000012" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="954,300,1065,326"/>
 <area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="1004,267,1010,299,1004,300,998,268"/>
-<area shape="rect" id="Node000014" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="1117,300,1249,326"/>
+<area shape="rect" id="Node000014" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="1116,300,1249,326"/>
 <area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="1194,268,1188,300,1183,299,1189,267"/>
 <area shape="rect" id="Node000015" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="1273,300,1367,326"/>
 <area shape="poly" id="edge19_Node000013_Node000015" title=" " alt="" coords="1232,258,1300,297,1298,302,1229,262"/>

@@ -1,4 +1,4 @@
 <map id="Z80 / R800 CPU mode" name="Z80 / R800 CPU mode">
 <area shape="rect" id="Node000002" href="$group__BIOS.html" title="#include &lt;bios.h&gt;" alt="" coords="5,5,134,46"/>
-<area shape="rect" id="Node000001" title="Change / Get CPU mode." alt="" coords="182,13,331,39"/>
+<area shape="rect" id="Node000001" title="Change / Get CPU mode." alt="" coords="182,13,331,38"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="Display registers" name="Display registers">
 <area shape="rect" id="Node000002" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" alt="" coords="5,5,142,46"/>
-<area shape="rect" id="Node000001" title="Dispalay area adjust / Hardware scroll." alt="" coords="190,13,306,39"/>
+<area shape="rect" id="Node000001" title="Dispalay area adjust / Hardware scroll." alt="" coords="190,13,306,38"/>
 </map>

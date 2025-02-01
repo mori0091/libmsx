@@ -11,13 +11,13 @@ var index =
     ] ],
     [ "Install instructions of Build tools", "index.html#autotoc_md9", [
       [ "Ubuntu 22.04", "index.html#autotoc_md10", [
-        [ "1. Install SDCC", "index.html#autotoc_md11", null ],
-        [ "2. Install other toolchain", "index.html#autotoc_md12", null ]
+        [ "Install SDCC", "index.html#autotoc_md11", null ],
+        [ "Install other toolchain", "index.html#autotoc_md12", null ]
       ] ],
       [ "Windows (Ubuntu on WSL2)", "index.html#autotoc_md13", null ],
       [ "Windows (MSYS2)", "index.html#autotoc_md14", [
-        [ "1. Install SDCC", "index.html#autotoc_md15", null ],
-        [ "2. Install other toolchain", "index.html#autotoc_md16", null ]
+        [ "Install SDCC", "index.html#autotoc_md15", null ],
+        [ "Install other toolchain", "index.html#autotoc_md16", null ]
       ] ]
     ] ],
     [ "Build instructions of the library and sample projects", "index.html#autotoc_md17", null ],

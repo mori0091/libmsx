@@ -1,4 +1,4 @@
 <map id="Mode registers" name="Mode registers">
 <area shape="rect" id="Node000002" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" alt="" coords="5,5,142,46"/>
-<area shape="rect" id="Node000001" title="Screen / Sprite mode setting." alt="" coords="190,13,296,39"/>
+<area shape="rect" id="Node000001" title="Screen / Sprite mode setting." alt="" coords="190,13,296,38"/>
 </map>

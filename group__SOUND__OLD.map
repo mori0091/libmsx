@@ -1,5 +1,5 @@
 <map id="Sound &#45; Old PSG sound driver" name="Sound &#45; Old PSG sound driver">
 <area shape="rect" id="Node000001" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" alt="" coords="5,23,163,64"/>
 <area shape="rect" id="Node000002" href="$group__SOUND__OLD__API.html" title="Old PSG sound driver APIs." alt="" coords="231,5,408,31"/>
-<area shape="rect" id="Node000003" href="$group__SOUND__OLD__EG__API.html" title="Software envelope generator interface." alt="" coords="211,55,428,80"/>
+<area shape="rect" id="Node000003" href="$group__SOUND__OLD__EG__API.html" title="Software envelope generator interface" alt="" coords="211,55,428,80"/>
 </map>

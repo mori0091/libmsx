@@ -1,14 +1,14 @@
 var annotated_dup =
 [
-    [ "AudioDecoder", "structAudioDecoder.html", "structAudioDecoder" ],
+    [ "AudioDecoder", "group__AUDIO__DECODER.html#structAudioDecoder", "group__AUDIO__DECODER_structAudioDecoder" ],
     [ "cgpnt", "workarea_8h.html#structcgpnt", "workarea_8h_structcgpnt" ],
     [ "font", "bios__const_8h.html#structfont", "bios__const_8h_structfont" ],
     [ "MemFile", "memfile__types_8h.html#structMemFile", "memfile__types_8h_structMemFile" ],
-    [ "MemFileMethods", "structMemFileMethods.html", "structMemFileMethods" ],
+    [ "MemFileMethods", "memfile__types_8h.html#structMemFileMethods", "memfile__types_8h_structMemFileMethods" ],
     [ "MemPos", "memfile__types_8h.html#structMemPos", "memfile__types_8h_structMemPos" ],
     [ "metasprite", "group__SPRITES__METASPRITE.html#structmetasprite", "group__SPRITES__METASPRITE_structmetasprite" ],
     [ "OPLL", "group__OPLL__DEVICE.html#structOPLL", "group__OPLL__DEVICE_structOPLL" ],
-    [ "OPLL_Device", "structOPLL__Device.html", "structOPLL__Device" ],
+    [ "OPLL_Device", "group__OPLL__DEVICE.html#structOPLL__Device", "group__OPLL__DEVICE_structOPLL__Device" ],
     [ "ResourceIndex", "group__RESOURCES__FIND.html#structResourceIndex", "group__RESOURCES__FIND_structResourceIndex" ],
     [ "SCC", "group__SCC__DEVICE.html#structSCC", "group__SCC__DEVICE_structSCC" ],
     [ "SCC_buffer", "group__SCC__BUFFER.html#structSCC__buffer", "group__SCC__BUFFER_structSCC__buffer" ],
@@ -34,7 +34,7 @@ var annotated_dup =
     [ "sound_fragment", "group__SOUND__OLD__API.html#structsound__fragment", "group__SOUND__OLD__API_structsound__fragment" ],
     [ "sprite", "group__SPRITES__ATTR.html#structsprite", "group__SPRITES__ATTR_structsprite" ],
     [ "sprite_color", "group__SPRITES__COLOR.html#structsprite__color", "group__SPRITES__COLOR_structsprite__color" ],
-    [ "TTY_Device", "structTTY__Device.html", "structTTY__Device" ],
+    [ "TTY_Device", "group__TTY__DEVICE.html#structTTY__Device", "group__TTY__DEVICE_structTTY__Device" ],
     [ "vdp_cmd", "group__VDP__COMMANDS__LOW.html#structvdp__cmd", "group__VDP__COMMANDS__LOW_structvdp__cmd" ],
     [ "vec2i", "group__SPRITES__METASPRITE.html#structvec2i", "group__SPRITES__METASPRITE_structvec2i" ]
 ];

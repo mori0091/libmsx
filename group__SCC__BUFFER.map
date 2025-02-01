@@ -1,4 +1,4 @@
 <map id="SCC/SCC+ Buffer" name="SCC/SCC+ Buffer">
 <area shape="rect" id="Node000002" href="$group__SCC.html" title="#include &lt;scc.h&gt;" alt="" coords="5,5,178,46"/>
-<area shape="rect" id="Node000001" title="#include &lt;scc_buf.h&gt; Buffered access to SCC/SCC+ registers." alt="" coords="226,13,350,39"/>
+<area shape="rect" id="Node000001" title="#include &lt;scc_buf.h&gt; Buffered access to SCC/SCC+ registers." alt="" coords="226,13,350,38"/>
 </map>

@@ -9,9 +9,9 @@
 <area shape="rect" id="Node000008" href="$resources_8h.html" title="Data types and functions for accessing embedded resources." alt="" coords="508,79,641,105"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="402,34,537,76,535,81,400,39"/>
 <area shape="rect" id="Node000004" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="218,153,329,178"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="276,120,276,152,271,152,271,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="276,120,276,152,270,152,270,120"/>
 <area shape="rect" id="Node000006" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="354,153,486,178"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="424,120,423,152,418,152,419,120"/>
-<area shape="rect" id="Node000007" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="511,153,604,178"/>
+<area shape="rect" id="Node000007" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="510,153,604,178"/>
 <area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="460,110,535,150,533,154,458,115"/>
 </map>

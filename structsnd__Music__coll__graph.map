@@ -1,7 +1,7 @@
 <map id="snd_Music" name="snd_Music">
 <area shape="rect" id="Node000001" title="Container of a music data." alt="" coords="271,112,355,137"/>
 <area shape="rect" id="Node000002" href="$structsnd__Music_1_1vec__snd__SpeedTrack.html" title="[optional] list of all speed tracks refered in items." alt="" coords="5,5,145,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,49,248,83,293,109,290,113,246,88,159,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,48,248,82,294,109,291,113,246,87,159,53"/>
 <area shape="rect" id="Node000003" href="$structsnd__Music_1_1vec__snd__EventTrack.html" title="[optional] list of all event tracks refered in items." alt="" coords="5,71,145,111"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,100,270,116,270,121,160,106"/>
 <area shape="rect" id="Node000004" href="$structsnd__Music_1_1vec__snd__Track.html" title="list of all tracks refered in items." alt="" coords="5,136,145,177"/>

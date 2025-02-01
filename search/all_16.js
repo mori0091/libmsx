@@ -16,7 +16,7 @@ var searchData=
   ['of_20the_20libmsx_20audio_20replayer_13',['of the libmsx audio replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
   ['of_20the_20library_20and_20sample_20projects_14',['Build instructions of the library and sample projects',['../index.html#autotoc_md17',1,'']]],
   ['of_20the_20stream_15',['of the stream',['../group__STREAM__ERR.html',1,'Check error status of the stream.'],['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
-  ['of_20track_20stream_16',['of track stream',['../md_docs_2design-notes__snddrv__internal.html#autotoc_md57',1,'Chunk of Track stream'],['../md_docs_2design-notes__snddrv__internal.html#autotoc_md55',1,'Definition of Track stream']]],
+  ['of_20track_20stream_16',['of Track stream',['../md_docs_2design-notes__snddrv__internal.html#autotoc_md57',1,'Chunk of Track stream'],['../md_docs_2design-notes__snddrv__internal.html#autotoc_md55',1,'Definition of Track stream']]],
   ['of_20user_20applications_17',['Build instructions of user applications',['../index.html#autotoc_md18',1,'']]],
   ['offset_18',['offset',['../group__RESOURCES__FIND.html#a27b211ace7b7ca4828e4c09434bb9bf2',1,'ResourceIndex']]],
   ['old_20psg_20sound_20driver_19',['Sound - Old PSG sound driver',['../group__SOUND__OLD.html',1,'']]],
@@ -35,7 +35,7 @@ var searchData=
   ['opll_5fbuf_2eh_32',['opll_buf.h',['../opll__buf_8h.html',1,'']]],
   ['opll_5fbuf_5fh_5f_33',['OPLL_BUF_H_',['../opll__buf_8h.html#a23c6635ddfb47395be19b82f8d5cdb3c',1,'opll_buf.h']]],
   ['opll_5fbuffer_34',['opll_buffer',['../group__OPLL__BUFFER.html#gae70502be5b54cb5b4da26392d1a49b87',1,'opll_buf.h']]],
-  ['opll_5fdevice_35',['OPLL_Device',['../structOPLL__Device.html',1,'']]],
+  ['opll_5fdevice_35',['OPLL_Device',['../group__OPLL__DEVICE.html#structOPLL__Device',1,'']]],
   ['opll_5fdisable_36',['OPLL_disable',['../group__OPLL__DEVICE.html#ga2a280d363923d8c0a22b7deab3a2f8d6',1,'opll.h']]],
   ['opll_5fenable_37',['OPLL_enable',['../group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456',1,'opll.h']]],
   ['opll_5ffind_38',['OPLL_find',['../group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83',1,'opll.h']]],
@@ -48,7 +48,7 @@ var searchData=
   ['opll_5frhythm_5fmode_45',['OPLL_rhythm_mode',['../group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d',1,'opll_buf.h']]],
   ['opll_5fstop_46',['OPLL_stop',['../group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159',1,'opll_buf.h']]],
   ['other_20la0_20specific_20apis_47',['Other LA0 specific APIs.',['../group__LA0__MISC.html',1,'']]],
-  ['other_20toolchain_48',['other toolchain',['../index.html#autotoc_md16',1,'2. Install other toolchain'],['../index.html#autotoc_md12',1,'2. Install other toolchain']]],
-  ['output_49',['output',['../group__CUI__PRINT.html',1,'Text output'],['../group__CUI.html',1,'Text output']]],
+  ['other_20toolchain_48',['other toolchain',['../index.html#autotoc_md12',1,'2. Install other toolchain'],['../index.html#autotoc_md16',1,'2. Install other toolchain']]],
+  ['output_49',['output',['../group__CUI.html',1,'Text output'],['../group__CUI__PRINT.html',1,'Text output']]],
   ['output_20system_50',['BIOS - Basic Input/Output System',['../group__BIOS.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 <map id="OPLL" name="OPLL">
 <area shape="rect" id="Node000001" title="OPLL Handle." alt="" coords="29,94,85,120"/>
-<area shape="rect" id="Node000002" href="$structOPLL__Device.html" title="Device interface for OPLL sound chip." alt="" coords="5,5,109,31"/>
+<area shape="rect" id="Node000002" href="$group__OPLL__DEVICE.html#structOPLL__Device" title="Device interface for OPLL sound chip." alt="" coords="5,5,109,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,47,60,94,54,94,54,47"/>
 </map>

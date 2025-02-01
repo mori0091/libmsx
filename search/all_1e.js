@@ -10,7 +10,7 @@ var searchData=
   ['wo_5fwaveform_7',['wo_waveform',['../group__SCC__DEVICE.html#a9a5f48a6d6c43bc153f511430049612b',1,'SCC_Channel']]],
   ['workarea_2eh_8',['workarea.h',['../workarea_8h.html',1,'']]],
   ['workarea_5fh_9',['WORKAREA_H',['../workarea_8h.html#ab17199beb488baf080e336e3d3577f57',1,'workarea.h']]],
-  ['write_10',['write',['../structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755',1,'OPLL_Device']]],
+  ['write_10',['write',['../group__OPLL__DEVICE.html#a74ab207424c3be0ad49f18cefe132755',1,'OPLL_Device']]],
   ['write_20call_11',['Inter-slot Read / Write / Call',['../group__BIOS__SLOT.html',1,'']]],
   ['wrprim_12',['WRPRIM',['../workarea_8h.html#afefb286a48de34bf901d08c48e0b658a',1,'workarea.h']]],
   ['wrslt_13',['WRSLT',['../bios__entry_8h.html#ad566fbdf11b69c7a63f68d594ed6b001',1,'bios_entry.h']]],

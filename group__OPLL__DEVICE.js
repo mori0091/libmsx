@@ -1,7 +1,7 @@
 var group__OPLL__DEVICE =
 [
-    [ "OPLL_Device", "structOPLL__Device.html", [
-      [ "write", "structOPLL__Device.html#a74ab207424c3be0ad49f18cefe132755", null ]
+    [ "OPLL_Device", "group__OPLL__DEVICE.html#structOPLL__Device", [
+      [ "write", "group__OPLL__DEVICE.html#a74ab207424c3be0ad49f18cefe132755", null ]
     ] ],
     [ "OPLL", "group__OPLL__DEVICE.html#structOPLL", [
       [ "slot", "group__OPLL__DEVICE.html#ae7f81dbf9dced3cc5cf19827ee23f3de", null ],

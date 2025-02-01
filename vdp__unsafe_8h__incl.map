@@ -1,27 +1,27 @@
 <map id="include/vdp_unsafe.h" name="include/vdp_unsafe.h">
-<area shape="rect" id="Node000001" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="110,5,254,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="69,300,132,326"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,34,115,52,74,78,37,112,22,132,11,153,8,176,10,205,23,251,42,272,64,290,61,294,38,276,18,253,5,206,3,176,6,152,18,129,33,108,71,73,112,47,149,29"/>
-<area shape="rect" id="Node000003" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="264,153,305,178"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,30,270,138,265,141,188,33"/>
-<area shape="rect" id="Node000005" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="290,79,357,105"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="207,29,287,69,285,74,205,34"/>
-<area shape="rect" id="Node000007" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="88,79,143,105"/>
-<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="173,33,139,69,135,66,169,29"/>
-<area shape="rect" id="Node000004" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="104,226,169,252"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="265,179,177,222,175,217,262,175"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="133,253,116,287,111,285,128,251"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="353,103,378,117,402,134,415,156,416,168,411,180,386,211,355,237,320,258,284,275,211,298,148,309,147,304,210,293,282,270,318,253,352,232,382,207,407,177,411,167,410,157,398,138,376,121,351,108"/>
-<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="319,106,301,140,296,138,315,104"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="330,153,397,178"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="332,104,352,138,347,140,328,106"/>
-<area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="89,105,52,123,36,137,23,154,17,172,16,190,20,208,28,226,51,260,77,287,73,291,47,263,24,229,15,210,11,190,12,171,18,151,32,133,50,119,86,100"/>
-<area shape="rect" id="Node000008" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="32,153,127,178"/>
-<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="112,106,95,140,90,138,107,104"/>
-<area shape="rect" id="Node000009" href="$bios__entry_8h.html" title="Assembler entry points for MSX BIOS functions." alt="" coords="150,153,241,178"/>
-<area shape="poly" id="edge14_Node000007_Node000009" title=" " alt="" coords="131,103,173,140,169,144,127,107"/>
-<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="84,179,94,252,99,284,94,285,89,252,78,179"/>
-<area shape="poly" id="edge13_Node000008_Node000004" title=" " alt="" coords="91,177,120,212,115,216,87,180"/>
-<area shape="poly" id="edge15_Node000009_Node000002" title=" " alt="" coords="199,179,197,214,192,234,183,253,164,276,141,294,137,290,160,272,179,251,187,232,191,213,193,179"/>
-<area shape="poly" id="edge16_Node000009_Node000004" title=" " alt="" coords="188,180,158,216,154,213,184,177"/>
+<area shape="rect" id="Node000001" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="112,5,255,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="70,300,134,326"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,34,115,52,75,78,37,112,22,132,11,153,8,177,11,206,24,251,43,272,66,290,62,294,39,276,20,253,6,207,3,177,6,152,18,129,33,108,71,73,113,47,150,29"/>
+<area shape="rect" id="Node000003" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="265,153,307,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,30,271,138,267,141,190,33"/>
+<area shape="rect" id="Node000005" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="291,79,358,105"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="209,29,288,69,286,74,206,34"/>
+<area shape="rect" id="Node000007" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="89,79,144,105"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="174,33,140,69,136,66,170,29"/>
+<area shape="rect" id="Node000004" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="105,226,171,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,179,178,222,176,217,264,175"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="134,253,117,287,113,285,130,251"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="354,103,380,117,403,134,416,156,417,168,412,180,387,211,356,237,322,258,285,275,212,298,149,309,149,304,211,293,283,270,319,253,353,232,383,207,408,177,412,167,411,157,399,138,377,121,352,108"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="321,106,302,140,298,138,316,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="331,153,398,178"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="334,104,353,138,348,140,329,106"/>
+<area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="90,105,54,123,37,137,24,154,18,172,18,190,22,208,30,226,53,260,78,287,75,291,49,263,25,229,17,210,12,190,13,171,20,151,33,133,51,119,87,100"/>
+<area shape="rect" id="Node000008" href="$bios__const_8h.html" title="Constant variables in the MSX BIOS ROM." alt="" coords="34,153,128,178"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="113,106,96,140,91,138,108,104"/>
+<area shape="rect" id="Node000009" href="$bios__entry_8h.html" title="Assembler entry points for MSX BIOS functions." alt="" coords="152,153,242,178"/>
+<area shape="poly" id="edge14_Node000007_Node000009" title=" " alt="" coords="132,103,174,140,170,144,129,107"/>
+<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="85,179,95,252,100,284,95,285,90,252,80,179"/>
+<area shape="poly" id="edge13_Node000008_Node000004" title=" " alt="" coords="92,177,121,212,117,216,88,180"/>
+<area shape="poly" id="edge15_Node000009_Node000002" title=" " alt="" coords="200,179,199,214,194,234,186,253,166,276,143,294,140,290,163,272,181,251,189,232,193,213,195,179"/>
+<area shape="poly" id="edge16_Node000009_Node000004" title=" " alt="" coords="189,180,160,216,155,213,185,177"/>
 </map>

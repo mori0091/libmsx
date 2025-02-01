@@ -17,7 +17,7 @@ var searchData=
   ['psg_20buffer_14',['PSG Buffer',['../group__PSG__BUFFER.html',1,'']]],
   ['psg_20registers_15',['PSG registers',['../group__PSG__REGISTER.html',1,'']]],
   ['psg_20scc_20scc_20opll_20sound_20driver_16',['LA0 - PSG, SCC/SCC+, OPLL sound driver.',['../group__LA0__DECODER.html',1,'']]],
-  ['psg_20sound_20driver_17',['psg sound driver',['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver']]],
+  ['psg_20sound_20driver_17',['PSG sound driver',['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver']]],
   ['psg_20sound_20driver_20apis_18',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
   ['psg_20to_20scc_20scc_20effector_19',['The &quot;PSG to SCC/SCC+&quot; effector.',['../group__AUDIO__EFX__PSG2SCC.html',1,'']]]
 ];

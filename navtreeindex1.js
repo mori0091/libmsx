@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a5ebee309b11e627b5f081ea3ba18732e":[6,4,3,0,9],
+"group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a61abece7f5ed285df85df94458c3c1bc":[6,4,3,0,4],
+"group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a6bd4971bca607c270db7625d3e021c20":[6,4,3,0,5],
+"group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a87272d71d1dcb29c36e1209f188ca3d4":[6,4,3,0,3],
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a8b0c82856890693ec59a1d0904397f36":[6,4,3,0,0],
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a9aa33d1273dd5447070bcc666aae3c83":[6,4,3,0,6],
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245aa0c7a4f3bf7928a3ea843f39da2e39fb":[6,4,3,0,7],
@@ -102,12 +106,14 @@ var NAVTREEINDEX1 =
 "group__OPLL__DEVICE.html":[6,8,0],
 "group__OPLL__DEVICE.html#a2c1af86d17c104c65519e93f3c21f925":[6,8,0,1,2],
 "group__OPLL__DEVICE.html#a3c0adc06ef84958caffee5a05594454b":[6,8,0,1,1],
+"group__OPLL__DEVICE.html#a74ab207424c3be0ad49f18cefe132755":[6,8,0,0,0],
 "group__OPLL__DEVICE.html#ae7f81dbf9dced3cc5cf19827ee23f3de":[6,8,0,1,0],
 "group__OPLL__DEVICE.html#ga2a280d363923d8c0a22b7deab3a2f8d6":[6,8,0,5],
 "group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83":[6,8,0,3],
 "group__OPLL__DEVICE.html#gab81376f1755460922e210c7049159422":[6,8,0,2],
 "group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456":[6,8,0,4],
 "group__OPLL__DEVICE.html#structOPLL":[6,8,0,1],
+"group__OPLL__DEVICE.html#structOPLL__Device":[6,8,0,0],
 "group__PSG.html":[6,9],
 "group__PSG__BUFFER.html":[6,9,0],
 "group__PSG__BUFFER.html#ga2ee75153f949aaf13e5aa0dea52fb72f":[6,9,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX1 =
 "group__SCREEN__PCG.html#ga335c1b4caf4e925867b6db2aa47707e7":[6,11,1,4],
 "group__SCREEN__PCG.html#ga692d9787c1912a51d3415c8cd734c023":[6,11,1,1],
 "group__SCREEN__PCG.html#gaf19869dd9bfc0771c49548a62dabf90a":[6,11,1,3],
-"group__SCREEN__PCG.html#gaf5d3983c231c7368ceadf7f6641f4b3d":[6,11,1,2],
-"group__SCREEN__TEXT.html":[6,11,0],
-"group__SCREEN__TEXT.html#ga8cd872959f2dc0d4195d3d307b82c89e":[6,11,0,1],
-"group__SCREEN__TEXT.html#ga9954ea88c47929d10eb76d813b2cfd46":[6,11,0,0],
-"group__SLOT.html":[6,12],
-"group__SLOT__INSPECT.html":[6,12,0],
-"group__SLOT__INSPECT.html#ga1b4c6e935a856b03506c04cc9948cb68":[6,12,0,11]
+"group__SCREEN__PCG.html#gaf5d3983c231c7368ceadf7f6641f4b3d":[6,11,1,2]
 };

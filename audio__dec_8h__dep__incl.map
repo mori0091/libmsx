@@ -1,9 +1,9 @@
 <map id="include/audio_dec.h" name="include/audio_dec.h">
-<area shape="rect" id="Node000001" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="137,5,272,31"/>
+<area shape="rect" id="Node000001" title="The audio decoder interface for the libmsx audio replayer." alt="" coords="136,5,272,31"/>
 <area shape="rect" id="Node000002" href="$audio__cb_8h.html" title="Callback functions of the libmsx audio replayer." alt="" coords="5,79,134,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,41,94,81,91,76,167,36"/>
 <area shape="rect" id="Node000003" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="158,79,251,105"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,46,207,79,202,79,202,46"/>
-<area shape="rect" id="Node000004" href="$snddrv_8h.html" title="SNDDRV a PSG sound driver." alt="" coords="275,79,390,105"/>
+<area shape="rect" id="Node000004" href="$snddrv_8h.html" title="SNDDRV a PSG sound driver." alt="" coords="274,79,390,105"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="240,37,312,76,309,81,238,41"/>
 </map>

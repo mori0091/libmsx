@@ -14,8 +14,8 @@
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="381,30,402,64,397,67,376,33"/>
 <area shape="rect" id="Node000010" href="$bios_8h.html" title="C language I/F for MSX BIOS routines." alt="" coords="539,153,595,178"/>
 <area shape="poly" id="edge23_Node000001_Node000010" title=" " alt="" coords="421,27,473,46,499,60,522,77,545,106,561,137,556,139,541,109,518,81,496,64,470,51,419,32"/>
-<area shape="rect" id="Node000013" href="$workarea_8h.html" title="Definitions of MSX SYSTEM Workarea." alt="" coords="682,153,767,178"/>
-<area shape="poly" id="edge24_Node000001_Node000013" title=" " alt="" coords="413,29,549,77,625,110,690,143,687,148,623,115,547,81,411,34"/>
+<area shape="rect" id="Node000013" href="$workarea_8h.html" title="Definitions of MSX SYSTEM Workarea." alt="" coords="682,153,766,178"/>
+<area shape="poly" id="edge24_Node000001_Node000013" title=" " alt="" coords="413,29,478,50,551,77,626,110,690,143,688,148,624,115,549,81,477,55,412,34"/>
 <area shape="rect" id="Node000006" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="606,300,672,326"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="481,246,595,291,593,296,479,251"/>
 <area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="624,328,573,367,569,362,621,324"/>

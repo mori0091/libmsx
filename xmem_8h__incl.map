@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,34,185,73,182,68,242,29"/>
 <area shape="rect" id="Node000010" href="$mem__rw_8h.html" title="Stream like access functions for ROM / RAM." alt="" coords="331,79,413,105"/>
 <area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="283,29,342,68,339,73,280,34"/>
-<area shape="rect" id="Node000011" href="$vmem__rw_8h.html" title="Stream like access functions for VRAM." alt="" coords="219,79,307,105"/>
+<area shape="rect" id="Node000011" href="$vmem__rw_8h.html" title="Stream like access functions for VRAM." alt="" coords="218,79,307,105"/>
 <area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="265,31,265,63,260,63,260,31"/>
 <area shape="rect" id="Node000003" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="68,153,135,178"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,106,121,141,116,138,141,103"/>

@@ -4,9 +4,9 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,47,58,300,53,300,53,47"/>
 <area shape="rect" id="Node000003" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="78,153,175,178"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="63,45,71,74,83,103,100,129,117,151,113,154,95,133,78,106,66,76,58,47"/>
-<area shape="rect" id="Node000005" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="93,79,237,105"/>
+<area shape="rect" id="Node000005" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="93,79,236,105"/>
 <area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="88,37,148,76,145,81,85,42"/>
-<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="107,192,83,228,68,266,60,300,55,299,63,265,78,225,103,189"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="108,192,85,228,69,267,61,300,55,299,64,265,80,225,104,189"/>
 <area shape="rect" id="Node000004" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="94,226,231,252"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="141,191,158,225,154,227,136,193"/>
 <area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="133,263,75,302,72,297,130,259"/>

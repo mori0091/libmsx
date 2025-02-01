@@ -1,4 +1,4 @@
 <map id="Control registers" name="Control registers">
 <area shape="rect" id="Node000002" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" alt="" coords="5,5,142,46"/>
-<area shape="rect" id="Node000001" title="Write to control registers." alt="" coords="190,13,305,39"/>
+<area shape="rect" id="Node000001" title="Write to control registers." alt="" coords="190,13,305,38"/>
 </map>

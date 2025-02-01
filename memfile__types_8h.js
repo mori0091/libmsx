@@ -11,5 +11,9 @@ var memfile__types_8h =
       [ "end", "memfile__types_8h.html#a0d9f5b264a4d038fbeb0f90076c7c159", null ],
       [ "methods", "memfile__types_8h.html#a4d320bfe7ac2c2b79813006e153a075f", null ]
     ] ],
-    [ "MemFileMethods", "structMemFileMethods.html", "structMemFileMethods" ]
+    [ "MemFileMethods", "memfile__types_8h.html#structMemFileMethods", [
+      [ "read1", "memfile__types_8h.html#a282d9e3b0657e08728e7d1a6cbe603cd", null ],
+      [ "read", "memfile__types_8h.html#ae4785d624a9b7cfd938cdb3790bbb3d5", null ],
+      [ "seek", "memfile__types_8h.html#a48aaca391661a2d162651a056783bdc9", null ]
+    ] ]
 ];

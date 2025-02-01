@@ -1,4 +1,4 @@
 <map id="System configuration" name="System configuration">
 <area shape="rect" id="Node000002" href="$group__BIOS.html" title="#include &lt;bios.h&gt;" alt="" coords="5,5,134,46"/>
-<area shape="rect" id="Node000001" title="Get the system version, VSYNC frequency, etc." alt="" coords="182,13,323,39"/>
+<area shape="rect" id="Node000001" title="Get the system version, VSYNC frequency, etc." alt="" coords="182,13,323,38"/>
 </map>

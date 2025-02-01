@@ -18,7 +18,7 @@ var searchData=
   ['blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20vram_20access_15',['A part of building blocks for inter-memory transfer, dedicated to VRAM access.',['../group__VMEM__RW.html',1,'']]],
   ['boolean_20operators_20for_2016x16_201bpp_20sprite_20patterns_16',['Boolean operators for 16x16 1bpp sprite patterns.',['../group__IM__BOOLEAN__SP16x16.html',1,'']]],
   ['boolean_20operators_20for_208x8px_201bpp_20bitmap_20images_17',['Boolean operators for 8x8px 1bpp bitmap images.',['../group__IM__BOOLEAN__BM8x8.html',1,'']]],
-  ['buffer_18',['buffer',['../group__OPLL__BUFFER.html',1,'OPLL Buffer'],['../group__PSG__BUFFER.html',1,'PSG Buffer'],['../group__SCC__BUFFER.html',1,'SCC/SCC+ Buffer']]],
+  ['buffer_18',['Buffer',['../group__OPLL__BUFFER.html',1,'OPLL Buffer'],['../group__PSG__BUFFER.html',1,'PSG Buffer'],['../group__SCC__BUFFER.html',1,'SCC/SCC+ Buffer']]],
   ['buffer_20of_20the_20libmsx_20audio_20replayer_19',['Unified sound-chip buffer of the libmsx audio replayer.',['../group__AUDIO__BUFFER.html',1,'']]],
   ['building_20blocks_20for_20inter_20memory_20transfer_20',['Building blocks for inter-memory transfer.',['../group__XMEM__INTER__MEMORY__TRANSFER.html',1,'']]],
   ['building_20blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20banked_20memory_20access_21',['A part of building blocks for inter-memory transfer, dedicated to Banked Memory access.',['../group__BMEM__RD.html',1,'']]],

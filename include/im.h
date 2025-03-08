@@ -801,7 +801,8 @@ enum ImOp {
   IM_ANTITRANSPOSE = (IM_TRANSPOSE | IM_FLIP_VERT | IM_FLIP_HORZ),
 };
 
-// /**
+// *** NOT SUPPORTED YET ***
+// /*
 //  * Enumeration of boolean operators for images.
 //  */
 // enum ImOp_boolean {
@@ -820,7 +821,8 @@ enum ImOp {
 //   // (reserved 9 to 15)
 // };
 
-// /**
+// *** NOT SUPPORTED YET ***
+// /*
 //  * Enumeration of shift operators for images.
 //  */
 // enum ImOp_shift {

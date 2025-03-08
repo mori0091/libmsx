@@ -14,11 +14,19 @@
 
 #include "bmem.h"
 
+#include <stdbool.h>
+
+#include "./memmap.h"
+
 uint8_t bmem_get(bmemptr_t src) {
+  struct MemMap saved_state;
+  memmap_save(&saved_state);
+  memmap_expose_cartridge();
   const uint8_t old_bank = bmem_get_bank();
   uint8_t bank = bmem_bank_of(src);
   bmem_set_bank(bank);
   uint8_t ret = *(const uint8_t *)(const uintptr_t)((src & 0x3fff) + 0x8000);
   bmem_set_bank(old_bank);
+  memmap_restore(&saved_state);
   return ret;
 }

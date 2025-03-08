@@ -20,10 +20,14 @@
 #include <stdint.h>
 #include <string.h>
 
+#include "./memmap.h"
+
+
 struct bmem_rd {
   uint8_t old_bank;
   uint8_t bank;
   const uint8_t * loc;
+  struct MemMap saved_state;
 };
 
 static struct bmem_rd bmem;
@@ -36,6 +40,8 @@ bool bmem_is_opened(void) {
 
 void bmem_open(bmemptr_t loc) {
   assert(!bmem_is_opened());
+  memmap_save(&bmem.saved_state);
+  memmap_expose_cartridge();
   bmem.old_bank = bmem_get_bank();
   bmem.loc = (const uint8_t *)PAGE_ADDR(2) + bmem_offset_of(loc);
   bmem.bank = bmem_bank_of(loc);
@@ -46,6 +52,7 @@ void bmem_close(void) {
   assert(bmem_is_opened());
   bmem_set_bank(bmem.old_bank);
   bmem.old_bank = 0;
+  memmap_restore(&bmem.saved_state);
 }
 
 size_t bmem_avail(void) {

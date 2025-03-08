@@ -14,8 +14,7 @@
 
 #include <memfile.h>
 
-#include <bios.h>
-#include <interrupt.h>
+#include "../memmap.h"
 
 #include <stdint.h>
 #include <string.h>
@@ -29,13 +28,9 @@ static void mempos_from_bmemptr(mempos_t * pos, bmemptr_t p) {
 }
 
 static uint8_t read1(MemFile * mf) {
-  const bool interrupt_enabled = get_interrupt_state();
-  const uint8_t slot_p1 = msx_get_slot(PAGE_ADDR(1));
-  const uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
-  {
-    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(1));
-    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(2));
-  }
+  struct MemMap saved_state;
+  memmap_save(&saved_state);
+  memmap_expose_cartridge();
 
   const uint8_t bank = bmem_get_bank();
   bmem_set_bank(mf->curr.segment);
@@ -46,23 +41,15 @@ static uint8_t read1(MemFile * mf) {
   }
   bmem_set_bank(bank);
 
-  {
-    msx_ENASLT(slot_p1, PAGE_ADDR(1));
-    msx_ENASLT(slot_p2, PAGE_ADDR(2));
-    if (interrupt_enabled) { __asm__("ei"); }
-  }
+  memmap_restore(&saved_state);
 
   return ret;
 }
 
 static size_t read(MemFile * mf, void * ptr, size_t size) {
-  const bool interrupt_enabled = get_interrupt_state();
-  const uint8_t slot_p1 = msx_get_slot(PAGE_ADDR(1));
-  const uint8_t slot_p2 = msx_get_slot(PAGE_ADDR(2));
-  {
-    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(1));
-    msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(2));
-  }
+  struct MemMap saved_state;
+  memmap_save(&saved_state);
+  memmap_expose_cartridge();
 
   const uint8_t bank = bmem_get_bank();
   uint8_t * dst = ptr;
@@ -88,11 +75,7 @@ static size_t read(MemFile * mf, void * ptr, size_t size) {
   }
   bmem_set_bank(bank);
 
-  {
-    msx_ENASLT(slot_p1, PAGE_ADDR(1));
-    msx_ENASLT(slot_p2, PAGE_ADDR(2));
-    if (interrupt_enabled) { __asm__("ei"); }
-  }
+  memmap_restore(&saved_state);
 
   return size;
 }

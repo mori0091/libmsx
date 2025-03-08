@@ -13,10 +13,12 @@
 
 #include "../include/vdp.h"
 
+#include "interrupt.h"
 #include "vdp_internal.h"
 
 void vmem_set_read_address(vmemptr_t loc) {
+  bool b = get_interrupt_state();
   __asm__("di");
   VDP_SET_VMEM_READ_POINTER(loc);
-  __asm__("ei");
+  if (b) { __asm__("ei"); }
 }

@@ -12,12 +12,15 @@
 
 all: build
 
+DEFAULT_CODE_SEGMENT ?= APPLCODE
+DEFAULT_DATA_ADDRESS ?= 0xc000
+
 # ------------------------------------------------------------------------------
 # crt0 configuration
 IMAGE_SIZE ?= 16384
 ADDR_HEAD = 0x4000
 ADDR_CODE = 0x4010
-ADDR_DATA = 0xc000
+ADDR_DATA = ${DEFAULT_DATA_ADDRESS}
 
 CONFIG_ROM_TYPE            ?= 16k
 CONFIG_CRT0_MOD_ROM_HEADER ?= app_rom_header
@@ -258,7 +261,7 @@ PAD2POW2 = ${LIBMSX_HOME}/bin/pad2pow2.sh
 CFLAGS ?=
 CFLAGS += -mz80 -MMD
 CFLAGS += -I ${LIBMSX_HOME}/include
-CFLAGS += --codeseg APPLCODE
+CFLAGS += --codeseg ${DEFAULT_CODE_SEGMENT}
 
 LIBMSX = ${LIBMSX_HOME}/lib/libmsx.lib
 

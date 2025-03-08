@@ -1,0 +1,27 @@
+<map id="include/sm2_bmem.h" name="include/sm2_bmem.h">
+<area shape="rect" id="Node000001" title="SM2 (Sprite Mode 2) internal APIs for BMEM / Resources." alt="" coords="53,5,197,31"/>
+<area shape="rect" id="Node000002" href="$sm2_8h.html" title="SM2 (Sprite Mode 2) Animated Color Sprites." alt="" coords="97,79,153,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,31,128,63,122,63,122,31"/>
+<area shape="rect" id="Node000003" href="$sm2__cfg_8h.html" title="SM2 (Sprite Mode 2) Runtime configuration." alt="" coords="92,226,174,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="128,105,134,211,129,211,123,105"/>
+<area shape="rect" id="Node000009" href="$sprite_8h.html" title="Sprites." alt="" coords="5,226,69,252"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="120,106,54,214,50,212,116,104"/>
+<area shape="rect" id="Node000010" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="162,153,261,178"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="141,103,187,141,184,145,138,107"/>
+<area shape="rect" id="Node000004" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="99,300,167,326"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="136,252,136,284,130,284,130,252"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="77,521,141,547"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="126,328,113,349,102,374,97,409,97,445,105,506,100,506,91,445,92,409,97,373,108,346,122,325"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="178,374,245,399"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="148,324,189,361,185,365,145,328"/>
+<area shape="rect" id="Node000007" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="112,374,154,399"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="136,326,136,358,130,358,130,326"/>
+<area shape="rect" id="Node000008" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="112,447,178,473"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="138,399,143,431,138,432,132,400"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="141,474,124,508,119,506,137,472"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="55,250,107,289,103,293,52,255"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="42,252,60,344,92,472,102,506,97,507,86,474,55,345,37,253"/>
+<area shape="poly" id="edge15_Node000010_Node000004" title=" " alt="" coords="212,179,205,213,189,253,160,291,155,287,184,251,200,212,207,178"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="224,177,242,200,262,232,278,270,285,311,285,388,282,412,272,434,258,454,240,472,198,500,156,519,154,514,195,495,236,467,254,451,267,432,276,411,280,388,280,312,273,272,257,235,238,203,220,180"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="183,181,82,222,80,218,181,176"/>
+</map>

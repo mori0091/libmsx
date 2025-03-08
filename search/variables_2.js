@@ -6,7 +6,7 @@ var searchData=
   ['cgpnt_3',['CGPNT',['../workarea_8h.html#a05f13239ba5edf4e7f39ab544a8a1e45',1,'workarea.h']]],
   ['cgtbl_4',['CGTBL',['../bios__const_8h.html#a2b30771e162fc823c58c95b6c0940685',1,'bios_const.h']]],
   ['channel_5fmask_5',['channel_mask',['../group__SCC__BUFFER.html#ad9422c592799868c73d6ac3dcec87b0e',1,'SCC_buffer']]],
-  ['channels_6',['channels',['../group__SCC__DEVICE.html#aef9068a3ddbfb1340ceec1e16eee8679',1,'SCC_Device::channels'],['../group__SNDDRV__DATA.html#a03b3a82ff1cbfadd066609c241b37c0b',1,'snd_Pattern::channels']]],
+  ['channels_6',['channels',['../group__SCC__DEVICE.html#aef9068a3ddbfb1340ceec1e16eee8679',1,'SCC_Device::channels'],['../group__SNDDRV__DATA.html#aca8dcc65629ec636590c303eef361177',1,'snd_Pattern::channels']]],
   ['chgcpu_7',['CHGCPU',['../bios__entry_8h.html#aeba5f9f725b4d999e89ef352fba7bace',1,'bios_entry.h']]],
   ['clear_5fscreen_8',['clear_screen',['../group__TTY__DEVICE.html#a31172d172e92ea32f685ec68a9fabb01',1,'TTY_Device']]],
   ['cliksw_9',['CLIKSW',['../workarea_8h.html#aaa9abc23fbc4a9fd8cb1ad0e4be20fb1',1,'workarea.h']]],
@@ -18,5 +18,7 @@ var searchData=
   ['crtcnt_15',['CRTCNT',['../workarea_8h.html#aa15624c073db8ebb6597e278d20e9e7d',1,'workarea.h']]],
   ['csrx_16',['CSRX',['../workarea_8h.html#a0d61d5ee2d4bd4023e264b1adf1305d2',1,'workarea.h']]],
   ['csry_17',['CSRY',['../workarea_8h.html#aedbd534ef607b72971cf2077b9eee0da',1,'workarea.h']]],
-  ['curr_18',['curr',['../memfile__types_8h.html#aef9f0c69ca21ce6300360ca34f49b3a3',1,'MemFile']]]
+  ['curr_18',['curr',['../memfile__types_8h.html#aef9f0c69ca21ce6300360ca34f49b3a3',1,'MemFile']]],
+  ['curr_5fdirection_19',['curr_direction',['../group__SM2__DATATYPES.html#a0dc48b05c127fef012895f7c3869bbcf',1,'sm2_Sprite']]],
+  ['curr_5fframe_20',['curr_frame',['../group__SM2__DATATYPES.html#ac4fbd968211a8595e26d78750b3ab38c',1,'sm2_Sprite']]]
 ];

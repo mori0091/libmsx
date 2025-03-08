@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['param_0',['param',['../group__SOUND__OLD__EG__API.html#aeca07335a33c5aeb5e1bc7c98b4b9d80',1,'sound_eg_attribute.__unnamed3__']]],
+  ['param_0',['param',['../group__SOUND__OLD__EG__API.html#aeca07335a33c5aeb5e1bc7c98b4b9d80',1,'sound_eg_attribute.__unnamed4__']]],
   ['pat_1',['pat',['../group__SPRITES__ATTR.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed',1,'sprite']]],
   ['patbas_2',['PATBAS',['../workarea_8h.html#aea4b54d7d72b7eb76626f59d308d1dd8',1,'workarea.h']]],
   ['path_3',['path',['../group__RESOURCES__FIND.html#af38c1ab06600fdabbfe434426e66a15c',1,'ResourceIndex']]],

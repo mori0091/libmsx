@@ -64,8 +64,8 @@ var group__SNDDRV__DATA =
     ] ],
     [ "snd_Pattern", "group__SNDDRV__DATA.html#structsnd__Pattern", [
       [ "height", "group__SNDDRV__DATA.html#ae5a0c0a1bd5ca96115ce6a87458b87fd", null ],
-      [ "specialChannels", "group__SNDDRV__DATA.html#a343741609bcf3fab62dc5a19a0b6c879", null ],
-      [ "channels", "group__SNDDRV__DATA.html#a03b3a82ff1cbfadd066609c241b37c0b", null ]
+      [ "specialChannels", "group__SNDDRV__DATA.html#a1f4a86bde5830cf9f3591b7800bc7b84", null ],
+      [ "channels", "group__SNDDRV__DATA.html#aca8dcc65629ec636590c303eef361177", null ]
     ] ],
     [ "snd_Pattern.specialChannels", "group__SNDDRV__DATA.html#structsnd__Pattern_8specialChannels", [
       [ "speedTrack", "group__SNDDRV__DATA.html#a55304ed91995007f42e3bccd7651dae8", null ],

@@ -16,8 +16,10 @@ var searchData=
   ['meta_20sprite_20interface_13',['Meta-sprite interface.',['../group__SPRITES__METASPRITE.html',1,'']]],
   ['meta_20sprites_14',['Sprites / Meta-Sprites',['../group__SPRITES.html',1,'']]],
   ['mode_15',['mode',['../group__SCREEN__BITMAP.html',1,'Bitmap graphics mode'],['../group__SCREEN__TEXT.html',1,'TEXT mode'],['../group__SCREEN__PCG.html',1,'Tiled graphics mode'],['../group__BIOS__CPU.html',1,'Z80 / R800 CPU mode']]],
-  ['mode_20initialization_16',['SCREEN mode initialization',['../group__SCREEN.html',1,'']]],
-  ['mode_20registers_17',['Mode registers',['../group__VDP__MODE__REGISTER.html',1,'']]],
-  ['msx_20music_18',['OPLL - YM2413 / MSX-MUSIC',['../group__OPLL.html',1,'']]],
-  ['music_19',['OPLL - YM2413 / MSX-MUSIC',['../group__OPLL.html',1,'']]]
+  ['mode_202_20animated_20color_20sprites_16',['SM2 (Sprite Mode 2) Animated Color Sprites.',['../group__SM2.html',1,'']]],
+  ['mode_20initialization_17',['SCREEN mode initialization',['../group__SCREEN.html',1,'']]],
+  ['mode_20registers_18',['Mode registers',['../group__VDP__MODE__REGISTER.html',1,'']]],
+  ['module_19',['SM2 initialization for SM2 module.',['../group__SM2__INIT.html',1,'']]],
+  ['msx_20music_20',['OPLL - YM2413 / MSX-MUSIC',['../group__OPLL.html',1,'']]],
+  ['music_21',['OPLL - YM2413 / MSX-MUSIC',['../group__OPLL.html',1,'']]]
 ];

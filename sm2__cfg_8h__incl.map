@@ -1,0 +1,14 @@
+<map id="include/sm2_cfg.h" name="include/sm2_cfg.h">
+<area shape="rect" id="Node000001" title="SM2 (Sprite Mode 2) Runtime configuration." alt="" coords="10,5,136,31"/>
+<area shape="rect" id="Node000002" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="39,79,107,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,31,76,63,70,63,70,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,300,69,326"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,107,44,127,30,154,23,188,23,223,32,285,27,285,17,224,18,187,25,152,40,124,58,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="39,153,107,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="76,105,76,137,70,137,70,105"/>
+<area shape="rect" id="Node000005" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="131,153,172,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="88,103,129,140,125,144,85,107"/>
+<area shape="rect" id="Node000006" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="79,226,144,252"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="147,180,128,214,123,212,143,177"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="101,254,62,291,58,287,97,251"/>
+</map>

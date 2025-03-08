@@ -10,5 +10,5 @@ var searchData=
   ['linl40_7',['LINL40',['../workarea_8h.html#a7a688941bf96ea62570fba654e4b7154',1,'workarea.h']]],
   ['linlen_8',['LINLEN',['../workarea_8h.html#a69c8d79fd921472dbb76958754cc1148',1,'workarea.h']]],
   ['looptoindex_9',['loopToIndex',['../group__SNDDRV__DATA.html#a3216f248df996913d722aea1db4a3d27',1,'snd_Music']]],
-  ['lpcm_10',['lpcm',['../group__SOUND__OLD__EG__API.html#abbdf3ac16a6162e550847e45dd9099b0',1,'sound_eg_attribute.__unnamed3__']]]
+  ['lpcm_10',['lpcm',['../group__SOUND__OLD__EG__API.html#abbdf3ac16a6162e550847e45dd9099b0',1,'sound_eg_attribute.__unnamed4__']]]
 ];

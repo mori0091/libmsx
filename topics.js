@@ -13,6 +13,7 @@ var topics =
     [ "Konami SCC/SCC+ sound cartridge", "group__SCC.html", "group__SCC" ],
     [ "SCREEN mode initialization", "group__SCREEN.html", "group__SCREEN" ],
     [ "Slot - Individual Address Spaces of devices.", "group__SLOT.html", "group__SLOT" ],
+    [ "SM2 (Sprite Mode 2) Animated Color Sprites.", "group__SM2.html", "group__SM2" ],
     [ "Sound - Old PSG sound driver", "group__SOUND__OLD.html", "group__SOUND__OLD" ],
     [ "Sprites / Meta-Sprites", "group__SPRITES.html", "group__SPRITES" ],
     [ "Text output", "group__CUI.html", "group__CUI" ],

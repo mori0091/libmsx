@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['snd_5feventtrack_0',['snd_EventTrack',['../group__SNDDRV__DATA.html#ga2b92001cc23d17da3d423b326cdbc2be',1,'snd_sound.h']]],
-  ['snd_5finstrument_1',['snd_Instrument',['../group__SNDDRV__DATA.html#ga603e7de873558643233af1d8da254d48',1,'snd_i_table.h']]],
-  ['snd_5fmusic_2',['snd_Music',['../group__SNDDRV__DATA.html#gae8a42bd495f3a6e469537aec784cb90f',1,'snd_sound.h']]],
-  ['snd_5fpattern_3',['snd_Pattern',['../group__SNDDRV__DATA.html#ga31ceb098ffcb9d9ccfa773240c4044c6',1,'snd_sound.h']]],
-  ['snd_5fperiodbend_4',['snd_PeriodBend',['../group__SNDDRV__DATA.html#ga34d4f33a404cf11d0d1a514459514b6c',1,'snd_p_table.h']]],
-  ['snd_5fpitchbend_5',['snd_PitchBend',['../group__SNDDRV__DATA.html#ga305d35e9184301195b2003b80a0f2cef',1,'snd_p_table.h']]],
-  ['snd_5fsoundassets_6',['snd_SoundAssets',['../group__SNDDRV__DATA.html#ga5321e55e38c2c81ab0ea52c4060bb36c',1,'snd_sound.h']]],
-  ['snd_5fspeedtrack_7',['snd_SpeedTrack',['../group__SNDDRV__DATA.html#ga5d780b938ed0336b0e5807a47bfd8e33',1,'snd_sound.h']]],
-  ['snd_5ftrack_8',['snd_Track',['../group__SNDDRV__DATA.html#ga123b2e3cb3692a41a494e0fdccd226ea',1,'snd_sound.h']]],
-  ['sp16x16_9',['SP16x16',['../group__IM.html#gac9b90ed011ccc356405a92ac1057adfb',1,'im.h']]],
-  ['sp8x8_10',['SP8x8',['../group__IM.html#ga2e5f9c5bf709cc59cc2180251f558be9',1,'im.h']]]
+  ['sm2_5fcel_0',['sm2_Cel',['../group__SM2__DATATYPES.html#gaab2586ca35e839a14611282159d15075',1,'sm2.h']]],
+  ['sm2_5fconfig_1',['sm2_Config',['../sm2__cfg_8h.html#a24fc982e42b21b57543c57be7f1ce68a',1,'sm2_cfg.h']]],
+  ['sm2_5fframe_2',['sm2_Frame',['../group__SM2__DATATYPES.html#ga564f998f0b1779c409b0c1144c033d90',1,'sm2.h']]],
+  ['sm2_5fframetag_3',['sm2_FrameTag',['../group__SM2__DATATYPES.html#gad7284944ffee6d1632098af5dcf2bed6',1,'sm2.h']]],
+  ['sm2_5fsprite_4',['sm2_Sprite',['../group__SM2__DATATYPES.html#ga3f8ff519394353e7100f03b10de01c10',1,'sm2.h']]],
+  ['sm2_5fspritesheet_5',['sm2_SpriteSheet',['../group__SM2__DATATYPES.html#gaa210094dd79090229f3ac0053da08426',1,'sm2.h']]],
+  ['snd_5feventtrack_6',['snd_EventTrack',['../group__SNDDRV__DATA.html#ga2b92001cc23d17da3d423b326cdbc2be',1,'snd_sound.h']]],
+  ['snd_5finstrument_7',['snd_Instrument',['../group__SNDDRV__DATA.html#ga603e7de873558643233af1d8da254d48',1,'snd_i_table.h']]],
+  ['snd_5fmusic_8',['snd_Music',['../group__SNDDRV__DATA.html#gae8a42bd495f3a6e469537aec784cb90f',1,'snd_sound.h']]],
+  ['snd_5fpattern_9',['snd_Pattern',['../group__SNDDRV__DATA.html#ga31ceb098ffcb9d9ccfa773240c4044c6',1,'snd_sound.h']]],
+  ['snd_5fperiodbend_10',['snd_PeriodBend',['../group__SNDDRV__DATA.html#ga34d4f33a404cf11d0d1a514459514b6c',1,'snd_p_table.h']]],
+  ['snd_5fpitchbend_11',['snd_PitchBend',['../group__SNDDRV__DATA.html#ga305d35e9184301195b2003b80a0f2cef',1,'snd_p_table.h']]],
+  ['snd_5fsoundassets_12',['snd_SoundAssets',['../group__SNDDRV__DATA.html#ga5321e55e38c2c81ab0ea52c4060bb36c',1,'snd_sound.h']]],
+  ['snd_5fspeedtrack_13',['snd_SpeedTrack',['../group__SNDDRV__DATA.html#ga5d780b938ed0336b0e5807a47bfd8e33',1,'snd_sound.h']]],
+  ['snd_5ftrack_14',['snd_Track',['../group__SNDDRV__DATA.html#ga123b2e3cb3692a41a494e0fdccd226ea',1,'snd_sound.h']]],
+  ['sp16x16_15',['SP16x16',['../group__IM.html#gac9b90ed011ccc356405a92ac1057adfb',1,'im.h']]],
+  ['sp8x8_16',['SP8x8',['../group__IM.html#ga2e5f9c5bf709cc59cc2180251f558be9',1,'im.h']]]
 ];

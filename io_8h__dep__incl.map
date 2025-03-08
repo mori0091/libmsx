@@ -1,53 +1,61 @@
 <map id="include/io.h" name="include/io.h">
 <area shape="rect" id="Node000001" title="Definition of I/O ports." alt="" coords="226,5,312,31"/>
-<area shape="rect" id="Node000002" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="406,374,506,399"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,28,147,42,113,53,80,67,52,85,29,107,13,133,8,164,8,240,11,255,20,268,53,293,102,315,162,334,293,361,406,377,405,382,293,366,160,339,100,320,50,298,16,272,6,257,3,241,3,164,8,131,24,103,48,80,78,62,111,48,145,37,210,23"/>
-<area shape="rect" id="Node000003" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="114,79,211,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,42,182,81,179,76,237,38"/>
-<area shape="rect" id="Node000005" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="321,226,418,252"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="271,46,275,109,283,144,297,177,320,204,348,224,345,228,317,208,292,180,278,146,269,110,265,47"/>
+<area shape="rect" id="Node000002" href="$msx_8h.html" title="Using #include &lt;msx.h&gt; includes almost all C header files in libmsx, for ease to use." alt="" coords="396,374,497,399"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,28,147,42,113,53,80,67,52,85,29,107,13,133,8,164,8,240,11,254,19,267,51,292,99,314,158,332,287,360,396,377,396,382,286,366,157,338,97,319,49,297,15,271,6,256,3,241,3,164,8,131,24,103,48,80,78,62,111,48,145,37,210,23"/>
+<area shape="rect" id="Node000003" href="$psg_8h.html" title="Device interface for PSG (AY&#45;3&#45;8910) an internal sound chip." alt="" coords="134,79,231,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="245,43,199,81,195,77,241,39"/>
+<area shape="rect" id="Node000005" href="$vdp_8h.html" title="Data types and functions for VDP (Video Display Proccessor) access." alt="" coords="317,226,414,252"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="271,46,275,109,283,144,297,177,320,204,346,224,343,228,316,208,292,180,278,146,270,110,265,47"/>
 <area shape="rect" id="Node000007" href="$vdp__unsafe_8h.html" title="Unsafe primitive functions for VDP (Video Display Proccessor) access." alt="" coords="307,153,450,178"/>
 <area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="289,42,372,151,367,154,285,45"/>
-<area shape="rect" id="Node000008" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="558,79,671,105"/>
-<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="328,29,559,76,558,81,327,34"/>
-<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="124,114,104,128,88,143,80,160,84,177,114,219,152,255,194,285,239,311,330,349,406,372,405,377,328,354,237,316,191,290,148,259,110,222,79,179,75,159,84,140,101,124,121,110"/>
-<area shape="rect" id="Node000004" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="94,153,232,178"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="165,120,165,152,160,152,160,120"/>
-<area shape="poly" id="edge8_Node000005_Node000002" title=" " alt="" coords="369,267,370,296,378,324,402,352,431,371,428,375,399,356,374,327,364,297,363,267"/>
-<area shape="rect" id="Node000006" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="387,300,525,326"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="397,260,443,298,440,302,394,264"/>
-<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="459,341,459,373,453,373,453,341"/>
-<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="378,194,374,226,368,226,373,193"/>
-<area shape="poly" id="edge22_Node000008_Node000002" title=" " alt="" coords="622,120,627,181,625,218,617,253,607,275,593,296,559,330,520,357,486,375,483,371,518,352,555,326,589,292,603,273,612,251,620,217,622,182,617,120"/>
-<area shape="poly" id="edge29_Node000008_Node000005" title=" " alt="" coords="583,115,391,228,389,223,580,110"/>
-<area shape="poly" id="edge21_Node000008_Node000006" title=" " alt="" coords="588,116,535,164,507,194,484,228,468,266,460,300,455,299,463,265,479,225,503,191,531,160,585,112"/>
-<area shape="poly" id="edge30_Node000008_Node000007" title=" " alt="" coords="561,112,420,155,418,150,559,107"/>
-<area shape="rect" id="Node000009" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="728,226,906,252"/>
-<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="650,111,711,150,805,224,801,228,708,155,647,115"/>
-<area shape="rect" id="Node000010" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="896,153,1008,178"/>
-<area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="687,106,896,150,895,155,685,111"/>
-<area shape="rect" id="Node000017" href="$sprite_8h.html" title="Sprites." alt="" coords="494,226,602,252"/>
-<area shape="poly" id="edge23_Node000008_Node000017" title=" " alt="" coords="605,120,556,227,551,225,601,117"/>
-<area shape="rect" id="Node000018" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="664,300,808,326"/>
-<area shape="poly" id="edge28_Node000008_Node000018" title=" " alt="" coords="636,116,661,151,705,234,734,298,729,301,700,237,656,154,632,119"/>
-<area shape="rect" id="Node000019" href="$vmem__rw_8h.html" title="Stream like access functions for VRAM." alt="" coords="1032,153,1165,178"/>
-<area shape="poly" id="edge31_Node000008_Node000019" title=" " alt="" coords="686,101,1032,152,1031,157,686,106"/>
-<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="917,188,842,228,839,223,914,184"/>
-<area shape="rect" id="Node000011" href="$bmem__rd_8h.html" title="Stream like access functions for Banked Memory." alt="" coords="931,226,1061,252"/>
-<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="970,190,991,224,986,227,965,193"/>
-<area shape="rect" id="Node000013" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="1137,226,1258,252"/>
-<area shape="poly" id="edge17_Node000010_Node000013" title=" " alt="" coords="1009,181,1156,223,1155,228,1007,186"/>
-<area shape="rect" id="Node000016" href="$resources_8h.html" title="Data types and functions for accessing embedded resources." alt="" coords="1283,226,1416,252"/>
-<area shape="poly" id="edge20_Node000010_Node000016" title=" " alt="" coords="1024,177,1283,223,1282,228,1023,182"/>
-<area shape="rect" id="Node000012" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="954,300,1065,326"/>
-<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="1004,267,1010,299,1004,300,998,268"/>
-<area shape="rect" id="Node000014" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="1116,300,1249,326"/>
-<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="1194,268,1188,300,1183,299,1189,267"/>
-<area shape="rect" id="Node000015" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="1273,300,1367,326"/>
-<area shape="poly" id="edge19_Node000013_Node000015" title=" " alt="" coords="1232,258,1300,297,1298,302,1229,262"/>
-<area shape="poly" id="edge25_Node000017_Node000002" title=" " alt="" coords="553,268,550,297,540,327,514,356,484,375,481,371,510,352,535,324,545,296,547,267"/>
-<area shape="poly" id="edge24_Node000017_Node000006" title=" " alt="" coords="522,264,473,302,470,298,519,260"/>
-<area shape="poly" id="edge26_Node000017_Node000018" title=" " alt="" coords="595,255,705,297,703,302,593,260"/>
-<area shape="poly" id="edge27_Node000018_Node000002" title=" " alt="" coords="675,332,504,376,503,370,673,327"/>
-<area shape="poly" id="edge32_Node000019_Node000012" title=" " alt="" coords="1097,194,1089,224,1076,253,1053,281,1028,302,1025,298,1049,277,1071,251,1084,222,1092,193"/>
+<area shape="rect" id="Node000008" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="666,79,779,105"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="328,26,666,79,666,84,327,31"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="199,117,262,213,306,270,356,324,391,350,424,371,422,375,388,355,353,328,302,274,258,216,195,120"/>
+<area shape="rect" id="Node000004" href="$ay__3__8910_8h.html" title="Buffer for PSG (AY&#45;3&#45;8910) registers." alt="" coords="43,153,181,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="162,117,126,154,122,150,158,114"/>
+<area shape="poly" id="edge8_Node000005_Node000002" title=" " alt="" coords="363,267,362,296,369,325,379,339,392,352,421,371,418,375,389,356,375,343,364,327,356,297,357,267"/>
+<area shape="rect" id="Node000006" href="$metasprite_8h.html" title="Meta&#45;sprite ; an aggregate of sprites." alt="" coords="378,300,515,326"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="392,260,435,298,431,302,389,264"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="449,341,449,373,444,373,444,341"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="376,194,370,226,365,225,371,193"/>
+<area shape="poly" id="edge22_Node000008_Node000002" title=" " alt="" coords="745,115,777,158,807,214,816,243,819,273,814,301,799,327,779,343,748,356,667,373,576,383,498,387,497,382,576,378,666,368,746,351,776,339,795,324,809,300,814,273,811,244,802,216,772,161,741,118"/>
+<area shape="poly" id="edge34_Node000008_Node000005" title=" " alt="" coords="656,112,590,130,521,155,445,193,386,228,383,223,442,188,519,150,588,125,654,106"/>
+<area shape="poly" id="edge21_Node000008_Node000006" title=" " alt="" coords="658,112,611,130,566,155,526,190,494,232,454,301,450,298,490,229,522,187,562,150,609,125,656,107"/>
+<area shape="poly" id="edge35_Node000008_Node000007" title=" " alt="" coords="652,111,438,155,437,149,651,105"/>
+<area shape="rect" id="Node000009" href="$ZX0__decompress_8h.html" title="Decompressor of the ZX0 data compression format version 2." alt="" coords="1042,226,1220,252"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="794,93,878,98,970,108,1052,125,1084,137,1107,151,1121,168,1129,189,1133,225,1128,226,1123,190,1116,171,1104,155,1082,141,1051,130,969,114,878,103,794,98"/>
+<area shape="rect" id="Node000010" href="$bmem_8h.html" title="Data types and functions for accessing banked memory." alt="" coords="1253,153,1366,178"/>
+<area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="795,99,1253,155,1252,160,794,105"/>
+<area shape="rect" id="Node000017" href="$sm2__cfg_8h.html" title="SM2 (Sprite Mode 2) Runtime configuration." alt="" coords="810,153,936,178"/>
+<area shape="poly" id="edge23_Node000008_Node000017" title=" " alt="" coords="763,109,849,150,847,154,761,114"/>
+<area shape="rect" id="Node000020" href="$sprite_8h.html" title="Sprites." alt="" coords="576,153,685,178"/>
+<area shape="poly" id="edge26_Node000008_Node000020" title=" " alt="" coords="697,117,648,154,644,150,694,112"/>
+<area shape="rect" id="Node000021" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="591,226,734,252"/>
+<area shape="poly" id="edge33_Node000008_Node000021" title=" " alt="" coords="719,120,700,179,673,227,668,225,695,177,714,119"/>
+<area shape="rect" id="Node000022" href="$vmem__rw_8h.html" title="Stream like access functions for VRAM." alt="" coords="960,153,1093,178"/>
+<area shape="poly" id="edge36_Node000008_Node000022" title=" " alt="" coords="790,106,976,149,974,155,789,111"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="1266,187,1162,228,1160,223,1264,182"/>
+<area shape="rect" id="Node000011" href="$bmem__rd_8h.html" title="Stream like access functions for Banked Memory." alt="" coords="1244,226,1374,252"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="1312,194,1312,226,1307,226,1307,194"/>
+<area shape="rect" id="Node000013" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="1398,226,1519,252"/>
+<area shape="poly" id="edge17_Node000010_Node000013" title=" " alt="" coords="1349,183,1434,223,1432,228,1347,188"/>
+<area shape="rect" id="Node000016" href="$resources_8h.html" title="Data types and functions for accessing embedded resources." alt="" coords="1544,226,1677,252"/>
+<area shape="poly" id="edge20_Node000010_Node000016" title=" " alt="" coords="1376,180,1560,223,1559,228,1375,185"/>
+<area shape="rect" id="Node000012" href="$xmem_8h.html" title="Inter&#45;memory transfer functions for ROM / RAM, VRAM, and Banked Memory (MegaROM)." alt="" coords="1043,300,1154,326"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="1260,260,1135,302,1134,297,1258,255"/>
+<area shape="rect" id="Node000014" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="1460,300,1593,326"/>
+<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="1482,261,1517,298,1513,301,1479,265"/>
+<area shape="rect" id="Node000015" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="1343,300,1436,326"/>
+<area shape="poly" id="edge19_Node000013_Node000015" title=" " alt="" coords="1439,265,1403,301,1399,298,1435,261"/>
+<area shape="rect" id="Node000018" href="$sm2_8h.html" title="SM2 (Sprite Mode 2) Animated Color Sprites." alt="" coords="684,300,785,326"/>
+<area shape="poly" id="edge24_Node000017_Node000018" title=" " alt="" coords="853,192,748,301,744,298,849,188"/>
+<area shape="rect" id="Node000019" href="$sm2__bmem_8h.html" title="SM2 (Sprite Mode 2) internal APIs for BMEM / Resources." alt="" coords="662,374,807,399"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="737,341,737,373,732,373,732,341"/>
+<area shape="poly" id="edge28_Node000020_Node000002" title=" " alt="" coords="610,192,581,228,566,255,557,278,548,301,530,327,500,355,470,375,467,371,497,351,526,324,543,299,552,276,561,253,576,225,606,188"/>
+<area shape="poly" id="edge27_Node000020_Node000006" title=" " alt="" coords="597,189,536,228,492,267,459,302,455,298,489,263,533,224,594,184"/>
+<area shape="poly" id="edge29_Node000020_Node000018" title=" " alt="" coords="695,182,725,199,749,225,755,245,755,265,743,300,738,299,749,265,750,245,744,228,722,204,692,187"/>
+<area shape="poly" id="edge30_Node000020_Node000021" title=" " alt="" coords="645,191,660,225,655,227,640,193"/>
+<area shape="poly" id="edge31_Node000021_Node000002" title=" " alt="" coords="644,265,612,296,574,328,526,355,480,375,478,371,523,351,570,323,609,292,641,261"/>
+<area shape="poly" id="edge32_Node000021_Node000018" title=" " alt="" coords="687,261,724,298,721,301,684,265"/>
+<area shape="poly" id="edge37_Node000022_Node000012" title=" " alt="" coords="1025,193,1024,222,1032,251,1052,278,1078,297,1075,301,1049,281,1027,253,1019,223,1019,193"/>
 </map>

@@ -75,6 +75,18 @@ var NAVTREE =
       ] ],
       [ "Definition of Instrument (timbre) table", "md_docs_2design-notes__snddrv__internal.html#autotoc_md59", null ]
     ] ],
+    [ "TUTORIAL : SM2 (Sprite Mode 2) - Animated Color Sprites.", "md_docs_2tutorial__SM2.html", [
+      [ "Requirements", "md_docs_2tutorial__SM2.html#autotoc_md61", null ],
+      [ "Tutorial", "md_docs_2tutorial__SM2.html#autotoc_md62", [
+        [ "Step 1. Make/Edit your sprite sheet with aseprite", "md_docs_2tutorial__SM2.html#autotoc_md63", null ],
+        [ "Step 2. Generate sprite data and code from the aseprite file", "md_docs_2tutorial__SM2.html#autotoc_md64", null ],
+        [ "Step 3. Import generated data and code into your application's repository", "md_docs_2tutorial__SM2.html#autotoc_md65", null ],
+        [ "Step 4. Write Makefile for building your application", "md_docs_2tutorial__SM2.html#autotoc_md66", null ],
+        [ "Step 5. Write your application code which use the generated code and SM2 APIs", "md_docs_2tutorial__SM2.html#autotoc_md67", null ],
+        [ "Step 6. Build your application with the generated data and code", "md_docs_2tutorial__SM2.html#autotoc_md68", null ]
+      ] ],
+      [ "References", "md_docs_2tutorial__SM2.html#autotoc_md69", null ]
+    ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
@@ -106,8 +118,8 @@ var NAVTREEINDEX =
 "ZX0__decompress_8h.html",
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a5ebee309b11e627b5f081ea3ba18732e",
 "group__SCREEN__TEXT.html",
-"group__VDP__COMMANDS__HIGH.html#ggad5a2110934821d4a04c4f412cea3160fac40e1f6a4e9356599cc1dfb0a0f7223d",
-"scc__buf_8h.html"
+"group__TTY__DEVICE.html#ga5e181c2bbf022370dbbc0ad927d9bd77",
+"md_docs_2design-notes__snddrv.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

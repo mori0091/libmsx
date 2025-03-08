@@ -1,0 +1,25 @@
+<map id="include/sm2.h" name="include/sm2.h">
+<area shape="rect" id="Node000001" title="SM2 (Sprite Mode 2) Animated Color Sprites." alt="" coords="74,5,176,31"/>
+<area shape="rect" id="Node000002" href="$sm2__cfg_8h.html" title="SM2 (Sprite Mode 2) Runtime configuration." alt="" coords="92,153,174,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,31,134,137,129,137,123,31"/>
+<area shape="rect" id="Node000008" href="$sprite_8h.html" title="Sprites." alt="" coords="5,153,69,178"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="120,33,54,141,50,138,116,30"/>
+<area shape="rect" id="Node000009" href="$sprite__color_8h.html" title="Sprite color table interface." alt="" coords="162,79,261,105"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="141,29,187,67,184,71,138,34"/>
+<area shape="rect" id="Node000003" href="$vmem_8h.html" title="Data types and functions for VRAM access." alt="" coords="99,226,167,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,179,136,211,130,211,130,179"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="77,447,141,473"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="126,254,113,275,102,301,97,335,97,371,105,432,100,433,91,371,92,335,97,299,108,273,122,251"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="178,300,245,326"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="148,251,189,287,185,291,145,255"/>
+<area shape="rect" id="Node000006" href="$io_8h.html" title="Definition of I/O ports." alt="" coords="112,300,154,326"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="136,252,136,284,130,284,130,252"/>
+<area shape="rect" id="Node000007" href="$config_8h.html" title="Hack for C Compiler portability." alt="" coords="112,374,178,399"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="138,325,143,358,138,359,132,326"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="141,401,124,435,119,432,137,398"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="55,177,107,215,103,219,52,181"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="42,178,60,270,92,399,102,432,97,433,86,400,55,271,37,179"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="212,105,205,140,189,180,160,217,155,214,184,177,200,138,207,104"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="224,103,242,127,262,159,278,197,285,238,285,314,282,339,272,361,258,380,240,398,198,426,156,446,154,441,195,421,236,394,254,377,267,358,276,337,280,314,280,238,273,198,257,161,238,130,220,107"/>
+<area shape="poly" id="edge13_Node000009_Node000008" title=" " alt="" coords="183,108,82,149,80,144,181,103"/>
+</map>

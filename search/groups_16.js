@@ -30,5 +30,6 @@ var searchData=
   ['transfer_20dedicated_20to_20vram_20access_27',['A part of building blocks for inter-memory transfer, dedicated to VRAM access.',['../group__VMEM__RW.html',1,'']]],
   ['transformation_20operators_20for_2016x16_201bpp_20sprite_20patterns_28',['Matrix transformation operators for 16x16 1bpp sprite patterns.',['../group__IM__TRANSFORM__SP16x16.html',1,'']]],
   ['transformation_20operators_20for_208x8px_201bpp_20bitmap_20images_29',['Matrix transformation operators for 8x8px 1bpp bitmap images.',['../group__IM__TRANSFORM__BM8x8.html',1,'']]],
-  ['trimming_20cropping_20for_2016x16_201bpp_20sprite_20patterns_30',['Trimming (Cropping) for 16x16 1bpp sprite patterns.',['../group__IM__TRIM__SP16x16.html',1,'']]]
+  ['trimming_20cropping_20for_2016x16_201bpp_20sprite_20patterns_30',['Trimming (Cropping) for 16x16 1bpp sprite patterns.',['../group__IM__TRIM__SP16x16.html',1,'']]],
+  ['types_31',['SM2 Data Types',['../group__SM2__DATATYPES.html',1,'']]]
 ];

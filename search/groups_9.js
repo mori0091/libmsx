@@ -12,10 +12,11 @@ var searchData=
   ['for_20megarom_9',['Banked Memory interface for MegaROM.',['../group__BANKED__MEMORY.html',1,'']]],
   ['for_20rom_20ram_20megarom_10',['Stream interface for ROM / RAM / MegaROM.',['../group__STREAM.html',1,'']]],
   ['for_20scc_20scc_11',['Predefined waveforms for SCC/SCC+.',['../group__SCC__PREDEFINED__WAVEFORMS.html',1,'']]],
-  ['for_20the_20libmsx_20audio_20replayer_12',['for the libmsx audio replayer',['../group__AUDIO__DECODERS.html',1,'Decoders for the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.']]],
-  ['from_20banked_20memory_13',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
-  ['from_20resource_20in_20banked_20memory_14',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
-  ['from_20the_20current_20position_20of_20the_20stream_15',['Read from the current position of the stream.',['../group__STREAM__READ.html',1,'']]],
-  ['functions_16',['Unsafe primitive functions',['../group__VDP__UNSAFE.html',1,'']]],
-  ['functions_20of_20the_20libmsx_20audio_20replayer_17',['Callback functions of the libmsx audio replayer.',['../group__AUDIO__CALLBACK.html',1,'']]]
+  ['for_20sm2_20module_12',['SM2 initialization for SM2 module.',['../group__SM2__INIT.html',1,'']]],
+  ['for_20the_20libmsx_20audio_20replayer_13',['for the libmsx audio replayer',['../group__AUDIO__DECODERS.html',1,'Decoders for the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.']]],
+  ['from_20banked_20memory_14',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
+  ['from_20resource_20in_20banked_20memory_15',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
+  ['from_20the_20current_20position_20of_20the_20stream_16',['Read from the current position of the stream.',['../group__STREAM__READ.html',1,'']]],
+  ['functions_17',['Unsafe primitive functions',['../group__VDP__UNSAFE.html',1,'']]],
+  ['functions_20of_20the_20libmsx_20audio_20replayer_18',['Callback functions of the libmsx audio replayer.',['../group__AUDIO__CALLBACK.html',1,'']]]
 ];

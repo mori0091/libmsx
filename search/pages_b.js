@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['routine_0',['DESIGN NOTE : crt0 - C startup routine',['../md_docs_2design-notes__crt0.html',1,'']]]
+  ['of_20snddrv_0',['DESIGN NOTE : Internal of SNDDRV',['../md_docs_2design-notes__snddrv__internal.html',1,'']]]
 ];

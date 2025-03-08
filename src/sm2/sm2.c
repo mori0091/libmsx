@@ -45,13 +45,13 @@ static size_t sm2__num_live_cels;
 
 // ----------------------------------------------------------------------
 inline uint32_t sm2__spt_offsetof(uint8_t depth) { (void)depth; return 1UL; }
-inline size_t sm2__spt_sizeof(uint8_t depth) { return depth * 32; }
+inline size_t sm2__spt_sizeof(uint8_t depth) { return (size_t)(depth * 32); }
 
 static uint32_t sm2__sct_offsetof(uint8_t depth) { return sm2__spt_offsetof(depth) + sm2__spt_sizeof(depth); }
-inline size_t sm2__sct_sizeof(uint8_t depth) { return depth * 16; }
+inline size_t sm2__sct_sizeof(uint8_t depth) { return (size_t)(depth * 16); }
 
 static uint32_t sm2__sat_offsetof(uint8_t depth) { return sm2__sct_offsetof(depth) + sm2__sct_sizeof(depth); }
-inline size_t sm2__sat_sizeof(uint8_t depth) { return  depth * 4; }
+inline size_t sm2__sat_sizeof(uint8_t depth) { return  (size_t)(depth * 4); }
 
 inline uint32_t sm2__cel_spt(const sm2_Cel * cel) { return sm2__spt_offsetof(cel->depth) + cel->addr; }
 static uint32_t sm2__cel_sct(const sm2_Cel * cel) { return sm2__sct_offsetof(cel->depth) + cel->addr; }

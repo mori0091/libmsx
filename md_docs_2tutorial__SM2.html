@@ -162,39 +162,57 @@ Step 5. Write your application code which use the generated code and SM2 APIs</h
 <div class="line"> </div>
 <div class="line">  #include &lt;msx.h&gt;</div>
 <div class="line">  #include &lt;screen.h&gt;</div>
+<div class="line"> </div>
+<div class="line">  // 👉 Include generated header file.</div>
 <div class="line">  #include &quot;MySprite.h&quot;</div>
 <div class="line"> </div>
-<div class="line">  // color palette</div>
-<div class="line">  static palette_t palette[16] = {RGB(0,0,0), ..., RGB(7,7,7)};</div>
+<div class="line">  // Color palette</div>
+<div class="line">  static palette_t palette[16] = {RGB(0,0,0), /* snip */, RGB(7,7,7)};</div>
 <div class="line"> </div>
+<div class="line">  // Sprite objects</div>
 <div class="line">  static sm2_Sprite sprites[2];</div>
 <div class="line"> </div>
-<div class="line">  void on_vsync(void) {</div>
+<div class="line">  void perform_animation_step(void) {</div>
+<div class="line">    // Calculate the remaining time of the current animation frame and </div>
+<div class="line">    // update the frame number.</div>
 <div class="line">    sm2_update_sprites(sprites, sizeof(sprites)/sizeof(sprites[0]));</div>
+<div class="line">    // \note</div>
+<div class="line">    // To perform an animation step,</div>
+<div class="line">    // This must be called at each VSYNC timing.</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  void main(void) {</div>
 <div class="line">    screen5();</div>
+<div class="line"> </div>
+<div class="line">    // The color palette must be initialized manually.</div>
+<div class="line">    // (The palette data is not included in the sprite sheet data file.)</div>
 <div class="line">    vdp_write_palette(palette);</div>
+<div class="line"> </div>
+<div class="line">    // VDP register setting for sprites</div>
+<div class="line">    // - Sprite size (16x16 or 16x16_MAGNIFIED)</div>
 <div class="line">    vdp_set_sprite_size(VDP_SPRITE_SIZE_16x16);</div>
 <div class="line"> </div>
+<div class="line">    // Initialize SM2 module.</div>
 <div class="line">    sm2_init();</div>
+<div class="line"> </div>
+<div class="line">    // 👉 Initialize sprite sheet.</div>
 <div class="line">    MySprite_init();</div>
 <div class="line"> </div>
+<div class="line">    // Construct/Initialize animated sprites.</div>
 <div class="line">    sm2_init_sprite(&amp;sprites[0], &amp;MySprite, &amp;MySprite_tag_Idle);</div>
 <div class="line">    sm2_init_sprite(&amp;sprites[1], &amp;MySprite, &amp;MySprite_tag_Walk);</div>
 <div class="line"> </div>
-<div class="line">    // Periodically update the animation state at each VSYNC timing.</div>
-<div class="line">    set_vsync_handler(on_vsync);</div>
+<div class="line">    // Perform an animation step at each VSYNC timing.</div>
+<div class="line">    set_vsync_handler(perform_animation_step);</div>
 <div class="line"> </div>
-<div class="line">    // main-loop</div>
-<div class="line">    int x = 0;</div>
-<div class="line">    int y = 0;</div>
+<div class="line">    // Main loop</div>
 <div class="line">    for (;;) {</div>
-<div class="line">      sm2_add_sprite(&amp;sprites[0], x, y);</div>
-<div class="line">      sm2_add_sprite(&amp;sprites[1], x, y+32);</div>
+<div class="line">      // Add some sprites to the internal list.</div>
+<div class="line">      sm2_add_sprite(&amp;sprites[0], 0, 0);</div>
+<div class="line">      sm2_add_sprite(&amp;sprites[1], 0, 32);</div>
+<div class="line">      // Next, the list is flushed to update the displayed sprites.</div>
 <div class="line">      sm2_flush();</div>
-<div class="line">    }</div>
+<div class="line">    } // Repeat the above as needed and/or periodically.</div>
 <div class="line">  }</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md68"></a>
 Step 6. Build your application with the generated data and code</h2>
@@ -211,7 +229,10 @@ Step 6. Build your application with the generated data and code</h2>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md69"></a>
 References</h1>
 <p>See also the SM2 API reference:</p><ul>
-<li><a href="https://mori0091.github.io/libmsx/group__SM2.html">SM2 (Sprite Mode 2) Animated Color Sprites</a> </li>
+<li><a href="https://mori0091.github.io/libmsx/group__SM2.html">SM2 (Sprite Mode 2) Animated Color Sprites</a></li>
+</ul>
+<p>Application example:</p><ul>
+<li><a href="https://github.com/mori0091/libmsx/tree/main/sample/sprite_animation">Usecase of libmsx SM2 (Sprite Mode 2) Animated Color Sprite module</a> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

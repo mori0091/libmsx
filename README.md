@@ -236,7 +236,7 @@ pacman -S coreutils findutils make gcc gzip libxslt git
 Don't forget adding SDCC to `PATH` environment variable.  
 Add the below to `~/.bashrc` or `~/.bash_profile`, on MSYS2 UCRT64 environment.  
 
-> At here it is assuming that the SDCC 4.3.0 is installed under `C:\Program Files\SDCC`.
+> At here it is assuming that the SDCC is installed under `C:\Program Files\SDCC`.
 
 ```shell
 export PATH=${PATH}:/c/Program\ Files/SDCC/bin

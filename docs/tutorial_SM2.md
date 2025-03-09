@@ -71,39 +71,57 @@ environment variable.
 
    #include <msx.h>
    #include <screen.h>
+
+   // 👉 Include generated header file.
    #include "MySprite.h"
 
-   // color palette
-   static palette_t palette[16] = {RGB(0,0,0), ..., RGB(7,7,7)};
+   // Color palette
+   static palette_t palette[16] = {RGB(0,0,0), /* snip */, RGB(7,7,7)};
 
+   // Sprite objects
    static sm2_Sprite sprites[2];
 
-   void on_vsync(void) {
+   void perform_animation_step(void) {
+     // Calculate the remaining time of the current animation frame and 
+     // update the frame number.
      sm2_update_sprites(sprites, sizeof(sprites)/sizeof(sprites[0]));
+     // \note
+     // To perform an animation step,
+     // This must be called at each VSYNC timing.
    }
 
    void main(void) {
      screen5();
+
+     // The color palette must be initialized manually.
+     // (The palette data is not included in the sprite sheet data file.)
      vdp_write_palette(palette);
+
+     // VDP register setting for sprites
+     // - Sprite size (16x16 or 16x16_MAGNIFIED)
      vdp_set_sprite_size(VDP_SPRITE_SIZE_16x16);
 
+     // Initialize SM2 module.
      sm2_init();
+
+     // 👉 Initialize sprite sheet.
      MySprite_init();
 
+     // Construct/Initialize animated sprites.
      sm2_init_sprite(&sprites[0], &MySprite, &MySprite_tag_Idle);
      sm2_init_sprite(&sprites[1], &MySprite, &MySprite_tag_Walk);
 
-     // Periodically update the animation state at each VSYNC timing.
-     set_vsync_handler(on_vsync);
+     // Perform an animation step at each VSYNC timing.
+     set_vsync_handler(perform_animation_step);
 
-     // main-loop
-     int x = 0;
-     int y = 0;
+     // Main loop
      for (;;) {
-       sm2_add_sprite(&sprites[0], x, y);
-       sm2_add_sprite(&sprites[1], x, y+32);
+       // Add some sprites to the internal list.
+       sm2_add_sprite(&sprites[0], 0, 0);
+       sm2_add_sprite(&sprites[1], 0, 32);
+       // Next, the list is flushed to update the displayed sprites.
        sm2_flush();
-     }
+     } // Repeat the above as needed and/or periodically.
    }
    ~~~
 
@@ -130,3 +148,6 @@ environment variable.
 
 See also the SM2 API reference:
 - [SM2 (Sprite Mode 2) Animated Color Sprites](https://mori0091.github.io/libmsx/group__SM2.html)
+
+Application example:
+- [Usecase of libmsx SM2 (Sprite Mode 2) Animated Color Sprite module](https://github.com/mori0091/libmsx/tree/main/sample/sprite_animation)

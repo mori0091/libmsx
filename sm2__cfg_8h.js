@@ -1,7 +1,7 @@
 var sm2__cfg_8h =
 [
     [ "sm2_Config", "sm2__cfg_8h.html#structsm2__Config", [
-      [ "vmem", "sm2__cfg_8h.html#a0d409e31b33eb06ed18cd31b9b823c0d", null ]
+      [ "vmem", "sm2__cfg_8h.html#a810eec061299755d5939b08686054281", null ]
     ] ],
     [ "sm2_Config.vmem", "sm2__cfg_8h.html#structsm2__Config_8vmem", [
       [ "spt", "sm2__cfg_8h.html#a86986dbb64d3f73c82718f1c91280b30", null ],

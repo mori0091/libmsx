@@ -20,7 +20,7 @@ var searchData=
   ['la0_5fset_5fsfx_5fwith_5fpriority_17',['la0_set_sfx_with_priority',['../group__LA0__SET__SONG.html#gacd9b73bcd28193858babdc9000c0ae07',1,'la0.h']]],
   ['la0_5fsfx_5fdecoder_18',['LA0_SFX_DECODER',['../group__LA0__DECODER.html#ga631bcc384168d7a38b2877dd1af06579',1,'la0.h']]],
   ['layouts_19',['layouts',['../group__SPRITES__METASPRITE.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
-  ['len_20',['len',['../group__SOUND__OLD__EG__API.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM']]],
+  ['len_20',['len',['../group__SOUND__OLD__EG__API.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM::len'],['../group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a',1,'sm2_Frame.cel_ids::len'],['../group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a',1,'sm2_SpriteSheet.frames::len'],['../group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a',1,'sm2_SpriteSheet.cels::len']]],
   ['level_20apis_21',['level APIs',['../group__VDP__COMMANDS__HIGH.html',1,'VDP commands (High level APIs)'],['../group__VDP__COMMANDS__LOW.html',1,'VDP commands (Low level APIs)']]],
   ['libmsx_20audio_20format_200_22',['DESIGN NOTE : LA0 - The libmsx audio format 0.',['../md_docs_2design-notes__la0.html',1,'']]],
   ['libmsx_20audio_20replayer_23',['libmsx audio replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__DECODERS.html',1,'Decoders for the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
@@ -41,5 +41,5 @@ var searchData=
   ['locate_38',['locate',['../group__CUI__CONTROL.html#ga425d46e75566dfa7bd78ee07a984692d',1,'text.h']]],
   ['looptoindex_39',['loopToIndex',['../group__SNDDRV__DATA.html#a3216f248df996913d722aea1db4a3d27',1,'snd_Music']]],
   ['low_20level_20apis_40',['VDP commands (Low level APIs)',['../group__VDP__COMMANDS__LOW.html',1,'']]],
-  ['lpcm_41',['lpcm',['../group__SOUND__OLD__EG__API.html#abbdf3ac16a6162e550847e45dd9099b0',1,'sound_eg_attribute.__unnamed4__']]]
+  ['lpcm_41',['lpcm',['../group__SOUND__OLD__EG__API.html#abbdf3ac16a6162e550847e45dd9099b0',1,'sound_eg_attribute.__unnamed7__']]]
 ];

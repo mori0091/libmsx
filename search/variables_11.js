@@ -52,7 +52,7 @@ var searchData=
   ['sm2_5fcfg_49',['sm2_cfg',['../sm2__cfg_8h.html#ac96eaeb97ea404a0edaa455f294bbf26',1,'sm2_cfg.h']]],
   ['snd_5fbgm_5fdecoder_50',['SND_BGM_DECODER',['../group__SNDDRV__API.html#ga9f60ec078af9a662177f4b0d2cfa5550',1,'snddrv.h']]],
   ['snd_5fsfx_5fdecoder_51',['SND_SFX_DECODER',['../group__SNDDRV__API.html#ga3d4c07bc7db462f217f13536b743c4aa',1,'snddrv.h']]],
-  ['specialchannels_52',['specialChannels',['../group__SNDDRV__DATA.html#a1f4a86bde5830cf9f3591b7800bc7b84',1,'snd_Pattern']]],
+  ['specialchannels_52',['specialChannels',['../group__SNDDRV__DATA.html#a01c1261ae41b031732bae4dd0ac4df3c',1,'snd_Pattern']]],
   ['speedtrack_53',['speedTrack',['../group__SNDDRV__DATA.html#a55304ed91995007f42e3bccd7651dae8',1,'snd_Pattern.specialChannels']]],
   ['speedtracks_54',['speedTracks',['../group__SNDDRV__DATA.html#a5af59f233a773f9c4dde3f8955bbf706',1,'snd_Music']]],
   ['spt_55',['spt',['../sm2__cfg_8h.html#a86986dbb64d3f73c82718f1c91280b30',1,'sm2_Config.vmem']]],

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structsm2__SpriteSheet.html" target="_top" xlink:title="SpriteSheet &#45; Whole animation frames and cels of a sprite sheet.">
+<g id="a_Node000002"><a xlink:href="group__SM2__DATATYPES.html#structsm2__SpriteSheet" target="_top" xlink:title="SpriteSheet &#45; Whole animation frames and cels of a sprite sheet.">
 <polygon fill="white" stroke="#666666" points="91,-85.75 0,-85.75 0,-66.5 91,-66.5 91,-85.75"/>
 <text text-anchor="middle" x="45.5" y="-72.25" font-family="Helvetica,sans-Serif" font-size="10.00">sm2_SpriteSheet</text>
 </a>

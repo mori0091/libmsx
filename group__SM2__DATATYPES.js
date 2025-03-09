@@ -4,13 +4,13 @@ var group__SM2__DATATYPES =
       [ "depth", "group__SM2__DATATYPES.html#a3168abc0ecb7e8d3f1d17f7a20513f7d", null ],
       [ "addr", "group__SM2__DATATYPES.html#a6365d4be24491d03a51d37a5c424dc9a", null ]
     ] ],
-    [ "sm2_Frame", "structsm2__Frame.html", [
-      [ "sm2_Slice", "structsm2__Frame.html#a9c4529f7934b1417d9af81bceb86034a", null ],
-      [ "duration", "structsm2__Frame.html#ad50b97a4a49965015ada46e8bb35d884", null ]
+    [ "sm2_Frame", "group__SM2__DATATYPES.html#structsm2__Frame", [
+      [ "duration", "group__SM2__DATATYPES.html#ad50b97a4a49965015ada46e8bb35d884", null ],
+      [ "cel_ids", "group__SM2__DATATYPES.html#ada72db36999bef8d2f2403a10744f968", null ]
     ] ],
-    [ "sm2_SpriteSheet", "structsm2__SpriteSheet.html", [
-      [ "sm2_Slice", "structsm2__SpriteSheet.html#a4a82d895b934bdbcb0f60ca8bae6b362", null ],
-      [ "sm2_Slice", "structsm2__SpriteSheet.html#a79a2fb600f05c9dd0bdd49c35c888e7e", null ]
+    [ "sm2_SpriteSheet", "group__SM2__DATATYPES.html#structsm2__SpriteSheet", [
+      [ "frames", "group__SM2__DATATYPES.html#a6185e5fa86dfec0bf7fb63a7c9936f05", null ],
+      [ "cels", "group__SM2__DATATYPES.html#a47500a7ab56159226824b501b251a8fe", null ]
     ] ],
     [ "sm2_FrameTag", "group__SM2__DATATYPES.html#structsm2__FrameTag", [
       [ "from", "group__SM2__DATATYPES.html#adca285008c5f603af75f1449de8de4e9", null ],
@@ -25,6 +25,18 @@ var group__SM2__DATATYPES =
       [ "curr_direction", "group__SM2__DATATYPES.html#a0dc48b05c127fef012895f7c3869bbcf", null ],
       [ "remaining_duration", "group__SM2__DATATYPES.html#af10418a05658531a1fc8cc805ccf85de", null ],
       [ "repeats", "group__SM2__DATATYPES.html#ad41e6dc3c2e817bd7b060f4d2dae0b4f", null ]
+    ] ],
+    [ "sm2_Frame.cel_ids", "group__SM2__DATATYPES.html#structsm2__Frame_8cel__ids", [
+      [ "ptr", "group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2", null ],
+      [ "len", "group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a", null ]
+    ] ],
+    [ "sm2_SpriteSheet.frames", "group__SM2__DATATYPES.html#structsm2__SpriteSheet_8frames", [
+      [ "ptr", "group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2", null ],
+      [ "len", "group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a", null ]
+    ] ],
+    [ "sm2_SpriteSheet.cels", "group__SM2__DATATYPES.html#structsm2__SpriteSheet_8cels", [
+      [ "ptr", "group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2", null ],
+      [ "len", "group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a", null ]
     ] ],
     [ "sm2_Slice", "group__SM2__DATATYPES.html#gaf57193878965f026f2788b28931811cd", null ],
     [ "SM2_SLICE", "group__SM2__DATATYPES.html#gaa9ae256d3eb8e09bcbf89a02d593596f", null ],

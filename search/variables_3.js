@@ -11,5 +11,5 @@ var searchData=
   ['disint_8',['DISINT',['../workarea_8h.html#a366afc24d7362980e4b79caffa07161c',1,'workarea.h']]],
   ['diskve_9',['DISKVE',['../workarea_8h.html#a0e0ffe25ca63aaa5c3e6007a930e11fe',1,'workarea.h']]],
   ['drvtbl_10',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]],
-  ['duration_11',['duration',['../structsm2__Frame.html#ad50b97a4a49965015ada46e8bb35d884',1,'sm2_Frame']]]
+  ['duration_11',['duration',['../group__SM2__DATATYPES.html#ad50b97a4a49965015ada46e8bb35d884',1,'sm2_Frame']]]
 ];

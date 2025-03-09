@@ -15,7 +15,7 @@ var searchData=
   ['addr_12',['addr',['../group__SM2__DATATYPES.html#a6365d4be24491d03a51d37a5c424dc9a',1,'sm2_Cel::addr'],['../workarea_8h.html#abe25ac2a9c407e3223f0e1051cd8ae0b',1,'cgpnt::addr']]],
   ['address_20registers_13',['Table base address registers',['../group__VDP__TABLE__BASE__ADDRESS__REGISTER.html',1,'']]],
   ['address_20spaces_20of_20devices_14',['Slot - Individual Address Spaces of devices.',['../group__SLOT.html',1,'']]],
-  ['ahdsr_15',['ahdsr',['../group__SOUND__OLD__EG__API.html#a0116ba6bb8f706ec2618607513d348ad',1,'sound_eg_attribute.__unnamed4__']]],
+  ['ahdsr_15',['ahdsr',['../group__SOUND__OLD__EG__API.html#a0116ba6bb8f706ec2618607513d348ad',1,'sound_eg_attribute.__unnamed7__']]],
   ['aks_20files_20into_20your_20application_16',['How to integrate Arkos Tracker 2 .aks files into your application',['../md_docs_2design-notes__snddrv.html#autotoc_md47',1,'']]],
   ['amp_20effector_17',['The AMP effector.',['../group__AUDIO__EFX__AMP.html',1,'']]],
   ['anchor_18',['anchor',['../group__SPRITES__METASPRITE.html#a8cff0a450c6cc8ed07f5d13a79a84395',1,'metasprite']]],

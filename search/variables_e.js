@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['param_0',['param',['../group__SOUND__OLD__EG__API.html#aeca07335a33c5aeb5e1bc7c98b4b9d80',1,'sound_eg_attribute.__unnamed4__']]],
+  ['param_0',['param',['../group__SOUND__OLD__EG__API.html#aeca07335a33c5aeb5e1bc7c98b4b9d80',1,'sound_eg_attribute.__unnamed7__']]],
   ['pat_1',['pat',['../group__SPRITES__ATTR.html#a355ae0f23e6fb3cd3cb1bcc7e9ffb9ed',1,'sprite']]],
   ['patbas_2',['PATBAS',['../workarea_8h.html#aea4b54d7d72b7eb76626f59d308d1dd8',1,'workarea.h']]],
   ['path_3',['path',['../group__RESOURCES__FIND.html#af38c1ab06600fdabbfe434426e66a15c',1,'ResourceIndex']]],
@@ -14,6 +14,6 @@ var searchData=
   ['psg_5fport1_11',['psg_port1',['../io_8h.html#ae513155a83d71ab12033bbf82b70f721',1,'io.h']]],
   ['psg_5fport2_12',['psg_port2',['../io_8h.html#a901f03d5ca82e8e40201c6b57fc7f34c',1,'io.h']]],
   ['psg_5freg_5finitial_5fvector_13',['psg_reg_initial_vector',['../group__PSG__REGISTER.html#ga5fe004c472dfaef154f795a07d39ce94',1,'psg.h']]],
-  ['ptr_14',['ptr',['../memfile__types_8h.html#a025208b98854dd7a69b0b37471b83fdc',1,'MemPos']]],
+  ['ptr_14',['ptr',['../memfile__types_8h.html#a025208b98854dd7a69b0b37471b83fdc',1,'MemPos::ptr'],['../group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2',1,'sm2_Frame.cel_ids::ptr'],['../group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2',1,'sm2_SpriteSheet.frames::ptr'],['../group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2',1,'sm2_SpriteSheet.cels::ptr']]],
   ['putpnt_15',['PUTPNT',['../workarea_8h.html#a18d0b38baf281d5921991ed442f06ce5',1,'workarea.h']]]
 ];

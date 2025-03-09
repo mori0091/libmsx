@@ -1,6 +1,6 @@
 <map id="sm2_Sprite" name="sm2_Sprite">
 <area shape="rect" id="Node000001" title="Sprite &#45; Animation state of a sprite." alt="" coords="93,94,180,120"/>
-<area shape="rect" id="Node000002" href="$structsm2__SpriteSheet.html" title="SpriteSheet &#45; Whole animation frames and cels of a sprite sheet." alt="" coords="5,5,127,31"/>
+<area shape="rect" id="Node000002" href="$group__SM2__DATATYPES.html#structsm2__SpriteSheet" title="SpriteSheet &#45; Whole animation frames and cels of a sprite sheet." alt="" coords="5,5,127,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,41,129,92,125,95,83,45"/>
 <area shape="rect" id="Node000003" href="$group__SM2__DATATYPES.html#structsm2__FrameTag" title="FrameTag &#45; Definition of a range of animation frames." alt="" coords="151,5,264,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,45,148,95,144,92,186,41"/>

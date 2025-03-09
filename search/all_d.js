@@ -53,5 +53,5 @@ var searchData=
   ['driver_50',['driver',['../md_docs_2design-notes__snddrv.html',1,'DESIGN NOTE : SNDDRV - a sound driver'],['../group__LA0__DECODER.html',1,'LA0 - PSG, SCC/SCC+, OPLL sound driver.'],['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver']]],
   ['driver_20apis_51',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
   ['drvtbl_52',['DRVTBL',['../workarea_8h.html#abd77dd54308020af3bf857186a157424',1,'workarea.h']]],
-  ['duration_53',['duration',['../structsm2__Frame.html#ad50b97a4a49965015ada46e8bb35d884',1,'sm2_Frame']]]
+  ['duration_53',['duration',['../group__SM2__DATATYPES.html#ad50b97a4a49965015ada46e8bb35d884',1,'sm2_Frame']]]
 ];

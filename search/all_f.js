@@ -32,13 +32,14 @@ var searchData=
   ['format_20notation_29',['format notation',['../md_docs_2design-notes__la0.html#autotoc_md36',1,'Data format notation'],['../md_docs_2design-notes__snddrv__internal.html#autotoc_md51',1,'Sound data format notation']]],
   ['format_5fversion_30',['format_version',['../group__SNDDRV__DATA.html#a73713cc5ca4d186b6c4946a4d3a64e83',1,'snd_Music']]],
   ['fragments_31',['fragments',['../group__SOUND__OLD__API.html#aae9c73220c1e3cf4037a6cf67dea650b',1,'sound_clip']]],
-  ['frcnew_32',['FRCNEW',['../workarea_8h.html#a28df2f5017327dc437d049caf313ab0b',1,'workarea.h']]],
-  ['from_33',['from',['../group__SM2__DATATYPES.html#adca285008c5f603af75f1449de8de4e9',1,'sm2_FrameTag']]],
-  ['from_20banked_20memory_34',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
-  ['from_20resource_20in_20banked_20memory_35',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
-  ['from_20the_20aseprite_20file_36',['Step 2. Generate sprite data and code from the aseprite file',['../md_docs_2tutorial__SM2.html#autotoc_md64',1,'']]],
-  ['from_20the_20current_20position_20of_20the_20stream_37',['Read from the current position of the stream.',['../group__STREAM__READ.html',1,'']]],
-  ['functionality_38',['functionality',['../index.html#autotoc_md3',1,'Supported functionality'],['../index.html#autotoc_md4',1,'Unsupported functionality']]],
-  ['functions_39',['Unsafe primitive functions',['../group__VDP__UNSAFE.html',1,'']]],
-  ['functions_20of_20the_20libmsx_20audio_20replayer_40',['Callback functions of the libmsx audio replayer.',['../group__AUDIO__CALLBACK.html',1,'']]]
+  ['frames_32',['frames',['../group__SM2__DATATYPES.html#a6185e5fa86dfec0bf7fb63a7c9936f05',1,'sm2_SpriteSheet']]],
+  ['frcnew_33',['FRCNEW',['../workarea_8h.html#a28df2f5017327dc437d049caf313ab0b',1,'workarea.h']]],
+  ['from_34',['from',['../group__SM2__DATATYPES.html#adca285008c5f603af75f1449de8de4e9',1,'sm2_FrameTag']]],
+  ['from_20banked_20memory_35',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
+  ['from_20resource_20in_20banked_20memory_36',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
+  ['from_20the_20aseprite_20file_37',['Step 2. Generate sprite data and code from the aseprite file',['../md_docs_2tutorial__SM2.html#autotoc_md64',1,'']]],
+  ['from_20the_20current_20position_20of_20the_20stream_38',['Read from the current position of the stream.',['../group__STREAM__READ.html',1,'']]],
+  ['functionality_39',['functionality',['../index.html#autotoc_md3',1,'Supported functionality'],['../index.html#autotoc_md4',1,'Unsupported functionality']]],
+  ['functions_40',['Unsafe primitive functions',['../group__VDP__UNSAFE.html',1,'']]],
+  ['functions_20of_20the_20libmsx_20audio_20replayer_41',['Callback functions of the libmsx audio replayer.',['../group__AUDIO__CALLBACK.html',1,'']]]
 ];

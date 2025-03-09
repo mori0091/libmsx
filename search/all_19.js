@@ -5,7 +5,7 @@ var searchData=
   ['page_5fsize_2',['PAGE_SIZE',['../group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e',1,'bios.h']]],
   ['palette_20registers_3',['Palette registers',['../group__VDP__PALETTE__REGISTER.html',1,'']]],
   ['palette_5ft_4',['palette_t',['../group__VDP__PALETTE__REGISTER.html#ga33595fdc0e04957d3dd734d82e10d55d',1,'vdp.h']]],
-  ['param_5',['param',['../group__SOUND__OLD__EG__API.html#aeca07335a33c5aeb5e1bc7c98b4b9d80',1,'sound_eg_attribute.__unnamed4__']]],
+  ['param_5',['param',['../group__SOUND__OLD__EG__API.html#aeca07335a33c5aeb5e1bc7c98b4b9d80',1,'sound_eg_attribute.__unnamed7__']]],
   ['part_20of_20building_20blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20banked_20memory_20access_6',['A part of building blocks for inter-memory transfer, dedicated to Banked Memory access.',['../group__BMEM__RD.html',1,'']]],
   ['part_20of_20building_20blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20rom_20ram_20access_7',['A part of building blocks for inter-memory transfer, dedicated to ROM / RAM access.',['../group__MEM__RW.html',1,'']]],
   ['part_20of_20building_20blocks_20for_20inter_20memory_20transfer_20dedicated_20to_20vram_20access_8',['A part of building blocks for inter-memory transfer, dedicated to VRAM access.',['../group__VMEM__RW.html',1,'']]],
@@ -54,6 +54,6 @@ var searchData=
   ['psg_5fport2_51',['psg_port2',['../io_8h.html#a901f03d5ca82e8e40201c6b57fc7f34c',1,'io.h']]],
   ['psg_5freg_5finitial_5fvector_52',['psg_reg_initial_vector',['../group__PSG__REGISTER.html#ga5fe004c472dfaef154f795a07d39ce94',1,'psg.h']]],
   ['psg_5fset_53',['psg_set',['../group__PSG__REGISTER.html#gae76dc7a8f615f828df6c22c7bf180577',1,'psg.h']]],
-  ['ptr_54',['ptr',['../memfile__types_8h.html#a025208b98854dd7a69b0b37471b83fdc',1,'MemPos']]],
+  ['ptr_54',['ptr',['../memfile__types_8h.html#a025208b98854dd7a69b0b37471b83fdc',1,'MemPos::ptr'],['../group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2',1,'sm2_Frame.cel_ids::ptr'],['../group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2',1,'sm2_SpriteSheet.frames::ptr'],['../group__SM2__DATATYPES.html#a4d9ad2b37053671b594b237bd061b3f2',1,'sm2_SpriteSheet.cels::ptr']]],
   ['putpnt_55',['PUTPNT',['../workarea_8h.html#a18d0b38baf281d5921991ed442f06ce5',1,'workarea.h']]]
 ];

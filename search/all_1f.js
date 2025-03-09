@@ -150,7 +150,7 @@ var searchData=
   ['vk_5fleft_147',['VK_LEFT',['../group__INPUT__JOYPAD.html#gabc5b23d7329364d2b0045bdbde9ef826',1,'input.h']]],
   ['vk_5fright_148',['VK_RIGHT',['../group__INPUT__JOYPAD.html#gabde1a28b80e3625c66ee269c3dec02f0',1,'input.h']]],
   ['vk_5fup_149',['VK_UP',['../group__INPUT__JOYPAD.html#ga57a88ceb387a03c046c9c51a8c154e05',1,'input.h']]],
-  ['vmem_150',['vmem',['../sm2__cfg_8h.html#a0d409e31b33eb06ed18cd31b9b823c0d',1,'sm2_Config']]],
+  ['vmem_150',['vmem',['../sm2__cfg_8h.html#a810eec061299755d5939b08686054281',1,'sm2_Config']]],
   ['vmem_2eh_151',['vmem.h',['../vmem_8h.html',1,'']]],
   ['vmem_5fclose_152',['vmem_close',['../group__VMEM__RW.html#ga34e9d5e10d11ed7193efeb68ac343643',1,'vmem_rw.h']]],
   ['vmem_5fdup_153',['vmem_dup',['../group__VMEM__RW.html#ga27b76930cf153e15e04ac6ff76a32e9e',1,'vmem_rw.h']]],

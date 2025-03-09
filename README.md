@@ -145,15 +145,15 @@ The below functionality is NOT supported yet.
 
 | Host Platform | SDCC version | status          |
 |---------------|--------------|-----------------|
-| Ubuntu 24.04  | 4.3.0        | ✔ (outdated)    |
-|               | 4.4.0        | ✔ (recommended) |
+| Ubuntu 24.04  | 4.4.0        | ✔ (outdated)    |
+|               | 4.5.0        | ✔ (recommended) |
 
 **Windows**
 
 | Host Platform | SDCC version | status          |
 |---------------|--------------|-----------------|
-| MSYS2 UCRT64  | 4.3.0        | (not tested)    |
-|               | 4.4.0        | (not tested)    |
+| MSYS2 UCRT64  | 4.4.0        | (not tested)    |
+|               | 4.5.0        | (not tested)    |
 
 Ofcourse, Ubuntu on **WSL2** is okey. 😄  
 (**WSL2**: Windows Subsystem for Linux)
@@ -164,7 +164,7 @@ Ofcourse, Ubuntu on **WSL2** is okey. 😄
   Small Device C Compiler  
   <http://sdcc.sourceforge.net/>
 
-> SDCC 4.4.0 or later is recommended.
+> SDCC 4.5.0 or later is recommended.
 
 - Other toolchain required for libmsx  
   GNU `find`, `make`, `gcc`, `gzip`, `zcat`, `xsltproc`, and so on.
@@ -176,30 +176,29 @@ To use `libmsx`,
 1. Install SDCC.
 2. Install other toolchain.
 
-## Ubuntu 22.04
+## Ubuntu
 
 ### 1. Install SDCC
 
 Download a SDCC pre-built binary for Linux from <http://sdcc.sourceforge.net/>
 and install it.
 
-SDCC 4.4.0 or later is recommended.
+SDCC 4.5.0 or later is recommended.
 
 Don't forget adding SDCC to `PATH` environment variable.  
 Add the below to `~/.bashrc` or `~/.bash_profile`.  
 
-> At here it is assuming that the SDCC 4.4.0 is installed under `~/sdcc-4.4.0`.
+> At here it is assuming that the SDCC 4.5.0 is installed under `~/sdcc-4.5.0`.
 
 ```shell
-export PATH=${PATH}:~/sdcc-4.4.0/bin
+export PATH=${PATH}:~/sdcc-4.5.0/bin
 ```
 
 > Why don't we install sdcc by `sudo apt install sdcc` ?
 > 
-> Because the latest version of SDCC may not be installed by `apt`.
-> In case of Ubuntu 24.04, SDCC 4.2.0 is installed. Thus we
-> recommend that you download SDCC 4.4.0 pre-built binary and use it on Ubuntu
-> 24.04 or later.
+> Because the latest version of SDCC may not be installed by `apt`. In case of
+> Ubuntu 24.04, SDCC 4.2.0 is installed. Thus we recommend that you download
+> SDCC 4.5.0 pre-built binary and use it on Ubuntu 24.04 or later.
 
 ### 2. Install other toolchain
 
@@ -211,7 +210,7 @@ sudo apt install build-essential make gcc gzip xsltproc git
 ## Windows (Ubuntu on WSL2)
 
 The 1st case is using Ubuntu on WSL2 environment.  
-In this case, it is same as for Ubuntu 22.04.
+In this case, it is same as for Ubuntu.
 
 Launch a terminal of *Ubuntu on WSL2*, and proceed with the above instructions.
 

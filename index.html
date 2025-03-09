@@ -255,18 +255,18 @@ Host Platform</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Host Platform   </th><th class="markdownTableHeadNone">SDCC version   </th><th class="markdownTableHeadNone">status    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Ubuntu 24.04   </td><td class="markdownTableBodyNone">4.3.0   </td><td class="markdownTableBodyNone">✔ (outdated)    </td></tr>
+<td class="markdownTableBodyNone">Ubuntu 24.04   </td><td class="markdownTableBodyNone">4.4.0   </td><td class="markdownTableBodyNone">✔ (outdated)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.4.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.5.0   </td><td class="markdownTableBodyNone">✔ (recommended)   </td></tr>
 </table>
 <p><b>Windows</b></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Host Platform   </th><th class="markdownTableHeadNone">SDCC version   </th><th class="markdownTableHeadNone">status    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">MSYS2 UCRT64   </td><td class="markdownTableBodyNone">4.3.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
+<td class="markdownTableBodyNone">MSYS2 UCRT64   </td><td class="markdownTableBodyNone">4.4.0   </td><td class="markdownTableBodyNone">(not tested)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.4.0   </td><td class="markdownTableBodyNone">(not tested)   </td></tr>
+<td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">4.5.0   </td><td class="markdownTableBodyNone">(not tested)   </td></tr>
 </table>
 <p>Ofcourse, Ubuntu on <b>WSL2</b> is okey. 😄 <br  />
  (<b>WSL2</b>: Windows Subsystem for Linux)</p>
@@ -278,7 +278,7 @@ Build tools</h2>
  <a href="http://sdcc.sourceforge.net/">http://sdcc.sourceforge.net/</a></li>
 </ul>
 <blockquote class="doxtable">
-<p>&zwj;SDCC 4.4.0 or later is recommended. </p>
+<p>&zwj;SDCC 4.5.0 or later is recommended. </p>
 </blockquote>
 <ul>
 <li>Other toolchain required for libmsx <br  />
@@ -291,21 +291,21 @@ Install instructions of Build tools</h1>
 <li>Install other toolchain.</li>
 </ol>
 <h2><a class="anchor" id="autotoc_md10"></a>
-Ubuntu 22.04</h2>
+Ubuntu</h2>
 <h3><a class="anchor" id="autotoc_md11"></a>
 1. Install SDCC</h3>
 <p>Download a SDCC pre-built binary for Linux from <a href="http://sdcc.sourceforge.net/">http://sdcc.sourceforge.net/</a> and install it.</p>
-<p>SDCC 4.4.0 or later is recommended.</p>
+<p>SDCC 4.5.0 or later is recommended.</p>
 <p>Don't forget adding SDCC to <code>PATH</code> environment variable. <br  />
  Add the below to <code>~/.bashrc</code> or <code>~/.bash_profile</code>. <br  />
 </p>
 <blockquote class="doxtable">
-<p>&zwj;At here it is assuming that the SDCC 4.4.0 is installed under <code>~/sdcc-4.4.0</code>. </p>
+<p>&zwj;At here it is assuming that the SDCC 4.5.0 is installed under <code>~/sdcc-4.5.0</code>. </p>
 </blockquote>
-<div class="fragment"><div class="line">export PATH=${PATH}:~/sdcc-4.4.0/bin</div>
+<div class="fragment"><div class="line">export PATH=${PATH}:~/sdcc-4.5.0/bin</div>
 </div><!-- fragment --><blockquote class="doxtable">
 <p>&zwj;Why don't we install sdcc by <code>sudo apt install sdcc</code> ?</p>
-<p>Because the latest version of SDCC may not be installed by <code>apt</code>. In case of Ubuntu 24.04, SDCC 4.2.0 is installed. Thus we recommend that you download SDCC 4.4.0 pre-built binary and use it on Ubuntu 24.04 or later. </p>
+<p>Because the latest version of SDCC may not be installed by <code>apt</code>. In case of Ubuntu 24.04, SDCC 4.2.0 is installed. Thus we recommend that you download SDCC 4.5.0 pre-built binary and use it on Ubuntu 24.04 or later. </p>
 </blockquote>
 <h3><a class="anchor" id="autotoc_md12"></a>
 2. Install other toolchain</h3>
@@ -315,7 +315,7 @@ Ubuntu 22.04</h2>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
 Windows (Ubuntu on WSL2)</h2>
 <p>The 1st case is using Ubuntu on WSL2 environment. <br  />
- In this case, it is same as for Ubuntu 22.04.</p>
+ In this case, it is same as for Ubuntu.</p>
 <p>Launch a terminal of <em>Ubuntu on WSL2</em>, and proceed with the above instructions.</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
 Windows (MSYS2)</h2>

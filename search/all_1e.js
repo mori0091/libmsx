@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ubuntu_2022_2004_0',['Ubuntu 22.04',['../index.html#autotoc_md10',1,'']]],
+  ['ubuntu_0',['Ubuntu',['../index.html#autotoc_md10',1,'']]],
   ['ubuntu_20on_20wsl2_1',['Windows (Ubuntu on WSL2)',['../index.html#autotoc_md13',1,'']]],
   ['unified_20sound_20chip_20buffer_20of_20the_20libmsx_20audio_20replayer_2',['Unified sound-chip buffer of the libmsx audio replayer.',['../group__AUDIO__BUFFER.html',1,'']]],
   ['unsafe_20primitive_20functions_3',['Unsafe primitive functions',['../group__VDP__UNSAFE.html',1,'']]],

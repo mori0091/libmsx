@@ -10,7 +10,7 @@ var index =
       [ "Build tools", "index.html#autotoc_md8", null ]
     ] ],
     [ "Install instructions of Build tools", "index.html#autotoc_md9", [
-      [ "Ubuntu 22.04", "index.html#autotoc_md10", [
+      [ "Ubuntu", "index.html#autotoc_md10", [
         [ "Install SDCC", "index.html#autotoc_md11", null ],
         [ "Install other toolchain", "index.html#autotoc_md12", null ]
       ] ],

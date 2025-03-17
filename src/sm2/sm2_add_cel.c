@@ -22,7 +22,7 @@ void sm2_add_cel(const sm2_Cel * cel, int x, int y) {
   }
   const size_t a = sm2__num_planes_in_use + cel->depth;
   if (a <= SM2_SPRITE_PLANE_MAX) {
-    if (sm2__put_cel(sm2__num_planes_in_use, cel, x, y)) {
+    if (sm2__add_cel(sm2__num_planes_in_use, cel, x, y)) {
       sm2__num_planes_in_use = a;
     }
   }

@@ -22,7 +22,7 @@
 // ----------------------------------------------------------------------
 /** Number of sprite patterns allocated. */
 uint8_t sm2__num_patterns_allocated;
-/** Number of sprite planes reserved for "array" partition. */
+/** Number of sprite planes reserved. */
 uint8_t sm2__num_planes_reserved;
 /** Number of sprite planes in use. */
 uint8_t sm2__num_planes_in_use;
@@ -30,7 +30,7 @@ uint8_t sm2__num_planes_in_use;
 struct sm2__SpriteTable sm2__sprite_table;
 
 // ----------------------------------------------------------------------
-#define SM2_LIVE_CELS_MAX      (32)
+#define SM2_LIVE_CELS_MAX      (64)
 
 typedef struct sm2__LiveCel {
   /** Key (Pointer to a cel)*/
@@ -98,7 +98,7 @@ static int8_t sm2__SPT_allocate(uint8_t cnt) {
   return index;
 }
 inline void sm2__SPT_deallocate_all(void) {
-  sm2__num_patterns_allocated = 0;
+  sm2__num_patterns_allocated = sm2__num_planes_reserved;
 }
 
 // ----------------------------------------------------------------------
@@ -134,15 +134,7 @@ static void sm2__set_EC_bit(struct sprite_color * c) {
   }
 }
 
-bool sm2__put_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
-  const sm2__LiveCel * const livecel = sm2__LiveCel_from(cel);
-  if (!livecel) return false;
-  // const sm2__LiveCel * livecel;
-  // while (!(livecel = sm2__LiveCel_from(cel))) {
-  //   sm2__LiveCel_clear_all();
-  // }
-  const uint8_t pat = livecel->base_pattern_number;
-
+static void sm2__put_cel_(uint8_t base_pat, uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
   uint8_t * const sct = (uint8_t *)&sm2__sprite_table.sct[base_plane];
   struct sprite_color * c = (struct sprite_color *)sct;
   sm2__load_sct(cel, sct);
@@ -175,11 +167,28 @@ bool sm2__put_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
     }
     s->x = sx;
 
-    s->pat += pat;
+    s->pat += base_pat;
 
     s++;
     c++;
   }
+}
+
+void sm2__put_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
+  const uint8_t pat = base_plane * 4;
+  sm2__load_spt(cel, SPRITE_PATTERNS + pat * 8);
+  sm2__put_cel_(pat, base_plane, cel, x, y);
+}
+
+bool sm2__add_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
+  const sm2__LiveCel * const livecel = sm2__LiveCel_from(cel);
+  if (!livecel) return false;
+  // const sm2__LiveCel * livecel;
+  // while (!(livecel = sm2__LiveCel_from(cel))) {
+  //   sm2__LiveCel_clear_all();
+  // }
+  const uint8_t pat = livecel->base_pattern_number;
+  sm2__put_cel_(pat, base_plane, cel, x, y);
   return true;
 }
 

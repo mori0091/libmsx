@@ -18,8 +18,7 @@
 void sm2_put_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
   const size_t a = base_plane + cel->depth;
   if (a <= sm2__num_planes_reserved) {
-    if (sm2__put_cel(base_plane, cel, x, y)) {
-      sm2__flush(base_plane, cel->depth);
-    }
+    sm2__put_cel(base_plane, cel, x, y);
+    sm2__flush(base_plane, cel->depth);
   }
 }

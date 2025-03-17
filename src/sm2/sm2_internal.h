@@ -56,7 +56,9 @@ extern struct sm2__SpriteTable sm2__sprite_table;
 // ----------------------------------------------------------------------
 void sm2__LiveCel_clear_all(void);
 
-bool sm2__put_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y);
+void sm2__put_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y);
+
+bool sm2__add_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y);
 
 void sm2__flush(uint8_t base_plane, uint8_t n);
 

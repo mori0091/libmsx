@@ -40,7 +40,7 @@ var searchData=
   ['remaining_5fduration_37',['remaining_duration',['../group__SM2__DATATYPES.html#af10418a05658531a1fc8cc805ccf85de',1,'sm2_Sprite']]],
   ['render_5fchar_38',['render_char',['../group__TTY__DEVICE.html#a379b6bee542f02672ff6faae5933728f',1,'TTY_Device']]],
   ['repcnt_39',['REPCNT',['../workarea_8h.html#a0af2b001fdfb0d0819b86c50463b94e9',1,'workarea.h']]],
-  ['repeats_40',['repeats',['../group__SM2__DATATYPES.html#a3349eabd2ef085d43be4258d53cf82f3',1,'sm2_FrameTag::repeats'],['../group__SM2__DATATYPES.html#ad41e6dc3c2e817bd7b060f4d2dae0b4f',1,'sm2_Sprite::repeats']]],
+  ['repeat_40',['repeat',['../group__SM2__DATATYPES.html#a92d0257717514c151f78a7a8c7da539e',1,'sm2_FrameTag::repeat'],['../group__SM2__DATATYPES.html#a273b199fc1bb1d7dfa68b29eb3858bd4',1,'sm2_Sprite::repeat']]],
   ['replayer_41',['replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__DECODERS.html',1,'Decoders for the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
   ['replayrate_42',['replayRate',['../group__SNDDRV__DATA.html#a030abb37b6c192bfdc9fd62278bb0826',1,'snd_Music']]],
   ['repository_43',['Step 3. Import generated data and code into your application&apos;s repository',['../md_docs_2tutorial__SM2.html#autotoc_md65',1,'']]],

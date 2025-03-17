@@ -28,7 +28,7 @@ var searchData=
   ['remaining_5fduration_25',['remaining_duration',['../group__SM2__DATATYPES.html#af10418a05658531a1fc8cc805ccf85de',1,'sm2_Sprite']]],
   ['render_5fchar_26',['render_char',['../group__TTY__DEVICE.html#a379b6bee542f02672ff6faae5933728f',1,'TTY_Device']]],
   ['repcnt_27',['REPCNT',['../workarea_8h.html#a0af2b001fdfb0d0819b86c50463b94e9',1,'workarea.h']]],
-  ['repeats_28',['repeats',['../group__SM2__DATATYPES.html#a3349eabd2ef085d43be4258d53cf82f3',1,'sm2_FrameTag::repeats'],['../group__SM2__DATATYPES.html#ad41e6dc3c2e817bd7b060f4d2dae0b4f',1,'sm2_Sprite::repeats']]],
+  ['repeat_28',['repeat',['../group__SM2__DATATYPES.html#a92d0257717514c151f78a7a8c7da539e',1,'sm2_FrameTag::repeat'],['../group__SM2__DATATYPES.html#a273b199fc1bb1d7dfa68b29eb3858bd4',1,'sm2_Sprite::repeat']]],
   ['replayrate_29',['replayRate',['../group__SNDDRV__DATA.html#a030abb37b6c192bfdc9fd62278bb0826',1,'snd_Music']]],
   ['rg0sav_30',['RG0SAV',['../workarea_8h.html#af0308ee928d41382ca763102fd14b16f',1,'workarea.h']]],
   ['rg10sa_31',['RG10SA',['../workarea_8h.html#a6273cb9410411dcbd5f391b2418d7e53',1,'workarea.h']]],

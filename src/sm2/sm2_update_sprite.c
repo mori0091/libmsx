@@ -18,17 +18,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-void sm2_update_sprite(sm2_Sprite * s) {
-  if (!s->remaining_duration) return; // duration = inf.
-  s->remaining_duration -= SM2_COUNTS_PER_TICK;
-  if (0 < s->remaining_duration) return;
-  const sm2_FrameTag * const tag = s->tag;
-  if (!tag) {
-    s->remaining_duration = 0;
-    return;
-  }
-
+static bool update_frame(sm2_Sprite * s) {
   const uint8_t curr_frame = s->curr_frame;
+  const sm2_FrameTag * const tag = s->tag;
   const uint8_t from = tag->from;
   const uint8_t to = tag->to;
   const uint8_t direction = tag->direction;
@@ -40,13 +32,12 @@ void sm2_update_sprite(sm2_Sprite * s) {
     s->curr_direction = SM2_FORWARD;
   }
 
-  bool cycle_end = false;
   if (s->curr_direction == SM2_FORWARD) {
     if (curr_frame < to) {
       s->curr_frame++;
     }
     else if (direction == SM2_FORWARD || direction == SM2_PINGPONG_REVERSE) {
-      cycle_end = true;
+      return true;
     }
   }
   else {
@@ -54,11 +45,24 @@ void sm2_update_sprite(sm2_Sprite * s) {
       s->curr_frame--;
     }
     else if (direction == SM2_REVERSE || direction == SM2_PINGPONG) {
-      cycle_end = true;
+      return true;
     }
+  }
+  return false;
+}
+
+void sm2_update_sprite(sm2_Sprite * s) {
+  if (!s->remaining_duration) return; // duration = inf.
+  s->remaining_duration -= SM2_COUNTS_PER_TICK;
+  if (0 < s->remaining_duration) return;
+  const sm2_FrameTag * const tag = s->tag;
+  if (!tag) {
+    s->remaining_duration = 0;
+    return;
   }
 
   const sm2_SpriteSheet * const sheet = s->sheet;
+  const bool cycle_end = update_frame(s);
   if (cycle_end) {
     const size_t repeats_max = tag->repeats;
     if (!repeats_max) {

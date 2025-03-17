@@ -64,15 +64,15 @@ void sm2_update_sprite(sm2_Sprite * s) {
   const sm2_SpriteSheet * const sheet = s->sheet;
   const bool cycle_end = update_frame(s);
   if (cycle_end) {
-    const size_t repeats_max = tag->repeats;
-    if (!repeats_max) {
+    const size_t repeat_max = tag->repeat;
+    if (!repeat_max) {
       sm2_init_sprite(s, sheet, tag);
     }
     else {
-      const size_t repeats = s->repeats;
-      if (repeats < repeats_max) {
+      const size_t repeat = s->repeat;
+      if (repeat < repeat_max) {
         sm2_init_sprite(s, sheet, tag);
-        s->repeats = repeats + 1;
+        s->repeat = repeat + 1;
       }
       else {
         s->remaining_duration = 0;

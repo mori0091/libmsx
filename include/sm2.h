@@ -103,7 +103,7 @@ typedef struct sm2_FrameTag {
   uint8_t from;              ///< 1st frame number.
   uint8_t to;                ///< last frame number.
   uint8_t direction;         ///< Animation direction.
-  size_t repeats;            ///< Number of repeats; 0 means inf.
+  size_t repeat;             ///< Number of repeats; 0 means inf.
 } sm2_FrameTag;
 
 /**
@@ -115,7 +115,7 @@ typedef struct sm2_Sprite {
   uint8_t curr_frame;            ///< Index of current frame.
   uint8_t curr_direction;        ///< Current animation direction; forward/reverse.
   size_t remaining_duration;     ///< Remaining duration of the current frame.
-  size_t repeats;                ///< Repeat count; Number of loops finished.
+  size_t repeat;                 ///< Repeat count; Number of loops finished.
 } sm2_Sprite;
 
 /** @} */

@@ -38,5 +38,5 @@ void sm2_init_sprite(sm2_Sprite * s, const sm2_SpriteSheet * sheet, const sm2_Fr
   }
   size_t duration = SM2_COUNTS_PER_MSEC * sheet->frames.ptr[s->curr_frame].duration;
   s->remaining_duration = duration;
-  s->repeats = 0;
+  s->repeat = 0;
 }

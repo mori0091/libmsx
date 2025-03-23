@@ -11,7 +11,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="group__AUDIO__DECODERS.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="group__AUDIO__DECODERS.html" target="_top" xlink:title="Audio/Sound drivers that implements the libmsx audio decoder interfaces.">
 <polygon fill="white" stroke="#666666" points="116.5,-73.5 0,-73.5 0,-43 116.5,-43 116.5,-73.5"/>
 <text text-anchor="start" x="8" y="-60" font-family="Helvetica,sans-Serif" font-size="10.00">Decoders for the libmsx</text>
 <text text-anchor="middle" x="58.25" y="-48.75" font-family="Helvetica,sans-Serif" font-size="10.00"> audio replayer.</text>

@@ -1,8 +1,10 @@
 <map id="The libmsx audio replayer." name="The libmsx audio replayer.">
-<area shape="rect" id="Node000001" title="#include &lt;audio.h&gt;" alt="" coords="5,172,174,198"/>
-<area shape="rect" id="Node000004" href="$group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;" alt="" coords="249,5,380,61"/>
-<area shape="rect" id="Node000005" href="$group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;" alt="" coords="249,85,380,141"/>
-<area shape="rect" id="Node000006" href="$group__AUDIO__DECODER.html" title="#include &lt;audio_dec.h&gt;" alt="" coords="222,165,407,206"/>
-<area shape="rect" id="Node000003" href="$group__AUDIO__EFX.html" title="Effectors for the libmsx audio replayer." alt="" coords="239,230,390,271"/>
-<area shape="rect" id="Node000002" href="$group__AUDIO__REPLAYER.html" title="The API of the libmsx audio replayer." alt="" coords="243,296,386,336"/>
+<area shape="rect" id="Node000001" title="#include &lt;audio.h&gt;" alt="" coords="194,206,362,231"/>
+<area shape="rect" id="Node000006" href="$group__AUDIO__BUFFER.html" title="#include &lt;audio_buf.h&gt;" alt="" coords="437,5,568,61"/>
+<area shape="rect" id="Node000007" href="$group__AUDIO__CALLBACK.html" title="#include &lt;audio_cb.h&gt;" alt="" coords="438,85,568,141"/>
+<area shape="rect" id="Node000008" href="$group__AUDIO__DECODER.html" title="#include &lt;audio_dec.h&gt;" alt="" coords="410,165,595,206"/>
+<area shape="rect" id="Node000004" href="$group__AUDIO__DECODERS.html" title="Audio/Sound drivers that implements the libmsx audio decoder interfaces." alt="" coords="425,230,580,271"/>
+<area shape="rect" id="Node000005" href="$group__AUDIO__EFX.html" title="Effectors for the libmsx audio replayer." alt="" coords="427,296,578,336"/>
+<area shape="rect" id="Node000003" href="$group__AUDIO__REPLAYER.html" title="The API of the libmsx audio replayer." alt="" coords="431,361,574,402"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__REPLAYER.html" title=" " alt="" coords="5,206,146,231"/>
 </map>

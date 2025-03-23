@@ -111,74 +111,74 @@ $(function(){initNavTree('bios_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * GitHub libmsx project\n</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * https://github.com/mori0091/libmsx</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef BIOS_H</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="bios_8h.html#a1c92f825a1fef0fbf75ab1b2cfd7475b">   24</a></span><span class="preprocessor">#define BIOS_H</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="bios__const_8h.html">bios_const.h</a>&quot;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="bios__entry_8h.html">bios_entry.h</a>&quot;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#ifndef __SDCCCALL</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define __sdcccall(x)</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e">   44</a></span><span class="preprocessor">#define PAGE_SIZE           (uint16_t)(0x4000)</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga9169260e2eb0c0dbce0e7f3dd42fdc99">   52</a></span><span class="preprocessor">#define PAGE_ADDR(p)        ((void *)(PAGE_SIZE * (p)))</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">extern</span> <span class="keyword">const</span> uint8_t <a class="code hl_variable" href="group__BIOS__CONFIG.html#gad14db158868f65ade8dd82dab1025279">libmsx_initial_slots</a>[4];</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#gab68e2c7a4fbde959d6c392c232708633">   62</a></span><span class="preprocessor">#define CARTRIDGE_SLOT  (libmsx_initial_slots[1])</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">   69</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">msx_get_version</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef BIOS_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="bios_8h.html#a1c92f825a1fef0fbf75ab1b2cfd7475b">   25</a></span><span class="preprocessor">#define BIOS_H</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="bios__const_8h.html">bios_const.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="bios__entry_8h.html">bios_entry.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#ifndef __SDCCCALL</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define __sdcccall(x)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga7d467c1d283fdfa1f2081ba1e0d01b6e">   45</a></span><span class="preprocessor">#define PAGE_SIZE           (uint16_t)(0x4000)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga9169260e2eb0c0dbce0e7f3dd42fdc99">   53</a></span><span class="preprocessor">#define PAGE_ADDR(p)        ((void *)(PAGE_SIZE * (p)))</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">extern</span> <span class="keyword">const</span> uint8_t <a class="code hl_variable" href="group__BIOS__CONFIG.html#gad14db158868f65ade8dd82dab1025279">libmsx_initial_slots</a>[4];</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#gab68e2c7a4fbde959d6c392c232708633">   63</a></span><span class="preprocessor">#define CARTRIDGE_SLOT  (libmsx_initial_slots[1])</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">   70</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">msx_get_version</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">   78</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">msx_get_vsync_frequency</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">return</span> ((<a class="code hl_variable" href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a> &amp; 0x80) ? 50 : 60);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">   79</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">msx_get_vsync_frequency</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">return</span> ((<a class="code hl_variable" href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a> &amp; 0x80) ? 50 : 60);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gaeb4cd6909bffe2fdc4ab12f034ea5f40">  103</a></span>uint8_t <a class="code hl_function" href="group__BIOS__SLOT.html#gaeb4cd6909bffe2fdc4ab12f034ea5f40">msx_RDSLT</a>(uint8_t slot, <span class="keywordtype">void</span> * addr);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#ga5508e48b4a3b786bb8c347c428e56d8e">  116</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__SLOT.html#ga5508e48b4a3b786bb8c347c428e56d8e">msx_WRSLT</a>(uint8_t slot, <span class="keywordtype">void</span> * addr, uint8_t value) __sdcccall(0);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e">  128</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e">msx_ENASLT</a>(uint8_t slot, <span class="keywordtype">void</span> * addr);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14">  137</a></span>uint8_t <a class="code hl_function" href="group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14">msx_get_slot</a>(<span class="keywordtype">void</span> * addr);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gaedc2e35feb1d1e15d8c84588b0369f46">  146</a></span>uint8_t <a class="code hl_function" href="group__BIOS__SLOT.html#gaedc2e35feb1d1e15d8c84588b0369f46">msx_RSLREG</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gadd657fb7bd235f898e14bd825dd03ac8">  155</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__SLOT.html#gadd657fb7bd235f898e14bd825dd03ac8">msx_WSLREG</a>(uint8_t value);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="group__BIOS__JOYPAD.html#ga221aeb5b2cb8816e03b9413e7c945ed8">  190</a></span>uint8_t <a class="code hl_function" href="group__BIOS__JOYPAD.html#ga221aeb5b2cb8816e03b9413e7c945ed8">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="group__BIOS__JOYPAD.html#ga68a83910179dac98a2d038c99ea55abf">  211</a></span>uint8_t <a class="code hl_function" href="group__BIOS__JOYPAD.html#ga68a83910179dac98a2d038c99ea55abf">msx_GTTRIG</a>(<span class="keyword">const</span> uint8_t a);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#gade3c2351bf7f00eb60bd423e0b6fa4d1">  248</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__CPU.html#gade3c2351bf7f00eb60bd423e0b6fa4d1">msx_CHGCPU</a>(<span class="keyword">const</span> uint8_t mode);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#ga4bb01de7baaae78f6cc43e81ba88d9af">  274</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__CPU.html#ga4bb01de7baaae78f6cc43e81ba88d9af">msx_set_cpu_mode</a>(<span class="keyword">const</span> uint8_t mode);</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#gad7a3a4e8570a8bd076740f64b34d3e53">  296</a></span>uint8_t <a class="code hl_function" href="group__BIOS__CPU.html#gad7a3a4e8570a8bd076740f64b34d3e53">msx_GETCPU</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3">  316</a></span>uint8_t <a class="code hl_function" href="group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3">msx_get_cpu_mode</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">#ifndef __SDCCCALL</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#undef __sdcccall</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gaeb4cd6909bffe2fdc4ab12f034ea5f40">  104</a></span>uint8_t <a class="code hl_function" href="group__BIOS__SLOT.html#gaeb4cd6909bffe2fdc4ab12f034ea5f40">msx_RDSLT</a>(uint8_t slot, <span class="keywordtype">void</span> * addr);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#ga5508e48b4a3b786bb8c347c428e56d8e">  117</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__SLOT.html#ga5508e48b4a3b786bb8c347c428e56d8e">msx_WRSLT</a>(uint8_t slot, <span class="keywordtype">void</span> * addr, uint8_t value) __sdcccall(0);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e">  129</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__SLOT.html#ga32ae6eade2e5890bf5403adff996965e">msx_ENASLT</a>(uint8_t slot, <span class="keywordtype">void</span> * addr);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14">  138</a></span>uint8_t <a class="code hl_function" href="group__BIOS__SLOT.html#gaddf1dd3c3bcc20397dd9ca1d47dd2c14">msx_get_slot</a>(<span class="keywordtype">void</span> * addr);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gaedc2e35feb1d1e15d8c84588b0369f46">  147</a></span>uint8_t <a class="code hl_function" href="group__BIOS__SLOT.html#gaedc2e35feb1d1e15d8c84588b0369f46">msx_RSLREG</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="group__BIOS__SLOT.html#gadd657fb7bd235f898e14bd825dd03ac8">  156</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__SLOT.html#gadd657fb7bd235f898e14bd825dd03ac8">msx_WSLREG</a>(uint8_t value);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="group__BIOS__JOYPAD.html#ga221aeb5b2cb8816e03b9413e7c945ed8">  191</a></span>uint8_t <a class="code hl_function" href="group__BIOS__JOYPAD.html#ga221aeb5b2cb8816e03b9413e7c945ed8">msx_GTSTCK</a>(<span class="keyword">const</span> uint8_t a);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="group__BIOS__JOYPAD.html#ga68a83910179dac98a2d038c99ea55abf">  212</a></span>uint8_t <a class="code hl_function" href="group__BIOS__JOYPAD.html#ga68a83910179dac98a2d038c99ea55abf">msx_GTTRIG</a>(<span class="keyword">const</span> uint8_t a);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#gade3c2351bf7f00eb60bd423e0b6fa4d1">  249</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__CPU.html#gade3c2351bf7f00eb60bd423e0b6fa4d1">msx_CHGCPU</a>(<span class="keyword">const</span> uint8_t mode);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#ga4bb01de7baaae78f6cc43e81ba88d9af">  275</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__BIOS__CPU.html#ga4bb01de7baaae78f6cc43e81ba88d9af">msx_set_cpu_mode</a>(<span class="keyword">const</span> uint8_t mode);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#gad7a3a4e8570a8bd076740f64b34d3e53">  297</a></span>uint8_t <a class="code hl_function" href="group__BIOS__CPU.html#gad7a3a4e8570a8bd076740f64b34d3e53">msx_GETCPU</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3">  317</a></span>uint8_t <a class="code hl_function" href="group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3">msx_get_cpu_mode</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#ifndef __SDCCCALL</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#undef __sdcccall</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="abios__const_8h_html"><div class="ttname"><a href="bios__const_8h.html">bios_const.h</a></div><div class="ttdoc">Constant variables in the MSX BIOS ROM.</div></div>
 <div class="ttc" id="abios__const_8h_html_a6affd3a7801ad8c6c255400f0a391cda"><div class="ttname"><a href="bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda">MSX_SYSTEM_VERSION_CODE</a></div><div class="ttdeci">static const uint8_t MSX_SYSTEM_VERSION_CODE</div><div class="ttdoc">MSX System version code of MSX BIOS (002DH / MAIN).</div><div class="ttdef"><b>Definition</b> <a href="bios__const_8h_source.html#l00070">bios_const.h:70</a></div></div>
 <div class="ttc" id="abios__const_8h_html_a91e2a52aaf73b50f909f12bb9f9fc9bc"><div class="ttname"><a href="bios__const_8h.html#a91e2a52aaf73b50f909f12bb9f9fc9bc">INTERNATIONAL_ID_1</a></div><div class="ttdeci">static const uint8_t INTERNATIONAL_ID_1</div><div class="ttdoc">MSX International identifier code #1 of MSX BIOS (002BH / MAIN).</div><div class="ttdef"><b>Definition</b> <a href="bios__const_8h_source.html#l00046">bios_const.h:46</a></div></div>
 <div class="ttc" id="abios__entry_8h_html"><div class="ttname"><a href="bios__entry_8h.html">bios_entry.h</a></div><div class="ttdoc">Assembler entry points for MSX BIOS functions.</div></div>
-<div class="ttc" id="agroup__BIOS__CONFIG_html_ga19b4876435ca81258934f0d78d6cae07"><div class="ttname"><a href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">msx_get_version</a></div><div class="ttdeci">uint8_t msx_get_version(void)</div><div class="ttdoc">MSX Returns MSX system version code.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">bios.h:69</a></div></div>
-<div class="ttc" id="agroup__BIOS__CONFIG_html_ga92e83309660f10fadbd038807b69b56f"><div class="ttname"><a href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">msx_get_vsync_frequency</a></div><div class="ttdeci">uint8_t msx_get_vsync_frequency(void)</div><div class="ttdoc">MSX Returns VSYNC frequency in Hz.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">bios.h:78</a></div></div>
+<div class="ttc" id="agroup__BIOS__CONFIG_html_ga19b4876435ca81258934f0d78d6cae07"><div class="ttname"><a href="group__BIOS__CONFIG.html#ga19b4876435ca81258934f0d78d6cae07">msx_get_version</a></div><div class="ttdeci">uint8_t msx_get_version(void)</div><div class="ttdoc">MSX Returns MSX system version code.</div><div class="ttdef"><b>Definition</b> <a href="#l00070">bios.h:70</a></div></div>
+<div class="ttc" id="agroup__BIOS__CONFIG_html_ga92e83309660f10fadbd038807b69b56f"><div class="ttname"><a href="group__BIOS__CONFIG.html#ga92e83309660f10fadbd038807b69b56f">msx_get_vsync_frequency</a></div><div class="ttdeci">uint8_t msx_get_vsync_frequency(void)</div><div class="ttdoc">MSX Returns VSYNC frequency in Hz.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">bios.h:79</a></div></div>
 <div class="ttc" id="agroup__BIOS__CONFIG_html_gad14db158868f65ade8dd82dab1025279"><div class="ttname"><a href="group__BIOS__CONFIG.html#gad14db158868f65ade8dd82dab1025279">libmsx_initial_slots</a></div><div class="ttdeci">const uint8_t libmsx_initial_slots[4]</div><div class="ttdoc">MSX Initial slot addresses for each page.</div></div>
 <div class="ttc" id="agroup__BIOS__CPU_html_ga4bb01de7baaae78f6cc43e81ba88d9af"><div class="ttname"><a href="group__BIOS__CPU.html#ga4bb01de7baaae78f6cc43e81ba88d9af">msx_set_cpu_mode</a></div><div class="ttdeci">void msx_set_cpu_mode(const uint8_t mode)</div><div class="ttdoc">MSX Change the CPU mode.</div></div>
 <div class="ttc" id="agroup__BIOS__CPU_html_ga9b18d372e5dc2d30439e273e5d4343f3"><div class="ttname"><a href="group__BIOS__CPU.html#ga9b18d372e5dc2d30439e273e5d4343f3">msx_get_cpu_mode</a></div><div class="ttdeci">uint8_t msx_get_cpu_mode(void)</div><div class="ttdoc">MSX Get the CPU mode.</div></div>

@@ -1,6 +1,7 @@
 var group__AUDIO =
 [
     [ "The API of the libmsx audio replayer.", "group__AUDIO__REPLAYER.html", "group__AUDIO__REPLAYER" ],
+    [ "Decoders for the libmsx audio replayer.", "group__AUDIO__DECODERS.html", "group__AUDIO__DECODERS" ],
     [ "Effectors for the libmsx audio replayer.", "group__AUDIO__EFX.html", "group__AUDIO__EFX" ],
     [ "Unified sound-chip buffer of the libmsx audio replayer.", "group__AUDIO__BUFFER.html", "group__AUDIO__BUFFER" ],
     [ "Callback functions of the libmsx audio replayer.", "group__AUDIO__CALLBACK.html", "group__AUDIO__CALLBACK" ],

@@ -1,6 +1,7 @@
 <map id="Text output" name="Text output">
-<area shape="rect" id="Node000001" title="#include &lt;text.h&gt;" alt="" coords="5,78,91,104"/>
-<area shape="rect" id="Node000003" href="$group__CUI__COLOR.html" title="Text color, Background color, Backdrop color." alt="" coords="147,5,286,46"/>
-<area shape="rect" id="Node000002" href="$group__CUI__CONTROL.html" title="Cursor position, Control characters, Clear screen, etc." alt="" coords="139,71,294,111"/>
-<area shape="rect" id="Node000004" href="$group__CUI__PRINT.html" title="Simple print functions." alt="" coords="174,136,259,161"/>
+<area shape="rect" id="Node000001" title="#include &lt;text.h&gt;" alt="" coords="219,78,304,104"/>
+<area shape="rect" id="Node000004" href="$group__CUI__COLOR.html" title="Text color, Background color, Backdrop color." alt="" coords="360,5,499,46"/>
+<area shape="rect" id="Node000003" href="$group__CUI__CONTROL.html" title="Cursor position, Control characters, Clear screen, etc." alt="" coords="352,71,507,111"/>
+<area shape="rect" id="Node000005" href="$group__CUI__PRINT.html" title="Simple print functions." alt="" coords="387,136,472,161"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__CUI.html" title=" " alt="" coords="5,78,171,104"/>
 </map>

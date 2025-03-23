@@ -1,0 +1,6 @@
+<map id="Sound devices." name="Sound devices.">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,78,115,104"/>
+<area shape="rect" id="Node000002" href="$group__OPLL.html" title="#include &lt;opll.h&gt;" alt="" coords="193,5,346,46"/>
+<area shape="rect" id="Node000003" href="$group__PSG.html" title="#include &lt;psg.h&gt;, #include &lt;ay_3_8910.h&gt;" alt="" coords="163,71,377,111"/>
+<area shape="rect" id="Node000004" href="$group__SCC.html" title="#include &lt;scc.h&gt;" alt="" coords="184,136,356,177"/>
+</map>

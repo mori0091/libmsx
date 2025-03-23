@@ -1,0 +1,5 @@
+<map id="RAM/ROM/MegaROM Storage Interface." name="RAM/ROM/MegaROM Storage Interface.">
+<area shape="rect" id="Node000002" href="$group__BANKED__MEMORY.html" title="#include &lt;bmem.h&gt;" alt="" coords="252,5,420,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,204,79"/>
+<area shape="rect" id="Node000003" href="$group__STREAM.html" title="#include &lt;memfile.h&gt;" alt="" coords="252,71,420,111"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="LA0 &#45; PSG, SCC/SCC+, OPLL sound driver." name="LA0 &#45; PSG, SCC/SCC+, OPLL sound driver.">
-<area shape="rect" id="Node000002" href="$group__AUDIO__DECODERS.html" title=" " alt="" coords="5,63,161,103"/>
+<area shape="rect" id="Node000002" href="$group__AUDIO__DECODERS.html" title="Audio/Sound drivers that implements the libmsx audio decoder interfaces." alt="" coords="5,63,161,103"/>
 <area shape="rect" id="Node000001" title="#include &lt;la0.h&gt;" alt="" coords="209,63,357,103"/>
 <area shape="rect" id="Node000005" href="$group__LA0__MISC.html" title=" " alt="" coords="412,5,539,46"/>
 <area shape="rect" id="Node000003" href="$group__LA0__OPEN.html" title=" " alt="" coords="406,70,545,96"/>

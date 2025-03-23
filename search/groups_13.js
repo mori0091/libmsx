@@ -10,7 +10,7 @@ var searchData=
   ['position_20of_20the_20stream_7',['position of the stream',['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
   ['predefined_20waveforms_20for_20scc_20scc_8',['Predefined waveforms for SCC/SCC+.',['../group__SCC__PREDEFINED__WAVEFORMS.html',1,'']]],
   ['primitive_20functions_9',['Unsafe primitive functions',['../group__VDP__UNSAFE.html',1,'']]],
-  ['processing_10',['8x8px, 16x16px bitmap image processing.',['../group__IM.html',1,'']]],
+  ['processing_10',['processing',['../group__IM.html',1,'8x8px, 16x16px bitmap image processing.'],['../group__LIBMSX__IMAGE__PROC.html',1,'Image processing.']]],
   ['processor_11',['VDP - Video Display Processor',['../group__VDP.html',1,'']]],
   ['programmable_20sound_20generator_12',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],
   ['psg_20ay_203_208910_20programmable_20sound_20generator_13',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],

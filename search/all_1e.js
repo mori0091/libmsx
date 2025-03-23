@@ -10,5 +10,6 @@ var searchData=
   ['use_20the_20generated_20code_20and_20sm2_20apis_7',['Step 5. Write your application code which use the generated code and SM2 APIs',['../md_docs_2tutorial__SM2.html#autotoc_md67',1,'']]],
   ['use_5fall_5fextensions_20deprecated_8',['USE_ALL_EXTENSIONS (deprecated)',['../md_docs_2design-notes__crt0.html#autotoc_md29',1,'']]],
   ['user_20applications_9',['Build instructions of user applications',['../index.html#autotoc_md18',1,'']]],
-  ['usrtab_10',['USRTAB',['../workarea_8h.html#ab928695d20624111642803fec8cbaf7e',1,'workarea.h']]]
+  ['user_20interface_10',['Character User Interface.',['../group__LIBMSX__CUI.html',1,'']]],
+  ['usrtab_11',['USRTAB',['../workarea_8h.html#ab928695d20624111642803fec8cbaf7e',1,'workarea.h']]]
 ];

@@ -1,7 +1,8 @@
 <map id="Stream interface for ROM / RAM / MegaROM." name="Stream interface for ROM / RAM / MegaROM.">
-<area shape="rect" id="Node000001" title="#include &lt;memfile.h&gt;" alt="" coords="5,92,174,133"/>
-<area shape="rect" id="Node000003" href="$group__STREAM__ERR.html" title="Check error status of the stream." alt="" coords="234,5,360,46"/>
-<area shape="rect" id="Node000002" href="$group__STREAM__OPEN.html" title="Open whole or part of memory image as stream." alt="" coords="248,70,346,96"/>
-<area shape="rect" id="Node000004" href="$group__STREAM__READ.html" title="Read from the current position of the stream." alt="" coords="222,120,372,161"/>
-<area shape="rect" id="Node000005" href="$group__STREAM__SEEK.html" title="Get / Set the current position of the stream." alt="" coords="222,185,372,226"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__STORAGE.html" title=" " alt="" coords="5,92,204,133"/>
+<area shape="rect" id="Node000001" title="#include &lt;memfile.h&gt;" alt="" coords="252,92,420,133"/>
+<area shape="rect" id="Node000004" href="$group__STREAM__ERR.html" title="Check error status of the stream." alt="" coords="480,5,606,46"/>
+<area shape="rect" id="Node000003" href="$group__STREAM__OPEN.html" title="Open whole or part of memory image as stream." alt="" coords="494,70,592,96"/>
+<area shape="rect" id="Node000005" href="$group__STREAM__READ.html" title="Read from the current position of the stream." alt="" coords="468,120,618,161"/>
+<area shape="rect" id="Node000006" href="$group__STREAM__SEEK.html" title="Get / Set the current position of the stream." alt="" coords="468,185,618,226"/>
 </map>

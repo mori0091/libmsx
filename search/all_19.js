@@ -33,7 +33,7 @@ var searchData=
   ['printu_30',['printu',['../group__CUI__PRINT.html#ga9194e2f35fa17087be6be197a8b1cf92',1,'text.h']]],
   ['printx_31',['printx',['../group__CUI__PRINT.html#ga91f173cf64c37dc5bc7fbf8d7534ac01',1,'text.h']]],
   ['priority_32',['priority',['../group__SOUND__OLD__API.html#aa50d220b45ae59eedb443b956ef1929d',1,'sound_clip']]],
-  ['processing_33',['8x8px, 16x16px bitmap image processing.',['../group__IM.html',1,'']]],
+  ['processing_33',['processing',['../group__IM.html',1,'8x8px, 16x16px bitmap image processing.'],['../group__LIBMSX__IMAGE__PROC.html',1,'Image processing.']]],
   ['processing_20pipiline_34',['SNDDRV&apos;s sound processing pipiline',['../md_docs_2design-notes__snddrv__internal.html#autotoc_md49',1,'']]],
   ['processor_35',['VDP - Video Display Processor',['../group__VDP.html',1,'']]],
   ['programmable_20sound_20generator_36',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],

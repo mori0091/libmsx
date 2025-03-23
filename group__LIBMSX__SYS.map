@@ -1,0 +1,7 @@
+<map id="BIOS, Interrupts, Slots, etc." name="BIOS, Interrupts, Slots, etc.">
+<area shape="rect" id="Node000002" href="$group__BIOS.html" title="#include &lt;bios.h&gt;" alt="" coords="226,5,354,46"/>
+<area shape="rect" id="Node000003" href="$group__INTERRUPT.html" title="#include &lt;interrupt.h&gt;" alt="" coords="252,70,328,96"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,92,162,133"/>
+<area shape="rect" id="Node000004" href="$group__SLOT.html" title="#include &lt;slot.h&gt;" alt="" coords="210,120,370,161"/>
+<area shape="rect" id="Node000005" href="$group__XMEM.html" title="#include &lt;xmem.h&gt;" alt="" coords="217,185,363,226"/>
+</map>

@@ -1,4 +1,5 @@
 <map id="Slot &#45; Individual Address Spaces of devices." name="Slot &#45; Individual Address Spaces of devices.">
-<area shape="rect" id="Node000001" title="#include &lt;slot.h&gt;" alt="" coords="5,5,166,46"/>
-<area shape="rect" id="Node000002" href="$group__SLOT__INSPECT.html" title="Inspect the slot mechanism of MSX." alt="" coords="214,13,320,38"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__SYS.html" title=" " alt="" coords="5,5,162,46"/>
+<area shape="rect" id="Node000001" title="#include &lt;slot.h&gt;" alt="" coords="210,5,370,46"/>
+<area shape="rect" id="Node000003" href="$group__SLOT__INSPECT.html" title="Inspect the slot mechanism of MSX." alt="" coords="418,13,524,38"/>
 </map>

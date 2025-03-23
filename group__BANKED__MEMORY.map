@@ -1,6 +1,7 @@
 <map id="Banked Memory interface for MegaROM." name="Banked Memory interface for MegaROM.">
-<area shape="rect" id="Node000001" title="#include &lt;bmem.h&gt;" alt="" coords="5,71,173,111"/>
-<area shape="rect" id="Node000002" href="$group__BANKED__MEMORY__DIRECT__ACCESS.html" title="APIs for direct access to 16KiB segments of banked memory." alt="" coords="224,5,412,46"/>
-<area shape="rect" id="Node000003" href="$group__BANKED__MEMORY__INDIRECT__ACCESS.html" title="APIs for indirect access to banked memory." alt="" coords="244,71,392,111"/>
-<area shape="rect" id="Node000004" href="$group__RESOURCES.html" title="#include &lt;resources.h&gt;" alt="" coords="221,136,415,177"/>
+<area shape="rect" id="Node000001" title="#include &lt;bmem.h&gt;" alt="" coords="252,71,419,111"/>
+<area shape="rect" id="Node000003" href="$group__BANKED__MEMORY__DIRECT__ACCESS.html" title="APIs for direct access to 16KiB segments of banked memory." alt="" coords="470,5,658,46"/>
+<area shape="rect" id="Node000004" href="$group__BANKED__MEMORY__INDIRECT__ACCESS.html" title="APIs for indirect access to banked memory." alt="" coords="490,71,638,111"/>
+<area shape="rect" id="Node000005" href="$group__RESOURCES.html" title="#include &lt;resources.h&gt;" alt="" coords="467,136,661,177"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__STORAGE.html" title=" " alt="" coords="5,71,204,111"/>
 </map>

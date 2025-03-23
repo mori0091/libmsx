@@ -10,12 +10,13 @@ var searchData=
   ['get_5finterrupt_5fstate_7',['get_interrupt_state',['../group__INTERRUPT__STATE.html#ga9d2679b16c066ac43f850258517a1d27',1,'interrupt.h']]],
   ['getcpu_8',['GETCPU',['../bios__entry_8h.html#a91fd124d4b8b97fcc19dfe2b08d64d75',1,'bios_entry.h']]],
   ['getpnt_9',['GETPNT',['../workarea_8h.html#a93546723a1bd791feacced8cb0b21070',1,'workarea.h']]],
-  ['graphics_20mode_10',['graphics mode',['../group__SCREEN__BITMAP.html',1,'Bitmap graphics mode'],['../group__SCREEN__PCG.html',1,'Tiled graphics mode']]],
-  ['grpatr_11',['GRPATR',['../workarea_8h.html#abe6c935e737dbd8e65b68beb6419e729',1,'workarea.h']]],
-  ['grpcgp_12',['GRPCGP',['../workarea_8h.html#a460d91305a8daa5ccfe78837cfe334ee',1,'workarea.h']]],
-  ['grpcol_13',['GRPCOL',['../workarea_8h.html#a487975287bf01003c227261241e0284f',1,'workarea.h']]],
-  ['grpnam_14',['GRPNAM',['../workarea_8h.html#ab476c7368621ce13387522e1ac7d00a6',1,'workarea.h']]],
-  ['grppat_15',['GRPPAT',['../workarea_8h.html#a1796ce5b6e58daf37b5f1673f9a24290',1,'workarea.h']]],
-  ['gtstck_16',['GTSTCK',['../bios__entry_8h.html#a7dfb0604fdb04a3a658b5e1db04cdefa',1,'bios_entry.h']]],
-  ['gttrig_17',['GTTRIG',['../bios__entry_8h.html#a64496cb8cdbabc91bcf6d1b4eb4d7795',1,'bios_entry.h']]]
+  ['graphics_10',['Video / Display / Graphics.',['../group__LIBMSX__GRAPHICS.html',1,'']]],
+  ['graphics_20mode_11',['graphics mode',['../group__SCREEN__BITMAP.html',1,'Bitmap graphics mode'],['../group__SCREEN__PCG.html',1,'Tiled graphics mode']]],
+  ['grpatr_12',['GRPATR',['../workarea_8h.html#abe6c935e737dbd8e65b68beb6419e729',1,'workarea.h']]],
+  ['grpcgp_13',['GRPCGP',['../workarea_8h.html#a460d91305a8daa5ccfe78837cfe334ee',1,'workarea.h']]],
+  ['grpcol_14',['GRPCOL',['../workarea_8h.html#a487975287bf01003c227261241e0284f',1,'workarea.h']]],
+  ['grpnam_15',['GRPNAM',['../workarea_8h.html#ab476c7368621ce13387522e1ac7d00a6',1,'workarea.h']]],
+  ['grppat_16',['GRPPAT',['../workarea_8h.html#a1796ce5b6e58daf37b5f1673f9a24290',1,'workarea.h']]],
+  ['gtstck_17',['GTSTCK',['../bios__entry_8h.html#a7dfb0604fdb04a3a658b5e1db04cdefa',1,'bios_entry.h']]],
+  ['gttrig_18',['GTTRIG',['../bios__entry_8h.html#a64496cb8cdbabc91bcf6d1b4eb4d7795',1,'bios_entry.h']]]
 ];

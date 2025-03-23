@@ -1,5 +1,6 @@
 <map id="PSG &#45; AY&#45;3&#45;8910 / Programmable Sound Generator" name="PSG &#45; AY&#45;3&#45;8910 / Programmable Sound Generator">
-<area shape="rect" id="Node000001" title="#include &lt;psg.h&gt;, #include &lt;ay_3_8910.h&gt;" alt="" coords="5,23,220,64"/>
-<area shape="rect" id="Node000002" href="$group__PSG__BUFFER.html" title="Buffered access to PSG registers." alt="" coords="276,5,362,31"/>
-<area shape="rect" id="Node000003" href="$group__PSG__REGISTER.html" title="Read / Write PSG registers" alt="" coords="268,55,370,80"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__SOUNDCHIP.html" title=" " alt="" coords="5,31,115,56"/>
+<area shape="rect" id="Node000001" title="#include &lt;psg.h&gt;, #include &lt;ay_3_8910.h&gt;" alt="" coords="163,23,377,64"/>
+<area shape="rect" id="Node000003" href="$group__PSG__BUFFER.html" title="Buffered access to PSG registers." alt="" coords="433,5,519,31"/>
+<area shape="rect" id="Node000004" href="$group__PSG__REGISTER.html" title="Read / Write PSG registers" alt="" coords="425,55,527,80"/>
 </map>

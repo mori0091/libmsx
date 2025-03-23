@@ -117,9 +117,9 @@ var NAVTREEINDEX =
 [
 "ZX0__decompress_8h.html",
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a5ebee309b11e627b5f081ea3ba18732e",
-"group__SCREEN__TEXT.html",
-"group__STREAM__SEEK.html#ga6980b2506091a672bdd4cdc5e4d76627",
-"md_docs_2design-notes__crt0.html#autotoc_md29"
+"group__SCREEN__BITMAP.html#gaa17c4390b43d6f6f29b525c7c3ebc1a8",
+"group__STREAM__READ.html#ga1ffc118f69792a55c4412e50db32dcad",
+"la0_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,6 +1,7 @@
 <map id="SCREEN mode initialization" name="SCREEN mode initialization">
-<area shape="rect" id="Node000001" title="#include &lt;screen.h&gt;" alt="" coords="5,55,185,80"/>
-<area shape="rect" id="Node000004" href="$group__SCREEN__BITMAP.html" title="Initialization functions for GRAPHIC 4, 5, 6, and 7 mode." alt="" coords="233,5,382,31"/>
-<area shape="rect" id="Node000003" href="$group__SCREEN__PCG.html" title="Initialization functions for GRAPHIC 1, 2, and 3 mode." alt="" coords="239,55,376,80"/>
-<area shape="rect" id="Node000002" href="$group__SCREEN__TEXT.html" title="Initialization functions for TEXT 1 and 2 mode." alt="" coords="263,104,352,130"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__GRAPHICS.html" title=" " alt="" coords="5,55,177,80"/>
+<area shape="rect" id="Node000001" title="#include &lt;screen.h&gt;" alt="" coords="225,55,404,80"/>
+<area shape="rect" id="Node000005" href="$group__SCREEN__BITMAP.html" title="Initialization functions for GRAPHIC 4, 5, 6, and 7 mode." alt="" coords="452,5,601,31"/>
+<area shape="rect" id="Node000004" href="$group__SCREEN__PCG.html" title="Initialization functions for GRAPHIC 1, 2, and 3 mode." alt="" coords="458,55,595,80"/>
+<area shape="rect" id="Node000003" href="$group__SCREEN__TEXT.html" title="Initialization functions for TEXT 1 and 2 mode." alt="" coords="482,104,571,130"/>
 </map>

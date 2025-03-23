@@ -1,7 +1,8 @@
 <map id="SM2 (Sprite Mode 2) Animated Color Sprites." name="SM2 (Sprite Mode 2) Animated Color Sprites.">
-<area shape="rect" id="Node000001" title="SM2 module provides APIs for displaying animated multicolor sprites." alt="" coords="5,92,165,133"/>
-<area shape="rect" id="Node000004" href="$group__SM2__ANIMATION.html" title="Updates animation state of Animated Color Sprites." alt="" coords="213,5,369,46"/>
-<area shape="rect" id="Node000002" href="$group__SM2__DATATYPES.html" title="Sprite, Sprite&#45;sheet, Frame, Cel, and FrameTag." alt="" coords="233,70,349,96"/>
-<area shape="rect" id="Node000005" href="$group__SM2__DISPLAY.html" title="Display Animated Color Sprites." alt="" coords="216,120,366,161"/>
-<area shape="rect" id="Node000003" href="$group__SM2__INIT.html" title="Initialization for SM2 module." alt="" coords="232,185,350,226"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__GRAPHICS.html" title=" " alt="" coords="5,100,177,125"/>
+<area shape="rect" id="Node000001" title="SM2 module provides APIs for displaying animated multicolor sprites." alt="" coords="225,92,384,133"/>
+<area shape="rect" id="Node000005" href="$group__SM2__ANIMATION.html" title="Updates animation state of Animated Color Sprites." alt="" coords="432,5,588,46"/>
+<area shape="rect" id="Node000003" href="$group__SM2__DATATYPES.html" title="Sprite, Sprite&#45;sheet, Frame, Cel, and FrameTag." alt="" coords="452,70,568,96"/>
+<area shape="rect" id="Node000006" href="$group__SM2__DISPLAY.html" title="Display Animated Color Sprites." alt="" coords="436,120,585,161"/>
+<area shape="rect" id="Node000004" href="$group__SM2__INIT.html" title="Initialization for SM2 module." alt="" coords="451,185,569,226"/>
 </map>

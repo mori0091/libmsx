@@ -1,0 +1,8 @@
+<map id="Video / Display / Graphics." name="Video / Display / Graphics.">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,120,177,146"/>
+<area shape="rect" id="Node000002" href="$group__SCREEN.html" title="#include &lt;screen.h&gt;" alt="" coords="225,5,404,31"/>
+<area shape="rect" id="Node000003" href="$group__SM2.html" title="SM2 module provides APIs for displaying animated multicolor sprites." alt="" coords="235,55,394,96"/>
+<area shape="rect" id="Node000004" href="$group__SPRITES.html" title="#include &lt;sprite.h&gt;, #include &lt;sprite_color.h&gt;, #include &lt;metasprite.h&gt;" alt="" coords="241,120,388,146"/>
+<area shape="rect" id="Node000005" href="$group__VDP.html" title="#include &lt;vdp.h&gt;" alt="" coords="246,170,382,210"/>
+<area shape="rect" id="Node000006" href="$group__VMEM.html" title="#include &lt;vmem.h&gt;" alt="" coords="247,235,382,260"/>
+</map>

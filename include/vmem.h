@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup VMEM VRAM - Video RAM
+ * \ingroup LIBMSX_GRAPHICS
  * `#include <vmem.h>`
  */
 

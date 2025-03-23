@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup SCREEN SCREEN mode initialization
+ * \ingroup LIBMSX_GRAPHICS
  * `#include <screen.h>`
  *
  * Functions corresponding to MSX-BASIC's following SCREEN modes:

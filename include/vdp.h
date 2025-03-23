@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup VDP VDP - Video Display Processor
+ * \ingroup LIBMSX_GRAPHICS
  * `#include <vdp.h>`
  */
 

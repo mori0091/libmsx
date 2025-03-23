@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup INPUT Input device
+ * \ingroup LIBMSX_HID
  * `#include <input.h>`
  */
 

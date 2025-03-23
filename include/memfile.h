@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup STREAM Stream interface for ROM / RAM / MegaROM.
+ * \ingroup LIBMSX_STORAGE
  * `#include <memfile.h>`
  *
  * Provides a stream interface similar to the standard C library I/O streams for

@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup PSG PSG - AY-3-8910 / Programmable Sound Generator
+ * \ingroup LIBMSX_SOUNDCHIP
  * `#include <psg.h>`, `#include <ay_3_8910.h>`
  */
 

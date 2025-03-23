@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup TTY Teletype/console device.
+ * \ingroup LIBMSX_CUI
  * `#include <tty.h>`
  *
  * \note

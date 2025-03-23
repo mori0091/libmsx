@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup SPRITES Sprites / Meta-Sprites
+ * \ingroup LIBMSX_GRAPHICS
  * `#include <sprite.h>`, `#include <sprite_color.h>`, `#include <metasprite.h>`
  */
 

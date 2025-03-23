@@ -15,10 +15,8 @@
  */
 /**
  * \defgroup AUDIO The libmsx audio replayer.
+ * \ingroup LIBMSX_REPLAYER
  * `#include <audio.h>`
- */
-/**
- * \defgroup AUDIO_DECODERS Decoders for the libmsx audio replayer.
  */
 
 #ifndef AUDIO_H_
@@ -177,13 +175,15 @@ void audio_set_repeat(bool repeat);
 /** @} */
 
 /**
+ * \defgroup AUDIO_DECODERS Decoders for the libmsx audio replayer.
+ * \ingroup AUDIO
+ * Audio/Sound drivers that implements the libmsx audio decoder interfaces.
+ */
+
+/**
  * \defgroup AUDIO_EFX Effectors for the libmsx audio replayer.
  * \ingroup AUDIO
  * Effectors for the libmsx audio replayer.
- *
- * @{
  */
-
-/** @} */
 
 #endif // AUDIO_H_

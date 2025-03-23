@@ -22,6 +22,7 @@
  */
 /**
  * \defgroup ZX0 ZX0 data compression
+ * \ingroup LIBMSX_COMPRESS
  * `#include <ZX0_decompress.h>`
  */
 

@@ -20,6 +20,7 @@
  */
 /**
  * \defgroup SCC Konami SCC/SCC+ sound cartridge
+ * \ingroup LIBMSX_SOUNDCHIP
  * `#include <scc.h>`
  */
 

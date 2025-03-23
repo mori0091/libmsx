@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup BANKED_MEMORY Banked Memory interface for MegaROM.
+ * \ingroup LIBMSX_STORAGE
  * `#include <bmem.h>`
  *
  * **MegaROM** is a ROM consisting of up to 256 8KiB or 16KiB segments.

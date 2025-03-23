@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup CUI Text output
+ * \ingroup LIBMSX_CUI
  * `#include <text.h>`
  *
  * The `text.h` provides some MSX-BASIC like utility functions for text output.

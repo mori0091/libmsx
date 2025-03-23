@@ -16,6 +16,7 @@
  */
 /**
  * \defgroup SOUND_OLD Sound - Old PSG sound driver
+ * \ingroup LIBMSX_REPLAYER
  * `#include <sound.h>`, `#include <sound_eg.h>`
  */
 

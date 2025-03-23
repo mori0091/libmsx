@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup BIOS BIOS - Basic Input/Output System
+ * \ingroup LIBMSX_SYS
  * `#include <bios.h>`
  */
 

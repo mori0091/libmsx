@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup XMEM XMEM - Inter-memory transfer.
+ * \ingroup LIBMSX_SYS
  * `#include <xmem.h>`
  */
 

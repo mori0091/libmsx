@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup INTERRUPT Interrupts
+ * \ingroup LIBMSX_SYS
  * `#include <interrupt.h>`
  */
 

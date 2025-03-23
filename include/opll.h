@@ -20,6 +20,7 @@
  */
 /**
  * \defgroup OPLL OPLL - YM2413 / MSX-MUSIC
+ * \ingroup LIBMSX_SOUNDCHIP
  * `#include <opll.h>`
  */
 

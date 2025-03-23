@@ -16,6 +16,7 @@
 
 /**
  * \defgroup IM 8x8px, 16x16px bitmap image processing.
+ * \ingroup LIBMSX_IMAGE_PROC
  * `#include <im.h>`
  */
 

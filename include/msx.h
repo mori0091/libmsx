@@ -14,6 +14,16 @@
  * `libmsx`, for ease to use.
  */
 
+/** \defgroup LIBMSX_SYS         BIOS, Interrupts, Slots, etc. */
+/** \defgroup LIBMSX_HID         Human Interaction Device. */
+/** \defgroup LIBMSX_CUI         Character User Interface. */
+/** \defgroup LIBMSX_GRAPHICS    Video / Display / Graphics. */
+/** \defgroup LIBMSX_IMAGE_PROC  Image processing. */
+/** \defgroup LIBMSX_STORAGE     RAM/ROM/MegaROM Storage Interface. */
+/** \defgroup LIBMSX_REPLAYER    Audio/Sound drivers. */
+/** \defgroup LIBMSX_SOUNDCHIP   Sound devices. */
+/** \defgroup LIBMSX_COMPRESS    Compression / Decompression. */
+
 #pragma once
 
 #ifndef MSX_H

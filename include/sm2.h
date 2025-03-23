@@ -15,6 +15,7 @@
  */
 /**
  * \defgroup SM2 SM2 (Sprite Mode 2) Animated Color Sprites.
+ * \ingroup LIBMSX_GRAPHICS
  * SM2 module provides APIs for displaying animated multicolor sprites.
  *
  * SM2 is designed to use with :

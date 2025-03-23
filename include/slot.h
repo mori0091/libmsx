@@ -43,6 +43,7 @@
  */
 /**
  * \defgroup SLOT Slot - Individual Address Spaces of devices.
+ * \ingroup LIBMSX_SYS
  * `#include <slot.h>`
  */
 

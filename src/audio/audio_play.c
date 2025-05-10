@@ -12,6 +12,7 @@
  * \file audio_play.c
  */
 
+#include "audio.h"
 #include "audio__internal.h"
 
 #include <audio_buf.h>
@@ -47,9 +48,10 @@ void audio_decode(void) {
 
 void audio_play(void) {
   if (audio_.paused) return;
+  bool b = audio_is_playing();
   audio_buf_play();
   audio_decode();
-  if (!audio_is_playing()) {
+  if (b && !audio_is_playing()) {
     audio_buf_init();
   }
 }

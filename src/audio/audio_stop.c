@@ -14,10 +14,13 @@
 
 #include "audio__internal.h"
 
+#include <audio_buf.h>
+
 void audio_stop(void) {
   audio_pause();
   __asm__("di");
   audio_.bgm.is_playing = false;
   audio_.sfx.is_playing = false;
+  audio_buf_init();
   __asm__("ei");
 }

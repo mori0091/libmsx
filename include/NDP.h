@@ -23,6 +23,7 @@
  * \defgroup NDP NDP - NDP sound driver.
  * \ingroup LIBMSX_REPLAYER
  * `#include <NDP.h>`
+ * NDP - PSG Driver for MSX (libmsx version).
  *
  * This software (NDP - PSG Driver for MSX) was originally programmed and
  * provided by naruto2413 and later modified for libmsx by Daishi Mori
@@ -48,14 +49,8 @@
  *
  * This function must be called once. In particular, it must be called
  * before the first call to any other NDP APIs.
- *
- * \note
- * Currently, this function does nothing. However, for compatibility with future
- * versions, it is recommended that this function be called only once before
- * other NDP APIs.
  */
-inline void NDP_init(void) {
-}
+void NDP_init(void);
 
 /**
  * `MSX` Return the version code of the NDP sound driver.
@@ -181,50 +176,47 @@ uint8_t NDP_get_loop_counter(void);
 
 // ----------------------------------------------------------------------
 /**
- * \defgroup NDP_OPEN Open NDP song data.
+ * \defgroup NDP_SONG Open NDP song data, and set it in the driver.
  * \ingroup NDP
  *
  * @{
  */
+
+/**
+ * `MSX` Container of an opened NDP song data.
+ */
+typedef struct NDPFile {
+  MemFile mf;
+} NDPFile;
 
 /**
  * `MSX` Open NDP song data stored in ROM / RAM.
  *
- * \param ndp  Pointer to a MemFile to be initialized.
+ * \param ndp  Pointer to a NDPFile to be initialized.
  * \param loc  Location of the NDP song data.
  * \param size Size in bytes.
  * \return     Number of songs contained in the NDP file.
  */
-int NDP_open_mem(MemFile * ndp, const uint8_t * loc, size_t size);
+int NDP_open_mem(NDPFile * ndp, const uint8_t * loc, size_t size);
 
 /**
  * `MSX` Open NDP song data stored in banked memory (MegaROM).
  *
- * \param ndp  Pointer to a MemFile to be initialized.
+ * \param ndp  Pointer to a NDPFile to be initialized.
  * \param loc  Location of the NDP song data.
  * \param size Size in bytes.
  * \return     Number of songs contained in the NDP file.
  */
-int NDP_open_bmem(MemFile * ndp, bmemptr_t loc, uint32_t size);
+int NDP_open_bmem(NDPFile * ndp, bmemptr_t loc, uint32_t size);
 
 /**
  * `MSX` Open NDP file stored as named resources in banked memory (MegaROM).
  *
- * \param ndp  Pointer to a MemFile to be initialized.
+ * \param ndp  Pointer to a NDPFile to be initialized.
  * \param path Path/File name (*.NDP) of the resource.
  * \return     Number of songs contained in the NDP file.
  */
-int NDP_open_resource(MemFile * ndp, const char * path);
-
-/** @} */
-
-// ----------------------------------------------------------------------
-/**
- * \defgroup NDP_SET_SONG Set a song to the NDP sound driver.
- * \ingroup NDP
- *
- * @{
- */
+int NDP_open_resource(NDPFile * ndp, const char * path);
 
 /**
  * `MSX` Setup the NDP song data to NDP sound driver.
@@ -233,11 +225,11 @@ int NDP_open_resource(MemFile * ndp, const char * path);
  * space or within the 16KiB segment boundaries of MegaROM, set the NDP sound
  * driver to play directly from that area. Otherwise, fails.
  *
- * \param ndp  Pointer to the MemFile opened by `NDP_open_*()`.
+ * \param ndp  Pointer to the NDPFile opened by `NDP_open_*()`.
  *
  * \return `true` on success, `false` otherwise.
  */
-bool NDP_set_bgm(MemFile * ndp);
+bool NDP_set_bgm(NDPFile * ndp);
 
 /**
  * `MSX` Load and setup the NDP song data to NDP sound driver.
@@ -246,32 +238,22 @@ bool NDP_set_bgm(MemFile * ndp);
  * buffer and set the NDP sound driver to play from the buffer. Otherwise,
  * fails.
  *
- * \param ndp      Pointer to the MemFile opened by `NDP_open_*()`.
+ * \param ndp      Pointer to the NDPFile opened by `NDP_open_*()`.
  * \param buf      Pointer to RAM buffer.
  * \param buf_size Size of the buffer.
  *
  * \return `true` on success, `false` otherwise.
  */
-bool NDP_load_bgm(MemFile * ndp, uint8_t * buf, size_t buf_size);
-
-/** @} */
-
-// ----------------------------------------------------------------------
-/**
- * \defgroup NDP_METADATA Read metadata in the NDP song data.
- * \ingroup NDP
- *
- * @{
- */
+bool NDP_load_bgm(NDPFile * ndp, uint8_t * buf, size_t buf_size);
 
 /**
  * `MSX` Returns whether or not there is metadata in the NDP song data.
  *
- * \param ndp      Pointer to MemFile opened by `NDP_open_*()`.
+ * \param ndp      Pointer to NDPFile opened by `NDP_open_*()`.
  *
  * \return `true` if metadata is present, `false` otherwise.
  */
-bool NDP_has_metadata(MemFile * ndp);
+bool NDP_has_metadata(NDPFile * ndp);
 
 /**
  * `MSX` Read metadata stored in NDP song data.
@@ -291,13 +273,13 @@ bool NDP_has_metadata(MemFile * ndp);
  * If the buffer size is too short, some items in the buffer will be too short
  * or will be invalid strings.
  *
- * \param ndp      Pointer to MemFile opened by `NDP_open_*()`.
+ * \param ndp      Pointer to NDPFile opened by `NDP_open_*()`.
  * \param buf      Pointer to the buffer into which the metadata will be read.
  * \param buf_size Size of the buffer.
  *
  * \return Size read into the buffer.
  */
-size_t NDP_read_metadata(MemFile * ndp, uint8_t * buf, size_t buf_size);
+size_t NDP_read_metadata(NDPFile * ndp, uint8_t * buf, size_t buf_size);
 
 /** @} */
 

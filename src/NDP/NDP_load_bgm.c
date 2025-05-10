@@ -20,12 +20,12 @@
 
 #include <assert.h>
 
-bool NDP_load_bgm(MemFile * ndp, uint8_t * buf, size_t buf_size) {
-  uint32_t len = mfsize(ndp);
+bool NDP_load_bgm(NDPFile * ndp, uint8_t * buf, size_t buf_size) {
+  uint32_t len = mfsize(&ndp->mf);
   if (buf && (len <= buf_size)) {
     assert((uint8_t *)PAGE_ADDR(3) <= buf);
-    mfseek(ndp, 0, MEM_SEEK_SET);
-    mfread(ndp, buf, len);
+    mfseek(&ndp->mf, 0, MEM_SEEK_SET);
+    mfread(&ndp->mf, buf, len);
     NDP__set_song_ptr(0, buf);
     return true;
   }

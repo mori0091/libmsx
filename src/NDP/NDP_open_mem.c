@@ -16,7 +16,7 @@
 
 extern int NDP__verify(MemFile * mf);
 
-int NDP_open_mem(MemFile * ndp, const uint8_t * loc, size_t size) {
-  mfopen_mem(ndp, (uint8_t *)loc, size);
-  return NDP__verify(ndp);
+int NDP_open_mem(NDPFile * ndp, const uint8_t * loc, size_t size) {
+  mfopen_mem(&ndp->mf, (uint8_t *)loc, size);
+  return NDP__verify(&ndp->mf);
 }

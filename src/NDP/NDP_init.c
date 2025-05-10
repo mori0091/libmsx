@@ -9,12 +9,12 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file NDP_has_metadata.c
+ * \file NDP_init.c
  */
 
 #include <NDP.h>
+#include "NDP__internal.h"
 
-bool NDP_has_metadata(NDPFile * ndp) {
-  mfseek(&ndp->mf, 0x0b, MEM_SEEK_SET);
-  return (mfread_u8(&ndp->mf) & 2);
+void NDP_init(void) {
+  NDP_stop();
 }

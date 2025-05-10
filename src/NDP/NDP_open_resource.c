@@ -17,7 +17,7 @@
 
 extern int NDP__verify(MemFile * mf);
 
-int NDP_open_resource(MemFile * ndp, const char * path) {
+int NDP_open_resource(NDPFile * ndp, const char * path) {
   const ResourceIndex * r = resource_find(path);
   if (!r || bmem_get(r->offset) != 0xfe) return 0;
   const size_t size = bmem_get_u16(r->offset + 3) - bmem_get_u16(r->offset + 1) + 1;

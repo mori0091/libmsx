@@ -18,10 +18,10 @@
 
 #include <bios.h>
 
-bool NDP_set_bgm(MemFile * ndp) {
-  if (ndp->base.slot == 0 || ndp->base.ptr + mfsize(ndp) <= (uint8_t *)PAGE_ADDR(3)) {
-    uint8_t * ptr = ndp->base.ptr;
-    uint8_t bank = ndp->base.segment;
+bool NDP_set_bgm(NDPFile * ndp) {
+  if (ndp->mf.base.slot == 0 || ndp->mf.base.ptr + mfsize(&ndp->mf) <= (uint8_t *)PAGE_ADDR(3)) {
+    uint8_t * ptr = ndp->mf.base.ptr;
+    uint8_t bank = ndp->mf.base.segment;
     NDP__set_song_ptr(bank, ptr);
     return true;
   }

@@ -43,16 +43,19 @@ IMAGE_SIZE = 32768
 CONFIG_CRT0_MOD_ROM_HEADER = app_rom_header
 CONFIG_CRT0_MOD_START      = start_32k
 else ifeq (${CONFIG_ROM_TYPE}, ascii8)
+LIBMSX_MEGAROM = 1
 IMAGE_SIZE = 16384
 CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header
 CONFIG_CRT0_MOD_START      = start_megarom
 CONFIG_CRT0_MOD_ROM_MAPPER = rom_ascii8
 else ifeq (${CONFIG_ROM_TYPE}, ascii16)
+LIBMSX_MEGAROM = 1
 IMAGE_SIZE = 16384
 CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header
 CONFIG_CRT0_MOD_START      = start_megarom
 CONFIG_CRT0_MOD_ROM_MAPPER = rom_ascii16
 else
+LIBMSX_MEGAROM = 1
 IMAGE_SIZE = 16384
 CONFIG_CRT0_MOD_ROM_HEADER = app_megarom_header
 CONFIG_CRT0_MOD_START      = start_megarom
@@ -262,6 +265,9 @@ CFLAGS ?=
 CFLAGS += -mz80 -MMD
 CFLAGS += -I ${LIBMSX_HOME}/include
 CFLAGS += --codeseg ${DEFAULT_CODE_SEGMENT}
+ifdef LIBMSX_MEGAROM
+CFLAGS += -DLIBMSX_MEGAROM
+endif
 
 LIBMSX = ${LIBMSX_HOME}/lib/libmsx.lib
 

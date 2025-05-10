@@ -19,24 +19,20 @@ void sm2_init_sprite(sm2_Sprite * s, const sm2_SpriteSheet * sheet, const sm2_Fr
   s->sheet = sheet;
   s->tag = tag;
   if (tag) {
-    switch (tag->direction) {
-      case SM2_FORWARD:
-      case SM2_PINGPONG:
-        s->curr_frame = tag->from;
-        s->curr_direction = SM2_FORWARD;
-        break;
-      case SM2_REVERSE:
-      case SM2_PINGPONG_REVERSE:
-        s->curr_frame = tag->to;
-        s->curr_direction = SM2_REVERSE;
-        break;
+    if (tag->direction & SM2_REVERSE) {
+      s->curr_frame = tag->to;
+      s->curr_direction = SM2_REVERSE;
+    }
+    else {
+      s->curr_frame = tag->from;
+      s->curr_direction = SM2_FORWARD;
     }
   }
   else {
     s->curr_frame = 0;
     s->curr_direction = SM2_FORWARD;
   }
-  size_t duration = SM2_COUNTS_PER_MSEC * sheet->frames.ptr[s->curr_frame].duration;
+  size_t duration = !sheet ? 0 : SM2_COUNTS_PER_MSEC * sheet->frames.ptr[s->curr_frame].duration;
   s->remaining_duration = duration;
   s->repeat = 0;
 }

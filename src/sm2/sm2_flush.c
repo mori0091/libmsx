@@ -27,7 +27,8 @@ void sm2_flush(void) {
   // ---- clear list
   sm2__num_planes_in_use = sm2__num_planes_reserved;
   // ---- clear pattern cache
-  if (52 <= sm2__num_patterns_allocated) {
+  if (sm2__cache_missed) {
+    sm2__cache_missed = false;
     sm2__LiveCel_clear_all();
   }
 }

@@ -91,10 +91,10 @@ typedef struct sm2_SpriteSheet {
  * Enumeration of animation direction.
  */
 enum SM2_Direction {
-  SM2_FORWARD,
-  SM2_REVERSE,
-  SM2_PINGPONG,
-  SM2_PINGPONG_REVERSE,
+  SM2_FORWARD          = 0,
+  SM2_REVERSE          = 1,     // REVERSE
+  SM2_PINGPONG         = 2,     // PINGPONG
+  SM2_PINGPONG_REVERSE = 3,     // PINGPONG | REVERSE
 };
 
 /**

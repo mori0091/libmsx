@@ -20,6 +20,7 @@
 #include <workarea.h>
 
 // ----------------------------------------------------------------------
+bool sm2__cache_missed;
 /** Number of sprite patterns allocated. */
 uint8_t sm2__num_patterns_allocated;
 /** Number of sprite planes reserved. */
@@ -182,11 +183,10 @@ void sm2__put_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
 
 bool sm2__add_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
   const sm2__LiveCel * const livecel = sm2__LiveCel_from(cel);
-  if (!livecel) return false;
-  // const sm2__LiveCel * livecel;
-  // while (!(livecel = sm2__LiveCel_from(cel))) {
-  //   sm2__LiveCel_clear_all();
-  // }
+  if (!livecel) {
+    sm2__cache_missed = true;
+    return false;
+  }
   const uint8_t pat = livecel->base_pattern_number;
   sm2__put_cel_(pat, base_plane, cel, x, y);
   return true;

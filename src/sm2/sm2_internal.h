@@ -44,6 +44,7 @@ struct sm2__SpriteTable {
 };
 
 // ----------------------------------------------------------------------
+extern bool sm2__cache_missed;
 /** Number of sprite patterns allocated. */
 extern uint8_t sm2__num_patterns_allocated;
 /** Number of sprite planes reserved for "array" partition. */

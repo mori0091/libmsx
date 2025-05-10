@@ -196,6 +196,66 @@ void bmem_copy_to_vmem(bmemptr_t src, vmemptr_t dst, uint32_t len);
  */
 void bmem_bload_s(bmemptr_t src);
 
+/**
+ * Load a `BSAVE` formatted binary in banked memory into RAM.
+ *
+ * A `BSAVE` formatted binary must consist of a 7-byte header followed by the
+ * data body, as follows:
+ *
+ * | address       | contents                   |
+ * |---------------|----------------------------|
+ * | `src+0`       | `0xFE`                     |
+ * | `src+1`       | lo-byte of `start` address |
+ * | `src+2`       | hi-byte of `start` address |
+ * | `src+3`       | lo-byte of `end` address   |
+ * | `src+4`       | hi-byte of `end` address   |
+ * | `src+5`       | lo-byte of `run` address   |
+ * | `src+6`       | hi-byte of `run` address   |
+ * | `src+7`       | `body[0]`                  |
+ * | ...           | ...                        |
+ * | `src+7 + N-1` | `body[N-1]`                |
+ *
+ * where `N == end - start + 1`, and `start <= end`.
+ *
+ * `start` and `end` are the range of addresses where the data body was, and
+ * `run` is the address of the entry point (ignored by libmsx).
+ *
+ * This function copies the body of the data to the specified buffer starting
+ * with `buf`.
+ *
+ * Do nothing in the following cases
+ * - The data pointed by `src` is not a `BSAVE` formatted binary.
+ * - Buffer size is too small.
+ *
+ * \param src      Address of `BSAVE` foramtted binary in banked memory.
+ * \param buf      Pointer to the RAM buffer.
+ * \param buf_size Buffer size (i.e., capacity) in bytes.
+ *
+ * \note
+ * This function is supposed to copy from banked memory to page 3 of main RAM.
+ * Thus the buffer specified by `buf` and `buf_size` must be in range of
+ * `0xc000` to `0xfffe`. In `libmsx`, the `DATA` segment and stack areas are
+ * placed on page 3 so this is reasonable.
+ *
+ * \note
+ * In particular, page 2 is used to access banked memory so the buffer cannot be
+ * in page 2. Page 0 is MAIN ROM, page 1 is `CODE` segment, and the library code
+ * itself is included in `CODE` segment. So these areas cannot be specified as
+ * the buffer.
+ *
+ * \note
+ * Address `0xffff` is not memory, that is "extended slot selector" register.
+ *
+ * \attention
+ * Stack areas and work areas are overridden if they intersect the buffer
+ * specified by `buf` and `buf_size`. Unfortunately, however, the library cannot
+ * determine the appropriate bounds. The application programmer must deal with
+ * this.
+ *
+ * \sa bmem_read()
+ */
+void bmem_bload(bmemptr_t src, void * buf, size_t buf_size);
+
 /** @} */
 
 #endif // BMEM_H_

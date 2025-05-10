@@ -93,9 +93,12 @@ void resource_copy_to_vmem(const char * path, vmemptr_t dst);
 /**
  * Load a `BSAVE` formatted binary resource in banked memory into VRAM.
  *
- * Searches for an embedded resource in banked memory by name and loads it into
- * VRAM as a `BSAVE` formatted binary. If the resource is not found, or is not a
- * `BSAVE` formatted binary, do nothing.
+ * Searches for embedded resources in banked memory by name and loads them into
+ * VRAM as binaries in `BSAVE` format.
+ *
+ * Do nothing in the following cases
+ * - The resource is not found,
+ * - The resource is not a `BSAVE` formatted binary.
  *
  * This function is same as the following code:
  * ~~~ c
@@ -110,6 +113,33 @@ void resource_copy_to_vmem(const char * path, vmemptr_t dst);
  * \sa bmem_bload_s()
  */
 void resource_bload_s(const char * path);
+
+/**
+ * Load a `BSAVE` formatted binary resource in banked memory into RAM.
+ *
+ * Searches for embedded resources in banked memory by name and loads them into
+ * RAM as binaries in `BSAVE` format.
+ *
+ * Do nothing in the following cases
+ * - The resource is not found,
+ * - The resource is not a `BSAVE` formatted binary.
+ * - Buffer size is too small.
+ *
+ * This function is same as the following code:
+ * ~~~ c
+ * const ResourceIndex * res = resource_find(path);
+ * if (res) {
+ *   bmem_bload(res->offset, buf, buf_size);
+ * }
+ * ~~~
+ *
+ * \param path     path/file name of the resource.
+ * \param buf      Pointer to the RAM buffer.
+ * \param buf_size Buffer size (i.e., capacity) in bytes.
+ *
+ * \sa bmem_bload_s()
+ */
+void resource_bload(const char * path, void * buf, size_t buf_size);
 
 /** @} */
 

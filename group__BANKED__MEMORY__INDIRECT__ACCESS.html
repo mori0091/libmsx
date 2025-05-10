@@ -131,6 +131,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3ed64b1b7801620a72b3fc46a568ee8a" id="r_ga3ed64b1b7801620a72b3fc46a568ee8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ed64b1b7801620a72b3fc46a568ee8a">bmem_bload_s</a> (<a class="el" href="group__BANKED__MEMORY__DIRECT__ACCESS.html#ga2b2d2e51ae616ffb07e5acf46a963e3d">bmemptr_t</a> src)</td></tr>
 <tr class="memdesc:ga3ed64b1b7801620a72b3fc46a568ee8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a <code>BSAVE</code> formatted binary in banked memory into VRAM.  <br /></td></tr>
 <tr class="separator:ga3ed64b1b7801620a72b3fc46a568ee8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12fb310d476eae40d37985899d689184" id="r_ga12fb310d476eae40d37985899d689184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12fb310d476eae40d37985899d689184">bmem_bload</a> (<a class="el" href="group__BANKED__MEMORY__DIRECT__ACCESS.html#ga2b2d2e51ae616ffb07e5acf46a963e3d">bmemptr_t</a> src, void *buf, size_t buf_size)</td></tr>
+<tr class="memdesc:ga12fb310d476eae40d37985899d689184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a <code>BSAVE</code> formatted binary in banked memory into RAM.  <br /></td></tr>
+<tr class="separator:ga12fb310d476eae40d37985899d689184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>APIs for indirect access to banked memory. </p>
@@ -316,6 +319,81 @@ Address <code>0xffff</code> is not memory, that is "extended slot selector" regi
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga12fb310d476eae40d37985899d689184" name="ga12fb310d476eae40d37985899d689184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12fb310d476eae40d37985899d689184">&#9670;&#160;</a></span>bmem_bload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bmem_bload </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__BANKED__MEMORY__DIRECT__ACCESS.html#ga2b2d2e51ae616ffb07e5acf46a963e3d">bmemptr_t</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>buf_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load a <code>BSAVE</code> formatted binary in banked memory into RAM. </p>
+<p>A <code>BSAVE</code> formatted binary must consist of a 7-byte header followed by the data body, as follows:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">address   </th><th class="markdownTableHeadNone">contents    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>src+0</code>   </td><td class="markdownTableBodyNone"><code>0xFE</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>src+1</code>   </td><td class="markdownTableBodyNone">lo-byte of <code>start</code> address    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>src+2</code>   </td><td class="markdownTableBodyNone">hi-byte of <code>start</code> address    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>src+3</code>   </td><td class="markdownTableBodyNone">lo-byte of <code>end</code> address    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>src+4</code>   </td><td class="markdownTableBodyNone">hi-byte of <code>end</code> address    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>src+5</code>   </td><td class="markdownTableBodyNone">lo-byte of <code>run</code> address    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>src+6</code>   </td><td class="markdownTableBodyNone">hi-byte of <code>run</code> address    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>src+7</code>   </td><td class="markdownTableBodyNone"><code>body[0]</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">...   </td><td class="markdownTableBodyNone">...    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>src+7 + N-1</code>   </td><td class="markdownTableBodyNone"><code>body[N-1]</code>   </td></tr>
+</table>
+<p>where <code>N == end - start + 1</code>, and <code>start &lt;= end</code>.</p>
+<p><code>start</code> and <code>end</code> are the range of addresses where the data body was, and <code>run</code> is the address of the entry point (ignored by libmsx).</p>
+<p>This function copies the body of the data to the specified buffer starting with <code>buf</code>.</p>
+<p>Do nothing in the following cases</p><ul>
+<li>The data pointed by <code>src</code> is not a <code>BSAVE</code> formatted binary.</li>
+<li>Buffer size is too small.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Address of <code>BSAVE</code> foramtted binary in banked memory. </td></tr>
+    <tr><td class="paramname">buf</td><td>Pointer to the RAM buffer. </td></tr>
+    <tr><td class="paramname">buf_size</td><td>Buffer size (i.e., capacity) in bytes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function is supposed to copy from banked memory to page 3 of main RAM. Thus the buffer specified by <code>buf</code> and <code>buf_size</code> must be in range of <code>0xc000</code> to <code>0xfffe</code>. In <code>libmsx</code>, the <code>DATA</code> segment and stack areas are placed on page 3 so this is reasonable.</dd>
+<dd>
+In particular, page 2 is used to access banked memory so the buffer cannot be in page 2. Page 0 is MAIN ROM, page 1 is <code>CODE</code> segment, and the library code itself is included in <code>CODE</code> segment. So these areas cannot be specified as the buffer.</dd>
+<dd>
+Address <code>0xffff</code> is not memory, that is "extended slot selector" register.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Stack areas and work areas are overridden if they intersect the buffer specified by <code>buf</code> and <code>buf_size</code>. Unfortunately, however, the library cannot determine the appropriate bounds. The application programmer must deal with this.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#gaefe31ff8cf61d521f109fc875e841a98" title="Read byte sequence from banked memory.">bmem_read()</a> </dd></dl>
 
 </div>
 </div>

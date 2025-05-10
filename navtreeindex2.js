@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"group__SCREEN__BITMAP.html#ga266ffb0556afacd9958b037cab14101e":[7,3,0,2,5],
+"group__SCREEN__BITMAP.html#ga85488f498679bc6feec298f2ea19bfb3":[7,3,0,2,2],
 "group__SCREEN__BITMAP.html#gaa17c4390b43d6f6f29b525c7c3ebc1a8":[7,3,0,2,1],
 "group__SCREEN__BITMAP.html#gad21925bfe1b1c2ed2961eaa36a890127":[7,3,0,2,3],
 "group__SCREEN__BITMAP.html#gaf9e640110975fa52e903459b8f2262b4":[7,3,0,2,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "group__STREAM__ERR.html#gad09ffad284dac9d422b3f217c95dcfe5":[7,5,1,1,0],
 "group__STREAM__OPEN.html":[7,5,1,0],
 "group__STREAM__OPEN.html#ga787062b73cde04de10865d3f857ec70c":[7,5,1,0,0],
-"group__STREAM__OPEN.html#gabd480c4a69f86399cf445337a42afd11":[7,5,1,0,1],
-"group__STREAM__OPEN.html#gae681870112a3ac2235d8730b713e0e02":[7,5,1,0,2],
-"group__STREAM__READ.html":[7,5,1,2]
+"group__STREAM__OPEN.html#gabd480c4a69f86399cf445337a42afd11":[7,5,1,0,1]
 };

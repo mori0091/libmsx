@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a36953a072fe4f8b633885cf9aaa1510b":[7,4,0,3,0,1],
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a5ebee309b11e627b5f081ea3ba18732e":[7,4,0,3,0,9],
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a61abece7f5ed285df85df94458c3c1bc":[7,4,0,3,0,4],
 "group__IM__TILEMAP__BM8x8.html#ggafa2a1d17209d9f2522669013acdc9245a6bd4971bca607c270db7625d3e021c20":[7,4,0,3,0,5],
@@ -145,6 +146,7 @@ var NAVTREEINDEX1 =
 "group__RESOURCES__FIND.html#structResourceIndex":[7,5,0,2,0,0],
 "group__RESOURCES__INDIRECT__ACCESS.html":[7,5,0,2,1],
 "group__RESOURCES__INDIRECT__ACCESS.html#gac3511f25925f2d76f49b14f5ed1bb7c0":[7,5,0,2,1,0],
+"group__RESOURCES__INDIRECT__ACCESS.html#gacb904ec4ee5d85956d19a8543d2574d5":[7,5,0,2,1,2],
 "group__RESOURCES__INDIRECT__ACCESS.html#gadfd8bea2f263b24cff97fd68992a1eff":[7,5,0,2,1,1],
 "group__SCC.html":[7,7,2],
 "group__SCC__BUFFER.html":[7,7,2,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "group__SCC__PREDEFINED__WAVEFORMS.html#gafe4b5e0a663a8a574359d535e03cea47":[7,7,2,2,9],
 "group__SCREEN.html":[7,3,0],
 "group__SCREEN__BITMAP.html":[7,3,0,2],
-"group__SCREEN__BITMAP.html#ga1827e3a2a2ef9778ada89048e80f7221":[7,3,0,2,0],
-"group__SCREEN__BITMAP.html#ga266ffb0556afacd9958b037cab14101e":[7,3,0,2,5],
-"group__SCREEN__BITMAP.html#ga85488f498679bc6feec298f2ea19bfb3":[7,3,0,2,2]
+"group__SCREEN__BITMAP.html#ga1827e3a2a2ef9778ada89048e80f7221":[7,3,0,2,0]
 };

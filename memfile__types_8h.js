@@ -15,5 +15,7 @@ var memfile__types_8h =
       [ "read1", "memfile__types_8h.html#a282d9e3b0657e08728e7d1a6cbe603cd", null ],
       [ "read", "memfile__types_8h.html#ae4785d624a9b7cfd938cdb3790bbb3d5", null ],
       [ "seek", "memfile__types_8h.html#a48aaca391661a2d162651a056783bdc9", null ]
-    ] ]
+    ] ],
+    [ "mfpos", "memfile__types_8h.html#ad10f2c8e31dff5f33d0c3dcb894f8562", null ],
+    [ "mfsize", "memfile__types_8h.html#a5f55ae62ff4ae5820673fb78fc58cad4", null ]
 ];

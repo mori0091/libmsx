@@ -43,4 +43,7 @@ struct MemFileMethods {
   void (* seek)(struct MemPos * dst, const struct MemPos * src, long offset);
 };
 
+uint32_t mfpos(const struct MemPos * pos);
+uint32_t mfsize(struct MemFile * mf);
+
 #endif // MEMFILE_TYPES_H_

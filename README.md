@@ -74,6 +74,15 @@ The below functionality is supported.
     - Read/Write registers.
 
 - Sound driver
+  - NDP - PSG Driver for MSX
+    - NTSC (60Hz)
+    - Stop, Start, Pause, Resume, Auto-Repeat.
+    - NDP was originally programmed and provided by
+      [naruto2413](https://x.com/naruto2413) and later modified for libmsx by
+      Daishi Mori ([mori0091](https://x.com/mori0091)).
+    - The original NDP driver for MSX and MML editor/compiler for Windows are
+      distributed at the following site by naruto2413.
+      - See also [NDP - PSG Driver for MSX](https://ndp.squares.net/web/)
   - LA0 - a PSG, SCC/SCC+, and OPLL sound driver
     - NTSC (60Hz), PAL/SECAM (50Hz), auto detect and auto adjust.
     - Available to specify default playing frequency that the sound data author expecting.
@@ -115,19 +124,6 @@ The below functionality is supported.
 > The origins of the ZX0 data compression format and algorithm were designed and
 > implemented by Einar Saukas.  
 > See also <https://github.com/einar-saukas/ZX0>.
-
-
-## Unsupported functionality
-
-The below functionality is NOT supported yet.
-
-- Keyboard input
-- Sound output
-  - ~~PSG (AY-3-8910)~~ `supported`
-  - ~~OPLL (YM2413 / MSX-MUSIC)~~ `supported`
-- ~~BGM driver~~ `supported`
-- ~~Sound effect driver~~ `supported`
-- … and so on
 
 
 # Pre-requisites

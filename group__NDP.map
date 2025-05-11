@@ -1,6 +1,6 @@
 <map id="NDP &#45; NDP sound driver." name="NDP &#45; NDP sound driver.">
-<area shape="rect" id="Node000002" href="$group__LIBMSX__REPLAYER.html" title=" " alt="" coords="5,46,146,72"/>
-<area shape="rect" id="Node000001" title="#include &lt;NDP.h&gt; NDP &#45; PSG Driver for MSX (libmsx version)." alt="" coords="194,46,357,72"/>
-<area shape="rect" id="Node000003" href="$group__NDP__REPLAYER.html" title="The replayer APIs of the NDP sound driver." alt="" coords="405,5,554,46"/>
-<area shape="rect" id="Node000004" href="$group__NDP__SONG.html" title=" " alt="" coords="406,71,554,111"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__REPLAYER.html" title=" " alt="" coords="5,46,171,72"/>
+<area shape="rect" id="Node000001" title="#include &lt;NDP.h&gt; NDP &#45; PSG Driver for MSX (libmsx version)." alt="" coords="219,46,382,72"/>
+<area shape="rect" id="Node000003" href="$group__NDP__REPLAYER.html" title="The replayer APIs of the NDP sound driver." alt="" coords="430,5,579,46"/>
+<area shape="rect" id="Node000004" href="$group__NDP__SONG.html" title=" " alt="" coords="430,71,579,111"/>
 </map>

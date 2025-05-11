@@ -102,7 +102,7 @@ $(function(){initNavTree('group__SNDDRV__API.html',''); initResizable(true); });
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">SNDDRV APIs<div class="ingroups"><a class="el" href="group__LIBMSX__REPLAYER.html">Audio/Sound drivers.</a> &raquo; <a class="el" href="group__AUDIO.html">The libmsx audio replayer.</a> &raquo; <a class="el" href="group__AUDIO__DECODERS.html">Decoders for the libmsx audio replayer.</a> &raquo; <a class="el" href="group__SNDDRV.html">SNDDRV - PSG sound driver</a></div></div></div>
+  <div class="headertitle"><div class="title">SNDDRV APIs<div class="ingroups"><a class="el" href="group__LIBMSX__REPLAYER.html">Sound drivers / replayers.</a> &raquo; <a class="el" href="group__SNDDRV.html">SNDDRV - PSG sound driver</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -201,7 +201,7 @@ Variables</h2></td></tr>
 <p>The value of the playback speed multiplier for 1.0x speed. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="#ga87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="snddrv_8h_source.html#l00065">65</a> of file <a class="el" href="snddrv_8h_source.html">snddrv.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="snddrv_8h_source.html#l00063">63</a> of file <a class="el" href="snddrv_8h_source.html">snddrv.h</a>.</p>
 
 </div>
 </div>
@@ -249,7 +249,7 @@ Variables</h2></td></tr>
 <p><code>MSX</code> Returns current player frequency of the background music. </p>
 <dl class="section return"><dt>Returns</dt><dd>frequency in Hz.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga3875410cecb97c263fc05658620754d6" title="MSX Return replayer frequency of the background music.">audio_get_bgm_frequency()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ Variables</h2></td></tr>
 <a class="el" href="#ga87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>When a music is set by <a class="el" href="#gaa7d178deaf1d7d9621cb4321d5226a51" title="MSX Sets the specified music as BGM in the sound driver.">snd_set_bgm()</a>, the player frequency is calculated regarding to the default frequency of the music and the speed set by <a class="el" href="#ga87c11bc841b809b3770261547c710a5e" title="MSX Sets the playback speed multiplier for background music.">snd_set_speed()</a>.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga6d64e9130ae940b5b63341b6e371417a" title="MSX Force replayer frequency of the background music.">audio_set_bgm_frequency()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -305,7 +305,7 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><a class="code hl_function" href="#ga87c11bc841b809b3770261547c710a5e">snd_set_speed</a>(<a class="code hl_define" href="#gac471cd048a903e718b845d72c030dd7d">SND_SPEED_1X</a> * 2);  <span class="comment">// 2.0x faster playback</span></div>
 <div class="line"><a class="code hl_function" href="#ga87c11bc841b809b3770261547c710a5e">snd_set_speed</a>(<a class="code hl_define" href="#gac471cd048a903e718b845d72c030dd7d">SND_SPEED_1X</a> / 4);  <span class="comment">// 1/4x slower playback</span></div>
 <div class="ttc" id="agroup__SNDDRV__API_html_ga87c11bc841b809b3770261547c710a5e"><div class="ttname"><a href="#ga87c11bc841b809b3770261547c710a5e">snd_set_speed</a></div><div class="ttdeci">void snd_set_speed(uint8_t multiplier)</div><div class="ttdoc">MSX Sets the playback speed multiplier for background music.</div></div>
-<div class="ttc" id="agroup__SNDDRV__API_html_gac471cd048a903e718b845d72c030dd7d"><div class="ttname"><a href="#gac471cd048a903e718b845d72c030dd7d">SND_SPEED_1X</a></div><div class="ttdeci">#define SND_SPEED_1X</div><div class="ttdoc">The value of the playback speed multiplier for 1.0x speed.</div><div class="ttdef"><b>Definition</b> <a href="snddrv_8h_source.html#l00065">snddrv.h:65</a></div></div>
+<div class="ttc" id="agroup__SNDDRV__API_html_gac471cd048a903e718b845d72c030dd7d"><div class="ttname"><a href="#gac471cd048a903e718b845d72c030dd7d">SND_SPEED_1X</a></div><div class="ttdeci">#define SND_SPEED_1X</div><div class="ttdoc">The value of the playback speed multiplier for 1.0x speed.</div><div class="ttdef"><b>Definition</b> <a href="snddrv_8h_source.html#l00063">snddrv.h:63</a></div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">multiplier</td><td>the playback speed multiplier </td></tr>
@@ -345,7 +345,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga31365c1f539768439ac6cc90ca6d03d4" title="MSX Turn on/off the auto-repeat of the BGM.">audio_set_repeat()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -465,7 +465,7 @@ Variables</h2></td></tr>
 <p><code>MSX</code> Return whether BGM and/or SFX is playing or not. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if BGM and/or SFX is playing.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga4f0effd895fb60dcd4e9cf128dc9a415" title="MSX Return whether BGM and/or SFX is playing or not.">audio_is_playing()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -487,7 +487,7 @@ Variables</h2></td></tr>
 <p><code>MSX</code> Return whether BGM is playing or not. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if BGM is playing.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga40b96df5f88f3b095c478fdc52187a17" title="MSX Return whether BGM is playing or not.">audio_is_playing_bgm()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -509,7 +509,7 @@ Variables</h2></td></tr>
 <p><code>MSX</code> Return whether SFX is playing or not. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if SFX is playing.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#gaa75bd271a138160146d625905f6bfadf" title="MSX Return whether SFX is playing or not.">audio_is_playing_sfx()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -530,7 +530,7 @@ Variables</h2></td></tr>
 
 <p><code>MSX</code> Initialize the PSG and the sound driver. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga780026a09284372732eeca5c1bdeda0b" title="MSX Initialize the libmsx audio replayer.">audio_init()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -551,7 +551,7 @@ Variables</h2></td></tr>
 
 <p><code>MSX</code> Start / Resume music. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga3407b4aecd070535031cd798a3eb31fb" title="MSX Start / Resume music.">audio_start()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -572,7 +572,7 @@ Variables</h2></td></tr>
 
 <p><code>MSX</code> Pause music. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga15c8897e7d28d4cd0af5803c93e33826" title="MSX Pause music.">audio_pause()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -593,7 +593,7 @@ Variables</h2></td></tr>
 
 <p><code>MSX</code> Return whether paused or not. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga7117b7b122b253687d22e5b06756123e" title="MSX Return whether paused or not.">audio_is_paused()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -614,7 +614,7 @@ Variables</h2></td></tr>
 
 <p><code>MSX</code> Stop music. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#ga73426854832aac09b270b5a893a57408" title="MSX Stop music.">audio_stop()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>
@@ -635,7 +635,7 @@ Variables</h2></td></tr>
 
 <p><code>MSX</code> Main routine of the sound driver. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated</a></b></dt><dd>Use <a class="el" href="group__AUDIO__REPLAYER.html#gacb7bf1b1c5b07828d8a582084224011f" title="MSX Main routine of the libmsx audio replayer.">audio_play()</a> instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt;">The libmsx audio replayer.</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers.">The libmsx audio replayer.</a> </dd></dl>
 
 </div>
 </div>

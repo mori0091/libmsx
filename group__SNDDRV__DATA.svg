@@ -11,7 +11,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="group__SNDDRV.html" target="_top" xlink:title="#include &lt;snddrv.h&gt;">
+<g id="a_Node000002"><a xlink:href="group__SNDDRV.html" target="_top" xlink:title="#include &lt;snddrv.h&gt; SNDDRV is a PSG sound driver inspired by Arkos Tracker 2.">
 <polygon fill="white" stroke="#666666" points="114.25,-30.5 0,-30.5 0,0 114.25,0 114.25,-30.5"/>
 <text text-anchor="start" x="8" y="-17" font-family="Helvetica,sans-Serif" font-size="10.00">SNDDRV &#45; PSG sound</text>
 <text text-anchor="middle" x="57.12" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00"> driver</text>

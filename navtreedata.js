@@ -116,11 +116,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "NDP_8h.html",
-"group__IM__TILEMAP__BM8x8.html#ga5901522cb37c02daaac7e181034447b6",
-"group__SCC__PREDEFINED__WAVEFORMS.html#gaad149b4daa1883848d3630552cb22c4e",
-"group__SPRITES__ATTR.html#structsprite",
-"index.html#autotoc_md12",
-"workarea_8h.html#af0308ee928d41382ca763102fd14b16f"
+"group__IM__TILEMAP__BM8x8.html#gafa2a1d17209d9f2522669013acdc9245",
+"group__SCC__PREDEFINED__WAVEFORMS.html#gaad6e6794f5d0baaf94d0cb0d9a55171e",
+"group__SPRITES__COLOR.html",
+"index.html#autotoc_md13",
+"workarea_8h.html#af1f802040ae669a8e6ba38a9366f7fd6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

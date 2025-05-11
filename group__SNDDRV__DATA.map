@@ -1,4 +1,4 @@
 <map id="Sound data structure" name="Sound data structure">
-<area shape="rect" id="Node000002" href="$group__SNDDRV.html" title="#include &lt;snddrv.h&gt;" alt="" coords="5,5,158,46"/>
+<area shape="rect" id="Node000002" href="$group__SNDDRV.html" title="#include &lt;snddrv.h&gt; SNDDRV is a PSG sound driver inspired by Arkos Tracker 2." alt="" coords="5,5,158,46"/>
 <area shape="rect" id="Node000001" title="Sound data structure for SNDDRV." alt="" coords="206,13,346,38"/>
 </map>

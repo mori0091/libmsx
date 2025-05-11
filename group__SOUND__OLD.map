@@ -1,6 +1,6 @@
 <map id="Sound &#45; Old PSG sound driver" name="Sound &#45; Old PSG sound driver">
-<area shape="rect" id="Node000002" href="$group__LIBMSX__REPLAYER.html" title=" " alt="" coords="5,31,146,56"/>
-<area shape="rect" id="Node000001" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" alt="" coords="194,23,351,64"/>
-<area shape="rect" id="Node000003" href="$group__SOUND__OLD__API.html" title="Old PSG sound driver APIs." alt="" coords="419,5,596,31"/>
-<area shape="rect" id="Node000004" href="$group__SOUND__OLD__EG__API.html" title="Software envelope generator interface" alt="" coords="399,55,616,80"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__REPLAYER.html" title=" " alt="" coords="5,31,171,56"/>
+<area shape="rect" id="Node000001" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" alt="" coords="219,23,376,64"/>
+<area shape="rect" id="Node000003" href="$group__SOUND__OLD__API.html" title="Old PSG sound driver APIs." alt="" coords="444,5,621,31"/>
+<area shape="rect" id="Node000004" href="$group__SOUND__OLD__EG__API.html" title="Software envelope generator interface" alt="" coords="424,55,641,80"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="SNDDRV &#45; PSG sound driver" name="SNDDRV &#45; PSG sound driver">
-<area shape="rect" id="Node000002" href="$group__AUDIO__DECODERS.html" title="Audio/Sound drivers that implements the libmsx audio decoder interfaces." alt="" coords="5,23,161,64"/>
-<area shape="rect" id="Node000001" title="#include &lt;snddrv.h&gt;" alt="" coords="209,23,361,64"/>
-<area shape="rect" id="Node000004" href="$group__SNDDRV__API.html" title="SNDDRV APIs." alt="" coords="425,5,533,31"/>
-<area shape="rect" id="Node000003" href="$group__SNDDRV__DATA.html" title="Sound data structure for SNDDRV." alt="" coords="409,55,549,80"/>
+<area shape="rect" id="Node000002" href="$group__LIBMSX__REPLAYER.html" title=" " alt="" coords="5,31,171,56"/>
+<area shape="rect" id="Node000001" title="#include &lt;snddrv.h&gt; SNDDRV is a PSG sound driver inspired by Arkos Tracker 2." alt="" coords="219,23,371,64"/>
+<area shape="rect" id="Node000004" href="$group__SNDDRV__API.html" title="SNDDRV APIs." alt="" coords="435,5,543,31"/>
+<area shape="rect" id="Node000003" href="$group__SNDDRV__DATA.html" title="Sound data structure for SNDDRV." alt="" coords="419,55,559,80"/>
 </map>

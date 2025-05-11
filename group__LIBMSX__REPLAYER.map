@@ -1,6 +1,8 @@
-<map id="Audio/Sound drivers." name="Audio/Sound drivers.">
-<area shape="rect" id="Node000002" href="$group__AUDIO.html" title="#include &lt;audio.h&gt;" alt="" coords="194,5,362,31"/>
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,146,80"/>
-<area shape="rect" id="Node000003" href="$group__NDP.html" title="#include &lt;NDP.h&gt; NDP &#45; PSG Driver for MSX (libmsx version)." alt="" coords="196,55,360,80"/>
-<area shape="rect" id="Node000004" href="$group__SOUND__OLD.html" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" alt="" coords="199,104,356,145"/>
+<map id="Sound drivers / replayers." name="Sound drivers / replayers.">
+<area shape="rect" id="Node000002" href="$group__AUDIO.html" title="#include &lt;audio.h&gt; Framework for sound drivers / replayers." alt="" coords="219,5,387,31"/>
+<area shape="rect" id="Node000003" href="$group__LA0__DECODER.html" title="#include &lt;la0.h&gt; LA0 decoder is a decoder for the libmsx audio replayer." alt="" coords="229,55,377,96"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,120,171,146"/>
+<area shape="rect" id="Node000004" href="$group__NDP.html" title="#include &lt;NDP.h&gt; NDP &#45; PSG Driver for MSX (libmsx version)." alt="" coords="221,120,384,146"/>
+<area shape="rect" id="Node000005" href="$group__SNDDRV.html" title="#include &lt;snddrv.h&gt; SNDDRV is a PSG sound driver inspired by Arkos Tracker 2." alt="" coords="227,170,379,210"/>
+<area shape="rect" id="Node000006" href="$group__SOUND__OLD.html" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" alt="" coords="224,235,382,276"/>
 </map>

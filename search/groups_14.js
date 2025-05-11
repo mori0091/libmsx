@@ -10,11 +10,12 @@ var searchData=
   ['reading_20and_20copying_20from_20banked_20memory_7',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
   ['reading_20and_20copying_20from_20resource_20in_20banked_20memory_8',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
   ['registers_9',['registers',['../group__VDP__COLOR__REGISTER.html',1,'Color registers'],['../group__VDP__CONTROL__REGISTER.html',1,'Control registers'],['../group__VDP__DISPLAY__REGISTER.html',1,'Display registers'],['../group__VDP__MODE__REGISTER.html',1,'Mode registers'],['../group__VDP__PALETTE__REGISTER.html',1,'Palette registers'],['../group__PSG__REGISTER.html',1,'PSG registers'],['../group__VDP__STATUS__REGISTER.html',1,'Status registers'],['../group__VDP__TABLE__BASE__ADDRESS__REGISTER.html',1,'Table base address registers']]],
-  ['replayer_10',['replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__DECODERS.html',1,'Decoders for the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
+  ['replayer_10',['replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
   ['replayer_20apis_20of_20the_20ndp_20sound_20driver_11',['The replayer APIs of the NDP sound driver.',['../group__NDP__REPLAYER.html',1,'']]],
-  ['resource_20in_20banked_20memory_12',['resource in banked memory',['../group__RESOURCES__FIND.html',1,'Find a resource in banked memory.'],['../group__RESOURCES__INDIRECT__ACCESS.html',1,'Reading and copying from resource in banked memory.']]],
-  ['resources_13',['Banked Memory as a storage of Named Resources.',['../group__RESOURCES.html',1,'']]],
-  ['rom_20megarom_20storage_20interface_14',['RAM/ROM/MegaROM Storage Interface.',['../group__LIBMSX__STORAGE.html',1,'']]],
-  ['rom_20ram_20access_15',['A part of building blocks for inter-memory transfer, dedicated to ROM / RAM access.',['../group__MEM__RW.html',1,'']]],
-  ['rom_20ram_20megarom_16',['Stream interface for ROM / RAM / MegaROM.',['../group__STREAM.html',1,'']]]
+  ['replayers_12',['Sound drivers / replayers.',['../group__LIBMSX__REPLAYER.html',1,'']]],
+  ['resource_20in_20banked_20memory_13',['resource in banked memory',['../group__RESOURCES__FIND.html',1,'Find a resource in banked memory.'],['../group__RESOURCES__INDIRECT__ACCESS.html',1,'Reading and copying from resource in banked memory.']]],
+  ['resources_14',['Banked Memory as a storage of Named Resources.',['../group__RESOURCES.html',1,'']]],
+  ['rom_20megarom_20storage_20interface_15',['RAM/ROM/MegaROM Storage Interface.',['../group__LIBMSX__STORAGE.html',1,'']]],
+  ['rom_20ram_20access_16',['A part of building blocks for inter-memory transfer, dedicated to ROM / RAM access.',['../group__MEM__RW.html',1,'']]],
+  ['rom_20ram_20megarom_17',['Stream interface for ROM / RAM / MegaROM.',['../group__STREAM.html',1,'']]]
 ];

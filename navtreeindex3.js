@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"group__SPRITES__ATTR.html#structsprite":[7,3,2,1,0],
 "group__SPRITES__COLOR.html":[7,3,2,2],
 "group__SPRITES__COLOR.html#a96825be5e00cd459cc7a1d7270daf13f":[7,3,2,2,0,0],
 "group__SPRITES__COLOR.html#ga59dc3146fb9b82d907c720b86286b853":[7,3,2,2,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "index.html":[0],
 "index.html#autotoc_md1":[0,0],
 "index.html#autotoc_md10":[0,4,0,0],
-"index.html#autotoc_md11":[0,4,0,1]
+"index.html#autotoc_md11":[0,4,0,1],
+"index.html#autotoc_md12":[0,4,1]
 };

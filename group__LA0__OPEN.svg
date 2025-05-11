@@ -11,7 +11,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="group__LA0__DECODER.html" target="_top" xlink:title="#include &lt;la0.h&gt;">
+<g id="a_Node000002"><a xlink:href="group__LA0__DECODER.html" target="_top" xlink:title="#include &lt;la0.h&gt; LA0 decoder is a decoder for the libmsx audio replayer.">
 <polygon fill="white" stroke="#666666" points="111.25,-30.5 0,-30.5 0,0 111.25,0 111.25,-30.5"/>
 <text text-anchor="start" x="8" y="-17" font-family="Helvetica,sans-Serif" font-size="10.00">LA0 &#45; PSG, SCC/SCC</text>
 <text text-anchor="middle" x="55.62" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">+, OPLL sound driver.</text>

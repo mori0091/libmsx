@@ -23,8 +23,7 @@ var searchData=
   ['as_20a_20storage_20of_20named_20resources_20',['Banked Memory as a storage of Named Resources.',['../group__RESOURCES.html',1,'']]],
   ['attribute_20table_21',['Sprite attribute table',['../group__SPRITES__ATTR.html',1,'']]],
   ['audio_20decoder_20interface_20for_20the_20libmsx_20audio_20replayer_22',['The audio decoder interface for the libmsx audio replayer.',['../group__AUDIO__DECODER.html',1,'']]],
-  ['audio_20replayer_23',['audio replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__DECODERS.html',1,'Decoders for the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
-  ['audio_20sound_20drivers_24',['Audio/Sound drivers.',['../group__LIBMSX__REPLAYER.html',1,'']]],
-  ['await_20interrupts_25',['Await interrupts',['../group__INTERRUPT__AWAIT.html',1,'']]],
-  ['ay_203_208910_20programmable_20sound_20generator_26',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]]
+  ['audio_20replayer_23',['audio replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.'],['../group__AUDIO.html',1,'The libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
+  ['await_20interrupts_24',['Await interrupts',['../group__INTERRUPT__AWAIT.html',1,'']]],
+  ['ay_203_208910_20programmable_20sound_20generator_25',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]]
 ];

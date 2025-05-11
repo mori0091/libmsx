@@ -40,7 +40,7 @@ var searchData=
   ['sound_20devices_37',['Sound devices.',['../group__LIBMSX__SOUNDCHIP.html',1,'']]],
   ['sound_20driver_38',['sound driver',['../group__LA0__DECODER.html',1,'LA0 - PSG, SCC/SCC+, OPLL sound driver.'],['../group__NDP.html',1,'NDP - NDP sound driver.'],['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver'],['../group__NDP__REPLAYER.html',1,'The replayer APIs of the NDP sound driver.']]],
   ['sound_20driver_20apis_39',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
-  ['sound_20drivers_40',['Audio/Sound drivers.',['../group__LIBMSX__REPLAYER.html',1,'']]],
+  ['sound_20drivers_20replayers_40',['Sound drivers / replayers.',['../group__LIBMSX__REPLAYER.html',1,'']]],
   ['sound_20generator_41',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],
   ['sound_20old_20psg_20sound_20driver_42',['Sound - Old PSG sound driver',['../group__SOUND__OLD.html',1,'']]],
   ['spaces_20of_20devices_43',['Slot - Individual Address Spaces of devices.',['../group__SLOT.html',1,'']]],

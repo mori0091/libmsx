@@ -25,7 +25,7 @@ var searchData=
   ['for_20rom_20ram_20megarom_22',['Stream interface for ROM / RAM / MegaROM.',['../group__STREAM.html',1,'']]],
   ['for_20scc_20scc_23',['Predefined waveforms for SCC/SCC+.',['../group__SCC__PREDEFINED__WAVEFORMS.html',1,'']]],
   ['for_20sm2_20module_24',['SM2 initialization for SM2 module.',['../group__SM2__INIT.html',1,'']]],
-  ['for_20the_20libmsx_20audio_20replayer_25',['for the libmsx audio replayer',['../group__AUDIO__DECODERS.html',1,'Decoders for the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.']]],
+  ['for_20the_20libmsx_20audio_20replayer_25',['for the libmsx audio replayer',['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.']]],
   ['forclr_26',['FORCLR',['../workarea_8h.html#ab36c2be4a568640a5609475f4fc7a22f',1,'workarea.h']]],
   ['format_27',['LA0 file/data format',['../md_docs_2design-notes__la0.html#autotoc_md36',1,'']]],
   ['format_200_28',['DESIGN NOTE : LA0 - The libmsx audio format 0.',['../md_docs_2design-notes__la0.html',1,'']]],

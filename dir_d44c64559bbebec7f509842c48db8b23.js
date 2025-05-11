@@ -23,6 +23,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "memfile.h", "memfile_8h.html", "memfile_8h" ],
     [ "metasprite.h", "metasprite_8h.html", "metasprite_8h" ],
     [ "msx.h", "msx_8h.html", "msx_8h" ],
+    [ "NDP.h", "NDP_8h.html", "NDP_8h" ],
     [ "opll.h", "opll_8h.html", "opll_8h" ],
     [ "opll_buf.h", "opll__buf_8h.html", "opll__buf_8h" ],
     [ "psg.h", "psg_8h.html", "psg_8h" ],

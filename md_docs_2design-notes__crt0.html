@@ -101,7 +101,7 @@ $(function(){initNavTree('md_docs_2design-notes__crt0.html',''); initResizable(t
   <div class="headertitle"><div class="title">DESIGN NOTE : crt0 - C startup routine</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md21"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md20"></a></p>
 <p>The <code>crt0</code> - C startup routine - shall be configured accoring to ROM image size and/or ROM type.</p>
 <p>To configure ROM image size and/or ROM type for your application, define <code>CONFIG_ROM_TYPE</code> variable in your <code>Makefile</code> as follows:</p>
 <div class="fragment"><div class="line"> makefile</div>
@@ -115,9 +115,9 @@ $(function(){initNavTree('md_docs_2design-notes__crt0.html',''); initResizable(t
 </div><!-- fragment --><p>If you want to use BDOS (MSX-DOS / Disk BASIC) functionality in your application, in addition to the above, set <code>CONFIG_CRT0_MOD_INIT</code> to <code>init_x</code> or <code>init_r</code>. </p><div class="fragment"><div class="line"> makefile</div>
 <div class="line"># (in your project&#39;s Makefile)</div>
 <div class="line">CONFIG_CRT0_MOD_INIT = init_x</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md22"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
 Make-variables for crt0 configuration</h1>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 CONFIG_ROM_TYPE</h2>
 <p>Select ROM type of the ROM image to be built.</p>
 <p><code>CONFIG_ROM_TYPE ?= 16k</code> in default.</p>
@@ -133,7 +133,7 @@ CONFIG_ROM_TYPE</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>ascii16</code>   </td><td class="markdownTableBodyNone">MegaROM image with ASCII16 rom mapper support, starting at 0x4000.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 CONFIG_CRT0_MOD_ROM_HEADER</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -144,7 +144,7 @@ CONFIG_CRT0_MOD_ROM_HEADER</h2>
 <td class="markdownTableBodyNone"><code>app_megarom_header</code>   </td><td class="markdownTableBodyNone">ROM header for MegaROM image of application.   </td></tr>
 </table>
 <p>The value is automatically selected according to <code>CONFIG_ROM_TYPE</code>.</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 CONFIG_CRT0_MOD_INIT</h2>
 <p>Select <code>init</code> module of the ROM image to be built.</p>
 <p><code>CONFIG_CRT0_MOD_INIT ?= init_0</code> in default.</p>
@@ -169,7 +169,7 @@ CONFIG_CRT0_MOD_INIT</h2>
 <p>(2): <code>MSXturboR</code> or later. <br  />
  On <code>MSX</code>, <code>MSX2</code>, or <code>MSX2+</code> the behaviour is same as <code>init_x</code>. <br  />
  If <code>1</code> key was pressed during startup time, the behaviour will be same as <code>init_x</code> even if on <code>MSXturboR</code>.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 CONFIG_CRT0_MOD_START</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -182,7 +182,7 @@ CONFIG_CRT0_MOD_START</h2>
 <td class="markdownTableBodyNone"><code>start_megarom</code>   </td><td class="markdownTableBodyNone">startup routine for MegaROM image.   </td></tr>
 </table>
 <p>The value is automatically selected according to <code>CONFIG_ROM_TYPE</code>.</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 CONFIG_CRT0_MOD_ROM_MAPPER</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -193,7 +193,7 @@ CONFIG_CRT0_MOD_ROM_MAPPER</h2>
 <td class="markdownTableBodyNone"><code>rom_ascii16</code>   </td><td class="markdownTableBodyNone">use ASCII16 ROM mapper   </td></tr>
 </table>
 <p>The value is automatically selected according to <code>CONFIG_ROM_TYPE</code>.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 CONFIG_CRT0_MOD_LIBS</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -202,11 +202,11 @@ CONFIG_CRT0_MOD_LIBS</h2>
 <td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone">get the current slot of page #n.   </td></tr>
 </table>
 <p>The value is automatically selected according to <code>CONFIG_ROM_TYPE</code> and <code>CONFIG_CRT0_MOD_INIT</code>.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 USE_ALL_EXTENSIONS (deprecated)</h2>
 <p><code>USE_ALL_EXTENSIONS ?=</code> in default.</p>
 <p><code>USE_ALL_EXTENSIONS = 1</code> implies <code>CONFIG_CRT0_MOD_INIT = init_x</code> for backward compatibility.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Pre-defined crt0 configurations</h1>
 <p>Some pre-defined crt0 configurations are in <code>${LIBMSX_HOME}/mk/</code> folder.</p>
 <p>Instead of defining <code>CONFIG_ROM_TYPE</code>, you can <code>include</code> one of the following into the <code>Makefile</code>.</p><ul>
@@ -231,22 +231,22 @@ Pre-defined crt0 configurations</h1>
 <td class="markdownTableBodyNone"><code>CONFIG_CRT0_MOD_LIBS</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td><td class="markdownTableBodyNone"><code>get_slot</code>   </td></tr>
 </table>
 <p>(3): Choose one of the <code>init</code> module; <code>init_0</code>, <code>init_x</code>, or <code>init_r</code>. <code>init_0</code> is selected in default.</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 ${LIBMSX_HOME}/mk/16k.4000.mk</h2>
 <div class="fragment"><div class="line"> makefile</div>
 <div class="line">CONFIG_ROM_TYPE = 16k</div>
 <div class="line">CONFIG_CRT0_MOD_INIT ?= init_0</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md32"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md31"></a>
 ${LIBMSX_HOME}/mk/32k.4000.mk</h2>
 <div class="fragment"><div class="line"> makefile</div>
 <div class="line">CONFIG_ROM_TYPE = 32k</div>
 <div class="line">CONFIG_CRT0_MOD_INIT ?= init_0</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md33"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md32"></a>
 ${LIBMSX_HOME}/mk/ascii8.mk</h2>
 <div class="fragment"><div class="line"> makefile</div>
 <div class="line">CONFIG_ROM_TYPE = ascii8</div>
 <div class="line">CONFIG_CRT0_MOD_INIT ?= init_0</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md34"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md33"></a>
 ${LIBMSX_HOME}/mk/ascii16.mk</h2>
 <div class="fragment"><div class="line"> makefile</div>
 <div class="line">CONFIG_ROM_TYPE = ascii16</div>

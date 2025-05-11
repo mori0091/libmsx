@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resourceindex_0',['ResourceIndex',['../group__RESOURCES__FIND.html#ga782698b6fbf0af8a21e97c804b6e3768',1,'resources.h']]]
+  ['palette_5ft_0',['palette_t',['../group__VDP__PALETTE__REGISTER.html#ga33595fdc0e04957d3dd734d82e10d55d',1,'vdp.h']]]
 ];

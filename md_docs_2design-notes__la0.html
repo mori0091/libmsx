@@ -101,12 +101,12 @@ $(function(){initNavTree('md_docs_2design-notes__la0.html',''); initResizable(tr
   <div class="headertitle"><div class="title">DESIGN NOTE : LA0 - The libmsx audio format 0.</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md35"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md34"></a></p>
 <p><em>LA0</em> is a file/data format and its decoder developed for use with "the libmsx
 audio replayer".</p>
 <p>This article describes the <em>LA0</em> file/data format in detail.</p>
 <p>First, the "data format notation" used in this article will be explained, followed by a description of the <em>LA0</em> file/data format using that notation.</p>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Data format notation</h1>
 <p>Here is the notation for defining our data format. <br  />
  This notation itself is described in BNF notation.</p>
@@ -142,7 +142,7 @@ Data format notation</h1>
 <td class="markdownTableBodyNone">[<em>T</em>;<em>N</em>]   </td><td class="markdownTableBodyNone"><em>N</em> elements array of type <em>T</em>   </td></tr>
 </table>
 <p>Note that the byte order of multi-byte integer types such as <code>u16</code>, <code>u32</code>, etc. is little-endian.</p>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 LA0 file/data format</h1>
 <div class="fragment"><div class="line"> BNF</div>
 <div class="line">LA0_FILE</div>
@@ -157,7 +157,7 @@ LA0 file/data format</h1>
 <div class="line">    = STREAM_INFO          // Properties/Attributes of the song.</div>
 <div class="line">      SCC_WAVE_TABLE?      // (optional SCC/SCC+ waveform table)</div>
 <div class="line">      STREAM_DATA</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md37"></a>
 STREAM_INFO</h2>
 <div class="fragment"><div class="line"> BNF</div>
 <div class="line">STREAM_INFO</div>
@@ -184,7 +184,7 @@ STREAM_INFO</h2>
 <div class="line">      psg_ch_3:u1          // 0: disabled, 1: enabled ; PSG channel #3.</div>
 <div class="line">      psg_ch_2:u1          // 0: disabled, 1: enabled ; PSG channel #2.</div>
 <div class="line">      psg_ch_1:u1          // 0: disabled, 1: enabled ; PSG channel #1.</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md39"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
 SCC_WAVE_TABLE ; SCC/SCC+ waveform table</h2>
 <div class="fragment"><div class="line"> BNF</div>
 <div class="line">SCC_WAVE_TABLE</div>
@@ -194,7 +194,7 @@ SCC_WAVE_TABLE ; SCC/SCC+ waveform table</h2>
 </div><!-- fragment --><p>The optional <code>SCC_WAVE_TABLE</code> contains one or more 32-byte waveforms (up to 256 entries).</p>
 <p>These are refered by index, as operand of the command <code>CMD = 0xfa</code>..<code>0xfe</code>.</p>
 <p>See also <em>DICTIONARY</em> section for detail of that command.</p>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 STREAM_DATA</h2>
 <div class="fragment"><div class="line"> BNF</div>
 <div class="line">STREAM_DATA</div>
@@ -202,7 +202,7 @@ STREAM_DATA</h2>
 <div class="line">      size:u32             // Size of SEQUENCE + DICTIONARY</div>
 <div class="line">      SEQUENCE             // Sequence of sample length and offset.</div>
 <div class="line">      DICTIONARY           // Dictionary of dedicated samples.</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md41"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md40"></a>
 SEQUENCE</h3>
 <div class="fragment"><div class="line"> BNF</div>
 <div class="line">SEQUENCE</div>
@@ -229,7 +229,7 @@ SEQUENCE</h3>
 </ul>
 <p>If the length was <code>0</code>, <code>EG_LENGTH</code> will be <code>EG_ZERO</code> and <code>EG_OFFSET</code> will be omitted.</p>
 <p>Finally, if the length of <code>SEQUENCE_BODY</code> is not a multiple of 8 bits, some <code>0</code> bits are padded. Therefore, the size of <code>SEQUENCE_BODY</code> is expressed in bytes.</p>
-<h3><a class="anchor" id="autotoc_md42"></a>
+<h3><a class="anchor" id="autotoc_md41"></a>
 DICTIONARY</h3>
 <div class="fragment"><div class="line"> BNF</div>
 <div class="line">DICTIONARY</div>
@@ -340,7 +340,7 @@ DICTIONARY</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">0xff   </td><td class="markdownTableBodyNone">(n/a)   </td><td class="markdownTableBodyNone">(reserved)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="autotoc_md42"></a>
 References</h1>
 <ul>
 <li><a href="https://mori0091.github.io/libmsx/group__AUDIO.html">The libmsx audio replayer.</a></li>

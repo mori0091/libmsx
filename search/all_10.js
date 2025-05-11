@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['generate_20sprite_20data_20and_20code_20from_20the_20aseprite_20file_0',['Step 2. Generate sprite data and code from the aseprite file',['../md_docs_2tutorial__SM2.html#autotoc_md64',1,'']]],
-  ['generated_20code_20and_20sm2_20apis_1',['Step 5. Write your application code which use the generated code and SM2 APIs',['../md_docs_2tutorial__SM2.html#autotoc_md67',1,'']]],
-  ['generated_20data_20and_20code_2',['Step 6. Build your application with the generated data and code',['../md_docs_2tutorial__SM2.html#autotoc_md68',1,'']]],
-  ['generated_20data_20and_20code_20into_20your_20application_20s_20repository_3',['Step 3. Import generated data and code into your application&apos;s repository',['../md_docs_2tutorial__SM2.html#autotoc_md65',1,'']]],
+  ['generate_20sprite_20data_20and_20code_20from_20the_20aseprite_20file_0',['Step 2. Generate sprite data and code from the aseprite file',['../md_docs_2tutorial__SM2.html#autotoc_md63',1,'']]],
+  ['generated_20code_20and_20sm2_20apis_1',['Step 5. Write your application code which use the generated code and SM2 APIs',['../md_docs_2tutorial__SM2.html#autotoc_md66',1,'']]],
+  ['generated_20data_20and_20code_2',['Step 6. Build your application with the generated data and code',['../md_docs_2tutorial__SM2.html#autotoc_md67',1,'']]],
+  ['generated_20data_20and_20code_20into_20your_20application_20s_20repository_3',['Step 3. Import generated data and code into your application&apos;s repository',['../md_docs_2tutorial__SM2.html#autotoc_md64',1,'']]],
   ['generator_4',['PSG - AY-3-8910 / Programmable Sound Generator',['../group__PSG.html',1,'']]],
   ['generator_20apis_5',['Software envelope generator APIs',['../group__SOUND__OLD__EG__API.html',1,'']]],
   ['get_20set_20the_20current_20position_20of_20the_20stream_6',['Get / Set the current position of the stream.',['../group__STREAM__SEEK.html',1,'']]],

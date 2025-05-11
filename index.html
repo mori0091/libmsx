@@ -167,6 +167,16 @@ Supported functionality</h1>
 </ul>
 </li>
 <li>Sound driver<ul>
+<li>NDP - PSG Driver for MSX<ul>
+<li>NTSC (60Hz)</li>
+<li>Stop, Start, Pause, Resume, Auto-Repeat.</li>
+<li>NDP was originally programmed and provided by <a href="https://x.com/naruto2413">naruto2413</a> and later modified for libmsx by Daishi Mori (<a href="https://x.com/mori0091">mori0091</a>).</li>
+<li>The original NDP driver for MSX and MML editor/compiler for Windows are distributed at the following site by naruto2413.<ul>
+<li>See also <a href="https://ndp.squares.net/web/">NDP - PSG Driver for MSX</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>LA0 - a PSG, SCC/SCC+, and <a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> sound driver<ul>
 <li>NTSC (60Hz), PAL/SECAM (50Hz), auto detect and auto adjust.</li>
 <li>Available to specify default playing frequency that the sound data author expecting.</li>
@@ -225,22 +235,8 @@ Supported functionality</h1>
  See also <a href="https://github.com/einar-saukas/ZX0">https://github.com/einar-saukas/ZX0</a>. </p>
 </blockquote>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Unsupported functionality</h1>
-<p>The below functionality is NOT supported yet.</p>
-<ul>
-<li>Keyboard input</li>
-<li>Sound output<ul>
-<li><strike>PSG (AY-3-8910)</strike> <code>supported</code></li>
-<li><strike><a class="el" href="group__OPLL__DEVICE.html#structOPLL" title="OPLL Handle.">OPLL</a> (YM2413 / MSX-MUSIC)</strike> <code>supported</code></li>
-</ul>
-</li>
-<li><strike>BGM driver</strike> <code>supported</code></li>
-<li><strike>Sound effect driver</strike> <code>supported</code></li>
-<li>… and so on</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
 Pre-requisites</h1>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Target Machine</h2>
 <ul>
 <li>MSX</li>
@@ -248,7 +244,7 @@ Target Machine</h2>
 <li>MSX2+</li>
 <li>MSXturboR</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Host Platform</h2>
 <p><b>Linux</b></p>
 <table class="markdownTable">
@@ -270,7 +266,7 @@ Host Platform</h2>
 </table>
 <p>Ofcourse, Ubuntu on <b>WSL2</b> is okey. 😄 <br  />
  (<b>WSL2</b>: Windows Subsystem for Linux)</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Build tools</h2>
 <ul>
 <li>SDCC <br  />
@@ -284,15 +280,15 @@ Build tools</h2>
 <li>Other toolchain required for libmsx <br  />
  GNU <code>find</code>, <code>make</code>, <code>gcc</code>, <code>gzip</code>, <code>zcat</code>, <code>xsltproc</code>, and so on.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Install instructions of Build tools</h1>
 <p>To use <code>libmsx</code>,</p><ol type="1">
 <li>Install SDCC.</li>
 <li>Install other toolchain.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Ubuntu</h2>
-<h3><a class="anchor" id="autotoc_md11"></a>
+<h3><a class="anchor" id="autotoc_md10"></a>
 1. Install SDCC</h3>
 <p>Download a SDCC pre-built binary for Linux from <a href="http://sdcc.sourceforge.net/">http://sdcc.sourceforge.net/</a> and install it.</p>
 <p>SDCC 4.5.0 or later is recommended.</p>
@@ -307,23 +303,23 @@ Ubuntu</h2>
 <p>&zwj;Why don't we install sdcc by <code>sudo apt install sdcc</code> ?</p>
 <p>Because the latest version of SDCC may not be installed by <code>apt</code>. In case of Ubuntu 24.04, SDCC 4.2.0 is installed. Thus we recommend that you download SDCC 4.5.0 pre-built binary and use it on Ubuntu 24.04 or later. </p>
 </blockquote>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<h3><a class="anchor" id="autotoc_md11"></a>
 2. Install other toolchain</h3>
 <div class="fragment"><div class="line"> shell</div>
 <div class="line">sudo apt update</div>
 <div class="line">sudo apt install build-essential make gcc gzip xsltproc git</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
 Windows (Ubuntu on WSL2)</h2>
 <p>The 1st case is using Ubuntu on WSL2 environment. <br  />
  In this case, it is same as for Ubuntu.</p>
 <p>Launch a terminal of <em>Ubuntu on WSL2</em>, and proceed with the above instructions.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Windows (MSYS2)</h2>
 <p>The 2nd case is using MSYS2 UCRT64 environment.</p>
-<h3><a class="anchor" id="autotoc_md15"></a>
+<h3><a class="anchor" id="autotoc_md14"></a>
 1. Install SDCC</h3>
 <p>Download a SDCC pre-built binary for Windows from <a href="http://sdcc.sourceforge.net/">http://sdcc.sourceforge.net/</a> and install it.</p>
-<h3><a class="anchor" id="autotoc_md16"></a>
+<h3><a class="anchor" id="autotoc_md15"></a>
 2. Install other toolchain</h3>
 <p>Download and install <a href="https://www.msys2.org/">MSYS2</a>.</p>
 <p>Then launch a terminal for the MSYS2 UCRT64 environment, and do as follows: </p><div class="fragment"><div class="line"> shell</div>
@@ -335,7 +331,7 @@ Windows (MSYS2)</h2>
 <p>&zwj;At here it is assuming that the SDCC is installed under <code>C:\Program Files\SDCC</code>. </p>
 </blockquote>
 <div class="fragment"><div class="line">export PATH=${PATH}:/c/Program\ Files/SDCC/bin</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md16"></a>
 Build instructions of the library and sample projects</h1>
 <p>The below makes the library <code>libmsx.lib</code> into <code>lib</code> folder, and bundled tools into <code>bin</code> folder.</p>
 <div class="fragment"><div class="line"> shell</div>
@@ -346,12 +342,12 @@ Build instructions of the library and sample projects</h1>
 </div><!-- fragment --><p>And for cleaning up:</p>
 <div class="fragment"><div class="line"> shell</div>
 <div class="line">make clean</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md18"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
 Build instructions of user applications</h1>
 <blockquote class="doxtable">
 <p>&zwj;There are several sample projects, please refer to the <code>sample/</code> folder of the <code>libmsx</code> project. </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Preparation</h2>
 <p><b>Step 1.</b> Make your project's Git repository.</p>
 <div class="fragment"><div class="line"> shell</div>
@@ -366,7 +362,7 @@ Preparation</h2>
 </div><!-- fragment --><p><b>Step 4.</b> Create the folder <code>my_proj/src/</code> and place your C source files under it or in its subfolders.</p>
 <div class="fragment"><div class="line"> shell</div>
 <div class="line">mkdir my_proj/src</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
 Build your application</h2>
 <p>To build your application, do as follows on the top of your repository <code>my_proj</code>. <br  />
  Then the ROM image will be made into <code>my_proj/bin</code> folder.</p>

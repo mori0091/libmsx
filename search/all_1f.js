@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['variables_20for_20crt0_20configuration_0',['Make-variables for crt0 configuration',['../md_docs_2design-notes__crt0.html#autotoc_md22',1,'']]],
+  ['variables_20for_20crt0_20configuration_0',['Make-variables for crt0 configuration',['../md_docs_2design-notes__crt0.html#autotoc_md21',1,'']]],
   ['vdp_20commands_20high_20level_20apis_1',['VDP commands (High level APIs)',['../group__VDP__COMMANDS__HIGH.html',1,'']]],
   ['vdp_20commands_20low_20level_20apis_2',['VDP commands (Low level APIs)',['../group__VDP__COMMANDS__LOW.html',1,'']]],
   ['vdp_20video_20display_20processor_3',['VDP - Video Display Processor',['../group__VDP.html',1,'']]],

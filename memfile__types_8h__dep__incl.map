@@ -1,9 +1,11 @@
 <map id="include/internal/memfile_types.h" name="include/internal/memfile_types.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="61,5,218,46"/>
-<area shape="rect" id="Node000002" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="79,94,200,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,62,142,93,137,93,137,62"/>
-<area shape="rect" id="Node000003" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="5,168,138,193"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,133,85,169,81,165,116,129"/>
-<area shape="rect" id="Node000004" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="162,168,256,193"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="163,129,199,165,195,169,159,132"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="122,5,279,46"/>
+<area shape="rect" id="Node000002" href="$memfile_8h.html" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="140,94,261,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,62,203,93,198,93,198,62"/>
+<area shape="rect" id="Node000003" href="$NDP_8h.html" title="NDP &#45; NDP sound driver." alt="" coords="5,168,110,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="163,129,83,169,81,165,161,125"/>
+<area shape="rect" id="Node000004" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="134,168,266,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="203,135,203,167,198,167,198,135"/>
+<area shape="rect" id="Node000005" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="291,168,384,193"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="238,125,315,165,313,169,236,130"/>
 </map>

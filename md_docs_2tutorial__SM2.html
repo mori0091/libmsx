@@ -101,18 +101,18 @@ $(function(){initNavTree('md_docs_2tutorial__SM2.html',''); initResizable(true);
   <div class="headertitle"><div class="title">TUTORIAL : SM2 (Sprite Mode 2) - Animated Color Sprites.</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md60"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md59"></a></p>
 <p>SM2 module provides APIs for displaying animated multicolor sprites.</p>
-<h1><a class="anchor" id="autotoc_md61"></a>
+<h1><a class="anchor" id="autotoc_md60"></a>
 Requirements</h1>
 <p>SM2 is designed to use with :</p><ul>
 <li><a href="https://www.aseprite.org/">aseprite</a> ; Animated Sprite Editor &amp; Pixel Art Tool</li>
 <li><a href="https://github.com/mori0091/ase2msx">ase2msx</a> ; Generates sprite data and code for libmsx/MSX2 from aseprite file.</li>
 </ul>
 <p>These must be installed and path to installed folder must be added to <code>PATH</code> environment variable.</p>
-<h1><a class="anchor" id="autotoc_md62"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 Tutorial</h1>
-<h2><a class="anchor" id="autotoc_md63"></a>
+<h2><a class="anchor" id="autotoc_md62"></a>
 Step 1. Make/Edit your sprite sheet with aseprite</h2>
 <p>Requirements:</p><ul>
 <li>The sprite size must be multiple of 16x16 pixels.</li>
@@ -123,7 +123,7 @@ Step 1. Make/Edit your sprite sheet with aseprite</h2>
 <li>The aseprite file is saved under the name <code>MySprite.ase</code>.</li>
 <li>The file has two tags, <code>Idle</code> and <code>Walk</code>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md64"></a>
+<h2><a class="anchor" id="autotoc_md63"></a>
 Step 2. Generate sprite data and code from the aseprite file</h2>
 <div class="fragment"><div class="line">shell</div>
 <div class="line">  ase2msx MySprite.ase</div>
@@ -134,12 +134,12 @@ Step 2. Generate sprite data and code from the aseprite file</h2>
 <li><code>MySprite.h</code> : C header file</li>
 <li><code>MySprite.sm2</code> : Sprite data</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md65"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
 Step 3. Import generated data and code into your application's repository</h2>
 <div class="fragment"><div class="line">shell</div>
 <div class="line">  mv MySprite.c MySprite.h src/</div>
 <div class="line">  mv MySprite.sm2 resources/</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md66"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md65"></a>
 Step 4. Write Makefile for building your application</h2>
 <div class="fragment"><div class="line">Makefile</div>
 <div class="line">  # Path to top of the libmsx installed folder.</div>
@@ -155,7 +155,7 @@ Step 4. Write Makefile for building your application</h2>
 <div class="line">  include ${LIBMSX_HOME}/mk/build.mk</div>
 </div><!-- fragment --><p>Note that the <code>CONFIG_ROM_TYPE</code> must be <code>ascii8</code> or <code>ascii16</code>.</p>
 <p>See also <a href="https://github.com/mori0091/libmsx/blob/main/mk/Makefile">Makefile template</a></p>
-<h2><a class="anchor" id="autotoc_md67"></a>
+<h2><a class="anchor" id="autotoc_md66"></a>
 Step 5. Write your application code which use the generated code and SM2 APIs</h2>
 <div class="fragment"><div class="line">c</div>
 <div class="line">  // \file src/main.c</div>
@@ -214,7 +214,7 @@ Step 5. Write your application code which use the generated code and SM2 APIs</h
 <div class="line">      sm2_flush();</div>
 <div class="line">    } // Repeat the above as needed and/or periodically.</div>
 <div class="line">  }</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md68"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md67"></a>
 Step 6. Build your application with the generated data and code</h2>
 <p>Now your application repository shall be as follows: </p><div class="fragment"><div class="line">./</div>
 <div class="line">├── Makefile</div>
@@ -226,7 +226,7 @@ Step 6. Build your application with the generated data and code</h2>
 <div class="line">    └── main.c</div>
 </div><!-- fragment --><p>To build your application, run <code>make</code>. </p><div class="fragment"><div class="line">shell</div>
 <div class="line">  make</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md69"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md68"></a>
 References</h1>
 <p>See also the SM2 API reference:</p><ul>
 <li><a href="https://mori0091.github.io/libmsx/group__SM2.html">SM2 (Sprite Mode 2) Animated Color Sprites</a></li>

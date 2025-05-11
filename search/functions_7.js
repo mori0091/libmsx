@@ -1,13 +1,23 @@
 var searchData=
 [
-  ['opll_5fdisable_0',['OPLL_disable',['../group__OPLL__DEVICE.html#ga2a280d363923d8c0a22b7deab3a2f8d6',1,'opll.h']]],
-  ['opll_5fenable_1',['OPLL_enable',['../group__OPLL__DEVICE.html#gaebb6b2a3f4e580d058a7a1a4043ab456',1,'opll.h']]],
-  ['opll_5ffind_2',['OPLL_find',['../group__OPLL__DEVICE.html#ga36bab4190b5c6dc620d537b1446b0e83',1,'opll.h']]],
-  ['opll_5finit_3',['OPLL_init',['../group__OPLL__BUFFER.html#ga153acf32eee95fb7f582f18616c79a46',1,'opll_buf.h']]],
-  ['opll_5finspect_4',['OPLL_inspect',['../group__OPLL__DEVICE.html#gab81376f1755460922e210c7049159422',1,'opll.h']]],
-  ['opll_5fplay_5',['OPLL_play',['../group__OPLL__BUFFER.html#ga83455bed53bf4b7fc40394b42565065c',1,'opll_buf.h']]],
-  ['opll_5fput_6',['OPLL_put',['../group__OPLL__BUFFER.html#ga70d335a1db7e415e1a4084524d24c7df',1,'opll_buf.h']]],
-  ['opll_5frhythm_7',['OPLL_rhythm',['../group__OPLL__BUFFER.html#ga7aa24d7c8576b549b7b6c5269fe8553b',1,'opll_buf.h']]],
-  ['opll_5frhythm_5fmode_8',['OPLL_rhythm_mode',['../group__OPLL__BUFFER.html#gaed81ce3781d88b77c2149f4edd48df8d',1,'opll_buf.h']]],
-  ['opll_5fstop_9',['OPLL_stop',['../group__OPLL__BUFFER.html#ga47d0b24380c7edf0a4b6b6a402b0c159',1,'opll_buf.h']]]
+  ['ndp_5ffadein_0',['NDP_fadein',['../group__NDP__REPLAYER.html#ga20aedbe0196ba7bf7a7feed83eb73fbd',1,'NDP.h']]],
+  ['ndp_5ffadeout_1',['NDP_fadeout',['../group__NDP__REPLAYER.html#ga93f52358d779bf94db194223f3202e4f',1,'NDP.h']]],
+  ['ndp_5fget_5floop_5fcounter_2',['NDP_get_loop_counter',['../group__NDP__REPLAYER.html#ga45abb1daa88d497e6f569fb4b5e2cf2d',1,'NDP.h']]],
+  ['ndp_5fget_5ftrack_5fstatus_3',['NDP_get_track_status',['../group__NDP__REPLAYER.html#gad89bc308043687eb976bf2d0a9001123',1,'NDP.h']]],
+  ['ndp_5fhas_5fmetadata_4',['NDP_has_metadata',['../group__NDP__SONG.html#gac5e9afe2a025149a1d0f2bec31b6634d',1,'NDP.h']]],
+  ['ndp_5finit_5',['NDP_init',['../group__NDP__REPLAYER.html#ga219bfd1fb2b63885836cf68be73a91ee',1,'NDP.h']]],
+  ['ndp_5fis_5fpaused_6',['NDP_is_paused',['../group__NDP__REPLAYER.html#ga97069d37e4ff3af63ee6d83e76534a36',1,'NDP.h']]],
+  ['ndp_5fis_5fplaying_7',['NDP_is_playing',['../group__NDP__REPLAYER.html#ga35b35c7ed500c42474df7199e59b2b68',1,'NDP.h']]],
+  ['ndp_5fload_5fbgm_8',['NDP_load_bgm',['../group__NDP__SONG.html#ga6a47cc11c940f8eeaf6eb4b3321d4ff9',1,'NDP.h']]],
+  ['ndp_5fopen_5fbmem_9',['NDP_open_bmem',['../group__NDP__SONG.html#gaef9db5d98ff296c23ac684347cfb829f',1,'NDP.h']]],
+  ['ndp_5fopen_5fmem_10',['NDP_open_mem',['../group__NDP__SONG.html#gaa22bbcd05db9e635142dfb416af378bf',1,'NDP.h']]],
+  ['ndp_5fopen_5fresource_11',['NDP_open_resource',['../group__NDP__SONG.html#gab95372b78726b69e060096b483c24e29',1,'NDP.h']]],
+  ['ndp_5fpause_12',['NDP_pause',['../group__NDP__REPLAYER.html#gace63b5214d30edb99905f374c5e29135',1,'NDP.h']]],
+  ['ndp_5fplay_13',['NDP_play',['../group__NDP__REPLAYER.html#gaa8556b48d83761cd1fce9a9772a7bb68',1,'NDP.h']]],
+  ['ndp_5fread_5fmetadata_14',['NDP_read_metadata',['../group__NDP__SONG.html#ga67b7e198577a782033d1ffb5ad23e28e',1,'NDP.h']]],
+  ['ndp_5fset_5fbgm_15',['NDP_set_bgm',['../group__NDP__SONG.html#ga4818fce77b5b2fd7e604114fe0dbf623',1,'NDP.h']]],
+  ['ndp_5fset_5fvolume_16',['NDP_set_volume',['../group__NDP__REPLAYER.html#ga7134b8069143a226c9f9a50b5dd23616',1,'NDP.h']]],
+  ['ndp_5fstart_17',['NDP_start',['../group__NDP__REPLAYER.html#ga3106748eef380ec63a8e9aa44c32c65c',1,'NDP.h']]],
+  ['ndp_5fstop_18',['NDP_stop',['../group__NDP__REPLAYER.html#ga4eda496e12f29372ba444bcab3ca276d',1,'NDP.h']]],
+  ['ndp_5fversion_19',['NDP_version',['../group__NDP__REPLAYER.html#ga26367d3e7b13d5103f364ae639019aa1',1,'NDP.h']]]
 ];

@@ -101,10 +101,10 @@ $(function(){initNavTree('md_docs_2design-notes__snddrv__internal.html',''); ini
   <div class="headertitle"><div class="title">DESIGN NOTE : Internal of SNDDRV</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md48"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md47"></a></p>
 <p>The following sections shows the summary of internal design and specification of SNDDRV.</p>
 <p>Please note that this information is for reference only and need not be a concern.</p>
-<h1><a class="anchor" id="autotoc_md49"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
 SNDDRV's sound processing pipiline</h1>
 <p>SNDDRV's sound processing pipeline is consisting of 3 part of components: some <b>streamers</b>, some <b>decorders</b>, and <b>engine</b>.</p>
 <ul>
@@ -147,7 +147,7 @@ SNDDRV's sound processing pipiline</h1>
 <div class="line">                           `----&#39; sequence control</div>
 <div class="line">                           `----- note on/off ------ (o)</div>
 <div class="line">                           `----- P program change ----- (p)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md50"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md49"></a>
 Sound data structure</h1>
 <p>The below table shows typical data types of SNDDRV and corresponding XML data type of Arkos Tracker 2 song file (.aks).</p>
 <table class="markdownTable">
@@ -191,7 +191,7 @@ Sound data structure</h1>
 <div class="line">snd_PitchBend  &lt;.. snd_Track : refers by index</div>
 <div class="line">snd_PeriodBend &lt;.. snd_Track : refers by index</div>
 <div class="line">snd_Instrument &lt;.. snd_Track : refers by index</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md51"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md50"></a>
 Sound data format notation</h1>
 <p>Here is the notation for defining our sound data format. <br  />
  This notation itself is described in BNF notation. </p><pre class="fragment">&lt;term&gt; := &lt;identifier&gt;        ; name of a variable
@@ -211,18 +211,18 @@ Sound data format notation</h1>
 &lt;bit&gt;  := '0'                 ; 1 bit zero
         | '1'                 ; 1 bit one
         | '_'                 ; 1 bit wildcard
-</pre><h1><a class="anchor" id="autotoc_md52"></a>
+</pre><h1><a class="anchor" id="autotoc_md51"></a>
 Definition of Sound data</h1>
-<h2><a class="anchor" id="autotoc_md53"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 Definition of SpeedTrack stream</h2>
 <p>(snip)</p>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 Definition of EventTrack stream</h2>
 <p>(snip)</p>
-<h2><a class="anchor" id="autotoc_md55"></a>
+<h2><a class="anchor" id="autotoc_md54"></a>
 Definition of Track stream</h2>
 <p>The following is the sound data format for <b>track streams</b> written in the notation defined in the previous section.</p>
-<h3><a class="anchor" id="autotoc_md56"></a>
+<h3><a class="anchor" id="autotoc_md55"></a>
 Track stream</h3>
 <div class="fragment"><div class="line">; Track stream</div>
 <div class="line">t_stream   := t_line*</div>
@@ -232,7 +232,7 @@ Track stream</h3>
 <div class="line"> </div>
 <div class="line">; end mark of line, and number of lines to be skipped.</div>
 <div class="line">EOL        := 110b l:5            ; l: number of lines to be skipped (0..31)</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md57"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md56"></a>
 Chunk of Track stream</h3>
 <div class="fragment"><div class="line">; A chunk of track stream</div>
 <div class="line">t_chunk    := RST                 ; stops the sound of the instrument.</div>
@@ -267,10 +267,10 @@ Chunk of Track stream</h3>
 <div class="line">            | 1101b x:4 y:4 _:4   ; force the speed of a period / wavelength table (1 step for each xy+1 ticks)</div>
 <div class="line">            | 1110b x:4 y:4 _:4   ; set arpeggio / pitch-bend table # to xy (1..255) or turn off (xy = 0)</div>
 <div class="line">            | 1111b x:4 y:4 _:4   ; set period / wavelength table # to xy (1..255) or turn off (xy = 0)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md58"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md57"></a>
 Definition of Pattern table</h2>
 <p>(snip)</p>
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md58"></a>
 Definition of Instrument (timbre) table</h1>
 <div class="fragment"><div class="line">; list of instrument tables</div>
 <div class="line">i_tables := address_of_i_table+</div>

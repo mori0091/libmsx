@@ -1,7 +1,9 @@
 <map id="include/memfile.h" name="include/memfile.h">
-<area shape="rect" id="Node000001" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="79,5,200,31"/>
-<area shape="rect" id="Node000002" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="5,79,138,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,44,85,80,81,77,116,40"/>
-<area shape="rect" id="Node000003" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="162,79,256,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,40,199,77,195,80,159,44"/>
+<area shape="rect" id="Node000001" title="Stream interface for ROM / RAM / MegaROM." alt="" coords="140,5,261,31"/>
+<area shape="rect" id="Node000002" href="$NDP_8h.html" title="NDP &#45; NDP sound driver." alt="" coords="5,79,110,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,41,83,81,81,76,161,36"/>
+<area shape="rect" id="Node000003" href="$audio__buf_8h.html" title="Unified sound&#45;chip buffer of the libmsx audio replayer." alt="" coords="134,79,266,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,46,203,79,198,79,198,46"/>
+<area shape="rect" id="Node000004" href="$la0_8h.html" title="The libmsx audio format 0 (LA0) decoder." alt="" coords="291,79,384,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,36,315,76,313,81,236,41"/>
 </map>

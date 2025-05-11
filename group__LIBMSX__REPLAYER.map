@@ -1,5 +1,6 @@
 <map id="Audio/Sound drivers." name="Audio/Sound drivers.">
 <area shape="rect" id="Node000002" href="$group__AUDIO.html" title="#include &lt;audio.h&gt;" alt="" coords="194,5,362,31"/>
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,146,60"/>
-<area shape="rect" id="Node000003" href="$group__SOUND__OLD.html" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" alt="" coords="199,55,356,96"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,146,80"/>
+<area shape="rect" id="Node000003" href="$group__NDP.html" title="#include &lt;NDP.h&gt; NDP &#45; PSG Driver for MSX (libmsx version)." alt="" coords="196,55,360,80"/>
+<area shape="rect" id="Node000004" href="$group__SOUND__OLD.html" title="#include &lt;sound.h&gt;, #include &lt;sound_eg.h&gt;" alt="" coords="199,104,356,145"/>
 </map>

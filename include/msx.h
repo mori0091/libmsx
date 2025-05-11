@@ -20,7 +20,7 @@
 /** \defgroup LIBMSX_GRAPHICS    Video / Display / Graphics. */
 /** \defgroup LIBMSX_IMAGE_PROC  Image processing. */
 /** \defgroup LIBMSX_STORAGE     RAM/ROM/MegaROM Storage Interface. */
-/** \defgroup LIBMSX_REPLAYER    Audio/Sound drivers. */
+/** \defgroup LIBMSX_REPLAYER    Sound drivers / replayers. */
 /** \defgroup LIBMSX_SOUNDCHIP   Sound devices. */
 /** \defgroup LIBMSX_COMPRESS    Compression / Decompression. */
 

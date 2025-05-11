@@ -27,9 +27,8 @@
 
 /**
  * \defgroup LA0_DECODER LA0 - PSG, SCC/SCC+, OPLL sound driver.
- * \ingroup AUDIO_DECODERS
+ * \ingroup LIBMSX_REPLAYER
  * `#include <la0.h>`
- *
  * LA0 decoder is a decoder for the libmsx audio replayer.
  *
  * `la0.h` provides LA0 decoder specific APIs.

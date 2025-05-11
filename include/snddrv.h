@@ -15,11 +15,9 @@
  */
 /**
  * \defgroup SNDDRV SNDDRV - PSG sound driver
- * \ingroup AUDIO_DECODERS
+ * \ingroup LIBMSX_REPLAYER
  * `#include <snddrv.h>`
- *
- * SNDDRV is a PSG sound driver inspired by [Arkos Tracker
- * 2](http://www.julien-nevo.com/arkostracker/).
+ * SNDDRV is a PSG sound driver inspired by [Arkos Tracker 2](http://www.julien-nevo.com/arkostracker/).
  *
  * SNDDRV covers almost feature of replayer of the Arkos Tracker 2.
  *

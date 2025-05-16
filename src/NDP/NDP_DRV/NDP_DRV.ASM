@@ -35,13 +35,6 @@
 
 	.area _CODE
 
-;------	KSS用にフックを無効化して再生
-
-;; KSSPLY:
-;; 	LD	A,#0x0C9
-;; 	LD	(OLDTH),A
-;; 	JP	MSTART
-
 ;------	曲データのアドレス設定
 
 ;USR関数用 (HL<-曲データをアドレスを格納しているメモリのアドレス-2)
@@ -425,7 +418,7 @@ RDLOOP:
 ;------	バージョン取得
 
 SYSVER:
-	LD	HL,#0x0100	;v1.00
+	LD	HL,#0x0101	;v1.01
 
 	;上位バイトがメジャーバージョン、下位バイトがマイナーバージョン
 	;上位バイトが0なら0.9として扱い、下位バイトはビルドバージョンとする
@@ -486,9 +479,15 @@ WPSG:
 
 	RET
 
-;------	タイマ割り込みルーチン
+;------	タイマ割り込みルーチン呼び出し＆旧フックコール
 
-INTRPT:
+;; INTRPT:
+;; 	CALL	IMAIN
+;; 	CALL	OLDTH
+;; 	EI
+;; 	RET
+
+IMAIN:
 	;; DI
 
 	;; PUSH	AF
@@ -514,9 +513,9 @@ MINT:
 MLOOP:
 	PUSH	BC
 
-	LD	A,+10(IX)	;チャンネル有効ならMAINを呼ぶ
+	LD	A,+10(IX)	;チャンネル有効ならNMAINを呼ぶ
 	OR	A
-	CALL	NZ,MAIN
+	CALL	NZ,NMAIN
 
 	LD	DE,#WSIZE	;CHワークのインデックスをワークサイズ分進める
 	ADD	IX,DE
@@ -570,7 +569,7 @@ SINT:
 	LD	B,#CHNUM-1
 	LD	IX,#SE1WRK
 SECHK1:
-	LD	A,+10(IX)	;チャンネル有効ならMAINを呼ぶ
+	LD	A,+10(IX)	;チャンネル有効ならSE用MAINを呼ぶ
 	OR	A
 	CALL	NZ,MAINSE
 
@@ -588,9 +587,6 @@ INTEND:
 	;; POP	BC
 	;; POP	AF
 
-	;; CALL	OLDTH
-
-	;; EI
 	RET
 
 ;------	ドライバ本体
@@ -599,7 +595,7 @@ MAINSE:
 	LD	HL,#SECNT
 	INC	(HL)		;効果音の使用トラック数を加算
 
-MAIN:
+NMAIN:
 	CP	#2		;トラック有効フラグを確認 (IX+10の内容がAに入ってくる)
 	JR	C,MAIN01	;2未満なら通常処理にジャンプ
 
@@ -1643,7 +1639,13 @@ RHYOFF:
 
 	LD	A,(RVREG)	;リズム発音前の音量に戻す
 	LD	E,A
+	LD	A,(MVOL)
+	LD	C,A
 	LD	A,(RSVOL)
+	SUB	C
+	JR	NC,RHYOFM
+	XOR	A
+RHYOFM:
 	CALL	WPSGM
 
 	CP	#16		;音量が16(ハードエンベ)なら

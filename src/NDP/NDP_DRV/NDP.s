@@ -45,7 +45,7 @@
 	;; _NDP_NDPINI == NDPINI	;ドライバ初期化 (タイマ割り込みフックにドライバを接続)
 	_NDP_MSTART == MSTART	;演奏開始 (ワークエリアをゼロクリアし演奏開始。フックは操作しない)
 	_NDP_MSTOP  == MSTOP	;演奏停止 (演奏停止してPSGレジスタを初期化。フックは操作しない)
-	_NDP_INTRPT == INTRPT	;割り込み処理 (フックに接続せずに自前で割り込みルーチンを呼ぶ際に使用)
+	;; _NDP_INTRPT == INTRPT	;割り込み処理 (フックに接続せずに自前で割り込みルーチンを呼ぶ際に使用) ※ドライバ内で退避した旧フックと共に実行
 	;; _NDP_U_ADR  == U_ADR	;(※)曲データ開始アドレス設定 (引数で指定。デフォルトの04000Hなら設定不要)
 	;; _NDP_U_OFF1 == U_OFF1	;(※)Ch.A 一時ミュート (ミュートするフレーム数を引数で指定 [2～255])
 	;; _NDP_U_OFF2 == U_OFF2	;(※)Ch.B 〃
@@ -69,7 +69,7 @@
 	_NDP_SYSVER == SYSVER	;ドライバのバージョン番号→HL (L=小数点以下、H=整数部。整数部が0なら0.9として扱う)
 	;; _NDP_NDPOFF == NDPOFF	;ドライバ終了 (タイマ割り込みフックからドライバを切り離して発音停止)
 	;; _NDP_SETHF  == SETHF	;タイマ割り込みフック接続フラグ←A
-	;; _NDP_KSSPLY == KSSPLY	;退避したH.TIMIをRETで潰して演奏開始 (KSSプレイヤー用)
+	_NDP_IMAIN == IMAIN	;割り込み処理・メイン部 (旧フックのCALLは行わずに割り込みルーチン本体のみ処理) ※DI状態のままRET
 
 ;; C APIs for libmsx
 	_NDP_fadeout		== _NDP_MFOSET ; void NDP_fadeout(uint8_t wait)

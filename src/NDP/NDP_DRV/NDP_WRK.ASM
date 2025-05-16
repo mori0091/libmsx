@@ -66,7 +66,7 @@
 	;; JP	NDPOFF
 	;; JP	SETHF
 
-	;; JP	KSSPLY
+	;; JP	IMAIN
 
 ;------	ワークエリア
 	.area _DATA

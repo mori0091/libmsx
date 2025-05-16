@@ -27,7 +27,7 @@ struct NDP_ {
 
 extern struct NDP_ NDP_;
 
-extern void NDP_INTRPT(void);
+extern void NDP_IMAIN(void);
 extern void NDP_ADRSET(void * ptr);
 
 extern void NDP__set_song_ptr(uint8_t bank, void * ptr);

@@ -21,10 +21,10 @@ void NDP_play_bmem(void) {
     // Play the song in MegaROM
     const uint8_t bank = bmem_get_bank();
     bmem_set_bank(NDP_.song_bank);
-    NDP_INTRPT();
+    NDP_IMAIN();
     bmem_set_bank(bank);
   }
   else {
-    NDP_INTRPT();
+    NDP_IMAIN();
   }
 }

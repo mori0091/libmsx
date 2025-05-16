@@ -17,5 +17,5 @@
 
 void NDP_play(void) {
   if (NDP_.paused) return;
-  NDP_INTRPT();
+  NDP_IMAIN();
 }

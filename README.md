@@ -77,6 +77,7 @@ The below functionality is supported.
   - NDP - PSG Driver for MSX
     - NTSC (60Hz)
     - Stop, Start, Pause, Resume, Auto-Repeat.
+    - Playing sound effects (SFX) during playing background music (BGM).
     - NDP was originally programmed and provided by
       [naruto2413](https://x.com/naruto2413) and later modified for libmsx by
       Daishi Mori ([mori0091](https://x.com/mori0091)).

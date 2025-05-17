@@ -9,16 +9,12 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file NDP_load_bgm.c
+ * \file NDS__verify.c
  */
 
-#include <NDP.h>
-#include "./NDP__internal.h"
+#include <memfile.h>
 
-bool NDP_load_bgm(NDPFile * ndp, uint8_t * buf, size_t buf_size) {
-  if (NDP__load_data(&ndp->mf, buf, buf_size)) {
-    NDP__set_song_ptr(0, buf);
-    return true;
-  }
-  return false;
+int NDS__verify(MemFile * mf) {
+  mfseek(mf, 0, MEM_SEEK_SET);
+  return (int)mfread_u8(mf);
 }

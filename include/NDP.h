@@ -71,8 +71,8 @@ uint16_t NDP_version(void);
 /**
  * `MSX` Main routine of the NDP sound driver.
  *
- * To play back background music, this function must be called at each VSYNC
- * timing.
+ * To play back background music and/or sound effects, this function must be
+ * called at each VSYNC timing.
  *
  * The easiest way is to set this function as the VSYNC interrupt handler by
  * calling set_vsync_handler().
@@ -280,6 +280,98 @@ bool NDP_has_metadata(NDPFile * ndp);
  * \return Size read into the buffer.
  */
 size_t NDP_read_metadata(NDPFile * ndp, uint8_t * buf, size_t buf_size);
+
+/** @} */
+
+// ----------------------------------------------------------------------
+/**
+ * \defgroup NDP_SFX Open NDS sound effects data, and set it in the driver.
+ * \ingroup NDP
+ *
+ * @{
+ */
+
+/**
+ * `MSX` Container of an opened NDS sound effects data.
+ */
+typedef struct NDSFile {
+  MemFile mf;
+} NDSFile;
+
+/**
+ * `MSX` Open NDS sound effects data stored in ROM / RAM.
+ *
+ * \param nds  Pointer to a NDSFile to be initialized.
+ * \param loc  Location of the NDS sound effects data.
+ * \param size Size in bytes.
+ * \return     Number of sound effects contained in the NDS file.
+ */
+int NDP_open_sfx_mem(NDSFile * nds, const uint8_t * loc, size_t size);
+
+/**
+ * `MSX` Open NDS sound effects data stored in banked memory (MegaROM).
+ *
+ * \param nds  Pointer to a NDSFile to be initialized.
+ * \param loc  Location of the NDS sound effects data.
+ * \param size Size in bytes.
+ * \return     Number of sound effects contained in the NDS file.
+ */
+int NDP_open_sfx_bmem(NDSFile * nds, bmemptr_t loc, uint32_t size);
+
+/**
+ * `MSX` Open NDS file stored as named resources in banked memory (MegaROM).
+ *
+ * \param nds  Pointer to a NDSFile to be initialized.
+ * \param path Path/File name (*.NDS) of the resource.
+ * \return     Number of sound effects contained in the NDS file.
+ */
+int NDP_open_sfx_resource(NDSFile * nds, const char * path);
+
+/**
+ * `MSX` Setup the NDS sound effects data to NDP sound driver.
+ *
+ * \param ptr Pointer to the sound effects data.
+ */
+void NDP_set_sfx_ptr(void * ptr);
+
+/**
+ * `MSX` Read the NDS sound effects data.
+ *
+ * Read the specified sound effects data from the NDSFile into the specified RAM
+ * buffer.
+ *
+ * \param index    Sound effect number.
+ * \param nds      Pointer to the NDSFile opened by `NDP_open_sfx_*()`.
+ * \param buf      Pointer to RAM buffer.
+ * \param buf_size Size of the buffer.
+ *
+ * \return the size of sound effect on success, `0` otherwise.
+ */
+size_t NDP_read_sfx(uint8_t index, NDSFile * nds, uint8_t * buf, size_t buf_size);
+
+/**
+ * `MSX` Load and setup the NDS sound effects data to NDP sound driver.
+ *
+ * Read the specified sound effects data from the NDSFile into the specified RAM
+ * buffer, and set the NDP sound driver to play the sound effects from the buffer.
+ *
+ * This is almost same as the following code:
+ * ``` c
+ * if (NDP_read_sfx(index, nds, buf, buf_size)) {
+ *   NDP_set_sfx_ptr(buf);
+ * }
+ * ```
+ *
+ * \param index    Sound effect number.
+ * \param nds      Pointer to the NDSFile opened by `NDP_open_sfx_*()`.
+ * \param buf      Pointer to RAM buffer.
+ * \param buf_size Size of the buffer.
+ *
+ * \return `true` on success, `false` otherwise.
+ *
+ * \sa NDP_read_sfx(), NDP_set_sfx_ptr()
+ */
+bool NDP_load_sfx(uint8_t index, NDSFile * nds, uint8_t * buf, size_t buf_size);
 
 /** @} */
 

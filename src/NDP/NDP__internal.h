@@ -15,6 +15,8 @@
 #ifndef NDP__INTERNAL_H_
 #define NDP__INTERNAL_H_
 
+#include <memfile.h>
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -31,5 +33,7 @@ extern void NDP_IMAIN(void);
 extern void NDP_ADRSET(void * ptr);
 
 extern void NDP__set_song_ptr(uint8_t bank, void * ptr);
+
+extern bool NDP__load_data(MemFile * mf, void * buf, size_t buf_size);
 
 #endif // NDP__INTERNAL_H_

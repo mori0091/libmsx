@@ -9,15 +9,14 @@
  * https://github.com/mori0091/libmsx
  */
 /**
- * \file NDP_load_bgm.c
+ * \file NDP_load_sfx.c
  */
 
 #include <NDP.h>
-#include "./NDP__internal.h"
 
-bool NDP_load_bgm(NDPFile * ndp, uint8_t * buf, size_t buf_size) {
-  if (NDP__load_data(&ndp->mf, buf, buf_size)) {
-    NDP__set_song_ptr(0, buf);
+bool NDP_load_sfx(uint8_t index, NDSFile * nds, uint8_t * buf, size_t buf_size) {
+  if (NDP_read_sfx(index, nds, buf, buf_size)) {
+    NDP_set_sfx_ptr(buf);
     return true;
   }
   return false;

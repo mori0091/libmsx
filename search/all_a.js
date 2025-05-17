@@ -25,7 +25,7 @@ var searchData=
   ['and_20copying_20from_20banked_20memory_22',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
   ['and_20copying_20from_20resource_20in_20banked_20memory_23',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
   ['and_20sample_20projects_24',['Build instructions of the library and sample projects',['../index.html#autotoc_md16',1,'']]],
-  ['and_20set_20it_20in_20the_20driver_25',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]],
+  ['and_20set_20it_20in_20the_20driver_25',['and set it in the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]],
   ['and_20sm2_20apis_26',['Step 5. Write your application code which use the generated code and SM2 APIs',['../md_docs_2tutorial__SM2.html#autotoc_md66',1,'']]],
   ['animated_20color_20sprites_27',['Animated Color Sprites',['../group__SM2.html',1,'SM2 (Sprite Mode 2) Animated Color Sprites.'],['../group__SM2__DISPLAY.html',1,'SM2 display Animated Color Sprites.'],['../md_docs_2tutorial__SM2.html',1,'TUTORIAL : SM2 (Sprite Mode 2) - Animated Color Sprites.']]],
   ['animation_20state_28',['SM2 updates animation state.',['../group__SM2__ANIMATION.html',1,'']]],

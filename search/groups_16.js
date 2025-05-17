@@ -12,7 +12,7 @@ var searchData=
   ['the_20audio_20decoder_20interface_20for_20the_20libmsx_20audio_20replayer_9',['The audio decoder interface for the libmsx audio replayer.',['../group__AUDIO__DECODER.html',1,'']]],
   ['the_20current_20position_20of_20the_20stream_10',['the current position of the stream',['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
   ['the_20decoder_11',['Set a song in LA0 file to the decoder.',['../group__LA0__SET__SONG.html',1,'']]],
-  ['the_20driver_12',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]],
+  ['the_20driver_12',['the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]],
   ['the_20libmsx_20audio_20replayer_13',['The libmsx audio replayer.',['../group__AUDIO.html',1,'']]],
   ['the_20libmsx_20audio_20replayer_14',['the libmsx audio replayer',['../group__AUDIO__CALLBACK.html',1,'Callback functions of the libmsx audio replayer.'],['../group__AUDIO__EFX.html',1,'Effectors for the libmsx audio replayer.'],['../group__AUDIO__REPLAYER.html',1,'The API of the libmsx audio replayer.'],['../group__AUDIO__DECODER.html',1,'The audio decoder interface for the libmsx audio replayer.'],['../group__AUDIO__BUFFER.html',1,'Unified sound-chip buffer of the libmsx audio replayer.']]],
   ['the_20ndp_20sound_20driver_15',['The replayer APIs of the NDP sound driver.',['../group__NDP__REPLAYER.html',1,'']]],

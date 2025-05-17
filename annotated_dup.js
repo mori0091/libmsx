@@ -8,6 +8,7 @@ var annotated_dup =
     [ "MemPos", "memfile__types_8h.html#structMemPos", "memfile__types_8h_structMemPos" ],
     [ "metasprite", "group__SPRITES__METASPRITE.html#structmetasprite", "group__SPRITES__METASPRITE_structmetasprite" ],
     [ "NDPFile", "group__NDP__SONG.html#structNDPFile", "group__NDP__SONG_structNDPFile" ],
+    [ "NDSFile", "group__NDP__SFX.html#structNDSFile", "group__NDP__SFX_structNDSFile" ],
     [ "OPLL", "group__OPLL__DEVICE.html#structOPLL", "group__OPLL__DEVICE_structOPLL" ],
     [ "OPLL_Device", "group__OPLL__DEVICE.html#structOPLL__Device", "group__OPLL__DEVICE_structOPLL__Device" ],
     [ "ResourceIndex", "group__RESOURCES__FIND.html#structResourceIndex", "group__RESOURCES__FIND_structResourceIndex" ],

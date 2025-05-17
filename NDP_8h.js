@@ -1,6 +1,7 @@
 var NDP_8h =
 [
     [ "NDPFile", "group__NDP__SONG.html#ga7c728772517f434b79fe93249cb53e80", null ],
+    [ "NDSFile", "group__NDP__SFX.html#gaaa1768a9cf2be8e08716fb10ba398f91", null ],
     [ "NDP_init", "group__NDP__REPLAYER.html#ga219bfd1fb2b63885836cf68be73a91ee", null ],
     [ "NDP_version", "group__NDP__REPLAYER.html#ga26367d3e7b13d5103f364ae639019aa1", null ],
     [ "NDP_play", "group__NDP__REPLAYER.html#gaa8556b48d83761cd1fce9a9772a7bb68", null ],
@@ -20,5 +21,11 @@ var NDP_8h =
     [ "NDP_set_bgm", "group__NDP__SONG.html#ga4818fce77b5b2fd7e604114fe0dbf623", null ],
     [ "NDP_load_bgm", "group__NDP__SONG.html#ga6a47cc11c940f8eeaf6eb4b3321d4ff9", null ],
     [ "NDP_has_metadata", "group__NDP__SONG.html#gac5e9afe2a025149a1d0f2bec31b6634d", null ],
-    [ "NDP_read_metadata", "group__NDP__SONG.html#ga67b7e198577a782033d1ffb5ad23e28e", null ]
+    [ "NDP_read_metadata", "group__NDP__SONG.html#ga67b7e198577a782033d1ffb5ad23e28e", null ],
+    [ "NDP_open_sfx_mem", "group__NDP__SFX.html#ga6ec73b9b592d571365728755fc29760d", null ],
+    [ "NDP_open_sfx_bmem", "group__NDP__SFX.html#ga007f362960ee28fba8fced262ca4674a", null ],
+    [ "NDP_open_sfx_resource", "group__NDP__SFX.html#gaef7659beaeb924faa82c6d4bd3af4173", null ],
+    [ "NDP_set_sfx_ptr", "group__NDP__SFX.html#ga2577411dd0b62ea2d569c9da081cfd20", null ],
+    [ "NDP_read_sfx", "group__NDP__SFX.html#ga1984dfeb5f600b4284ab94b0b58d74d1", null ],
+    [ "NDP_load_sfx", "group__NDP__SFX.html#ga5e7dbfbf1e75116ddf78f13c3d78ea14", null ]
 ];

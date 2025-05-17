@@ -124,12 +124,18 @@ Data Structures</h2></td></tr>
 <tr class="memitem:structNDPFile" id="r_structNDPFile"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SONG.html#structNDPFile">NDPFile</a></td></tr>
 <tr class="memdesc:structNDPFile"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Container of an opened NDP song data.  <a href="group__NDP__SONG.html#structNDPFile">More...</a><br /></td></tr>
 <tr class="separator:structNDPFile"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structNDSFile" id="r_structNDSFile"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#structNDSFile">NDSFile</a></td></tr>
+<tr class="memdesc:structNDSFile"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Container of an opened NDS sound effects data.  <a href="group__NDP__SFX.html#structNDSFile">More...</a><br /></td></tr>
+<tr class="separator:structNDSFile"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga7c728772517f434b79fe93249cb53e80" id="r_ga7c728772517f434b79fe93249cb53e80"><td class="memItemLeft" align="right" valign="top">typedef struct NDPFile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SONG.html#ga7c728772517f434b79fe93249cb53e80">NDPFile</a></td></tr>
 <tr class="memdesc:ga7c728772517f434b79fe93249cb53e80"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Container of an opened NDP song data.  <br /></td></tr>
 <tr class="separator:ga7c728772517f434b79fe93249cb53e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa1768a9cf2be8e08716fb10ba398f91" id="r_gaaa1768a9cf2be8e08716fb10ba398f91"><td class="memItemLeft" align="right" valign="top">typedef struct NDSFile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#gaaa1768a9cf2be8e08716fb10ba398f91">NDSFile</a></td></tr>
+<tr class="memdesc:gaaa1768a9cf2be8e08716fb10ba398f91"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Container of an opened NDS sound effects data.  <br /></td></tr>
+<tr class="separator:gaaa1768a9cf2be8e08716fb10ba398f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -193,6 +199,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ga67b7e198577a782033d1ffb5ad23e28e" id="r_ga67b7e198577a782033d1ffb5ad23e28e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SONG.html#ga67b7e198577a782033d1ffb5ad23e28e">NDP_read_metadata</a> (<a class="el" href="group__NDP__SONG.html#structNDPFile">NDPFile</a> *ndp, uint8_t *buf, size_t buf_size)</td></tr>
 <tr class="memdesc:ga67b7e198577a782033d1ffb5ad23e28e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Read metadata stored in NDP song data.  <br /></td></tr>
 <tr class="separator:ga67b7e198577a782033d1ffb5ad23e28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ec73b9b592d571365728755fc29760d" id="r_ga6ec73b9b592d571365728755fc29760d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#ga6ec73b9b592d571365728755fc29760d">NDP_open_sfx_mem</a> (<a class="el" href="group__NDP__SFX.html#structNDSFile">NDSFile</a> *nds, const uint8_t *loc, size_t size)</td></tr>
+<tr class="memdesc:ga6ec73b9b592d571365728755fc29760d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open NDS sound effects data stored in ROM / RAM.  <br /></td></tr>
+<tr class="separator:ga6ec73b9b592d571365728755fc29760d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga007f362960ee28fba8fced262ca4674a" id="r_ga007f362960ee28fba8fced262ca4674a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#ga007f362960ee28fba8fced262ca4674a">NDP_open_sfx_bmem</a> (<a class="el" href="group__NDP__SFX.html#structNDSFile">NDSFile</a> *nds, <a class="el" href="group__BANKED__MEMORY__DIRECT__ACCESS.html#ga2b2d2e51ae616ffb07e5acf46a963e3d">bmemptr_t</a> loc, uint32_t size)</td></tr>
+<tr class="memdesc:ga007f362960ee28fba8fced262ca4674a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open NDS sound effects data stored in banked memory (MegaROM).  <br /></td></tr>
+<tr class="separator:ga007f362960ee28fba8fced262ca4674a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef7659beaeb924faa82c6d4bd3af4173" id="r_gaef7659beaeb924faa82c6d4bd3af4173"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#gaef7659beaeb924faa82c6d4bd3af4173">NDP_open_sfx_resource</a> (<a class="el" href="group__NDP__SFX.html#structNDSFile">NDSFile</a> *nds, const char *path)</td></tr>
+<tr class="memdesc:gaef7659beaeb924faa82c6d4bd3af4173"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Open NDS file stored as named resources in banked memory (MegaROM).  <br /></td></tr>
+<tr class="separator:gaef7659beaeb924faa82c6d4bd3af4173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2577411dd0b62ea2d569c9da081cfd20" id="r_ga2577411dd0b62ea2d569c9da081cfd20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#ga2577411dd0b62ea2d569c9da081cfd20">NDP_set_sfx_ptr</a> (void *ptr)</td></tr>
+<tr class="memdesc:ga2577411dd0b62ea2d569c9da081cfd20"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Setup the NDS sound effects data to NDP sound driver.  <br /></td></tr>
+<tr class="separator:ga2577411dd0b62ea2d569c9da081cfd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1984dfeb5f600b4284ab94b0b58d74d1" id="r_ga1984dfeb5f600b4284ab94b0b58d74d1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#ga1984dfeb5f600b4284ab94b0b58d74d1">NDP_read_sfx</a> (uint8_t index, <a class="el" href="group__NDP__SFX.html#structNDSFile">NDSFile</a> *nds, uint8_t *buf, size_t buf_size)</td></tr>
+<tr class="memdesc:ga1984dfeb5f600b4284ab94b0b58d74d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Read the NDS sound effects data.  <br /></td></tr>
+<tr class="separator:ga1984dfeb5f600b4284ab94b0b58d74d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e7dbfbf1e75116ddf78f13c3d78ea14" id="r_ga5e7dbfbf1e75116ddf78f13c3d78ea14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NDP__SFX.html#ga5e7dbfbf1e75116ddf78f13c3d78ea14">NDP_load_sfx</a> (uint8_t index, <a class="el" href="group__NDP__SFX.html#structNDSFile">NDSFile</a> *nds, uint8_t *buf, size_t buf_size)</td></tr>
+<tr class="memdesc:ga5e7dbfbf1e75116ddf78f13c3d78ea14"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>MSX</code> Load and setup the NDS sound effects data to NDP sound driver.  <br /></td></tr>
+<tr class="separator:ga5e7dbfbf1e75116ddf78f13c3d78ea14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>NDP - NDP sound driver. </p>

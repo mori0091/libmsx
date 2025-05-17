@@ -110,7 +110,7 @@ var searchData=
   ['import_20generated_20data_20and_20code_20into_20your_20application_20s_20repository_107',['Step 3. Import generated data and code into your application&apos;s repository',['../md_docs_2tutorial__SM2.html#autotoc_md64',1,'']]],
   ['in_20banked_20memory_108',['in banked memory',['../group__RESOURCES__FIND.html',1,'Find a resource in banked memory.'],['../group__RESOURCES__INDIRECT__ACCESS.html',1,'Reading and copying from resource in banked memory.']]],
   ['in_20la0_20file_20to_20the_20decoder_109',['Set a song in LA0 file to the decoder.',['../group__LA0__SET__SONG.html',1,'']]],
-  ['in_20the_20driver_110',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]],
+  ['in_20the_20driver_110',['in the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]],
   ['individual_20address_20spaces_20of_20devices_111',['Slot - Individual Address Spaces of devices.',['../group__SLOT.html',1,'']]],
   ['initialization_112',['SCREEN mode initialization',['../group__SCREEN.html',1,'']]],
   ['initialization_20for_20sm2_20module_113',['SM2 initialization for SM2 module.',['../group__SM2__INIT.html',1,'']]],
@@ -156,5 +156,5 @@ var searchData=
   ['io_2eh_153',['io.h',['../io_8h.html',1,'']]],
   ['io_5fh_154',['IO_H',['../io_8h.html#a7a88fe5b19b9d27c4d2b2d2501f8591a',1,'io.h']]],
   ['isloop_155',['isLoop',['../group__SNDDRV__DATA.html#a8235e7d4e853b68b722090b9f037394c',1,'snd_Music']]],
-  ['it_20in_20the_20driver_156',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]]
+  ['it_20in_20the_20driver_156',['it in the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]]
 ];

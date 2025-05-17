@@ -14,7 +14,7 @@ var searchData=
   ['amp_20effector_11',['The AMP effector.',['../group__AUDIO__EFX__AMP.html',1,'']]],
   ['and_20copying_20from_20banked_20memory_12',['Reading and copying from banked memory.',['../group__BANKED__MEMORY__INDIRECT__ACCESS.html',1,'']]],
   ['and_20copying_20from_20resource_20in_20banked_20memory_13',['Reading and copying from resource in banked memory.',['../group__RESOURCES__INDIRECT__ACCESS.html',1,'']]],
-  ['and_20set_20it_20in_20the_20driver_14',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]],
+  ['and_20set_20it_20in_20the_20driver_14',['and set it in the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]],
   ['animated_20color_20sprites_15',['Animated Color Sprites',['../group__SM2.html',1,'SM2 (Sprite Mode 2) Animated Color Sprites.'],['../group__SM2__DISPLAY.html',1,'SM2 display Animated Color Sprites.']]],
   ['animation_20state_16',['SM2 updates animation state.',['../group__SM2__ANIMATION.html',1,'']]],
   ['api_20of_20the_20libmsx_20audio_20replayer_17',['The API of the libmsx audio replayer.',['../group__AUDIO__REPLAYER.html',1,'']]],

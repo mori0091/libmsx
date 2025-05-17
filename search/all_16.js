@@ -49,7 +49,7 @@ var searchData=
   ['metasprite_5fh_46',['METASPRITE_H',['../metasprite_8h.html#a4b2523870ebd0bc58f65a5138affe961',1,'metasprite.h']]],
   ['metasprite_5ft_47',['metasprite_t',['../group__SPRITES__METASPRITE.html#gaaa450295993f973fb05ebda45d8d14bf',1,'metasprite.h']]],
   ['methods_48',['methods',['../memfile__types_8h.html#a4d320bfe7ac2c2b79813006e153a075f',1,'MemFile']]],
-  ['mf_49',['mf',['../group__NDP__SONG.html#a017c074c753c357eb7aa077cdca28f33',1,'NDPFile']]],
+  ['mf_49',['mf',['../group__NDP__SONG.html#a017c074c753c357eb7aa077cdca28f33',1,'NDPFile::mf'],['../group__NDP__SFX.html#a4b29a1210728556cbfe9d80ee8da0114',1,'NDSFile::mf']]],
   ['mfeof_50',['mfeof',['../group__STREAM__ERR.html#gad09ffad284dac9d422b3f217c95dcfe5',1,'memfile.h']]],
   ['mfgetpos_51',['mfgetpos',['../group__STREAM__SEEK.html#ga9ab5519986a44b493ec675b8d1f05f2e',1,'memfile.h']]],
   ['mfopen_5fbmem_52',['mfopen_bmem',['../group__STREAM__OPEN.html#gabd480c4a69f86399cf445337a42afd11',1,'memfile.h']]],

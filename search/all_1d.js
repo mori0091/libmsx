@@ -26,7 +26,7 @@ var searchData=
   ['the_20audio_20decoder_20interface_20for_20the_20libmsx_20audio_20replayer_23',['The audio decoder interface for the libmsx audio replayer.',['../group__AUDIO__DECODER.html',1,'']]],
   ['the_20current_20position_20of_20the_20stream_24',['the current position of the stream',['../group__STREAM__SEEK.html',1,'Get / Set the current position of the stream.'],['../group__STREAM__READ.html',1,'Read from the current position of the stream.']]],
   ['the_20decoder_25',['Set a song in LA0 file to the decoder.',['../group__LA0__SET__SONG.html',1,'']]],
-  ['the_20driver_26',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]],
+  ['the_20driver_26',['the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]],
   ['the_20generated_20code_20and_20sm2_20apis_27',['Step 5. Write your application code which use the generated code and SM2 APIs',['../md_docs_2tutorial__SM2.html#autotoc_md66',1,'']]],
   ['the_20generated_20data_20and_20code_28',['Step 6. Build your application with the generated data and code',['../md_docs_2tutorial__SM2.html#autotoc_md67',1,'']]],
   ['the_20libmsx_20audio_20format_200_29',['DESIGN NOTE : LA0 - The libmsx audio format 0.',['../md_docs_2design-notes__la0.html',1,'']]],

@@ -6,7 +6,7 @@ var searchData=
   ['images_3',['images',['../group__IM__BOOLEAN__BM8x8.html',1,'Boolean operators for 8x8px 1bpp bitmap images.'],['../group__IM__TRANSFORM__BM8x8.html',1,'Matrix transformation operators for 8x8px 1bpp bitmap images.'],['../group__IM__SHIFT__BM8x8.html',1,'Shift operators for 8x8px 1bpp bitmap images.'],['../group__IM__TILEMAP__BM8x8.html',1,'Tile-mapping for 8x8px 1bpp bitmap images.']]],
   ['in_20banked_20memory_4',['in banked memory',['../group__RESOURCES__FIND.html',1,'Find a resource in banked memory.'],['../group__RESOURCES__INDIRECT__ACCESS.html',1,'Reading and copying from resource in banked memory.']]],
   ['in_20la0_20file_20to_20the_20decoder_5',['Set a song in LA0 file to the decoder.',['../group__LA0__SET__SONG.html',1,'']]],
-  ['in_20the_20driver_6',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]],
+  ['in_20the_20driver_6',['in the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]],
   ['individual_20address_20spaces_20of_20devices_7',['Slot - Individual Address Spaces of devices.',['../group__SLOT.html',1,'']]],
   ['initialization_8',['SCREEN mode initialization',['../group__SCREEN.html',1,'']]],
   ['initialization_20for_20sm2_20module_9',['SM2 initialization for SM2 module.',['../group__SM2__INIT.html',1,'']]],
@@ -30,5 +30,5 @@ var searchData=
   ['interrupts_27',['interrupts',['../group__INTERRUPT__AWAIT.html',1,'Await interrupts'],['../group__INTERRUPT__STATE.html',1,'State of interrupts']]],
   ['interrupts_20handler_28',['Interrupts handler',['../group__INTERRUPT__HANDLER.html',1,'']]],
   ['interrupts_20slots_20etc_29',['BIOS, Interrupts, Slots, etc.',['../group__LIBMSX__SYS.html',1,'']]],
-  ['it_20in_20the_20driver_30',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]]
+  ['it_20in_20the_20driver_30',['it in the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]]
 ];

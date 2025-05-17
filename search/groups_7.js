@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_20and_20set_20it_20in_20the_20driver_0',['Open NDP song data, and set it in the driver.',['../group__NDP__SONG.html',1,'']]],
+  ['data_20and_20set_20it_20in_20the_20driver_0',['data and set it in the driver',['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.']]],
   ['data_20compression_1',['ZX0 data compression',['../group__ZX0.html',1,'']]],
   ['data_20structure_2',['Sound data structure',['../group__SNDDRV__DATA.html',1,'']]],
   ['data_20types_3',['SM2 Data Types',['../group__SM2__DATATYPES.html',1,'']]],
@@ -20,7 +20,7 @@ var searchData=
   ['display_20graphics_17',['Video / Display / Graphics.',['../group__LIBMSX__GRAPHICS.html',1,'']]],
   ['display_20processor_18',['VDP - Video Display Processor',['../group__VDP.html',1,'']]],
   ['display_20registers_19',['Display registers',['../group__VDP__DISPLAY__REGISTER.html',1,'']]],
-  ['driver_20',['driver',['../group__LA0__DECODER.html',1,'LA0 - PSG, SCC/SCC+, OPLL sound driver.'],['../group__NDP.html',1,'NDP - NDP sound driver.'],['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver'],['../group__NDP__REPLAYER.html',1,'The replayer APIs of the NDP sound driver.']]],
+  ['driver_20',['driver',['../group__LA0__DECODER.html',1,'LA0 - PSG, SCC/SCC+, OPLL sound driver.'],['../group__NDP.html',1,'NDP - NDP sound driver.'],['../group__NDP__SONG.html',1,'Open NDP song data, and set it in the driver.'],['../group__NDP__SFX.html',1,'Open NDS sound effects data, and set it in the driver.'],['../group__SNDDRV.html',1,'SNDDRV - PSG sound driver'],['../group__SOUND__OLD.html',1,'Sound - Old PSG sound driver'],['../group__NDP__REPLAYER.html',1,'The replayer APIs of the NDP sound driver.']]],
   ['driver_20apis_21',['Old PSG sound driver APIs',['../group__SOUND__OLD__API.html',1,'']]],
   ['drivers_20replayers_22',['Sound drivers / replayers.',['../group__LIBMSX__REPLAYER.html',1,'']]]
 ];

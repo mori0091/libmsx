@@ -3,7 +3,7 @@ var searchData=
   ['masters_0',['MASTERS',['../workarea_8h.html#a1250a3a4d9e79ca2cbe2ff9fb7826284',1,'workarea.h']]],
   ['maxupd_1',['MAXUPD',['../workarea_8h.html#a4be2db156d55ae71aaedc5698e656bda',1,'workarea.h']]],
   ['methods_2',['methods',['../memfile__types_8h.html#a4d320bfe7ac2c2b79813006e153a075f',1,'MemFile']]],
-  ['mf_3',['mf',['../group__NDP__SONG.html#a017c074c753c357eb7aa077cdca28f33',1,'NDPFile']]],
+  ['mf_3',['mf',['../group__NDP__SONG.html#a017c074c753c357eb7aa077cdca28f33',1,'NDPFile::mf'],['../group__NDP__SFX.html#a4b29a1210728556cbfe9d80ee8da0114',1,'NDSFile::mf']]],
   ['minupd_4',['MINUPD',['../workarea_8h.html#a7148e99e9f0ce5d64d6aff154cedc2df',1,'workarea.h']]],
   ['mltatr_5',['MLTATR',['../workarea_8h.html#afa872c54daa79fe885b0ab0084af6718',1,'workarea.h']]],
   ['mltcgp_6',['MLTCGP',['../workarea_8h.html#a8c9a5737a2198d41dbcb0779aa8cc97e',1,'workarea.h']]],

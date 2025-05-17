@@ -1,0 +1,9 @@
+<map id="NDSFile" name="NDSFile">
+<area shape="rect" id="Node000001" title="MSX Container of an opened NDS sound effects data." alt="" coords="67,213,137,238"/>
+<area shape="rect" id="Node000002" href="$memfile__types_8h.html#structMemFile" title="Internal structure of MemFile type." alt="" coords="66,124,138,150"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,165,105,212,99,212,99,165"/>
+<area shape="rect" id="Node000003" href="$memfile__types_8h.html#structMemPos" title="Internal structure of mempos_t type." alt="" coords="5,5,79,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,44,98,122,93,125,53,46"/>
+<area shape="rect" id="Node000004" href="$memfile__types_8h.html#structMemFileMethods" title=" " alt="" coords="103,5,224,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="152,46,111,125,106,122,148,44"/>
+</map>

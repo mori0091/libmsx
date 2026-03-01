@@ -19,68 +19,63 @@
 #include <stdint.h>
 
 static bool update_frame(sm2_Sprite * s) {
-  const uint8_t curr_frame = s->curr_frame;
   const sm2_FrameTag * const tag = s->tag;
-  const uint8_t from = tag->from;
-  const uint8_t to = tag->to;
-  const uint8_t direction = tag->direction;
-
-  if (curr_frame == to && direction == SM2_PINGPONG) {
-    s->curr_direction = SM2_REVERSE;
-  }
-  else if (curr_frame == from && direction == SM2_PINGPONG_REVERSE) {
-    s->curr_direction = SM2_FORWARD;
-  }
 
   if (s->curr_direction == SM2_FORWARD) {
-    if (curr_frame < to) {
+    if (s->curr_frame < tag->to) {
       s->curr_frame++;
     }
-    else if (direction == SM2_FORWARD || direction == SM2_PINGPONG_REVERSE) {
+    else if (tag->direction == SM2_PINGPONG) {
+      s->curr_direction = SM2_REVERSE;
+    }
+    else {
       return true;
     }
   }
   else {
-    if (from < curr_frame) {
+    if (tag->from < s->curr_frame) {
       s->curr_frame--;
     }
-    else if (direction == SM2_REVERSE || direction == SM2_PINGPONG) {
+    else if (tag->direction == SM2_PINGPONG_REVERSE) {
+      s->curr_direction = SM2_FORWARD;
+    }
+    else {
       return true;
     }
   }
   return false;
 }
 
+extern void sm2_init_sprite_0(sm2_Sprite * s, const sm2_SpriteSheet * sheet, const sm2_FrameTag * tag);
+
 void sm2_update_sprite(sm2_Sprite * s) {
   if (!s->remaining_duration) return; // duration = inf.
-  s->remaining_duration -= SM2_COUNTS_PER_TICK;
-  if (0 < s->remaining_duration) return;
+  if (s->remaining_duration > SM2_COUNTS_PER_TICK) {
+    s->remaining_duration -= SM2_COUNTS_PER_TICK;
+    return;
+  }
+  s->remaining_duration = 0;
   const sm2_FrameTag * const tag = s->tag;
   if (!tag) {
-    s->remaining_duration = 0;
     return;
   }
 
   const sm2_SpriteSheet * const sheet = s->sheet;
-  const bool cycle_end = update_frame(s);
-  if (cycle_end) {
+  if (update_frame(s)) {
     const size_t repeat_max = tag->repeat;
     if (!repeat_max) {
-      sm2_init_sprite(s, sheet, tag);
+      sm2_init_sprite_0(s, sheet, tag);
     }
     else {
       const size_t repeat = s->repeat;
       if (repeat < repeat_max) {
-        sm2_init_sprite(s, sheet, tag);
+        sm2_init_sprite_0(s, sheet, tag);
         s->repeat = repeat + 1;
-      }
-      else {
-        s->remaining_duration = 0;
       }
     }
   }
   else {
     size_t duration = SM2_COUNTS_PER_MSEC * sheet->frames.ptr[s->curr_frame].duration;
-    s->remaining_duration += duration;
+    s->remaining_duration = duration;
   }
 }

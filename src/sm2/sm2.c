@@ -17,6 +17,7 @@
 #include "./sm2_internal.h"
 
 #include <bmem.h>
+#include <vdp.h>
 #include <workarea.h>
 
 // ----------------------------------------------------------------------
@@ -63,15 +64,8 @@ inline size_t sm2__cel_sct_size(const sm2_Cel * cel) { return sm2__sct_sizeof(ce
 inline size_t sm2__cel_sat_size(const sm2_Cel * cel) { return sm2__sat_sizeof(cel->depth); }
 
 // ----------------------------------------------------------------------
-// static void sm2_bmem__load_spt(const sm2_Cel * cel, vmemptr_t spt) {
-//   bmem_copy_to_vmem(sm2__cel_spt(cel), spt, sm2__cel_spt_size(cel));
-// }
 static void sm2_bmem__load_spt(const sm2_Cel * cel, vmemptr_t spt) {
-  // Note that `cel->depth` must be <= SM2_SPRITE_PLANE_MAX (32).
-  static uint8_t spt_buf[32 * SM2_SPRITE_PLANE_MAX];
-  const size_t len = sm2__cel_spt_size(cel);
-  bmem_read(sm2__cel_spt(cel), spt_buf, len);
-  vmem_write(spt, spt_buf, len);
+  bmem_copy_to_vmem(sm2__cel_spt(cel), spt, sm2__cel_spt_size(cel));
 }
 static void sm2_bmem__load_sct(const sm2_Cel * cel, uint8_t * sct) {
   bmem_read(sm2__cel_sct(cel), sct, sm2__cel_sct_size(cel));
@@ -95,6 +89,12 @@ inline void sm2__load_sat(const sm2_Cel * cel, uint8_t * sat) {
 static int8_t sm2__SPT_allocate(uint8_t cnt) {
   int8_t index = sm2__num_patterns_allocated;
   if (SM2_SPRITE_PATTERN_MAX < index + cnt) return -1;
+  if ((uint8_t)index == sm2__num_planes_reserved) {
+    // Temporarily hide all sprites until the pattern table and attribute table
+    // are corrected, preventing sprites corrupted by pattern table correction
+    // from being displayed.
+    vdp_set_control(8, RG8SAV | 0x02);
+  }
   sm2__num_patterns_allocated += cnt;
   return index;
 }
@@ -195,9 +195,12 @@ bool sm2__add_cel(uint8_t base_plane, const sm2_Cel * cel, int x, int y) {
 // ----------------------------------------------------------------------
 void sm2__flush(uint8_t base_plane, uint8_t n) {
   const size_t sat_len = n * 4;
-  const size_t sat_offset = base_plane * 4;
   const size_t sct_len = sat_len * 4;
+  const size_t sat_offset = base_plane * 4;
   const size_t sct_offset = sat_offset * 4;
   vmem_write(SPRITE_COLORS + sct_offset, ((uint8_t *)&sm2__sprite_table.sct) + sct_offset, sct_len);
   vmem_write(SPRITES + sat_offset, ((uint8_t *)&sm2__sprite_table.sat) + sat_offset, sat_len);
+  // The pattern table, color table, and attribute table for sprites have been
+  // corrected. Sprite visibility can now be restored.
+  vdp_set_control(8, RG8SAV);
 }

@@ -15,7 +15,7 @@
 #include <sm2.h>
 #include "./sm2_internal.h"
 
-void sm2_init_sprite(sm2_Sprite * s, const sm2_SpriteSheet * sheet, const sm2_FrameTag * tag) {
+void sm2_init_sprite_0(sm2_Sprite * s, const sm2_SpriteSheet * sheet, const sm2_FrameTag * tag) {
   s->sheet = sheet;
   s->tag = tag;
   if (tag) {
@@ -32,7 +32,13 @@ void sm2_init_sprite(sm2_Sprite * s, const sm2_SpriteSheet * sheet, const sm2_Fr
     s->curr_frame = 0;
     s->curr_direction = SM2_FORWARD;
   }
-  size_t duration = !sheet ? 0 : SM2_COUNTS_PER_MSEC * sheet->frames.ptr[s->curr_frame].duration;
+  size_t duration = (!sheet) ? 0 : (SM2_COUNTS_PER_MSEC * sheet->frames.ptr[s->curr_frame].duration);
   s->remaining_duration = duration;
   s->repeat = 0;
+}
+
+void sm2_init_sprite(sm2_Sprite * s, const sm2_SpriteSheet * sheet, const sm2_FrameTag * tag) {
+  __asm__("di");
+  sm2_init_sprite_0(s, sheet, tag);
+  __asm__("ei");
 }

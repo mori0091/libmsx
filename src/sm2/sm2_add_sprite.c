@@ -15,10 +15,13 @@
 #include <sm2.h>
 
 void sm2_add_sprite(const sm2_Sprite * s, int x, int y) {
+  __asm__("di");
   const sm2_SpriteSheet * sheet = s->sheet;
+  const uint8_t curr_frame = s->curr_frame;
+  __asm__("ei");
   if (!sheet) return;
   const sm2_Cel * const cels = sheet->cels.ptr;
-  const sm2_Frame * const frame = &sheet->frames.ptr[s->curr_frame];
+  const sm2_Frame * const frame = &sheet->frames.ptr[curr_frame];
   const uint8_t * cel_ids = frame->cel_ids.ptr;
   for (uint8_t n = frame->cel_ids.len; n--; cel_ids++) {
     sm2_add_cel(&cels[*cel_ids], x, y);

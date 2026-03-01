@@ -15,6 +15,13 @@
 #include "./memmap.h"
 
 void memmap_expose_cartridge(void) {
-  msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(1));
-  msx_ENASLT(CARTRIDGE_SLOT, PAGE_ADDR(2));
+__asm__("ENASLT = 0x0024");
+__asm__("push    ix");
+__asm__("ld      a, (_libmsx_initial_slots + #1)");
+__asm__("ld      h, #0x40");
+__asm__("call    ENASLT");
+__asm__("ld      a, (_libmsx_initial_slots + #2)");
+__asm__("ld      h, #0x80");
+__asm__("call    ENASLT");
+__asm__("pop     ix");
 }

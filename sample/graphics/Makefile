@@ -1,6 +1,6 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-# Copyright (c) 2021-2025 Daishi Mori (mori0091)
+# Copyright (c) 2021-2026 Daishi Mori (mori0091)
 #
 # This software is released under the MIT License.
 # See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -59,6 +59,7 @@ LIBS    =
 # (default is `init_0`, if omitted)
 # \see https://github.com/mori0091/libmsx/blob/main/docs/design-notes_crt0.md
 # CONFIG_CRT0_MOD_INIT = init_0
+CONFIG_CRT0_MOD_INIT = init_r
 
 # [REQUIRED]
 # Select ROM type.
@@ -67,7 +68,7 @@ LIBS    =
 # - ascii16 : to make MegaROM image (ROM type: ASCII16)
 # - ascii8  : to make MegaROM image (ROM type: ASCII8)
 # \see https://github.com/mori0091/libmsx/blob/main/docs/design-notes_crt0.md
-CONFIG_ROM_TYPE = 32k
+CONFIG_ROM_TYPE = ascii8
 
 # [REQUIRED] (No need to modify)
 # Include common part of Makefile

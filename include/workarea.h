@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /*
- * Copyright (c) 2021-2025 Daishi Mori (mori0091)
+ * Copyright (c) 2021-2026 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -256,6 +256,24 @@ static volatile __at (0xfc4a) uint16_t HIMEM;
  * `MSX` Free-running counter that counts up every VSYNC interrupts.
  */
 static volatile __at (0xfc9e) uint16_t JIFFY;
+
+// ------ Graphics ------
+/**
+ * `MSX` X Coordinate
+ */
+static volatile __at (0xfcb3) uint16_t GXPOS;
+/**
+ * `MSX` Y Coordinate
+ */
+static volatile __at (0xfcb5) uint16_t GYPOS;
+/**
+ * `MSX` Graphics accumulator (X coordinate)
+ */
+static volatile __at (0xfcb7) uint16_t GRPACX;
+/**
+ * `MSX` Graphics accumulator (Y coordinate)
+ */
+static volatile __at (0xfcb9) uint16_t GRPACY;
 
 // ------ Slot workarea ------
 /**

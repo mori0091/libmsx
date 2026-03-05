@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /*
- * Copyright (c) 2021-2025 Daishi Mori (mori0091)
+ * Copyright (c) 2021-2026 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -33,5 +33,13 @@ MSX_IO_PORT(0x0a2) psg_port2; /* data read */
 
 // ---- Slot I/O ports
 MSX_IO_PORT(0x0a8) primary_slot_select_port;
+
+// ---- Kanji ROM I/O ports
+// JIS X 0208 第1水準 漢字ROM
+MSX_IO_PORT(0x0d8) KANJI_ROM_JIS1_port1; /* Read font / Write LSB 6 bits of kanji code */
+MSX_IO_PORT(0x0d9) KANJI_ROM_JIS1_port2; /* Read font / Write MSB 6 bits of kanji code */
+// JIS X 0208 第2水準 漢字ROM
+MSX_IO_PORT(0x0da) KANJI_ROM_JIS2_port1; /* Read font / Write LSB 6 bits of kanji code */
+MSX_IO_PORT(0x0db) KANJI_ROM_JIS2_port2; /* Read font / Write MSB 6 bits of kanji code */
 
 #endif

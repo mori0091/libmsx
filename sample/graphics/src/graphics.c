@@ -1,6 +1,6 @@
 // -*- coding: utf-8-unix -*-
 /*
- * Copyright (c) 2021-2025 Daishi Mori (mori0091)
+ * Copyright (c) 2021-2026 Daishi Mori (mori0091)
  *
  * This software is released under the MIT License.\n
  * See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -153,21 +153,37 @@ void copy_rect(uint16_t x, uint16_t y,
                uint16_t w, uint16_t h,
                uint16_t dx, uint16_t dy,
                enum vdp_cmd_dir dir) {
+  // uint16_t sx = x;
+  // uint16_t sy = y;
+  // switch (dir) {
+  //   case VDP_CMD_LRTB:
+  //     break;
+  //   case VDP_CMD_RLTB:
+  //     sx += w - 1;
+  //     break;
+  //   case VDP_CMD_LRBT:
+  //     sy += h - 1;
+  //     break;
+  //   case VDP_CMD_RLBT:
+  //     sx += w - 1;
+  //     sy += h - 1;
+  //     break;
+  // }
   uint16_t sx = x;
   uint16_t sy = y;
-  switch (dir) {
-    case VDP_CMD_LRTB:
-      break;
-    case VDP_CMD_RLTB:
-      sx += w - 1;
-      break;
-    case VDP_CMD_LRBT:
-      sy += h - 1;
-      break;
-    case VDP_CMD_RLBT:
-      sx += w - 1;
-      sy += h - 1;
-      break;
+  if (dir == VDP_CMD_LRTB) {
+  }
+  else if (dir == VDP_CMD_RLTB) {
+    sx = x + w - 1;
+    sy = y;
+  }
+  else if (dir == VDP_CMD_LRBT) {
+    sx = x;
+    sy = y + h - 1;
+  }
+  else if (dir == VDP_CMD_RLBT) {
+    sx = x + w - 1;
+    sy = y + h - 1;
   }
 
   sleep_ticks(1);               // why needs this??
@@ -491,8 +507,13 @@ void rect_move_v(void) {
 }
 
 // --------------------------------------------------------------
+extern void exec_on_main_ram(void);
+
 void main(void) {
   screen5();
+  if (msx_get_version() >= 3) {
+    exec_on_main_ram();
+  }
   for (;;) {
     // Random print (LMMC)
     random_print(0, "HELLO");

@@ -1,6 +1,6 @@
 # -*- coding: utf-8-unix; tab-width: 8 -*-
 
-# Copyright (c) 2021-2025 Daishi Mori (mori0091)
+# Copyright (c) 2021-2026 Daishi Mori (mori0091)
 #
 # This software is released under the MIT License.
 # See https://github.com/mori0091/libmsx/blob/main/LICENSE
@@ -77,25 +77,18 @@ include ${LIBMSX_HOME}/mk/build.mk
 OPENMSX = openmsx.exe
 
 # OPENMSX_MACHINE = C-BIOS_MSX1_JP
-OPENMSX_MACHINE = C-BIOS_MSX2+_JP
-# OPENMSX_MACHINE = Panasonic_FS-A1GT
+# OPENMSX_MACHINE = C-BIOS_MSX2+_JP
+OPENMSX_MACHINE = Panasonic_FS-A1GT
 
 OPENMSX_FLAGS = \
 	 -extb scc+ \
 	 -machine ${OPENMSX_MACHINE}
 
-# PROFILE_FLAGS = \
-# 	profile::section_irq_bp irq; \
-# 	profile::section_scope_bp frame 0xFD9F; \
-# 	profile::section_vdp_bp vdp; \
-# 	$$(sed -n -E -e 's/DEF ((_msx_|_audio_|_la0_|_ay_|_SCC_[0-9a-z_]|_OPLL_|_mf|_bmem_|_SRLEG_)[0-9a-zA-Z_]+) (0x.+)/profile::section_scope_bp \1 \3;/p' ${BINDIR}/${NAME}.noi) \
-# 	profile_osd p;
-
 PROFILE_FLAGS = \
 	profile::section_irq_bp irq; \
 	profile::section_scope_bp frame 0xFD9F; \
 	profile::section_vdp_bp vdp; \
-	$$(sed -n -E -e 's/DEF ((_audio_|_la0_|_mf)[0-9a-zA-Z_]+) (0x.+)/profile::section_scope_bp \1 \3;/p' ${BINDIR}/${NAME}.noi) \
+	$$(sed -n -E -e 's/DEF ((_audio_|_la0_|_BitReader_)[0-9a-zA-Z_]+) (0x.+)/profile::section_scope_bp \1 \3;/p' ${BINDIR}/${NAME}.noi) \
 	profile_osd p;
 
 prof: ${BINDIR}/${NAME}.rom

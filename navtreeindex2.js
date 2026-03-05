@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"group__SCC__PREDEFINED__WAVEFORMS.html#ga885ec12e778e35728128bf31e9ca35b6":[7,7,2,2,15],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga8943afa264bc89bda0d1220706af55c9":[7,7,2,2,23],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga8bcfa2d76d70cdc9b411ed57c2791b5d":[7,7,2,2,6],
 "group__SCC__PREDEFINED__WAVEFORMS.html#ga8c7cf009cc333332431440f646ac9e7c":[7,7,2,2,45],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "group__SPRITES__ATTR.html#a938b2b6b7c016d1a538066f362f13d9c":[7,3,2,1,0,3],
 "group__SPRITES__ATTR.html#ae721ff1bb077d5d54ee08a4ea0ae607c":[7,3,2,1,0,1],
 "group__SPRITES__ATTR.html#ga0e5f09efae319ad69d5828e962ece788":[7,3,2,1,6],
-"group__SPRITES__ATTR.html#ga1bcc3bbb6147ac89600bc593acd181f1":[7,3,2,1,2],
-"group__SPRITES__ATTR.html#ga4d424f5d339662168ed48c3c0667f1d2":[7,3,2,1,8]
+"group__SPRITES__ATTR.html#ga1bcc3bbb6147ac89600bc593acd181f1":[7,3,2,1,2]
 };

@@ -1,16 +1,14 @@
 var searchData=
 [
-  ['masters_0',['MASTERS',['../workarea_8h.html#a1250a3a4d9e79ca2cbe2ff9fb7826284',1,'workarea.h']]],
-  ['maxupd_1',['MAXUPD',['../workarea_8h.html#a4be2db156d55ae71aaedc5698e656bda',1,'workarea.h']]],
-  ['methods_2',['methods',['../memfile__types_8h.html#a4d320bfe7ac2c2b79813006e153a075f',1,'MemFile']]],
-  ['mf_3',['mf',['../group__NDP__SONG.html#a017c074c753c357eb7aa077cdca28f33',1,'NDPFile::mf'],['../group__NDP__SFX.html#a4b29a1210728556cbfe9d80ee8da0114',1,'NDSFile::mf']]],
-  ['minupd_4',['MINUPD',['../workarea_8h.html#a7148e99e9f0ce5d64d6aff154cedc2df',1,'workarea.h']]],
-  ['mltatr_5',['MLTATR',['../workarea_8h.html#afa872c54daa79fe885b0ab0084af6718',1,'workarea.h']]],
-  ['mltcgp_6',['MLTCGP',['../workarea_8h.html#a8c9a5737a2198d41dbcb0779aa8cc97e',1,'workarea.h']]],
-  ['mltcol_7',['MLTCOL',['../workarea_8h.html#ae05fcdd37a1ee36aef7a406b7831e6ab',1,'workarea.h']]],
-  ['mltnam_8',['MLTNAM',['../workarea_8h.html#ac477f08586b8b147d6dc85abc0664d87',1,'workarea.h']]],
-  ['mltpat_9',['MLTPAT',['../workarea_8h.html#ae11cccd86098c3f6009e16d542c223a9',1,'workarea.h']]],
-  ['mode_10',['mode',['../group__SCC__DEVICE.html#affaf59a000ac39ed197e4cea9c626855',1,'SCC']]],
-  ['msx_5fsystem_5fversion_5fcode_11',['MSX_SYSTEM_VERSION_CODE',['../bios__const_8h.html#a6affd3a7801ad8c6c255400f0a391cda',1,'bios_const.h']]],
-  ['musics_12',['musics',['../group__SNDDRV__DATA.html#ab3ebb5d3d3c59d8e17b6ecb07c898c1c',1,'snd_SoundAssets']]]
+  ['la0_5fbgm_5fdecoder_0',['LA0_BGM_DECODER',['../group__LA0__DECODER.html#ga6c0f913acd96369d7b2eb440c078972f',1,'la0.h']]],
+  ['la0_5fsfx_5fdecoder_1',['LA0_SFX_DECODER',['../group__LA0__DECODER.html#ga631bcc384168d7a38b2877dd1af06579',1,'la0.h']]],
+  ['layouts_2',['layouts',['../group__SPRITES__METASPRITE.html#a5ae3c1d2d121a11cf8186a90025ef195',1,'metasprite']]],
+  ['len_3',['len',['../group__SOUND__OLD__EG__API.html#abd36de16ef1f01eda753a81c14284d9d',1,'sound_eg_LPCM::len'],['../group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a',1,'sm2_Frame.cel_ids::len'],['../group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a',1,'sm2_SpriteSheet.frames::len'],['../group__SM2__DATATYPES.html#af5a8e923f8cd24b56b3bab32358cc58a',1,'sm2_SpriteSheet.cels::len']]],
+  ['libmsx_5finitial_5fslots_4',['libmsx_initial_slots',['../group__BIOS__CONFIG.html#gad14db158868f65ade8dd82dab1025279',1,'bios.h']]],
+  ['lines_5',['lines',['../group__TTY__DEVICE.html#a6777c040a82e06b45e2b00a5dab08140',1,'TTY_Device']]],
+  ['linl32_6',['LINL32',['../workarea_8h.html#acae9fd8260ba77d17eb4b20807ee0364',1,'workarea.h']]],
+  ['linl40_7',['LINL40',['../workarea_8h.html#a7a688941bf96ea62570fba654e4b7154',1,'workarea.h']]],
+  ['linlen_8',['LINLEN',['../workarea_8h.html#a69c8d79fd921472dbb76958754cc1148',1,'workarea.h']]],
+  ['looptoindex_9',['loopToIndex',['../group__SNDDRV__DATA.html#a3216f248df996913d722aea1db4a3d27',1,'snd_Music']]],
+  ['lpcm_10',['lpcm',['../group__SOUND__OLD__EG__API.html#abbdf3ac16a6162e550847e45dd9099b0',1,'sound_eg_attribute.__unnamed7__']]]
 ];

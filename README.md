@@ -1,6 +1,6 @@
 # libmsx ; C library for MSX
 
-[![MIT License](https://img.shields.io/github/license/mori0091/libmsx.svg)](https://github.com/mori0091/libmsx/blob/main/LICENSE)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 [![C/C++ CI](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/c-cpp.yml)
 [![CodeQL](https://github.com/mori0091/libmsx/actions/workflows/codeql.yml/badge.svg)](https://github.com/mori0091/libmsx/actions/workflows/codeql.yml)
 
@@ -20,7 +20,7 @@ _Pull requests (PRs) and issues (bug reports, feature requests) are welcome._ ðŸ
 
 ## LICENSE
 
-Copyright (c) 2021-2025 Daishi Mori (mori0091)
+Copyright (c) 2021-2026 Daishi Mori (mori0091)
 
 This software is released under the MIT License.  
 See <https://github.com/mori0091/libmsx/blob/main/LICENSE>

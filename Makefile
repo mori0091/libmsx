@@ -41,7 +41,7 @@ SDAS = sdasz80
 SDLD = sdld
 SDAR = sdar
 
-CFLAGS ?= --opt-code-size
+CFLAGS ?= --opt-code-size --max-allocs-per-node 120000
 CFLAGS += -mz80 -MMD
 CFLAGS += -DNDEBUG --Werror
 CFLAGS += -I include
